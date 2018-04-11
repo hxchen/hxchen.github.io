@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://hxchen.github.io/sitemap.xml

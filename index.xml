@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工作 生活 记录</title>
+    <link>https://hxchen.github.io/</link>
+    <description>Recent content on 工作 生活 记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 20 Aug 2017 21:38:52 +0800</lastBuildDate>
+    
+        <atom:link href="https://hxchen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>关于</title>
+      <link>https://hxchen.github.io/about/</link>
+      <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
+      
+      <guid>https://hxchen.github.io/about/</guid>
+      
+        <description>&lt;p&gt;Geeking &amp;amp; Hiking&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>ERC20 标准规范</title>
+      <link>https://hxchen.github.io/post/erc-20-token-standard/</link>
+      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
+      
+      <guid>https://hxchen.github.io/post/erc-20-token-standard/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;简要说明&#34;&gt;简要说明&lt;/h1&gt;
+
+&lt;p&gt;该文主要是一个以太币智能合约的标准接口说明。&lt;/p&gt;
+
+&lt;h1 id=&#34;抽象&#34;&gt;抽象&lt;/h1&gt;
+
+&lt;p&gt;以下将要说明的标准允许你去实现基于智能合约的标准代币（Tokens）API提供的接口。这个标准提供了一些基本功能以用于代币（Tokens）转账，以及批准用于其他链上的第三方来使用。&lt;/p&gt;
+
+&lt;h1 id=&#34;动机&#34;&gt;动机&lt;/h1&gt;
+
+&lt;p&gt;标准接口允许以太坊上的任何代币（Tokens）可以被其他程序来重新使用：包括钱包和去中心化的交换。&lt;/p&gt;
+
+&lt;h1 id=&#34;规范&#34;&gt;规范&lt;/h1&gt;
+
+&lt;h1 id=&#34;代币-tokens&#34;&gt;代币(Tokens)&lt;/h1&gt;
+
+&lt;h2 id=&#34;方法&#34;&gt;方法&lt;/h2&gt;
+
+&lt;p&gt;注意：调用者必须处理返回方法 &lt;code&gt;returns (bool success)&lt;/code&gt;返回的 &lt;code&gt;false&lt;/code&gt;.调用者绝对不能认为 &lt;code&gt;false&lt;/code&gt;从未返回。&lt;/p&gt;
+
+&lt;h3 id=&#34;name&#34;&gt;name&lt;/h3&gt;
+
+&lt;p&gt;返回代币的名字 ，例如 “MyToken”
+可选 - 该方法用来提高可用性，但是接口和其他合约不能期望这些值的呈现。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;function name() view returns (string name)&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;symbol&#34;&gt;symbol&lt;/h3&gt;
+
+&lt;p&gt;返回代币的符号，例如“ETH”
+可选 - 该方法用来提高可用性，但是接口和其他合约不能期望这些值的呈现。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;function symbol() view returns (string symbol)&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;decimals&#34;&gt;decimals&lt;/h3&gt;
+
+&lt;p&gt;返回代币的精确度，例如“8”，代币最小可以是0.00000001
+可选 - 该方法用来提高可用性，但是接口和其他合约不能期望这些值的呈现。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;该方法用来提高可用性，但是接口和其他合约不能期望这些值的呈现。&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;totalsupply&#34;&gt;totalSupply&lt;/h3&gt;
+
+&lt;p&gt;返回代币的总量&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;function totalSupply() view returns (uint256 totalSupply)&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;balanceof&#34;&gt;balanceOf&lt;/h3&gt;
+
+&lt;p&gt;返回地址为 _owner 账户的 账户余额&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;function balanceOf(address _owner) view returns (uint256 balance)&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;transfer&#34;&gt;transfer&lt;/h3&gt;
+
+&lt;p&gt;将 &lt;code&gt;_value&lt;/code&gt; 数量的代币（从外面账户）转到账户 &lt;code&gt;_to&lt;/code&gt;,并且必须调用 &lt;code&gt;Transfer&lt;/code&gt; 事件。如果 &lt;code&gt;_from&lt;/code&gt; 账户余额不够使用的话，该函数 应该抛出 &lt;code&gt;throw&lt;/code&gt; 。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;function transfer(address _to, uint256 _value) returns (bool success)&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;transferfrom&#34;&gt;transferFrom&lt;/h3&gt;
+
+&lt;p&gt;实现代币用户之间的交易，将 &lt;code&gt;_value&lt;/code&gt; 数量的代币从 &lt;code&gt;_from&lt;/code&gt; 账户转账到 &lt;code&gt;_to&lt;/code&gt;账户，并且必须调用 &lt;code&gt;Transfer&lt;/code&gt; 事件。
+transferFrom 方法用于退出工作流程，允许合约代表你来转账。例如，这可以允许合约代替你来交易或者收取子货币的费用。该函数应该抛出 &lt;code&gt;throw&lt;/code&gt;，除非 &lt;code&gt;_from&lt;/code&gt; 账户通过某些机制授权消息的发送者。
+注意：交易数量为 0 的转账须当做正常交易，并且应该调用 &lt;code&gt;Transfer&lt;/code&gt;事件&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;function transferFrom(address _from, address _to, uint256 _value) returns (bool success)&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;approve&#34;&gt;approve&lt;/h3&gt;
+
+&lt;p&gt;该方法允许发送者&lt;code&gt;_spender&lt;/code&gt;从你的账户多次取走最多为&lt;code&gt;_value&lt;/code&gt;限额数量的代币。如果这个方法再次被调用，那么他会用&lt;code&gt;_value&lt;/code&gt;的值覆盖当前可用限额。
+注意:为了避免攻击，客户端应该以这样的方式来设置限额，在设置其他值给同一个发送者之前，先设置成0（尽管为了向后兼容之前的合约，合约不会执行它）.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;function approve(address _spender, uint256 _value) returns (bool success)&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;allowance&#34;&gt;allowance&lt;/h3&gt;
+
+&lt;p&gt;返回发送者&lt;code&gt;_spender&lt;/code&gt;还剩下可从&lt;code&gt;_owner&lt;/code&gt;取走的额度。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;function allowance(address _owner, address _spender) view returns (uint256 remaining)&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;事件&#34;&gt;事件&lt;/h2&gt;
+
+&lt;h3 id=&#34;transfer-1&#34;&gt;Transfer&lt;/h3&gt;
+
+&lt;p&gt;该事件必须在交易代币（Tokens）的时候出发，包括数量为0的交易。
+当创建新代币时应该触发一个 &lt;code&gt;Transfer&lt;/code&gt;事件，并将_from账户设置为&lt;code&gt;0x0&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;event Transfer(address indexed _from, address indexed _to, uint256 _value)&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;approval&#34;&gt;Approval&lt;/h3&gt;
+
+&lt;p&gt;该事件必须在 成功调用 &lt;code&gt;approve(address _spender, uint256 _value)&lt;/code&gt;的时候触发。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;event Approval(address indexed _owner, address indexed _spender, uint256 _value)&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;实现&#34;&gt;实现&lt;/h1&gt;
+
+&lt;p&gt;现在已经有很多的兼容ERC20标准并且基于以太坊网络的代币。有众多的团队根据接口来实现了不一样的代币，这些不同的实现包括节约费用Gas，提高安全性。
+以下是一些可用的实现：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/token/ERC20/StandardToken.sol&#34;&gt;https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/token/ERC20/StandardToken.sol&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/ConsenSys/Tokens/blob/master/contracts/eip20/EIP20.sol&#34;&gt;https://github.com/ConsenSys/Tokens/blob/master/contracts/eip20/EIP20.sol&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;一个再次调用 &lt;code&gt;approve&lt;/code&gt;前，设置0操作的实现：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/Giveth/minime/blob/master/contracts/MiniMeToken.sol&#34;&gt;https://github.com/Giveth/minime/blob/master/contracts/MiniMeToken.sol&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>ERC223 标准规范</title>
+      <link>https://hxchen.github.io/post/erc-223-token-standard/</link>
+      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
+      
+      <guid>https://hxchen.github.io/post/erc-223-token-standard/</guid>
+      
+        <description>
+
+&lt;p&gt;翻译自 &lt;a href=&#34;https://github.com/ethereum/EIPs/issues/223&#34;&gt;https://github.com/ethereum/EIPs/issues/223&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;抽象&#34;&gt;抽象&lt;/h1&gt;
+
+&lt;p&gt;以下描述了标准代币合约函数和特定的代币,这样的实现代币可以避免意外发送到合约,可以是代币事物表现的像其他事务一样。&lt;/p&gt;
+
+&lt;h1 id=&#34;动机&#34;&gt;动机&lt;/h1&gt;
+
+&lt;p&gt;以下描述了ER223解决的ERC20代币规范的问题:
+ERC20代币规范会导致退出用户的金钱损失.主要的问题是无法处理传入的ERC20事务,该事务是指通过 ERC20规范中 &lt;code&gt;transfer&lt;/code&gt; 函数执行的。&lt;/p&gt;
+
+&lt;p&gt;如果你发送100个 ETH到一个不支持Ether的合约地址,那么他会拒绝交易并没有什么坏事发生。
+如果您发送100个 ERC20代币到一个不支持ERC20的代币合约地址,那么他不会被拒绝,因为它能识别传入事务,所以会导致你的代币在你的余额里被卡住。&lt;/p&gt;
+
+&lt;p&gt;比起ERC20,ERC23里解决的是:&lt;/p&gt;
+
+&lt;p&gt;1.缺少 &lt;code&gt;transfer&lt;/code&gt; 处理的可能性。&lt;/p&gt;
+
+&lt;p&gt;2.代币丢失。&lt;/p&gt;
+
+&lt;p&gt;3.代币交易应该符合以太坊思想。当一个用户想交易的时候,他应该一直是通过调用 &lt;code&gt;transfer&lt;/code&gt;.用户是存一个新合约还是发送给一个外部账户,这都是无关紧要的.&lt;/p&gt;
+
+&lt;p&gt;这些讲允许合约处理传入的代币事务并且阻止意外发送的和合约接受的代币(卡在余额中)&lt;/p&gt;
+
+&lt;p&gt;例如,去中心化的交易不再需要用户调用 &lt;code&gt;approve&lt;/code&gt; 然后调用 &lt;code&gt;deposit&lt;/code&gt;(内部调用 &lt;code&gt;transferFrom&lt;/code&gt;用来取出批准的代币). 代币事务会在交易合约中自动处理.&lt;/p&gt;
+
+&lt;p&gt;这里最重要的是在执行合约时调用 &lt;code&gt;tokenFallback&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;规范&#34;&gt;规范&lt;/h1&gt;
+
+&lt;h1 id=&#34;代币-tokens&#34;&gt;代币(Tokens)&lt;/h1&gt;
+
+&lt;h2 id=&#34;方法&#34;&gt;方法&lt;/h2&gt;
+
+&lt;p&gt;注意:合约开发者如果想他们的合约支持特定代币,那么他们必须实现&lt;code&gt;tokenFallback&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;如果接受者没有实现 &lt;code&gt;tokenFallback&lt;/code&gt;函数,考虑合约不是设计用来支持代币,那么交易必定失败并且不会有代币被转账.
+类比以太币交易,当发送以太币到一个没有实现 &lt;code&gt;function() payable&lt;/code&gt;的合约地址,也是会失败。&lt;/p&gt;
+
+&lt;h3 id=&#34;totalsupply&#34;&gt;totalSupply&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;function totalSupply() constant returns (uint256 totalSupply)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;返回代币总量&lt;/p&gt;
+
+&lt;h3 id=&#34;name&#34;&gt;name&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;function name() constant returns (string _name)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;返回代币名字&lt;/p&gt;
+
+&lt;h3 id=&#34;symbol&#34;&gt;symbol&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;function symbol() constant returns (bytes32 _symbol)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;返回代币符号&lt;/p&gt;
+
+&lt;h3 id=&#34;decimals&#34;&gt;decimals&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;function decimals() constant returns (uint8 _decimals)&lt;/code&gt;
+返回精度&lt;/p&gt;
+
+&lt;h3 id=&#34;balanceof&#34;&gt;balanceOf&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;function balanceOf(address _owner) constant returns (uint256 balance)&lt;/code&gt;
+返回 address _owner 的余额&lt;/p&gt;
+
+&lt;h3 id=&#34;transfer-address-uint&#34;&gt;transfer(address, uint)&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;function transfer(address _to, uint _value) returns (bool)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;因为 ERC20 &lt;code&gt;transfer&lt;/code&gt; 函数没有 &lt;code&gt;bytes&lt;/code&gt; 参数,所以需要向后兼容.
+该函数必须必须传输令牌并调&lt;code&gt;_to&lt;/code&gt;中的函数&lt;code&gt;tokenFallback(address,uint256,bytes)&lt;/code&gt;。
+如果&lt;code&gt;_to&lt;/code&gt;（接收方合同）中没有实现&lt;code&gt;tokenFallback&lt;/code&gt;函数，则事务必须失败，并且不会发生令牌的传输。&lt;/p&gt;
+
+&lt;p&gt;注意:将在接收方合约中调用的令牌备用功能必须命名为&lt;code&gt;tokenFallback&lt;/code&gt;，并使用参数&lt;code&gt;address,uint256，bytes&lt;/code&gt;。 此函数必须具有0xc0ee0b8a签名。&lt;/p&gt;
+
+&lt;h3 id=&#34;transfer-address-uint-bytes&#34;&gt;transfer(address, uint, bytes)&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;function transfer(address _to, uint _value, bytes _data) returns (bool)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;该函数总是在某人想转移代币的时候调用。&lt;/p&gt;
+
+&lt;h2 id=&#34;事件&#34;&gt;事件&lt;/h2&gt;
+
+&lt;h3 id=&#34;transfer&#34;&gt;Transfer&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;event Transfer(address indexed _from, address indexed _to, uint256 indexed _value, bytes _data)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;转移代币时候触发.&lt;/p&gt;
+
+&lt;h2 id=&#34;contract合约和tokens-代币-一起工作&#34;&gt;Contract合约和tokens 代币 一起工作&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;function tokenFallback(address _from, uint _value, bytes _data)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;一个处理代币转移的函数,当代币持有者发送代币时候由代币合约来调用.
+&lt;code&gt;_from&lt;/code&gt;指代币发送者 &lt;code&gt;_value&lt;/code&gt;是收入代币的数量,&lt;code&gt;_data&lt;/code&gt;是附加数据,类似于以太币交易中的&lt;code&gt;msg.data&lt;/code&gt;.
+它类似于Ether事务的fallback功能，并且什么也不返回。&lt;/p&gt;
+
+&lt;h2 id=&#34;推荐的实现&#34;&gt;推荐的实现&lt;/h2&gt;
+
+&lt;p&gt;这是一个强烈推荐的ERC223的代币实现 &lt;a href=&#34;https://github.com/Dexaran/ERC23-tokens/tree/Recommended&#34;&gt;https://github.com/Dexaran/ERC23-tokens/tree/Recommended&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+  </channel>
+</rss>

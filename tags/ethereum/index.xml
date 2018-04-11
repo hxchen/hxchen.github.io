@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ethereum on 工作 生活 记录</title>
+    <link>https://hxchen.github.io/tags/ethereum/</link>
+    <description>Recent content in Ethereum on 工作 生活 记录</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 31 Aug 2017 15:43:48 +0800</lastBuildDate>
+    
+	<atom:link href="https://hxchen.github.io/tags/ethereum/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ERC20 标准规范</title>
+      <link>https://hxchen.github.io/post/erc-20-token-standard/</link>
+      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
+      
+      <guid>https://hxchen.github.io/post/erc-20-token-standard/</guid>
+      <description>简要说明 该文主要是一个以太币智能合约的标准接口说明。 抽象 以下将要说明的标准允许你去实现基于智能合约的标准代币（Tokens）API提供的接口</description>
+    </item>
+    
+    <item>
+      <title>ERC223 标准规范</title>
+      <link>https://hxchen.github.io/post/erc-223-token-standard/</link>
+      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
+      
+      <guid>https://hxchen.github.io/post/erc-223-token-standard/</guid>
+      <description>翻译自 https://github.com/ethereum/EIPs/issues/223 抽象 以下描述了标准代币合约函数和特定的代币,这样的实现代币可以避免意外发送到合约,可以是代币事物表现的像其他事务一样。 动机 以下描述了</description>
+    </item>
+    
+  </channel>
+</rss>
