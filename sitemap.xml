@@ -10,15 +10,22 @@
   </url>
   
   <url>
-    <loc>https://hxchen.github.io/post/erc-20-token-standard/</loc>
-    <lastmod>2017-08-31T15:43:48+08:00</lastmod>
+    <loc>https://hxchen.github.io/post/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE/</loc>
+    <lastmod>2018-04-11T15:43:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://hxchen.github.io/post/erc-223-token-standard/</loc>
-    <lastmod>2017-08-31T15:43:48+08:00</lastmod>
+    <lastmod>2018-04-09T15:43:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hxchen.github.io/post/erc-20-token-standard/</loc>
+    <lastmod>2018-04-04T15:43:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -30,29 +37,29 @@
   </url>
   
   <url>
-    <loc>https://hxchen.github.io/categories/ethereum/</loc>
-    <lastmod>2017-08-31T15:43:48+08:00</lastmod>
+    <loc>https://hxchen.github.io/tags/ethereum/</loc>
+    <lastmod>2018-04-11T15:43:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://hxchen.github.io/tags/ethereum/</loc>
-    <lastmod>2017-08-31T15:43:48+08:00</lastmod>
+    <loc>https://hxchen.github.io/categories/ethereum/</loc>
+    <lastmod>2018-04-11T15:43:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://hxchen.github.io/post/</loc>
-    <lastmod>2017-08-31T15:43:48+08:00</lastmod>
+    <lastmod>2018-04-11T15:43:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://hxchen.github.io/tags/</loc>
-    <lastmod>2017-08-31T15:43:48+08:00</lastmod>
+    <lastmod>2018-04-11T15:43:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
