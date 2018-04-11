@@ -345,7 +345,7 @@ INFO [04-11|09:37:09] Submitted transaction                    fullhash=0x2d8342
 &amp;quot;0x2d8342ce23ca00a61a66a9926d45e8516bd0edda18703770c72897d2b9c31973&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;此时如果没有挖矿，用 txpool.status 命令可以看到本地交易池中有一个待确认的交易，可以使用 eth.getBlock(&amp;ldquo;pending&amp;rdquo;, true).transactions 查看当前待确认交易。&lt;/p&gt;
+&lt;p&gt;此时如果没有挖矿，用 txpool.status 命令可以看到本地交易池中有一个待确认的交易，可以使用 &lt;code&gt;eth.getBlock(&amp;quot;pending&amp;quot;, true).transactions&lt;/code&gt; 查看当前待确认交易。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;gt; txpool.status
 {
