@@ -422,8 +422,7 @@ true
 
 &lt;p&gt;通过区块号查看区块&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;
-&amp;gt; eth.getBlock(102)
+&lt;pre&gt;&lt;code&gt;&amp;gt; eth.getBlock(102)
 {
   difficulty: 137514,
   extraData: &amp;quot;0xd783010802846765746887676f312e392e34856c696e7578&amp;quot;,
@@ -445,7 +444,8 @@ true
   transactions: [],
   transactionsRoot: &amp;quot;0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421&amp;quot;,
   uncles: []
-}&lt;/code&gt;&lt;/p&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;
 </description>
       
     </item>
