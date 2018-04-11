@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on 工作 生活 记录</title>
-    <link>https://hxchen.github.io/categories/</link>
-    <description>Recent content in Categories on 工作 生活 记录</description>
+    <title>Categories on 我不是帅才</title>
+    <link>https://www.3afun.com/categories/</link>
+    <description>Recent content in Categories on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	<atom:link href="https://hxchen.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.3afun.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ethereum</title>
-      <link>https://hxchen.github.io/categories/ethereum/</link>
+      <link>https://www.3afun.com/categories/ethereum/</link>
       <pubDate>Wed, 11 Apr 2018 15:43:48 +0800</pubDate>
       
-      <guid>https://hxchen.github.io/categories/ethereum/</guid>
+      <guid>https://www.3afun.com/categories/ethereum/</guid>
       <description></description>
     </item>
     

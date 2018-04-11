@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>工作 生活 记录</title>
-    <link>https://hxchen.github.io/</link>
-    <description>Recent content on 工作 生活 记录</description>
+    <title>我不是帅才</title>
+    <link>https://www.3afun.com/</link>
+    <description>Recent content on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 20 Aug 2017 21:38:52 +0800</lastBuildDate>
     
-        <atom:link href="https://hxchen.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://www.3afun.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>关于</title>
-      <link>https://hxchen.github.io/about/</link>
+      <link>https://www.3afun.com/about/</link>
       <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
       
-      <guid>https://hxchen.github.io/about/</guid>
+      <guid>https://www.3afun.com/about/</guid>
       
         <description>&lt;p&gt;Geeking &amp;amp; Hiking&lt;/p&gt;
 </description>
@@ -24,10 +24,10 @@
     
     <item>
       <title>Ubuntu16.04 搭建以太坊Ethereum私链</title>
-      <link>https://hxchen.github.io/post/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE/</link>
+      <link>https://www.3afun.com/post/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE/</link>
       <pubDate>Wed, 11 Apr 2018 15:43:48 +0800</pubDate>
       
-      <guid>https://hxchen.github.io/post/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE/</guid>
+      <guid>https://www.3afun.com/post/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE/</guid>
       
         <description>
 
@@ -452,10 +452,10 @@ true
     
     <item>
       <title>ERC223 标准规范</title>
-      <link>https://hxchen.github.io/post/erc-223-token-standard/</link>
+      <link>https://www.3afun.com/post/erc-223-token-standard/</link>
       <pubDate>Mon, 09 Apr 2018 15:43:48 +0800</pubDate>
       
-      <guid>https://hxchen.github.io/post/erc-223-token-standard/</guid>
+      <guid>https://www.3afun.com/post/erc-223-token-standard/</guid>
       
         <description>
 
@@ -567,10 +567,10 @@ ERC20代币规范会导致退出用户的金钱损失.主要的问题是无法�
     
     <item>
       <title>ERC20 标准规范</title>
-      <link>https://hxchen.github.io/post/erc-20-token-standard/</link>
+      <link>https://www.3afun.com/post/erc-20-token-standard/</link>
       <pubDate>Wed, 04 Apr 2018 15:43:48 +0800</pubDate>
       
-      <guid>https://hxchen.github.io/post/erc-20-token-standard/</guid>
+      <guid>https://www.3afun.com/post/erc-20-token-standard/</guid>
       
         <description>
 
