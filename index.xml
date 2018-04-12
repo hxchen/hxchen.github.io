@@ -23,6 +23,54 @@
     </item>
     
     <item>
+      <title>Wallet钱包链接private chain 私有链</title>
+      <link>https://www.3afun.com/post/wallet%E9%92%B1%E5%8C%85%E9%93%BE%E6%8E%A5private-chain-%E7%A7%81%E6%9C%89%E9%93%BE/</link>
+      <pubDate>Thu, 12 Apr 2018 18:31:44 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/wallet%E9%92%B1%E5%8C%85%E9%93%BE%E6%8E%A5private-chain-%E7%A7%81%E6%9C%89%E9%93%BE/</guid>
+      
+        <description>
+
+&lt;p&gt;上一篇文章里,我们讲到 &lt;a href=&#34;https://www.3afun.com/post/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE/&#34;&gt;Ubuntu16.04 搭建以太坊Ethereum私链&lt;/a&gt;
+这次,我就要来介绍如何下载我们的钱包来链接我们的私有链。&lt;/p&gt;
+
+&lt;h1 id=&#34;以太坊钱包wallet下载&#34;&gt;以太坊钱包Wallet下载&lt;/h1&gt;
+
+&lt;p&gt;钱包下载,大家可以去 &lt;a href=&#34;https://github.com/ethereum/mist/releases&#34;&gt;这里&lt;/a&gt;下载。现在最新版本是0.10.0&lt;/p&gt;
+
+&lt;p&gt;不管大家选择是 Ethereum Wallet 还是 Mist 都是可以的,这里我都下载了Mac版本的2个钱包。&lt;/p&gt;
+
+&lt;p&gt;安装的话没有难度,正常安装就行。&lt;/p&gt;
+
+&lt;h1 id=&#34;geth-server-私有链服务器端&#34;&gt;Geth Server 私有链服务器端&lt;/h1&gt;
+
+&lt;p&gt;因为我是远程链接私有链不是本地链接,所有我采用了RPC 链接方式。&lt;/p&gt;
+
+&lt;p&gt;Geth 启动方式&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;geth --identity &amp;quot;TestNode&amp;quot; --rpc --rpcaddr &amp;quot;0.0.0.0&amp;quot; --rpcport &amp;quot;8545&amp;quot; --datadir data0 --port &amp;quot;30303&amp;quot; --nodiscover console
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;此次我们加入了 &lt;code&gt;--rpcaddr&lt;/code&gt;参数来允许远程连接,默认是拒绝远程链接的,只能本地链接。&lt;/p&gt;
+
+&lt;h1 id=&#34;客户端钱包wallet启动&#34;&gt;客户端钱包Wallet启动&lt;/h1&gt;
+
+&lt;h3 id=&#34;ethereum-wallet-启动&#34;&gt;Ethereum Wallet 启动&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;/Applications/Ethereum Wallet.app/Contents/MacOS/Ethereum Wallet&amp;quot; --rpc &amp;quot;http://YOUR_IP:8545&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;mist-启动&#34;&gt;Mist 启动&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;/Applications/Mist.app/Contents/MacOS/Mist --rpc http://YOUR_IP:8545
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;请自行替换 &lt;code&gt;YOUR_IP&lt;/code&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>Ubuntu16.04 搭建以太坊Ethereum私链</title>
       <link>https://www.3afun.com/post/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE/</link>
       <pubDate>Wed, 11 Apr 2018 15:43:48 +0800</pubDate>

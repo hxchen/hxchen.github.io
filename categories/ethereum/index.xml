@@ -5,10 +5,19 @@
     <link>https://www.3afun.com/categories/ethereum/</link>
     <description>Recent content in Ethereum on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 11 Apr 2018 15:43:48 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 12 Apr 2018 18:31:44 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/categories/ethereum/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Wallet钱包链接private chain 私有链</title>
+      <link>https://www.3afun.com/post/wallet%E9%92%B1%E5%8C%85%E9%93%BE%E6%8E%A5private-chain-%E7%A7%81%E6%9C%89%E9%93%BE/</link>
+      <pubDate>Thu, 12 Apr 2018 18:31:44 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/wallet%E9%92%B1%E5%8C%85%E9%93%BE%E6%8E%A5private-chain-%E7%A7%81%E6%9C%89%E9%93%BE/</guid>
+      <description>上一篇文章里,我们讲到 Ubuntu16.04 搭建以太坊Ethereum私链 这次,我就要来介绍如何下载我们的钱包来链接我们的私有链。 以太坊钱包Wallet下载 钱包</description>
+    </item>
     
     <item>
       <title>Ubuntu16.04 搭建以太坊Ethereum私链</title>
