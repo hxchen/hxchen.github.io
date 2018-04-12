@@ -63,11 +63,7 @@
 
 &lt;p&gt;以太坊支持两种智能合约的编程语言：Solidity 和 Serpent。现在的主流是Solidity，学习教程可参考 &lt;a href=&#34;http://www.tryblockchain.org/Solidity-%E8%AF%AD%E8%A8%80%E4%BB%8B%E7%BB%8D.html&#34;&gt;站点&lt;/a&gt; 。&lt;/p&gt;
 
-&lt;p&gt;现在以太坊提供更方便的在线 IDE —— Remix &lt;a href=&#34;https://remix.ethereum.org&#34;&gt;https://remix.ethereum.org&lt;/a&gt; 使用 Remix，免去了安装&lt;/p&gt;
-
-&lt;p&gt;solc&lt;/p&gt;
-
-&lt;p&gt;和编译过程，它可以直接提供部署合约所需的二进制码和 ABI。&lt;/p&gt;
+&lt;p&gt;现在以太坊提供更方便的在线 IDE —— Remix &lt;a href=&#34;https://remix.ethereum.org&#34;&gt;https://remix.ethereum.org&lt;/a&gt; 使用 Remix，免去了安装solc和编译过程，它可以直接提供部署合约所需的二进制码和 ABI。&lt;/p&gt;
 
 &lt;p&gt;3、以太坊钱包&lt;/p&gt;
 
