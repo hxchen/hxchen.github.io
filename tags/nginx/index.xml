@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nginx on 我不是帅才</title>
+    <link>https://www.3afun.com/tags/nginx/</link>
+    <description>Recent content in Nginx on 我不是帅才</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 14 Jun 2017 11:32:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.3afun.com/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>nginx pid No such file or directory解决办法</title>
+      <link>https://www.3afun.com/post/nginx-pid-no-such-file-or-directory%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Wed, 14 Jun 2017 11:32:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/nginx-pid-no-such-file-or-directory%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <description>服务器重启后，有时会需要重新启动 nginx，采用 nginx -s reload 提示 nginx: [error] open() &amp;quot;/var/run/nginx.pid&amp;quot; failed (2: No such file or directory) 是因为服务器重启时丢了pid文件。 这种情况下可以使用 nginx -c，</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on 我不是帅才</title>
+    <link>https://www.3afun.com/tags/python/</link>
+    <description>Recent content in Python on 我不是帅才</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 16 Aug 2017 15:32:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.3afun.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python requirements.txt的使用</title>
+      <link>https://www.3afun.com/post/python-requirements.txt%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Wed, 16 Aug 2017 15:32:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/python-requirements.txt%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <description>在构建别人项目环境时，经常可以看到requirements.txt，这个文件记录了所依赖的包和版本。作用就是方便在另一台电脑搭建项目环境。那</description>
+    </item>
+    
+    <item>
+      <title>Python利用BeautifulSoup抓取解析网页数据</title>
+      <link>https://www.3afun.com/post/python%E5%88%A9%E7%94%A8beautifulsoup%E6%8A%93%E5%8F%96%E8%A7%A3%E6%9E%90%E7%BD%91%E9%A1%B5%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Wed, 10 May 2017 14:22:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/python%E5%88%A9%E7%94%A8beautifulsoup%E6%8A%93%E5%8F%96%E8%A7%A3%E6%9E%90%E7%BD%91%E9%A1%B5%E6%95%B0%E6%8D%AE/</guid>
+      <description>网页UI以及HTML组织形式，目的是抓取网页数据并解析。 &amp;lt;div class=&amp;quot;clan__table&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;clan__headers&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Rank&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Name&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Level&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;League&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Trophies&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Donations&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Role&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__rowContainer&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;clan__row&amp;quot;&amp;gt; #1 &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__row&amp;quot;&amp;gt; &amp;lt;a class=&amp;quot;ui__blueLink&amp;quot; href=&amp;quot;/p</description>
+    </item>
+    
+    <item>
+      <title>多版本Python下执行Twitter Ads API</title>
+      <link>https://www.3afun.com/post/%E5%A4%9A%E7%89%88%E6%9C%ACpython%E4%B8%8B%E6%89%A7%E8%A1%8Ctwitter-ads-api/</link>
+      <pubDate>Wed, 29 Mar 2017 10:53:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/%E5%A4%9A%E7%89%88%E6%9C%ACpython%E4%B8%8B%E6%89%A7%E8%A1%8Ctwitter-ads-api/</guid>
+      <description>Twitter-API 地址 https://github.com/twitterdev/twitter-python-ads-sdk Mac电脑自带了Python2.7版本，Twitter在改版本下脚本是可执行的。但是我更想使用Python3，于是在电脑安装了Pyt</description>
+    </item>
+    
+  </channel>
+</rss>

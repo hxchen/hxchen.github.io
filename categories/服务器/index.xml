@@ -28,5 +28,14 @@
       <description>一、事前准备 Tomcat8（版本8.5.20） 下载地址 JDK8（版本号1.8.0_144） 下载地址 二、配置部署 目录说明 jdk 安装目录 /usr/java/jdk1.8.0_144 tomcat 安装目录</description>
     </item>
     
+    <item>
+      <title>nginx pid No such file or directory解决办法</title>
+      <link>https://www.3afun.com/post/nginx-pid-no-such-file-or-directory%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Wed, 14 Jun 2017 11:32:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/nginx-pid-no-such-file-or-directory%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <description>服务器重启后，有时会需要重新启动 nginx，采用 nginx -s reload 提示 nginx: [error] open() &amp;quot;/var/run/nginx.pid&amp;quot; failed (2: No such file or directory) 是因为服务器重启时丢了pid文件。 这种情况下可以使用 nginx -c，</description>
+    </item>
+    
   </channel>
 </rss>

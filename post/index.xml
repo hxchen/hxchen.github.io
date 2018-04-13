@@ -109,5 +109,50 @@
       <description>安装 你可以进行一起全局安装 sudo npm install -g create-react-app 创建一个应用 为了创建一个App，执行 create-react-app react_demo cd react_demo 执行完毕后，他会在当前目录下创建一个名为 react_demo 的文件夹。 如图所示</description>
     </item>
     
+    <item>
+      <title>Python requirements.txt的使用</title>
+      <link>https://www.3afun.com/post/python-requirements.txt%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Wed, 16 Aug 2017 15:32:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/python-requirements.txt%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <description>在构建别人项目环境时，经常可以看到requirements.txt，这个文件记录了所依赖的包和版本。作用就是方便在另一台电脑搭建项目环境。那</description>
+    </item>
+    
+    <item>
+      <title>无法安裝COMPOSER 出現 COMMAND NOT FOUND 的解决办法</title>
+      <link>https://www.3afun.com/post/%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%9Dcomposer-%E5%87%BA%E7%8F%BE-command-not-found-%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Thu, 10 Aug 2017 11:32:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%9Dcomposer-%E5%87%BA%E7%8F%BE-command-not-found-%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <description>想要全局安装composer，按照网上的方法下载安装： curl -sS https://getcomposer.org/installer | php mv composer.phar /usr/local/bin/composer 然后检查结果 composer -V 会出现，bash: composer: command not found Installation on Unixes (Ubuntu, Debian, CentOS, 等操作系统上) 如</description>
+    </item>
+    
+    <item>
+      <title>nginx pid No such file or directory解决办法</title>
+      <link>https://www.3afun.com/post/nginx-pid-no-such-file-or-directory%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Wed, 14 Jun 2017 11:32:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/nginx-pid-no-such-file-or-directory%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <description>服务器重启后，有时会需要重新启动 nginx，采用 nginx -s reload 提示 nginx: [error] open() &amp;quot;/var/run/nginx.pid&amp;quot; failed (2: No such file or directory) 是因为服务器重启时丢了pid文件。 这种情况下可以使用 nginx -c，</description>
+    </item>
+    
+    <item>
+      <title>Python利用BeautifulSoup抓取解析网页数据</title>
+      <link>https://www.3afun.com/post/python%E5%88%A9%E7%94%A8beautifulsoup%E6%8A%93%E5%8F%96%E8%A7%A3%E6%9E%90%E7%BD%91%E9%A1%B5%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Wed, 10 May 2017 14:22:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/python%E5%88%A9%E7%94%A8beautifulsoup%E6%8A%93%E5%8F%96%E8%A7%A3%E6%9E%90%E7%BD%91%E9%A1%B5%E6%95%B0%E6%8D%AE/</guid>
+      <description>网页UI以及HTML组织形式，目的是抓取网页数据并解析。 &amp;lt;div class=&amp;quot;clan__table&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;clan__headers&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Rank&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Name&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Level&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;League&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Trophies&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Donations&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Role&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__rowContainer&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;clan__row&amp;quot;&amp;gt; #1 &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__row&amp;quot;&amp;gt; &amp;lt;a class=&amp;quot;ui__blueLink&amp;quot; href=&amp;quot;/p</description>
+    </item>
+    
+    <item>
+      <title>多版本Python下执行Twitter Ads API</title>
+      <link>https://www.3afun.com/post/%E5%A4%9A%E7%89%88%E6%9C%ACpython%E4%B8%8B%E6%89%A7%E8%A1%8Ctwitter-ads-api/</link>
+      <pubDate>Wed, 29 Mar 2017 10:53:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/%E5%A4%9A%E7%89%88%E6%9C%ACpython%E4%B8%8B%E6%89%A7%E8%A1%8Ctwitter-ads-api/</guid>
+      <description>Twitter-API 地址 https://github.com/twitterdev/twitter-python-ads-sdk Mac电脑自带了Python2.7版本，Twitter在改版本下脚本是可执行的。但是我更想使用Python3，于是在电脑安装了Pyt</description>
+    </item>
+    
   </channel>
 </rss>
