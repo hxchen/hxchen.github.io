@@ -5,10 +5,19 @@
     <link>https://www.3afun.com/tags/</link>
     <description>Recent content in Tags on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 13 Apr 2018 16:18:49 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 18 Nov 2017 16:57:00 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Charles</title>
+      <link>https://www.3afun.com/tags/charles/</link>
+      <pubDate>Sat, 18 Nov 2017 16:57:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/charles/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Ethereum</title>
@@ -16,6 +25,51 @@
       <pubDate>Fri, 13 Apr 2018 16:18:49 +0800</pubDate>
       
       <guid>https://www.3afun.com/tags/ethereum/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web前端</title>
+      <link>https://www.3afun.com/tags/web%E5%89%8D%E7%AB%AF/</link>
+      <pubDate>Fri, 15 Dec 2017 13:42:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/web%E5%89%8D%E7%AB%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web前端 React</title>
+      <link>https://www.3afun.com/tags/web%E5%89%8D%E7%AB%AF-react/</link>
+      <pubDate>Sun, 20 Aug 2017 22:04:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/web%E5%89%8D%E7%AB%AF-react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web前端 Saas</title>
+      <link>https://www.3afun.com/tags/web%E5%89%8D%E7%AB%AF-saas/</link>
+      <pubDate>Wed, 27 Sep 2017 10:51:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/web%E5%89%8D%E7%AB%AF-saas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>服务器 Crontab</title>
+      <link>https://www.3afun.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8-crontab/</link>
+      <pubDate>Mon, 20 Nov 2017 17:27:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8-crontab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>服务器 Tomcat</title>
+      <link>https://www.3afun.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8-tomcat/</link>
+      <pubDate>Mon, 11 Sep 2017 18:47:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8-tomcat/</guid>
       <description></description>
     </item>
     

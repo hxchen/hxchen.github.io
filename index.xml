@@ -762,5 +762,366 @@ transferFrom 方法用于退出工作流程，允许合约代表你来转账。�
       
     </item>
     
+    <item>
+      <title>Network Error Unable to load the page的解决办法</title>
+      <link>https://www.3afun.com/post/network-error-unable-to-load-the-page%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Fri, 15 Dec 2017 13:42:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/network-error-unable-to-load-the-page%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      
+        <description>&lt;p&gt;Cocos2d-x加载一个http页面A，A中其中含有一个链接到https页面B。现在B页面返回到A页面报错Unable to load the page.Please keep network connection.&lt;/p&gt;
+
+&lt;p&gt;尝试B页面加载Https页面C没问题，返回A有问题。&lt;/p&gt;
+
+&lt;p&gt;修改办法是，B页面的href链接 采用如下形式：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;a class=&amp;quot;class_name&amp;quot; href=&amp;quot;//www.example.com&amp;quot;&amp;gt;A Page&amp;lt;/a&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Crontab 定时执行任务的环境变量问题</title>
+      <link>https://www.3afun.com/post/crontab-%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E4%BB%BB%E5%8A%A1%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 20 Nov 2017 17:27:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/crontab-%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E4%BB%BB%E5%8A%A1%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%97%AE%E9%A2%98/</guid>
+      
+        <description>&lt;p&gt;今天写了一个脚本文件，有用到Python3中time库的localtime函数。在单独执行该脚本文件时候，可以支持获取服务器date时间。但是放在Crontab里定时执行的时候，发现获取的是格林尼治时间。明明系统已经更改到北京时间，为什么还会显示格林尼治时间呢？
+怀疑是crontab执行时和单独执行py脚本时候，系统环境变量不一致。&lt;/p&gt;
+
+&lt;p&gt;最终原先直接在crontab里定时执行py脚本，改为定时执行shell文件，在shell文件里通过记载用户环境变量，再执行py文件，成功获取到北京时间。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/sh
+source /etc/profile
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>使用Charles 进行https抓包</title>
+      <link>https://www.3afun.com/post/%E4%BD%BF%E7%94%A8charles-%E8%BF%9B%E8%A1%8Chttps%E6%8A%93%E5%8C%85/</link>
+      <pubDate>Sat, 18 Nov 2017 16:57:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/%E4%BD%BF%E7%94%A8charles-%E8%BF%9B%E8%A1%8Chttps%E6%8A%93%E5%8C%85/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;1-charles安装&#34;&gt;1. Charles安装&lt;/h1&gt;
+
+&lt;p&gt;官网下载安装Charles:
+&lt;a href=&#34;https://www.charlesproxy.com/download/&#34;&gt;https://www.charlesproxy.com/download/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;2-http抓包&#34;&gt;2. HTTP抓包&lt;/h1&gt;
+
+&lt;h2 id=&#34;1-查看电脑ip地址&#34;&gt;（1）查看电脑IP地址&lt;/h2&gt;
+
+&lt;h2 id=&#34;2-设置手机http代理&#34;&gt;（2）设置手机HTTP代理&lt;/h2&gt;
+
+&lt;p&gt;手机连上电脑，点击“设置-&amp;gt;无线局域网-&amp;gt;连接的WiFi”&lt;/p&gt;
+
+&lt;p&gt;设置HTTP代理：服务器为电脑IP地址：如192.168.0.100 端口：8888&lt;/p&gt;
+
+&lt;p&gt;设置代理后，需要在电脑上打开Charles才能上网&lt;/p&gt;
+
+&lt;h2 id=&#34;3-电脑上打开charles进行http抓包&#34;&gt;（3）电脑上打开Charles进行HTTP抓包&lt;/h2&gt;
+
+&lt;p&gt;手机上打开某个App&lt;/p&gt;
+
+&lt;p&gt;点击电脑上“Allow”允许，出现手机的HTTP请求列&lt;/p&gt;
+
+&lt;h1 id=&#34;3-https抓包&#34;&gt;3. HTTPS抓包&lt;/h1&gt;
+
+&lt;p&gt;HTTPS的抓包需要在HTTP抓包基础上再进行设置&lt;/p&gt;
+
+&lt;p&gt;手机浏览器打开 &lt;a href=&#34;https://chls.pro/ssl&#34;&gt;https://chls.pro/ssl&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;并安装证书，记得要信任该证书。&lt;/p&gt;
+
+&lt;p&gt;注意：IOS 版本10.3+的，还需要额外设置：&lt;/p&gt;
+
+&lt;p&gt;设置-&amp;gt;通用-&amp;gt;关于本机-&amp;gt;证书信任设置-&amp;gt;Charles Proxy CA 证书那里打开。&lt;/p&gt;
+
+&lt;p&gt;至此大家可以试下Https抓包效果了。&lt;/p&gt;
+
+&lt;p&gt;参考：&lt;a href=&#34;https://www.charlesproxy.com/documentation/using-charles/ssl-certificates/&#34;&gt;https://www.charlesproxy.com/documentation/using-charles/ssl-certificates/&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Sass 安装 及其常见错误的解决办法</title>
+      <link>https://www.3afun.com/post/sass-%E5%AE%89%E8%A3%85-%E5%8F%8A%E5%85%B6%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Wed, 27 Sep 2017 10:51:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/sass-%E5%AE%89%E8%A3%85-%E5%8F%8A%E5%85%B6%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      
+        <description>&lt;p&gt;Sass是一种css的开发工具，它的安装依赖Ruby，没有安装Ruby的请先安装Ruby。&lt;/p&gt;
+
+&lt;p&gt;假定你已经安装了Ruby，则可以直接执行如下语句进行安装。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gem install sass
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;常见错误提示：&lt;/p&gt;
+
+&lt;p&gt;1、ERROR:  While executing gem &amp;hellip; (OpenSSL::SSL::SSLError)&lt;/p&gt;
+
+&lt;p&gt;hostname &amp;ldquo;gems.ruby-china.org&amp;rdquo; does not match the server certificate&lt;/p&gt;
+
+&lt;p&gt;解决办法：&lt;/p&gt;
+
+&lt;p&gt;执行命令，查看数据源&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gem source -l
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;结果&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;*** CURRENT SOURCES ***
+
+https://ruby.taobao.org/
+https://gems.ruby-china.org
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;则可以删除多余的&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;gem sources --remove https://ruby.taobao.org/
+sudo gem update --system
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后重新安装。&lt;/p&gt;
+
+&lt;p&gt;2、ERROR:  SSL verification error at depth 1: unable to get local issuer certificate (20)&lt;/p&gt;
+
+&lt;p&gt;ERROR:  You must add /O=Digital Signature Trust Co./CN=DST Root CA X3 to your local trusted store&lt;/p&gt;
+
+&lt;p&gt;Fetching: ffi-1.9.18.gem ( 32%)ERROR:  SSL verification error at depth 2: self signed certificate in certificate chain (19)&lt;/p&gt;
+
+&lt;p&gt;ERROR:  Root certificate is not trusted (/C=US/O=GeoTrust Inc./CN=GeoTrust Global CA)&lt;/p&gt;
+
+&lt;p&gt;ERROR:  While executing gem &amp;hellip; (OpenSSL::SSL::SSLError)&lt;/p&gt;
+
+&lt;p&gt;hostname &amp;ldquo;gems.ruby-china.org&amp;rdquo; does not match the server certificate&lt;/p&gt;
+
+&lt;p&gt;3、ERROR:  SSL verification error at depth 1: unable to get local issuer certificate (20)&lt;/p&gt;
+
+&lt;p&gt;ERROR:  You must add /O=Digital Signature Trust Co./CN=DST Root CA X3 to your local trusted store&lt;/p&gt;
+
+&lt;p&gt;Fetching: ffi-1.9.18.gem (100%)&lt;/p&gt;
+
+&lt;p&gt;Building native extensions.  This could take a while&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Successfully installed ffi-1.9.18&lt;/p&gt;
+
+&lt;p&gt;ERROR:  SSL verification error at depth 2: self signed certificate in certificate chain (19)&lt;/p&gt;
+
+&lt;p&gt;ERROR:  Root certificate is not trusted (/C=US/O=GeoTrust Inc./CN=GeoTrust Global CA)&lt;/p&gt;
+
+&lt;p&gt;Fetching: rb-inotify-0.9.10.gem (100%)&lt;/p&gt;
+
+&lt;p&gt;Successfully installed rb-inotify-0.9.10&lt;/p&gt;
+
+&lt;p&gt;Fetching: sass-listen-4.0.0.gem (100%)&lt;/p&gt;
+
+&lt;p&gt;Successfully installed sass-listen-4.0.0&lt;/p&gt;
+
+&lt;p&gt;Fetching: sass-3.5.1.gem (100%)&lt;/p&gt;
+
+&lt;p&gt;ERROR:  While executing gem &amp;hellip; (Errno::EPERM)&lt;/p&gt;
+
+&lt;p&gt;Operation not permitted - /usr/bin/sass&lt;/p&gt;
+
+&lt;p&gt;遇到以上错误 2和3的解决办法&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo gem install -n /usr/local/bin sass
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;查看&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sass -v
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;则会正确显示Sass版本号。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;2017年12月28日更新：&lt;/p&gt;
+
+&lt;p&gt;Mac更新系统后，Ruby由2.0升级到2.3，再次使用Sass时候，发现报错。&lt;/p&gt;
+
+&lt;p&gt;于是决定升级SaaS，重新安装时遇到错误。最后找到解决方案：&lt;/p&gt;
+
+&lt;p&gt;先安装libgmp-dev，再重新安装即可。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew install libgmp-dev
+sudo gem install -n /usr/local/bin sass
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Tomcat8 多实例 Unix daemon 模式 </title>
+      <link>https://www.3afun.com/post/tomcat8-%E5%A4%9A%E5%AE%9E%E4%BE%8B-unix-daemon-%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Mon, 11 Sep 2017 18:47:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/tomcat8-%E5%A4%9A%E5%AE%9E%E4%BE%8B-unix-daemon-%E6%A8%A1%E5%BC%8F/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;一-事前准备&#34;&gt;一、事前准备&lt;/h1&gt;
+
+&lt;p&gt;Tomcat8（版本8.5.20） &lt;a href=&#34;http://apache.spinellicreations.com/tomcat/tomcat-8/v8.5.20/bin/apache-tomcat-8.5.20.tar.gz&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;JDK8（版本号1.8.0_144） &lt;a href=&#34;http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.tar.gz&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;二-配置部署&#34;&gt;二、配置部署&lt;/h1&gt;
+
+&lt;h3 id=&#34;目录说明&#34;&gt;目录说明&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;jdk 安装目录&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;/usr/java/jdk1.8.0_144&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;tomcat 安装目录&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;/usr/tomcat/apache-tomcat-8.5.20&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;项目代码目录&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;data/web/forum&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;tomcat实例目录&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;/data/web/tomcat8_forum8082&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;tomcat安装&#34;&gt;tomcat安装&lt;/h3&gt;
+
+&lt;p&gt;1.生成jsvc&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd /usr/tomcat/apache-tomcat-8.5.20/bin
+tar xvfz commons-daemon-native.tar.gz
+cd commons-daemon-1.0.x-native-src/unix
+./configure --with-java=/usr/java/jdk1.8.0_144
+make
+cp jsvc ../..
+cd ../..
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2.复制tomcat 安装目录的conf 配置文件到实例目录conf&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp /usr/tomcat/apache-tomcat-8.5.20/conf /data/web/tomcat8_forum8082
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3.修改相应端口号，此处使用8082.&lt;/p&gt;
+
+&lt;p&gt;4.在/data/web/tomcat8_forum8082目录下新建启动脚本&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;startup.sh&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+
+JRE_HOME=&amp;quot;/usr/java/jdk1.8.0_144&amp;quot;
+JAVA_HOME=&amp;quot;/usr/java/jdk1.8.0_144&amp;quot;
+SERVER_PATH=&amp;quot;/data/web&amp;quot;
+LOGS_PATH=&amp;quot;/data/web/logs/forum&amp;quot;
+CATALINA_HOME=&amp;quot;/usr/tomcat/apache-tomcat-8.5.20&amp;quot;
+CATALINA_BASE=&amp;quot;/data/web/tomcat8_forum8082&amp;quot;
+CATALINA_PID=&amp;quot;$SERVER_PATH/tomcat8_forum8082/pid&amp;quot;
+JAVA_OPTS=&amp;quot;-Xms512m -Xmx512m &amp;quot;
+#TOMCAT_USER=&amp;quot;app100681811&amp;quot;
+
+#export JAVA_HOME JRE_HOME LOGS_PATH CATALINA_HOME CATALINA_BASE
+export JAVA_HOME JRE_HOME LOGS_PATH #CATALINA_HOME CATALINA_BASE CATALINA_PID
+echo $&amp;quot;tomcat8_forum8082 start&amp;quot;
+#/usr/tomcat/apache-tomcat-8.5.20/bin/catalina.sh start
+export LANG=en_US.UTF-8
+
+cd $CATALINA_HOME
+./bin/jsvc \
+    -classpath $CATALINA_HOME/bin/bootstrap.jar:$CATALINA_HOME/bin/tomcat-juli.jar \
+    -outfile $CATALINA_BASE/logs/catalina.out \
+    -errfile $CATALINA_BASE/logs/catalina.err \
+    -pidfile &amp;quot;$CATALINA_PID&amp;quot; \
+    -Dcatalina.home=$CATALINA_HOME \
+    -Dcatalina.base=$CATALINA_BASE \
+    -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager \
+    -Djava.util.logging.config.file=$CATALINA_BASE/conf/logging.properties \
+    org.apache.catalina.startup.Bootstrap
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;关闭脚本&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;shutdown.sh&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;echo $&amp;quot;tomcat8_forum8082 stop&amp;quot;
+ps aux | grep jsvc |grep &#39;/web/tomcat8_forum8082&#39;| grep -v &#39;grep&#39; | awk -F &#39; &#39; &#39;{print $2}&#39; | xargs kill -s 2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;5.执行相应脚本，即可完成启动关闭。&lt;/p&gt;
+
+&lt;h1 id=&#34;三-多实例模式&#34;&gt;三 、多实例模式&lt;/h1&gt;
+
+&lt;p&gt;多实例模式，只需要复制tomcat实例目录，修改相应配置文件为B项目地址，端口号等信息即可。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>React入门 </title>
+      <link>https://www.3afun.com/post/react%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Sun, 20 Aug 2017 22:04:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/react%E5%85%A5%E9%97%A8/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;安装&#34;&gt;安装&lt;/h1&gt;
+
+&lt;p&gt;你可以进行一起全局安装&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo npm install -g create-react-app
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;创建一个应用&#34;&gt;创建一个应用&lt;/h1&gt;
+
+&lt;p&gt;为了创建一个App，执行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;create-react-app react_demo
+cd react_demo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;执行完毕后，他会在当前目录下创建一个名为 react_demo 的文件夹。&lt;/p&gt;
+
+&lt;p&gt;如图所示&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2017/react_01.png&#34; alt=&#34;react_01&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;运行&#34;&gt;运行&lt;/h1&gt;
+
+&lt;p&gt;运行该App，可以执行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd react_demo
+npm start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后打开浏览器即可以看到自动初始化的界面&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2017/react_02.png&#34; alt=&#34;Areact_02&#34; /&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
   </channel>
 </rss>

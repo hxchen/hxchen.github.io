@@ -55,5 +55,59 @@
       <description>简要说明 该文主要是一个以太币智能合约的标准接口说明。 抽象 以下将要说明的标准允许你去实现基于智能合约的标准代币（Tokens）API提供的接口</description>
     </item>
     
+    <item>
+      <title>Network Error Unable to load the page的解决办法</title>
+      <link>https://www.3afun.com/post/network-error-unable-to-load-the-page%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Fri, 15 Dec 2017 13:42:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/network-error-unable-to-load-the-page%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <description>Cocos2d-x加载一个http页面A，A中其中含有一个链接到https页面B。现在B页面返回到A页面报错Unable to load the page.Please keep network connection. 尝试B</description>
+    </item>
+    
+    <item>
+      <title>Crontab 定时执行任务的环境变量问题</title>
+      <link>https://www.3afun.com/post/crontab-%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E4%BB%BB%E5%8A%A1%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 20 Nov 2017 17:27:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/crontab-%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E4%BB%BB%E5%8A%A1%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%97%AE%E9%A2%98/</guid>
+      <description>今天写了一个脚本文件，有用到Python3中time库的localtime函数。在单独执行该脚本文件时候，可以支持获取服务器date时间。但</description>
+    </item>
+    
+    <item>
+      <title>使用Charles 进行https抓包</title>
+      <link>https://www.3afun.com/post/%E4%BD%BF%E7%94%A8charles-%E8%BF%9B%E8%A1%8Chttps%E6%8A%93%E5%8C%85/</link>
+      <pubDate>Sat, 18 Nov 2017 16:57:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/%E4%BD%BF%E7%94%A8charles-%E8%BF%9B%E8%A1%8Chttps%E6%8A%93%E5%8C%85/</guid>
+      <description>1. Charles安装 官网下载安装Charles: https://www.charlesproxy.com/download/ 2. HTTP抓包 （1）查看电脑IP地址 （2）设置手机HTTP代理 手机连上电脑，点击“设置-&amp;</description>
+    </item>
+    
+    <item>
+      <title>Sass 安装 及其常见错误的解决办法</title>
+      <link>https://www.3afun.com/post/sass-%E5%AE%89%E8%A3%85-%E5%8F%8A%E5%85%B6%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Wed, 27 Sep 2017 10:51:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/sass-%E5%AE%89%E8%A3%85-%E5%8F%8A%E5%85%B6%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <description>Sass是一种css的开发工具，它的安装依赖Ruby，没有安装Ruby的请先安装Ruby。 假定你已经安装了Ruby，则可以直接执行如下语句进</description>
+    </item>
+    
+    <item>
+      <title>Tomcat8 多实例 Unix daemon 模式 </title>
+      <link>https://www.3afun.com/post/tomcat8-%E5%A4%9A%E5%AE%9E%E4%BE%8B-unix-daemon-%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Mon, 11 Sep 2017 18:47:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/tomcat8-%E5%A4%9A%E5%AE%9E%E4%BE%8B-unix-daemon-%E6%A8%A1%E5%BC%8F/</guid>
+      <description>一、事前准备 Tomcat8（版本8.5.20） 下载地址 JDK8（版本号1.8.0_144） 下载地址 二、配置部署 目录说明 jdk 安装目录 /usr/java/jdk1.8.0_144 tomcat 安装目录</description>
+    </item>
+    
+    <item>
+      <title>React入门 </title>
+      <link>https://www.3afun.com/post/react%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Sun, 20 Aug 2017 22:04:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/react%E5%85%A5%E9%97%A8/</guid>
+      <description>安装 你可以进行一起全局安装 sudo npm install -g create-react-app 创建一个应用 为了创建一个App，执行 create-react-app react_demo cd react_demo 执行完毕后，他会在当前目录下创建一个名为 react_demo 的文件夹。 如图所示</description>
+    </item>
+    
   </channel>
 </rss>

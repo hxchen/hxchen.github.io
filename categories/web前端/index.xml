@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web前端 on 我不是帅才</title>
+    <link>https://www.3afun.com/categories/web%E5%89%8D%E7%AB%AF/</link>
+    <description>Recent content in Web前端 on 我不是帅才</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 15 Dec 2017 13:42:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.3afun.com/categories/web%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Network Error Unable to load the page的解决办法</title>
+      <link>https://www.3afun.com/post/network-error-unable-to-load-the-page%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Fri, 15 Dec 2017 13:42:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/network-error-unable-to-load-the-page%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <description>Cocos2d-x加载一个http页面A，A中其中含有一个链接到https页面B。现在B页面返回到A页面报错Unable to load the page.Please keep network connection. 尝试B</description>
+    </item>
+    
+    <item>
+      <title>Sass 安装 及其常见错误的解决办法</title>
+      <link>https://www.3afun.com/post/sass-%E5%AE%89%E8%A3%85-%E5%8F%8A%E5%85%B6%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Wed, 27 Sep 2017 10:51:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/sass-%E5%AE%89%E8%A3%85-%E5%8F%8A%E5%85%B6%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <description>Sass是一种css的开发工具，它的安装依赖Ruby，没有安装Ruby的请先安装Ruby。 假定你已经安装了Ruby，则可以直接执行如下语句进</description>
+    </item>
+    
+    <item>
+      <title>React入门 </title>
+      <link>https://www.3afun.com/post/react%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Sun, 20 Aug 2017 22:04:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/react%E5%85%A5%E9%97%A8/</guid>
+      <description>安装 你可以进行一起全局安装 sudo npm install -g create-react-app 创建一个应用 为了创建一个App，执行 create-react-app react_demo cd react_demo 执行完毕后，他会在当前目录下创建一个名为 react_demo 的文件夹。 如图所示</description>
+    </item>
+    
+  </channel>
+</rss>
