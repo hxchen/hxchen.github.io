@@ -23,6 +23,37 @@
     </item>
     
     <item>
+      <title>Ubuntu16.04 搭建以太坊Ethereum私链(2)</title>
+      <link>https://www.3afun.com/post/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE2/</link>
+      <pubDate>Fri, 13 Apr 2018 16:18:49 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE2/</guid>
+      
+        <description>
+
+&lt;p&gt;前面几篇文章我们介绍了私有链的服务器搭建和客户端连接私有服务器,接下来我们就要学习如何保证服务器端退出后还能继续提供稳定服务,解决客户端可以永久链接服务器,交易实时被处理。&lt;/p&gt;
+
+&lt;h1 id=&#34;服务器端启动&#34;&gt;服务器端启动&lt;/h1&gt;
+
+&lt;p&gt;为了让客户端可以链接,我们可以使用nohup命令来让服务器进行后台启动,但仅仅这样还是不够的,我们还应该允许服务器端支持客户端转账等API,我们就要使用&lt;code&gt;--rpcapi&lt;/code&gt; 参数来指定。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;nohup geth --identity TestNode --rpc --rpcaddr 0.0.0.0 --rpcport 8545 --rpcapi &amp;quot;db,eth,net,web3,personal,admin,miner&amp;quot; --datadir /home/ubuntu/ethereum/data0 --port 30303 --nodiscover --mine --minerthreads=1 &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以上命令可以来后台启动服务器,并且允许客户端进行远程API调用.
+在此命令中我们使用了mine参数开启一个线程进行挖矿,我们是有理由这么操作的,因为如果不是这样,即使客户端发起了一笔远程交易,因为不能生产块数据,也还是不会处理转账。&lt;/p&gt;
+
+&lt;p&gt;如果你还是想进入console控制台来向原来那样执行命令,可以使用如下命令来进入&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;geth attach http://127.0.0.1:8545
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这篇文章结束后,我们在使用客户端操作时候,就可以实现实时处理我们的交易。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>Ethereum wallet以太坊钱包链接Geth Server私有链</title>
       <link>https://www.3afun.com/post/ethereum-wallet%E4%BB%A5%E5%A4%AA%E5%9D%8A%E9%92%B1%E5%8C%85%E9%93%BE%E6%8E%A5geth-server%E7%A7%81%E6%9C%89%E9%93%BE/</link>
       <pubDate>Thu, 12 Apr 2018 18:31:44 +0800</pubDate>
@@ -72,10 +103,10 @@
     
     <item>
       <title>Ubuntu16.04 搭建以太坊Ethereum私链</title>
-      <link>https://www.3afun.com/post/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE/</link>
+      <link>https://www.3afun.com/post/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE1/</link>
       <pubDate>Wed, 11 Apr 2018 15:43:48 +0800</pubDate>
       
-      <guid>https://www.3afun.com/post/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE/</guid>
+      <guid>https://www.3afun.com/post/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE1/</guid>
       
         <description>
 

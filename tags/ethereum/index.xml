@@ -5,10 +5,19 @@
     <link>https://www.3afun.com/tags/ethereum/</link>
     <description>Recent content in Ethereum on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 12 Apr 2018 18:31:44 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 13 Apr 2018 16:18:49 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/tags/ethereum/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ubuntu16.04 搭建以太坊Ethereum私链(2)</title>
+      <link>https://www.3afun.com/post/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE2/</link>
+      <pubDate>Fri, 13 Apr 2018 16:18:49 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE2/</guid>
+      <description>前面几篇文章我们介绍了私有链的服务器搭建和客户端连接私有服务器,接下来我们就要学习如何保证服务器端退出后还能继续提供稳定服务,解决客户端可以</description>
+    </item>
     
     <item>
       <title>Ethereum wallet以太坊钱包链接Geth Server私有链</title>
@@ -21,10 +30,10 @@
     
     <item>
       <title>Ubuntu16.04 搭建以太坊Ethereum私链</title>
-      <link>https://www.3afun.com/post/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE/</link>
+      <link>https://www.3afun.com/post/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE1/</link>
       <pubDate>Wed, 11 Apr 2018 15:43:48 +0800</pubDate>
       
-      <guid>https://www.3afun.com/post/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE/</guid>
+      <guid>https://www.3afun.com/post/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE1/</guid>
       <description>一、说明 想尝试基于以太坊的应用或者Tokens发布，无奈正常网络测试需要用Ether，购买麻烦，各步骤还得需要消耗以太币，不过我们可以搭建私</description>
     </item>
     
