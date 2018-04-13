@@ -20,11 +20,20 @@
     </item>
     
     <item>
-      <title>Cocosbuilder Lua</title>
-      <link>https://www.3afun.com/tags/cocosbuilder-lua/</link>
+      <title>Cocosbuilder</title>
+      <link>https://www.3afun.com/tags/cocosbuilder/</link>
       <pubDate>Fri, 02 Dec 2016 15:52:00 +0800</pubDate>
       
-      <guid>https://www.3afun.com/tags/cocosbuilder-lua/</guid>
+      <guid>https://www.3afun.com/tags/cocosbuilder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Crontab</title>
+      <link>https://www.3afun.com/tags/crontab/</link>
+      <pubDate>Mon, 20 Nov 2017 17:27:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/crontab/</guid>
       <description></description>
     </item>
     
@@ -34,6 +43,15 @@
       <pubDate>Fri, 13 Apr 2018 16:18:49 +0800</pubDate>
       
       <guid>https://www.3afun.com/tags/ethereum/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lua</title>
+      <link>https://www.3afun.com/tags/lua/</link>
+      <pubDate>Fri, 02 Dec 2016 15:52:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/lua/</guid>
       <description></description>
     </item>
     
@@ -65,6 +83,33 @@
     </item>
     
     <item>
+      <title>React</title>
+      <link>https://www.3afun.com/tags/react/</link>
+      <pubDate>Sun, 20 Aug 2017 22:04:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Saas</title>
+      <link>https://www.3afun.com/tags/saas/</link>
+      <pubDate>Wed, 27 Sep 2017 10:51:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/saas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tomcat</title>
+      <link>https://www.3afun.com/tags/tomcat/</link>
+      <pubDate>Mon, 11 Sep 2017 18:47:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/tomcat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Web前端</title>
       <link>https://www.3afun.com/tags/web%E5%89%8D%E7%AB%AF/</link>
       <pubDate>Fri, 15 Dec 2017 13:42:00 +0800</pubDate>
@@ -74,38 +119,11 @@
     </item>
     
     <item>
-      <title>Web前端 React</title>
-      <link>https://www.3afun.com/tags/web%E5%89%8D%E7%AB%AF-react/</link>
-      <pubDate>Sun, 20 Aug 2017 22:04:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/web%E5%89%8D%E7%AB%AF-react/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Web前端 Saas</title>
-      <link>https://www.3afun.com/tags/web%E5%89%8D%E7%AB%AF-saas/</link>
-      <pubDate>Wed, 27 Sep 2017 10:51:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/web%E5%89%8D%E7%AB%AF-saas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>服务器 Crontab</title>
-      <link>https://www.3afun.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8-crontab/</link>
+      <title>服务器</title>
+      <link>https://www.3afun.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
       <pubDate>Mon, 20 Nov 2017 17:27:00 +0800</pubDate>
       
-      <guid>https://www.3afun.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8-crontab/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>服务器 Tomcat</title>
-      <link>https://www.3afun.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8-tomcat/</link>
-      <pubDate>Mon, 11 Sep 2017 18:47:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8-tomcat/</guid>
+      <guid>https://www.3afun.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
       <description></description>
     </item>
     

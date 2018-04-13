@@ -142,8 +142,15 @@
   </url>
   
   <url>
-    <loc>https://www.3afun.com/tags/cocosbuilder-lua/</loc>
+    <loc>https://www.3afun.com/tags/cocosbuilder/</loc>
     <lastmod>2016-12-02T15:52:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.3afun.com/tags/crontab/</loc>
+    <lastmod>2017-11-20T17:27:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -158,6 +165,13 @@
   <url>
     <loc>https://www.3afun.com/categories/ethereum/</loc>
     <lastmod>2018-04-13T16:18:49+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.3afun.com/tags/lua/</loc>
+    <lastmod>2016-12-02T15:52:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -205,8 +219,29 @@
   </url>
   
   <url>
+    <loc>https://www.3afun.com/tags/react/</loc>
+    <lastmod>2017-08-20T22:04:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.3afun.com/tags/saas/</loc>
+    <lastmod>2017-09-27T10:51:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.3afun.com/tags/</loc>
     <lastmod>2017-11-18T16:57:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.3afun.com/tags/tomcat/</loc>
+    <lastmod>2017-09-11T18:47:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -226,20 +261,6 @@
   </url>
   
   <url>
-    <loc>https://www.3afun.com/tags/web%E5%89%8D%E7%AB%AF-react/</loc>
-    <lastmod>2017-08-20T22:04:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/tags/web%E5%89%8D%E7%AB%AF-saas/</loc>
-    <lastmod>2017-09-27T10:51:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.3afun.com/</loc>
     <lastmod>2017-08-28T21:41:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -247,22 +268,15 @@
   </url>
   
   <url>
+    <loc>https://www.3afun.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <lastmod>2017-11-20T17:27:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
     <lastmod>2017-11-20T17:27:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8-crontab/</loc>
-    <lastmod>2017-11-20T17:27:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8-tomcat/</loc>
-    <lastmod>2017-09-11T18:47:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
