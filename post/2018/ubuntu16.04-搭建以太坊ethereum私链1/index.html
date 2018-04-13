@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Ubuntu16.04 搭建以太坊Ethereum私链 - 我不是帅才</title>
+  <link rel="alternate" hreflang="en" href="https://www.3afun.com/" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+
+<meta name="author" content="chen wayne" />
+  <meta name="description" content="一、说明 想尝试基于以太坊的应用或者Tokens发布，无奈正常网络测试需要用Ether，购买麻烦，各步骤还得需要消耗以太币，不过我们可以搭建私" />
+
+  <meta name="keywords" content="技术, 程序员, 码农, 程序猿, 分享, java, python" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.38.2" />
+
+
+<link rel="canonical" href="https://www.3afun.com/post/2018/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE1/" />
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Ubuntu16.04 搭建以太坊Ethereum私链" />
+<meta property="og:description" content="一、说明 想尝试基于以太坊的应用或者Tokens发布，无奈正常网络测试需要用Ether，购买麻烦，各步骤还得需要消耗以太币，不过我们可以搭建私" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.3afun.com/post/2018/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE1/" />
+
+
+
+<meta property="article:published_time" content="2018-04-11T15:43:48&#43;08:00"/>
+
+<meta property="article:modified_time" content="2018-04-11T15:43:48&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Ubuntu16.04 搭建以太坊Ethereum私链">
+<meta itemprop="description" content="一、说明 想尝试基于以太坊的应用或者Tokens发布，无奈正常网络测试需要用Ether，购买麻烦，各步骤还得需要消耗以太币，不过我们可以搭建私">
+
+
+<meta itemprop="datePublished" content="2018-04-11T15:43:48&#43;08:00" />
+<meta itemprop="dateModified" content="2018-04-11T15:43:48&#43;08:00" />
+<meta itemprop="wordCount" content="3020">
+
+
+
+<meta itemprop="keywords" content="Ethereum," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ubuntu16.04 搭建以太坊Ethereum私链"/>
+<meta name="twitter:description" content="一、说明 想尝试基于以太坊的应用或者Tokens发布，无奈正常网络测试需要用Ether，购买麻烦，各步骤还得需要消耗以太币，不过我们可以搭建私"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">我不是帅才</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">我不是帅才</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        
+        <a class="menu-item-link" href="/">首页</a>
+        
+      </li><li class="menu-item">
+        
+        <a class="menu-item-link" href="/post/">归档</a>
+        
+      </li><li class="menu-item">
+        
+        <a class="menu-item-link" href="/tags/">标签</a>
+        
+      </li><li class="menu-item">
+        
+        <a class="menu-item-link" href="/categories/">分类</a>
+        
+      </li><li class="menu-item">
+        
+        <a class="menu-item-link" href="/about/">关于</a>
+        
+      </li>
+  </ul>
+</nav>
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Ubuntu16.04 搭建以太坊Ethereum私链</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2018-04-11 </span>
+        <div class="post-category">
+            
+              <a href="/categories/ethereum/"> Ethereum </a>
+            
+          </div>
+        <span class="more-meta"> 约 3020 字 </span>
+        <span class="more-meta"> 预计阅读 7 分钟 </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#一-说明">一、说明</a></li>
+<li><a href="#二-所需工具">二、所需工具</a></li>
+<li><a href="#三-安装">三、安装</a></li>
+<li><a href="#四-私有链搭建">四、私有链搭建</a></li>
+<li><a href="#五-启动私有节点">五、启动私有节点</a></li>
+<li><a href="#六-控制台操作">六、控制台操作</a>
+<ul>
+<li><a href="#1-创建账户">1、创建账户</a></li>
+<li><a href="#2-查看账户余额">2、查看账户余额</a></li>
+<li><a href="#3-启动-停止挖矿">3、启动 停止挖矿</a>
+<ul>
+<li><a href="#启动挖矿">启动挖矿</a></li>
+<li><a href="#停止挖矿">停止挖矿</a></li>
+</ul></li>
+<li><a href="#4-发送交易">4、发送交易</a></li>
+<li><a href="#5-查看交易和区块">5、查看交易和区块</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h1 id="一-说明">一、说明</h1>
+
+<p>想尝试基于以太坊的应用或者Tokens发布，无奈正常网络测试需要用Ether，购买麻烦，各步骤还得需要消耗以太币，不过我们可以搭建私有链来进行开发，话不多说，马上开始搭建我们自己的开发测试私有链。</p>
+
+<h1 id="二-所需工具">二、所需工具</h1>
+
+<p>1、以太坊客户端</p>
+
+<p>以太坊客户端用于接入以太坊网络，进行账户管理、交易、挖矿、智能合约相关的操作。</p>
+
+<p>目前有多种语言实现的客户端，常用的有 Go 语言实现的 go-ethereum 客户端 Geth，支持接入以太坊网络并成为一个完整节点，也可作为一个 HTTP-RPC 服务器对外提供 JSON-RPC 接口。</p>
+
+<p>其他的客户端有：智能合约编译器</p>
+
+<p>Parity：Rust 语言实现；</p>
+
+<p>cpp-ethereum：C++ 语言实现；</p>
+
+<p>ethereumjs-lib：JavaScript 语言实现；</p>
+
+<p>Ethereum(J)：Java 语言实现；</p>
+
+<p>ethereumH：Haskell 语言实现；</p>
+
+<p>pyethapp： Python 语言实现；</p>
+
+<p>ruby-ethereum：Ruby 语言实现；</p>
+
+<p>2、智能合约编译器</p>
+
+<p>以太坊支持两种智能合约的编程语言：Solidity 和 Serpent。现在的主流是Solidity，学习教程可参考 <a href="http://www.tryblockchain.org/Solidity-%E8%AF%AD%E8%A8%80%E4%BB%8B%E7%BB%8D.html">站点</a> 。</p>
+
+<p>现在以太坊提供更方便的在线 IDE —— Remix <a href="https://remix.ethereum.org">https://remix.ethereum.org</a> 使用 Remix，免去了安装solc和编译过程，它可以直接提供部署合约所需的二进制码和 ABI。</p>
+
+<p>3、以太坊钱包</p>
+
+<p>以太坊提供了图形界面的钱包 Ethereum Wallet 和 Mist Dapp 浏览器。</p>
+
+<p>钱包的功能是 Mist 的一个子集，可用于管理账户和交易；Mist 在钱包基础上，还能操作智能合约。为了演示合约部署过程，本文使用了 Geth console 操作，没有用到 Mist，当然，使用 Mist 会更简单。</p>
+
+<h1 id="三-安装">三、安装</h1>
+
+<p>服务器我们采用Ubuntu16.04。</p>
+
+<p>首先安装必要的工具</p>
+
+<pre><code>apt install software-properties-common
+</code></pre>
+
+<p>再次添加以太坊源</p>
+
+<pre><code>add-apt-repository -y ppa:ethereum/ethereum
+apt update
+</code></pre>
+
+<p>最后安装go-ethereum</p>
+
+<pre><code>apt install ethereum
+</code></pre>
+
+<p>安装完成后，可以运行命令查看是否成功</p>
+
+<pre><code>geth version
+</code></pre>
+
+<p>显示</p>
+
+<pre><code>Geth
+Version: 1.8.2-stable
+Git Commit: b8b9f7f4476a30a0aaf6077daade6ae77f969960
+Architecture: amd64
+Protocol Versions: [63 62]
+Network Id: 1
+Go Version: go1.9.4
+Operating System: linux
+GOPATH=
+GOROOT=/usr/lib/go-1.9
+</code></pre>
+
+<h1 id="四-私有链搭建">四、私有链搭建</h1>
+
+<p>1、创建初始化配置文件和存放数据目录</p>
+
+<p>要运行以太坊私有链，需要定义自己创世区块，创世区块是一个json格式配置文件。我们可以新建一个文件 genesis.json</p>
+
+<pre><code>{
+&quot;config&quot;: {
+    &quot;chainId&quot;: 411,
+    &quot;homesteadBlock&quot;: 0,
+    &quot;eip155Block&quot;: 0,
+    &quot;eip158Block&quot;: 0
+  },
+  &quot;nonce&quot;: &quot;0x0000000000000033&quot;,
+  &quot;timestamp&quot;: &quot;0x0&quot;,
+  &quot;parentHash&quot;: &quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;,
+  &quot;gasLimit&quot;: &quot;0x8000000&quot;,
+  &quot;difficulty&quot;: &quot;0x100&quot;,
+  &quot;mixhash&quot;: &quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;,
+  &quot;coinbase&quot;: &quot;0x0000000000000000000000000000000000000000&quot;,
+  &quot;alloc&quot;: {
+        &quot;0x1C83C95473e1e93A2C8560c73976dAFA9C3f0a79&quot;:{&quot;balance&quot;:&quot;1000000&quot;}
+  }
+}
+</code></pre>
+
+<p>其中chainID 指定了区块链网络ID。</p>
+
+<p>并且我对自己地址进行了配额。其他参数可参考 <a href="http://www.tryblockchain.org/Solidity-%E8%AF%AD%E8%A8%80%E4%BB%8B%E7%BB%8D.html">站点</a></p>
+
+<p>存放数据目录在此我使用 <code>/home/ubuntu/ethereum/data0</code></p>
+
+<p>genesis.json存放在<code>/home/ubuntu/ethereum/</code></p>
+
+<p>然后可以执行命令来进行初始化操作。</p>
+
+<pre><code>cd ethereum
+geth --datadir data0 init genesis.json
+</code></pre>
+
+<p>结果</p>
+
+<pre><code>INFO [04-11|07:51:14] Maximum peer count                       ETH=25 LES=0 total=25
+INFO [04-11|07:51:14] Allocated cache and file handles         database=/home/ubuntu/ethereum/data0/geth/chaindata cache=16 handles=16
+INFO [04-11|07:51:14] Writing custom genesis block
+INFO [04-11|07:51:14] Persisted trie from memory database      nodes=1 size=195.00B time=35.174碌s gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
+INFO [04-11|07:51:14] Successfully wrote genesis state         database=chaindata                                  hash=b924d6Ωfdceb
+INFO [04-11|07:51:14] Allocated cache and file handles         database=/home/ubuntu/ethereum/data0/geth/lightchaindata cache=16 handles=16
+INFO [04-11|07:51:14] Writing custom genesis block
+INFO [04-11|07:51:14] Persisted trie from memory database      nodes=1 size=195.00B time=460.134碌s gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
+INFO [04-11|07:51:14] Successfully wrote genesis state         database=lightchaindata                                  hash=b924d6Ωfdceb
+</code></pre>
+
+<p>初始化成功后，会在data0目录下生产所需文件。</p>
+
+<p>其中 <code>geth/chaindata</code> 中存放的是区块数据，<code>keystore</code> 中存放的是账户数据。</p>
+
+<h1 id="五-启动私有节点">五、启动私有节点</h1>
+
+<p>初始化完成后，就有了一条自己的私有链。我们可以执行命令来启动它</p>
+
+<pre><code>geth --identity &quot;TestNode&quot; --rpc --rpcport &quot;8545&quot; --datadir data0 --port &quot;30303&quot; --nodiscover console
+</code></pre>
+
+<p>上面命令的主体是 geth console，表示启动节点并进入交互式控制台。</p>
+
+<p>各选项含义如下：</p>
+
+<p>–identity：指定节点 ID；</p>
+
+<p>–rpc：表示开启 HTTP-RPC 服务；</p>
+
+<p>–rpcport：指定 HTTP-RPC 服务监听端口号（默认为 8545）；</p>
+
+<p>–datadir：指定区块链数据的存储位置；</p>
+
+<p>–port：指定和其他节点连接所用的端口号（默认为 30303）；</p>
+
+<p>–nodiscover：关闭节点发现机制，防止加入有同样初始配置的陌生节点。</p>
+
+<p>运行上面的命令后，就启动了区块链节点并进入了该节点的控制台：</p>
+
+<pre><code>INFO [04-11|08:05:23] Maximum peer count                       ETH=25 LES=0 total=25
+INFO [04-11|08:05:23] Starting peer-to-peer node               instance=Geth/TestNode/v1.8.2-stable-b8b9f7f4/linux-amd64/go1.9.4
+INFO [04-11|08:05:23] Allocated cache and file handles         database=/home/ubuntu/ethereum/data0/data0/geth/chaindata cache=768 handles=512
+INFO [04-11|08:05:23] Writing default main-net genesis block
+INFO [04-11|08:05:23] Persisted trie from memory database      nodes=12356 size=2.34mB time=47.705254ms gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
+INFO [04-11|08:05:23] Initialised chain configuration          config=&quot;{ChainID: 1 Homestead: 1150000 DAO: 1920000 DAOSupport: true EIP150: 2463000 EIP155: 2675000 EIP158: 2675000 Byzantium: 4370000 Constantinople: &lt;nil&gt; Engine: ethash}&quot;
+INFO [04-11|08:05:23] Disk storage enabled for ethash caches   dir=/home/ubuntu/ethereum/data0/data0/geth/ethash count=3
+INFO [04-11|08:05:23] Disk storage enabled for ethash DAGs     dir=/root/.ethash                                 count=2
+INFO [04-11|08:05:23] Initialising Ethereum protocol           versions=&quot;[63 62]&quot; network=1
+INFO [04-11|08:05:23] Loaded most recent local header          number=0 hash=d4e567b8fa3 td=17179869184
+INFO [04-11|08:05:23] Loaded most recent local full block      number=0 hash=d4e567b8fa3 td=17179869184
+INFO [04-11|08:05:23] Loaded most recent local fast block      number=0 hash=d4e567b8fa3 td=17179869184
+INFO [04-11|08:05:23] Regenerated local transaction journal    transactions=0 accounts=0
+INFO [04-11|08:05:23] Starting P2P networking
+INFO [04-11|08:05:23] RLPx listener up                         self=&quot;enode://b5e91ca148308d721599ac14b9f2a9aff28c88b258a439fbc19f094d65ecaa9954a6a7d0de29f5737726bcdb20a443db9edeedce0471c1ba5cda043e8601e0d0@[::]:30303?discport=0&quot;
+INFO [04-11|08:05:23] IPC endpoint opened                      url=/home/ubuntu/ethereum/data0/data0/geth.ipc
+INFO [04-11|08:05:23] HTTP endpoint opened                     url=http://127.0.0.1:8545                      cors= vhosts=localhost
+Welcome to the Geth JavaScript console!
+
+instance: Geth/TestNode/v1.8.2-stable-b8b9f7f4/linux-amd64/go1.9.4
+ modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 txpool:1.0 web3:1.0
+</code></pre>
+
+<p>这是一个交互式的 JavaScript 执行环境，在这里面可以执行 JavaScript 代码，其中 <code>&gt;</code>是命令提示符。在这个环境里也内置了一些用来操作以太坊的 JavaScript 对象，可以直接使用这些对象。这些对象主要包括：</p>
+
+<p>eth：包含一些跟操作区块链相关的方法；</p>
+
+<p>net：包含一些查看p2p网络状态的方法；</p>
+
+<p>admin：包含一些与管理节点相关的方法；</p>
+
+<p>miner：包含启动&amp;停止挖矿的一些方法；</p>
+
+<p>personal：主要包含一些管理账户的方法；</p>
+
+<p>txpool：包含一些查看交易内存池的方法；</p>
+
+<p>web3：包含了以上对象，还包含一些单位换算的方法。</p>
+
+<h1 id="六-控制台操作">六、控制台操作</h1>
+
+<p>进入以太坊 Javascript Console 后，就可以使用里面的内置对象做一些操作，这些内置对象提供的功能很丰富，比如查看区块和交易、创建账户、挖矿、发送交易、部署智能合约等。</p>
+
+<p>常用命令有：</p>
+
+<p><code>personal.newAccount()</code>：创建账户；</p>
+
+<p><code>personal.unlockAccount()</code>：解锁账户；</p>
+
+<p><code>eth.accounts</code>：枚举系统中的账户；</p>
+
+<p><code>eth.getBalance()</code>：查看账户余额，返回值的单位是 Wei（Wei 是以太坊中最小货币面额单位，类似比特币中的聪，1 ether = 10^18 Wei）；</p>
+
+<p><code>eth.blockNumber</code>：列出区块总数；</p>
+
+<p><code>eth.getTransaction()</code>：获取交易；</p>
+
+<p><code>eth.getBlock()</code>：获取区块；</p>
+
+<p><code>miner.start()</code>：开始挖矿；</p>
+
+<p><code>miner.stop()</code>：停止挖矿；</p>
+
+<p><code>web3.fromWei()</code>：Wei 换算成以太币；</p>
+
+<p><code>web3.toWei()</code>：以太币换算成 Wei；</p>
+
+<p><code>txpool.status</code>：交易池中的状态；</p>
+
+<p><code>admin.addPeer()</code>：连接到其他节点；</p>
+
+<p>这些命令支持 Tab 键自动补全，具体用法如下。</p>
+
+<h2 id="1-创建账户">1、创建账户</h2>
+
+<pre><code>&gt;personal.newAccount()
+Passphrase:
+Repeat passphrase:
+&quot;0x914995c9c3c993c9d3fdd63602c91823f932b308&quot;
+</code></pre>
+
+<p>输入密码、确认密码将会创建一个账户.</p>
+
+<p>同样方法再创建一个</p>
+
+<pre><code>&gt; personal.newAccount()
+Passphrase:
+Repeat passphrase:
+&quot;0x30ed8cd207dfdaf5e24847252df822b1da1f2fe5&quot;
+</code></pre>
+
+<p>查看账户(上面初始化配置文件出差错了？没分配呀)</p>
+
+<pre><code>&gt; eth.accounts
+[&quot;0x914995c9c3c993c9d3fdd63602c91823f932b308&quot;, &quot;0x30ed8cd207dfdaf5e24847252df822b1da1f2fe5&quot;]
+</code></pre>
+
+<h2 id="2-查看账户余额">2、查看账户余额</h2>
+
+<pre><code>eth.getBalance(eth.accounts[0])
+</code></pre>
+
+<h2 id="3-启动-停止挖矿">3、启动 停止挖矿</h2>
+
+<h3 id="启动挖矿">启动挖矿</h3>
+
+<pre><code>&gt;miner.start(1)
+</code></pre>
+
+<p>其中 start 的参数表示挖矿使用的线程数。第一次启动挖矿会先生成挖矿所需的 DAG 文件，这个过程有点慢，等进度达到 100% 后，就会开始挖矿，此时屏幕会被挖矿信息刷屏。</p>
+
+<h3 id="停止挖矿">停止挖矿</h3>
+
+<pre><code>&gt;miner.stop()
+</code></pre>
+
+<p>挖到一个区块会奖励5个以太币，挖矿所得的奖励会进入矿工的账户，这个账户叫做 coinbase，默认情况下 coinbase 是本地账户中的第一个账户，可以通过 miner.setEtherbase() 将其他账户设置成 coinbase。</p>
+
+<p>再次查看账户余额</p>
+
+<pre><code>&gt; eth.getBalance(eth.accounts[0])
+510000000000000000000
+</code></pre>
+
+<h2 id="4-发送交易">4、发送交易</h2>
+
+<p>目前，账户0已经挖到了97个块的奖励，账户1余额还是0：</p>
+
+<pre><code>&gt; eth.getBalance(eth.accounts[0])
+510000000000000000000
+&gt; eth.getBalance(eth.accounts[1])
+0
+</code></pre>
+
+<p>我们要从账户0到账户1转账，需要先解锁账户0才能转账</p>
+
+<pre><code>&gt; personal.unlockAccount(eth.accounts[0])
+Unlock account 0x914995c9c3c993c9d3fdd63602c91823f932b308
+Passphrase:
+true
+</code></pre>
+
+<p>转账0-&gt;1</p>
+
+<pre><code>&gt; amount = web3.toWei(5,'ether')
+&quot;5000000000000000000&quot;
+&gt; eth.sendTransaction({from:eth.accounts[0],to:eth.accounts[1],value:amount})
+INFO [04-11|09:37:09] Submitted transaction                    fullhash=0x2d8342ce23ca00a61a66a9926d45e8516bd0edda18703770c72897d2b9c31973 recipient=0x30Ed8Cd207dfdAF5E24847252DF822b1DA1F2FE5
+&quot;0x2d8342ce23ca00a61a66a9926d45e8516bd0edda18703770c72897d2b9c31973&quot;
+</code></pre>
+
+<p>此时如果没有挖矿，用 txpool.status 命令可以看到本地交易池中有一个待确认的交易，可以使用 <code>eth.getBlock(&quot;pending&quot;, true).transactions</code> 查看当前待确认交易。</p>
+
+<pre><code>&gt; txpool.status
+{
+  pending: 1,
+  queued: 0
+}
+&gt; eth.getBlock(&quot;pending&quot;, true).transactions
+[{
+    blockHash: &quot;0x2a13705bbe3a60c1d8fa686d6c8a326c6f1b70e7943bb7be8d8e9aa9fef7701e&quot;,
+    blockNumber: 103,
+    from: &quot;0x914995c9c3c993c9d3fdd63602c91823f932b308&quot;,
+    gas: 90000,
+    gasPrice: 18000000000,
+    hash: &quot;0x2d8342ce23ca00a61a66a9926d45e8516bd0edda18703770c72897d2b9c31973&quot;,
+    input: &quot;0x&quot;,
+    nonce: 0,
+    r: &quot;0x546055f53f1f7535549c4e31ddf03c6678384afc9571240d237823c205239a11&quot;,
+    s: &quot;0x65f39c6a35f338c6fe67faf7a3bb14c91abc0472113bb9916c82cc51a407f6c9&quot;,
+    to: &quot;0x30ed8cd207dfdaf5e24847252df822b1da1f2fe5&quot;,
+    transactionIndex: 0,
+    v: &quot;0x359&quot;,
+    value: 5000000000000000000
+}]
+</code></pre>
+
+<p>使用 <code>miner.start()</code> 命令开始挖矿：</p>
+
+<pre><code>&gt; miner.start(1);admin.sleepBlocks(1);miner.stop();
+INFO [04-11|09:39:49] Updated mining threads                   threads=1
+INFO [04-11|09:39:49] Transaction pool price threshold updated price=18000000000
+INFO [04-11|09:39:49] Starting mining operation
+INFO [04-11|09:39:49] Commit new mining work                   number=103 txs=1 uncles=0 elapsed=378.402碌s
+INFO [04-11|09:39:52] Successfully sealed new block            number=103 hash=8327606bec9
+INFO [04-11|09:39:52]  block reached canonical chain          number=98  hash=9d43b286588
+INFO [04-11|09:39:52]  mined potential block                  number=103 hash=8327606bec9
+INFO [04-11|09:39:52] Commit new mining work                   number=104 txs=0 uncles=0 elapsed=231.591碌s
+true
+</code></pre>
+
+<p>新区块挖出后，挖矿结束，查看账户 1 的余额，已经收到了账户 0 的以太币：</p>
+
+<pre><code>&gt; web3.fromWei(eth.getBalance(eth.accounts[1]),'ether')
+5
+</code></pre>
+
+<h2 id="5-查看交易和区块">5、查看交易和区块</h2>
+
+<p>查看当前区块总数：</p>
+
+<pre><code>&gt; eth.blockNumber
+103
+</code></pre>
+
+<p>通过交易 Hash 查看交易（Hash 值包含在上面交易返回值中）：</p>
+
+<pre><code>&gt; eth.getTransaction(&quot;0x2d8342ce23ca00a61a66a9926d45e8516bd0edda18703770c72897d2b9c31973&quot;)
+{
+  blockHash: &quot;0x83276067a8ad0168cf1d9fabb089b7778024bc6700434f470d830decb4a6bec9&quot;,
+  blockNumber: 103,
+  from: &quot;0x914995c9c3c993c9d3fdd63602c91823f932b308&quot;,
+  gas: 90000,
+  gasPrice: 18000000000,
+  hash: &quot;0x2d8342ce23ca00a61a66a9926d45e8516bd0edda18703770c72897d2b9c31973&quot;,
+  input: &quot;0x&quot;,
+  nonce: 0,
+  r: &quot;0x546055f53f1f7535549c4e31ddf03c6678384afc9571240d237823c205239a11&quot;,
+  s: &quot;0x65f39c6a35f338c6fe67faf7a3bb14c91abc0472113bb9916c82cc51a407f6c9&quot;,
+  to: &quot;0x30ed8cd207dfdaf5e24847252df822b1da1f2fe5&quot;,
+  transactionIndex: 0,
+  v: &quot;0x359&quot;,
+  value: 5000000000000000000
+}
+</code></pre>
+
+<p>通过区块号查看区块</p>
+
+<pre><code>&gt; eth.getBlock(102)
+{
+  difficulty: 137514,
+  extraData: &quot;0xd783010802846765746887676f312e392e34856c696e7578&quot;,
+  gasLimit: 121486905,
+  gasUsed: 0,
+  hash: &quot;0x09c0a05f1a76fa39222f965d0b3665550bb5a0ab518963c8d1c5280a7b13cf43&quot;,
+  logsBloom: &quot;0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&quot;,
+  miner: &quot;0x914995c9c3c993c9d3fdd63602c91823f932b308&quot;,
+  mixHash: &quot;0x7afd2e352e797ad57554bd81d1f156baed041242fcb641c336683fc9f5937b6c&quot;,
+  nonce: &quot;0x4fe257812731bb15&quot;,
+  number: 102,
+  parentHash: &quot;0xaf1c22536346d8183b63632e4eb6fae81bfd5f9ca305f5fe20b9b7ef0da2a9de&quot;,
+  receiptsRoot: &quot;0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421&quot;,
+  sha3Uncles: &quot;0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347&quot;,
+  size: 536,
+  stateRoot: &quot;0x73bb0a88af2d04b4fcec031a48ffdc16cda90b88c215e3587f1e9acc1c050eca&quot;,
+  timestamp: 1523438740,
+  totalDifficulty: 13695386,
+  transactions: [],
+  transactionsRoot: &quot;0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421&quot;,
+  uncles: []
+}
+</code></pre>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">chen wayne</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-04-11</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a href="https://github.com/gohugoio/hugoBasicExample" rel="noopener" target="_blank">See origin</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/ethereum/">Ethereum</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2018/ethereum-wallet%E4%BB%A5%E5%A4%AA%E5%9D%8A%E9%92%B1%E5%8C%85%E9%93%BE%E6%8E%A5geth-server%E7%A7%81%E6%9C%89%E9%93%BE/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Ethereum wallet以太坊钱包链接Geth Server私有链</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/2018/erc-223-token-standard/">
+            <span class="next-text nav-default">ERC223 标准规范</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  
+
+  
+
+  <div id="comments-gitment"></div>
+  <link rel="stylesheet" href="/lib/gitment/gitment-0.0.3.min.css">
+    <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    id: 'Ubuntu16.04 搭建以太坊Ethereum私链(1).md',
+    title: 'Ubuntu16.04 搭建以太坊Ethereum私链',
+    link: decodeURI(location.href),
+    desc: '一、说明 想尝试基于以太坊的应用或者Tokens发布，无奈正常网络测试需要用Ether，购买麻烦，各步骤还得需要消耗以太币，不过我们可以搭建私',
+    owner: 'hxchen',
+    repo: 'comments',
+    oauth: {
+      client_id: 'a557bdb0db1d073dd11d',
+      client_secret: '1f97a695510b5ae31ee6b672e17d17134cb92809'
+    }
+  })
+  gitment.render('comments-gitment')
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:helloworld.vip@gmail.com" rel="me" class="iconfont icon-email" 
+        title="email" target="_blank">
+      </a>
+      <a href="https://twitter.com/helloworld_vip" rel="me" class="iconfont icon-twitter" 
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.facebook.com/wayne.chen.dev" rel="me" class="iconfont icon-facebook" 
+        title="facebook" target="_blank">
+      </a>
+      <a href="https://github.com/hxchen" rel="me" class="iconfont icon-github" 
+        title="github" target="_blank">
+      </a>
+  <a href="https://www.3afun.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" 
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2012 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">北斗</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+</body>
+</html>

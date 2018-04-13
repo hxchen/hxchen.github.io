@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>CocosBuilder生成的ccbi文件与lua的交互 - 我不是帅才</title>
+  <link rel="alternate" hreflang="en" href="https://www.3afun.com/" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+
+<meta name="author" content="chen wayne" />
+  <meta name="description" content="一、添加Control，设置位置。 属性设置如图所示 二、lua代码设置 -- 绑定 loginui[&amp;quot;close_btn&amp;quot;] = handler(self, self.onClose) --响应事件 function AdLayer:onClose() ... end" />
+
+  <meta name="keywords" content="技术, 程序员, 码农, 程序猿, 分享, java, python" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.38.2" />
+
+
+<link rel="canonical" href="https://www.3afun.com/post/2016/cocosbuilder%E7%94%9F%E6%88%90%E7%9A%84ccbi%E6%96%87%E4%BB%B6%E4%B8%8Elua%E7%9A%84%E4%BA%A4%E4%BA%92/" />
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="CocosBuilder生成的ccbi文件与lua的交互" />
+<meta property="og:description" content="一、添加Control，设置位置。 属性设置如图所示 二、lua代码设置 -- 绑定 loginui[&quot;close_btn&quot;] = handler(self, self.onClose) --响应事件 function AdLayer:onClose() ... end" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.3afun.com/post/2016/cocosbuilder%E7%94%9F%E6%88%90%E7%9A%84ccbi%E6%96%87%E4%BB%B6%E4%B8%8Elua%E7%9A%84%E4%BA%A4%E4%BA%92/" />
+
+
+
+<meta property="article:published_time" content="2016-12-02T15:52:00&#43;08:00"/>
+
+<meta property="article:modified_time" content="2016-12-02T15:52:00&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="CocosBuilder生成的ccbi文件与lua的交互">
+<meta itemprop="description" content="一、添加Control，设置位置。 属性设置如图所示 二、lua代码设置 -- 绑定 loginui[&quot;close_btn&quot;] = handler(self, self.onClose) --响应事件 function AdLayer:onClose() ... end">
+
+
+<meta itemprop="datePublished" content="2016-12-02T15:52:00&#43;08:00" />
+<meta itemprop="dateModified" content="2016-12-02T15:52:00&#43;08:00" />
+<meta itemprop="wordCount" content="51">
+
+
+
+<meta itemprop="keywords" content="CocosBuilder Lua," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CocosBuilder生成的ccbi文件与lua的交互"/>
+<meta name="twitter:description" content="一、添加Control，设置位置。 属性设置如图所示 二、lua代码设置 -- 绑定 loginui[&quot;close_btn&quot;] = handler(self, self.onClose) --响应事件 function AdLayer:onClose() ... end"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">我不是帅才</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">我不是帅才</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        
+        <a class="menu-item-link" href="/">首页</a>
+        
+      </li><li class="menu-item">
+        
+        <a class="menu-item-link" href="/post/">归档</a>
+        
+      </li><li class="menu-item">
+        
+        <a class="menu-item-link" href="/tags/">标签</a>
+        
+      </li><li class="menu-item">
+        
+        <a class="menu-item-link" href="/categories/">分类</a>
+        
+      </li><li class="menu-item">
+        
+        <a class="menu-item-link" href="/about/">关于</a>
+        
+      </li>
+  </ul>
+</nav>
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">CocosBuilder生成的ccbi文件与lua的交互</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2016-12-02 </span>
+        <div class="post-category">
+            
+              <a href="/categories/%E6%B8%B8%E6%88%8F/"> 游戏 </a>
+            
+          </div>
+        <span class="more-meta"> 约 51 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#一-添加control-设置位置">一、添加Control，设置位置。</a></li>
+<li><a href="#二-lua代码设置">二、lua代码设置</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h1 id="一-添加control-设置位置">一、添加Control，设置位置。</h1>
+
+<p>属性设置如图所示
+<img src="/media/images/2016/cocos.png" alt="cocos builder ui" /></p>
+
+<h1 id="二-lua代码设置">二、lua代码设置</h1>
+
+<pre><code>-- 绑定
+loginui[&quot;close_btn&quot;] = handler(self, self.onClose)
+
+
+--响应事件
+function AdLayer:onClose()
+    ...
+end
+</code></pre>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">chen wayne</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2016-12-02</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/cocosbuilder-lua/">CocosBuilder Lua</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2017/%E5%A4%9A%E7%89%88%E6%9C%ACpython%E4%B8%8B%E6%89%A7%E8%A1%8Ctwitter-ads-api/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">多版本Python下执行Twitter Ads API</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+      </nav>
+    </footer>
+    
+
+  
+
+  
+
+  <div id="comments-gitment"></div>
+  <link rel="stylesheet" href="/lib/gitment/gitment-0.0.3.min.css">
+    <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    id: 'CocosBuilder生成的ccbi文件与lua的交互.md',
+    title: 'CocosBuilder生成的ccbi文件与lua的交互',
+    link: decodeURI(location.href),
+    desc: '一、添加Control，设置位置。 属性设置如图所示 二、lua代码设置 -- 绑定 loginui[\x26quot;close_btn\x26quot;] = handler(self, self.onClose) --响应事件 function AdLayer:onClose() ... end',
+    owner: 'hxchen',
+    repo: 'comments',
+    oauth: {
+      client_id: 'a557bdb0db1d073dd11d',
+      client_secret: '1f97a695510b5ae31ee6b672e17d17134cb92809'
+    }
+  })
+  gitment.render('comments-gitment')
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:helloworld.vip@gmail.com" rel="me" class="iconfont icon-email" 
+        title="email" target="_blank">
+      </a>
+      <a href="https://twitter.com/helloworld_vip" rel="me" class="iconfont icon-twitter" 
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.facebook.com/wayne.chen.dev" rel="me" class="iconfont icon-facebook" 
+        title="facebook" target="_blank">
+      </a>
+      <a href="https://github.com/hxchen" rel="me" class="iconfont icon-github" 
+        title="github" target="_blank">
+      </a>
+  <a href="https://www.3afun.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" 
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2012 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">北斗</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+</body>
+</html>

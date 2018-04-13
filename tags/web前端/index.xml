@@ -12,10 +12,10 @@
     
     <item>
       <title>Network Error Unable to load the page的解决办法</title>
-      <link>https://www.3afun.com/post/network-error-unable-to-load-the-page%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <link>https://www.3afun.com/post/2017/network-error-unable-to-load-the-page%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
       <pubDate>Fri, 15 Dec 2017 13:42:00 +0800</pubDate>
       
-      <guid>https://www.3afun.com/post/network-error-unable-to-load-the-page%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <guid>https://www.3afun.com/post/2017/network-error-unable-to-load-the-page%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
       <description>Cocos2d-x加载一个http页面A，A中其中含有一个链接到https页面B。现在B页面返回到A页面报错Unable to load the page.Please keep network connection. 尝试B</description>
     </item>
     

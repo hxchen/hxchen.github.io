@@ -12,10 +12,10 @@
     
     <item>
       <title>Sass 安装 及其常见错误的解决办法</title>
-      <link>https://www.3afun.com/post/sass-%E5%AE%89%E8%A3%85-%E5%8F%8A%E5%85%B6%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <link>https://www.3afun.com/post/2017/sass-%E5%AE%89%E8%A3%85-%E5%8F%8A%E5%85%B6%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
       <pubDate>Wed, 27 Sep 2017 10:51:00 +0800</pubDate>
       
-      <guid>https://www.3afun.com/post/sass-%E5%AE%89%E8%A3%85-%E5%8F%8A%E5%85%B6%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <guid>https://www.3afun.com/post/2017/sass-%E5%AE%89%E8%A3%85-%E5%8F%8A%E5%85%B6%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
       <description>Sass是一种css的开发工具，它的安装依赖Ruby，没有安装Ruby的请先安装Ruby。 假定你已经安装了Ruby，则可以直接执行如下语句进</description>
     </item>
     

@@ -12,10 +12,10 @@
     
     <item>
       <title>Tomcat8 多实例 Unix daemon 模式 </title>
-      <link>https://www.3afun.com/post/tomcat8-%E5%A4%9A%E5%AE%9E%E4%BE%8B-unix-daemon-%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://www.3afun.com/post/2017/tomcat8-%E5%A4%9A%E5%AE%9E%E4%BE%8B-unix-daemon-%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Mon, 11 Sep 2017 18:47:00 +0800</pubDate>
       
-      <guid>https://www.3afun.com/post/tomcat8-%E5%A4%9A%E5%AE%9E%E4%BE%8B-unix-daemon-%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://www.3afun.com/post/2017/tomcat8-%E5%A4%9A%E5%AE%9E%E4%BE%8B-unix-daemon-%E6%A8%A1%E5%BC%8F/</guid>
       <description>一、事前准备 Tomcat8（版本8.5.20） 下载地址 JDK8（版本号1.8.0_144） 下载地址 二、配置部署 目录说明 jdk 安装目录 /usr/java/jdk1.8.0_144 tomcat 安装目录</description>
     </item>
     

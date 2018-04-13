@@ -12,28 +12,28 @@
     
     <item>
       <title>Crontab 定时执行任务的环境变量问题</title>
-      <link>https://www.3afun.com/post/crontab-%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E4%BB%BB%E5%8A%A1%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%97%AE%E9%A2%98/</link>
+      <link>https://www.3afun.com/post/2017/crontab-%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E4%BB%BB%E5%8A%A1%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%97%AE%E9%A2%98/</link>
       <pubDate>Mon, 20 Nov 2017 17:27:00 +0800</pubDate>
       
-      <guid>https://www.3afun.com/post/crontab-%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E4%BB%BB%E5%8A%A1%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://www.3afun.com/post/2017/crontab-%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E4%BB%BB%E5%8A%A1%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%97%AE%E9%A2%98/</guid>
       <description>今天写了一个脚本文件，有用到Python3中time库的localtime函数。在单独执行该脚本文件时候，可以支持获取服务器date时间。但</description>
     </item>
     
     <item>
       <title>Tomcat8 多实例 Unix daemon 模式 </title>
-      <link>https://www.3afun.com/post/tomcat8-%E5%A4%9A%E5%AE%9E%E4%BE%8B-unix-daemon-%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://www.3afun.com/post/2017/tomcat8-%E5%A4%9A%E5%AE%9E%E4%BE%8B-unix-daemon-%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Mon, 11 Sep 2017 18:47:00 +0800</pubDate>
       
-      <guid>https://www.3afun.com/post/tomcat8-%E5%A4%9A%E5%AE%9E%E4%BE%8B-unix-daemon-%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://www.3afun.com/post/2017/tomcat8-%E5%A4%9A%E5%AE%9E%E4%BE%8B-unix-daemon-%E6%A8%A1%E5%BC%8F/</guid>
       <description>一、事前准备 Tomcat8（版本8.5.20） 下载地址 JDK8（版本号1.8.0_144） 下载地址 二、配置部署 目录说明 jdk 安装目录 /usr/java/jdk1.8.0_144 tomcat 安装目录</description>
     </item>
     
     <item>
       <title>nginx pid No such file or directory解决办法</title>
-      <link>https://www.3afun.com/post/nginx-pid-no-such-file-or-directory%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <link>https://www.3afun.com/post/2017/nginx-pid-no-such-file-or-directory%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
       <pubDate>Wed, 14 Jun 2017 11:32:00 +0800</pubDate>
       
-      <guid>https://www.3afun.com/post/nginx-pid-no-such-file-or-directory%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <guid>https://www.3afun.com/post/2017/nginx-pid-no-such-file-or-directory%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
       <description>服务器重启后，有时会需要重新启动 nginx，采用 nginx -s reload 提示 nginx: [error] open() &amp;quot;/var/run/nginx.pid&amp;quot; failed (2: No such file or directory) 是因为服务器重启时丢了pid文件。 这种情况下可以使用 nginx -c，</description>
     </item>
     
