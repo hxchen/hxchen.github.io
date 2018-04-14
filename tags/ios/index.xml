@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ios on 我不是帅才</title>
+    <link>https://www.3afun.com/tags/ios/</link>
+    <description>Recent content in Ios on 我不是帅才</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 25 Oct 2016 17:59:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.3afun.com/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>IOS升级后无法真机测试：could not locate device support files解决办法 </title>
+      <link>https://www.3afun.com/post/2016/ios%E5%8D%87%E7%BA%A7%E5%90%8E%E6%97%A0%E6%B3%95%E7%9C%9F%E6%9C%BA%E6%B5%8B%E8%AF%95could-not-locate-device-support-files%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95-/</link>
+      <pubDate>Tue, 25 Oct 2016 17:59:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2016/ios%E5%8D%87%E7%BA%A7%E5%90%8E%E6%97%A0%E6%B3%95%E7%9C%9F%E6%9C%BA%E6%B5%8B%E8%AF%95could-not-locate-device-support-files%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95-/</guid>
+      <description>手机升级了10.1，可是XCode（8.0）不支持。 解决办法是：下载SDK，放到 /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport 重启XCode。</description>
+    </item>
+    
+    <item>
+      <title>XCODE查看真机的沙盒App包内容</title>
+      <link>https://www.3afun.com/post/2016/xcode%E6%9F%A5%E7%9C%8B%E7%9C%9F%E6%9C%BA%E7%9A%84%E6%B2%99%E7%9B%92app%E5%8C%85%E5%86%85%E5%AE%B9/</link>
+      <pubDate>Thu, 29 Sep 2016 11:29:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2016/xcode%E6%9F%A5%E7%9C%8B%E7%9C%9F%E6%9C%BA%E7%9A%84%E6%B2%99%E7%9B%92app%E5%8C%85%E5%86%85%E5%AE%B9/</guid>
+      <description>打开Devices 依顺序选择：XCODE-&amp;gt;Window-&amp;gt;devices 此处双击选择要查看的App包，稍等一会即可显示包内容。</description>
+    </item>
+    
+  </channel>
+</rss>

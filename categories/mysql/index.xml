@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mysql on 我不是帅才</title>
+    <link>https://www.3afun.com/categories/mysql/</link>
+    <description>Recent content in Mysql on 我不是帅才</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 06 Jan 2016 19:33:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.3afun.com/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MySQL数据库表的导入导出</title>
+      <link>https://www.3afun.com/post/2016/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/</link>
+      <pubDate>Wed, 06 Jan 2016 19:33:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2016/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/</guid>
+      <description>备份： mysqldump -hhostname -uroot -ppassword dbName tableName&amp;gt; tableName.bak 还原： mysq&amp;gt; use dbName mysq&amp;gt; source /data/tableName.bak</description>
+    </item>
+    
+    <item>
+      <title>Python进行MySQL数据备份:数据查询和添加</title>
+      <link>https://www.3afun.com/post/2016/python%E8%BF%9B%E8%A1%8Cmysql%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2%E5%92%8C%E6%B7%BB%E5%8A%A0/</link>
+      <pubDate>Wed, 06 Jan 2016 18:20:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2016/python%E8%BF%9B%E8%A1%8Cmysql%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2%E5%92%8C%E6%B7%BB%E5%8A%A0/</guid>
+      <description>运行前，需要安装MySQLdb模块！！！ sudo yum install MySQL-python #!/usr/bin/python # -*- coding: UTF-8 -*- import MySQLdb import datetime def backYestoday(): today = datetime.date.today() yesterday = today - datetime.timedelta(days=1) # 打开数据库连接 db_mat = MySQLdb.connect(&amp;quot;hostname&amp;quot;, &amp;quot;root&amp;quot;, &amp;quot;password&amp;quot;, &amp;quot;db&amp;quot;, charset=&#39;utf8&#39;) # 使用cursor()</description>
+    </item>
+    
+  </channel>
+</rss>

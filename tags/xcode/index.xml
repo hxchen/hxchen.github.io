@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xcode on 我不是帅才</title>
+    <link>https://www.3afun.com/tags/xcode/</link>
+    <description>Recent content in Xcode on 我不是帅才</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 29 Sep 2016 11:29:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.3afun.com/tags/xcode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>XCODE查看真机的沙盒App包内容</title>
+      <link>https://www.3afun.com/post/2016/xcode%E6%9F%A5%E7%9C%8B%E7%9C%9F%E6%9C%BA%E7%9A%84%E6%B2%99%E7%9B%92app%E5%8C%85%E5%86%85%E5%AE%B9/</link>
+      <pubDate>Thu, 29 Sep 2016 11:29:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2016/xcode%E6%9F%A5%E7%9C%8B%E7%9C%9F%E6%9C%BA%E7%9A%84%E6%B2%99%E7%9B%92app%E5%8C%85%E5%86%85%E5%AE%B9/</guid>
+      <description>打开Devices 依顺序选择：XCODE-&amp;gt;Window-&amp;gt;devices 此处双击选择要查看的App包，稍等一会即可显示包内容。</description>
+    </item>
+    
+  </channel>
+</rss>

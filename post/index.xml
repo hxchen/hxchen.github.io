@@ -163,5 +163,32 @@
       <description>一、添加Control，设置位置。 属性设置如图所示 二、lua代码设置 -- 绑定 loginui[&amp;quot;close_btn&amp;quot;] = handler(self, self.onClose) --响应事件 function AdLayer:onClose() ... end</description>
     </item>
     
+    <item>
+      <title>Mac OS Sierra 关机慢的排查思路</title>
+      <link>https://www.3afun.com/post/2016/mac-os-sierra-%E5%85%B3%E6%9C%BA%E6%85%A2%E7%9A%84%E6%8E%92%E6%9F%A5%E6%80%9D%E8%B7%AF/</link>
+      <pubDate>Sat, 26 Nov 2016 20:48:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2016/mac-os-sierra-%E5%85%B3%E6%9C%BA%E6%85%A2%E7%9A%84%E6%8E%92%E6%9F%A5%E6%80%9D%E8%B7%AF/</guid>
+      <description>系统版本10.12.1 之前系统关机是很快，很正常的，不知道什么时候开始，关机后盖子白苹果灯要亮很久。再忍无可忍之后，前往苹果体验店需求帮助，</description>
+    </item>
+    
+    <item>
+      <title>Mac 卸载GoogleSoftwareUpdate </title>
+      <link>https://www.3afun.com/post/2016/mac-%E5%8D%B8%E8%BD%BDgooglesoftwareupdate/</link>
+      <pubDate>Sat, 26 Nov 2016 19:20:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2016/mac-%E5%8D%B8%E8%BD%BDgooglesoftwareupdate/</guid>
+      <description>sudo /Library/Google/GoogleSoftwareUpdate/GoogleSoftwareUpdate.bundle/Contents/Resources/ksinstall --uninstall  </description>
+    </item>
+    
+    <item>
+      <title>IOS升级后无法真机测试：could not locate device support files解决办法 </title>
+      <link>https://www.3afun.com/post/2016/ios%E5%8D%87%E7%BA%A7%E5%90%8E%E6%97%A0%E6%B3%95%E7%9C%9F%E6%9C%BA%E6%B5%8B%E8%AF%95could-not-locate-device-support-files%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95-/</link>
+      <pubDate>Tue, 25 Oct 2016 17:59:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2016/ios%E5%8D%87%E7%BA%A7%E5%90%8E%E6%97%A0%E6%B3%95%E7%9C%9F%E6%9C%BA%E6%B5%8B%E8%AF%95could-not-locate-device-support-files%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95-/</guid>
+      <description>手机升级了10.1，可是XCode（8.0）不支持。 解决办法是：下载SDK，放到 /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport 重启XCode。</description>
+    </item>
+    
   </channel>
 </rss>

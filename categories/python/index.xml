@@ -37,5 +37,14 @@
       <description>Twitter-API 地址 https://github.com/twitterdev/twitter-python-ads-sdk Mac电脑自带了Python2.7版本，Twitter在改版本下脚本是可执行的。但是我更想使用Python3，于是在电脑安装了Pyt</description>
     </item>
     
+    <item>
+      <title>Python进行MySQL数据备份:数据查询和添加</title>
+      <link>https://www.3afun.com/post/2016/python%E8%BF%9B%E8%A1%8Cmysql%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2%E5%92%8C%E6%B7%BB%E5%8A%A0/</link>
+      <pubDate>Wed, 06 Jan 2016 18:20:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2016/python%E8%BF%9B%E8%A1%8Cmysql%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2%E5%92%8C%E6%B7%BB%E5%8A%A0/</guid>
+      <description>运行前，需要安装MySQLdb模块！！！ sudo yum install MySQL-python #!/usr/bin/python # -*- coding: UTF-8 -*- import MySQLdb import datetime def backYestoday(): today = datetime.date.today() yesterday = today - datetime.timedelta(days=1) # 打开数据库连接 db_mat = MySQLdb.connect(&amp;quot;hostname&amp;quot;, &amp;quot;root&amp;quot;, &amp;quot;password&amp;quot;, &amp;quot;db&amp;quot;, charset=&#39;utf8&#39;) # 使用cursor()</description>
+    </item>
+    
   </channel>
 </rss>
