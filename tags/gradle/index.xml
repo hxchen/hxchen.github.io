@@ -19,5 +19,14 @@
       <description>1.下载 下载地址 2.解压 下载完解压到任意目录，我解压在/usr/local/下。 3.配置环境变量 在命令行运行以下命令 sudo vim /etc/bashrc 添加以下内容 GRADLE_HOME=/usr/local/gradle-2.14; export GRADLE_HOME</description>
     </item>
     
+    <item>
+      <title>Gradle build时候报lint failed错误的解决办法</title>
+      <link>https://www.3afun.com/post/2015/gradle-build%E6%97%B6%E5%80%99%E6%8A%A5lint-failed%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Mon, 27 Apr 2015 17:27:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2015/gradle-build%E6%97%B6%E5%80%99%E6%8A%A5lint-failed%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <description>这是因为程序在buid的时候，会执行lint检查，有任何的错误或者警告提示，都会终止构建，我们可以将其关掉。 修改build.gradle配置</description>
+    </item>
+    
   </channel>
 </rss>

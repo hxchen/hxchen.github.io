@@ -19,5 +19,14 @@
       <description>打开Devices 依顺序选择：XCODE-&amp;gt;Window-&amp;gt;devices 此处双击选择要查看的App包，稍等一会即可显示包内容。</description>
     </item>
     
+    <item>
+      <title>Xcode cannot run using the selected device</title>
+      <link>https://www.3afun.com/post/2015/xcode-cannot-run-using-the-selected-device/</link>
+      <pubDate>Tue, 28 Apr 2015 16:57:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2015/xcode-cannot-run-using-the-selected-device/</guid>
+      <description>有时候Xcode不能真机运行，工具栏无法选择真机，提示Xcode cannot run using the selected device。 解决办法是，菜单栏：</description>
+    </item>
+    
   </channel>
 </rss>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nodejs on 我不是帅才</title>
+    <link>https://www.3afun.com/categories/nodejs/</link>
+    <description>Recent content in Nodejs on 我不是帅才</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 06 Feb 2015 15:25:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.3afun.com/categories/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Nodejs使用Chrome伪装微信浏览器UA</title>
+      <link>https://www.3afun.com/post/2015/nodejs%E4%BD%BF%E7%94%A8chrome%E4%BC%AA%E8%A3%85%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A8ua/</link>
+      <pubDate>Fri, 06 Feb 2015 15:25:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2015/nodejs%E4%BD%BF%E7%94%A8chrome%E4%BC%AA%E8%A3%85%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A8ua/</guid>
+      <description>一、获取手机在微信内置浏览器的User-Agent var http = require(&#39;http&#39;); http.createServer(function(req, res) { res.writeHead(200, {&#39;Content-type&#39; : &#39;text/html&#39;}); res.write(&#39;user-agent=&#39;+req.headers[&amp;quot;user-agent&amp;quot;]); console.log(req.headers[&amp;quot;user-agent&amp;quot;]); res.end(); }).listen(3000); 在这里我获取我手机的是 Mozilla/5.0 (iPhone; CPU iPhone OS 7_1_2 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Mob ile/11D257 MicroMessenger/6.1 NetType/WIFI 二</description>
+    </item>
+    
+  </channel>
+</rss>

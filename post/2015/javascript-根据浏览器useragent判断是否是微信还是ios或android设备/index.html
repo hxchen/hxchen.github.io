@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>javascript 根据浏览器UserAgent判断是否是微信还是IOS或Android设备 - 我不是帅才</title>
+  <link rel="alternate" hreflang="en" href="https://www.3afun.com/" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+
+<meta name="author" content="chen wayne" />
+  <meta name="description" content="function is_weixn() { var ua = navigator.userAgent.toLowerCase(); console.log(ua); if (ua.match(/MicroMessenger/i) == &amp;quot;micromessenger&amp;quot;) { return true; } else { return false; } } if (is_weixn()) { console.log(&#39;来自微信&#39;); }else { /* * 智能机浏览器版本信息: * */ var browser = { versions : function() {" />
+
+  <meta name="keywords" content="技术, 程序员, 码农, 程序猿, 分享, java, python" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.38.2" />
+
+
+<link rel="canonical" href="https://www.3afun.com/post/2015/javascript-%E6%A0%B9%E6%8D%AE%E6%B5%8F%E8%A7%88%E5%99%A8useragent%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%98%AF%E5%BE%AE%E4%BF%A1%E8%BF%98%E6%98%AFios%E6%88%96android%E8%AE%BE%E5%A4%87/" />
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="javascript 根据浏览器UserAgent判断是否是微信还是IOS或Android设备" />
+<meta property="og:description" content="function is_weixn() { var ua = navigator.userAgent.toLowerCase(); console.log(ua); if (ua.match(/MicroMessenger/i) == &quot;micromessenger&quot;) { return true; } else { return false; } } if (is_weixn()) { console.log(&#39;来自微信&#39;); }else { /* * 智能机浏览器版本信息: * */ var browser = { versions : function() {" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.3afun.com/post/2015/javascript-%E6%A0%B9%E6%8D%AE%E6%B5%8F%E8%A7%88%E5%99%A8useragent%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%98%AF%E5%BE%AE%E4%BF%A1%E8%BF%98%E6%98%AFios%E6%88%96android%E8%AE%BE%E5%A4%87/" />
+
+
+
+<meta property="article:published_time" content="2015-07-01T15:04:00&#43;08:00"/>
+
+<meta property="article:modified_time" content="2015-07-01T15:04:00&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="javascript 根据浏览器UserAgent判断是否是微信还是IOS或Android设备">
+<meta itemprop="description" content="function is_weixn() { var ua = navigator.userAgent.toLowerCase(); console.log(ua); if (ua.match(/MicroMessenger/i) == &quot;micromessenger&quot;) { return true; } else { return false; } } if (is_weixn()) { console.log(&#39;来自微信&#39;); }else { /* * 智能机浏览器版本信息: * */ var browser = { versions : function() {">
+
+
+<meta itemprop="datePublished" content="2015-07-01T15:04:00&#43;08:00" />
+<meta itemprop="dateModified" content="2015-07-01T15:04:00&#43;08:00" />
+<meta itemprop="wordCount" content="322">
+
+
+
+<meta itemprop="keywords" content="Web前端," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="javascript 根据浏览器UserAgent判断是否是微信还是IOS或Android设备"/>
+<meta name="twitter:description" content="function is_weixn() { var ua = navigator.userAgent.toLowerCase(); console.log(ua); if (ua.match(/MicroMessenger/i) == &quot;micromessenger&quot;) { return true; } else { return false; } } if (is_weixn()) { console.log(&#39;来自微信&#39;); }else { /* * 智能机浏览器版本信息: * */ var browser = { versions : function() {"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">我不是帅才</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">我不是帅才</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        
+        <a class="menu-item-link" href="/">首页</a>
+        
+      </li><li class="menu-item">
+        
+        <a class="menu-item-link" href="/post/">归档</a>
+        
+      </li><li class="menu-item">
+        
+        <a class="menu-item-link" href="/tags/">标签</a>
+        
+      </li><li class="menu-item">
+        
+        <a class="menu-item-link" href="/categories/">分类</a>
+        
+      </li><li class="menu-item">
+        
+        <a class="menu-item-link" href="/about/">关于</a>
+        
+      </li>
+  </ul>
+</nav>
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">javascript 根据浏览器UserAgent判断是否是微信还是IOS或Android设备</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2015-07-01 </span>
+        <div class="post-category">
+            
+              <a href="/categories/web%E5%89%8D%E7%AB%AF/"> Web前端 </a>
+            
+          </div>
+        <span class="more-meta"> 约 322 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <pre><code>function is_weixn() {
+    var ua = navigator.userAgent.toLowerCase();
+    console.log(ua);
+    if (ua.match(/MicroMessenger/i) == &quot;micromessenger&quot;) {
+        return true;
+    } else {
+        return false;
+    }
+}
+if (is_weixn()) {
+    console.log('来自微信');
+}else {
+    /*
+     * 智能机浏览器版本信息:
+     *
+     */
+    var browser = {
+        versions : function() {
+            var u = navigator.userAgent, app = navigator.appVersion;
+            return {//移动终端浏览器版本信息
+                trident : u.indexOf('Trident') &gt; -1, //IE内核
+                presto : u.indexOf('Presto') &gt; -1, //opera内核
+                webKit : u.indexOf('AppleWebKit') &gt; -1, //苹果、谷歌内核
+                gecko : u.indexOf('Gecko') &gt; -1 &amp;&amp; u.indexOf('KHTML') == -1, //火狐内核
+                mobile : !!u.match(/AppleWebKit.*Mobile.*/) || !!u.match(/AppleWebKit/), //是否为移动终端
+                ios : !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                android : u.indexOf('Android') &gt; -1 || u.indexOf('Linux') &gt; -1, //android终端或者uc浏览器
+                iPhone : u.indexOf('iPhone') &gt; -1 || u.indexOf('Mac') &gt; -1, //是否为iPhone或者QQHD浏览器
+                iPad : u.indexOf('iPad') &gt; -1, //是否iPad
+                webApp : u.indexOf('Safari') == -1
+            //是否web应该程序，没有头部与底部
+            };
+        }(),
+        language : (navigator.browserLanguage || navigator.language).toLowerCase()
+    }
+
+    if (browser.versions.ios || browser.versions.iPhone || browser.versions.iPad) {
+        console.log('ios');
+    } else if (browser.versions.android) {
+        console.log('android');
+    } else {
+        console.log('既不是安卓也不是ios?');
+    }
+}
+</code></pre>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">chen wayne</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2015-07-01</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/web%E5%89%8D%E7%AB%AF/">Web前端</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2015/tweet-button%E5%8F%91%E9%80%81%E6%88%90%E5%8A%9F%E5%90%8E%E5%9B%9E%E8%B0%83/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Tweet Button发送成功后回调</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/2015/android-edittext%E8%8E%B7%E5%8F%96%E7%84%A6%E7%82%B9%E6%98%BE%E7%A4%BA%E8%BE%93%E5%85%A5%E6%B3%95%E6%97%B6%E5%B8%83%E5%B1%80%E8%87%AA%E5%8A%A8%E6%94%B9%E5%8F%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-/">
+            <span class="next-text nav-default">Android EditText获取焦点显示输入法时布局自动改变的解决方案 </span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  
+
+  
+
+  <div id="comments-gitment"></div>
+  <link rel="stylesheet" href="/lib/gitment/gitment-0.0.3.min.css">
+    <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    id: 'javascript 根据浏览器UserAgent判断是否是微信还是IOS或Android设备.md',
+    title: 'javascript 根据浏览器UserAgent判断是否是微信还是IOS或Android设备',
+    link: decodeURI(location.href),
+    desc: 'function is_weixn() { var ua = navigator.userAgent.toLowerCase(); console.log(ua); if (ua.match(\/MicroMessenger\/i) == \x26quot;micromessenger\x26quot;) { return true; } else { return false; } } if (is_weixn()) { console.log(\x27来自微信\x27); }else { \/* * 智能机浏览器版本信息: * *\/ var browser = { versions : function() {',
+    owner: 'hxchen',
+    repo: 'comments',
+    oauth: {
+      client_id: 'a557bdb0db1d073dd11d',
+      client_secret: '1f97a695510b5ae31ee6b672e17d17134cb92809'
+    }
+  })
+  gitment.render('comments-gitment')
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:helloworld.vip@gmail.com" rel="me" class="iconfont icon-email" 
+        title="email" target="_blank">
+      </a>
+      <a href="https://twitter.com/helloworld_vip" rel="me" class="iconfont icon-twitter" 
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.facebook.com/wayne.chen.dev" rel="me" class="iconfont icon-facebook" 
+        title="facebook" target="_blank">
+      </a>
+      <a href="https://github.com/hxchen" rel="me" class="iconfont icon-github" 
+        title="github" target="_blank">
+      </a>
+  <a href="https://www.3afun.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" 
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2012 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">北斗</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+</body>
+</html>

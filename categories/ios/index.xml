@@ -28,5 +28,41 @@
       <description>打开Devices 依顺序选择：XCODE-&amp;gt;Window-&amp;gt;devices 此处双击选择要查看的App包，稍等一会即可显示包内容。</description>
     </item>
     
+    <item>
+      <title>Xcode6.3修改IOS应用打包名字</title>
+      <link>https://www.3afun.com/post/2015/xcode6.3%E4%BF%AE%E6%94%B9ios%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85%E5%90%8D%E5%AD%97/</link>
+      <pubDate>Tue, 05 May 2015 10:01:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2015/xcode6.3%E4%BF%AE%E6%94%B9ios%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85%E5%90%8D%E5%AD%97/</guid>
+      <description>Xcode6.3 下修改打IOS应用的打包名字，即手机图标下显示的应用名称。 选中工程，Info选项卡，修改Bundle name为你想要的应用名称。</description>
+    </item>
+    
+    <item>
+      <title>IOS WebView加载本地html文件</title>
+      <link>https://www.3afun.com/post/2015/ios-webview%E5%8A%A0%E8%BD%BD%E6%9C%AC%E5%9C%B0html%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Tue, 28 Apr 2015 18:19:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2015/ios-webview%E5%8A%A0%E8%BD%BD%E6%9C%AC%E5%9C%B0html%E6%96%87%E4%BB%B6/</guid>
+      <description>一、选中工程，右键选择Add files，按照下图进行添加后，文件夹被成功添加到项目中去，文件夹显示蓝色图标。 二、Object-C里文件加载采</description>
+    </item>
+    
+    <item>
+      <title>Xcode cannot run using the selected device</title>
+      <link>https://www.3afun.com/post/2015/xcode-cannot-run-using-the-selected-device/</link>
+      <pubDate>Tue, 28 Apr 2015 16:57:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2015/xcode-cannot-run-using-the-selected-device/</guid>
+      <description>有时候Xcode不能真机运行，工具栏无法选择真机，提示Xcode cannot run using the selected device。 解决办法是，菜单栏：</description>
+    </item>
+    
+    <item>
+      <title>解决IOS7系统上下黑屏问题</title>
+      <link>https://www.3afun.com/post/2015/%E8%A7%A3%E5%86%B3ios7%E7%B3%BB%E7%BB%9F%E4%B8%8A%E4%B8%8B%E9%BB%91%E5%B1%8F%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 22 Apr 2015 18:55:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2015/%E8%A7%A3%E5%86%B3ios7%E7%B3%BB%E7%BB%9F%E4%B8%8A%E4%B8%8B%E9%BB%91%E5%B1%8F%E9%97%AE%E9%A2%98/</guid>
+      <description>最近在Xcode下开发IOS应用，发现ios7.1下应用出现上下黑屏问题。解决方案： 选中工程-&amp;gt;切换到general,按照如图所示进行</description>
+    </item>
+    
   </channel>
 </rss>

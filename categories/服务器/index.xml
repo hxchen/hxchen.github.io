@@ -55,5 +55,14 @@
       <description>添加任务，执行命令： crontab -e 在新开的文件里添加： 00 05 * * * python /data/Backup_DB_MAT_TABLE_INSTALL.py 保存退出。 !wq 重启crond： service crond restart</description>
     </item>
     
+    <item>
+      <title>Spring4.x MVC responsebody 406错误的解决方案</title>
+      <link>https://www.3afun.com/post/2015/spring4.x-mvc-responsebody-406%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Thu, 10 Sep 2015 17:32:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2015/spring4.x-mvc-responsebody-406%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
+      <description>Spring MVC REST 风格API升级到Spring4.x（4.1.1.RELEASE）+的时候报了406错误。结合网上方案，最终定位为： 1、pom文件 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.fasterxml.jackson.core&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jackson-core&amp;lt;/artifactId&amp;gt;</description>
+    </item>
+    
   </channel>
 </rss>

@@ -5,10 +5,19 @@
     <link>https://www.3afun.com/tags/</link>
     <description>Recent content in Tags on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 18 Nov 2017 16:57:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2015 11:17:00 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android</title>
+      <link>https://www.3afun.com/tags/android/</link>
+      <pubDate>Fri, 20 Nov 2015 11:17:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/android/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Charles</title>
@@ -56,11 +65,38 @@
     </item>
     
     <item>
+      <title>Http</title>
+      <link>https://www.3afun.com/tags/http/</link>
+      <pubDate>Fri, 18 Dec 2015 13:50:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/http/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Intellij</title>
+      <link>https://www.3afun.com/tags/intellij/</link>
+      <pubDate>Mon, 08 Aug 2016 10:47:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/intellij/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Ios</title>
       <link>https://www.3afun.com/tags/ios/</link>
       <pubDate>Tue, 25 Oct 2016 17:59:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/tags/ios/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://www.3afun.com/tags/java/</link>
+      <pubDate>Thu, 22 Jan 2015 17:31:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/java/</guid>
       <description></description>
     </item>
     
@@ -88,6 +124,15 @@
       <pubDate>Wed, 14 Jun 2017 11:32:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nodejs</title>
+      <link>https://www.3afun.com/tags/nodejs/</link>
+      <pubDate>Fri, 06 Feb 2015 15:25:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/nodejs/</guid>
       <description></description>
     </item>
     
@@ -128,65 +173,20 @@
     </item>
     
     <item>
+      <title>Spring Mvc</title>
+      <link>https://www.3afun.com/tags/spring-mvc/</link>
+      <pubDate>Thu, 10 Sep 2015 17:32:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/spring-mvc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Squid</title>
       <link>https://www.3afun.com/tags/squid/</link>
       <pubDate>Tue, 14 Jun 2016 17:47:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/tags/squid/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tomcat</title>
-      <link>https://www.3afun.com/tags/tomcat/</link>
-      <pubDate>Mon, 11 Sep 2017 18:47:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/tomcat/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Web前端</title>
-      <link>https://www.3afun.com/tags/web%E5%89%8D%E7%AB%AF/</link>
-      <pubDate>Fri, 15 Dec 2017 13:42:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/web%E5%89%8D%E7%AB%AF/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Xcode</title>
-      <link>https://www.3afun.com/tags/xcode/</link>
-      <pubDate>Thu, 29 Sep 2016 11:29:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/xcode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>操作系统</title>
-      <link>https://www.3afun.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
-      <pubDate>Sat, 26 Nov 2016 20:48:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>服务器</title>
-      <link>https://www.3afun.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
-      <pubDate>Mon, 20 Nov 2017 17:27:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>杂</title>
-      <link>https://www.3afun.com/tags/%E6%9D%82/</link>
-      <pubDate>Mon, 08 Aug 2016 10:47:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/%E6%9D%82/</guid>
       <description></description>
     </item>
     

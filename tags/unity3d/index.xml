@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unity3d on 我不是帅才</title>
+    <link>https://www.3afun.com/tags/unity3d/</link>
+    <description>Recent content in Unity3d on 我不是帅才</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 20 Nov 2015 11:17:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.3afun.com/tags/unity3d/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Unity3D与Android SDK交互</title>
+      <link>https://www.3afun.com/post/2015/unity3d%E4%B8%8Eandroid-sdk%E4%BA%A4%E4%BA%92/</link>
+      <pubDate>Fri, 20 Nov 2015 11:17:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2015/unity3d%E4%B8%8Eandroid-sdk%E4%BA%A4%E4%BA%92/</guid>
+      <description>一、Android SDK准备 1、新建Android Library工程unitysdk 2、新建libs目录，将Unity for Android的 cl</description>
+    </item>
+    
+  </channel>
+</rss>

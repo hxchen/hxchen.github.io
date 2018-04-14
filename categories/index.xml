@@ -5,9 +5,19 @@
     <link>https://www.3afun.com/categories/</link>
     <description>Recent content in Categories on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 20 Nov 2015 11:17:00 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android</title>
+      <link>https://www.3afun.com/categories/android/</link>
+      <pubDate>Fri, 20 Nov 2015 11:17:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/android/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Ethereum</title>
@@ -28,6 +38,15 @@
     </item>
     
     <item>
+      <title>Intellij</title>
+      <link>https://www.3afun.com/categories/intellij/</link>
+      <pubDate>Mon, 08 Aug 2016 10:47:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/intellij/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Ios</title>
       <link>https://www.3afun.com/categories/ios/</link>
       <pubDate>Tue, 25 Oct 2016 17:59:00 +0800</pubDate>
@@ -37,11 +56,38 @@
     </item>
     
     <item>
+      <title>Java</title>
+      <link>https://www.3afun.com/categories/java/</link>
+      <pubDate>Thu, 22 Jan 2015 17:31:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Mysql</title>
       <link>https://www.3afun.com/categories/mysql/</link>
       <pubDate>Wed, 06 Jan 2016 19:33:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/categories/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nginx</title>
+      <link>https://www.3afun.com/categories/nginx/</link>
+      <pubDate>Fri, 18 Dec 2015 13:50:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nodejs</title>
+      <link>https://www.3afun.com/categories/nodejs/</link>
+      <pubDate>Fri, 06 Feb 2015 15:25:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/nodejs/</guid>
       <description></description>
     </item>
     
@@ -64,11 +110,29 @@
     </item>
     
     <item>
+      <title>Unity3d</title>
+      <link>https://www.3afun.com/categories/unity3d/</link>
+      <pubDate>Fri, 20 Nov 2015 11:17:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/unity3d/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Web前端</title>
       <link>https://www.3afun.com/categories/web%E5%89%8D%E7%AB%AF/</link>
       <pubDate>Fri, 15 Dec 2017 13:42:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/categories/web%E5%89%8D%E7%AB%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xcode</title>
+      <link>https://www.3afun.com/categories/xcode/</link>
+      <pubDate>Tue, 28 Apr 2015 16:57:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/xcode/</guid>
       <description></description>
     </item>
     
