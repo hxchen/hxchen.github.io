@@ -270,7 +270,7 @@ contract TokenERC20 {
 
 &lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/deploy10.png&#34; alt=&#34;deploy step&#34; /&gt;&lt;/p&gt;
 
-&lt;h1 id=&#34;高级版代币&#34;&gt;高级版代币&lt;/h1&gt;
+&lt;h1 id=&#34;提升你代币&#34;&gt;提升你代币&lt;/h1&gt;
 
 &lt;h2 id=&#34;其他更多基础函数&#34;&gt;其他更多基础函数&lt;/h2&gt;
 
@@ -480,7 +480,7 @@ contract TokenERC20 {
 
 &lt;p&gt;这将确保不会有低于必要以太币的账户可以接受代币。&lt;/p&gt;
 
-&lt;h1 id=&#34;高级版代币-1&#34;&gt;高级版代币&lt;/h1&gt;
+&lt;h1 id=&#34;高级版代币&#34;&gt;高级版代币&lt;/h1&gt;
 
 &lt;h2 id=&#34;全部代码&#34;&gt;全部代码&lt;/h2&gt;
 
