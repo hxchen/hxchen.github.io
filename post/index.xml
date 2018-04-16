@@ -5,10 +5,19 @@
     <link>https://www.3afun.com/post/</link>
     <description>Recent content in Posts on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 13 Apr 2018 16:18:49 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 16 Apr 2018 11:24:49 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>如何利用私有链来创建自己的加密代币</title>
+      <link>https://www.3afun.com/post/2018/how-to-use-your-own-private-ethereum-blockchain-to-create-your-own-crypto-currency/</link>
+      <pubDate>Mon, 16 Apr 2018 11:24:49 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/how-to-use-your-own-private-ethereum-blockchain-to-create-your-own-crypto-currency/</guid>
+      <description>根据前面的几篇文章,我们已经可以创建自己的私有链、使用钱包来链接私有链,今天我们来学习如何使用私有链来创建我们自己的加密货币。 工具 1.私有链</description>
+    </item>
     
     <item>
       <title>Ubuntu16.04 搭建以太坊Ethereum私链(2)</title>
@@ -179,15 +188,6 @@
       
       <guid>https://www.3afun.com/post/2016/mac-%E5%8D%B8%E8%BD%BDgooglesoftwareupdate/</guid>
       <description>sudo /Library/Google/GoogleSoftwareUpdate/GoogleSoftwareUpdate.bundle/Contents/Resources/ksinstall --uninstall  </description>
-    </item>
-    
-    <item>
-      <title>IOS升级后无法真机测试：could not locate device support files解决办法 </title>
-      <link>https://www.3afun.com/post/2016/ios%E5%8D%87%E7%BA%A7%E5%90%8E%E6%97%A0%E6%B3%95%E7%9C%9F%E6%9C%BA%E6%B5%8B%E8%AF%95could-not-locate-device-support-files%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95-/</link>
-      <pubDate>Tue, 25 Oct 2016 17:59:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2016/ios%E5%8D%87%E7%BA%A7%E5%90%8E%E6%97%A0%E6%B3%95%E7%9C%9F%E6%9C%BA%E6%B5%8B%E8%AF%95could-not-locate-device-support-files%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95-/</guid>
-      <description>手机升级了10.1，可是XCode（8.0）不支持。 解决办法是：下载SDK，放到 /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport 重启XCode。</description>
     </item>
     
   </channel>
