@@ -737,6 +737,10 @@ contract MyAdvancedToken is owned, TokenERC20 {
 }
 
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;部署&#34;&gt;部署&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/imges/2018/deploy.png&#34; alt=&#34;deplpy&#34; /&gt;&lt;/p&gt;
 </description>
       
     </item>
