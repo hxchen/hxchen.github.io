@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>并发编程 on 我不是帅才</title>
+    <link>https://www.3afun.com/categories/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</link>
+    <description>Recent content in 并发编程 on 我不是帅才</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 08 Apr 2013 19:45:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.3afun.com/categories/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AtomicInteger 在高并发量应用程序中的使用及volatile说明</title>
+      <link>https://www.3afun.com/post/2013/atomicinteger-%E5%9C%A8%E9%AB%98%E5%B9%B6%E5%8F%91%E9%87%8F%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E5%8F%8Avolatile%E8%AF%B4%E6%98%8E/</link>
+      <pubDate>Mon, 08 Apr 2013 19:45:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2013/atomicinteger-%E5%9C%A8%E9%AB%98%E5%B9%B6%E5%8F%91%E9%87%8F%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E5%8F%8Avolatile%E8%AF%B4%E6%98%8E/</guid>
+      <description>当我们在处理简单程序中，可以使用诸如count++这种简单的计数器，但是这种简单的处理在高并发/多线程中的使用却是不安全的，几乎可以百分百的</description>
+    </item>
+    
+    <item>
+      <title>线程池中newCashedThreadpool和newFixedThreadPool区别</title>
+      <link>https://www.3afun.com/post/2012/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E4%B8%ADnewcashedthreadpool%E5%92%8Cnewfixedthreadpool%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Sat, 22 Dec 2012 22:58:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2012/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E4%B8%ADnewcashedthreadpool%E5%92%8Cnewfixedthreadpool%E5%8C%BA%E5%88%AB/</guid>
+      <description>如果编写的是小程序，或者是轻载的服务器，使用Excutors.newCashedThreadpool通常是个不错的选择，因为它不需要配置，并</description>
+    </item>
+    
+    <item>
+      <title>安全发布对象的常用模式</title>
+      <link>https://www.3afun.com/post/2012/%E5%AE%89%E5%85%A8%E5%8F%91%E5%B8%83%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Thu, 20 Dec 2012 22:02:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2012/%E5%AE%89%E5%85%A8%E5%8F%91%E5%B8%83%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%BC%8F/</guid>
+      <description>1.在静态初始化函数中初始化一个对象引用。 2.将他保存到vilatile域中。 3.放到final域中。 4.放到并发的集合中。 5.将对象的引用</description>
+    </item>
+    
+    <item>
+      <title>CountDownLatch 闭锁演示</title>
+      <link>https://www.3afun.com/post/2012/countdownlatch-%E9%97%AD%E9%94%81%E6%BC%94%E7%A4%BA/</link>
+      <pubDate>Fri, 23 Nov 2012 18:02:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2012/countdownlatch-%E9%97%AD%E9%94%81%E6%BC%94%E7%A4%BA/</guid>
+      <description>import java.util.concurrent.CountDownLatch; /** * CountDownLatch 闭锁演示 * 闭锁的作用相当于一扇门：在闭锁到达结束状态（getCount()=0）前，这扇门一直是关闭的，并且没有任何线程能通过。 *</description>
+    </item>
+    
+    <item>
+      <title>利用阻塞队列BlockingDeque实现生产者-消费者模式</title>
+      <link>https://www.3afun.com/post/2012/%E5%88%A9%E7%94%A8%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97blockingdeque%E5%AE%9E%E7%8E%B0%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Thu, 22 Nov 2012 16:53:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2012/%E5%88%A9%E7%94%A8%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97blockingdeque%E5%AE%9E%E7%8E%B0%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
+      <description>消费者 import java.util.concurrent.BlockingDeque; import java.util.concurrent.LinkedBlockingDeque; /** * 消费者类 * */ public class Consumer implements Runnable { private BlockingDeque&amp;lt;String&amp;gt; queue = new LinkedBlockingDeque&amp;lt;String&amp;gt;(); public Consumer(BlockingDeque&amp;lt;String&amp;gt; queue){ this.queue = queue; } @Override public void run() { // TODO Auto-generated method stub int i = 0; do{ try { String product = queue.take(); if(!&amp;quot;&amp;quot;.equals(product) &amp;amp;&amp;amp; null != product){ System.out</description>
+    </item>
+    
+  </channel>
+</rss>

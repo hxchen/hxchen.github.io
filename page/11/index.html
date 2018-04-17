@@ -66,7 +66,7 @@
 
 
 
-<meta property="og:updated_time" content="2013-01-25T17:38:00&#43;08:00"/>
+<meta property="og:updated_time" content="2012-12-20T22:02:00&#43;08:00"/>
 
 
 
@@ -167,16 +167,74 @@
     
       <article class="post bg-white">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2013/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6%E5%AE%9E%E7%8E%B0/">MySQL主从复制实现</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/2012/%E5%AE%89%E5%85%A8%E5%8F%91%E5%B8%83%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%BC%8F/">安全发布对象的常用模式</a></h1>
     
     <div class="post-meta">
-      <span class="post-time"> 2013-01-25 </span>
+      <span class="post-time"> 2012-12-20 </span>
       <div class="post-category">
           
-            <a href="/categories/mysql/"> MySQL </a>
+            <a href="/categories/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"> 并发编程 </a>
           
         </div>
-      <span class="more-meta"> 约 656 字 </span>
+      <span class="more-meta"> 约 70 字 </span>
+      <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      1.在静态初始化函数中初始化一个对象引用。 2.将他保存到vilatile域中。 3.放到final域中。 4.放到并发的集合中。 5.将对象的引用
+    </div>
+    <div class="read-more">
+      <a href="/post/2012/%E5%AE%89%E5%85%A8%E5%8F%91%E5%B8%83%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%BC%8F/" class="read-more-link">阅读全文</a>
+    </div>
+    
+  </div>
+</article>
+
+    
+      <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2012/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/">类加载器</a></h1>
+    
+    <div class="post-meta">
+      <span class="post-time"> 2012-12-20 </span>
+      <div class="post-category">
+          
+            <a href="/categories/java/"> Java </a>
+          
+        </div>
+      <span class="more-meta"> 约 103 字 </span>
+      <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      import java.io.IOException; import java.io.InputStream; /** * 类加载器与instanceof演示 * */ public class ClassLoadTest { public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException { ClassLoader classLoader = new ClassLoader() { @Override public Class&lt;?&gt; loadClass(String name) throws ClassNotFoundException{ try { String fileName = name.substring(name.lastIndexOf(&quot;.&quot;)+1)+&quot;.class&quot;; InputStream is = getClass().getResourceAsStream(fileName); if(is == null){ return super.loadClass(name); } byte[] b
+    </div>
+    <div class="read-more">
+      <a href="/post/2012/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/" class="read-more-link">阅读全文</a>
+    </div>
+    
+  </div>
+</article>
+
+    
+      <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2012/java%E4%B8%ADfinal%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E4%BD%BF%E7%94%A8/">java中final关键字的使用</a></h1>
+    
+    <div class="post-meta">
+      <span class="post-time"> 2012-12-14 </span>
+      <div class="post-category">
+          
+            <a href="/categories/java/"> Java </a>
+          
+        </div>
+      <span class="more-meta"> 约 521 字 </span>
       <span class="more-meta"> 预计阅读 2 分钟 </span>
     </div>
   </header>
@@ -184,10 +242,10 @@
   <div class="post-content">
     
     <div class="post-summary">
-      1、下载免安装版。 2、解压缩到 C:\MySQL，命名为mysql-5.5.29-win32-master。 3、目录文件下找到my-large
+      final数据： 被final修饰的数据，如果是基本类型，那么它的值是恒定不变的；如果是对象引用，那么引用是恒定不变的，始终指向一个对象，但对
     </div>
     <div class="read-more">
-      <a href="/post/2013/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6%E5%AE%9E%E7%8E%B0/" class="read-more-link">阅读全文</a>
+      <a href="/post/2012/java%E4%B8%ADfinal%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E4%BD%BF%E7%94%A8/" class="read-more-link">阅读全文</a>
     </div>
     
   </div>
@@ -196,248 +254,45 @@
     
       <article class="post bg-white">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2013/error-1201-hy000-could-not-initialize-master-info-structure/">ERROR 1201 (HY000): Could not initialize master info structure</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/2012/countdownlatch-%E9%97%AD%E9%94%81%E6%BC%94%E7%A4%BA/">CountDownLatch 闭锁演示</a></h1>
     
     <div class="post-meta">
-      <span class="post-time"> 2013-01-25 </span>
-      <div class="post-category">
-          
-            <a href="/categories/mysql/"> MySQL </a>
-          
-        </div>
-      <span class="more-meta"> 约 171 字 </span>
-      <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      今天在做MySQL主从复制时遇到个ERROR 1201 (HY000): Could not initialize master info structure . 出现这个问题的原因是之前曾做过主从复制！！！ 解决方案是：运行命令 stop slave; 成功执行后
-    </div>
-    <div class="read-more">
-      <a href="/post/2013/error-1201-hy000-could-not-initialize-master-info-structure/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-    
-      <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2013/hibernate-cascadeall-delete-orphan%E6%89%80%E6%9C%89-%E5%88%A0%E9%99%A4-%E5%AD%A4%E5%84%BF%E9%87%8A%E7%96%91/">hibernate cascade=&#39;all-delete-orphan&#39;（所有-删除-孤儿）释疑</a></h1>
-    
-    <div class="post-meta">
-      <span class="post-time"> 2013-01-17 </span>
-      <div class="post-category">
-          
-            <a href="/categories/mysql/"> MySQL </a>
-          
-        </div>
-      <span class="more-meta"> 约 369 字 </span>
-      <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      这是一个级联插入，删除，更新的操作。 cascade=&ldquo;all-delete-orphan&rdquo;（所有-删除-孤儿）。级联
-    </div>
-    <div class="read-more">
-      <a href="/post/2013/hibernate-cascadeall-delete-orphan%E6%89%80%E6%9C%89-%E5%88%A0%E9%99%A4-%E5%AD%A4%E5%84%BF%E9%87%8A%E7%96%91/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-    
-      <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2013/javascript-%E8%B0%83%E7%94%A8cmd%E5%91%BD%E4%BB%A4%E5%BB%BA%E7%AB%8B%E7%BD%91%E7%BB%9C%E5%85%B1%E4%BA%AB%E8%BF%9E%E6%8E%A5/">javascript 调用cmd命令建立网络共享连接</a></h1>
-    
-    <div class="post-meta">
-      <span class="post-time"> 2013-01-17 </span>
-      <div class="post-category">
-          
-            <a href="/categories/web%E5%89%8D%E7%AB%AF/"> Web前端 </a>
-          
-        </div>
-      <span class="more-meta"> 约 159 字 </span>
-      <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      建立目的电脑（Linux OS）的共享连接，目的电脑IP：192.168.17.211 共享文件夹prison 用户名 root 密码 88888888 &lt;html&gt; &lt;head&gt; &lt;titl
-    </div>
-    <div class="read-more">
-      <a href="/post/2013/javascript-%E8%B0%83%E7%94%A8cmd%E5%91%BD%E4%BB%A4%E5%BB%BA%E7%AB%8B%E7%BD%91%E7%BB%9C%E5%85%B1%E4%BA%AB%E8%BF%9E%E6%8E%A5/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-    
-      <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2013/aop-advisor%E8%AF%B4%E6%98%8E%E4%BB%A5%E5%8F%8Athe-prefix-aop-for-element-aopconfig-is-not-bound.%E9%94%99%E8%AF%AF%E5%8E%9F%E5%9B%A0/">aop advisor说明以及The prefix aop for element  aop:config is not bound.错误原因</a></h1>
-    
-    <div class="post-meta">
-      <span class="post-time"> 2013-01-17 </span>
-      <div class="post-category">
-          
-            <a href="/categories/web%E5%89%8D%E7%AB%AF/"> Web前端 </a>
-          
-        </div>
-      <span class="more-meta"> 约 294 字 </span>
-      <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      原因：我们在定义申明AOP的时候。没有加载schema。 解决：首先应该加载JAR包。 还要在中要加入“xmlns：aop”的命名申明， 并在“x
-    </div>
-    <div class="read-more">
-      <a href="/post/2013/aop-advisor%E8%AF%B4%E6%98%8E%E4%BB%A5%E5%8F%8Athe-prefix-aop-for-element-aopconfig-is-not-bound.%E9%94%99%E8%AF%AF%E5%8E%9F%E5%9B%A0/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-    
-      <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2013/powerdesigner%E5%AF%BC%E5%87%BA%E8%84%9A%E6%9C%AC%E9%87%8C%E5%8C%85%E5%90%AB%E8%A7%86%E5%9B%BE/">PowerDesigner导出脚本里包含视图</a></h1>
-    
-    <div class="post-meta">
-      <span class="post-time"> 2013-01-17 </span>
-      <div class="post-category">
-          
-            <a href="/categories/mysql/"> MySQL </a>
-          
-        </div>
-      <span class="more-meta"> 约 155 字 </span>
-      <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      打开使用MySQL5.0的PDM之后，在菜单里选择Database-&gt; Edit Current DBMS.. 确认DBMS使用的是MySQL5.0 打开左端树状结构Scr
-    </div>
-    <div class="read-more">
-      <a href="/post/2013/powerdesigner%E5%AF%BC%E5%87%BA%E8%84%9A%E6%9C%AC%E9%87%8C%E5%8C%85%E5%90%AB%E8%A7%86%E5%9B%BE/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-    
-      <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2013/android%E5%B7%A5%E7%A8%8B%E4%B8%8B%E4%B8%8D%E8%83%BD%E8%BF%90%E8%A1%8Cjava-main%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">android工程下不能运行java main程序的解决办法</a></h1>
-    
-    <div class="post-meta">
-      <span class="post-time"> 2013-01-17 </span>
-      <div class="post-category">
-          
-            <a href="/categories/android/"> Android </a>
-          
-        </div>
-      <span class="more-meta"> 约 174 字 </span>
-      <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      直接运行会报这个错误 A fatal error has been detected by the Java Runtime Environment: Internal Error (classFileParser.cpp:3161), pid=4884, tid=1732 Error: ShouldNotReachHere() JRE version: 6.0_22-b04 Java VM: Java HotSpot&trade; Client VM (17.1-b03 mixed mode windows-x86 ) 解决办法如下： 右击有main方法的类 ===&gt; Run as ===&gt; Run Configurations ===&
-    </div>
-    <div class="read-more">
-      <a href="/post/2013/android%E5%B7%A5%E7%A8%8B%E4%B8%8B%E4%B8%8D%E8%83%BD%E8%BF%90%E8%A1%8Cjava-main%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-    
-      <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2013/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%94%9F%E6%88%90%E7%BB%A9%E6%80%BB%E5%92%8C%E5%A4%A7%E4%BA%8E240%E5%88%86%E7%9A%84%E5%AD%A6%E7%94%9F%E5%A7%93%E5%90%8D----sql-having%E5%AD%90%E5%8F%A5/">统计学生成绩总和大于240分的学生姓名----SQL HAVING子句</a></h1>
-    
-    <div class="post-meta">
-      <span class="post-time"> 2013-01-11 </span>
-      <div class="post-category">
-          
-            <a href="/categories/mysql/"> MySQL </a>
-          
-        </div>
-      <span class="more-meta"> 约 320 字 </span>
-      <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      HAVING 子句 在 SQL 中增加 HAVING 子句原因是，WHERE 关键字无法与合计函数一起使用。 SQL HAVING 语法 SELECT column_name, aggregate_function(column_name) FROM table_name WHERE column_name operator value GROUP BY column_name HAVING aggregate_function(column_name) operator value 比如有学生表： CREATE TABLE `student` ( `id` int(11) NOT NULL
-    </div>
-    <div class="read-more">
-      <a href="/post/2013/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%94%9F%E6%88%90%E7%BB%A9%E6%80%BB%E5%92%8C%E5%A4%A7%E4%BA%8E240%E5%88%86%E7%9A%84%E5%AD%A6%E7%94%9F%E5%A7%93%E5%90%8D----sql-having%E5%AD%90%E5%8F%A5/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-    
-      <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2013/windows%E4%B8%8B%E6%89%B9%E5%A4%84%E7%90%86%E5%88%A0%E9%99%A4svn%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/">Windows下批处理删除SVN文件方法</a></h1>
-    
-    <div class="post-meta">
-      <span class="post-time"> 2013-01-07 </span>
-      <div class="post-category">
-          
-            <a href="/categories/%E6%9D%82/"> 杂 </a>
-          
-        </div>
-      <span class="more-meta"> 约 29 字 </span>
-      <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      在项目根目录执行以下dos命令 for /r . %%a in (.) do @if exist &quot;%%a\.svn&quot; rd /s /q &quot;%%a\.svn&quot;
-    </div>
-    <div class="read-more">
-      <a href="/post/2013/windows%E4%B8%8B%E6%89%B9%E5%A4%84%E7%90%86%E5%88%A0%E9%99%A4svn%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-    
-      <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2012/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E4%B8%ADnewcashedthreadpool%E5%92%8Cnewfixedthreadpool%E5%8C%BA%E5%88%AB/">线程池中newCashedThreadpool和newFixedThreadPool区别</a></h1>
-    
-    <div class="post-meta">
-      <span class="post-time"> 2012-12-22 </span>
+      <span class="post-time"> 2012-11-23 </span>
       <div class="post-category">
           
             <a href="/categories/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"> 并发编程 </a>
           
         </div>
-      <span class="more-meta"> 约 316 字 </span>
+      <span class="more-meta"> 约 593 字 </span>
+      <span class="more-meta"> 预计阅读 2 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      import java.util.concurrent.CountDownLatch; /** * CountDownLatch 闭锁演示 * 闭锁的作用相当于一扇门：在闭锁到达结束状态（getCount()=0）前，这扇门一直是关闭的，并且没有任何线程能通过。 *
+    </div>
+    <div class="read-more">
+      <a href="/post/2012/countdownlatch-%E9%97%AD%E9%94%81%E6%BC%94%E7%A4%BA/" class="read-more-link">阅读全文</a>
+    </div>
+    
+  </div>
+</article>
+
+    
+      <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2012/%E5%88%A9%E7%94%A8%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97blockingdeque%E5%AE%9E%E7%8E%B0%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E8%80%85%E6%A8%A1%E5%BC%8F/">利用阻塞队列BlockingDeque实现生产者-消费者模式</a></h1>
+    
+    <div class="post-meta">
+      <span class="post-time"> 2012-11-22 </span>
+      <div class="post-category">
+          
+            <a href="/categories/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"> 并发编程 </a>
+          
+        </div>
+      <span class="more-meta"> 约 246 字 </span>
       <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
   </header>
@@ -445,10 +300,39 @@
   <div class="post-content">
     
     <div class="post-summary">
-      如果编写的是小程序，或者是轻载的服务器，使用Excutors.newCashedThreadpool通常是个不错的选择，因为它不需要配置，并
+      消费者 import java.util.concurrent.BlockingDeque; import java.util.concurrent.LinkedBlockingDeque; /** * 消费者类 * */ public class Consumer implements Runnable { private BlockingDeque&lt;String&gt; queue = new LinkedBlockingDeque&lt;String&gt;(); public Consumer(BlockingDeque&lt;String&gt; queue){ this.queue = queue; } @Override public void run() { // TODO Auto-generated method stub int i = 0; do{ try { String product = queue.take(); if(!&quot;&quot;.equals(product) &amp;&amp; null != product){ System.out
     </div>
     <div class="read-more">
-      <a href="/post/2012/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E4%B8%ADnewcashedthreadpool%E5%92%8Cnewfixedthreadpool%E5%8C%BA%E5%88%AB/" class="read-more-link">阅读全文</a>
+      <a href="/post/2012/%E5%88%A9%E7%94%A8%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97blockingdeque%E5%AE%9E%E7%8E%B0%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E8%80%85%E6%A8%A1%E5%BC%8F/" class="read-more-link">阅读全文</a>
+    </div>
+    
+  </div>
+</article>
+
+    
+      <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2012/java%E6%A3%80%E6%B5%8Bgc%E6%97%A5%E5%BF%97/">JAVA检测GC日志</a></h1>
+    
+    <div class="post-meta">
+      <span class="post-time"> 2012-11-07 </span>
+      <div class="post-category">
+          
+            <a href="/categories/java/"> Java </a>
+          
+        </div>
+      <span class="more-meta"> 约 33 字 </span>
+      <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      只需要在JAVA程序运行的时候，加上VM参数就可以。像下面这样: -XX:+PrintGCDetails
+    </div>
+    <div class="read-more">
+      <a href="/post/2012/java%E6%A3%80%E6%B5%8Bgc%E6%97%A5%E5%BF%97/" class="read-more-link">阅读全文</a>
     </div>
     
   </div>
@@ -515,11 +399,11 @@
       <a href="/page/9/">9</a>
     </li>
     
-    <li  class="active" >
+    <li >
       <a href="/page/10/">10</a>
     </li>
     
-    <li >
+    <li  class="active" >
       <a href="/page/11/">11</a>
     </li>
     

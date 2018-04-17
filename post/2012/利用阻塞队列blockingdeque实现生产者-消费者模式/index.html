@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Windows下批处理删除SVN文件方法 - 我不是帅才</title>
+  <title>利用阻塞队列BlockingDeque实现生产者-消费者模式 - 我不是帅才</title>
   <link rel="alternate" hreflang="en" href="https://www.3afun.com/" />
 
 <meta name="renderer" content="webkit" />
@@ -26,7 +26,7 @@
 
 
 <meta name="author" content="chen wayne" />
-  <meta name="description" content="在项目根目录执行以下dos命令 for /r . %%a in (.) do @if exist &amp;quot;%%a\.svn&amp;quot; rd /s /q &amp;quot;%%a\.svn&amp;quot;" />
+  <meta name="description" content="消费者 import java.util.concurrent.BlockingDeque; import java.util.concurrent.LinkedBlockingDeque; /** * 消费者类 * */ public class Consumer implements Runnable { private BlockingDeque&amp;lt;String&amp;gt; queue = new LinkedBlockingDeque&amp;lt;String&amp;gt;(); public Consumer(BlockingDeque&amp;lt;String&amp;gt; queue){ this.queue = queue; } @Override public void run() { // TODO Auto-generated method stub int i = 0; do{ try { String product = queue.take(); if(!&amp;quot;&amp;quot;.equals(product) &amp;amp;&amp;amp; null != product){ System.out" />
 
   <meta name="keywords" content="技术, 程序员, 码农, 程序猿, 分享, java, python" />
 
@@ -38,7 +38,7 @@
 <meta name="generator" content="Hugo 0.38.2" />
 
 
-<link rel="canonical" href="https://www.3afun.com/post/2013/windows%E4%B8%8B%E6%89%B9%E5%A4%84%E7%90%86%E5%88%A0%E9%99%A4svn%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/" />
+<link rel="canonical" href="https://www.3afun.com/post/2012/%E5%88%A9%E7%94%A8%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97blockingdeque%E5%AE%9E%E7%8E%B0%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E8%80%85%E6%A8%A1%E5%BC%8F/" />
 
 
 
@@ -58,20 +58,16 @@
 
 
 
-<meta property="og:title" content="Windows下批处理删除SVN文件方法" />
-<meta property="og:description" content="在项目根目录执行以下dos命令 for /r . %%a in (.) do @if exist &quot;%%a\.svn&quot; rd /s /q &quot;%%a\.svn&quot;" />
+<meta property="og:title" content="利用阻塞队列BlockingDeque实现生产者-消费者模式" />
+<meta property="og:description" content="消费者 import java.util.concurrent.BlockingDeque; import java.util.concurrent.LinkedBlockingDeque; /** * 消费者类 * */ public class Consumer implements Runnable { private BlockingDeque&lt;String&gt; queue = new LinkedBlockingDeque&lt;String&gt;(); public Consumer(BlockingDeque&lt;String&gt; queue){ this.queue = queue; } @Override public void run() { // TODO Auto-generated method stub int i = 0; do{ try { String product = queue.take(); if(!&quot;&quot;.equals(product) &amp;&amp; null != product){ System.out" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.3afun.com/post/2013/windows%E4%B8%8B%E6%89%B9%E5%A4%84%E7%90%86%E5%88%A0%E9%99%A4svn%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/" />
+<meta property="og:url" content="https://www.3afun.com/post/2012/%E5%88%A9%E7%94%A8%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97blockingdeque%E5%AE%9E%E7%8E%B0%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E8%80%85%E6%A8%A1%E5%BC%8F/" />
 
 
 
-<meta property="article:published_time" content="2013-01-07T15:11:00&#43;08:00"/>
+<meta property="article:published_time" content="2012-11-22T16:53:00&#43;08:00"/>
 
-<meta property="article:modified_time" content="2013-01-07T15:11:00&#43;08:00"/>
-
-
-
-
+<meta property="article:modified_time" content="2012-11-22T16:53:00&#43;08:00"/>
 
 
 
@@ -79,20 +75,24 @@
 
 
 
-<meta itemprop="name" content="Windows下批处理删除SVN文件方法">
-<meta itemprop="description" content="在项目根目录执行以下dos命令 for /r . %%a in (.) do @if exist &quot;%%a\.svn&quot; rd /s /q &quot;%%a\.svn&quot;">
-
-
-<meta itemprop="datePublished" content="2013-01-07T15:11:00&#43;08:00" />
-<meta itemprop="dateModified" content="2013-01-07T15:11:00&#43;08:00" />
-<meta itemprop="wordCount" content="29">
 
 
 
-<meta itemprop="keywords" content="杂," />
+
+<meta itemprop="name" content="利用阻塞队列BlockingDeque实现生产者-消费者模式">
+<meta itemprop="description" content="消费者 import java.util.concurrent.BlockingDeque; import java.util.concurrent.LinkedBlockingDeque; /** * 消费者类 * */ public class Consumer implements Runnable { private BlockingDeque&lt;String&gt; queue = new LinkedBlockingDeque&lt;String&gt;(); public Consumer(BlockingDeque&lt;String&gt; queue){ this.queue = queue; } @Override public void run() { // TODO Auto-generated method stub int i = 0; do{ try { String product = queue.take(); if(!&quot;&quot;.equals(product) &amp;&amp; null != product){ System.out">
+
+
+<meta itemprop="datePublished" content="2012-11-22T16:53:00&#43;08:00" />
+<meta itemprop="dateModified" content="2012-11-22T16:53:00&#43;08:00" />
+<meta itemprop="wordCount" content="246">
+
+
+
+<meta itemprop="keywords" content="并发编程," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Windows下批处理删除SVN文件方法"/>
-<meta name="twitter:description" content="在项目根目录执行以下dos命令 for /r . %%a in (.) do @if exist &quot;%%a\.svn&quot; rd /s /q &quot;%%a\.svn&quot;"/>
+<meta name="twitter:title" content="利用阻塞队列BlockingDeque实现生产者-消费者模式"/>
+<meta name="twitter:description" content="消费者 import java.util.concurrent.BlockingDeque; import java.util.concurrent.LinkedBlockingDeque; /** * 消费者类 * */ public class Consumer implements Runnable { private BlockingDeque&lt;String&gt; queue = new LinkedBlockingDeque&lt;String&gt;(); public Consumer(BlockingDeque&lt;String&gt; queue){ this.queue = queue; } @Override public void run() { // TODO Auto-generated method stub int i = 0; do{ try { String product = queue.take(); if(!&quot;&quot;.equals(product) &amp;&amp; null != product){ System.out"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -173,16 +173,16 @@
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">Windows下批处理删除SVN文件方法</h1>
+      <h1 class="post-title">利用阻塞队列BlockingDeque实现生产者-消费者模式</h1>
       
       <div class="post-meta">
-        <span class="post-time"> 2013-01-07 </span>
+        <span class="post-time"> 2012-11-22 </span>
         <div class="post-category">
             
-              <a href="/categories/%E6%9D%82/"> 杂 </a>
+              <a href="/categories/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"> 并发编程 </a>
             
           </div>
-        <span class="more-meta"> 约 29 字 </span>
+        <span class="more-meta"> 约 246 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -198,9 +198,92 @@
 
     
     <div class="post-content">
-      <p>在项目根目录执行以下dos命令</p>
+      <p>消费者</p>
 
-<pre><code>for /r . %%a in (.) do @if exist &quot;%%a\.svn&quot; rd /s /q &quot;%%a\.svn&quot;
+<pre><code class="language-java">import java.util.concurrent.BlockingDeque;
+import java.util.concurrent.LinkedBlockingDeque;
+
+/**
+ * 消费者类
+ * */
+public class Consumer implements Runnable {
+	private BlockingDeque&lt;String&gt; queue = new LinkedBlockingDeque&lt;String&gt;();
+
+	public Consumer(BlockingDeque&lt;String&gt; queue){
+		this.queue = queue;
+	}
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		int i = 0;
+			do{
+				try {
+					String product = queue.take();
+					if(!&quot;&quot;.equals(product) &amp;&amp; null != product){
+						System.out.println(&quot;消费者-:&quot;+product);
+						i++;
+					}
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+			}while(i &lt; 50);
+		}
+}
+</code></pre>
+
+<p>生产者</p>
+
+<pre><code class="language-java">import java.util.concurrent.BlockingDeque;
+import java.util.concurrent.LinkedBlockingDeque;
+/**
+ * 生产者类
+ * */
+
+public class Producer implements Runnable {
+	private BlockingDeque&lt;String&gt; queue = new LinkedBlockingDeque&lt;String&gt;();
+
+	public Producer(BlockingDeque&lt;String&gt; queue){
+		this.queue = queue;
+	}
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		for(int i=0; i &lt; 50; i++){
+			try {
+				System.out.println(&quot;生产者-Product&quot;+i);
+				queue.put(&quot;Prodect:&quot;+i);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+}
+</code></pre>
+
+<p>测试类</p>
+
+<pre><code>javaimport java.util.concurrent.BlockingDeque;
+       import java.util.concurrent.LinkedBlockingDeque;
+
+       /**
+        * 测试类
+        * */
+       public class BlockingQueueTest {
+
+       	private static BlockingDeque&lt;String&gt; queue = new LinkedBlockingDeque&lt;String&gt;();
+
+       	public static void main(String[] args) {
+       		// TODO Auto-generated method stub
+       		Producer producer = new Producer(queue);
+       		Consumer cusumer = new Consumer(queue);
+       		new Thread(cusumer).start();
+       		new Thread(producer).start();
+       	}
+       }
 </code></pre>
 
     </div>
@@ -214,7 +297,7 @@
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2013-01-07</span>
+    <span class="item-content">2012-11-22</span>
   </p>
   
   <p class="copyright-item">
@@ -229,21 +312,21 @@
     <footer class="post-footer">
       <div class="post-tags">
           
-          <a href="/tags/%E6%9D%82/">杂</a>
+          <a href="/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/2013/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%94%9F%E6%88%90%E7%BB%A9%E6%80%BB%E5%92%8C%E5%A4%A7%E4%BA%8E240%E5%88%86%E7%9A%84%E5%AD%A6%E7%94%9F%E5%A7%93%E5%90%8D----sql-having%E5%AD%90%E5%8F%A5/">
+          <a class="prev" href="/post/2012/countdownlatch-%E9%97%AD%E9%94%81%E6%BC%94%E7%A4%BA/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">统计学生成绩总和大于240分的学生姓名----SQL HAVING子句</span>
+            <span class="prev-text nav-default">CountDownLatch 闭锁演示</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
-          <a class="next" href="/post/2012/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E4%B8%ADnewcashedthreadpool%E5%92%8Cnewfixedthreadpool%E5%8C%BA%E5%88%AB/">
-            <span class="next-text nav-default">线程池中newCashedThreadpool和newFixedThreadPool区别</span>
+          <a class="next" href="/post/2012/java%E6%A3%80%E6%B5%8Bgc%E6%97%A5%E5%BF%97/">
+            <span class="next-text nav-default">JAVA检测GC日志</span>
             <span class="prev-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -260,10 +343,10 @@
     <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
   <script type="text/javascript">
   const gitment = new Gitment({
-    id: 'Windows下批处理删除SVN文件方法.md',
-    title: 'Windows下批处理删除SVN文件方法',
+    id: '利用阻塞队列BlockingDeque实现生产者-消费者模式.md',
+    title: '利用阻塞队列BlockingDeque实现生产者-消费者模式',
     link: decodeURI(location.href),
-    desc: '在项目根目录执行以下dos命令 for \/r . %%a in (.) do @if exist \x26quot;%%a\\.svn\x26quot; rd \/s \/q \x26quot;%%a\\.svn\x26quot;',
+    desc: '消费者 import java.util.concurrent.BlockingDeque; import java.util.concurrent.LinkedBlockingDeque; \/** * 消费者类 * *\/ public class Consumer implements Runnable { private BlockingDeque\x26lt;String\x26gt; queue = new LinkedBlockingDeque\x26lt;String\x26gt;(); public Consumer(BlockingDeque\x26lt;String\x26gt; queue){ this.queue = queue; } @Override public void run() { \/\/ TODO Auto-generated method stub int i = 0; do{ try { String product = queue.take(); if(!\x26quot;\x26quot;.equals(product) \x26amp;\x26amp; null != product){ System.out',
     owner: 'hxchen',
     repo: 'comments',
     oauth: {

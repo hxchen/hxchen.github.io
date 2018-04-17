@@ -29,15 +29,6 @@
     </item>
     
     <item>
-      <title>AtomicInteger 在高并发量应用程序中的使用及volatile说明</title>
-      <link>https://www.3afun.com/post/2013/atomicinteger-%E5%9C%A8%E9%AB%98%E5%B9%B6%E5%8F%91%E9%87%8F%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E5%8F%8Avolatile%E8%AF%B4%E6%98%8E/</link>
-      <pubDate>Mon, 08 Apr 2013 19:45:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2013/atomicinteger-%E5%9C%A8%E9%AB%98%E5%B9%B6%E5%8F%91%E9%87%8F%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E5%8F%8Avolatile%E8%AF%B4%E6%98%8E/</guid>
-      <description>当我们在处理简单程序中，可以使用诸如count++这种简单的计数器，但是这种简单的处理在高并发/多线程中的使用却是不安全的，几乎可以百分百的</description>
-    </item>
-    
-    <item>
       <title>NoSuchMethodError ServletFileUpload.parseRequest</title>
       <link>https://www.3afun.com/post/2013/nosuchmethoderror-servletfileupload.parserequest/</link>
       <pubDate>Mon, 01 Apr 2013 16:29:00 +0800</pubDate>
@@ -53,6 +44,33 @@
       
       <guid>https://www.3afun.com/post/2013/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97----%E6%9C%89%E4%B8%80%E6%AE%B5%E6%A5%BC%E6%A2%AF%E6%9C%89n%E7%BA%A7%E5%8F%B0%E9%98%B6%E8%A7%84%E5%AE%9A%E6%AF%8F%E4%B8%80%E6%AD%A5%E5%8F%AA%E8%83%BD%E8%B7%A8%E4%B8%80%E7%BA%A7%E6%88%96%E4%B8%A4%E7%BA%A7%E8%A6%81%E7%99%BB%E4%B8%8A%E7%AC%ACn%E7%BA%A7%E5%8F%B0%E9%98%B6%E6%9C%89%E5%87%A0%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E8%B5%B0%E6%B3%95/</guid>
       <description>问题：有一段楼梯有n级台阶,规定每一步只能跨一级或两级,要登上第n级台阶有几种不同的走法? 求解： /** * 有一段楼梯有n级台阶,规定每一步只能跨一</description>
+    </item>
+    
+    <item>
+      <title>类加载器</title>
+      <link>https://www.3afun.com/post/2012/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/</link>
+      <pubDate>Thu, 20 Dec 2012 22:02:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2012/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/</guid>
+      <description>import java.io.IOException; import java.io.InputStream; /** * 类加载器与instanceof演示 * */ public class ClassLoadTest { public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException { ClassLoader classLoader = new ClassLoader() { @Override public Class&amp;lt;?&amp;gt; loadClass(String name) throws ClassNotFoundException{ try { String fileName = name.substring(name.lastIndexOf(&amp;quot;.&amp;quot;)+1)+&amp;quot;.class&amp;quot;; InputStream is = getClass().getResourceAsStream(fileName); if(is == null){ return super.loadClass(name); } byte[] b</description>
+    </item>
+    
+    <item>
+      <title>java中final关键字的使用</title>
+      <link>https://www.3afun.com/post/2012/java%E4%B8%ADfinal%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Fri, 14 Dec 2012 11:04:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2012/java%E4%B8%ADfinal%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <description>final数据： 被final修饰的数据，如果是基本类型，那么它的值是恒定不变的；如果是对象引用，那么引用是恒定不变的，始终指向一个对象，但对</description>
+    </item>
+    
+    <item>
+      <title>JAVA检测GC日志</title>
+      <link>https://www.3afun.com/post/2012/java%E6%A3%80%E6%B5%8Bgc%E6%97%A5%E5%BF%97/</link>
+      <pubDate>Wed, 07 Nov 2012 15:46:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2012/java%E6%A3%80%E6%B5%8Bgc%E6%97%A5%E5%BF%97/</guid>
+      <description>只需要在JAVA程序运行的时候，加上VM参数就可以。像下面这样: -XX:+PrintGCDetails</description>
     </item>
     
   </channel>
