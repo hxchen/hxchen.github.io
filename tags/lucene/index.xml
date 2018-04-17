@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lucene on 我不是帅才</title>
+    <link>https://www.3afun.com/tags/lucene/</link>
+    <description>Recent content in Lucene on 我不是帅才</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 27 Mar 2013 23:19:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.3afun.com/tags/lucene/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>一个例子学懂lucene--Helloworld</title>
+      <link>https://www.3afun.com/post/2013/%E4%B8%80%E4%B8%AA%E4%BE%8B%E5%AD%90%E5%AD%A6%E6%87%82lucene--helloworld/</link>
+      <pubDate>Wed, 27 Mar 2013 23:19:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2013/%E4%B8%80%E4%B8%AA%E4%BE%8B%E5%AD%90%E5%AD%A6%E6%87%82lucene--helloworld/</guid>
+      <description>lucene的一个Helloworld例子，麻雀虽小，五脏俱全。 所需jar包：lucene-analyzers-3.6.2.jar、luce</description>
+    </item>
+    
+  </channel>
+</rss>

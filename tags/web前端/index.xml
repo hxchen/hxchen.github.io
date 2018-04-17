@@ -82,5 +82,77 @@
       <description>一、获取手机在微信内置浏览器的User-Agent var http = require(&#39;http&#39;); http.createServer(function(req, res) { res.writeHead(200, {&#39;Content-type&#39; : &#39;text/html&#39;}); res.write(&#39;user-agent=&#39;+req.headers[&amp;quot;user-agent&amp;quot;]); console.log(req.headers[&amp;quot;user-agent&amp;quot;]); res.end(); }).listen(3000); 在这里我获取我手机的是 Mozilla/5.0 (iPhone; CPU iPhone OS 7_1_2 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Mob ile/11D257 MicroMessenger/6.1 NetType/WIFI 二</description>
     </item>
     
+    <item>
+      <title>jade模板下的条件注释</title>
+      <link>https://www.3afun.com/post/2014/jade%E6%A8%A1%E6%9D%BF%E4%B8%8B%E7%9A%84%E6%9D%A1%E4%BB%B6%E6%B3%A8%E9%87%8A/</link>
+      <pubDate>Mon, 10 Nov 2014 15:59:27 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2014/jade%E6%A8%A1%E6%9D%BF%E4%B8%8B%E7%9A%84%E6%9D%A1%E4%BB%B6%E6%B3%A8%E9%87%8A/</guid>
+      <description>jade版本1.6.0 在调试浏览器兼容问题时，发现原先的条件注释不再试用，特此更新下最新标记 demo.jade doctype html html(lang=&#39;zh-CN&#39;) head title= title //if IE 7 //if IE 8 //if IE 9 body h3 Welcome //if IE 7 p IE7_1</description>
+    </item>
+    
+    <item>
+      <title>Can not find the tag library descriptor for jstl core 的解决办法</title>
+      <link>https://www.3afun.com/post/2014/can-not-find-the-tag-library-descriptor-for-jstl-core%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Wed, 23 Jul 2014 16:40:27 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2014/can-not-find-the-tag-library-descriptor-for-jstl-core%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <description>Maven工程，确定已经导入了standard.jar，jstl.jar 还提示 Can not find the tag library descriptor for &amp;ldquo;http://java.sun.com/jsp/jstl/core&amp;quot; 错误解决方案： Maven pom配置文件里删除导入，重</description>
+    </item>
+    
+    <item>
+      <title>javascript 中contains方法的定义</title>
+      <link>https://www.3afun.com/post/2013/javascript-%E4%B8%ADcontains%E6%96%B9%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89/</link>
+      <pubDate>Mon, 21 Oct 2013 16:16:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2013/javascript-%E4%B8%ADcontains%E6%96%B9%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89/</guid>
+      <description>/** * 对大小写敏感的Contains方法 * @param substring * @returns */ String.prototype.contains = function(substring) { return this.indexOf(substring) != -1 ? true:false; }; 使用方法：a.contains(b)&amp;mdash;-a中是否包含b</description>
+    </item>
+    
+    <item>
+      <title>Bootstrap前端开发框架</title>
+      <link>https://www.3afun.com/post/2013/bootstrap%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/</link>
+      <pubDate>Thu, 17 Oct 2013 15:25:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2013/bootstrap%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/</guid>
+      <description>之前做的一个项目，最近完成了前端改版，选用了前端开发框架Bootstrap，感觉真不错。谈谈几个最大的感受： 一、布局方便合理。Bootstr</description>
+    </item>
+    
+    <item>
+      <title>UEditor(JSP版本)图片上传</title>
+      <link>https://www.3afun.com/post/2013/ueditorjsp%E7%89%88%E6%9C%AC%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/</link>
+      <pubDate>Tue, 05 Feb 2013 16:16:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2013/ueditorjsp%E7%89%88%E6%9C%AC%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/</guid>
+      <description>接上篇UEditor（JSP版本）安装与部署，本篇介绍UEditor（JSP版本）图片上传。 一、新建文件夹ueditor，拷贝源码jsp文件</description>
+    </item>
+    
+    <item>
+      <title>UEditor(JSP版本)安装与部署</title>
+      <link>https://www.3afun.com/post/2013/ueditorjsp%E7%89%88%E6%9C%AC%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Mon, 04 Feb 2013 17:35:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2013/ueditorjsp%E7%89%88%E6%9C%AC%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2/</guid>
+      <description>一、访问UEditor官方网站，此处我选择的是开发版-&amp;gt;1.2.5.0Jsp版本-&amp;gt;UTF-8版本。 二、解压缩下载文件。如图所示</description>
+    </item>
+    
+    <item>
+      <title>javascript 调用cmd命令建立网络共享连接</title>
+      <link>https://www.3afun.com/post/2013/javascript-%E8%B0%83%E7%94%A8cmd%E5%91%BD%E4%BB%A4%E5%BB%BA%E7%AB%8B%E7%BD%91%E7%BB%9C%E5%85%B1%E4%BA%AB%E8%BF%9E%E6%8E%A5/</link>
+      <pubDate>Thu, 17 Jan 2013 22:36:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2013/javascript-%E8%B0%83%E7%94%A8cmd%E5%91%BD%E4%BB%A4%E5%BB%BA%E7%AB%8B%E7%BD%91%E7%BB%9C%E5%85%B1%E4%BA%AB%E8%BF%9E%E6%8E%A5/</guid>
+      <description>建立目的电脑（Linux OS）的共享连接，目的电脑IP：192.168.17.211 共享文件夹prison 用户名 root 密码 88888888 &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;titl</description>
+    </item>
+    
+    <item>
+      <title>aop advisor说明以及The prefix aop for element  aop:config is not bound.错误原因</title>
+      <link>https://www.3afun.com/post/2013/aop-advisor%E8%AF%B4%E6%98%8E%E4%BB%A5%E5%8F%8Athe-prefix-aop-for-element-aopconfig-is-not-bound.%E9%94%99%E8%AF%AF%E5%8E%9F%E5%9B%A0/</link>
+      <pubDate>Thu, 17 Jan 2013 22:34:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2013/aop-advisor%E8%AF%B4%E6%98%8E%E4%BB%A5%E5%8F%8Athe-prefix-aop-for-element-aopconfig-is-not-bound.%E9%94%99%E8%AF%AF%E5%8E%9F%E5%9B%A0/</guid>
+      <description>原因：我们在定义申明AOP的时候。没有加载schema。 解决：首先应该加载JAR包。 还要在中要加入“xmlns：aop”的命名申明， 并在“x</description>
+    </item>
+    
   </channel>
 </rss>

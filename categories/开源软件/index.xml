@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>开源软件 on 我不是帅才</title>
+    <link>https://www.3afun.com/categories/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/</link>
+    <description>Recent content in 开源软件 on 我不是帅才</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 23 Apr 2014 14:31:27 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.3afun.com/categories/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Wordpress缺少MySQL扩展</title>
+      <link>https://www.3afun.com/post/2014/wordpress%E7%BC%BA%E5%B0%91mysql%E6%89%A9%E5%B1%95/</link>
+      <pubDate>Wed, 23 Apr 2014 14:31:27 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2014/wordpress%E7%BC%BA%E5%B0%91mysql%E6%89%A9%E5%B1%95/</guid>
+      <description>访问wordpress时提示：鎮ㄧ殑 PHP 浼间箮娌℃湁瀹夎杩愯 WordPress 鎵€蹇呴渶鐨 MySQL 鎵╁睍銆 这是在说：您的 PHP 似乎没有安装运行 WordPress 所必需的 MySQL 扩展 可以w</description>
+    </item>
+    
+    <item>
+      <title>Wordpress更改Permalink后出现404的解决办法</title>
+      <link>https://www.3afun.com/post/2014/wordpress%E6%9B%B4%E6%94%B9permalink%E5%90%8E%E5%87%BA%E7%8E%B0404%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Wed, 19 Mar 2014 15:18:27 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2014/wordpress%E6%9B%B4%E6%94%B9permalink%E5%90%8E%E5%87%BA%E7%8E%B0404%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <description>1、Apache作为服务器的话 修改httpd.conf 打开 LoadModule rewrite_module modules/mod_rewrite.so 查找并替换 AllowOverride none -&amp;gt; AllowOverride All 2、nginx作为服务器的话，添加三条if语句。 location ~ \.php$ {</description>
+    </item>
+    
+    <item>
+      <title>EC2主机部署Wordpress</title>
+      <link>https://www.3afun.com/post/2014/ec2%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2wordpress/</link>
+      <pubDate>Mon, 10 Mar 2014 17:42:27 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2014/ec2%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2wordpress/</guid>
+      <description>一、Wordpress配置 下载 wget http://wordpress.org/latest.zip 解压 unzip latest.zip 进入目录 cd wordpress/ 重命名 mv wp-config-sample.php wp-config.php 更改配置 vi wp-config.php 请自行根据数据库设置进行配置文件设置。 二、PHP服务器配置 安装</description>
+    </item>
+    
+    <item>
+      <title>一个例子学懂lucene--Helloworld</title>
+      <link>https://www.3afun.com/post/2013/%E4%B8%80%E4%B8%AA%E4%BE%8B%E5%AD%90%E5%AD%A6%E6%87%82lucene--helloworld/</link>
+      <pubDate>Wed, 27 Mar 2013 23:19:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2013/%E4%B8%80%E4%B8%AA%E4%BE%8B%E5%AD%90%E5%AD%A6%E6%87%82lucene--helloworld/</guid>
+      <description>lucene的一个Helloworld例子，麻雀虽小，五脏俱全。 所需jar包：lucene-analyzers-3.6.2.jar、luce</description>
+    </item>
+    
+  </channel>
+</rss>

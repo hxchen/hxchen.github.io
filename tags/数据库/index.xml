@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据库 on 我不是帅才</title>
+    <link>https://www.3afun.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+    <description>Recent content in 数据库 on 我不是帅才</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 06 Jun 2014 17:09:27 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.3afun.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MySQL生成随机时间</title>
+      <link>https://www.3afun.com/post/2014/mysql%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%97%B6%E9%97%B4/</link>
+      <pubDate>Fri, 06 Jun 2014 17:09:27 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2014/mysql%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%97%B6%E9%97%B4/</guid>
+      <description>随机生成2014/05/01到现在的时间 SELECT FROM_UNIXTIME(UNIX_TIMESTAMP(&#39;20140501000000&#39;) + ROUND(RAND()*(UNIX_TIMESTAMP() - UNIX_TIMESTAMP(&#39;20140501000000&#39;))));</description>
+    </item>
+    
+    <item>
+      <title>excel数据导入mysql数据库</title>
+      <link>https://www.3afun.com/post/2013/excel%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <pubDate>Thu, 28 Nov 2013 19:54:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2013/excel%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <description>1.excel另存为txt。 选中将要导出的数据列，然后另存为选择其它格式=&amp;gt;文本文件（制表符分割）。 存为： E:\项目\fblike\g</description>
+    </item>
+    
+  </channel>
+</rss>

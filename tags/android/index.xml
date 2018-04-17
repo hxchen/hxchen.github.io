@@ -73,5 +73,14 @@
       <description>思路主要是在onResume事件里处理按钮事件并进行判断。 如果使用了WebView则在onKey里处理返回按钮事件。 import android.os.Bundle; import android.support.annotation.Nullable; import android.support.v4.app.Fragment; import android.support.v4.app.FragmentManager; import android.view.KeyEvent; import android.view.LayoutInflater;</description>
     </item>
     
+    <item>
+      <title>android工程下不能运行java main程序的解决办法</title>
+      <link>https://www.3afun.com/post/2013/android%E5%B7%A5%E7%A8%8B%E4%B8%8B%E4%B8%8D%E8%83%BD%E8%BF%90%E8%A1%8Cjava-main%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Thu, 17 Jan 2013 22:31:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2013/android%E5%B7%A5%E7%A8%8B%E4%B8%8B%E4%B8%8D%E8%83%BD%E8%BF%90%E8%A1%8Cjava-main%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <description>直接运行会报这个错误 A fatal error has been detected by the Java Runtime Environment: Internal Error (classFileParser.cpp:3161), pid=4884, tid=1732 Error: ShouldNotReachHere() JRE version: 6.0_22-b04 Java VM: Java HotSpot&amp;trade; Client VM (17.1-b03 mixed mode windows-x86 ) 解决办法如下： 右击有main方法的类 ===&amp;gt; Run as ===&amp;gt; Run Configurations ===&amp;</description>
+    </item>
+    
   </channel>
 </rss>

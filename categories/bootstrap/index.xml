@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bootstrap on 我不是帅才</title>
+    <link>https://www.3afun.com/categories/bootstrap/</link>
+    <description>Recent content in Bootstrap on 我不是帅才</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 17 Oct 2013 15:25:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.3afun.com/categories/bootstrap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bootstrap前端开发框架</title>
+      <link>https://www.3afun.com/post/2013/bootstrap%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/</link>
+      <pubDate>Thu, 17 Oct 2013 15:25:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2013/bootstrap%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/</guid>
+      <description>之前做的一个项目，最近完成了前端改版，选用了前端开发框架Bootstrap，感觉真不错。谈谈几个最大的感受： 一、布局方便合理。Bootstr</description>
+    </item>
+    
+  </channel>
+</rss>

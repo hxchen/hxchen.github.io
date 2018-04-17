@@ -20,6 +20,15 @@
     </item>
     
     <item>
+      <title>Bootstrap</title>
+      <link>https://www.3afun.com/categories/bootstrap/</link>
+      <pubDate>Thu, 17 Oct 2013 15:25:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/bootstrap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Ethereum</title>
       <link>https://www.3afun.com/categories/ethereum/</link>
       <pubDate>Mon, 16 Apr 2018 11:24:49 +0800</pubDate>
@@ -61,6 +70,24 @@
       <pubDate>Thu, 22 Jan 2015 17:31:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>https://www.3afun.com/categories/javascript/</link>
+      <pubDate>Mon, 21 Oct 2013 16:16:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://www.3afun.com/categories/linux/</link>
+      <pubDate>Tue, 27 May 2014 10:20:27 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/linux/</guid>
       <description></description>
     </item>
     
@@ -110,6 +137,24 @@
     </item>
     
     <item>
+      <title>Spring Mvc</title>
+      <link>https://www.3afun.com/categories/spring-mvc/</link>
+      <pubDate>Fri, 04 Apr 2014 14:46:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/spring-mvc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tomcat</title>
+      <link>https://www.3afun.com/categories/tomcat/</link>
+      <pubDate>Thu, 07 Nov 2013 14:25:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/tomcat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Unity3d</title>
       <link>https://www.3afun.com/categories/unity3d/</link>
       <pubDate>Fri, 20 Nov 2015 11:17:00 +0800</pubDate>
@@ -137,29 +182,11 @@
     </item>
     
     <item>
-      <title>服务器</title>
-      <link>https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
-      <pubDate>Mon, 20 Nov 2017 17:27:00 +0800</pubDate>
+      <title>大数据</title>
+      <link>https://www.3afun.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Thu, 16 Oct 2014 18:12:27 +0800</pubDate>
       
-      <guid>https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>杂</title>
-      <link>https://www.3afun.com/categories/%E6%9D%82/</link>
-      <pubDate>Sat, 18 Nov 2017 16:57:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/categories/%E6%9D%82/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>游戏</title>
-      <link>https://www.3afun.com/categories/%E6%B8%B8%E6%88%8F/</link>
-      <pubDate>Fri, 02 Dec 2016 15:52:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/categories/%E6%B8%B8%E6%88%8F/</guid>
+      <guid>https://www.3afun.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/</guid>
       <description></description>
     </item>
     

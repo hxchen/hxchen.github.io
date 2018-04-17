@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jade on 我不是帅才</title>
+    <link>https://www.3afun.com/tags/jade/</link>
+    <description>Recent content in Jade on 我不是帅才</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 10 Nov 2014 15:59:27 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.3afun.com/tags/jade/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>jade模板下的条件注释</title>
+      <link>https://www.3afun.com/post/2014/jade%E6%A8%A1%E6%9D%BF%E4%B8%8B%E7%9A%84%E6%9D%A1%E4%BB%B6%E6%B3%A8%E9%87%8A/</link>
+      <pubDate>Mon, 10 Nov 2014 15:59:27 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2014/jade%E6%A8%A1%E6%9D%BF%E4%B8%8B%E7%9A%84%E6%9D%A1%E4%BB%B6%E6%B3%A8%E9%87%8A/</guid>
+      <description>jade版本1.6.0 在调试浏览器兼容问题时，发现原先的条件注释不再试用，特此更新下最新标记 demo.jade doctype html html(lang=&#39;zh-CN&#39;) head title= title //if IE 7 //if IE 8 //if IE 9 body h3 Welcome //if IE 7 p IE7_1</description>
+    </item>
+    
+  </channel>
+</rss>

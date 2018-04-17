@@ -19,5 +19,41 @@
       <description>电脑（win7,64位）原先安装了jdk1.7 jdk1.8 64位的，但是由于做cocos2dx，同事自己写的插件，只支持32位jdk，没办法只能重新安</description>
     </item>
     
+    <item>
+      <title>java打印N阶回旋矩阵</title>
+      <link>https://www.3afun.com/post/2013/java%E6%89%93%E5%8D%B0n%E9%98%B6%E5%9B%9E%E6%97%8B%E7%9F%A9%E9%98%B5/</link>
+      <pubDate>Tue, 18 Jun 2013 20:40:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2013/java%E6%89%93%E5%8D%B0n%E9%98%B6%E5%9B%9E%E6%97%8B%E7%9F%A9%E9%98%B5/</guid>
+      <description>算法分析： 1.将此矩阵分解为一个一个的圈，如下图，1-20可以看成一个圈，21-32是一个圈，33-36也是一个圈。 2.再将圈分解为四个均等</description>
+    </item>
+    
+    <item>
+      <title>AtomicInteger 在高并发量应用程序中的使用及volatile说明</title>
+      <link>https://www.3afun.com/post/2013/atomicinteger-%E5%9C%A8%E9%AB%98%E5%B9%B6%E5%8F%91%E9%87%8F%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E5%8F%8Avolatile%E8%AF%B4%E6%98%8E/</link>
+      <pubDate>Mon, 08 Apr 2013 19:45:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2013/atomicinteger-%E5%9C%A8%E9%AB%98%E5%B9%B6%E5%8F%91%E9%87%8F%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E5%8F%8Avolatile%E8%AF%B4%E6%98%8E/</guid>
+      <description>当我们在处理简单程序中，可以使用诸如count++这种简单的计数器，但是这种简单的处理在高并发/多线程中的使用却是不安全的，几乎可以百分百的</description>
+    </item>
+    
+    <item>
+      <title>NoSuchMethodError ServletFileUpload.parseRequest</title>
+      <link>https://www.3afun.com/post/2013/nosuchmethoderror-servletfileupload.parserequest/</link>
+      <pubDate>Mon, 01 Apr 2013 16:29:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2013/nosuchmethoderror-servletfileupload.parserequest/</guid>
+      <description>Bug描述：老项目，文件上传在tomcat下没有问题，在部分WebSphere上存在问题。 Error 500: java.lang.NoSuchMethodError: org/apache/commons/fileupload/servlet/ServletFileUpload.parseRequest(Lorg/apache/commons/fileupload/RequestContext;)Ljava/util/List; 问题原因：不是没有加载fileupload</description>
+    </item>
+    
+    <item>
+      <title>斐波那契数列----有一段楼梯有n级台阶,规定每一步只能跨一级或两级,要登上第n级台阶有几种不同的走法?</title>
+      <link>https://www.3afun.com/post/2013/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97----%E6%9C%89%E4%B8%80%E6%AE%B5%E6%A5%BC%E6%A2%AF%E6%9C%89n%E7%BA%A7%E5%8F%B0%E9%98%B6%E8%A7%84%E5%AE%9A%E6%AF%8F%E4%B8%80%E6%AD%A5%E5%8F%AA%E8%83%BD%E8%B7%A8%E4%B8%80%E7%BA%A7%E6%88%96%E4%B8%A4%E7%BA%A7%E8%A6%81%E7%99%BB%E4%B8%8A%E7%AC%ACn%E7%BA%A7%E5%8F%B0%E9%98%B6%E6%9C%89%E5%87%A0%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E8%B5%B0%E6%B3%95/</link>
+      <pubDate>Tue, 26 Mar 2013 16:42:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2013/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97----%E6%9C%89%E4%B8%80%E6%AE%B5%E6%A5%BC%E6%A2%AF%E6%9C%89n%E7%BA%A7%E5%8F%B0%E9%98%B6%E8%A7%84%E5%AE%9A%E6%AF%8F%E4%B8%80%E6%AD%A5%E5%8F%AA%E8%83%BD%E8%B7%A8%E4%B8%80%E7%BA%A7%E6%88%96%E4%B8%A4%E7%BA%A7%E8%A6%81%E7%99%BB%E4%B8%8A%E7%AC%ACn%E7%BA%A7%E5%8F%B0%E9%98%B6%E6%9C%89%E5%87%A0%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E8%B5%B0%E6%B3%95/</guid>
+      <description>问题：有一段楼梯有n级台阶,规定每一步只能跨一级或两级,要登上第n级台阶有几种不同的走法? 求解： /** * 有一段楼梯有n级台阶,规定每一步只能跨一</description>
+    </item>
+    
   </channel>
 </rss>

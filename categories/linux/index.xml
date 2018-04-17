@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on 我不是帅才</title>
+    <link>https://www.3afun.com/categories/linux/</link>
+    <description>Recent content in Linux on 我不是帅才</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 27 May 2014 10:20:27 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.3afun.com/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>grep 匹配行和前后行显示</title>
+      <link>https://www.3afun.com/post/2014/grep-%E5%8C%B9%E9%85%8D%E8%A1%8C%E5%92%8C%E5%89%8D%E5%90%8E%E8%A1%8C%E6%98%BE%E7%A4%BA/</link>
+      <pubDate>Tue, 27 May 2014 10:20:27 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2014/grep-%E5%8C%B9%E9%85%8D%E8%A1%8C%E5%92%8C%E5%89%8D%E5%90%8E%E8%A1%8C%E6%98%BE%E7%A4%BA/</guid>
+      <description>grep 检索显示匹配行以及前后行 info.txt里检索KEY，显示KEY的后10行。 grep -A 10 &#39;KEY&#39; info.txt info.txt里检索KEY，显示KEY的前10行。</description>
+    </item>
+    
+  </channel>
+</rss>

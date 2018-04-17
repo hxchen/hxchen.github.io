@@ -28,5 +28,86 @@
       <description>运行前，需要安装MySQLdb模块！！！ sudo yum install MySQL-python #!/usr/bin/python # -*- coding: UTF-8 -*- import MySQLdb import datetime def backYestoday(): today = datetime.date.today() yesterday = today - datetime.timedelta(days=1) # 打开数据库连接 db_mat = MySQLdb.connect(&amp;quot;hostname&amp;quot;, &amp;quot;root&amp;quot;, &amp;quot;password&amp;quot;, &amp;quot;db&amp;quot;, charset=&#39;utf8&#39;) # 使用cursor()</description>
     </item>
     
+    <item>
+      <title>yum方式安装MySQL</title>
+      <link>https://www.3afun.com/post/2014/yum%E6%96%B9%E5%BC%8F%E5%AE%89%E8%A3%85mysql/</link>
+      <pubDate>Tue, 22 Apr 2014 17:18:27 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2014/yum%E6%96%B9%E5%BC%8F%E5%AE%89%E8%A3%85mysql/</guid>
+      <description>1、安装 yum install mysql mysql-server 2、启动 service mysqld start 3、登录 mysql -uroot -p 4、改密码 set password for root@localhost=password(&#39;your_password&#39;) 5、查看密码 select user,host,password from mysql.user 备注： 更改数据库编码参考： SET character_set_client = utf8 ;</description>
+    </item>
+    
+    <item>
+      <title>excel数据导入mysql数据库</title>
+      <link>https://www.3afun.com/post/2013/excel%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <pubDate>Thu, 28 Nov 2013 19:54:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2013/excel%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <description>1.excel另存为txt。 选中将要导出的数据列，然后另存为选择其它格式=&amp;gt;文本文件（制表符分割）。 存为： E:\项目\fblike\g</description>
+    </item>
+    
+    <item>
+      <title>MySQL不同存储引擎和不同分区字段对于查询的影响</title>
+      <link>https://www.3afun.com/post/2013/mysql%E4%B8%8D%E5%90%8C%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%E5%92%8C%E4%B8%8D%E5%90%8C%E5%88%86%E5%8C%BA%E5%AD%97%E6%AE%B5%E5%AF%B9%E4%BA%8E%E6%9F%A5%E8%AF%A2%E7%9A%84%E5%BD%B1%E5%93%8D/</link>
+      <pubDate>Thu, 31 Jan 2013 15:46:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2013/mysql%E4%B8%8D%E5%90%8C%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%E5%92%8C%E4%B8%8D%E5%90%8C%E5%88%86%E5%8C%BA%E5%AD%97%E6%AE%B5%E5%AF%B9%E4%BA%8E%E6%9F%A5%E8%AF%A2%E7%9A%84%E5%BD%B1%E5%93%8D/</guid>
+      <description>前提：每种表类型准备了200万条相同的数据。 表一 InnoDB &amp;amp; PARTITION BY RANGE (id) CREATE TABLE `customer_innodb_id` ( `id` int(11) NOT NULL, `email` varchar(64) NOT NULL, `name` varchar(32) NOT NULL, `password` varchar(32) NOT NULL, `phone` varchar(13) DEFAULT NULL, `birth` date DEFAULT NULL, `sex` int(1) DEFAULT NULL, `avatar` blob, `address` varchar(64) DEFAULT NULL, `regtime` datetime</description>
+    </item>
+    
+    <item>
+      <title>MySQL 如何快速插入大量数据</title>
+      <link>https://www.3afun.com/post/2013/mysql-%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%8F%92%E5%85%A5%E5%A4%A7%E9%87%8F%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Thu, 31 Jan 2013 13:45:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2013/mysql-%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%8F%92%E5%85%A5%E5%A4%A7%E9%87%8F%E6%95%B0%E6%8D%AE/</guid>
+      <description>这几天尝试了使用不同的存储引擎大量插入MySQL表数据，主要试验了MyISAM存储引擎和InnoDB。下面是实验过程： 一、InnoDB存储引</description>
+    </item>
+    
+    <item>
+      <title>MySQL主从复制实现</title>
+      <link>https://www.3afun.com/post/2013/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6%E5%AE%9E%E7%8E%B0/</link>
+      <pubDate>Fri, 25 Jan 2013 17:38:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2013/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6%E5%AE%9E%E7%8E%B0/</guid>
+      <description>1、下载免安装版。 2、解压缩到 C:\MySQL，命名为mysql-5.5.29-win32-master。 3、目录文件下找到my-large</description>
+    </item>
+    
+    <item>
+      <title>ERROR 1201 (HY000): Could not initialize master info structure</title>
+      <link>https://www.3afun.com/post/2013/error-1201-hy000-could-not-initialize-master-info-structure/</link>
+      <pubDate>Fri, 25 Jan 2013 11:00:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2013/error-1201-hy000-could-not-initialize-master-info-structure/</guid>
+      <description>今天在做MySQL主从复制时遇到个ERROR 1201 (HY000): Could not initialize master info structure . 出现这个问题的原因是之前曾做过主从复制！！！ 解决方案是：运行命令 stop slave; 成功执行后</description>
+    </item>
+    
+    <item>
+      <title>hibernate cascade=&#39;all-delete-orphan&#39;（所有-删除-孤儿）释疑</title>
+      <link>https://www.3afun.com/post/2013/hibernate-cascadeall-delete-orphan%E6%89%80%E6%9C%89-%E5%88%A0%E9%99%A4-%E5%AD%A4%E5%84%BF%E9%87%8A%E7%96%91/</link>
+      <pubDate>Thu, 17 Jan 2013 22:39:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2013/hibernate-cascadeall-delete-orphan%E6%89%80%E6%9C%89-%E5%88%A0%E9%99%A4-%E5%AD%A4%E5%84%BF%E9%87%8A%E7%96%91/</guid>
+      <description>这是一个级联插入，删除，更新的操作。 cascade=&amp;ldquo;all-delete-orphan&amp;rdquo;（所有-删除-孤儿）。级联</description>
+    </item>
+    
+    <item>
+      <title>PowerDesigner导出脚本里包含视图</title>
+      <link>https://www.3afun.com/post/2013/powerdesigner%E5%AF%BC%E5%87%BA%E8%84%9A%E6%9C%AC%E9%87%8C%E5%8C%85%E5%90%AB%E8%A7%86%E5%9B%BE/</link>
+      <pubDate>Thu, 17 Jan 2013 22:32:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2013/powerdesigner%E5%AF%BC%E5%87%BA%E8%84%9A%E6%9C%AC%E9%87%8C%E5%8C%85%E5%90%AB%E8%A7%86%E5%9B%BE/</guid>
+      <description>打开使用MySQL5.0的PDM之后，在菜单里选择Database-&amp;gt; Edit Current DBMS.. 确认DBMS使用的是MySQL5.0 打开左端树状结构Scr</description>
+    </item>
+    
+    <item>
+      <title>统计学生成绩总和大于240分的学生姓名----SQL HAVING子句</title>
+      <link>https://www.3afun.com/post/2013/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%94%9F%E6%88%90%E7%BB%A9%E6%80%BB%E5%92%8C%E5%A4%A7%E4%BA%8E240%E5%88%86%E7%9A%84%E5%AD%A6%E7%94%9F%E5%A7%93%E5%90%8D----sql-having%E5%AD%90%E5%8F%A5/</link>
+      <pubDate>Fri, 11 Jan 2013 18:33:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2013/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%94%9F%E6%88%90%E7%BB%A9%E6%80%BB%E5%92%8C%E5%A4%A7%E4%BA%8E240%E5%88%86%E7%9A%84%E5%AD%A6%E7%94%9F%E5%A7%93%E5%90%8D----sql-having%E5%AD%90%E5%8F%A5/</guid>
+      <description>HAVING 子句 在 SQL 中增加 HAVING 子句原因是，WHERE 关键字无法与合计函数一起使用。 SQL HAVING 语法 SELECT column_name, aggregate_function(column_name) FROM table_name WHERE column_name operator value GROUP BY column_name HAVING aggregate_function(column_name) operator value 比如有学生表： CREATE TABLE `student` ( `id` int(11) NOT NULL</description>
+    </item>
+    
   </channel>
 </rss>

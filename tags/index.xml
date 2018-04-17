@@ -20,6 +20,15 @@
     </item>
     
     <item>
+      <title>Bootstrap</title>
+      <link>https://www.3afun.com/tags/bootstrap/</link>
+      <pubDate>Thu, 17 Oct 2013 15:25:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/bootstrap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Charles</title>
       <link>https://www.3afun.com/tags/charles/</link>
       <pubDate>Sat, 18 Nov 2017 16:57:00 +0800</pubDate>
@@ -52,6 +61,15 @@
       <pubDate>Mon, 16 Apr 2018 11:24:49 +0800</pubDate>
       
       <guid>https://www.3afun.com/tags/ethereum/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://www.3afun.com/tags/git/</link>
+      <pubDate>Tue, 22 Apr 2014 19:10:27 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/git/</guid>
       <description></description>
     </item>
     
@@ -92,6 +110,15 @@
     </item>
     
     <item>
+      <title>Jade</title>
+      <link>https://www.3afun.com/tags/jade/</link>
+      <pubDate>Mon, 10 Nov 2014 15:59:27 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/jade/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Java</title>
       <link>https://www.3afun.com/tags/java/</link>
       <pubDate>Thu, 22 Jan 2015 17:31:00 +0800</pubDate>
@@ -101,11 +128,38 @@
     </item>
     
     <item>
+      <title>Javascript</title>
+      <link>https://www.3afun.com/tags/javascript/</link>
+      <pubDate>Mon, 21 Oct 2013 16:16:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://www.3afun.com/tags/linux/</link>
+      <pubDate>Tue, 27 May 2014 10:20:27 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Lua</title>
       <link>https://www.3afun.com/tags/lua/</link>
       <pubDate>Fri, 02 Dec 2016 15:52:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/tags/lua/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lucene</title>
+      <link>https://www.3afun.com/tags/lucene/</link>
+      <pubDate>Wed, 27 Mar 2013 23:19:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/lucene/</guid>
       <description></description>
     </item>
     
@@ -133,60 +187,6 @@
       <pubDate>Fri, 06 Feb 2015 15:25:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/tags/nodejs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Php</title>
-      <link>https://www.3afun.com/tags/php/</link>
-      <pubDate>Thu, 10 Aug 2017 11:32:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/php/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://www.3afun.com/tags/python/</link>
-      <pubDate>Wed, 16 Aug 2017 15:32:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>React</title>
-      <link>https://www.3afun.com/tags/react/</link>
-      <pubDate>Sun, 20 Aug 2017 22:04:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/react/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Saas</title>
-      <link>https://www.3afun.com/tags/saas/</link>
-      <pubDate>Wed, 27 Sep 2017 10:51:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/saas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Spring Mvc</title>
-      <link>https://www.3afun.com/tags/spring-mvc/</link>
-      <pubDate>Thu, 10 Sep 2015 17:32:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/spring-mvc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Squid</title>
-      <link>https://www.3afun.com/tags/squid/</link>
-      <pubDate>Tue, 14 Jun 2016 17:47:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/squid/</guid>
       <description></description>
     </item>
     
