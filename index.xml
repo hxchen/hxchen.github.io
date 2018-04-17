@@ -484,8 +484,9 @@ contract TokenERC20 {
 
 &lt;h2 id=&#34;全部代码&#34;&gt;全部代码&lt;/h2&gt;
 
-&lt;p&gt;如果你打算添加所有高级的高能,下面是最终代码:
-注意:原示例中存在几处bug已经修正。&lt;/p&gt;
+&lt;p&gt;如果你打算添加所有高级的高能,下面是最终代码:&lt;/p&gt;
+
+&lt;p&gt;注意:原示例中存在几处bug已经修正。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;pragma solidity ^0.4.16;
 
@@ -740,7 +741,8 @@ contract MyAdvancedToken is owned, TokenERC20 {
 
 &lt;h2 id=&#34;部署&#34;&gt;部署&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/imges/2018/deploy.png&#34; alt=&#34;deplpy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;复制修正后代码到部署界面,选择My Advanced Token,填写相应的参数,发布即可。
+&lt;img src=&#34;https://www.3afun.com/media/images/2018/deploy11.png&#34; alt=&#34;deplpy&#34; /&gt;&lt;/p&gt;
 </description>
       
     </item>
