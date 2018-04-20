@@ -479,7 +479,11 @@ contract TokenERC20 {
     }
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;buy函数中我们增加了一个payable关键字,表示调用者可以直接向该函数传入以太币进行调用。&lt;/p&gt;
+
 &lt;p&gt;注意:买入和卖出价格并不是以Ether为单位,而是以wei(最小货币精度)为单位。1Ether = 1000000000000000000 wei。所以当在Ether中设置价格时,后面需要加18个0.&lt;/p&gt;
+
+&lt;p&gt;不明白的话,可以看后面的Sell Buy 测试数据。&lt;/p&gt;
 
 &lt;p&gt;当创建合约时,要发送足够的Ether以确保能买回来市场上所有的代币,否则你的合约会破产并且你的用户不能卖出他们的代币。&lt;/p&gt;
 
@@ -853,7 +857,7 @@ contract MyAdvancedToken is owned, TokenERC20 {
     }
 
     /**
-     * 使用以太币购买代币
+     * 使用以太币购买代币,通过增加关键字 payable 我们就可以从任何账户接受以太币来调用这个函数。
      */
     function buy() payable public {
       uint amount = msg.value / buyPrice;
@@ -882,6 +886,282 @@ contract MyAdvancedToken is owned, TokenERC20 {
 
 &lt;p&gt;复制修正后代码到部署界面,选择My Advanced Token,填写相应的参数,发布即可。
 &lt;img src=&#34;https://www.3afun.com/media/images/2018/deploy11.png&#34; alt=&#34;deplpy&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;测试&#34;&gt;测试&lt;/h2&gt;
+
+&lt;h3 id=&#34;准备&#34;&gt;准备&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;账号&lt;/th&gt;
+&lt;th&gt;地址&lt;/th&gt;
+&lt;th&gt;CoolCoin&lt;/th&gt;
+&lt;th&gt;Ether&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Main account&lt;/td&gt;
+&lt;td&gt;0x914995c9c3c993C9D3Fdd63602c91823F932b308&lt;/td&gt;
+&lt;td&gt;9800&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Account 2&lt;/td&gt;
+&lt;td&gt;0x30Ed8Cd207dfdAF5E24847252DF822b1DA1F2FE5&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Account 3&lt;/td&gt;
+&lt;td&gt;0x379f0f61dF4D9009C1AB7BDEA409F5465b5D940c&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Account 4&lt;/td&gt;
+&lt;td&gt;0xc2298C3398584aaB380fafb564037D9Fb910e0a1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;1-set-prices-测试&#34;&gt;1.Set prices 测试&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;实验:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;在合约管理界面,通过Set Prices函数,我们可以设置&lt;/p&gt;
+
+&lt;p&gt;New sell price =  1&lt;/p&gt;
+
+&lt;p&gt;New buy price = 2&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;结果&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;等到同步一个区块后,发现管理界面Sell price 和 Buy Price已经更新。&lt;/p&gt;
+
+&lt;h3 id=&#34;2-approve-allowance-transfer-from-测试&#34;&gt;2.Approve &amp;amp; Allowance &amp;amp;Transfer From 测试&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;实验1:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;通过账户2授权10个CoolCoin给账户3&lt;/p&gt;
+
+&lt;p&gt;Approve(Account2, 100)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin01.png&#34; alt=&#34;cool coin&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;结果:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;通过Allowance查看账户2拥有账户3的授权额度&lt;/p&gt;
+
+&lt;p&gt;Allowance(Account 2, Account 3) = 10&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin02.png&#34; alt=&#34;cool coin&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;实验2:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;通过Transfer From函数,账户3将账户2账户的10个Cool Coin转给账户4&lt;/p&gt;
+
+&lt;p&gt;Transfer From(Account2, Account4,10)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin03.png&#34; alt=&#34;cool coin&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;结果:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Balance of(Account2) = 90&lt;/p&gt;
+
+&lt;p&gt;Balance of(Account4) = 10&lt;/p&gt;
+
+&lt;p&gt;Allowance(Account 2, Account 3) = 0&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;账号&lt;/th&gt;
+&lt;th&gt;地址&lt;/th&gt;
+&lt;th&gt;CoolCoin&lt;/th&gt;
+&lt;th&gt;Ether&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Main account&lt;/td&gt;
+&lt;td&gt;0x914995c9c3c993C9D3Fdd63602c91823F932b308&lt;/td&gt;
+&lt;td&gt;9800&lt;/td&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Account 2&lt;/td&gt;
+&lt;td&gt;0x30Ed8Cd207dfdAF5E24847252DF822b1DA1F2FE5&lt;/td&gt;
+&lt;td&gt;90&lt;/td&gt;
+&lt;td&gt;0,999212698&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Account 3&lt;/td&gt;
+&lt;td&gt;0x379f0f61dF4D9009C1AB7BDEA409F5465b5D940c&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Account 4&lt;/td&gt;
+&lt;td&gt;0xc2298C3398584aaB380fafb564037D9Fb910e0a1&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;其他条件测试可自行进行。&lt;/p&gt;
+
+&lt;h3 id=&#34;3-burn-测试&#34;&gt;3.Burn 测试&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;实验&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;销毁账户4的5个Cool Coin&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin04.png&#34; alt=&#34;cool coin&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;结果&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;账户4 还剩下5个Cool Coin,Total supply 同步也会减少5个。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin05.png&#34; alt=&#34;cool coin&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;4-mint-token-测试&#34;&gt;4.Mint Token 测试&lt;/h3&gt;
+
+&lt;p&gt;账户4挖5个Cool Coin&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin06.png&#34; alt=&#34;cool coin&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;结果&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;账户4 此时有10个Cool Coin&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin07.png&#34; alt=&#34;cool coin&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;5-burn-from-测试&#34;&gt;5.Burn From 测试&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;实验&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;账户2通过Burn From函数销毁账户3的 10个CoolCoin&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin08.png&#34; alt=&#34;cool coin&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;结果&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;执行失败,原因是账户2不具有账户3的授权额度。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin09.png&#34; alt=&#34;cool coin&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;那么我们可以将账户3的20个币授权给账户2再重新试一下&lt;/p&gt;
+
+&lt;p&gt;授权&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin10.png&#34; alt=&#34;cool coin&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;此时有Allowance(Account3, Account2)=20&lt;/p&gt;
+
+&lt;p&gt;现在我们再次使用账户2来销毁账户3的10个币试一下&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin11.png&#34; alt=&#34;cool coin&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;现在可以成功销毁账户3的10个币了&lt;/p&gt;
+
+&lt;p&gt;此时有Allowance(Account3, Account2)=10&lt;/p&gt;
+
+&lt;p&gt;当我们尝试再次销毁20个的时候,发现区块链拒绝我们的服务,但是我们销毁10个的话,还是可以允许的。&lt;/p&gt;
+
+&lt;h3 id=&#34;6-buy测试&#34;&gt;6.Buy测试&lt;/h3&gt;
+
+&lt;p&gt;通过Set prices 测试,我们已经完成的设置有:&lt;/p&gt;
+
+&lt;p&gt;Buy Price = 1&lt;/p&gt;
+
+&lt;p&gt;Sell price = 2&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;实验&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;由于现在Cool Coin的管理界面账户里是没有Ether的,所以我们只能先用账户4来购买一些以太币。&lt;/p&gt;
+
+&lt;p&gt;1.主账户发送100Ether给账户4&lt;/p&gt;
+
+&lt;p&gt;2.测试账户4有100,890236054 ETHER和20个CoolCoin,现在我们使用账户4的10个Ether来购买CoolCoin。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin12.png&#34; alt=&#34;cool coin&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;3.&lt;strong&gt;注意:我们购买代币,并不是从合约管理员Owner来扣除相应的代币,而是从合约地址来购买代币。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;所以我们需要先给合约地址充值代币,才能允许其他用户来购买,否则其他用户向一个代币为0的&amp;rdquo;央行&amp;rdquo;购买,是会购买不到。&lt;/p&gt;
+
+&lt;p&gt;在此我们使用Mint Token函数来给合约地址 0x63b5047Decd4501d4eb3bb7b30e3da89cE37c2f5 充值 100万个。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin13.png&#34; alt=&#34;cool coin&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;4.现在我们的&amp;rdquo;央行&amp;rdquo;&amp;ndash;CoolCoin(管理界面),拥有0个以太币,100万个Cool Coin&lt;/p&gt;
+
+&lt;p&gt;账户4拥有100.890236054个以太币和20个CoolCoin&lt;/p&gt;
+
+&lt;p&gt;回到合约管理界面,我们尝试使用账户4调用Buy函数,传入10个以太币,看看会发什么。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin14.png&#34; alt=&#34;购买&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;结果&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;没错!!!&lt;/p&gt;
+
+&lt;p&gt;结果正是我们看到的,账户4以太币减少了10个。Cool Coin币增加了5个。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin15.png&#34; alt=&#34;购买&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;同样可查看CoolCoin管理界面多了10个Ether。&lt;/p&gt;
+
+&lt;h3 id=&#34;7-sell-测试&#34;&gt;7.Sell 测试&lt;/h3&gt;
+
+&lt;p&gt;现在更激动人心的来了,我们要进行Sell测试,因为我们订的Buy Price = 2, Sell price = 1。账户4一买一卖我们会净赚一半!!!&lt;/p&gt;
+
+&lt;p&gt;现在我们使用账户4卖出刚才买入的5个CoolCoin:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin16.png&#34; alt=&#34;卖出操作&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;卖出后,我们回到Account 4,发现我们成功卖出5个CoolCoin,得到5个以太币。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin17.png&#34; alt=&#34;卖出操作&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;8-freeze-account-测试&#34;&gt;8.Freeze Account 测试&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;实验&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;1.现在我们进行冻结账户测试,我们选择冻结账户4&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin18.png&#34; alt=&#34;卖出操作&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2.然后账户4授权20个币给账户2.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin19.png&#34; alt=&#34;卖出操作&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;现在我们有&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin20.png&#34; alt=&#34;卖出操作&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;结果&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;为了验证,我们选择使用2将账户4的10个币转账给账户3。结果提示交易会失败,符合预期。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin21.png&#34; alt=&#34;卖出操作&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin22.png&#34; alt=&#34;卖出操作&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;重新解冻后,我们就可以进行上面验证了。&lt;/p&gt;
 </description>
       
     </item>
