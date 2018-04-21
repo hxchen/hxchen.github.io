@@ -230,6 +230,8 @@ public class CoolCoinClient{
 }
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;有关 web3j 更多可参考:&lt;a href=&#34;https://github.com/web3j/web3j&#34; target=&#34;_blank&#34;&gt;web3j&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;全文涉及到的代码, 在&lt;a href=&#34;https://github.com/hxchen/web3&#34; target=&#34;_blank&#34;&gt;这里&lt;/a&gt;&lt;/p&gt;
 </description>
       
