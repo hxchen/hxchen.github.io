@@ -5,10 +5,19 @@
     <link>https://www.3afun.com/categories/ethereum/</link>
     <description>Recent content in Ethereum on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 18 Apr 2018 18:13:20 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 21 Apr 2018 14:27:54 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/categories/ethereum/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>远程调用以太坊智能合约</title>
+      <link>https://www.3afun.com/post/2018/%E8%BF%9C%E7%A8%8B%E8%B0%83%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/</link>
+      <pubDate>Sat, 21 Apr 2018 14:27:54 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/%E8%BF%9C%E7%A8%8B%E8%B0%83%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/</guid>
+      <description>前面我们学习了部署以太坊合约,我们的操作都是在钱包中完成的。 然而当我们面对我们的用户时我们不可能说叫他们安装钱包,然后学习这些复杂操作。 对于</description>
+    </item>
     
     <item>
       <title>以太坊钱包删除合约</title>

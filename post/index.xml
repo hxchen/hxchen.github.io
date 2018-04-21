@@ -5,10 +5,19 @@
     <link>https://www.3afun.com/post/</link>
     <description>Recent content in Posts on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 18 Apr 2018 18:13:20 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 21 Apr 2018 14:27:54 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>远程调用以太坊智能合约</title>
+      <link>https://www.3afun.com/post/2018/%E8%BF%9C%E7%A8%8B%E8%B0%83%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/</link>
+      <pubDate>Sat, 21 Apr 2018 14:27:54 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/%E8%BF%9C%E7%A8%8B%E8%B0%83%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/</guid>
+      <description>前面我们学习了部署以太坊合约,我们的操作都是在钱包中完成的。 然而当我们面对我们的用户时我们不可能说叫他们安装钱包,然后学习这些复杂操作。 对于</description>
+    </item>
     
     <item>
       <title>以太坊钱包删除合约</title>
@@ -179,15 +188,6 @@
       
       <guid>https://www.3afun.com/post/2016/cocosbuilder%E7%94%9F%E6%88%90%E7%9A%84ccbi%E6%96%87%E4%BB%B6%E4%B8%8Elua%E7%9A%84%E4%BA%A4%E4%BA%92/</guid>
       <description>一、添加Control，设置位置。 属性设置如图所示 二、lua代码设置 -- 绑定 loginui[&amp;quot;close_btn&amp;quot;] = handler(self, self.onClose) --响应事件 function AdLayer:onClose() ... end</description>
-    </item>
-    
-    <item>
-      <title>Mac OS Sierra 关机慢的排查思路</title>
-      <link>https://www.3afun.com/post/2016/mac-os-sierra-%E5%85%B3%E6%9C%BA%E6%85%A2%E7%9A%84%E6%8E%92%E6%9F%A5%E6%80%9D%E8%B7%AF/</link>
-      <pubDate>Sat, 26 Nov 2016 20:48:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2016/mac-os-sierra-%E5%85%B3%E6%9C%BA%E6%85%A2%E7%9A%84%E6%8E%92%E6%9F%A5%E6%80%9D%E8%B7%AF/</guid>
-      <description>系统版本10.12.1 之前系统关机是很快，很正常的，不知道什么时候开始，关机后盖子白苹果灯要亮很久。再忍无可忍之后，前往苹果体验店需求帮助，</description>
     </item>
     
   </channel>

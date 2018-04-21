@@ -39,6 +39,78 @@
     </item>
     
     <item>
+      <title>远程调用以太坊智能合约</title>
+      <link>https://www.3afun.com/post/2018/%E8%BF%9C%E7%A8%8B%E8%B0%83%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/</link>
+      <pubDate>Sat, 21 Apr 2018 14:27:54 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/%E8%BF%9C%E7%A8%8B%E8%B0%83%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/</guid>
+      
+        <description>
+
+&lt;p&gt;前面我们学习了部署以太坊合约,我们的操作都是在钱包中完成的。&lt;/p&gt;
+
+&lt;p&gt;然而当我们面对我们的用户时我们不可能说叫他们安装钱包,然后学习这些复杂操作。&lt;/p&gt;
+
+&lt;p&gt;对于普通的用户来说,这太不友好了,那么我们就得继续封装,允许用户在我们的网站或者手机上动动手指就可以完成简单的操作。&lt;/p&gt;
+
+&lt;p&gt;下面我们就学习一下如何用代码的方式替代钱包里的操作来调用智能合约。&lt;/p&gt;
+
+&lt;p&gt;我们重点讲一下两种访问智能合约方式: &lt;strong&gt;web3.js&lt;/strong&gt; 和 &lt;strong&gt;web3j&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;web3-js方式&#34;&gt;web3.js方式&lt;/h1&gt;
+
+&lt;p&gt;如果你还没有安装node js 安装,请先安装node js,此处不再赘述。&lt;/p&gt;
+
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;npm install web3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;代码&#34;&gt;代码&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var Web3 = require(&#39;web3&#39;);
+web3 = new Web3(new Web3.providers.HttpProvider(&amp;quot;http://localhost:8545&amp;quot;));
+var abi = [ { &amp;quot;constant&amp;quot;: false, &amp;quot;inputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;newSellPrice&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;uint256&amp;quot; }, { &amp;quot;name&amp;quot;: &amp;quot;newBuyPrice&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;uint256&amp;quot; } ], &amp;quot;name&amp;quot;: &amp;quot;setPrices&amp;quot;, &amp;quot;outputs&amp;quot;: [], &amp;quot;payable&amp;quot;: false, &amp;quot;stateMutability&amp;quot;: &amp;quot;nonpayable&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;function&amp;quot; }, { &amp;quot;constant&amp;quot;: true, &amp;quot;inputs&amp;quot;: [], &amp;quot;name&amp;quot;: &amp;quot;name&amp;quot;, &amp;quot;outputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;CoolCoin&amp;quot; } ], &amp;quot;payable&amp;quot;: false, &amp;quot;stateMutability&amp;quot;: &amp;quot;view&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;function&amp;quot; }, { &amp;quot;constant&amp;quot;: false, &amp;quot;inputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;_spender&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;address&amp;quot; }, { &amp;quot;name&amp;quot;: &amp;quot;_value&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;uint256&amp;quot; } ], &amp;quot;name&amp;quot;: &amp;quot;approve&amp;quot;, &amp;quot;outputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;success&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;bool&amp;quot; } ], &amp;quot;payable&amp;quot;: false, &amp;quot;stateMutability&amp;quot;: &amp;quot;nonpayable&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;function&amp;quot; }, { &amp;quot;constant&amp;quot;: true, &amp;quot;inputs&amp;quot;: [], &amp;quot;name&amp;quot;: &amp;quot;totalSupply&amp;quot;, &amp;quot;outputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;uint256&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;1.009e+22&amp;quot; } ], &amp;quot;payable&amp;quot;: false, &amp;quot;stateMutability&amp;quot;: &amp;quot;view&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;function&amp;quot; }, { &amp;quot;constant&amp;quot;: false, &amp;quot;inputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;_from&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;address&amp;quot; }, { &amp;quot;name&amp;quot;: &amp;quot;_to&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;address&amp;quot; }, { &amp;quot;name&amp;quot;: &amp;quot;_value&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;uint256&amp;quot; } ], &amp;quot;name&amp;quot;: &amp;quot;transferFrom&amp;quot;, &amp;quot;outputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;success&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;bool&amp;quot; } ], &amp;quot;payable&amp;quot;: false, &amp;quot;stateMutability&amp;quot;: &amp;quot;nonpayable&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;function&amp;quot; }, { &amp;quot;constant&amp;quot;: true, &amp;quot;inputs&amp;quot;: [], &amp;quot;name&amp;quot;: &amp;quot;decimals&amp;quot;, &amp;quot;outputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;uint8&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;18&amp;quot; } ], &amp;quot;payable&amp;quot;: false, &amp;quot;stateMutability&amp;quot;: &amp;quot;view&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;function&amp;quot; }, { &amp;quot;constant&amp;quot;: false, &amp;quot;inputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;_value&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;uint256&amp;quot; } ], &amp;quot;name&amp;quot;: &amp;quot;burn&amp;quot;, &amp;quot;outputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;success&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;bool&amp;quot; } ], &amp;quot;payable&amp;quot;: false, &amp;quot;stateMutability&amp;quot;: &amp;quot;nonpayable&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;function&amp;quot; }, { &amp;quot;constant&amp;quot;: true, &amp;quot;inputs&amp;quot;: [], &amp;quot;name&amp;quot;: &amp;quot;sellPrice&amp;quot;, &amp;quot;outputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;uint256&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;1&amp;quot; } ], &amp;quot;payable&amp;quot;: false, &amp;quot;stateMutability&amp;quot;: &amp;quot;view&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;function&amp;quot; }, { &amp;quot;constant&amp;quot;: true, &amp;quot;inputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;address&amp;quot; } ], &amp;quot;name&amp;quot;: &amp;quot;balanceOf&amp;quot;, &amp;quot;outputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;uint256&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;0&amp;quot; } ], &amp;quot;payable&amp;quot;: false, &amp;quot;stateMutability&amp;quot;: &amp;quot;view&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;function&amp;quot; }, { &amp;quot;constant&amp;quot;: false, &amp;quot;inputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;target&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;address&amp;quot; }, { &amp;quot;name&amp;quot;: &amp;quot;mintedAmount&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;uint256&amp;quot; } ], &amp;quot;name&amp;quot;: &amp;quot;mintToken&amp;quot;, &amp;quot;outputs&amp;quot;: [], &amp;quot;payable&amp;quot;: false, &amp;quot;stateMutability&amp;quot;: &amp;quot;nonpayable&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;function&amp;quot; }, { &amp;quot;constant&amp;quot;: false, &amp;quot;inputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;_from&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;address&amp;quot; }, { &amp;quot;name&amp;quot;: &amp;quot;_value&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;uint256&amp;quot; } ], &amp;quot;name&amp;quot;: &amp;quot;burnFrom&amp;quot;, &amp;quot;outputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;success&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;bool&amp;quot; } ], &amp;quot;payable&amp;quot;: false, &amp;quot;stateMutability&amp;quot;: &amp;quot;nonpayable&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;function&amp;quot; }, { &amp;quot;constant&amp;quot;: true, &amp;quot;inputs&amp;quot;: [], &amp;quot;name&amp;quot;: &amp;quot;buyPrice&amp;quot;, &amp;quot;outputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;uint256&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;2&amp;quot; } ], &amp;quot;payable&amp;quot;: false, &amp;quot;stateMutability&amp;quot;: &amp;quot;view&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;function&amp;quot; }, { &amp;quot;constant&amp;quot;: true, &amp;quot;inputs&amp;quot;: [], &amp;quot;name&amp;quot;: &amp;quot;owner&amp;quot;, &amp;quot;outputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;address&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;0x914995c9c3c993c9d3fdd63602c91823f932b308&amp;quot; } ], &amp;quot;payable&amp;quot;: false, &amp;quot;stateMutability&amp;quot;: &amp;quot;view&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;function&amp;quot; }, { &amp;quot;constant&amp;quot;: true, &amp;quot;inputs&amp;quot;: [], &amp;quot;name&amp;quot;: &amp;quot;symbol&amp;quot;, &amp;quot;outputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;c&amp;quot; } ], &amp;quot;payable&amp;quot;: false, &amp;quot;stateMutability&amp;quot;: &amp;quot;view&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;function&amp;quot; }, { &amp;quot;constant&amp;quot;: false, &amp;quot;inputs&amp;quot;: [], &amp;quot;name&amp;quot;: &amp;quot;buy&amp;quot;, &amp;quot;outputs&amp;quot;: [], &amp;quot;payable&amp;quot;: true, &amp;quot;stateMutability&amp;quot;: &amp;quot;payable&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;function&amp;quot; }, { &amp;quot;constant&amp;quot;: false, &amp;quot;inputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;_to&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;address&amp;quot; }, { &amp;quot;name&amp;quot;: &amp;quot;_value&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;uint256&amp;quot; } ], &amp;quot;name&amp;quot;: &amp;quot;transfer&amp;quot;, &amp;quot;outputs&amp;quot;: [], &amp;quot;payable&amp;quot;: false, &amp;quot;stateMutability&amp;quot;: &amp;quot;nonpayable&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;function&amp;quot; }, { &amp;quot;constant&amp;quot;: true, &amp;quot;inputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;address&amp;quot; } ], &amp;quot;name&amp;quot;: &amp;quot;frozenAccount&amp;quot;, &amp;quot;outputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;bool&amp;quot;, &amp;quot;value&amp;quot;: false } ], &amp;quot;payable&amp;quot;: false, &amp;quot;stateMutability&amp;quot;: &amp;quot;view&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;function&amp;quot; }, { &amp;quot;constant&amp;quot;: false, &amp;quot;inputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;_spender&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;address&amp;quot; }, { &amp;quot;name&amp;quot;: &amp;quot;_value&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;uint256&amp;quot; }, { &amp;quot;name&amp;quot;: &amp;quot;_extraData&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;bytes&amp;quot; } ], &amp;quot;name&amp;quot;: &amp;quot;approveAndCall&amp;quot;, &amp;quot;outputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;success&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;bool&amp;quot; } ], &amp;quot;payable&amp;quot;: false, &amp;quot;stateMutability&amp;quot;: &amp;quot;nonpayable&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;function&amp;quot; }, { &amp;quot;constant&amp;quot;: true, &amp;quot;inputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;address&amp;quot; }, { &amp;quot;name&amp;quot;: &amp;quot;&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;address&amp;quot; } ], &amp;quot;name&amp;quot;: &amp;quot;allowance&amp;quot;, &amp;quot;outputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;uint256&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;0&amp;quot; } ], &amp;quot;payable&amp;quot;: false, &amp;quot;stateMutability&amp;quot;: &amp;quot;view&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;function&amp;quot; }, { &amp;quot;constant&amp;quot;: false, &amp;quot;inputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;amount&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;uint256&amp;quot; } ], &amp;quot;name&amp;quot;: &amp;quot;sell&amp;quot;, &amp;quot;outputs&amp;quot;: [], &amp;quot;payable&amp;quot;: false, &amp;quot;stateMutability&amp;quot;: &amp;quot;nonpayable&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;function&amp;quot; }, { &amp;quot;constant&amp;quot;: false, &amp;quot;inputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;target&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;address&amp;quot; }, { &amp;quot;name&amp;quot;: &amp;quot;freeze&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;bool&amp;quot; } ], &amp;quot;name&amp;quot;: &amp;quot;freezeAccount&amp;quot;, &amp;quot;outputs&amp;quot;: [], &amp;quot;payable&amp;quot;: false, &amp;quot;stateMutability&amp;quot;: &amp;quot;nonpayable&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;function&amp;quot; }, { &amp;quot;constant&amp;quot;: false, &amp;quot;inputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;newOwner&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;address&amp;quot; } ], &amp;quot;name&amp;quot;: &amp;quot;transferOwnership&amp;quot;, &amp;quot;outputs&amp;quot;: [], &amp;quot;payable&amp;quot;: false, &amp;quot;stateMutability&amp;quot;: &amp;quot;nonpayable&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;function&amp;quot; }, { &amp;quot;inputs&amp;quot;: [ { &amp;quot;name&amp;quot;: &amp;quot;initialSupply&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;uint256&amp;quot;, &amp;quot;index&amp;quot;: 0, &amp;quot;typeShort&amp;quot;: &amp;quot;uint&amp;quot;, &amp;quot;bits&amp;quot;: &amp;quot;256&amp;quot;, &amp;quot;displayName&amp;quot;: &amp;quot;initial Supply&amp;quot;, &amp;quot;template&amp;quot;: &amp;quot;elements_input_uint&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;&amp;quot; }, { &amp;quot;name&amp;quot;: &amp;quot;tokenName&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;index&amp;quot;: 1, &amp;quot;typeShort&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;bits&amp;quot;: &amp;quot;&amp;quot;, &amp;quot;displayName&amp;quot;: &amp;quot;token Name&amp;quot;, &amp;quot;template&amp;quot;: &amp;quot;elements_input_string&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;&amp;quot; }, { &amp;quot;name&amp;quot;: &amp;quot;tokenSymbol&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;index&amp;quot;: 2, &amp;quot;typeShort&amp;quot;: &amp;quot;string&amp;quot;, &amp;quot;bits&amp;quot;: &amp;quot;&amp;quot;, &amp;quot;displayName&amp;quot;: &amp;quot;token Symbol&amp;quot;, &amp;quot;template&amp;quot;: &amp;quot;elements_input_string&amp;quot;, &amp;quot;value&amp;quot;: &amp;quot;&amp;quot; } ], &amp;quot;payable&amp;quot;: false, &amp;quot;stateMutability&amp;quot;: &amp;quot;nonpayable&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;constructor&amp;quot; }, { &amp;quot;anonymous&amp;quot;: false, &amp;quot;inputs&amp;quot;: [ { &amp;quot;indexed&amp;quot;: false, &amp;quot;name&amp;quot;: &amp;quot;target&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;address&amp;quot; }, { &amp;quot;indexed&amp;quot;: false, &amp;quot;name&amp;quot;: &amp;quot;frozen&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;bool&amp;quot; } ], &amp;quot;name&amp;quot;: &amp;quot;FrozenFunds&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;event&amp;quot; }, { &amp;quot;anonymous&amp;quot;: false, &amp;quot;inputs&amp;quot;: [ { &amp;quot;indexed&amp;quot;: true, &amp;quot;name&amp;quot;: &amp;quot;from&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;address&amp;quot; }, { &amp;quot;indexed&amp;quot;: true, &amp;quot;name&amp;quot;: &amp;quot;to&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;address&amp;quot; }, { &amp;quot;indexed&amp;quot;: false, &amp;quot;name&amp;quot;: &amp;quot;value&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;uint256&amp;quot; } ], &amp;quot;name&amp;quot;: &amp;quot;Transfer&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;event&amp;quot; }, { &amp;quot;anonymous&amp;quot;: false, &amp;quot;inputs&amp;quot;: [ { &amp;quot;indexed&amp;quot;: true, &amp;quot;name&amp;quot;: &amp;quot;from&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;address&amp;quot; }, { &amp;quot;indexed&amp;quot;: false, &amp;quot;name&amp;quot;: &amp;quot;value&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;uint256&amp;quot; } ], &amp;quot;name&amp;quot;: &amp;quot;Burn&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;event&amp;quot; } ];
+var address = &amp;quot;0x63b5047Decd4501d4eb3bb7b30e3da89cE37c2f5&amp;quot;;
+var coolcoin = new web3.eth.Contract(abi);
+coolcoin.options.address = address;
+coolcoin.methods.balanceOf(&#39;0xc2298C3398584aaB380fafb564037D9Fb910e0a1&#39;).call({from: address}, function(error, result){
+    console.log(result);
+});
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;代码讲解&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;第1行代码我们引入了web3的库。&lt;/p&gt;
+
+&lt;p&gt;第2行代码设置服务器。&lt;/p&gt;
+
+&lt;p&gt;第3行代码设置ABI（Application Binary Interface）: 应用程序二进制接口。这里的ABI我们可以在钱包界面,点击显示界面,复制其中的JSon格式数据即可。
+里面主要订了我们合约内容。&lt;/p&gt;
+
+&lt;p&gt;第4行填写合约地址。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/rpc01.png&#34; alt=&#34;rpc&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;第5、6行通过abi和address获取合约。&lt;/p&gt;
+
+&lt;p&gt;最后我们以异步方式调用&lt;code&gt;balanceOf&lt;/code&gt;方法,该方法使用了address来查询地址&lt;code&gt;0xc2298C3398584aaB380fafb564037D9Fb910e0a1&lt;/code&gt;有多少个Cool Coin。&lt;/p&gt;
+
+&lt;p&gt;大家可以通过执行该方法对比Mist钱包查询,自行验证余额是否一致。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;node CoolCoin.js
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;有关 web3 更多 API可参考 :
+&lt;a href=&#34;https://web3js.readthedocs.io/en/1.0/getting-started.html&#34; target=&#34;_blank&#34;&gt;这里&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;web3j方式&#34;&gt;web3j方式&lt;/h1&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>以太坊钱包删除合约</title>
       <link>https://www.3afun.com/post/2018/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E9%92%B1%E5%8C%85%E5%88%A0%E9%99%A4%E5%90%88%E7%BA%A6/</link>
       <pubDate>Wed, 18 Apr 2018 18:13:20 +0800</pubDate>
@@ -2512,35 +2584,6 @@ account = client.accounts(id=ACCOUNT_ID)
 # iterate through campaigns
 for campaign in account.campaigns():
     print(campaign.name)
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>CocosBuilder生成的ccbi文件与lua的交互</title>
-      <link>https://www.3afun.com/post/2016/cocosbuilder%E7%94%9F%E6%88%90%E7%9A%84ccbi%E6%96%87%E4%BB%B6%E4%B8%8Elua%E7%9A%84%E4%BA%A4%E4%BA%92/</link>
-      <pubDate>Fri, 02 Dec 2016 15:52:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2016/cocosbuilder%E7%94%9F%E6%88%90%E7%9A%84ccbi%E6%96%87%E4%BB%B6%E4%B8%8Elua%E7%9A%84%E4%BA%A4%E4%BA%92/</guid>
-      
-        <description>
-
-&lt;h1 id=&#34;一-添加control-设置位置&#34;&gt;一、添加Control，设置位置。&lt;/h1&gt;
-
-&lt;p&gt;属性设置如图所示
-&lt;img src=&#34;https://www.3afun.com/media/images/2016/cocos.png&#34; alt=&#34;cocos builder ui&#34; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;二-lua代码设置&#34;&gt;二、lua代码设置&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;-- 绑定
-loginui[&amp;quot;close_btn&amp;quot;] = handler(self, self.onClose)
-
-
---响应事件
-function AdLayer:onClose()
-    ...
-end
 &lt;/code&gt;&lt;/pre&gt;
 </description>
       
