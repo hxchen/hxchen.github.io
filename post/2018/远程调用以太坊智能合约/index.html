@@ -385,7 +385,7 @@ public class CoolCoinClient{
             Credentials credentials = Credentials.create(account);
             //合约地址
             String address=&quot;0xd69A0599df3C0dd9ACAa0a9E47365730E9f4ee99&quot;;
-            CoolCoin coolCoin = CoolCoin.load(address,web3j,credentials, Contract.GAS_PRICE,Contract.GAS_PRICE);
+            CoolCoin coolCoin = CoolCoin.load(address,web3j,credentials, Contract.GAS_PRICE,Contract.Contract.GAS_LIMIT);
             //待查询余额的账户地址
             String account2 = &quot;0xc2298C3398584aaB380fafb564037D9Fb910e0a1&quot;;
             RemoteCall remoteCall= coolCoin.balanceOf(account);
