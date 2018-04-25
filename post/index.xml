@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Tue, 24 Apr 2018 22:23:11 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 25 Apr 2018 22:15:37 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Intellij Solidity智能合约开发插件</title>
+      <link>https://www.3afun.com/post/2018/intellij-solidity%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E6%8F%92%E4%BB%B6/</link>
+      <pubDate>Wed, 25 Apr 2018 22:15:37 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/intellij-solidity%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E6%8F%92%E4%BB%B6/</guid>
+      <description>选择菜单栏Intellij IDEA -&amp;gt; Preferences -&amp;gt; Plugins -&amp;gt; Browse repositories, 然后搜索Intellij-Solidity安装,重启Intellij IDEA即可生效。</description>
+    </item>
     
     <item>
       <title>如何同步一个fork</title>
@@ -180,15 +189,6 @@
       
       <guid>https://www.3afun.com/post/2017/python%E5%88%A9%E7%94%A8beautifulsoup%E6%8A%93%E5%8F%96%E8%A7%A3%E6%9E%90%E7%BD%91%E9%A1%B5%E6%95%B0%E6%8D%AE/</guid>
       <description>网页UI以及HTML组织形式，目的是抓取网页数据并解析。 &amp;lt;div class=&amp;quot;clan__table&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;clan__headers&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Rank&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Name&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Level&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;League&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Trophies&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Donations&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Role&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__rowContainer&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;clan__row&amp;quot;&amp;gt; #1 &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__row&amp;quot;&amp;gt; &amp;lt;a class=&amp;quot;ui__blueLink&amp;quot; href=&amp;quot;/p</description>
-    </item>
-    
-    <item>
-      <title>多版本Python下执行Twitter Ads API</title>
-      <link>https://www.3afun.com/post/2017/%E5%A4%9A%E7%89%88%E6%9C%ACpython%E4%B8%8B%E6%89%A7%E8%A1%8Ctwitter-ads-api/</link>
-      <pubDate>Wed, 29 Mar 2017 10:53:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2017/%E5%A4%9A%E7%89%88%E6%9C%ACpython%E4%B8%8B%E6%89%A7%E8%A1%8Ctwitter-ads-api/</guid>
-      <description>Twitter-API 地址 https://github.com/twitterdev/twitter-python-ads-sdk Mac电脑自带了Python2.7版本，Twitter在改版本下脚本是可执行的。但是我更想使用Python3，于是在电脑安装了Pyt</description>
     </item>
     
   </channel>

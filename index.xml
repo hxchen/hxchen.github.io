@@ -40,6 +40,22 @@
     </item>
     
     <item>
+      <title>Intellij Solidity智能合约开发插件</title>
+      <link>https://www.3afun.com/post/2018/intellij-solidity%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E6%8F%92%E4%BB%B6/</link>
+      <pubDate>Wed, 25 Apr 2018 22:15:37 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/intellij-solidity%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E6%8F%92%E4%BB%B6/</guid>
+      
+        <description>&lt;p&gt;选择菜单栏Intellij IDEA -&amp;gt; Preferences -&amp;gt; Plugins -&amp;gt; Browse repositories, 然后搜索&lt;code&gt;Intellij-Solidity&lt;/code&gt;安装,重启Intellij IDEA即可生效。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/plugins01.png&#34; alt=&#34;plugins&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/plugins02.png&#34; alt=&#34;plugins&#34; /&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>如何同步一个fork</title>
       <link>https://www.3afun.com/post/2018/syncing-a-fork/</link>
       <pubDate>Tue, 24 Apr 2018 22:23:11 +0800</pubDate>
@@ -2640,111 +2656,6 @@ mv composer.phar /usr/local/bin/composer
 &lt;p&gt;这种情况下可以使用 nginx -c，具体如下（nginx.conf位置自行替换）&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;nginx -c /etc/nginx/nginx.conf
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>Python利用BeautifulSoup抓取解析网页数据</title>
-      <link>https://www.3afun.com/post/2017/python%E5%88%A9%E7%94%A8beautifulsoup%E6%8A%93%E5%8F%96%E8%A7%A3%E6%9E%90%E7%BD%91%E9%A1%B5%E6%95%B0%E6%8D%AE/</link>
-      <pubDate>Wed, 10 May 2017 14:22:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2017/python%E5%88%A9%E7%94%A8beautifulsoup%E6%8A%93%E5%8F%96%E8%A7%A3%E6%9E%90%E7%BD%91%E9%A1%B5%E6%95%B0%E6%8D%AE/</guid>
-      
-        <description>&lt;p&gt;网页UI以及HTML组织形式，目的是抓取网页数据并解析。
-&lt;img src=&#34;https://www.3afun.com/media/images/2017/python_01.png&#34; alt=&#34;UI&#34; /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&amp;quot;clan__table&amp;quot;&amp;gt;
-      &amp;lt;div class=&amp;quot;clan__headers&amp;quot;&amp;gt;
-        &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Rank&amp;lt;/div&amp;gt;
-        &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Name&amp;lt;/div&amp;gt;
-        &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Level&amp;lt;/div&amp;gt;
-        &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;League&amp;lt;/div&amp;gt;
-        &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Trophies&amp;lt;/div&amp;gt;
-        &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Donations&amp;lt;/div&amp;gt;
-        &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Role&amp;lt;/div&amp;gt;
-      &amp;lt;/div&amp;gt;
-
-
-      &amp;lt;div class=&amp;quot;clan__rowContainer&amp;quot;&amp;gt;
-        &amp;lt;div class=&amp;quot;clan__row&amp;quot;&amp;gt;
-                            #1
-                    &amp;lt;/div&amp;gt;
-        &amp;lt;div class=&amp;quot;clan__row&amp;quot;&amp;gt;
-          &amp;lt;a class=&amp;quot;ui__blueLink&amp;quot; href=&amp;quot;/profile/2P0V2CCY&amp;quot;&amp;gt;北斗&amp;lt;/a&amp;gt;
-        &amp;lt;/div&amp;gt;
-        &amp;lt;div class=&amp;quot;clan__row&amp;quot;&amp;gt;
-          &amp;lt;span class=&amp;quot;clan__playerLevel&amp;quot;&amp;gt;11&amp;lt;/span&amp;gt;
-        &amp;lt;/div&amp;gt;
-        &amp;lt;div class=&amp;quot;clan__row&amp;quot;&amp;gt;
-          &amp;lt;div class=&amp;quot;clan__leagueContainer&amp;quot;&amp;gt;
-                            &amp;lt;div class=&amp;quot;league__2&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
-          &amp;lt;/div&amp;gt;
-        &amp;lt;/div&amp;gt;
-        &amp;lt;div class=&amp;quot;clan__row&amp;quot;&amp;gt;
-          &amp;lt;div class=&amp;quot;clan__cup&amp;quot;&amp;gt;4438&amp;lt;/div&amp;gt;
-        &amp;lt;/div&amp;gt;
-        &amp;lt;div class=&amp;quot;clan__row&amp;quot;&amp;gt;379&amp;lt;/div&amp;gt;
-        &amp;lt;div class=&amp;quot;clan__row&amp;quot;&amp;gt;
-             Leader
-        &amp;lt;/div&amp;gt;
-      &amp;lt;/div&amp;gt;
-
-
-      &amp;lt;div class=&amp;quot;clan__rowContainer&amp;quot;&amp;gt;
-        &amp;lt;div class=&amp;quot;clan__row&amp;quot;&amp;gt;
-                            #2
-                    &amp;lt;/div&amp;gt;
-        &amp;lt;div class=&amp;quot;clan__row&amp;quot;&amp;gt;
-          &amp;lt;a class=&amp;quot;ui__blueLink&amp;quot; href=&amp;quot;/profile/9UURJRQU&amp;quot;&amp;gt;wglj&amp;lt;/a&amp;gt;
-        &amp;lt;/div&amp;gt;
-        &amp;lt;div class=&amp;quot;clan__row&amp;quot;&amp;gt;
-          &amp;lt;span class=&amp;quot;clan__playerLevel&amp;quot;&amp;gt;12&amp;lt;/span&amp;gt;
-        &amp;lt;/div&amp;gt;
-        &amp;lt;div class=&amp;quot;clan__row&amp;quot;&amp;gt;
-          &amp;lt;div class=&amp;quot;clan__leagueContainer&amp;quot;&amp;gt;
-                            &amp;lt;div class=&amp;quot;league__2&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
-           &amp;lt;/div&amp;gt;
-        &amp;lt;/div&amp;gt;
-        &amp;lt;div class=&amp;quot;clan__row&amp;quot;&amp;gt;
-          &amp;lt;div class=&amp;quot;clan__cup&amp;quot;&amp;gt;4344&amp;lt;/div&amp;gt;
-        &amp;lt;/div&amp;gt;
-        &amp;lt;div class=&amp;quot;clan__row&amp;quot;&amp;gt;498&amp;lt;/div&amp;gt;
-        &amp;lt;div class=&amp;quot;clan__row&amp;quot;&amp;gt;
-             Co-Leader
-        &amp;lt;/div&amp;gt;
-      &amp;lt;/div&amp;gt;
-
-
-&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2017/python_02.png&#34; alt=&#34;UI&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;通过查看页面源代码，我们发现每一个玩家信息都是存储在一个class为clan__rowContainer的div中。&lt;/p&gt;
-
-&lt;p&gt;那么我们就可以通过soup的finaAll选择器来获取所有行的玩家信息，然后遍历挨个解析玩家数据。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;for i, row in enumerate(soup.findAll(&amp;quot;div&amp;quot;,attrs = {&amp;quot;class&amp;quot;:&amp;quot;clan__rowContainer&amp;quot;})):
-        user_dict = {}
-        for j,col in enumerate(row.findAll(&amp;quot;div&amp;quot;,attrs = {&amp;quot;class&amp;quot;:&amp;quot;clan__row&amp;quot;})):
-            if j == 0:
-                user_dict[&amp;quot;rank&amp;quot;] = col.string.strip().replace(&amp;quot;#&amp;quot;,&amp;quot;&amp;quot;)
-            elif j == 1:
-                user_dict[&amp;quot;name&amp;quot;] = col.a.string.strip()
-                user_dict[&amp;quot;uid&amp;quot;] = col.a.get(&amp;quot;href&amp;quot;).strip(&amp;quot;/profile/&amp;quot;)
-            elif j == 2:
-                user_dict[&amp;quot;level&amp;quot;] = col.span.string.strip()
-            elif j == 3:
-                user_dict[&amp;quot;league&amp;quot;] = col.contents[1].div.get(&amp;quot;class&amp;quot;)[0].replace(&amp;quot;league__&amp;quot;,&amp;quot;&amp;quot;)
-            elif j == 4:
-                user_dict[&amp;quot;score&amp;quot;] = col.div.string.strip()
-            elif j == 5:
-                user_dict[&amp;quot;donations&amp;quot;] = col.string.strip()
-            elif j == 6:
-                user_dict[&amp;quot;role&amp;quot;] = col.string.strip()
-        print(user_dict)
 &lt;/code&gt;&lt;/pre&gt;
 </description>
       

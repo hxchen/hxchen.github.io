@@ -66,7 +66,7 @@
 
 
 
-<meta property="og:updated_time" content="2014-02-26T11:09:27&#43;08:00"/>
+<meta property="og:updated_time" content="2014-03-05T16:05:27&#43;08:00"/>
 
 
 
@@ -164,6 +164,37 @@
   <section id="posts" class="posts">
     
     
+    
+      <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2014/nginx-location%E8%A7%84%E5%88%99%E6%9B%BF%E6%8D%A2/">nginx location规则替换</a></h1>
+    
+    <div class="post-meta">
+      <span class="post-time"> 2014-03-05 </span>
+      <div class="post-category">
+          
+            <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
+          
+            <a href="/categories/nginx/"> Nginx </a>
+          
+        </div>
+      <span class="more-meta"> 约 126 字 </span>
+      <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      server { listen 80; server_name www.6dgame.com 6dgame.com; location /2013/ { proxy_pass http://127.0.0.1:8081/; } location / { proxy_pass http://127.0.0.1:8080/; } error_page 500 502 503 504 /50x.html; location = /50x.html { root html; } } 对于此种设置方法， 访问：http://54.200.150.182:808
+    </div>
+    <div class="read-more">
+      <a href="/post/2014/nginx-location%E8%A7%84%E5%88%99%E6%9B%BF%E6%8D%A2/" class="read-more-link">阅读全文</a>
+    </div>
+    
+  </div>
+</article>
+
     
       <article class="post bg-white">
   <header class="post-header">
@@ -434,37 +465,6 @@
     </div>
     <div class="read-more">
       <a href="/post/2013/touch%E5%91%BD%E4%BB%A4%E6%9B%B4%E6%96%B0%E7%9B%AE%E5%BD%95%E5%8F%8A%E5%85%B6%E5%AD%90%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E6%97%B6%E9%97%B4/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-    
-      <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2013/javascript-%E4%B8%ADcontains%E6%96%B9%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89/">javascript 中contains方法的定义</a></h1>
-    
-    <div class="post-meta">
-      <span class="post-time"> 2013-10-21 </span>
-      <div class="post-category">
-          
-            <a href="/categories/web%E5%89%8D%E7%AB%AF/"> Web前端 </a>
-          
-            <a href="/categories/javascript/"> JavaScript </a>
-          
-        </div>
-      <span class="more-meta"> 约 69 字 </span>
-      <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      /** * 对大小写敏感的Contains方法 * @param substring * @returns */ String.prototype.contains = function(substring) { return this.indexOf(substring) != -1 ? true:false; }; 使用方法：a.contains(b)&mdash;-a中是否包含b
-    </div>
-    <div class="read-more">
-      <a href="/post/2013/javascript-%E4%B8%ADcontains%E6%96%B9%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89/" class="read-more-link">阅读全文</a>
     </div>
     
   </div>
