@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>智能合约和java智能包装的使用 - 我不是帅才</title>
+  <link rel="alternate" hreflang="en" href="https://www.3afun.com/" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+
+<meta name="author" content="北斗" /><meta name="description" content="Ethereum" />
+<meta name="keywords" content="Ethereum" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.38.2" />
+
+
+<link rel="canonical" href="https://www.3afun.com/post/2018/working-with-smart-contracts-with-java-smart-contract-wrappers/" />
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="智能合约和java智能包装的使用" />
+<meta property="og:description" content="Ethereum" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.3afun.com/post/2018/working-with-smart-contracts-with-java-smart-contract-wrappers/" />
+
+
+
+<meta property="article:published_time" content="2018-04-25T17:34:28&#43;08:00"/>
+
+<meta property="article:modified_time" content="2018-04-25T23:42:28&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="智能合约和java智能包装的使用">
+<meta itemprop="description" content="Ethereum">
+
+
+<meta itemprop="datePublished" content="2018-04-25T17:34:28&#43;08:00" />
+<meta itemprop="dateModified" content="2018-04-25T17:34:28&#43;08:00" />
+<meta itemprop="wordCount" content="2387">
+
+
+
+<meta itemprop="keywords" content="Ethereum," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="智能合约和java智能包装的使用"/>
+<meta name="twitter:description" content="Ethereum"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">我不是帅才</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">我不是帅才</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        
+        <a class="menu-item-link" href="/">首页</a>
+        
+      </li><li class="menu-item">
+        
+        <a class="menu-item-link" href="/post/">归档</a>
+        
+      </li><li class="menu-item">
+        
+        <a class="menu-item-link" href="/tags/">标签</a>
+        
+      </li><li class="menu-item">
+        
+        <a class="menu-item-link" href="/categories/">分类</a>
+        
+      </li><li class="menu-item">
+        
+        <a class="menu-item-link" href="/about/">关于</a>
+        
+      </li>
+  </ul>
+</nav>
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">智能合约和java智能包装的使用</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2018-04-25 </span>
+        <div class="post-category">
+            
+              <a href="/categories/ethereum/"> Ethereum </a>
+            
+          </div>
+        <span class="more-meta"> 约 2387 字 </span>
+        <span class="more-meta"> 预计阅读 5 分钟 </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#安装solidity编译器">安装Solidity编译器</a></li>
+<li><a href="#安装web3j">安装web3j</a>
+<ul>
+<li>
+<ul>
+<li><a href="#智能合约生成bin文件和abi文件">智能合约生成bin文件和abi文件</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<p>本章节我们将学习如何从智能合约代码自动生成与java交换的java代码。</p>
+
+<p>首先我们需要安装Solidity编译器</p>
+
+<h1 id="安装solidity编译器">安装Solidity编译器</h1>
+
+<pre><code class="language-bash">sudo npm install -g solc
+</code></pre>
+
+<p>查看是否安装成功</p>
+
+<pre><code class="language-bash">solcjs --version
+</code></pre>
+
+<h1 id="安装web3j">安装web3j</h1>
+
+<pre><code class="language-bash">brew tap web3j/web3j
+brew install web3j
+</code></pre>
+
+<p>查看web3j是否安装成功</p>
+
+<pre><code>web3j
+</code></pre>
+
+<h3 id="智能合约生成bin文件和abi文件">智能合约生成bin文件和abi文件</h3>
+
+<p>现在我们有如下合约 CoolCoin.sol</p>
+
+<pre><code>pragma solidity 0.4.23;
+interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
+/**
+ * owned 是一个管理者
+ */
+contract owned {
+    address public owner;
+    /**
+     * 初台化构造函数
+     */
+    constructor() public {
+        owner = msg.sender;
+    }
+    /**
+     * 判断当前合约调用者是否是管理员
+     */
+    modifier onlyOwner {
+        require (msg.sender == owner);
+        _;
+    }
+    /**
+     * 指派一个新的管理员
+     * @param  newOwner address 新的管理员帐户地址
+     */
+    function transferOwnership(address newOwner) onlyOwner public{
+        owner = newOwner;
+    }
+}
+/**
+ * @title 基础版的代币合约
+ */
+contract TokenERC20 {
+    /* 公共变量 */
+    string public name; //代币名称
+    string public symbol; //代币符号比如'$'
+    uint8 public decimals = 18;  //代币精度，展示的小数点后面多少个0,和以太币一样后面是是18个0
+    uint256 public totalSupply; //代币总量
+    /*记录所有余额的映射*/
+    mapping (address =&gt; uint256) public balanceOf;
+    mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
+    /* 在区块链上创建一个事件，用以通知客户端*/
+    event Transfer(address indexed from, address indexed to, uint256 value);  //转帐通知事件
+    event Burn(address indexed from, uint256 value);  //减去用户余额事件
+    /* 构造函数
+     * 初始化合约，并且把初始的所有代币都给这合约的创建者
+     * @param initialSupply 代币的总数
+     * @param tokenName 代币名称
+     * @param tokenSymbol 代币符号
+     */
+    constructor(uint256 initialSupply, string tokenName, string tokenSymbol) public {
+        //初始化总量
+        totalSupply = initialSupply * 10 ** uint256(decimals);    //使用精度来更新总量
+        //初始化总量赋值给创建者
+        balanceOf[msg.sender] = totalSupply;
+        name = tokenName;
+        symbol = tokenSymbol;
+    }
+    /**
+     * 私有方法从一个帐户发送给另一个帐户代币，只能合约内部调用
+     * @param  _from address 发送代币的地址
+     * @param  _to address 接受代币的地址
+     * @param  _value uint256 接受代币的数量
+     */
+    function _transfer(address _from, address _to, uint256 _value) internal {
+      //避免转帐的地址是0x0
+      require(_to != 0x0);
+      //检查发送者是否拥有足够余额
+      require(balanceOf[_from] &gt;= _value);
+      //检查是否溢出
+      require(balanceOf[_to] + _value &gt; balanceOf[_to]);
+      //保存数据用于后面的判断
+      uint previousBalances = balanceOf[_from] + balanceOf[_to];
+      //从发送者减掉发送额
+      balanceOf[_from] -= _value;
+      //给接收者加上相同的量
+      balanceOf[_to] += _value;
+      //通知任何监听该交易的客户端
+      emit Transfer(_from, _to, _value);
+      //判断买、卖双方的数据是否和转换前一致
+      assert(balanceOf[_from] + balanceOf[_to] == previousBalances);
+    }
+    /**
+     * 从主帐户合约调用者发送给别人代币
+     * @param  _to address 接受代币的地址
+     * @param  _value uint256 接受代币的数量
+     */
+    function transfer(address _to, uint256 _value) public {
+        _transfer(msg.sender, _to, _value);
+    }
+    /**
+     * 从某个指定的帐户中，向另一个帐户发送代币
+     *
+     * 调用过程，会检查设置的允许最大交易额
+     *
+     * @param  _from address 发送者地址
+     * @param  _to address 接受者地址
+     * @param  _value uint256 要转移的代币数量
+     * @return success        是否交易成功
+     */
+    function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
+        //检查发送者是否拥有足够余额
+        require(_value &lt;= allowance[_from][msg.sender]);   // Check allowance
+        allowance[_from][msg.sender] -= _value;
+        _transfer(_from, _to, _value);
+        return true;
+    }
+    /**
+     * 设置帐户允许支付的最大金额
+     *
+     * 一般在智能合约的时候，避免支付过多，造成风险
+     *
+     * @param _spender 帐户地址
+     * @param _value 金额
+     */
+    function approve(address _spender, uint256 _value) public returns (bool success) {
+        allowance[msg.sender][_spender] = _value;
+        return true;
+    }
+    /**
+     * 设置帐户允许支付的最大金额
+     *
+     * 一般在智能合约的时候，避免支付过多，造成风险，加入时间参数，可以在 tokenRecipient 中做其他操作
+     *
+     * @param _spender 帐户地址
+     * @param _value 金额
+     * @param _extraData 操作的时间
+     */
+    function approveAndCall(address _spender, uint256 _value, bytes _extraData) public returns (bool success) {
+        tokenRecipient spender = tokenRecipient(_spender);
+        if (approve(_spender, _value)) {
+            spender.receiveApproval(msg.sender, _value, this, _extraData);
+            return true;
+        }
+    }
+    /**
+     * 减少代币调用者的余额
+     *
+     * 操作以后是不可逆的
+     *
+     * @param _value 要删除的数量
+     */
+    function burn(uint256 _value) public returns (bool success) {
+        //检查帐户余额是否大于要减去的值
+        require(balanceOf[msg.sender] &gt;= _value);   // Check if the sender has enough
+        //给指定帐户减去余额
+        balanceOf[msg.sender] -= _value;
+        //代币问题做相应扣除
+        totalSupply -= _value;
+        emit Burn(msg.sender, _value);
+        return true;
+    }
+    /**
+     * 删除帐户的余额（含其他帐户）
+     *
+     * 删除以后是不可逆的
+     *
+     * @param _from 要操作的帐户地址
+     * @param _value 要减去的数量
+     */
+    function burnFrom(address _from, uint256 _value) public returns (bool success) {
+        //检查帐户余额是否大于要减去的值
+        require(balanceOf[_from] &gt;= _value);
+        //检查 其他帐户 的余额是否够使用
+        require(_value &lt;= allowance[_from][msg.sender]);
+        //减掉代币
+        balanceOf[_from] -= _value;
+        allowance[_from][msg.sender] -= _value;
+        //更新总量
+        totalSupply -= _value;
+        emit Burn(_from, _value);
+        return true;
+    }
+}
+/**
+ * @title 高级版代币
+ * 增加冻结用户、挖矿、根据指定汇率购买(售出)代币价格的功能
+ */
+contract MyAdvancedToken is owned, TokenERC20 {
+    //卖出价格 单位是wei
+    uint256 public sellPrice;
+    //买入价格
+    uint256 public buyPrice;
+    //是否冻结帐户的列表
+    mapping (address =&gt; bool) public frozenAccount;
+    //定义一个事件，当有资产被冻结的时候，通知正在监听事件的客户端
+    event FrozenFunds(address target, bool frozen);
+    /*初始化合约，并且把初始的所有的令牌都给这合约的创建者
+     * @param initialSupply 所有币的总数
+     * @param tokenName 代币名称
+     * @param tokenSymbol 代币符号
+     */
+    constructor (uint256 initialSupply,string tokenName,string tokenSymbol) public TokenERC20 (initialSupply, tokenName, tokenSymbol){
+     //初始化操作
+     //   TokenERC20(_initialSupply, _tokenName, _tokenSymbol);
+    }
+    /**
+     * 私有方法，从指定帐户转出余额
+     * @param  _from address 发送代币的地址
+     * @param  _to address 接受代币的地址
+     * @param  _value uint256 接受代币的数量
+     */
+    function _transfer(address _from, address _to, uint _value) internal {
+        //避免转帐的地址是0x0
+        require (_to != 0x0);
+        //检查发送者是否拥有足够余额
+        require (balanceOf[_from] &gt;= _value);
+        //检查是否溢出
+        require (balanceOf[_to] + _value &gt;= balanceOf[_to]);
+        //检查 冻结帐户
+        require(!frozenAccount[_from]);
+        require(!frozenAccount[_to]);
+        //从发送者减掉发送额
+        balanceOf[_from] -= _value;
+        //给接收者加上相同的量
+        balanceOf[_to] += _value;
+        //通知任何监听该交易的客户端
+        emit Transfer(_from, _to, _value);
+    }
+    /**
+     * 合约拥有者，可以为指定帐户创造一些代币
+     * @param  target address 帐户地址
+     * @param  mintedAmount uint256 增加的金额(单位是wei)
+     */
+    function mintToken(address target, uint256 mintedAmount) onlyOwner public{
+        //给指定地址增加代币，同时总量也相加
+        balanceOf[target] += mintedAmount;
+        totalSupply += mintedAmount;
+        emit Transfer(0, this, mintedAmount);
+        emit Transfer(this, target, mintedAmount);
+    }
+    /**
+     * 增加冻结帐户名称
+     *
+     * 你可能需要监管功能以便你能控制谁可以/谁不可以使用你创建的代币合约
+     *
+     * @param  target address 帐户地址
+     * @param  freeze bool    是否冻结
+     */
+    function freezeAccount(address target, bool freeze) onlyOwner public{
+        frozenAccount[target] = freeze;
+        emit FrozenFunds(target, freeze);
+    }
+    /**
+     * 设置买卖价格
+     *
+     * 如果你想让ether(或其他代币)为你的代币进行背书,以便可以市场价自动化买卖代币,我们可以这么做。如果要使用浮动的价格，也可以在这里设置
+     *
+     * @param newSellPrice 新的卖出价格
+     * @param newBuyPrice 新的买入价格
+     */
+    function setPrices(uint256 newSellPrice, uint256 newBuyPrice) onlyOwner public{
+        sellPrice = newSellPrice;
+        buyPrice = newBuyPrice;
+    }
+    /**
+     * 使用以太币购买代币,通过增加关键字 payable 我们就可以从任何账户接受以太币来调用这个函数。
+     */
+    function buy() payable public {
+      uint amount = msg.value / buyPrice;
+      _transfer(this, msg.sender, amount);
+    }
+    /**
+     * @dev 卖出代币
+     * @return 要卖出的数量(单位是wei)
+     */
+    function sell(uint256 amount) public {
+        //检查合约的余额是否充足
+        require(address(this).balance &gt;= amount * sellPrice);
+        _transfer(msg.sender, this, amount);
+        msg.sender.transfer(amount * sellPrice);
+    }
+}
+</code></pre>
+
+<p>我们在同位置新建一个build的目录来存储bin 和 abi 文件。然后用solc编译合约代码获得 bin 和 abi</p>
+
+<pre><code class="language-bash">solcjs CoolCoin.sol --bin --abi --optimize -o build/
+</code></pre>
+
+<p>用web3j编译bin和abi 获得包装代码</p>
+
+<pre><code>web3j solidity generate /path/to/&lt;smart-contract&gt;.bin /path/to/&lt;smart-contract&gt;.abi -o /path/to/src/main/java -p com.your.organisation.name
+</code></pre>
+
+<p>上面从智能合约到生成java包装代码比较麻烦,更聪明的办法是你应该写一个脚本文件来处理:</p>
+
+<pre><code>#!/usr/bin/env bash
+
+set -e
+set -o pipefail
+
+targets=&quot;
+ens/ENS
+ens/PublicResolver
+&quot;
+
+for target in ${targets}; do
+    dirName=$(dirname $target)
+    fileName=$(basename $target)
+
+    cd $dirName
+    echo &quot;Compiling Solidity file ${fileName}.sol:&quot;
+    solc --bin --abi --optimize --overwrite ${fileName}.sol -o build/
+    echo &quot;Complete&quot;
+
+    echo &quot;Generating web3j bindings&quot;
+    web3j solidity generate \
+        build/${fileName}.bin \
+        build/${fileName}.abi \
+        -p org.web3j.ens.contracts.generated \
+        -o ../../../../main/java/ &gt; /dev/null
+    echo &quot;Complete&quot;
+
+    cd -
+done
+</code></pre>
+
+<p>讲解说明:</p>
+
+<p>该文件通过 targets 定义了 你要编译的合约ENS.sol和PublicResolver.sol</p>
+
+<p>然后遍历待编译的合约文件,通过solc命令来编译。</p>
+
+<p>最后通过web3j 命令来生成相应的java包装代码。</p>
+
+<p>参考:<a href="https://github.com/web3j/web3j" target="_blank">web3j/web3j</a></p>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">北斗</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-04-25</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/ethereum/">Ethereum</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2018/intellij-solidity%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E6%8F%92%E4%BB%B6/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Intellij Solidity智能合约开发插件</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/2018/syncing-a-fork/">
+            <span class="next-text nav-default">如何同步一个fork</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+
+  
+
+  
+
+  <div id="comments-gitment"></div>
+  <link rel="stylesheet" href="/lib/gitment/gitment-0.0.3.min.css">
+    <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    id: 'working-with-smart-contracts-with-java-smart-contract-wrappers.md',
+    title: '智能合约和java智能包装的使用',
+    link: decodeURI(location.href),
+    desc: '本章节我们将学习如何从智能合约代码自动生成与java交换的java代码。 首先我们需要安装Solidity编译器 安装Solidity编译器 sudo npm',
+    owner: 'hxchen',
+    repo: 'comments',
+    oauth: {
+      client_id: 'a557bdb0db1d073dd11d',
+      client_secret: '1f97a695510b5ae31ee6b672e17d17134cb92809'
+    }
+  })
+  gitment.render('comments-gitment')
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:helloworld.vip@gmail.com" rel="me" class="iconfont icon-email" 
+        title="email" target="_blank">
+      </a>
+      <a href="https://twitter.com/helloworld_vip" rel="me" class="iconfont icon-twitter" 
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://www.facebook.com/wayne.chen.dev" rel="me" class="iconfont icon-facebook" 
+        title="facebook" target="_blank">
+      </a>
+      <a href="https://github.com/hxchen" rel="me" class="iconfont icon-github" 
+        title="github" target="_blank">
+      </a>
+  <a href="https://www.3afun.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" 
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2012 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Copyright 3AFun</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117605000-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-117605000-1');
+  </script>
+
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+</body>
+</html>

@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>智能合约和java智能包装的使用</title>
+      <link>https://www.3afun.com/post/2018/working-with-smart-contracts-with-java-smart-contract-wrappers/</link>
+      <pubDate>Wed, 25 Apr 2018 17:34:28 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/working-with-smart-contracts-with-java-smart-contract-wrappers/</guid>
+      <description>本章节我们将学习如何从智能合约代码自动生成与java交换的java代码。 首先我们需要安装Solidity编译器 安装Solidity编译器 sudo npm</description>
+    </item>
+    
+    <item>
       <title>如何同步一个fork</title>
       <link>https://www.3afun.com/post/2018/syncing-a-fork/</link>
       <pubDate>Tue, 24 Apr 2018 22:23:11 +0800</pubDate>
@@ -180,15 +189,6 @@
       
       <guid>https://www.3afun.com/post/2017/nginx-pid-no-such-file-or-directory%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
       <description>服务器重启后，有时会需要重新启动 nginx，采用 nginx -s reload 提示 nginx: [error] open() &amp;quot;/var/run/nginx.pid&amp;quot; failed (2: No such file or directory) 是因为服务器重启时丢了pid文件。 这种情况下可以使用 nginx -c，</description>
-    </item>
-    
-    <item>
-      <title>Python利用BeautifulSoup抓取解析网页数据</title>
-      <link>https://www.3afun.com/post/2017/python%E5%88%A9%E7%94%A8beautifulsoup%E6%8A%93%E5%8F%96%E8%A7%A3%E6%9E%90%E7%BD%91%E9%A1%B5%E6%95%B0%E6%8D%AE/</link>
-      <pubDate>Wed, 10 May 2017 14:22:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2017/python%E5%88%A9%E7%94%A8beautifulsoup%E6%8A%93%E5%8F%96%E8%A7%A3%E6%9E%90%E7%BD%91%E9%A1%B5%E6%95%B0%E6%8D%AE/</guid>
-      <description>网页UI以及HTML组织形式，目的是抓取网页数据并解析。 &amp;lt;div class=&amp;quot;clan__table&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;clan__headers&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Rank&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Name&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Level&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;League&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Trophies&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Donations&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__headerCaption&amp;quot;&amp;gt;Role&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__rowContainer&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;clan__row&amp;quot;&amp;gt; #1 &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;clan__row&amp;quot;&amp;gt; &amp;lt;a class=&amp;quot;ui__blueLink&amp;quot; href=&amp;quot;/p</description>
     </item>
     
   </channel>

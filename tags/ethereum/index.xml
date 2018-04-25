@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>智能合约和java智能包装的使用</title>
+      <link>https://www.3afun.com/post/2018/working-with-smart-contracts-with-java-smart-contract-wrappers/</link>
+      <pubDate>Wed, 25 Apr 2018 17:34:28 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/working-with-smart-contracts-with-java-smart-contract-wrappers/</guid>
+      <description>本章节我们将学习如何从智能合约代码自动生成与java交换的java代码。 首先我们需要安装Solidity编译器 安装Solidity编译器 sudo npm</description>
+    </item>
+    
+    <item>
       <title>远程调用以太坊智能合约</title>
       <link>https://www.3afun.com/post/2018/%E8%BF%9C%E7%A8%8B%E8%B0%83%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/</link>
       <pubDate>Sat, 21 Apr 2018 14:27:54 +0800</pubDate>
