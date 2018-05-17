@@ -844,7 +844,7 @@
   
   <url>
     <loc>https://www.3afun.com/tags/ethereum/</loc>
-    <lastmod>2018-04-25T22:15:37+08:00</lastmod>
+    <lastmod>2018-04-25T23:42:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -887,6 +887,20 @@
   <url>
     <loc>https://www.3afun.com/tags/http/</loc>
     <lastmod>2015-12-18T13:50:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.3afun.com/tags/idea/</loc>
+    <lastmod>2018-04-25T22:15:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.3afun.com/categories/idea/</loc>
+    <lastmod>2018-04-25T22:15:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1174,6 +1188,20 @@
   <url>
     <loc>https://www.3afun.com/categories/xcode/</loc>
     <lastmod>2015-04-28T16:57:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.3afun.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/</loc>
+    <lastmod>2018-04-25T23:42:28+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.3afun.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/</loc>
+    <lastmod>2018-04-25T23:42:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

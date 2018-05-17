@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Idea on 我不是帅才</title>
+    <link>https://www.3afun.com/tags/idea/</link>
+    <description>Recent content in Idea on 我不是帅才</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright 3AFun</copyright>
+    <lastBuildDate>Wed, 25 Apr 2018 22:15:37 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.3afun.com/tags/idea/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Intellij Solidity智能合约开发插件</title>
+      <link>https://www.3afun.com/post/2018/intellij-solidity%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E6%8F%92%E4%BB%B6/</link>
+      <pubDate>Wed, 25 Apr 2018 22:15:37 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/intellij-solidity%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E6%8F%92%E4%BB%B6/</guid>
+      <description>选择菜单栏Intellij IDEA -&amp;gt; Preferences -&amp;gt; Plugins -&amp;gt; Browse repositories, 然后搜索Intellij-Solidity安装,重启Intellij IDEA即可生效。</description>
+    </item>
+    
+  </channel>
+</rss>
