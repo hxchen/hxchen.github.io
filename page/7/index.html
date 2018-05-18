@@ -66,7 +66,7 @@
 
 
 
-<meta property="og:updated_time" content="2014-07-23T16:40:27&#43;08:00"/>
+<meta property="og:updated_time" content="2014-07-25T10:12:27&#43;08:00"/>
 
 
 
@@ -171,6 +171,35 @@ ga('send', 'pageview');
   <section id="posts" class="posts">
     
     
+    
+      <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2014/redis-%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE/">redis 批量删除数据</a></h1>
+    
+    <div class="post-meta">
+      <span class="post-time"> 2014-07-25 </span>
+      <div class="post-category">
+          
+            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"> 数据库 </a>
+          
+        </div>
+      <span class="more-meta"> 约 57 字 </span>
+      <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      redis在cli里不能直接操作。批量删除gameRankData_DGJD开始的keys需要： ./redis-cli -n 0 keys &quot;gameRankData_DGJD*&quot;|xargs ./redis-cli -n 0 del
+    </div>
+    <div class="read-more">
+      <a href="/post/2014/redis-%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE/" class="read-more-link">阅读全文</a>
+    </div>
+    
+  </div>
+</article>
+
     
       <article class="post bg-white">
   <header class="post-header">
@@ -435,35 +464,6 @@ ga('send', 'pageview');
     </div>
     <div class="read-more">
       <a href="/post/2014/springmvc-redirect%E9%87%8D%E5%AE%9A%E5%90%91%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-    
-      <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2014/wordpress%E6%9B%B4%E6%94%B9permalink%E5%90%8E%E5%87%BA%E7%8E%B0404%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">Wordpress更改Permalink后出现404的解决办法</a></h1>
-    
-    <div class="post-meta">
-      <span class="post-time"> 2014-03-19 </span>
-      <div class="post-category">
-          
-            <a href="/categories/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/"> 开源软件 </a>
-          
-        </div>
-      <span class="more-meta"> 约 105 字 </span>
-      <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      1、Apache作为服务器的话 修改httpd.conf 打开 LoadModule rewrite_module modules/mod_rewrite.so 查找并替换 AllowOverride none -&gt; AllowOverride All 2、nginx作为服务器的话，添加三条if语句。 location ~ \.php$ {
-    </div>
-    <div class="read-more">
-      <a href="/post/2014/wordpress%E6%9B%B4%E6%94%B9permalink%E5%90%8E%E5%87%BA%E7%8E%B0404%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" class="read-more-link">阅读全文</a>
     </div>
     
   </div>

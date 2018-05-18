@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>https://www.3afun.com/post/2018/swift%E5%8A%A8%E6%80%81%E5%BA%93frameworksdk%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2018-05-18T18:34:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://www.3afun.com/post/2018/intellij-solidity%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E6%8F%92%E4%BB%B6/</loc>
     <lastmod>2018-04-25T22:15:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1054,7 +1061,7 @@
   
   <url>
     <loc>https://www.3afun.com/post/</loc>
-    <lastmod>2018-04-25T22:15:37+08:00</lastmod>
+    <lastmod>2018-05-18T18:34:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -1118,6 +1125,20 @@
   <url>
     <loc>https://www.3afun.com/tags/struts/</loc>
     <lastmod>2013-02-28T10:32:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.3afun.com/tags/swift/</loc>
+    <lastmod>2018-05-18T18:34:58+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.3afun.com/categories/swift/</loc>
+    <lastmod>2018-05-18T18:34:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

@@ -38,6 +38,157 @@
     </item>
     
     <item>
+      <title>Swift动态库FrameworkSDK开发</title>
+      <link>https://www.3afun.com/post/2018/swift%E5%8A%A8%E6%80%81%E5%BA%93frameworksdk%E5%BC%80%E5%8F%91/</link>
+      <pubDate>Fri, 18 May 2018 18:34:58 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/swift%E5%8A%A8%E6%80%81%E5%BA%93frameworksdk%E5%BC%80%E5%8F%91/</guid>
+      
+        <description>
+
+&lt;p&gt;今天这篇文章主要是来讲解如何进行 &lt;code&gt;Cocoa Touch Framework&lt;/code&gt; 开发SDK,以及如何使用打包出来的SDK。&lt;/p&gt;
+
+&lt;h2 id=&#34;学习目标&#34;&gt;学习目标&lt;/h2&gt;
+
+&lt;p&gt;看完这篇文章,你将会学会:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用Xcode创建一个&lt;code&gt;Cocoa Touch Framework&lt;/code&gt;项目,进行SDK开发&lt;/li&gt;
+&lt;li&gt;打包SDK&lt;/li&gt;
+&lt;li&gt;使用storyboard进行简单布局&lt;/li&gt;
+&lt;li&gt;UI和代码的链接,进行事件操作&lt;/li&gt;
+&lt;li&gt;调用打包的SDK中的函数&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;一-创建一个cocoa-touch-framework项目&#34;&gt;一、创建一个Cocoa Touch Framework项目&lt;/h2&gt;
+
+&lt;h3 id=&#34;1-打开xcode-新建一个工程&#34;&gt;1.打开Xcode,新建一个工程&lt;/h3&gt;
+
+&lt;p&gt;因为是进行Cocoa Touch Framework开发,所以我们要选择这个,然后点击next。
+&lt;img src=&#34;https://www.3afun.com/media/images/2018/swift01.png&#34; alt=&#34;new project&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在这里我们给我们的工程起个名字:AccountSDK
+&lt;img src=&#34;https://www.3afun.com/media/images/2018/swift02.png&#34; alt=&#34;new project&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;2-编写函数供sdk掉用者使用&#34;&gt;2.编写函数供SDK掉用者使用&lt;/h3&gt;
+
+&lt;p&gt;菜单栏-&amp;gt;File-&amp;gt;New-&amp;gt;File&amp;hellip; 新建一个名为&lt;code&gt;LoginProcessor.swift&lt;/code&gt;的文件。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/swift03.png&#34; alt=&#34;new file&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;LoginProcessor.swift&lt;/code&gt;代码如下:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;import Foundation
+
+public class LoginProcessor{
+
+    public init(){
+
+    }
+
+    public func login(){
+        NSLog(&amp;quot;LoginProcessor:login&amp;quot;);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在类LoginProcessor里面我们先定义了构造函数init,然后定义了一个login函数供SDK调用者使用,功能非常简单,只是一句简单输出。&lt;/p&gt;
+
+&lt;h3 id=&#34;3-打包sdk&#34;&gt;3.打包SDK&lt;/h3&gt;
+
+&lt;p&gt;快捷键command+B打包SDK成framework文件,默认生产的文件会在Products目录下。我们可以选择文件,右键打开文件所在位置找到文件供接下来的步骤使用。
+&lt;img src=&#34;https://www.3afun.com/media/images/2018/swift04.png&#34; alt=&#34;findindir&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;二-创建single-view-app项目来测试sdk&#34;&gt;️二、创建Single View App项目来测试SDK&lt;/h2&gt;
+
+&lt;h3 id=&#34;1-使用xcode新建一个名为accountsdkdemo的工程&#34;&gt;1.使用Xcode新建一个名为AccountSDKDemo的工程&lt;/h3&gt;
+
+&lt;p&gt;Xcode菜单栏-&amp;gt;File-&amp;gt;New-&amp;gt;Project
+&lt;img src=&#34;https://www.3afun.com/media/images/2018/swift05.png&#34; alt=&#34;new Project&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/swift06.png&#34; alt=&#34;new Project&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;2-为storyboard添加button&#34;&gt;2.为storyboard添加Button&lt;/h3&gt;
+
+&lt;p&gt;左侧导航栏选中&lt;code&gt;Main.storyboard&lt;/code&gt;,中间我们会看到一个UI,右侧有工具区。我们从工具区拖拽一个Button到中间编辑区的UI上。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/swift07.png&#34; alt=&#34;new Project&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;3-切换到assistant-工作区&#34;&gt;3.切换到Assistant 工作区&lt;/h3&gt;
+
+&lt;p&gt;点击工具栏左上角的 Show Assistant Editor&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/swift08.png&#34; alt=&#34;new Project&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;4-ui和代码的绑定&#34;&gt;4.UI和代码的绑定&lt;/h3&gt;
+
+&lt;p&gt;1.编辑 ViewController.swift,在&lt;code&gt;UIViewController{&lt;/code&gt;下面添加注释 &lt;code&gt;//MARK: Properties&lt;/code&gt;,下面代码来绑定UI中的变量,
+在类的最后一个括号上面添加一行注释&lt;code&gt;//MARK: Actions&lt;/code&gt;下面代码好绑定事件。&lt;/p&gt;
+
+&lt;p&gt;2.在UI上选中Button按钮,右键拖拽一个Referencing Outlets到&lt;code&gt;//MARK: Properties&lt;/code&gt;下面,并起名&lt;code&gt;loginButton&lt;/code&gt;
+拖拽一个Touch Up Inside事件到 &lt;code&gt;//MARK: Actions&lt;/code&gt;下面,起名&lt;code&gt;login&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/swift09.png&#34; alt=&#34;new Project&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;5-添加sdk&#34;&gt;5.添加SDK&lt;/h3&gt;
+
+&lt;p&gt;1.复制步骤一中打包出来的SDK到AccountSDKDemo目录下,并添加。
+&lt;img src=&#34;https://www.3afun.com/media/images/2018/swift10.png&#34; alt=&#34;new Project&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2.General-&amp;gt;Embedded Binaries中添加SDK。
+&lt;img src=&#34;https://www.3afun.com/media/images/2018/swift11.png&#34; alt=&#34;new Project&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;6-调用sdk代码&#34;&gt;6.调用SDK代码&lt;/h3&gt;
+
+&lt;p&gt;编辑ViewController.swift,添加&lt;code&gt;import AccountSDK&lt;/code&gt;,并且在login事件中调用SDK中定义的login函数。
+最终该文件应该是这样的:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;//
+//  ViewController.swift
+//  AccountSDKDemo
+//
+//  Created by 海祥陈 on 2018/5/18.
+//  Copyright © 2018年 海祥陈. All rights reserved.
+//
+
+import UIKit
+import AccountSDK
+
+class ViewController: UIViewController {
+    //MARK: Properties
+
+    @IBOutlet weak var loginButton: UIButton!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    //MARK: Actions
+
+    // event for click login button
+    @IBAction func login(_ sender: Any) {
+        NSLog(&amp;quot;Login&amp;quot;);
+        LoginProcessor().login();
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;## 三、测试&lt;/p&gt;
+
+&lt;p&gt;Command+R 在模拟器上运行AccountSDKDemo App,运行后,点击Login按钮,观察后台日志,是否成功输出LoginProcessor中login函数的内容。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/swift12.png&#34; alt=&#34;new Project&#34; /&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>Intellij Solidity智能合约开发插件</title>
       <link>https://www.3afun.com/post/2018/intellij-solidity%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E6%8F%92%E4%BB%B6/</link>
       <pubDate>Wed, 25 Apr 2018 22:15:37 +0800</pubDate>
@@ -2957,45 +3108,6 @@ npm start
 
 &lt;pre&gt;&lt;code&gt;pip install -r requirements.txt
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>无法安裝COMPOSER 出現 COMMAND NOT FOUND 的解决办法</title>
-      <link>https://www.3afun.com/post/2017/%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%9Dcomposer-%E5%87%BA%E7%8F%BE-command-not-found-%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
-      <pubDate>Thu, 10 Aug 2017 11:32:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2017/%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%9Dcomposer-%E5%87%BA%E7%8F%BE-command-not-found-%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
-      
-        <description>&lt;p&gt;想要全局安装composer，按照网上的方法下载安装：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;curl -sS https://getcomposer.org/installer | php
-mv composer.phar /usr/local/bin/composer
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然后检查结果&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;composer -V
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;会出现，bash: composer: command not found Installation on Unixes (Ubuntu, Debian, CentOS, 等操作系统上)&lt;/p&gt;
-
-&lt;p&gt;如果遇到了这个问题，那么可以将composer原先放在 &lt;em&gt;/usr/local/bin/&lt;/em&gt; 的路径，&lt;/p&gt;
-
-&lt;p&gt;换成成以下目录 &lt;em&gt;/usr/bin/&lt;/em&gt; 。&lt;/p&gt;
-
-&lt;p&gt;解决办法的LINUX指令：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# sudo mv /usr/local/bin/composer /usr/bin/composer
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;接着继续测试&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#composer -V
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;就会正确显示版本了~&lt;/p&gt;
 </description>
       
     </item>

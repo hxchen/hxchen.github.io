@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Swift on 我不是帅才</title>
+    <link>https://www.3afun.com/categories/swift/</link>
+    <description>Recent content in Swift on 我不是帅才</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright 3AFun</copyright>
+    <lastBuildDate>Fri, 18 May 2018 18:34:58 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.3afun.com/categories/swift/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Swift动态库FrameworkSDK开发</title>
+      <link>https://www.3afun.com/post/2018/swift%E5%8A%A8%E6%80%81%E5%BA%93frameworksdk%E5%BC%80%E5%8F%91/</link>
+      <pubDate>Fri, 18 May 2018 18:34:58 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/swift%E5%8A%A8%E6%80%81%E5%BA%93frameworksdk%E5%BC%80%E5%8F%91/</guid>
+      <description>今天这篇文章主要是来讲解如何进行 Cocoa Touch Framework 开发SDK,以及如何使用打包出来的SDK。 学习目标 看完这篇文章,你将会学会: 使用Xcode创建一个Co</description>
+    </item>
+    
+  </channel>
+</rss>
