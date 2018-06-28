@@ -6,10 +6,19 @@
     <description>Recent content in Swift on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Fri, 18 May 2018 18:34:58 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 25 Jun 2018 17:40:07 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/tags/swift/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Swift之SDK开发-从Framework中给UIButton按钮加载图片</title>
+      <link>https://www.3afun.com/post/2018/swift%E4%B9%8Bsdk%E5%BC%80%E5%8F%91-%E4%BB%8Eframework%E4%B8%AD%E7%BB%99uibutton%E6%8C%89%E9%92%AE%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87/</link>
+      <pubDate>Mon, 25 Jun 2018 17:40:07 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/swift%E4%B9%8Bsdk%E5%BC%80%E5%8F%91-%E4%BB%8Eframework%E4%B8%AD%E7%BB%99uibutton%E6%8C%89%E9%92%AE%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87/</guid>
+      <description>如果是正常App加载图片资源,我们会如下方法加载 let button = UIButton() let logoImage:UIImageView! logoImage = UIImageView(image: UIImage(named: &amp;quot;image_name&amp;quot;)) button.setImage(logoImage, for: .normal) 但是当我们这个资源是要打包成Framework,给第三方使用的使</description>
+    </item>
     
     <item>
       <title>Swift动态库FrameworkSDK开发</title>

@@ -38,6 +38,34 @@
     </item>
     
     <item>
+      <title>Swift之SDK开发-从Framework中给UIButton按钮加载图片</title>
+      <link>https://www.3afun.com/post/2018/swift%E4%B9%8Bsdk%E5%BC%80%E5%8F%91-%E4%BB%8Eframework%E4%B8%AD%E7%BB%99uibutton%E6%8C%89%E9%92%AE%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87/</link>
+      <pubDate>Mon, 25 Jun 2018 17:40:07 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/swift%E4%B9%8Bsdk%E5%BC%80%E5%8F%91-%E4%BB%8Eframework%E4%B8%AD%E7%BB%99uibutton%E6%8C%89%E9%92%AE%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87/</guid>
+      
+        <description>&lt;p&gt;如果是正常App加载图片资源,我们会如下方法加载&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;let button = UIButton()
+let logoImage:UIImageView!
+logoImage = UIImageView(image: UIImage(named: &amp;quot;image_name&amp;quot;))
+button.setImage(logoImage, for: .normal)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;但是当我们这个资源是要打包成Framework,给第三方使用的使用,第三方就会不能加载我们的图片资源。这时候我们就应该从该SDK内读取资源,正确方式如下:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;let button = UIButton()
+let logoImage:UIImageView!
+logoImage = UIImageView(named: &amp;quot;image_name&amp;quot;,in: Bundle(for: type(of: self)), compatibleWith: nil)
+button.setImage(logoImage, for: .normal)
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>Swift动态库FrameworkSDK开发</title>
       <link>https://www.3afun.com/post/2018/swift%E5%8A%A8%E6%80%81%E5%BA%93frameworksdk%E5%BC%80%E5%8F%91/</link>
       <pubDate>Fri, 18 May 2018 18:34:58 +0800</pubDate>
@@ -3090,28 +3118,6 @@ npm start
 &lt;p&gt;然后打开浏览器即可以看到自动初始化的界面&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2017/react_02.png&#34; alt=&#34;Areact_02&#34; /&gt;&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>Python requirements.txt的使用</title>
-      <link>https://www.3afun.com/post/2017/python-requirements.txt%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Wed, 16 Aug 2017 15:32:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2017/python-requirements.txt%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
-      
-        <description>&lt;p&gt;在构建别人项目环境时，经常可以看到requirements.txt，这个文件记录了所依赖的包和版本。作用就是方便在另一台电脑搭建项目环境。那么如何使用呢？&lt;/p&gt;
-
-&lt;p&gt;生成 &lt;em&gt;requirements.txt&lt;/em&gt; 文件&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;pip freeze &amp;gt; requirements.txt
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;安装 &lt;em&gt;requirements.txt&lt;/em&gt; 依赖&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;pip install -r requirements.txt
-&lt;/code&gt;&lt;/pre&gt;
 </description>
       
     </item>
