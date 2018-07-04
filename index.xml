@@ -38,11 +38,64 @@
     </item>
     
     <item>
+      <title>Swift之SDK开发-多语言国际化</title>
+      <link>https://www.3afun.com/post/2018/swift%E4%B9%8Bframework%E5%BC%80%E5%8F%91-%E5%A4%9A%E8%AF%AD%E8%A8%80%E5%9B%BD%E9%99%85%E5%8C%96/</link>
+      <pubDate>Wed, 04 Jul 2018 21:56:47 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/swift%E4%B9%8Bframework%E5%BC%80%E5%8F%91-%E5%A4%9A%E8%AF%AD%E8%A8%80%E5%9B%BD%E9%99%85%E5%8C%96/</guid>
+      
+        <description>
+
+&lt;p&gt;除了做App开发之外,有时候我们会使用Framework进行SDK开发,如果你使用的语言是Swift,你又怎么才能实现你的多语言国际化呢?&lt;/p&gt;
+
+&lt;h3 id=&#34;添加多语言文件&#34;&gt;添加多语言文件&lt;/h3&gt;
+
+&lt;p&gt;1.Command + N, 选择iOS -&amp;gt; Resource -&amp;gt; Strings File
+&lt;img src=&#34;https://www.3afun.com/media/images/2018/multilang000.png&#34; alt=&#34;multiLang01&#34; /&gt;
+2.文件名必须命名为&lt;code&gt;Localizable.strings&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;3.文件创建成功，查看Xcode左侧导航列表，发现多了一个名为Localizable.strings的文件&lt;/p&gt;
+
+&lt;p&gt;4.选中Localizable.strings文件，在Xcode的File inspection中点击Localize，目的是选择我们需要本地化的语言.&lt;/p&gt;
+
+&lt;p&gt;5.依次选择English-&amp;gt;Localize,在此我们可以继续添加简体中文,日语等。&lt;/p&gt;
+
+&lt;p&gt;6.此时，Xcode左侧的Localizable.strings左侧多了一个箭头，展开后可以看到存储各个语言的文件。&lt;/p&gt;
+
+&lt;p&gt;7.然后我们只需要在Localizable.strings下对应的文件中，分别以Key-Value的形式，为代码中每一个需要本地化的字符串赋值。
+例如 &lt;code&gt;LOGIN = &amp;quot;登录&amp;quot;;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;代码中多语言适配&#34;&gt;代码中多语言适配&lt;/h3&gt;
+
+&lt;p&gt;在SDK中提取多语言翻译,我们用到的方法是:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;public func NSLocalizedString(_ key: String, tableName: String? = default, bundle: Bundle = default, value: String = default, comment: String) -&amp;gt; String&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;NSLocalizedString&lt;/code&gt;可以接受5个参数,各个参数说明如下:&lt;/p&gt;
+
+&lt;p&gt;1.&lt;code&gt;key&lt;/code&gt;对应多语言文件中的Key值。&lt;/p&gt;
+
+&lt;p&gt;2.&lt;code&gt;tableName&lt;/code&gt;用来确定 .strings 的文件名。 默认情况下，系统会从 Main Bundle 中加载名称为 Localizable.strings 的文件,如果多人开发时候,大家可以各自定义每人使用的文件。&lt;/p&gt;
+
+&lt;p&gt;3.&lt;code&gt;bundle&lt;/code&gt;定义了从这个bundle中查找tableName文件中的key值。&lt;/p&gt;
+
+&lt;p&gt;4.&lt;code&gt;value&lt;/code&gt;定义默认值&lt;/p&gt;
+
+&lt;p&gt;5.&lt;code&gt;comment&lt;/code&gt;注释&lt;/p&gt;
+
+&lt;p&gt;因为我是在Framework中调用语言,最终的App是谁,我并不去关心,因此重点我只需要关注Bundle就好,在此可以使用
+&lt;code&gt;NSLocalizedString(&amp;quot;LOGIN&amp;quot;, tableName: nil, bundle: Bundle(for: type(of: self)), value: &amp;quot;&amp;quot;, comment: &amp;quot;登录&amp;quot;)&lt;/code&gt;
+来调用SDK下面的多语言文件内容。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>Swift之SDK开发-从Framework中给UIButton按钮加载图片</title>
-      <link>https://www.3afun.com/post/2018/swift%E4%B9%8Bsdk%E5%BC%80%E5%8F%91-%E4%BB%8Eframework%E4%B8%AD%E7%BB%99uibutton%E6%8C%89%E9%92%AE%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87/</link>
+      <link>https://www.3afun.com/post/2018/swift%E4%B9%8Bframework%E5%BC%80%E5%8F%91-%E4%BB%8Eframework%E4%B8%AD%E7%BB%99uibutton%E6%8C%89%E9%92%AE%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87/</link>
       <pubDate>Mon, 25 Jun 2018 17:40:07 +0800</pubDate>
       
-      <guid>https://www.3afun.com/post/2018/swift%E4%B9%8Bsdk%E5%BC%80%E5%8F%91-%E4%BB%8Eframework%E4%B8%AD%E7%BB%99uibutton%E6%8C%89%E9%92%AE%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87/</guid>
+      <guid>https://www.3afun.com/post/2018/swift%E4%B9%8Bframework%E5%BC%80%E5%8F%91-%E4%BB%8Eframework%E4%B8%AD%E7%BB%99uibutton%E6%8C%89%E9%92%AE%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87/</guid>
       
         <description>&lt;p&gt;如果是正常App加载图片资源,我们会如下方法加载&lt;/p&gt;
 
@@ -3073,51 +3126,6 @@ ps aux | grep jsvc |grep &#39;/web/tomcat8_forum8082&#39;| grep -v &#39;grep&#39
 &lt;h1 id=&#34;三-多实例模式&#34;&gt;三 、多实例模式&lt;/h1&gt;
 
 &lt;p&gt;多实例模式，只需要复制tomcat实例目录，修改相应配置文件为B项目地址，端口号等信息即可。&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>React入门 </title>
-      <link>https://www.3afun.com/post/2017/react%E5%85%A5%E9%97%A8/</link>
-      <pubDate>Sun, 20 Aug 2017 22:04:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2017/react%E5%85%A5%E9%97%A8/</guid>
-      
-        <description>
-
-&lt;h1 id=&#34;安装&#34;&gt;安装&lt;/h1&gt;
-
-&lt;p&gt;你可以进行一起全局安装&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo npm install -g create-react-app
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;创建一个应用&#34;&gt;创建一个应用&lt;/h1&gt;
-
-&lt;p&gt;为了创建一个App，执行&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;create-react-app react_demo
-cd react_demo
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;执行完毕后，他会在当前目录下创建一个名为 react_demo 的文件夹。&lt;/p&gt;
-
-&lt;p&gt;如图所示&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2017/react_01.png&#34; alt=&#34;react_01&#34; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;运行&#34;&gt;运行&lt;/h1&gt;
-
-&lt;p&gt;运行该App，可以执行&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd react_demo
-npm start
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然后打开浏览器即可以看到自动初始化的界面&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2017/react_02.png&#34; alt=&#34;Areact_02&#34; /&gt;&lt;/p&gt;
 </description>
       
     </item>
