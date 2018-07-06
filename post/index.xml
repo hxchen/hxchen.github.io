@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Wed, 04 Jul 2018 21:56:47 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 06 Jul 2018 11:45:20 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AndroidStudio报错No Render Target Selected的解决办法</title>
+      <link>https://www.3afun.com/post/2018/androidstudio%E6%8A%A5%E9%94%99no-render-target-selected%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Fri, 06 Jul 2018 11:45:20 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/androidstudio%E6%8A%A5%E9%94%99no-render-target-selected%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <description>之前使用Windows+Android Studio开发的Android项目,后来迁移到Mac+Android Studio开发下,同样的工程项</description>
+    </item>
     
     <item>
       <title>Swift之SDK开发-多语言国际化</title>
@@ -180,15 +189,6 @@
       
       <guid>https://www.3afun.com/post/2017/tomcat8-%E5%A4%9A%E5%AE%9E%E4%BE%8B-unix-daemon-%E6%A8%A1%E5%BC%8F/</guid>
       <description>一、事前准备 Tomcat8（版本8.5.20） 下载地址 JDK8（版本号1.8.0_144） 下载地址 二、配置部署 目录说明 jdk 安装目录 /usr/java/jdk1.8.0_144 tomcat 安装目录</description>
-    </item>
-    
-    <item>
-      <title>React入门 </title>
-      <link>https://www.3afun.com/post/2017/react%E5%85%A5%E9%97%A8/</link>
-      <pubDate>Sun, 20 Aug 2017 22:04:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2017/react%E5%85%A5%E9%97%A8/</guid>
-      <description>安装 你可以进行一起全局安装 sudo npm install -g create-react-app 创建一个应用 为了创建一个App，执行 create-react-app react_demo cd react_demo 执行完毕后，他会在当前目录下创建一个名为 react_demo 的文件夹。 如图所示</description>
     </item>
     
   </channel>

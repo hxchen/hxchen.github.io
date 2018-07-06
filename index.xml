@@ -38,6 +38,34 @@
     </item>
     
     <item>
+      <title>AndroidStudio报错No Render Target Selected的解决办法</title>
+      <link>https://www.3afun.com/post/2018/androidstudio%E6%8A%A5%E9%94%99no-render-target-selected%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Fri, 06 Jul 2018 11:45:20 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/androidstudio%E6%8A%A5%E9%94%99no-render-target-selected%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      
+        <description>&lt;p&gt;之前使用Windows+Android Studio开发的Android项目,后来迁移到Mac+Android Studio开发下,同样的工程项目导入后,报错&lt;code&gt;No render target selected&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;这个问题的根本原因是Android Studio找不到对应API级别开渲染布局文件。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/android01.png&#34; alt=&#34;android01&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;可尝试如下解决办法:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;1.有使用Gradle的,先进行Gradle同步。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;2.检查编译使用的SDK版本在新环境中是否有对应下载安装。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;3.有人说可以Tools-&amp;gt;android-&amp;gt;AVD Manager新建一个AVD(注意版本),不过我并不觉得这样做可以,但是大家可以尝试。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;4.检查确认要求的SDK版本和Android Studio安装的版本确实都存在后,选择 File -&amp;gt; Invalidate Caches/Restart。重启后可在上面截图那个被圈起来的位置选择版本进行渲染。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>Swift之SDK开发-多语言国际化</title>
       <link>https://www.3afun.com/post/2018/swift%E4%B9%8Bframework%E5%BC%80%E5%8F%91-%E5%A4%9A%E8%AF%AD%E8%A8%80%E5%9B%BD%E9%99%85%E5%8C%96/</link>
       <pubDate>Wed, 04 Jul 2018 21:56:47 +0800</pubDate>
@@ -3011,121 +3039,6 @@ sudo gem update --system
 &lt;pre&gt;&lt;code&gt;brew install libgmp-dev
 sudo gem install -n /usr/local/bin sass
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>Tomcat8 多实例 Unix daemon 模式 </title>
-      <link>https://www.3afun.com/post/2017/tomcat8-%E5%A4%9A%E5%AE%9E%E4%BE%8B-unix-daemon-%E6%A8%A1%E5%BC%8F/</link>
-      <pubDate>Mon, 11 Sep 2017 18:47:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2017/tomcat8-%E5%A4%9A%E5%AE%9E%E4%BE%8B-unix-daemon-%E6%A8%A1%E5%BC%8F/</guid>
-      
-        <description>
-
-&lt;h1 id=&#34;一-事前准备&#34;&gt;一、事前准备&lt;/h1&gt;
-
-&lt;p&gt;Tomcat8（版本8.5.20） &lt;a href=&#34;http://apache.spinellicreations.com/tomcat/tomcat-8/v8.5.20/bin/apache-tomcat-8.5.20.tar.gz&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;JDK8（版本号1.8.0_144） &lt;a href=&#34;http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.tar.gz&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;二-配置部署&#34;&gt;二、配置部署&lt;/h1&gt;
-
-&lt;h3 id=&#34;目录说明&#34;&gt;目录说明&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;jdk 安装目录&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;em&gt;/usr/java/jdk1.8.0_144&lt;/em&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;tomcat 安装目录&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;em&gt;/usr/tomcat/apache-tomcat-8.5.20&lt;/em&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;项目代码目录&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;em&gt;data/web/forum&lt;/em&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;tomcat实例目录&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;em&gt;/data/web/tomcat8_forum8082&lt;/em&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;tomcat安装&#34;&gt;tomcat安装&lt;/h3&gt;
-
-&lt;p&gt;1.生成jsvc&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd /usr/tomcat/apache-tomcat-8.5.20/bin
-tar xvfz commons-daemon-native.tar.gz
-cd commons-daemon-1.0.x-native-src/unix
-./configure --with-java=/usr/java/jdk1.8.0_144
-make
-cp jsvc ../..
-cd ../..
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;2.复制tomcat 安装目录的conf 配置文件到实例目录conf&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cp /usr/tomcat/apache-tomcat-8.5.20/conf /data/web/tomcat8_forum8082
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;3.修改相应端口号，此处使用8082.&lt;/p&gt;
-
-&lt;p&gt;4.在/data/web/tomcat8_forum8082目录下新建启动脚本&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;startup.sh&lt;/em&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-
-JRE_HOME=&amp;quot;/usr/java/jdk1.8.0_144&amp;quot;
-JAVA_HOME=&amp;quot;/usr/java/jdk1.8.0_144&amp;quot;
-SERVER_PATH=&amp;quot;/data/web&amp;quot;
-LOGS_PATH=&amp;quot;/data/web/logs/forum&amp;quot;
-CATALINA_HOME=&amp;quot;/usr/tomcat/apache-tomcat-8.5.20&amp;quot;
-CATALINA_BASE=&amp;quot;/data/web/tomcat8_forum8082&amp;quot;
-CATALINA_PID=&amp;quot;$SERVER_PATH/tomcat8_forum8082/pid&amp;quot;
-JAVA_OPTS=&amp;quot;-Xms512m -Xmx512m &amp;quot;
-#TOMCAT_USER=&amp;quot;app100681811&amp;quot;
-
-#export JAVA_HOME JRE_HOME LOGS_PATH CATALINA_HOME CATALINA_BASE
-export JAVA_HOME JRE_HOME LOGS_PATH #CATALINA_HOME CATALINA_BASE CATALINA_PID
-echo $&amp;quot;tomcat8_forum8082 start&amp;quot;
-#/usr/tomcat/apache-tomcat-8.5.20/bin/catalina.sh start
-export LANG=en_US.UTF-8
-
-cd $CATALINA_HOME
-./bin/jsvc \
-    -classpath $CATALINA_HOME/bin/bootstrap.jar:$CATALINA_HOME/bin/tomcat-juli.jar \
-    -outfile $CATALINA_BASE/logs/catalina.out \
-    -errfile $CATALINA_BASE/logs/catalina.err \
-    -pidfile &amp;quot;$CATALINA_PID&amp;quot; \
-    -Dcatalina.home=$CATALINA_HOME \
-    -Dcatalina.base=$CATALINA_BASE \
-    -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager \
-    -Djava.util.logging.config.file=$CATALINA_BASE/conf/logging.properties \
-    org.apache.catalina.startup.Bootstrap
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;关闭脚本&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;shutdown.sh&lt;/em&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;echo $&amp;quot;tomcat8_forum8082 stop&amp;quot;
-ps aux | grep jsvc |grep &#39;/web/tomcat8_forum8082&#39;| grep -v &#39;grep&#39; | awk -F &#39; &#39; &#39;{print $2}&#39; | xargs kill -s 2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;5.执行相应脚本，即可完成启动关闭。&lt;/p&gt;
-
-&lt;h1 id=&#34;三-多实例模式&#34;&gt;三 、多实例模式&lt;/h1&gt;
-
-&lt;p&gt;多实例模式，只需要复制tomcat实例目录，修改相应配置文件为B项目地址，端口号等信息即可。&lt;/p&gt;
 </description>
       
     </item>
