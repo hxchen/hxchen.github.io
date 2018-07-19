@@ -6,10 +6,19 @@
     <description>Recent content in Swift on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Wed, 04 Jul 2018 21:56:47 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 19 Jul 2018 16:32:12 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/categories/swift/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Swift跳转AppStore商店应用评论页</title>
+      <link>https://www.3afun.com/post/2018/swift%E8%B7%B3%E8%BD%ACappstore%E5%95%86%E5%BA%97%E5%BA%94%E7%94%A8%E8%AF%84%E8%AE%BA%E9%A1%B5/</link>
+      <pubDate>Thu, 19 Jul 2018 16:32:12 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/swift%E8%B7%B3%E8%BD%ACappstore%E5%95%86%E5%BA%97%E5%BA%94%E7%94%A8%E8%AF%84%E8%AE%BA%E9%A1%B5/</guid>
+      <description>兼容iOS10以及iOS11的,跳转苹果商店应用评论页的函数,直接调用就行。 自行替换XXXXXXXX为商店ID //跳转到应用的AppStor</description>
+    </item>
     
     <item>
       <title>Swift之SDK开发-多语言国际化</title>

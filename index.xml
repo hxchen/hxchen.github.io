@@ -38,6 +38,34 @@
     </item>
     
     <item>
+      <title>Swift跳转AppStore商店应用评论页</title>
+      <link>https://www.3afun.com/post/2018/swift%E8%B7%B3%E8%BD%ACappstore%E5%95%86%E5%BA%97%E5%BA%94%E7%94%A8%E8%AF%84%E8%AE%BA%E9%A1%B5/</link>
+      <pubDate>Thu, 19 Jul 2018 16:32:12 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/swift%E8%B7%B3%E8%BD%ACappstore%E5%95%86%E5%BA%97%E5%BA%94%E7%94%A8%E8%AF%84%E8%AE%BA%E9%A1%B5/</guid>
+      
+        <description>&lt;p&gt;兼容iOS10以及iOS11的,跳转苹果商店应用评论页的函数,直接调用就行。&lt;/p&gt;
+
+&lt;p&gt;自行替换&lt;code&gt;XXXXXXXX&lt;/code&gt;为商店ID&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;//跳转到应用的AppStore页页面
+    func gotoAppStore() {
+        let urlString = &amp;quot;itms-apps://itunes.apple.com/cn/app/idXXXXXXXX?mt=8&amp;amp;action=write-review&amp;quot;
+        if let url = URL(string: urlString) {
+            //根据iOS系统版本，分别处理
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url, options: [:],completionHandler: {(success) in})
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>AndroidStudio报错No Render Target Selected的解决办法</title>
       <link>https://www.3afun.com/post/2018/androidstudio%E6%8A%A5%E9%94%99no-render-target-selected%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
       <pubDate>Fri, 06 Jul 2018 11:45:20 +0800</pubDate>
@@ -2927,118 +2955,6 @@ source /etc/profile
 &lt;p&gt;至此大家可以试下Https抓包效果了。&lt;/p&gt;
 
 &lt;p&gt;参考：&lt;a href=&#34;https://www.charlesproxy.com/documentation/using-charles/ssl-certificates/&#34;&gt;https://www.charlesproxy.com/documentation/using-charles/ssl-certificates/&lt;/a&gt;&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>Sass 安装 及其常见错误的解决办法</title>
-      <link>https://www.3afun.com/post/2017/sass-%E5%AE%89%E8%A3%85-%E5%8F%8A%E5%85%B6%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
-      <pubDate>Wed, 27 Sep 2017 10:51:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2017/sass-%E5%AE%89%E8%A3%85-%E5%8F%8A%E5%85%B6%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
-      
-        <description>&lt;p&gt;Sass是一种css的开发工具，它的安装依赖Ruby，没有安装Ruby的请先安装Ruby。&lt;/p&gt;
-
-&lt;p&gt;假定你已经安装了Ruby，则可以直接执行如下语句进行安装。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;gem install sass
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;常见错误提示：&lt;/p&gt;
-
-&lt;p&gt;1、ERROR:  While executing gem &amp;hellip; (OpenSSL::SSL::SSLError)&lt;/p&gt;
-
-&lt;p&gt;hostname &amp;ldquo;gems.ruby-china.org&amp;rdquo; does not match the server certificate&lt;/p&gt;
-
-&lt;p&gt;解决办法：&lt;/p&gt;
-
-&lt;p&gt;执行命令，查看数据源&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;gem source -l
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;结果&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;*** CURRENT SOURCES ***
-
-https://ruby.taobao.org/
-https://gems.ruby-china.org
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;则可以删除多余的&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;gem sources --remove https://ruby.taobao.org/
-sudo gem update --system
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;然后重新安装。&lt;/p&gt;
-
-&lt;p&gt;2、ERROR:  SSL verification error at depth 1: unable to get local issuer certificate (20)&lt;/p&gt;
-
-&lt;p&gt;ERROR:  You must add /O=Digital Signature Trust Co./CN=DST Root CA X3 to your local trusted store&lt;/p&gt;
-
-&lt;p&gt;Fetching: ffi-1.9.18.gem ( 32%)ERROR:  SSL verification error at depth 2: self signed certificate in certificate chain (19)&lt;/p&gt;
-
-&lt;p&gt;ERROR:  Root certificate is not trusted (/C=US/O=GeoTrust Inc./CN=GeoTrust Global CA)&lt;/p&gt;
-
-&lt;p&gt;ERROR:  While executing gem &amp;hellip; (OpenSSL::SSL::SSLError)&lt;/p&gt;
-
-&lt;p&gt;hostname &amp;ldquo;gems.ruby-china.org&amp;rdquo; does not match the server certificate&lt;/p&gt;
-
-&lt;p&gt;3、ERROR:  SSL verification error at depth 1: unable to get local issuer certificate (20)&lt;/p&gt;
-
-&lt;p&gt;ERROR:  You must add /O=Digital Signature Trust Co./CN=DST Root CA X3 to your local trusted store&lt;/p&gt;
-
-&lt;p&gt;Fetching: ffi-1.9.18.gem (100%)&lt;/p&gt;
-
-&lt;p&gt;Building native extensions.  This could take a while&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;Successfully installed ffi-1.9.18&lt;/p&gt;
-
-&lt;p&gt;ERROR:  SSL verification error at depth 2: self signed certificate in certificate chain (19)&lt;/p&gt;
-
-&lt;p&gt;ERROR:  Root certificate is not trusted (/C=US/O=GeoTrust Inc./CN=GeoTrust Global CA)&lt;/p&gt;
-
-&lt;p&gt;Fetching: rb-inotify-0.9.10.gem (100%)&lt;/p&gt;
-
-&lt;p&gt;Successfully installed rb-inotify-0.9.10&lt;/p&gt;
-
-&lt;p&gt;Fetching: sass-listen-4.0.0.gem (100%)&lt;/p&gt;
-
-&lt;p&gt;Successfully installed sass-listen-4.0.0&lt;/p&gt;
-
-&lt;p&gt;Fetching: sass-3.5.1.gem (100%)&lt;/p&gt;
-
-&lt;p&gt;ERROR:  While executing gem &amp;hellip; (Errno::EPERM)&lt;/p&gt;
-
-&lt;p&gt;Operation not permitted - /usr/bin/sass&lt;/p&gt;
-
-&lt;p&gt;遇到以上错误 2和3的解决办法&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo gem install -n /usr/local/bin sass
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;查看&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sass -v
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;则会正确显示Sass版本号。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;2017年12月28日更新：&lt;/p&gt;
-
-&lt;p&gt;Mac更新系统后，Ruby由2.0升级到2.3，再次使用Sass时候，发现报错。&lt;/p&gt;
-
-&lt;p&gt;于是决定升级SaaS，重新安装时遇到错误。最后找到解决方案：&lt;/p&gt;
-
-&lt;p&gt;先安装libgmp-dev，再重新安装即可。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;brew install libgmp-dev
-sudo gem install -n /usr/local/bin sass
-&lt;/code&gt;&lt;/pre&gt;
 </description>
       
     </item>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>AndroidStudio报错No Render Target Selected的解决办法 - 我不是帅才</title>
+  <title>Swift跳转AppStore商店应用评论页 - 我不是帅才</title>
   <link rel="alternate" hreflang="en" href="https://www.3afun.com/" />
 
 <meta name="renderer" content="webkit" />
@@ -25,8 +25,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 
-<meta name="author" content="北斗" /><meta name="description" content="Android" />
-<meta name="keywords" content="Android" />
+<meta name="author" content="北斗" /><meta name="description" content="Swift" />
+<meta name="keywords" content="Swift" />
 
 
 
@@ -37,7 +37,7 @@
 <meta name="generator" content="Hugo 0.38.2" />
 
 
-<link rel="canonical" href="https://www.3afun.com/post/2018/androidstudio%E6%8A%A5%E9%94%99no-render-target-selected%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" />
+<link rel="canonical" href="https://www.3afun.com/post/2018/swift%E8%B7%B3%E8%BD%ACappstore%E5%95%86%E5%BA%97%E5%BA%94%E7%94%A8%E8%AF%84%E8%AE%BA%E9%A1%B5/" />
 
 
 
@@ -57,20 +57,16 @@
 
 
 
-<meta property="og:title" content="AndroidStudio报错No Render Target Selected的解决办法" />
-<meta property="og:description" content="Android" />
+<meta property="og:title" content="Swift跳转AppStore商店应用评论页" />
+<meta property="og:description" content="Swift" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.3afun.com/post/2018/androidstudio%E6%8A%A5%E9%94%99no-render-target-selected%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" />
+<meta property="og:url" content="https://www.3afun.com/post/2018/swift%E8%B7%B3%E8%BD%ACappstore%E5%95%86%E5%BA%97%E5%BA%94%E7%94%A8%E8%AF%84%E8%AE%BA%E9%A1%B5/" />
 
 
 
-<meta property="article:published_time" content="2018-07-06T11:45:20&#43;08:00"/>
+<meta property="article:published_time" content="2018-07-19T16:32:12&#43;08:00"/>
 
-<meta property="article:modified_time" content="2018-07-06T11:45:20&#43;08:00"/>
-
-
-
-
+<meta property="article:modified_time" content="2018-07-19T16:32:12&#43;08:00"/>
 
 
 
@@ -78,20 +74,24 @@
 
 
 
-<meta itemprop="name" content="AndroidStudio报错No Render Target Selected的解决办法">
-<meta itemprop="description" content="Android">
-
-
-<meta itemprop="datePublished" content="2018-07-06T11:45:20&#43;08:00" />
-<meta itemprop="dateModified" content="2018-07-06T11:45:20&#43;08:00" />
-<meta itemprop="wordCount" content="348">
 
 
 
-<meta itemprop="keywords" content="Android," />
+
+<meta itemprop="name" content="Swift跳转AppStore商店应用评论页">
+<meta itemprop="description" content="Swift">
+
+
+<meta itemprop="datePublished" content="2018-07-19T16:32:12&#43;08:00" />
+<meta itemprop="dateModified" content="2018-07-19T16:32:12&#43;08:00" />
+<meta itemprop="wordCount" content="117">
+
+
+
+<meta itemprop="keywords" content="Swift," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="AndroidStudio报错No Render Target Selected的解决办法"/>
-<meta name="twitter:description" content="Android"/>
+<meta name="twitter:title" content="Swift跳转AppStore商店应用评论页"/>
+<meta name="twitter:description" content="Swift"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -179,16 +179,16 @@ ga('send', 'pageview');
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">AndroidStudio报错No Render Target Selected的解决办法</h1>
+      <h1 class="post-title">Swift跳转AppStore商店应用评论页</h1>
       
       <div class="post-meta">
-        <span class="post-time"> 2018-07-06 </span>
+        <span class="post-time"> 2018-07-19 </span>
         <div class="post-category">
             
-              <a href="/categories/android/"> Android </a>
+              <a href="/categories/swift/"> Swift </a>
             
           </div>
-        <span class="more-meta"> 约 348 字 </span>
+        <span class="more-meta"> 约 117 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -204,23 +204,23 @@ ga('send', 'pageview');
 
     
     <div class="post-content">
-      <p>之前使用Windows+Android Studio开发的Android项目,后来迁移到Mac+Android Studio开发下,同样的工程项目导入后,报错<code>No render target selected</code>。</p>
+      <p>兼容iOS10以及iOS11的,跳转苹果商店应用评论页的函数,直接调用就行。</p>
 
-<p>这个问题的根本原因是Android Studio找不到对应API级别开渲染布局文件。</p>
+<p>自行替换<code>XXXXXXXX</code>为商店ID</p>
 
-<p><img src="/media/images/2018/android01.png" alt="android01" /></p>
-
-<p>可尝试如下解决办法:</p>
-
-<ul>
-<li><p>1.有使用Gradle的,先进行Gradle同步。</p></li>
-
-<li><p>2.检查编译使用的SDK版本在新环境中是否有对应下载安装。</p></li>
-
-<li><p>3.有人说可以Tools-&gt;android-&gt;AVD Manager新建一个AVD(注意版本),不过我并不觉得这样做可以,但是大家可以尝试。</p></li>
-
-<li><p>4.检查确认要求的SDK版本和Android Studio安装的版本确实都存在后,选择 File -&gt; Invalidate Caches/Restart。重启后可在上面截图那个被圈起来的位置选择版本进行渲染。</p></li>
-</ul>
+<pre><code class="language-swift">//跳转到应用的AppStore页页面
+    func gotoAppStore() {
+        let urlString = &quot;itms-apps://itunes.apple.com/cn/app/idXXXXXXXX?mt=8&amp;action=write-review&quot;
+        if let url = URL(string: urlString) {
+            //根据iOS系统版本，分别处理
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url, options: [:],completionHandler: {(success) in})
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
+    }
+</code></pre>
 
     </div>
 
@@ -233,7 +233,7 @@ ga('send', 'pageview');
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2018-07-06</span>
+    <span class="item-content">2018-07-19</span>
   </p>
   
   <p class="copyright-item">
@@ -248,21 +248,16 @@ ga('send', 'pageview');
     <footer class="post-footer">
       <div class="post-tags">
           
-          <a href="/tags/android/">Android</a>
+          <a href="/tags/swift/">Swift</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/2018/swift%E8%B7%B3%E8%BD%ACappstore%E5%95%86%E5%BA%97%E5%BA%94%E7%94%A8%E8%AF%84%E8%AE%BA%E9%A1%B5/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Swift跳转AppStore商店应用评论页</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/2018/swift%E4%B9%8Bframework%E5%BC%80%E5%8F%91-%E5%A4%9A%E8%AF%AD%E8%A8%80%E5%9B%BD%E9%99%85%E5%8C%96/">
-            <span class="next-text nav-default">Swift之SDK开发-多语言国际化</span>
+          <a class="next" href="/post/2018/androidstudio%E6%8A%A5%E9%94%99no-render-target-selected%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">
+            <span class="next-text nav-default">AndroidStudio报错No Render Target Selected的解决办法</span>
             <span class="prev-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -279,10 +274,10 @@ ga('send', 'pageview');
     <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
   <script type="text/javascript">
   const gitment = new Gitment({
-    id: 'AndroidStudio报错No-render-target-selected的解决办法.md',
-    title: 'AndroidStudio报错No Render Target Selected的解决办法',
+    id: 'Swift跳转AppStore商店应用评论页.md',
+    title: 'Swift跳转AppStore商店应用评论页',
     link: decodeURI(location.href),
-    desc: '之前使用Windows\x2bAndroid Studio开发的Android项目,后来迁移到Mac\x2bAndroid Studio开发下,同样的工程项',
+    desc: '兼容iOS10以及iOS11的,跳转苹果商店应用评论页的函数,直接调用就行。 自行替换XXXXXXXX为商店ID \/\/跳转到应用的AppStor',
     owner: 'hxchen',
     repo: 'comments',
     oauth: {

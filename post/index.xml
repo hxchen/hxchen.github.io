@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Fri, 06 Jul 2018 11:45:20 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 19 Jul 2018 16:32:12 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Swift跳转AppStore商店应用评论页</title>
+      <link>https://www.3afun.com/post/2018/swift%E8%B7%B3%E8%BD%ACappstore%E5%95%86%E5%BA%97%E5%BA%94%E7%94%A8%E8%AF%84%E8%AE%BA%E9%A1%B5/</link>
+      <pubDate>Thu, 19 Jul 2018 16:32:12 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/swift%E8%B7%B3%E8%BD%ACappstore%E5%95%86%E5%BA%97%E5%BA%94%E7%94%A8%E8%AF%84%E8%AE%BA%E9%A1%B5/</guid>
+      <description>兼容iOS10以及iOS11的,跳转苹果商店应用评论页的函数,直接调用就行。 自行替换XXXXXXXX为商店ID //跳转到应用的AppStor</description>
+    </item>
     
     <item>
       <title>AndroidStudio报错No Render Target Selected的解决办法</title>
@@ -180,15 +189,6 @@
       
       <guid>https://www.3afun.com/post/2017/sass-%E5%AE%89%E8%A3%85-%E5%8F%8A%E5%85%B6%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
       <description>Sass是一种css的开发工具，它的安装依赖Ruby，没有安装Ruby的请先安装Ruby。 假定你已经安装了Ruby，则可以直接执行如下语句进</description>
-    </item>
-    
-    <item>
-      <title>Tomcat8 多实例 Unix daemon 模式 </title>
-      <link>https://www.3afun.com/post/2017/tomcat8-%E5%A4%9A%E5%AE%9E%E4%BE%8B-unix-daemon-%E6%A8%A1%E5%BC%8F/</link>
-      <pubDate>Mon, 11 Sep 2017 18:47:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2017/tomcat8-%E5%A4%9A%E5%AE%9E%E4%BE%8B-unix-daemon-%E6%A8%A1%E5%BC%8F/</guid>
-      <description>一、事前准备 Tomcat8（版本8.5.20） 下载地址 JDK8（版本号1.8.0_144） 下载地址 二、配置部署 目录说明 jdk 安装目录 /usr/java/jdk1.8.0_144 tomcat 安装目录</description>
     </item>
     
   </channel>
