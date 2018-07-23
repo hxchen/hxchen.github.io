@@ -38,6 +38,91 @@
     </item>
     
     <item>
+      <title>Swift自定义按钮UIButton</title>
+      <link>https://www.3afun.com/post/2018/swift%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%89%E9%92%AEuibutton/</link>
+      <pubDate>Mon, 23 Jul 2018 20:58:17 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/swift%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%89%E9%92%AEuibutton/</guid>
+      
+        <description>&lt;p&gt;在开发的时候,默认的UI有时候并不能满足我们的要求,我们可能需要一套具有主题的按钮,为了避免使用按钮的时候,每次都需要重写大量UI代码,我们就需要定义一套公共的按钮进行复用。&lt;/p&gt;
+
+&lt;p&gt;Swift自定义按钮其实很简单,只要继承&lt;code&gt;UIButton&lt;/code&gt;,并重写其中的&lt;code&gt;init&lt;/code&gt;方法就可以。示例中我定义了2种不同颜色的带圆角按钮,并且添加了点击按下变色的效果。&lt;/p&gt;
+
+&lt;p&gt;使用的时候直接创建对象,设置按钮文字即可。&lt;/p&gt;
+
+&lt;p&gt;按钮效果:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/custom_button01.png&#34; alt=&#34;custom_button01&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;示例代码:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;class KhakiButton: UIButton {
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        layer.cornerRadius = 4
+        clipsToBounds = true
+        setTitleColor(UIColor.white, for: .normal)
+        setTitleColor(UIColor.init(rgb: 0x555555), for: .highlighted)
+        backgroundColor = UIColor(red: 176/255, green: 160/255, blue: 141/255, alpha:0xFF)
+        setBackgroundColor(color: UIColor.init(rgb: 0x9a8b79), forState: .highlighted)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError(&amp;quot;init(coder:) has not been implemented&amp;quot;)
+    }
+}
+
+// 红色按钮
+class RedButton: UIButton {
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        layer.cornerRadius = 4
+        clipsToBounds = true
+        setTitleColor(UIColor.white, for: .normal)
+        setTitleColor(UIColor.init(rgb: 0x555555), for: .highlighted)
+        backgroundColor = UIColor(red: 210/255, green: 93/255, blue: 84/255, alpha:0xFF)
+        setBackgroundColor(color: UIColor.init(rgb: 0xbe4e46), forState: .highlighted)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError(&amp;quot;init(coder:) has not been implemented&amp;quot;)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;使用方法:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;let loginButton = RedButton()
+loginButton.setTitle(&amp;quot;登录&amp;quot;, for: .normal)
+let registerButton = KhakiButton()
+registerButton.setTitle(&amp;quot;注册&amp;quot;, for: .normal)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其中用到的&lt;code&gt;UIColor.init&lt;/code&gt;是我自定义的一个方法,进行16进制颜色值和rgb转换&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;extension UIColor {
+    convenience init(red: Int, green: Int, blue: Int) {
+        assert(red &amp;gt;= 0 &amp;amp;&amp;amp; red &amp;lt;= 255, &amp;quot;Invalid red component&amp;quot;)
+        assert(green &amp;gt;= 0 &amp;amp;&amp;amp; green &amp;lt;= 255, &amp;quot;Invalid green component&amp;quot;)
+        assert(blue &amp;gt;= 0 &amp;amp;&amp;amp; blue &amp;lt;= 255, &amp;quot;Invalid blue component&amp;quot;)
+
+        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
+    }
+
+    convenience init(rgb: Int) {
+        self.init(
+            red: (rgb &amp;gt;&amp;gt; 16) &amp;amp; 0xFF,
+            green: (rgb &amp;gt;&amp;gt; 8) &amp;amp; 0xFF,
+            blue: rgb &amp;amp; 0xFF
+        )
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>Swift跳转AppStore商店应用评论页</title>
       <link>https://www.3afun.com/post/2018/swift%E8%B7%B3%E8%BD%ACappstore%E5%95%86%E5%BA%97%E5%BA%94%E7%94%A8%E8%AF%84%E8%AE%BA%E9%A1%B5/</link>
       <pubDate>Thu, 19 Jul 2018 16:32:12 +0800</pubDate>
@@ -2904,57 +2989,6 @@ transferFrom 方法用于退出工作流程，允许合约代表你来转账。�
 &lt;pre&gt;&lt;code&gt;#!/bin/sh
 source /etc/profile
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>使用Charles 进行https抓包</title>
-      <link>https://www.3afun.com/post/2017/%E4%BD%BF%E7%94%A8charles-%E8%BF%9B%E8%A1%8Chttps%E6%8A%93%E5%8C%85/</link>
-      <pubDate>Sat, 18 Nov 2017 16:57:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2017/%E4%BD%BF%E7%94%A8charles-%E8%BF%9B%E8%A1%8Chttps%E6%8A%93%E5%8C%85/</guid>
-      
-        <description>
-
-&lt;h1 id=&#34;1-charles安装&#34;&gt;1. Charles安装&lt;/h1&gt;
-
-&lt;p&gt;官网下载安装Charles:
-&lt;a href=&#34;https://www.charlesproxy.com/download/&#34;&gt;https://www.charlesproxy.com/download/&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;2-http抓包&#34;&gt;2. HTTP抓包&lt;/h1&gt;
-
-&lt;h2 id=&#34;1-查看电脑ip地址&#34;&gt;（1）查看电脑IP地址&lt;/h2&gt;
-
-&lt;h2 id=&#34;2-设置手机http代理&#34;&gt;（2）设置手机HTTP代理&lt;/h2&gt;
-
-&lt;p&gt;手机连上电脑，点击“设置-&amp;gt;无线局域网-&amp;gt;连接的WiFi”&lt;/p&gt;
-
-&lt;p&gt;设置HTTP代理：服务器为电脑IP地址：如192.168.0.100 端口：8888&lt;/p&gt;
-
-&lt;p&gt;设置代理后，需要在电脑上打开Charles才能上网&lt;/p&gt;
-
-&lt;h2 id=&#34;3-电脑上打开charles进行http抓包&#34;&gt;（3）电脑上打开Charles进行HTTP抓包&lt;/h2&gt;
-
-&lt;p&gt;手机上打开某个App&lt;/p&gt;
-
-&lt;p&gt;点击电脑上“Allow”允许，出现手机的HTTP请求列&lt;/p&gt;
-
-&lt;h1 id=&#34;3-https抓包&#34;&gt;3. HTTPS抓包&lt;/h1&gt;
-
-&lt;p&gt;HTTPS的抓包需要在HTTP抓包基础上再进行设置&lt;/p&gt;
-
-&lt;p&gt;手机浏览器打开 &lt;a href=&#34;https://chls.pro/ssl&#34;&gt;https://chls.pro/ssl&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;并安装证书，记得要信任该证书。&lt;/p&gt;
-
-&lt;p&gt;注意：IOS 版本10.3+的，还需要额外设置：&lt;/p&gt;
-
-&lt;p&gt;设置-&amp;gt;通用-&amp;gt;关于本机-&amp;gt;证书信任设置-&amp;gt;Charles Proxy CA 证书那里打开。&lt;/p&gt;
-
-&lt;p&gt;至此大家可以试下Https抓包效果了。&lt;/p&gt;
-
-&lt;p&gt;参考：&lt;a href=&#34;https://www.charlesproxy.com/documentation/using-charles/ssl-certificates/&#34;&gt;https://www.charlesproxy.com/documentation/using-charles/ssl-certificates/&lt;/a&gt;&lt;/p&gt;
 </description>
       
     </item>
