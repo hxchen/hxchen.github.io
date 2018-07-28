@@ -63,9 +63,9 @@
 
 
 
-<meta property="article:published_time" content="2018-07-24T20:28:05&#43;08:00"/>
+<meta property="article:published_time" content="2018-07-24T18:56:43&#43;08:00"/>
 
-<meta property="article:modified_time" content="2018-07-24T20:28:05&#43;08:00"/>
+<meta property="article:modified_time" content="2018-07-24T18:56:43&#43;08:00"/>
 
 
 
@@ -81,9 +81,9 @@
 <meta itemprop="description" content="Swift iOS">
 
 
-<meta itemprop="datePublished" content="2018-07-24T20:28:05&#43;08:00" />
-<meta itemprop="dateModified" content="2018-07-24T20:28:05&#43;08:00" />
-<meta itemprop="wordCount" content="944">
+<meta itemprop="datePublished" content="2018-07-24T18:56:43&#43;08:00" />
+<meta itemprop="dateModified" content="2018-07-24T18:56:43&#43;08:00" />
+<meta itemprop="wordCount" content="988">
 
 
 
@@ -317,7 +317,7 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/ios/"> iOS </a>
             
           </div>
-        <span class="more-meta"> 约 944 字 </span>
+        <span class="more-meta"> 约 988 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
       </div>
     </header>
@@ -355,62 +355,62 @@ ga('send', 'pageview');
 
 <tbody>
 <tr>
-<td><strong>default</strong></td>
+<td>default</td>
 <td>为当前输入方法提供的默认类型。</td>
 </tr>
 
 <tr>
-<td><strong>asciiCapable</strong></td>
+<td>asciiCapable</td>
 <td>一个可以输入ASCII字符的键盘类型</td>
 </tr>
 
 <tr>
-<td><strong>numbersAndPunctuation</strong></td>
+<td>numbersAndPunctuation</td>
 <td>数字和标点符号</td>
 </tr>
 
 <tr>
-<td><strong>URL</strong></td>
-<td>为方便输入网址URL网址  (例如 . / .com ).</td>
+<td>URL</td>
+<td>为方便输入网址URL网址 (例如 . / .com ).</td>
 </tr>
 
 <tr>
-<td><strong>numberPad</strong></td>
+<td>numberPad</td>
 <td>数字键盘 (0-9, ۰-۹, ०-९, etc.). 方便PIN码的输入.</td>
 </tr>
 
 <tr>
-<td><strong>phonePad</strong></td>
+<td>phonePad</td>
 <td>一般用于打电话键盘 (1-9, *, 0, #, 数字下含字母).</td>
 </tr>
 
 <tr>
-<td><strong>namePhonePad</strong></td>
+<td>namePhonePad</td>
 <td>方便输入姓名和手机号.</td>
 </tr>
 
 <tr>
-<td><strong>emailAddress</strong></td>
+<td>emailAddress</td>
 <td>方面输入邮箱地址的 (含有 space @ .).</td>
 </tr>
 
 <tr>
-<td><strong>decimalPad</strong></td>
+<td>decimalPad</td>
 <td>iOS4.1+ 支持输入数字和小数点</td>
 </tr>
 
 <tr>
-<td><strong>twitter</strong></td>
+<td>twitter</td>
 <td>iOS5.0+ 方便twitter输入的,支持 @ #</td>
 </tr>
 
 <tr>
-<td><strong>webSearch</strong></td>
+<td>webSearch</td>
 <td>iOS7.0+ 面向URL输入,支持空格 点号.</td>
 </tr>
 
 <tr>
-<td><strong>asciiCapableNumberPad</strong></td>
+<td>asciiCapableNumberPad</td>
 <td>iOS10.0+ 数字键盘（0-9），始终为ASCII数字。</td>
 </tr>
 </tbody>
@@ -418,7 +418,7 @@ ga('send', 'pageview');
 
 <h1 id="swift-键盘返回类型-uireturnkeytype">Swift 键盘返回类型 UIReturnKeyType</h1>
 
-<p>连续多个输入框的时候,有时我们填写完一项,我们想使用键盘自动跳到下一项输入框,这时候我们可以设置键盘Return按键功能,该类型定义在<code>UIReturnKeyType</code></p>
+<p>连续多个输入框的时候,有时我们填写完一项,我们想使用键盘自动跳到下一项输入框,这时候我们可以设置键盘Return按键功能,该类型定义在UIReturnKeyType</p>
 
 <table>
 <thead>
@@ -431,27 +431,27 @@ ga('send', 'pageview');
 
 <tbody>
 <tr>
-<td><strong>default</strong></td>
-<td><strong>go</strong></td>
-<td><strong>google</strong></td>
+<td>default</td>
+<td>go</td>
+<td>google</td>
 </tr>
 
 <tr>
-<td><strong>join</strong></td>
-<td><strong>next</strong></td>
-<td><strong>route</strong></td>
+<td>join</td>
+<td>next</td>
+<td>route</td>
 </tr>
 
 <tr>
-<td><strong>search</strong></td>
-<td><strong>send</strong></td>
-<td><strong>yahoo</strong></td>
+<td>search</td>
+<td>send</td>
+<td>yahoo</td>
 </tr>
 
 <tr>
-<td><strong>done</strong></td>
-<td><strong>emergencyCall</strong></td>
-<td><strong>continue</strong> //iOS 9.0+</td>
+<td>done</td>
+<td>emergencyCall</td>
+<td>continue //iOS 9.0+</td>
 </tr>
 </tbody>
 </table>
@@ -459,9 +459,9 @@ ga('send', 'pageview');
 <p>常用的有next下一项和done完成,使用方法如下:</p>
 
 <ul>
-<li><p>1、ViewController类需要继承<code>UITextFieldDelegate</code></p></li>
+<li><p>1、ViewController类需要继承UITextFieldDelegate</p></li>
 
-<li><p>2、设置TextField的<code>returnKeyType</code>和<code>delegate</code>值。</p></li>
+<li><p>2、设置TextField的returnKeyType和delegate值。</p></li>
 
 <li><p>3、实现textFieldShouldReturn方法。</p></li>
 </ul>
@@ -472,47 +472,75 @@ ga('send', 'pageview');
 <p><img src="/media/images/2018/keyboard_done.png" alt="keyboard_done" /></p>
 
 <p>实现代码如下:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="nc">ViewController</span><span class="p">:</span> <span class="n">UIViewController</span><span class="p">,</span> <span class="n">UITextFieldDelegate</span><span class="p">{</span>
 
-<pre><code class="language-swift">
-class ViewController: UIViewController, UITextFieldDelegate{
+  <span class="kd">var</span> <span class="nv">nameTextfield</span> <span class="p">:</span><span class="n">UITextField</span><span class="o">!//</span><span class="err">账号</span>
+  <span class="kd">var</span> <span class="nv">passworkTextfield</span> <span class="p">:</span><span class="n">UITextField</span><span class="o">!//</span><span class="err">密码</span>
 
-  var nameTextfield :UITextField!//账号
-  var passworkTextfield :UITextField!//密码
+  <span class="kr">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kc">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
+      <span class="c1">// Do any additional setup after loading the view, typically from a nib.</span>
+      <span class="p">...</span>
+      <span class="n">nameTextfield</span><span class="p">.</span><span class="n">returnKeyType</span> <span class="p">=</span> <span class="n">UIReturnKeyType</span><span class="p">.</span><span class="n">next</span>
+      <span class="n">nameTextfield</span><span class="p">.</span><span class="n">delegate</span> <span class="p">=</span> <span class="kc">self</span>
+      <span class="n">passworkTextfield</span><span class="p">.</span><span class="n">returnKeyType</span> <span class="p">=</span> <span class="n">UIReturnKeyType</span><span class="p">.</span><span class="n">done</span>
+      <span class="n">passworkTextfield</span><span class="p">.</span><span class="n">delegate</span> <span class="p">=</span> <span class="kc">self</span>
+      <span class="p">...</span>
+  <span class="p">}</span>
 
-  override func viewDidLoad() {
-      super.viewDidLoad()
-      // Do any additional setup after loading the view, typically from a nib.
-      ...
-      nameTextfield.returnKeyType = UIReturnKeyType.next
-      nameTextfield.delegate = self
-      passworkTextfield.returnKeyType = UIReturnKeyType.done
-      passworkTextfield.delegate = self
-      ...
-  }
+  <span class="kd">func</span> <span class="nf">textFieldShouldReturn</span><span class="p">(</span><span class="kc">_</span> <span class="n">textField</span><span class="p">:</span> <span class="n">UITextField</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nb">Bool</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">textField</span> <span class="p">==</span> <span class="n">nameTextfield</span> <span class="p">{</span>
+            <span class="c1">// 焦点转到密码输入框</span>
+            <span class="n">passworkTextfield</span><span class="p">.</span><span class="n">becomeFirstResponder</span><span class="p">()</span>
+        <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+           <span class="c1">// 收起键盘</span>
+           <span class="n">textField</span><span class="p">.</span><span class="n">resignFirstResponder</span><span class="p">()</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
 
-  func textFieldShouldReturn(_ textField: UITextField) -&gt; Bool {
-        if textField == nameTextfield {
-            // 焦点转到密码输入框
-            passworkTextfield.becomeFirstResponder()
-        }else {
-           // 收起键盘
-           textField.resignFirstResponder()
-        }
-        return true;
-    }
-
-}
-
-</code></pre>
-
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>在上面的代码中我们设置了,当焦点位于账号输入框时,键盘右下角显示下一项,点击下一项,焦点移到密码输入框,此时键盘右下角显示完成,点击完成,可隐藏键盘。</p>
 
 <h1 id="为数字键盘添加完成功能">为数字键盘添加完成功能</h1>
 
-<p>当我们设置键盘类型为<code>UIKeyboardType.numberPad</code>,我们是无法为键盘添加完成收起键盘的功能。
-但是我们可以利用<code>UIToolbar</code>在数字键盘上方附着一个完成按钮。</p>
+<p>当我们设置键盘类型为UIKeyboardType.numberPad,我们是无法为键盘添加完成收起键盘的功能。 但是我们可以利用UIToolbar在数字键盘上方附着一个完成按钮。</p>
 
-<p>假设我们的TextField名为 <code>codeTextfield</code>,我们可以利用如下代码实现添加完成按钮,点击完成按钮,隐藏键盘。</p>
+<p>假设我们的TextField名为 codeTextfield,我们可以利用如下代码实现添加完成按钮,点击完成按钮,隐藏键盘。</p>
 
 <p>效果如下:</p>
 
@@ -521,26 +549,44 @@ class ViewController: UIViewController, UITextFieldDelegate{
 <p><img src="/media/images/2018/keyboard_number_done.png" alt="keyboard_number_done" /></p>
 
 <p>实现代码如下:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="c1">// 添加完成按钮</span>
+<span class="kd">let</span> <span class="nv">doneToolbar</span><span class="p">:</span> <span class="n">UIToolbar</span> <span class="p">=</span> <span class="n">UIToolbar</span><span class="p">(</span><span class="n">frame</span><span class="p">:</span> <span class="n">CGRect</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">:</span> <span class="mi">320</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="mi">50</span><span class="p">))</span>
+<span class="n">doneToolbar</span><span class="p">.</span><span class="n">barStyle</span>       <span class="p">=</span> <span class="n">UIBarStyle</span><span class="p">.</span><span class="k">default</span>
+<span class="kd">let</span> <span class="nv">flexSpace</span>              <span class="p">=</span> <span class="n">UIBarButtonItem</span><span class="p">(</span><span class="n">barButtonSystemItem</span><span class="p">:</span> <span class="n">UIBarButtonSystemItem</span><span class="p">.</span><span class="n">flexibleSpace</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nv">done</span><span class="p">:</span> <span class="n">UIBarButtonItem</span>  <span class="p">=</span> <span class="n">UIBarButtonItem</span><span class="p">(</span><span class="n">title</span><span class="p">:</span> <span class="s">&#34;Done&#34;</span><span class="p">,</span> <span class="n">style</span><span class="p">:</span> <span class="n">UIBarButtonItemStyle</span><span class="p">.</span><span class="n">done</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="kc">self</span><span class="p">,</span> <span class="n">action</span><span class="p">:</span> <span class="k">#selector</span><span class="p">(</span><span class="n">ViewController</span><span class="p">.</span><span class="n">doneButtonAction</span><span class="p">))</span>
+<span class="kd">var</span> <span class="nv">items</span> <span class="p">=</span> <span class="p">[</span><span class="n">UIBarButtonItem</span><span class="p">]()</span>
+<span class="n">items</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">flexSpace</span><span class="p">)</span>
+<span class="n">items</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">done</span><span class="p">)</span>
+<span class="n">doneToolbar</span><span class="p">.</span><span class="n">items</span> <span class="p">=</span> <span class="n">items</span>
+<span class="n">doneToolbar</span><span class="p">.</span><span class="n">sizeToFit</span><span class="p">()</span>
+<span class="n">codeTextfield</span><span class="p">.</span><span class="n">inputAccessoryView</span> <span class="p">=</span> <span class="n">doneToolbar</span>
 
-<pre><code class="language-swift">// 添加完成按钮
-let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
-doneToolbar.barStyle       = UIBarStyle.default
-let flexSpace              = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-let done: UIBarButtonItem  = UIBarButtonItem(title: &quot;Done&quot;, style: UIBarButtonItemStyle.done, target: self, action: #selector(ViewController.doneButtonAction))
-var items = [UIBarButtonItem]()
-items.append(flexSpace)
-items.append(done)
-doneToolbar.items = items
-doneToolbar.sizeToFit()
-codeTextfield.inputAccessoryView = doneToolbar
-
-// 点击完成按钮，隐藏键盘
-@objc func doneButtonAction() {
-    self.verificationCodeTextfield.resignFirstResponder()
-}
-
-</code></pre>
-
+<span class="c1">// 点击完成按钮，隐藏键盘</span>
+<span class="kr">@objc</span> <span class="kd">func</span> <span class="nf">doneButtonAction</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kc">self</span><span class="p">.</span><span class="n">verificationCodeTextfield</span><span class="p">.</span><span class="n">resignFirstResponder</span><span class="p">()</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
