@@ -84,7 +84,7 @@
 
 <meta itemprop="datePublished" content="2016-10-13T18:32:00&#43;08:00" />
 <meta itemprop="dateModified" content="2016-10-13T18:32:00&#43;08:00" />
-<meta itemprop="wordCount" content="158">
+<meta itemprop="wordCount" content="176">
 
 
 
@@ -317,7 +317,7 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
             
           </div>
-        <span class="more-meta"> 约 158 字 </span>
+        <span class="more-meta"> 约 176 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -346,8 +346,29 @@ ga('send', 'pageview');
 <p>cat ssl_certificate.cer IntermediateCA.cer &gt;&gt;  domain_name.crt</p>
 
 <p>4.nginx配置</p>
-
-<pre><code>server {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">server {
     listen       80;
     server_name  www.domain.com;
     rewrite ^(.*)$  https://$host$1 permanent;
@@ -364,9 +385,9 @@ server {
         root /data/web/www;
         index index.html;
     }
-}
-</code></pre>
-
+}</pre></td></tr></table>
+</div>
+</div>
 <p>5.如果有后台API，需要视情况升级修改。</p>
 
     </div>

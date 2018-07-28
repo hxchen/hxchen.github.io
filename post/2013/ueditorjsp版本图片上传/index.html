@@ -84,7 +84,7 @@
 
 <meta itemprop="datePublished" content="2013-02-05T16:16:00&#43;08:00" />
 <meta itemprop="dateModified" content="2013-02-05T16:16:00&#43;08:00" />
-<meta itemprop="wordCount" content="248">
+<meta itemprop="wordCount" content="251">
 
 
 
@@ -316,7 +316,7 @@ ga('send', 'pageview');
         <div class="post-category">
             
           </div>
-        <span class="more-meta"> 约 248 字 </span>
+        <span class="more-meta"> 约 251 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -337,11 +337,18 @@ ga('send', 'pageview');
 <p>一、新建文件夹ueditor，拷贝源码jsp文件夹内的.jsp和.java内容到该文件夹。目录结构如图所示</p>
 
 <p>二、修改editor_config.js</p>
-
-<pre><code class="language-js">imageUrl:URL+&quot;ueditor/ueditor/imageUp.jsp&quot; //图片上传提交地址
-imagePath:&quot;/Ecommerce/resources/ueditor/ueditor/ueditor/&quot; //图片修正地址，引用了fixedImagePath,如有特殊需求，可自行配置
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">imageUrl</span><span class="o">:</span><span class="nx">URL</span><span class="o">+</span><span class="s2">&#34;ueditor/ueditor/imageUp.jsp&#34;</span> <span class="c1">//图片上传提交地址
+</span><span class="c1"></span><span class="nx">imagePath</span><span class="o">:</span><span class="s2">&#34;/Ecommerce/resources/ueditor/ueditor/ueditor/&#34;</span> <span class="c1">//图片修正地址，引用了fixedImagePath,如有特殊需求，可自行配置
+</span><span class="c1"></span></code></pre></td></tr></table>
+</div>
+</div>
 <p>三、访问UEditor实例化页面，上传图片查看。</p>
 
 <p>ps：注意工程的发布环境，要选择webapps下面，否则可能会引起图片上传成功，但是找不到图片（会上传到实际deploy目录中去）。</p>

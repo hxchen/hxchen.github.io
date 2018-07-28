@@ -83,7 +83,7 @@
 
 <meta itemprop="datePublished" content="2018-05-18T18:34:58&#43;08:00" />
 <meta itemprop="dateModified" content="2018-05-18T18:34:58&#43;08:00" />
-<meta itemprop="wordCount" content="1323">
+<meta itemprop="wordCount" content="1367">
 
 
 
@@ -316,7 +316,7 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/swift/"> Swift </a>
             
           </div>
-        <span class="more-meta"> 约 1323 字 </span>
+        <span class="more-meta"> 约 1367 字 </span>
         <span class="more-meta"> 预计阅读 3 分钟 </span>
       </div>
     </header>
@@ -389,21 +389,36 @@ ga('send', 'pageview');
 <p><img src="/media/images/2018/swift03.png" alt="new file" /></p>
 
 <p><code>LoginProcessor.swift</code>代码如下:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">import</span> <span class="nc">Foundation</span>
 
-<pre><code class="language-swift">import Foundation
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">LoginProcessor</span><span class="p">{</span>
 
-public class LoginProcessor{
+    <span class="kd">public</span> <span class="kd">init</span><span class="p">(){</span>
 
-    public init(){
+    <span class="p">}</span>
 
-    }
-
-    public func login(){
-        NSLog(&quot;LoginProcessor:login&quot;);
-    }
-}
-</code></pre>
-
+    <span class="kd">public</span> <span class="kd">func</span> <span class="nf">login</span><span class="p">(){</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">&#34;LoginProcessor:login&#34;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>在类LoginProcessor里面我们先定义了构造函数init,然后定义了一个login函数供SDK调用者使用,功能非常简单,只是一句简单输出。</p>
 
 <h3 id="3-打包sdk">3.打包SDK</h3>
@@ -454,43 +469,80 @@ public class LoginProcessor{
 
 <p>编辑ViewController.swift,添加<code>import AccountSDK</code>,并且在login事件中调用SDK中定义的login函数。
 最终该文件应该是这样的:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="c1">//</span>
+<span class="c1">//  ViewController.swift</span>
+<span class="c1">//  AccountSDKDemo</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by 海祥陈 on 2018/5/18.</span>
+<span class="c1">//  Copyright © 2018年 海祥陈. All rights reserved.</span>
+<span class="c1">//</span>
 
-<pre><code class="language-swift">//
-//  ViewController.swift
-//  AccountSDKDemo
-//
-//  Created by 海祥陈 on 2018/5/18.
-//  Copyright © 2018年 海祥陈. All rights reserved.
-//
+<span class="kd">import</span> <span class="nc">UIKit</span>
+<span class="kd">import</span> <span class="nc">AccountSDK</span>
 
-import UIKit
-import AccountSDK
+<span class="kd">class</span> <span class="nc">ViewController</span><span class="p">:</span> <span class="n">UIViewController</span> <span class="p">{</span>
+    <span class="c1">//</span><span class="cs">MARK:</span><span class="c1"> Properties</span>
 
-class ViewController: UIViewController {
-    //MARK: Properties
+    <span class="kr">@IBOutlet</span> <span class="kr">weak</span> <span class="kd">var</span> <span class="nv">loginButton</span><span class="p">:</span> <span class="n">UIButton</span><span class="o">!</span>
 
-    @IBOutlet weak var loginButton: UIButton!
+    <span class="kr">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kc">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
+        <span class="c1">// Do any additional setup after loading the view, typically from a nib.</span>
+    <span class="p">}</span>
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+    <span class="kr">override</span> <span class="kd">func</span> <span class="nf">didReceiveMemoryWarning</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kc">super</span><span class="p">.</span><span class="n">didReceiveMemoryWarning</span><span class="p">()</span>
+        <span class="c1">// Dispose of any resources that can be recreated.</span>
+    <span class="p">}</span>
+    <span class="c1">//</span><span class="cs">MARK:</span><span class="c1"> Actions</span>
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    //MARK: Actions
+    <span class="c1">// event for click login button</span>
+    <span class="kr">@IBAction</span> <span class="kd">func</span> <span class="nf">login</span><span class="p">(</span><span class="kc">_</span> <span class="n">sender</span><span class="p">:</span> <span class="nb">Any</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">&#34;Login&#34;</span><span class="p">);</span>
+        <span class="n">LoginProcessor</span><span class="p">().</span><span class="n">login</span><span class="p">();</span>
+    <span class="p">}</span>
 
-    // event for click login button
-    @IBAction func login(_ sender: Any) {
-        NSLog(&quot;Login&quot;);
-        LoginProcessor().login();
-    }
-
-}
-</code></pre>
-
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <h2 id="三-测试">三、测试</h2>
 
 <p>Command+R 在模拟器上运行AccountSDKDemo App,运行后,点击Login按钮,观察后台日志,是否成功输出LoginProcessor中login函数的内容。</p>

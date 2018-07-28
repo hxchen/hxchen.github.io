@@ -25,7 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="北斗" />
-  <meta name="description" content="项目在测试环境获取用户IP没问题，在正式环境下使用 request.getRemoteHost() 获取的始终是127.0.0.1，最后才想到问题所在：正式环境使用了nginx作为代理，获" />
+  <meta name="description" content="项目在测试环境获取用户IP没问题，在正式环境下使用 1 request.getRemoteHost() 获取的始终是127.0.0.1，最后才想到问题所在：正式环境使用了nginx作为代理，" />
 
   <meta name="keywords" content="技术, 程序员, 码农, 程序猿, 分享, java, python, 3afun" />
 
@@ -58,7 +58,7 @@
 
 
 <meta property="og:title" content="Nginx&#43;Tomcat获取用户真实IP" />
-<meta property="og:description" content="项目在测试环境获取用户IP没问题，在正式环境下使用 request.getRemoteHost() 获取的始终是127.0.0.1，最后才想到问题所在：正式环境使用了nginx作为代理，获" />
+<meta property="og:description" content="项目在测试环境获取用户IP没问题，在正式环境下使用 1 request.getRemoteHost() 获取的始终是127.0.0.1，最后才想到问题所在：正式环境使用了nginx作为代理，" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.3afun.com/post/2013/nginx&#43;tomcat%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E7%9C%9F%E5%AE%9Eip/" />
 
@@ -79,19 +79,19 @@
 
 
 <meta itemprop="name" content="Nginx&#43;Tomcat获取用户真实IP">
-<meta itemprop="description" content="项目在测试环境获取用户IP没问题，在正式环境下使用 request.getRemoteHost() 获取的始终是127.0.0.1，最后才想到问题所在：正式环境使用了nginx作为代理，获">
+<meta itemprop="description" content="项目在测试环境获取用户IP没问题，在正式环境下使用 1 request.getRemoteHost() 获取的始终是127.0.0.1，最后才想到问题所在：正式环境使用了nginx作为代理，">
 
 
 <meta itemprop="datePublished" content="2013-12-26T19:30:27&#43;08:00" />
 <meta itemprop="dateModified" content="2013-12-26T19:30:27&#43;08:00" />
-<meta itemprop="wordCount" content="82">
+<meta itemprop="wordCount" content="84">
 
 
 
 <meta itemprop="keywords" content="服务器,Nginx," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Nginx&#43;Tomcat获取用户真实IP"/>
-<meta name="twitter:description" content="项目在测试环境获取用户IP没问题，在正式环境下使用 request.getRemoteHost() 获取的始终是127.0.0.1，最后才想到问题所在：正式环境使用了nginx作为代理，获"/>
+<meta name="twitter:description" content="项目在测试环境获取用户IP没问题，在正式环境下使用 1 request.getRemoteHost() 获取的始终是127.0.0.1，最后才想到问题所在：正式环境使用了nginx作为代理，"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -318,7 +318,7 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/nginx/"> Nginx </a>
             
           </div>
-        <span class="more-meta"> 约 82 字 </span>
+        <span class="more-meta"> 约 84 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -335,20 +335,32 @@ ga('send', 'pageview');
     
     <div class="post-content">
       <p>项目在测试环境获取用户IP没问题，在正式环境下使用</p>
-
-<pre><code class="language-Java">request.getRemoteHost()
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="n">request</span><span class="o">.</span><span class="na">getRemoteHost</span><span class="o">()</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>获取的始终是127.0.0.1，最后才想到问题所在：正式环境使用了nginx作为代理，获取的始终是nginx的IP。这时想获取用户真实IP，可在Nginx，location/下作如下设置：</p>
-
-<pre><code>proxy_set_header X-Real-IP $remote_addr;
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">proxy_set_header X-Real-IP $remote_addr;</pre></td></tr></table>
+</div>
+</div>
 <p>代码中使用</p>
-
-<pre><code class="language-Java">request.getHeader(&quot;X-Real-IP&quot;)
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java"><span class="n">request</span><span class="o">.</span><span class="na">getHeader</span><span class="o">(</span><span class="s">&#34;X-Real-IP&#34;</span><span class="o">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>获取。</p>
 
     </div>
@@ -416,7 +428,7 @@ ga('send', 'pageview');
         id: 'Nginx\x2bTomcat获取用户真实IP.md',
         title: 'Nginx\x2bTomcat获取用户真实IP',
         link: decodeURI(location.href),
-        desc: '项目在测试环境获取用户IP没问题，在正式环境下使用 request.getRemoteHost() 获取的始终是127.0.0.1，最后才想到问题所在：正式环境使用了nginx作为代理，获',
+        desc: '项目在测试环境获取用户IP没问题，在正式环境下使用 1 request.getRemoteHost() 获取的始终是127.0.0.1，最后才想到问题所在：正式环境使用了nginx作为代理，',
         owner: 'hxchen',
         repo: 'comments',
         oauth: {

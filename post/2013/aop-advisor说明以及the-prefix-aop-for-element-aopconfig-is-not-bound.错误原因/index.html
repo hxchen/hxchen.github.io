@@ -84,7 +84,7 @@
 
 <meta itemprop="datePublished" content="2013-01-17T22:34:00&#43;08:00" />
 <meta itemprop="dateModified" content="2013-01-17T22:34:00&#43;08:00" />
-<meta itemprop="wordCount" content="294">
+<meta itemprop="wordCount" content="307">
 
 
 
@@ -316,7 +316,7 @@ ga('send', 'pageview');
         <div class="post-category">
             
           </div>
-        <span class="more-meta"> 约 294 字 </span>
+        <span class="more-meta"> 约 307 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -341,22 +341,38 @@ ga('send', 'pageview');
 <p>并在“xsi：schemaLocation”中指定aop配置的schema的地址</p>
 
 <p>配置文件如下：</p>
-
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans &quot;
-xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance &quot;
-xmlns:aop=&quot;http://www.springframework.org/schema/aop &quot;
-xmlns:tx=&quot;http://www.springframework.org/schema/tx &quot;
-xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+&lt;beans xmlns=&#34;http://www.springframework.org/schema/beans &#34;
+xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance &#34;
+xmlns:aop=&#34;http://www.springframework.org/schema/aop &#34;
+xmlns:tx=&#34;http://www.springframework.org/schema/tx &#34;
+xsi:schemaLocation=&#34;http://www.springframework.org/schema/beans
                      http://www.springframework.org/schema/beans/spring-beans.xsd
                      http://www.springframework.org/schema/tx
                      http://www.springframework.org/schema/tx/spring-tx.xsd
                      http://www.springframework.org/schema/aop
-                     http://www.springframework.org/schema/aop/spring-aop.xsd &quot;&gt;
+                     http://www.springframework.org/schema/aop/spring-aop.xsd &#34;&gt;
 
-(* com.test.service.*.*(..))中几个通配符的含义：
-</code></pre>
-
+(* com.test.service.*.*(..))中几个通配符的含义：</pre></td></tr></table>
+</div>
+</div>
 <p>第一个 * —— 通配 任意返回值类型</p>
 
 <p>第二个 * —— 通配 包com.test.service下的任意class</p>

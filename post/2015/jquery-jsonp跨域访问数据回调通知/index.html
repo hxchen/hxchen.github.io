@@ -25,7 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="北斗" />
-  <meta name="description" content="javascript跨域回调，和传统JQuery Ajax有些区别。前端后台需要同时进行改写。 前端： $(document).ready(function(){ var url = &amp;quot;http://hostname/model-art-code&amp;quot;; $.ajax({ type : &amp;quot;GET&amp;quot;, async: false, url : url, dataType: &#39;jsonp&#39;, jsonp: &amp;quot;callback&amp;quot;, jsonpCallback:&amp;quot;success_jsonpCallback&amp;quot;, success :" />
+  <meta name="description" content="javascript跨域回调，和传统JQuery Ajax有些区别。前端后台需要同时进行改写。 前端： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 $(document).ready(function(){ var url =" />
 
   <meta name="keywords" content="技术, 程序员, 码农, 程序猿, 分享, java, python, 3afun" />
 
@@ -58,7 +58,7 @@
 
 
 <meta property="og:title" content="JQuery JSONP跨域访问数据回调通知" />
-<meta property="og:description" content="javascript跨域回调，和传统JQuery Ajax有些区别。前端后台需要同时进行改写。 前端： $(document).ready(function(){ var url = &quot;http://hostname/model-art-code&quot;; $.ajax({ type : &quot;GET&quot;, async: false, url : url, dataType: &#39;jsonp&#39;, jsonp: &quot;callback&quot;, jsonpCallback:&quot;success_jsonpCallback&quot;, success :" />
+<meta property="og:description" content="javascript跨域回调，和传统JQuery Ajax有些区别。前端后台需要同时进行改写。 前端： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 $(document).ready(function(){ var url =" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.3afun.com/post/2015/jquery-jsonp%E8%B7%A8%E5%9F%9F%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE%E5%9B%9E%E8%B0%83%E9%80%9A%E7%9F%A5/" />
 
@@ -79,19 +79,19 @@
 
 
 <meta itemprop="name" content="JQuery JSONP跨域访问数据回调通知">
-<meta itemprop="description" content="javascript跨域回调，和传统JQuery Ajax有些区别。前端后台需要同时进行改写。 前端： $(document).ready(function(){ var url = &quot;http://hostname/model-art-code&quot;; $.ajax({ type : &quot;GET&quot;, async: false, url : url, dataType: &#39;jsonp&#39;, jsonp: &quot;callback&quot;, jsonpCallback:&quot;success_jsonpCallback&quot;, success :">
+<meta itemprop="description" content="javascript跨域回调，和传统JQuery Ajax有些区别。前端后台需要同时进行改写。 前端： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 $(document).ready(function(){ var url =">
 
 
 <meta itemprop="datePublished" content="2015-06-10T19:21:00&#43;08:00" />
 <meta itemprop="dateModified" content="2015-06-10T19:21:00&#43;08:00" />
-<meta itemprop="wordCount" content="169">
+<meta itemprop="wordCount" content="191">
 
 
 
 <meta itemprop="keywords" content="Web前端," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="JQuery JSONP跨域访问数据回调通知"/>
-<meta name="twitter:description" content="javascript跨域回调，和传统JQuery Ajax有些区别。前端后台需要同时进行改写。 前端： $(document).ready(function(){ var url = &quot;http://hostname/model-art-code&quot;; $.ajax({ type : &quot;GET&quot;, async: false, url : url, dataType: &#39;jsonp&#39;, jsonp: &quot;callback&quot;, jsonpCallback:&quot;success_jsonpCallback&quot;, success :"/>
+<meta name="twitter:description" content="javascript跨域回调，和传统JQuery Ajax有些区别。前端后台需要同时进行改写。 前端： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 $(document).ready(function(){ var url ="/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -316,7 +316,7 @@ ga('send', 'pageview');
         <div class="post-category">
             
           </div>
-        <span class="more-meta"> 约 169 字 </span>
+        <span class="more-meta"> 约 191 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -335,33 +335,59 @@ ga('send', 'pageview');
       <p>javascript跨域回调，和传统JQuery Ajax有些区别。前端后台需要同时进行改写。</p>
 
 <p>前端：</p>
-
-<pre><code>$(document).ready(function(){
-            var url = &quot;http://hostname/model-art-code&quot;;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$(document).ready(function(){
+            var url = &#34;http://hostname/model-art-code&#34;;
             $.ajax({
-                type : &quot;GET&quot;,
+                type : &#34;GET&#34;,
                 async: false,
                 url : url,
-                dataType: 'jsonp',
-                jsonp: &quot;callback&quot;,
-                jsonpCallback:&quot;success_jsonpCallback&quot;,
+                dataType: &#39;jsonp&#39;,
+                jsonp: &#34;callback&#34;,
+                jsonpCallback:&#34;success_jsonpCallback&#34;,
                 success : function(json){
-                    console.log('success='+json.code);
+                    console.log(&#39;success=&#39;+json.code);
                 },
                 error:function(err){
-                    console.log('fail'+err);
+                    console.log(&#39;fail&#39;+err);
                 }
             });
-        });
-</code></pre>
-
+        });</pre></td></tr></table>
+</div>
+</div>
 <p>Nodejs后台：</p>
-
-<pre><code>res.writeHead(200,{'Content-Type':'application/json;charset=utf-8'});
-res.write('success_jsonpCallback'+'({ code:\&quot;value值\&quot;})');
-res.end();
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">res.writeHead(200,{&#39;Content-Type&#39;:&#39;application/json;charset=utf-8&#39;});
+res.write(&#39;success_jsonpCallback&#39;+&#39;({ code:\&#34;value值\&#34;})&#39;);
+res.end();</pre></td></tr></table>
+</div>
+</div>
 <p>其中服务器端success_jsonpCallback为客户端jsonpCallback传入的参数</p>
 
     </div>
@@ -427,7 +453,7 @@ res.end();
         id: 'JQuery JSONP跨域访问数据回调通知.md',
         title: 'JQuery JSONP跨域访问数据回调通知',
         link: decodeURI(location.href),
-        desc: 'javascript跨域回调，和传统JQuery Ajax有些区别。前端后台需要同时进行改写。 前端： $(document).ready(function(){ var url = \x26quot;http:\/\/hostname\/model-art-code\x26quot;; $.ajax({ type : \x26quot;GET\x26quot;, async: false, url : url, dataType: \x27jsonp\x27, jsonp: \x26quot;callback\x26quot;, jsonpCallback:\x26quot;success_jsonpCallback\x26quot;, success :',
+        desc: 'javascript跨域回调，和传统JQuery Ajax有些区别。前端后台需要同时进行改写。 前端： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 $(document).ready(function(){ var url =',
         owner: 'hxchen',
         repo: 'comments',
         oauth: {

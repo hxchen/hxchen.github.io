@@ -17,7 +17,7 @@
       <pubDate>Fri, 04 Apr 2014 14:46:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2014/springmvc-redirect%E9%87%8D%E5%AE%9A%E5%90%91%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0/</guid>
-      <description>URL不接参数的非重定向可以使用 Model.addAttribute(Object arg1); 重定向可以使用如下方法传递对象参数 RedirectAttributes.addFlashAttribute(String arg0, Object arg1) 其他传递方法则可参考RedirectAttributes类的方</description>
+      <description>URL不接参数的非重定向可以使用 1 Model.addAttribute(Object arg1); 重定向可以使用如下方法传递对象参数 1 RedirectAttributes.addFlashAttribute(String arg0, Object arg1) 其他传递方法则可参考RedirectAttributes类</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Wed, 26 Feb 2014 11:09:27 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2014/springmvc-controller%E5%B1%82%E4%B8%AD-request%E6%8E%A5%E6%94%B6%E5%8F%82%E6%95%B0%E4%B9%B1%E7%A0%81/</guid>
-      <description>直接使用 String email = request.getParameter(&amp;quot;email&amp;quot;); 接收到email是乱码，需要转换 email = new String(request.getParameter(&amp;quot;email&amp;quot;).getBytes(&amp;quot;ISO-8859-1&amp;quot;),&amp;quot;UTF-8&amp;quot;); 这样麻烦还需要处理异常。 还可以这么解决： web.xml &amp;lt;filter&amp;gt; &amp;lt;filter-name&amp;gt;CharacterEncodingFilter&amp;lt;/filter-name&amp;gt; &amp;lt;filter-class&amp;gt;org.springframework.web.filter.CharacterEncodingFilter&amp;lt;/filter-class&amp;gt; &amp;lt;init-param&amp;gt; &amp;lt;param-name&amp;gt;encoding&amp;lt;/param-name&amp;gt; &amp;lt;param-value&amp;gt;utf-8&amp;lt;/param-value&amp;gt; &amp;lt;/init-param&amp;gt; &amp;lt;/filter&amp;gt; &amp;lt;filter-mapping&amp;gt; &amp;lt;filter-name&amp;gt;CharacterEncodingFilter&amp;lt;/filter-name&amp;gt; &amp;lt;url-pattern&amp;gt;/*&amp;lt;/url-pattern&amp;gt; &amp;lt;/filter-mapping&amp;gt;</description>
+      <description>直接使用 1 String email = request.getParameter(&amp;#34;email&amp;#34;); 接收到email是乱码，需要转换 1 email = new String(request.getParameter(&amp;#34;email&amp;#34;).getBytes(&amp;#34;ISO-8859-1&amp;#34;),&amp;#34;UTF-8&amp;#34;); 这样麻烦还需要处理异常。 还可以这么解决： web.xml 1 2 3 4 5 6 7 8 9 10 11 12 &amp;lt;filter&amp;gt; &amp;lt;filter-name&amp;gt;CharacterEncodingFilter&amp;lt;/filter-name&amp;gt; &amp;lt;filter-class&amp;gt;org.springframework.web.filter.CharacterEncodingFilter&amp;lt;/filter-class&amp;gt; &amp;lt;init-param&amp;gt; &amp;lt;param-name&amp;gt;encoding&amp;lt;/param-name&amp;gt; &amp;lt;param-value&amp;gt;utf-8&amp;lt;/param-value&amp;gt; &amp;lt;/init-param&amp;gt;</description>
     </item>
     
   </channel>

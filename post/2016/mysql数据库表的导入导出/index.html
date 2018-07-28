@@ -25,7 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="北斗" />
-  <meta name="description" content="备份： mysqldump -hhostname -uroot -ppassword dbName tableName&amp;gt; tableName.bak 还原： mysq&amp;gt; use dbName mysq&amp;gt; source /data/tableName.bak" />
+  <meta name="description" content="备份： 1 mysqldump -hhostname -uroot -ppassword dbName tableName&amp;gt; tableName.bak 还原： 1 2 3 mysq&amp;gt; use dbName mysq&amp;gt; source /data/tableName.bak" />
 
   <meta name="keywords" content="技术, 程序员, 码农, 程序猿, 分享, java, python, 3afun" />
 
@@ -58,7 +58,7 @@
 
 
 <meta property="og:title" content="MySQL数据库表的导入导出" />
-<meta property="og:description" content="备份： mysqldump -hhostname -uroot -ppassword dbName tableName&gt; tableName.bak 还原： mysq&gt; use dbName mysq&gt; source /data/tableName.bak" />
+<meta property="og:description" content="备份： 1 mysqldump -hhostname -uroot -ppassword dbName tableName&gt; tableName.bak 还原： 1 2 3 mysq&gt; use dbName mysq&gt; source /data/tableName.bak" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.3afun.com/post/2016/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/" />
 
@@ -79,19 +79,19 @@
 
 
 <meta itemprop="name" content="MySQL数据库表的导入导出">
-<meta itemprop="description" content="备份： mysqldump -hhostname -uroot -ppassword dbName tableName&gt; tableName.bak 还原： mysq&gt; use dbName mysq&gt; source /data/tableName.bak">
+<meta itemprop="description" content="备份： 1 mysqldump -hhostname -uroot -ppassword dbName tableName&gt; tableName.bak 还原： 1 2 3 mysq&gt; use dbName mysq&gt; source /data/tableName.bak">
 
 
 <meta itemprop="datePublished" content="2016-01-06T19:33:00&#43;08:00" />
 <meta itemprop="dateModified" content="2016-01-06T19:33:00&#43;08:00" />
-<meta itemprop="wordCount" content="19">
+<meta itemprop="wordCount" content="23">
 
 
 
 <meta itemprop="keywords" content="MySQL," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="MySQL数据库表的导入导出"/>
-<meta name="twitter:description" content="备份： mysqldump -hhostname -uroot -ppassword dbName tableName&gt; tableName.bak 还原： mysq&gt; use dbName mysq&gt; source /data/tableName.bak"/>
+<meta name="twitter:description" content="备份： 1 mysqldump -hhostname -uroot -ppassword dbName tableName&gt; tableName.bak 还原： 1 2 3 mysq&gt; use dbName mysq&gt; source /data/tableName.bak"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -317,7 +317,7 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/mysql/"> MySQL </a>
             
           </div>
-        <span class="more-meta"> 约 19 字 </span>
+        <span class="more-meta"> 约 23 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -334,17 +334,27 @@ ga('send', 'pageview');
     
     <div class="post-content">
       <p>备份：</p>
-
-<pre><code>mysqldump -hhostname -uroot -ppassword dbName tableName&gt; tableName.bak
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">mysqldump -hhostname -uroot -ppassword dbName tableName&gt; tableName.bak</pre></td></tr></table>
+</div>
+</div>
 <p>还原：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">mysq&gt; use dbName
 
-<pre><code>mysq&gt; use dbName
-
-mysq&gt; source /data/tableName.bak
-</code></pre>
-
+mysq&gt; source /data/tableName.bak</pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
@@ -409,7 +419,7 @@ mysq&gt; source /data/tableName.bak
         id: 'MySQL数据库表的导入导出.md',
         title: 'MySQL数据库表的导入导出',
         link: decodeURI(location.href),
-        desc: '备份： mysqldump -hhostname -uroot -ppassword dbName tableName\x26gt; tableName.bak 还原： mysq\x26gt; use dbName mysq\x26gt; source \/data\/tableName.bak',
+        desc: '备份： 1 mysqldump -hhostname -uroot -ppassword dbName tableName\x26gt; tableName.bak 还原： 1 2 3 mysq\x26gt; use dbName mysq\x26gt; source \/data\/tableName.bak',
         owner: 'hxchen',
         repo: 'comments',
         oauth: {

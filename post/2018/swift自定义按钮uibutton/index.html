@@ -83,7 +83,7 @@
 
 <meta itemprop="datePublished" content="2018-07-23T20:58:17&#43;08:00" />
 <meta itemprop="dateModified" content="2018-07-23T20:58:17&#43;08:00" />
-<meta itemprop="wordCount" content="501">
+<meta itemprop="wordCount" content="550">
 
 
 
@@ -317,8 +317,8 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/ios/"> iOS </a>
             
           </div>
-        <span class="more-meta"> 约 501 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span class="more-meta"> 约 550 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
       </div>
     </header>
 
@@ -344,70 +344,132 @@ ga('send', 'pageview');
 <p><img src="/media/images/2018/custom_button01.png" alt="custom_button01" /></p>
 
 <p>示例代码:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="nc">KhakiButton</span><span class="p">:</span> <span class="n">UIButton</span> <span class="p">{</span>
 
-<pre><code class="language-swift">class KhakiButton: UIButton {
+    <span class="kr">override</span> <span class="kd">init</span><span class="p">(</span><span class="n">frame</span><span class="p">:</span> <span class="n">CGRect</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kc">super</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">frame</span><span class="p">:</span> <span class="n">frame</span><span class="p">)</span>
+        <span class="n">layer</span><span class="p">.</span><span class="n">cornerRadius</span> <span class="p">=</span> <span class="mi">4</span>
+        <span class="n">clipsToBounds</span> <span class="p">=</span> <span class="kc">true</span>
+        <span class="n">setTitleColor</span><span class="p">(</span><span class="n">UIColor</span><span class="p">.</span><span class="n">white</span><span class="p">,</span> <span class="k">for</span><span class="p">:</span> <span class="p">.</span><span class="n">normal</span><span class="p">)</span>
+        <span class="n">setTitleColor</span><span class="p">(</span><span class="n">UIColor</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">rgb</span><span class="p">:</span> <span class="mh">0x555555</span><span class="p">),</span> <span class="k">for</span><span class="p">:</span> <span class="p">.</span><span class="n">highlighted</span><span class="p">)</span>
+        <span class="n">backgroundColor</span> <span class="p">=</span> <span class="n">UIColor</span><span class="p">(</span><span class="n">red</span><span class="p">:</span> <span class="mi">176</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="n">green</span><span class="p">:</span> <span class="mi">160</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="n">blue</span><span class="p">:</span> <span class="mi">141</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="n">alpha</span><span class="p">:</span><span class="mh">0xFF</span><span class="p">)</span>
+        <span class="n">setBackgroundColor</span><span class="p">(</span><span class="n">color</span><span class="p">:</span> <span class="n">UIColor</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">rgb</span><span class="p">:</span> <span class="mh">0x9a8b79</span><span class="p">),</span> <span class="n">forState</span><span class="p">:</span> <span class="p">.</span><span class="n">highlighted</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="kr">required</span> <span class="kd">init</span><span class="p">?(</span><span class="n">coder</span> <span class="n">aDecoder</span><span class="p">:</span> <span class="n">NSCoder</span><span class="p">)</span> <span class="p">{</span>
+        <span class="bp">fatalError</span><span class="p">(</span><span class="s">&#34;init(coder:) has not been implemented&#34;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        layer.cornerRadius = 4
-        clipsToBounds = true
-        setTitleColor(UIColor.white, for: .normal)
-        setTitleColor(UIColor.init(rgb: 0x555555), for: .highlighted)
-        backgroundColor = UIColor(red: 176/255, green: 160/255, blue: 141/255, alpha:0xFF)
-        setBackgroundColor(color: UIColor.init(rgb: 0x9a8b79), forState: .highlighted)
-    }
-    required init?(coder aDecoder: NSCoder) {
-        fatalError(&quot;init(coder:) has not been implemented&quot;)
-    }
-}
+<span class="c1">// 红色按钮</span>
+<span class="kd">class</span> <span class="nc">RedButton</span><span class="p">:</span> <span class="n">UIButton</span> <span class="p">{</span>
 
-// 红色按钮
-class RedButton: UIButton {
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        layer.cornerRadius = 4
-        clipsToBounds = true
-        setTitleColor(UIColor.white, for: .normal)
-        setTitleColor(UIColor.init(rgb: 0x555555), for: .highlighted)
-        backgroundColor = UIColor(red: 210/255, green: 93/255, blue: 84/255, alpha:0xFF)
-        setBackgroundColor(color: UIColor.init(rgb: 0xbe4e46), forState: .highlighted)
-    }
-    required init?(coder aDecoder: NSCoder) {
-        fatalError(&quot;init(coder:) has not been implemented&quot;)
-    }
-}
-</code></pre>
-
+    <span class="kr">override</span> <span class="kd">init</span><span class="p">(</span><span class="n">frame</span><span class="p">:</span> <span class="n">CGRect</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kc">super</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">frame</span><span class="p">:</span> <span class="n">frame</span><span class="p">)</span>
+        <span class="n">layer</span><span class="p">.</span><span class="n">cornerRadius</span> <span class="p">=</span> <span class="mi">4</span>
+        <span class="n">clipsToBounds</span> <span class="p">=</span> <span class="kc">true</span>
+        <span class="n">setTitleColor</span><span class="p">(</span><span class="n">UIColor</span><span class="p">.</span><span class="n">white</span><span class="p">,</span> <span class="k">for</span><span class="p">:</span> <span class="p">.</span><span class="n">normal</span><span class="p">)</span>
+        <span class="n">setTitleColor</span><span class="p">(</span><span class="n">UIColor</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">rgb</span><span class="p">:</span> <span class="mh">0x555555</span><span class="p">),</span> <span class="k">for</span><span class="p">:</span> <span class="p">.</span><span class="n">highlighted</span><span class="p">)</span>
+        <span class="n">backgroundColor</span> <span class="p">=</span> <span class="n">UIColor</span><span class="p">(</span><span class="n">red</span><span class="p">:</span> <span class="mi">210</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="n">green</span><span class="p">:</span> <span class="mi">93</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="n">blue</span><span class="p">:</span> <span class="mi">84</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="n">alpha</span><span class="p">:</span><span class="mh">0xFF</span><span class="p">)</span>
+        <span class="n">setBackgroundColor</span><span class="p">(</span><span class="n">color</span><span class="p">:</span> <span class="n">UIColor</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">rgb</span><span class="p">:</span> <span class="mh">0xbe4e46</span><span class="p">),</span> <span class="n">forState</span><span class="p">:</span> <span class="p">.</span><span class="n">highlighted</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="kr">required</span> <span class="kd">init</span><span class="p">?(</span><span class="n">coder</span> <span class="n">aDecoder</span><span class="p">:</span> <span class="n">NSCoder</span><span class="p">)</span> <span class="p">{</span>
+        <span class="bp">fatalError</span><span class="p">(</span><span class="s">&#34;init(coder:) has not been implemented&#34;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>使用方法:</p>
-
-<pre><code class="language-swift">let loginButton = RedButton()
-loginButton.setTitle(&quot;登录&quot;, for: .normal)
-let registerButton = KhakiButton()
-registerButton.setTitle(&quot;注册&quot;, for: .normal)
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">let</span> <span class="nv">loginButton</span> <span class="p">=</span> <span class="n">RedButton</span><span class="p">()</span>
+<span class="n">loginButton</span><span class="p">.</span><span class="n">setTitle</span><span class="p">(</span><span class="s">&#34;登录&#34;</span><span class="p">,</span> <span class="k">for</span><span class="p">:</span> <span class="p">.</span><span class="n">normal</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nv">registerButton</span> <span class="p">=</span> <span class="n">KhakiButton</span><span class="p">()</span>
+<span class="n">registerButton</span><span class="p">.</span><span class="n">setTitle</span><span class="p">(</span><span class="s">&#34;注册&#34;</span><span class="p">,</span> <span class="k">for</span><span class="p">:</span> <span class="p">.</span><span class="n">normal</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>其中用到的<code>UIColor.init</code>是我自定义的一个方法,进行16进制颜色值和rgb转换</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">extension</span> <span class="nc">UIColor</span> <span class="p">{</span>
+    <span class="kr">convenience</span> <span class="kd">init</span><span class="p">(</span><span class="n">red</span><span class="p">:</span> <span class="nb">Int</span><span class="p">,</span> <span class="n">green</span><span class="p">:</span> <span class="nb">Int</span><span class="p">,</span> <span class="n">blue</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="bp">assert</span><span class="p">(</span><span class="n">red</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">red</span> <span class="o">&lt;=</span> <span class="mi">255</span><span class="p">,</span> <span class="s">&#34;Invalid red component&#34;</span><span class="p">)</span>
+        <span class="bp">assert</span><span class="p">(</span><span class="n">green</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">green</span> <span class="o">&lt;=</span> <span class="mi">255</span><span class="p">,</span> <span class="s">&#34;Invalid green component&#34;</span><span class="p">)</span>
+        <span class="bp">assert</span><span class="p">(</span><span class="n">blue</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">blue</span> <span class="o">&lt;=</span> <span class="mi">255</span><span class="p">,</span> <span class="s">&#34;Invalid blue component&#34;</span><span class="p">)</span>
 
-<pre><code class="language-swift">extension UIColor {
-    convenience init(red: Int, green: Int, blue: Int) {
-        assert(red &gt;= 0 &amp;&amp; red &lt;= 255, &quot;Invalid red component&quot;)
-        assert(green &gt;= 0 &amp;&amp; green &lt;= 255, &quot;Invalid green component&quot;)
-        assert(blue &gt;= 0 &amp;&amp; blue &lt;= 255, &quot;Invalid blue component&quot;)
+        <span class="kc">self</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span><span class="n">red</span><span class="p">:</span> <span class="n">CGFloat</span><span class="p">(</span><span class="n">red</span><span class="p">)</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">,</span> <span class="n">green</span><span class="p">:</span> <span class="n">CGFloat</span><span class="p">(</span><span class="n">green</span><span class="p">)</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">,</span> <span class="n">blue</span><span class="p">:</span> <span class="n">CGFloat</span><span class="p">(</span><span class="n">blue</span><span class="p">)</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">,</span> <span class="n">alpha</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">)</span>
+    <span class="p">}</span>
 
-        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
-    }
-
-    convenience init(rgb: Int) {
-        self.init(
-            red: (rgb &gt;&gt; 16) &amp; 0xFF,
-            green: (rgb &gt;&gt; 8) &amp; 0xFF,
-            blue: rgb &amp; 0xFF
-        )
-    }
-}
-</code></pre>
-
+    <span class="kr">convenience</span> <span class="kd">init</span><span class="p">(</span><span class="n">rgb</span><span class="p">:</span> <span class="nb">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kc">self</span><span class="p">.</span><span class="kd">init</span><span class="p">(</span>
+            <span class="n">red</span><span class="p">:</span> <span class="p">(</span><span class="n">rgb</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">,</span>
+            <span class="n">green</span><span class="p">:</span> <span class="p">(</span><span class="n">rgb</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">,</span>
+            <span class="n">blue</span><span class="p">:</span> <span class="n">rgb</span> <span class="o">&amp;</span> <span class="mh">0xFF</span>
+        <span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
@@ -441,9 +503,9 @@ registerButton.setTitle(&quot;注册&quot;, for: .normal)
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/2018/swift%E9%94%AE%E7%9B%98%E7%B1%BB%E5%9E%8B%E5%92%8C%E6%B7%BB%E5%8A%A0%E4%B8%8B%E4%B8%80%E9%A1%B9%E5%AE%8C%E6%88%90%E7%AD%89%E9%80%89%E9%A1%B9%E7%9A%84%E6%8E%A7%E5%88%B6/">
+          <a class="prev" href="/post/2018/swift%E9%94%AE%E7%9B%98%E7%B1%BB%E5%9E%8B%E5%92%8C%E6%B7%BB%E5%8A%A0%E4%B8%8B%E4%B8%80%E9%A1%B9%E5%AE%8C%E6%88%90%E7%AD%89%E9%80%89%E9%A1%B9%E7%9A%84%E6%8E%A7%E5%88%B6%E6%8E%A7%E5%88%B6/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Swift键盘类型和添加下一项完成等选项的控制</span>
+            <span class="prev-text nav-default">Swift键盘类型和添加下一项完成等选项的控制控制</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         

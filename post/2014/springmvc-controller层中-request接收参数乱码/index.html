@@ -25,7 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="北斗" />
-  <meta name="description" content="直接使用 String email = request.getParameter(&amp;quot;email&amp;quot;); 接收到email是乱码，需要转换 email = new String(request.getParameter(&amp;quot;email&amp;quot;).getBytes(&amp;quot;ISO-8859-1&amp;quot;),&amp;quot;UTF-8&amp;quot;); 这样麻烦还需要处理异常。 还可以这么解决： web.xml &amp;lt;filter&amp;gt; &amp;lt;filter-name&amp;gt;CharacterEncodingFilter&amp;lt;/filter-name&amp;gt; &amp;lt;filter-class&amp;gt;org.springframework.web.filter.CharacterEncodingFilter&amp;lt;/filter-class&amp;gt; &amp;lt;init-param&amp;gt; &amp;lt;param-name&amp;gt;encoding&amp;lt;/param-name&amp;gt; &amp;lt;param-value&amp;gt;utf-8&amp;lt;/param-value&amp;gt; &amp;lt;/init-param&amp;gt; &amp;lt;/filter&amp;gt; &amp;lt;filter-mapping&amp;gt; &amp;lt;filter-name&amp;gt;CharacterEncodingFilter&amp;lt;/filter-name&amp;gt; &amp;lt;url-pattern&amp;gt;/*&amp;lt;/url-pattern&amp;gt; &amp;lt;/filter-mapping&amp;gt;" />
+  <meta name="description" content="直接使用 1 String email = request.getParameter(&amp;#34;email&amp;#34;); 接收到email是乱码，需要转换 1 email = new String(request.getParameter(&amp;#34;email&amp;#34;).getBytes(&amp;#34;ISO-8859-1&amp;#34;),&amp;#34;UTF-8&amp;#34;); 这样麻烦还需要处理异常。 还可以这么解决： web.xml 1 2 3 4 5 6 7 8 9 10 11 12 &amp;lt;filter&amp;gt; &amp;lt;filter-name&amp;gt;CharacterEncodingFilter&amp;lt;/filter-name&amp;gt; &amp;lt;filter-class&amp;gt;org.springframework.web.filter.CharacterEncodingFilter&amp;lt;/filter-class&amp;gt; &amp;lt;init-param&amp;gt; &amp;lt;param-name&amp;gt;encoding&amp;lt;/param-name&amp;gt; &amp;lt;param-value&amp;gt;utf-8&amp;lt;/param-value&amp;gt; &amp;lt;/init-param&amp;gt;" />
 
   <meta name="keywords" content="技术, 程序员, 码农, 程序猿, 分享, java, python, 3afun" />
 
@@ -58,7 +58,7 @@
 
 
 <meta property="og:title" content="SpringMVC Controller层中 request接收参数乱码" />
-<meta property="og:description" content="直接使用 String email = request.getParameter(&quot;email&quot;); 接收到email是乱码，需要转换 email = new String(request.getParameter(&quot;email&quot;).getBytes(&quot;ISO-8859-1&quot;),&quot;UTF-8&quot;); 这样麻烦还需要处理异常。 还可以这么解决： web.xml &lt;filter&gt; &lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt; &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt; &lt;init-param&gt; &lt;param-name&gt;encoding&lt;/param-name&gt; &lt;param-value&gt;utf-8&lt;/param-value&gt; &lt;/init-param&gt; &lt;/filter&gt; &lt;filter-mapping&gt; &lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt; &lt;url-pattern&gt;/*&lt;/url-pattern&gt; &lt;/filter-mapping&gt;" />
+<meta property="og:description" content="直接使用 1 String email = request.getParameter(&#34;email&#34;); 接收到email是乱码，需要转换 1 email = new String(request.getParameter(&#34;email&#34;).getBytes(&#34;ISO-8859-1&#34;),&#34;UTF-8&#34;); 这样麻烦还需要处理异常。 还可以这么解决： web.xml 1 2 3 4 5 6 7 8 9 10 11 12 &lt;filter&gt; &lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt; &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt; &lt;init-param&gt; &lt;param-name&gt;encoding&lt;/param-name&gt; &lt;param-value&gt;utf-8&lt;/param-value&gt; &lt;/init-param&gt;" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.3afun.com/post/2014/springmvc-controller%E5%B1%82%E4%B8%AD-request%E6%8E%A5%E6%94%B6%E5%8F%82%E6%95%B0%E4%B9%B1%E7%A0%81/" />
 
@@ -79,19 +79,19 @@
 
 
 <meta itemprop="name" content="SpringMVC Controller层中 request接收参数乱码">
-<meta itemprop="description" content="直接使用 String email = request.getParameter(&quot;email&quot;); 接收到email是乱码，需要转换 email = new String(request.getParameter(&quot;email&quot;).getBytes(&quot;ISO-8859-1&quot;),&quot;UTF-8&quot;); 这样麻烦还需要处理异常。 还可以这么解决： web.xml &lt;filter&gt; &lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt; &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt; &lt;init-param&gt; &lt;param-name&gt;encoding&lt;/param-name&gt; &lt;param-value&gt;utf-8&lt;/param-value&gt; &lt;/init-param&gt; &lt;/filter&gt; &lt;filter-mapping&gt; &lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt; &lt;url-pattern&gt;/*&lt;/url-pattern&gt; &lt;/filter-mapping&gt;">
+<meta itemprop="description" content="直接使用 1 String email = request.getParameter(&#34;email&#34;); 接收到email是乱码，需要转换 1 email = new String(request.getParameter(&#34;email&#34;).getBytes(&#34;ISO-8859-1&#34;),&#34;UTF-8&#34;); 这样麻烦还需要处理异常。 还可以这么解决： web.xml 1 2 3 4 5 6 7 8 9 10 11 12 &lt;filter&gt; &lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt; &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt; &lt;init-param&gt; &lt;param-name&gt;encoding&lt;/param-name&gt; &lt;param-value&gt;utf-8&lt;/param-value&gt; &lt;/init-param&gt;">
 
 
 <meta itemprop="datePublished" content="2014-02-26T11:09:27&#43;08:00" />
 <meta itemprop="dateModified" content="2014-02-26T11:09:27&#43;08:00" />
-<meta itemprop="wordCount" content="61">
+<meta itemprop="wordCount" content="75">
 
 
 
 <meta itemprop="keywords" content="服务器,Spring-MVC," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="SpringMVC Controller层中 request接收参数乱码"/>
-<meta name="twitter:description" content="直接使用 String email = request.getParameter(&quot;email&quot;); 接收到email是乱码，需要转换 email = new String(request.getParameter(&quot;email&quot;).getBytes(&quot;ISO-8859-1&quot;),&quot;UTF-8&quot;); 这样麻烦还需要处理异常。 还可以这么解决： web.xml &lt;filter&gt; &lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt; &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt; &lt;init-param&gt; &lt;param-name&gt;encoding&lt;/param-name&gt; &lt;param-value&gt;utf-8&lt;/param-value&gt; &lt;/init-param&gt; &lt;/filter&gt; &lt;filter-mapping&gt; &lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt; &lt;url-pattern&gt;/*&lt;/url-pattern&gt; &lt;/filter-mapping&gt;"/>
+<meta name="twitter:description" content="直接使用 1 String email = request.getParameter(&#34;email&#34;); 接收到email是乱码，需要转换 1 email = new String(request.getParameter(&#34;email&#34;).getBytes(&#34;ISO-8859-1&#34;),&#34;UTF-8&#34;); 这样麻烦还需要处理异常。 还可以这么解决： web.xml 1 2 3 4 5 6 7 8 9 10 11 12 &lt;filter&gt; &lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt; &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt; &lt;init-param&gt; &lt;param-name&gt;encoding&lt;/param-name&gt; &lt;param-value&gt;utf-8&lt;/param-value&gt; &lt;/init-param&gt;"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -318,7 +318,7 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/spring-mvc/"> Spring-MVC </a>
             
           </div>
-        <span class="more-meta"> 约 61 字 </span>
+        <span class="more-meta"> 约 75 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -335,22 +335,45 @@ ga('send', 'pageview');
     
     <div class="post-content">
       <p>直接使用</p>
-
-<pre><code class="language-java">String email = request.getParameter(&quot;email&quot;);
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">String</span> <span class="n">email</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">&#34;email&#34;</span><span class="o">);</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>接收到email是乱码，需要转换</p>
-
-<pre><code class="language-java">email = new String(request.getParameter(&quot;email&quot;).getBytes(&quot;ISO-8859-1&quot;),&quot;UTF-8&quot;);
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">email</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">&#34;email&#34;</span><span class="o">).</span><span class="na">getBytes</span><span class="o">(</span><span class="s">&#34;ISO-8859-1&#34;</span><span class="o">),</span><span class="s">&#34;UTF-8&#34;</span><span class="o">);</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>这样麻烦还需要处理异常。</p>
 
 <p>还可以这么解决：</p>
 
 <p>web.xml</p>
-
-<pre><code>&lt;filter&gt;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;filter&gt;
     &lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt;
     &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;
     &lt;init-param&gt;
@@ -361,9 +384,9 @@ ga('send', 'pageview');
 &lt;filter-mapping&gt;
     &lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt;
     &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
-&lt;/filter-mapping&gt;
-</code></pre>
-
+&lt;/filter-mapping&gt;</pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
@@ -429,7 +452,7 @@ ga('send', 'pageview');
         id: 'SpringMVC Controller层中 request接收参数乱码.md',
         title: 'SpringMVC Controller层中 request接收参数乱码',
         link: decodeURI(location.href),
-        desc: '直接使用 String email = request.getParameter(\x26quot;email\x26quot;); 接收到email是乱码，需要转换 email = new String(request.getParameter(\x26quot;email\x26quot;).getBytes(\x26quot;ISO-8859-1\x26quot;),\x26quot;UTF-8\x26quot;); 这样麻烦还需要处理异常。 还可以这么解决： web.xml \x26lt;filter\x26gt; \x26lt;filter-name\x26gt;CharacterEncodingFilter\x26lt;\/filter-name\x26gt; \x26lt;filter-class\x26gt;org.springframework.web.filter.CharacterEncodingFilter\x26lt;\/filter-class\x26gt; \x26lt;init-param\x26gt; \x26lt;param-name\x26gt;encoding\x26lt;\/param-name\x26gt; \x26lt;param-value\x26gt;utf-8\x26lt;\/param-value\x26gt; \x26lt;\/init-param\x26gt; \x26lt;\/filter\x26gt; \x26lt;filter-mapping\x26gt; \x26lt;filter-name\x26gt;CharacterEncodingFilter\x26lt;\/filter-name\x26gt; \x26lt;url-pattern\x26gt;\/*\x26lt;\/url-pattern\x26gt; \x26lt;\/filter-mapping\x26gt;',
+        desc: '直接使用 1 String email = request.getParameter(\x26#34;email\x26#34;); 接收到email是乱码，需要转换 1 email = new String(request.getParameter(\x26#34;email\x26#34;).getBytes(\x26#34;ISO-8859-1\x26#34;),\x26#34;UTF-8\x26#34;); 这样麻烦还需要处理异常。 还可以这么解决： web.xml 1 2 3 4 5 6 7 8 9 10 11 12 \x26lt;filter\x26gt; \x26lt;filter-name\x26gt;CharacterEncodingFilter\x26lt;\/filter-name\x26gt; \x26lt;filter-class\x26gt;org.springframework.web.filter.CharacterEncodingFilter\x26lt;\/filter-class\x26gt; \x26lt;init-param\x26gt; \x26lt;param-name\x26gt;encoding\x26lt;\/param-name\x26gt; \x26lt;param-value\x26gt;utf-8\x26lt;\/param-value\x26gt; \x26lt;\/init-param\x26gt;',
         owner: 'hxchen',
         repo: 'comments',
         oauth: {

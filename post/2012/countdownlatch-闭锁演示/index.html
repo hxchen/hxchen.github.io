@@ -25,7 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="北斗" />
-  <meta name="description" content="import java.util.concurrent.CountDownLatch; /** * CountDownLatch 闭锁演示 * 闭锁的作用相当于一扇门：在闭锁到达结束状态（getCount()=0）前，这扇门一直是关闭的，并且没有任何线程能通过。 *" />
+  <meta name="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 import java.util.concurrent.CountDownLatch; /** * CountDownLatch 闭锁演示 * 闭锁的作用相当" />
 
   <meta name="keywords" content="技术, 程序员, 码农, 程序猿, 分享, java, python, 3afun" />
 
@@ -58,7 +58,7 @@
 
 
 <meta property="og:title" content="CountDownLatch 闭锁演示" />
-<meta property="og:description" content="import java.util.concurrent.CountDownLatch; /** * CountDownLatch 闭锁演示 * 闭锁的作用相当于一扇门：在闭锁到达结束状态（getCount()=0）前，这扇门一直是关闭的，并且没有任何线程能通过。 *" />
+<meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 import java.util.concurrent.CountDownLatch; /** * CountDownLatch 闭锁演示 * 闭锁的作用相当" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.3afun.com/post/2012/countdownlatch-%E9%97%AD%E9%94%81%E6%BC%94%E7%A4%BA/" />
 
@@ -79,19 +79,19 @@
 
 
 <meta itemprop="name" content="CountDownLatch 闭锁演示">
-<meta itemprop="description" content="import java.util.concurrent.CountDownLatch; /** * CountDownLatch 闭锁演示 * 闭锁的作用相当于一扇门：在闭锁到达结束状态（getCount()=0）前，这扇门一直是关闭的，并且没有任何线程能通过。 *">
+<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 import java.util.concurrent.CountDownLatch; /** * CountDownLatch 闭锁演示 * 闭锁的作用相当">
 
 
 <meta itemprop="datePublished" content="2012-11-23T18:02:00&#43;08:00" />
 <meta itemprop="dateModified" content="2012-11-23T18:02:00&#43;08:00" />
-<meta itemprop="wordCount" content="593">
+<meta itemprop="wordCount" content="587">
 
 
 
 <meta itemprop="keywords" content="并发编程," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CountDownLatch 闭锁演示"/>
-<meta name="twitter:description" content="import java.util.concurrent.CountDownLatch; /** * CountDownLatch 闭锁演示 * 闭锁的作用相当于一扇门：在闭锁到达结束状态（getCount()=0）前，这扇门一直是关闭的，并且没有任何线程能通过。 *"/>
+<meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 import java.util.concurrent.CountDownLatch; /** * CountDownLatch 闭锁演示 * 闭锁的作用相当"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -317,7 +317,7 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"> 并发编程 </a>
             
           </div>
-        <span class="more-meta"> 约 593 字 </span>
+        <span class="more-meta"> 约 587 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
       </div>
     </header>
@@ -333,61 +333,118 @@ ga('send', 'pageview');
 
     
     <div class="post-content">
-      <pre><code class="language-java">import java.util.concurrent.CountDownLatch;
+      <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.concurrent.CountDownLatch</span><span class="o">;</span>
 
-/**
- * CountDownLatch 闭锁演示
- * 闭锁的作用相当于一扇门：在闭锁到达结束状态（getCount()=0）前，这扇门一直是关闭的，并且没有任何线程能通过。
- * 当到达结束状态时，这扇门会打开并允许所有的线程通过（可以继续执行await()之后的代码）。
- * 当闭锁到达结束状态后，将不会再改变状态，因此这扇门将永远保持打开状态。
- * **/
-public class TestHarness {
-	public long timeTasks(int nThreads, final Runnable task)
-		throws InterruptedException{
+<span class="cm">/**
+</span><span class="cm"> * CountDownLatch 闭锁演示
+</span><span class="cm"> * 闭锁的作用相当于一扇门：在闭锁到达结束状态（getCount()=0）前，这扇门一直是关闭的，并且没有任何线程能通过。
+</span><span class="cm"> * 当到达结束状态时，这扇门会打开并允许所有的线程通过（可以继续执行await()之后的代码）。
+</span><span class="cm"> * 当闭锁到达结束状态后，将不会再改变状态，因此这扇门将永远保持打开状态。
+</span><span class="cm"> * **/</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestHarness</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kt">long</span> <span class="nf">timeTasks</span><span class="o">(</span><span class="kt">int</span> <span class="n">nThreads</span><span class="o">,</span> <span class="kd">final</span> <span class="n">Runnable</span> <span class="n">task</span><span class="o">)</span>
+		<span class="kd">throws</span> <span class="n">InterruptedException</span><span class="o">{</span>
 
-		final CountDownLatch startGate = new CountDownLatch(1);
-		final CountDownLatch endGate = new CountDownLatch(nThreads);
+		<span class="kd">final</span> <span class="n">CountDownLatch</span> <span class="n">startGate</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CountDownLatch</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
+		<span class="kd">final</span> <span class="n">CountDownLatch</span> <span class="n">endGate</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CountDownLatch</span><span class="o">(</span><span class="n">nThreads</span><span class="o">);</span>
 
-		for(int i = 0; i &lt; nThreads; i++){
-			Thread thread = new Thread(){
-				public void run(){
-					try {
-						System.out.println(&quot;Before:S=&quot;+startGate.getCount()+&quot;	E=&quot;+endGate.getCount());
-						startGate.await();//使当前线程在锁存器倒计数至零之前一直等待，除非线程被中断。
-						System.out.println(&quot;After：S=&quot;+startGate.getCount()+&quot;	E=&quot;+endGate.getCount());
-						try {
-							System.out.println(&quot;task run!&quot;);
-							task.run();
-						} finally{
-							System.out.println(&quot;End Gate countDown()&quot;);
-							endGate.countDown();
-						}
-					} catch (InterruptedException e) {}
-				}
-			};
-			thread.start();
-		}
-		long start = System.nanoTime();//返回最准确的可用系统计时器的当前值，以毫微秒为单位。
-		System.out.println(&quot;开启启动门!&quot;);
-		startGate.countDown();//递减锁存器的计数，如果计数到达零，则释放所有等待的线程。
-		endGate.await();//使当前线程在锁存器倒计数至零之前一直等待，除非线程被中断。
-		System.out.println(&quot;End Gate await()&quot;);
-		long end = System.nanoTime();
-		return end-start;
-	}
-	public static void main(String[] args) {
-		MyThread thread=new MyThread(&quot;线程A&quot;);
-		TestHarness testHarness = new TestHarness();
-		try {
-			long time = testHarness.timeTasks(10, thread);
-			System.out.println(&quot;It's cost time:&quot;+time);
-		} catch (Exception e) {
-			System.out.println(&quot;Exception Accured!&quot;);
-		}
-	}
-}
-</code></pre>
-
+		<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nThreads</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+			<span class="n">Thread</span> <span class="n">thread</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="o">(){</span>
+				<span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(){</span>
+					<span class="k">try</span> <span class="o">{</span>
+						<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Before:S=&#34;</span><span class="o">+</span><span class="n">startGate</span><span class="o">.</span><span class="na">getCount</span><span class="o">()+</span><span class="s">&#34;	E=&#34;</span><span class="o">+</span><span class="n">endGate</span><span class="o">.</span><span class="na">getCount</span><span class="o">());</span>
+						<span class="n">startGate</span><span class="o">.</span><span class="na">await</span><span class="o">();</span><span class="c1">//使当前线程在锁存器倒计数至零之前一直等待，除非线程被中断。
+</span><span class="c1"></span>						<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;After：S=&#34;</span><span class="o">+</span><span class="n">startGate</span><span class="o">.</span><span class="na">getCount</span><span class="o">()+</span><span class="s">&#34;	E=&#34;</span><span class="o">+</span><span class="n">endGate</span><span class="o">.</span><span class="na">getCount</span><span class="o">());</span>
+						<span class="k">try</span> <span class="o">{</span>
+							<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;task run!&#34;</span><span class="o">);</span>
+							<span class="n">task</span><span class="o">.</span><span class="na">run</span><span class="o">();</span>
+						<span class="o">}</span> <span class="k">finally</span><span class="o">{</span>
+							<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;End Gate countDown()&#34;</span><span class="o">);</span>
+							<span class="n">endGate</span><span class="o">.</span><span class="na">countDown</span><span class="o">();</span>
+						<span class="o">}</span>
+					<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{}</span>
+				<span class="o">}</span>
+			<span class="o">};</span>
+			<span class="n">thread</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+		<span class="o">}</span>
+		<span class="kt">long</span> <span class="n">start</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span><span class="c1">//返回最准确的可用系统计时器的当前值，以毫微秒为单位。
+</span><span class="c1"></span>		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;开启启动门!&#34;</span><span class="o">);</span>
+		<span class="n">startGate</span><span class="o">.</span><span class="na">countDown</span><span class="o">();</span><span class="c1">//递减锁存器的计数，如果计数到达零，则释放所有等待的线程。
+</span><span class="c1"></span>		<span class="n">endGate</span><span class="o">.</span><span class="na">await</span><span class="o">();</span><span class="c1">//使当前线程在锁存器倒计数至零之前一直等待，除非线程被中断。
+</span><span class="c1"></span>		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;End Gate await()&#34;</span><span class="o">);</span>
+		<span class="kt">long</span> <span class="n">end</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">nanoTime</span><span class="o">();</span>
+		<span class="k">return</span> <span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="o">;</span>
+	<span class="o">}</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">MyThread</span> <span class="n">thread</span><span class="o">=</span><span class="k">new</span> <span class="n">MyThread</span><span class="o">(</span><span class="s">&#34;线程A&#34;</span><span class="o">);</span>
+		<span class="n">TestHarness</span> <span class="n">testHarness</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TestHarness</span><span class="o">();</span>
+		<span class="k">try</span> <span class="o">{</span>
+			<span class="kt">long</span> <span class="n">time</span> <span class="o">=</span> <span class="n">testHarness</span><span class="o">.</span><span class="na">timeTasks</span><span class="o">(</span><span class="n">10</span><span class="o">,</span> <span class="n">thread</span><span class="o">);</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;It&#39;s cost time:&#34;</span><span class="o">+</span><span class="n">time</span><span class="o">);</span>
+		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Exception Accured!&#34;</span><span class="o">);</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+<span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
@@ -452,7 +509,7 @@ public class TestHarness {
         id: 'CountDownLatch 闭锁演示.md',
         title: 'CountDownLatch 闭锁演示',
         link: decodeURI(location.href),
-        desc: 'import java.util.concurrent.CountDownLatch; \/** * CountDownLatch 闭锁演示 * 闭锁的作用相当于一扇门：在闭锁到达结束状态（getCount()=0）前，这扇门一直是关闭的，并且没有任何线程能通过。 *',
+        desc: '1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 import java.util.concurrent.CountDownLatch; \/** * CountDownLatch 闭锁演示 * 闭锁的作用相当',
         owner: 'hxchen',
         repo: 'comments',
         oauth: {

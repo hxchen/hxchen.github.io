@@ -84,7 +84,7 @@
 
 <meta itemprop="datePublished" content="2013-03-29T18:32:00&#43;08:00" />
 <meta itemprop="dateModified" content="2013-03-29T18:32:00&#43;08:00" />
-<meta itemprop="wordCount" content="803">
+<meta itemprop="wordCount" content="806">
 
 
 
@@ -317,7 +317,7 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
             
           </div>
-        <span class="more-meta"> 约 803 字 </span>
+        <span class="more-meta"> 约 806 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
       </div>
     </header>
@@ -374,17 +374,25 @@ ga('send', 'pageview');
 <p>4、执行命令行安装（静默安装）：</p>
 
 <p>以root账号身份执行，切换目录到/WAS在命令行输入</p>
-
-<pre><code>./install -options install.txt  –silent
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">./install -options install.txt  –silent</pre></td></tr></table>
+</div>
+</div>
 <p>等待一段时间，直到命令执行完成。查看是否安装成功。</p>
 
 <p>切换目录到/opt如果opt路径下执行下面的命令，有.ibm 和IBM文件夹则说明安装完成。</p>
-
-<pre><code>ls -la
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">ls -la</pre></td></tr></table>
+</div>
+</div>
 <p>该版本在安装时报错，位置发生在install下。</p>
 
 <p>401行原来代码是  if [ $version -ge 5 ]</p>
@@ -398,10 +406,14 @@ ga('send', 'pageview');
 <p>6、验证是否安装成功</p>
 
 <p>切换目录到/opt/IBM/WebSphere/AppServer/bin启动WAS</p>
-
-<pre><code>./startServer.sh server1
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">./startServer.sh server1</pre></td></tr></table>
+</div>
+</div>
 <p>启动完成后，在其他机器输入<a href="http://iphost:9060/ibm/console，如果能打开界面，说明安装成功，至此WAS光盘镜像的静默安装完成">http://iphost:9060/ibm/console，如果能打开界面，说明安装成功，至此WAS光盘镜像的静默安装完成</a></p>
 
     </div>

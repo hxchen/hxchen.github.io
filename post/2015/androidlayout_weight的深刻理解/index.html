@@ -84,7 +84,7 @@
 
 <meta itemprop="datePublished" content="2015-05-02T17:29:00&#43;08:00" />
 <meta itemprop="dateModified" content="2015-05-02T17:29:00&#43;08:00" />
-<meta itemprop="wordCount" content="2062">
+<meta itemprop="wordCount" content="2098">
 
 
 
@@ -317,7 +317,7 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/android/"> Android </a>
             
           </div>
-        <span class="more-meta"> 约 2062 字 </span>
+        <span class="more-meta"> 约 2098 字 </span>
         <span class="more-meta"> 预计阅读 5 分钟 </span>
       </div>
     </header>
@@ -338,32 +338,58 @@ ga('send', 'pageview');
 <p>首先看一下Layout_weight属性的作用：它是用来分配属于空间的一个属性，你可以设置他的权重。很多人不知道剩余空间是个什么概念，下面我先来说说剩余空间。</p>
 
 <p>看下面代码：</p>
-
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:orientation=&quot;vertical&quot;
-    android:layout_width=&quot;fill_parent&quot;
-    android:layout_height=&quot;fill_parent&quot;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
+&lt;LinearLayout xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34;
+    android:orientation=&#34;vertical&#34;
+    android:layout_width=&#34;fill_parent&#34;
+    android:layout_height=&#34;fill_parent&#34;
     &gt;
 &lt;EditText
-    android:layout_width=&quot;fill_parent&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:gravity=&quot;left&quot;
-    android:text=&quot;one&quot;/&gt;
+    android:layout_width=&#34;fill_parent&#34;
+    android:layout_height=&#34;wrap_content&#34;
+    android:gravity=&#34;left&#34;
+    android:text=&#34;one&#34;/&gt;
 &lt;EditText
-    android:layout_width=&quot;fill_parent&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:gravity=&quot;center&quot;
-    android:layout_weight=&quot;1.0&quot;
-    android:text=&quot;two&quot;/&gt;
+    android:layout_width=&#34;fill_parent&#34;
+    android:layout_height=&#34;wrap_content&#34;
+    android:gravity=&#34;center&#34;
+    android:layout_weight=&#34;1.0&#34;
+    android:text=&#34;two&#34;/&gt;
     &lt;EditText
-    android:layout_width=&quot;fill_parent&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:gravity=&quot;right&quot;
-    android:text=&quot;three&quot;/&gt;
-&lt;/LinearLayout&gt;
-</code></pre>
-
+    android:layout_width=&#34;fill_parent&#34;
+    android:layout_height=&#34;wrap_content&#34;
+    android:gravity=&#34;right&#34;
+    android:text=&#34;three&#34;/&gt;
+&lt;/LinearLayout&gt;</pre></td></tr></table>
+</div>
+</div>
 <p>运行结果是：</p>
 
 <p><img src="/media/images/2015/android01.png" alt="android" /></p>
@@ -377,36 +403,66 @@ ga('send', 'pageview');
 <p>有了以上的理解我们就可以对网上关于Layout_weight这个属性更让人费解的效果有一个清晰的认识了。</p>
 
 <p>我们来看这段代码：</p>
-
-<pre><code> &lt;？xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;？&gt;
-&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:layout_width=&quot;fill_parent&quot;
-    android:layout_height=&quot;wrap_content&quot;
-    android:orientation=&quot;horizontal&quot; &gt;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"> &lt;？xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;？&gt;
+&lt;LinearLayout xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34;
+    android:layout_width=&#34;fill_parent&#34;
+    android:layout_height=&#34;wrap_content&#34;
+    android:orientation=&#34;horizontal&#34; &gt;
     &lt;TextView
-        android:background=&quot;＃ff0000&quot;
-        android:layout_width=&quot;**&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;1&quot;
-        android:textColor=&quot;＠android:color/white&quot;
-        android:layout_weight=&quot;1&quot;/&gt;
+        android:background=&#34;＃ff0000&#34;
+        android:layout_width=&#34;**&#34;
+        android:layout_height=&#34;wrap_content&#34;
+        android:text=&#34;1&#34;
+        android:textColor=&#34;＠android:color/white&#34;
+        android:layout_weight=&#34;1&#34;/&gt;
     &lt;TextView
-        android:background=&quot;＃cccccc&quot;
-        android:layout_width=&quot;**&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;2&quot;
-        android:textColor=&quot;＠android:color/black&quot;
-        android:layout_weight=&quot;2&quot; /&gt;
+        android:background=&#34;＃cccccc&#34;
+        android:layout_width=&#34;**&#34;
+        android:layout_height=&#34;wrap_content&#34;
+        android:text=&#34;2&#34;
+        android:textColor=&#34;＠android:color/black&#34;
+        android:layout_weight=&#34;2&#34; /&gt;
      &lt;TextView
-        android:background=&quot;＃ddaacc&quot;
-        android:layout_width=&quot;**&quot;
-        android:layout_height=&quot;wrap_content&quot;
-        android:text=&quot;3&quot;
-        android:textColor=&quot;＠android:color/black&quot;
-        android:layout_weight=&quot;3&quot; /&gt;
-&lt;/LinearLayout&gt;
-</code></pre>
-
+        android:background=&#34;＃ddaacc&#34;
+        android:layout_width=&#34;**&#34;
+        android:layout_height=&#34;wrap_content&#34;
+        android:text=&#34;3&#34;
+        android:textColor=&#34;＠android:color/black&#34;
+        android:layout_weight=&#34;3&#34; /&gt;
+&lt;/LinearLayout&gt;</pre></td></tr></table>
+</div>
+</div>
 <p>三个文本框的都是 layout_width=“wrap_content ”时，会得到以下效果</p>
 
 <p><img src="/media/images/2015/android02.jpg" alt="android" /></p>

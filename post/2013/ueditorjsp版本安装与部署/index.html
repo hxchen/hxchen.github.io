@@ -84,7 +84,7 @@
 
 <meta itemprop="datePublished" content="2013-02-04T17:35:00&#43;08:00" />
 <meta itemprop="dateModified" content="2013-02-04T17:35:00&#43;08:00" />
-<meta itemprop="wordCount" content="497">
+<meta itemprop="wordCount" content="516">
 
 
 
@@ -316,8 +316,8 @@ ga('send', 'pageview');
         <div class="post-category">
             
           </div>
-        <span class="more-meta"> 约 497 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span class="more-meta"> 约 516 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
       </div>
     </header>
 
@@ -341,33 +341,61 @@ ga('send', 'pageview');
 <p>拷贝源码包dialogs、lang、themes、third-party、editor_all.js、editor_config.js文件或目录到工程ueditor下面。新建editor.jsp文件用于展示ueditor。</p>
 
 <p>ueditor.jsp内容：</p>
-
-<pre><code class="language-jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
-    pageEncoding=&quot;UTF-8&quot;%&gt;
-&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-jsp" data-lang="jsp"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-jsp" data-lang="jsp">&lt;%@ page language=&#34;java&#34; contentType=&#34;text/html; charset=UTF-8&#34;
+    pageEncoding=&#34;UTF-8&#34;%&gt;
+&lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD HTML 4.01 Transitional//EN&#34; &#34;http://www.w3.org/TR/html4/loose.dtd&#34;&gt;
 &lt;html&gt;
 &lt;head&gt;
-&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
-&lt;SCRIPT type=text/javascript src=&quot;../resources/ueditor/editor_config.js&quot;&gt;&lt;/SCRIPT&gt;
-&lt;SCRIPT type=text/javascript src=&quot;../resources/ueditor/editor_all.js&quot;&gt;&lt;/SCRIPT&gt;
-&lt;LINK rel=stylesheet href=&quot;../resources/ueditor/themes/default/css/ueditor.css&quot;&gt;
+&lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html; charset=UTF-8&#34;&gt;
+&lt;SCRIPT type=text/javascript src=&#34;../resources/ueditor/editor_config.js&#34;&gt;&lt;/SCRIPT&gt;
+&lt;SCRIPT type=text/javascript src=&#34;../resources/ueditor/editor_all.js&#34;&gt;&lt;/SCRIPT&gt;
+&lt;LINK rel=stylesheet href=&#34;../resources/ueditor/themes/default/css/ueditor.css&#34;&gt;
 &lt;title&gt;文本编辑器&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
 &lt;DIV id=myEditor&gt;&lt;/DIV&gt;
 &lt;SCRIPT type=text/javascript&gt;
     var editor = new baidu.editor.ui.Editor();
-    editor.render(&quot;myEditor&quot;);
+    editor.render(&#34;myEditor&#34;);
 &lt;/SCRIPT&gt;
 &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-
+&lt;/html&gt;</code></pre></td></tr></table>
+</div>
+</div>
 <p>四、修改editor_config.js中URL值指向资源文件</p>
-
-<pre><code class="language-js">URL = window.UEDITOR_HOME_URL||&quot;/Ecommerce/resources/ueditor/&quot;;//这里你可以配置成ueditor目录在您网站的相对路径或者绝对路径（指以http开头的绝对路径）
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">URL</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">UEDITOR_HOME_URL</span><span class="o">||</span><span class="s2">&#34;/Ecommerce/resources/ueditor/&#34;</span><span class="p">;</span><span class="c1">//这里你可以配置成ueditor目录在您网站的相对路径或者绝对路径（指以http开头的绝对路径）
+</span><span class="c1"></span></code></pre></td></tr></table>
+</div>
+</div>
 <p>五、至此ueditor部署完毕。访问预览如图所示</p>
 
     </div>

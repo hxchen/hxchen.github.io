@@ -25,7 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="北斗" />
-  <meta name="description" content="服务器重启后，有时会需要重新启动 nginx，采用 nginx -s reload 提示 nginx: [error] open() &amp;quot;/var/run/nginx.pid&amp;quot; failed (2: No such file or directory) 是因为服务器重启时丢了pid文件。 这种情况下可以使用 nginx -c，" />
+  <meta name="description" content="服务器重启后，有时会需要重新启动 nginx，采用 1 nginx -s reload 提示 1 nginx: [error] open() &amp;#34;/var/run/nginx.pid&amp;#34; failed (2: No such file or directory) 是因为服务器重启时丢了pid文件。 这种情况下可以使用 nginx -" />
 
   <meta name="keywords" content="技术, 程序员, 码农, 程序猿, 分享, java, python, 3afun" />
 
@@ -58,7 +58,7 @@
 
 
 <meta property="og:title" content="nginx pid No such file or directory解决办法" />
-<meta property="og:description" content="服务器重启后，有时会需要重新启动 nginx，采用 nginx -s reload 提示 nginx: [error] open() &quot;/var/run/nginx.pid&quot; failed (2: No such file or directory) 是因为服务器重启时丢了pid文件。 这种情况下可以使用 nginx -c，" />
+<meta property="og:description" content="服务器重启后，有时会需要重新启动 nginx，采用 1 nginx -s reload 提示 1 nginx: [error] open() &#34;/var/run/nginx.pid&#34; failed (2: No such file or directory) 是因为服务器重启时丢了pid文件。 这种情况下可以使用 nginx -" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.3afun.com/post/2017/nginx-pid-no-such-file-or-directory%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" />
 
@@ -79,19 +79,19 @@
 
 
 <meta itemprop="name" content="nginx pid No such file or directory解决办法">
-<meta itemprop="description" content="服务器重启后，有时会需要重新启动 nginx，采用 nginx -s reload 提示 nginx: [error] open() &quot;/var/run/nginx.pid&quot; failed (2: No such file or directory) 是因为服务器重启时丢了pid文件。 这种情况下可以使用 nginx -c，">
+<meta itemprop="description" content="服务器重启后，有时会需要重新启动 nginx，采用 1 nginx -s reload 提示 1 nginx: [error] open() &#34;/var/run/nginx.pid&#34; failed (2: No such file or directory) 是因为服务器重启时丢了pid文件。 这种情况下可以使用 nginx -">
 
 
 <meta itemprop="datePublished" content="2017-06-14T11:32:00&#43;08:00" />
 <meta itemprop="dateModified" content="2017-06-14T11:32:00&#43;08:00" />
-<meta itemprop="wordCount" content="73">
+<meta itemprop="wordCount" content="74">
 
 
 
 <meta itemprop="keywords" content="Nginx," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="nginx pid No such file or directory解决办法"/>
-<meta name="twitter:description" content="服务器重启后，有时会需要重新启动 nginx，采用 nginx -s reload 提示 nginx: [error] open() &quot;/var/run/nginx.pid&quot; failed (2: No such file or directory) 是因为服务器重启时丢了pid文件。 这种情况下可以使用 nginx -c，"/>
+<meta name="twitter:description" content="服务器重启后，有时会需要重新启动 nginx，采用 1 nginx -s reload 提示 1 nginx: [error] open() &#34;/var/run/nginx.pid&#34; failed (2: No such file or directory) 是因为服务器重启时丢了pid文件。 这种情况下可以使用 nginx -"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -317,7 +317,7 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
             
           </div>
-        <span class="more-meta"> 约 73 字 </span>
+        <span class="more-meta"> 约 74 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -334,22 +334,34 @@ ga('send', 'pageview');
     
     <div class="post-content">
       <p>服务器重启后，有时会需要重新启动 nginx，采用</p>
-
-<pre><code>nginx -s reload
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">nginx -s reload</pre></td></tr></table>
+</div>
+</div>
 <p>提示</p>
-
-<pre><code>nginx: [error] open() &quot;/var/run/nginx.pid&quot; failed (2: No such file or directory)
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">nginx: [error] open() &#34;/var/run/nginx.pid&#34; failed (2: No such file or directory)</pre></td></tr></table>
+</div>
+</div>
 <p>是因为服务器重启时丢了pid文件。</p>
 
 <p>这种情况下可以使用 nginx -c，具体如下（nginx.conf位置自行替换）</p>
-
-<pre><code>nginx -c /etc/nginx/nginx.conf
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">nginx -c /etc/nginx/nginx.conf</pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
@@ -414,7 +426,7 @@ ga('send', 'pageview');
         id: 'nginx pid No such file or directory解决办法.md',
         title: 'nginx pid No such file or directory解决办法',
         link: decodeURI(location.href),
-        desc: '服务器重启后，有时会需要重新启动 nginx，采用 nginx -s reload 提示 nginx: [error] open() \x26quot;\/var\/run\/nginx.pid\x26quot; failed (2: No such file or directory) 是因为服务器重启时丢了pid文件。 这种情况下可以使用 nginx -c，',
+        desc: '服务器重启后，有时会需要重新启动 nginx，采用 1 nginx -s reload 提示 1 nginx: [error] open() \x26#34;\/var\/run\/nginx.pid\x26#34; failed (2: No such file or directory) 是因为服务器重启时丢了pid文件。 这种情况下可以使用 nginx -',
         owner: 'hxchen',
         repo: 'comments',
         oauth: {

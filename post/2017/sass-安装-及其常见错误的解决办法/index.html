@@ -84,7 +84,7 @@
 
 <meta itemprop="datePublished" content="2017-09-27T10:51:00&#43;08:00" />
 <meta itemprop="dateModified" content="2017-09-27T10:51:00&#43;08:00" />
-<meta itemprop="wordCount" content="482">
+<meta itemprop="wordCount" content="494">
 
 
 
@@ -316,7 +316,7 @@ ga('send', 'pageview');
         <div class="post-category">
             
           </div>
-        <span class="more-meta"> 约 482 字 </span>
+        <span class="more-meta"> 约 494 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -335,10 +335,14 @@ ga('send', 'pageview');
       <p>Sass是一种css的开发工具，它的安装依赖Ruby，没有安装Ruby的请先安装Ruby。</p>
 
 <p>假定你已经安装了Ruby，则可以直接执行如下语句进行安装。</p>
-
-<pre><code>gem install sass
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">gem install sass</pre></td></tr></table>
+</div>
+</div>
 <p>常见错误提示：</p>
 
 <p>1、ERROR:  While executing gem &hellip; (OpenSSL::SSL::SSLError)</p>
@@ -348,24 +352,40 @@ ga('send', 'pageview');
 <p>解决办法：</p>
 
 <p>执行命令，查看数据源</p>
-
-<pre><code>gem source -l
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">gem source -l</pre></td></tr></table>
+</div>
+</div>
 <p>结果</p>
-
-<pre><code>*** CURRENT SOURCES ***
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">*** CURRENT SOURCES ***
 
 https://ruby.taobao.org/
-https://gems.ruby-china.org
-</code></pre>
-
+https://gems.ruby-china.org</pre></td></tr></table>
+</div>
+</div>
 <p>则可以删除多余的</p>
-
-<pre><code>gem sources --remove https://ruby.taobao.org/
-sudo gem update --system
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">gem sources --remove https://ruby.taobao.org/
+sudo gem update --system</pre></td></tr></table>
+</div>
+</div>
 <p>然后重新安装。</p>
 
 <p>2、ERROR:  SSL verification error at depth 1: unable to get local issuer certificate (20)</p>
@@ -409,15 +429,23 @@ sudo gem update --system
 <p>Operation not permitted - /usr/bin/sass</p>
 
 <p>遇到以上错误 2和3的解决办法</p>
-
-<pre><code>sudo gem install -n /usr/local/bin sass
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">sudo gem install -n /usr/local/bin sass</pre></td></tr></table>
+</div>
+</div>
 <p>查看</p>
-
-<pre><code>sass -v
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">sass -v</pre></td></tr></table>
+</div>
+</div>
 <p>则会正确显示Sass版本号。</p>
 
 <hr />
@@ -429,11 +457,16 @@ sudo gem update --system
 <p>于是决定升级SaaS，重新安装时遇到错误。最后找到解决方案：</p>
 
 <p>先安装libgmp-dev，再重新安装即可。</p>
-
-<pre><code>brew install libgmp-dev
-sudo gem install -n /usr/local/bin sass
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">brew install libgmp-dev
+sudo gem install -n /usr/local/bin sass</pre></td></tr></table>
+</div>
+</div>
     </div>
 
     

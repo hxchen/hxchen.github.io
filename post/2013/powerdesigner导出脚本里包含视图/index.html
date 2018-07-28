@@ -84,7 +84,7 @@
 
 <meta itemprop="datePublished" content="2013-01-17T22:32:00&#43;08:00" />
 <meta itemprop="dateModified" content="2013-01-17T22:32:00&#43;08:00" />
-<meta itemprop="wordCount" content="155">
+<meta itemprop="wordCount" content="159">
 
 
 
@@ -317,7 +317,7 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/mysql/"> MySQL </a>
             
           </div>
-        <span class="more-meta"> 约 155 字 </span>
+        <span class="more-meta"> 约 159 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -340,17 +340,27 @@ ga('send', 'pageview');
 <p>打开左端树状结构Script-&gt; Objects-&gt; View</p>
 
 <p>选中Create，在右端的Value中写入</p>
-
-<pre><code>create   VIEW   [%R%?[   if   not   exists]]   %VIEW%
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">create   VIEW   [%R%?[   if   not   exists]]   %VIEW%
   as
-%SQL%
-</code></pre>
-
+%SQL%</pre></td></tr></table>
+</div>
+</div>
 <p>选中Drop，在右端的Value中写入</p>
-
-<pre><code>drop   table   if   exists   %VIEW%
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">drop   table   if   exists   %VIEW%</pre></td></tr></table>
+</div>
+</div>
 <p>选中Enable，在右端的Value中选择Yes</p>
 
 <p>确定保存。</p>

@@ -84,7 +84,7 @@
 
 <meta itemprop="datePublished" content="2013-03-27T23:19:00&#43;08:00" />
 <meta itemprop="dateModified" content="2013-03-27T23:19:00&#43;08:00" />
-<meta itemprop="wordCount" content="402">
+<meta itemprop="wordCount" content="449">
 
 
 
@@ -317,7 +317,7 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/"> 开源软件 </a>
             
           </div>
-        <span class="more-meta"> 约 402 字 </span>
+        <span class="more-meta"> 约 449 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -336,68 +336,130 @@ ga('send', 'pageview');
       <p>lucene的一个Helloworld例子，麻雀虽小，五脏俱全。</p>
 
 <p>所需jar包：lucene-analyzers-3.6.2.jar、lucene-core-3.6.2.jar、junit-4.4.jar</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.lucene.analysis.Analyzer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.lucene.analysis.standard.StandardAnalyzer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.lucene.document.Document</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.lucene.document.Field</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.lucene.index.CorruptIndexException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.lucene.index.IndexWriter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.lucene.index.IndexWriter.MaxFieldLength</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.lucene.queryParser.MultiFieldQueryParser</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.lucene.queryParser.ParseException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.lucene.queryParser.QueryParser</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.lucene.search.IndexSearcher</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.lucene.search.Query</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.lucene.search.TopDocs</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.lucene.store.Directory</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.lucene.store.LockObtainFailedException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.lucene.store.RAMDirectory</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.lucene.util.Version</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.Test</span><span class="o">;</span>
 
-<pre><code class="language-java">import java.io.IOException;
-import org.apache.lucene.analysis.Analyzer;
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
-import org.apache.lucene.document.Document;
-import org.apache.lucene.document.Field;
-import org.apache.lucene.index.CorruptIndexException;
-import org.apache.lucene.index.IndexWriter;
-import org.apache.lucene.index.IndexWriter.MaxFieldLength;
-import org.apache.lucene.queryParser.MultiFieldQueryParser;
-import org.apache.lucene.queryParser.ParseException;
-import org.apache.lucene.queryParser.QueryParser;
-import org.apache.lucene.search.IndexSearcher;
-import org.apache.lucene.search.Query;
-import org.apache.lucene.search.TopDocs;
-import org.apache.lucene.store.Directory;
-import org.apache.lucene.store.LockObtainFailedException;
-import org.apache.lucene.store.RAMDirectory;
-import org.apache.lucene.util.Version;
-import org.junit.Test;
-
-public class HelloWorld {
-    @SuppressWarnings(&quot;deprecation&quot;)
-    @Test
-    public  void luceneTest(){
-        Directory directory  = new RAMDirectory();
-        Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_36);
-        try {
-                 IndexWriter indexWriter = new IndexWriter(directory, analyzer, true, MaxFieldLength.LIMITED);
-                 Document document = new Document();
-                 Document document2 = new Document();
-                 String text  = &quot;我是中国人，我爱中国.&quot;;
-                 String text2  = &quot;我是中国人，我爱中国.&quot;;
-                 document.add(new Field(&quot;fieldname&quot;, text, Field.Store.YES, Field.Index.ANALYZED));
-                 document2.add(new Field(&quot;fieldname&quot;, text2, Field.Store.YES, Field.Index.ANALYZED));
-                 indexWriter.addDocument(document);
-                 indexWriter.addDocument(document2);
-                 indexWriter.optimize();
-                 indexWriter.close();
-                 // Now search the index;
-                 IndexSearcher isearcher = new IndexSearcher(directory);
-                 // Parse a simple query that searches for &quot;中国人&quot;
-                  String [] queryFileds = {&quot;fieldname&quot;};
-                 QueryParser parser = new MultiFieldQueryParser(Version.LUCENE_36, queryFileds, analyzer);
-                 Query query = parser.parse(&quot;中国人&quot;);
-                 TopDocs result =  isearcher.search(query, 1000);
-                 System.out.println(&quot;检索到&quot;+result.totalHits+&quot;条符合条件的数据.&quot;);
-                 isearcher.close();
-                 directory.close();
-        } catch (CorruptIndexException e) {
-            e.printStackTrace();
-        } catch (LockObtainFailedException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-    }
-}
-</code></pre>
-
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloWorld</span> <span class="o">{</span>
+    <span class="nd">@SuppressWarnings</span><span class="o">(</span><span class="s">&#34;deprecation&#34;</span><span class="o">)</span>
+    <span class="nd">@Test</span>
+    <span class="kd">public</span>  <span class="kt">void</span> <span class="nf">luceneTest</span><span class="o">(){</span>
+        <span class="n">Directory</span> <span class="n">directory</span>  <span class="o">=</span> <span class="k">new</span> <span class="n">RAMDirectory</span><span class="o">();</span>
+        <span class="n">Analyzer</span> <span class="n">analyzer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StandardAnalyzer</span><span class="o">(</span><span class="n">Version</span><span class="o">.</span><span class="na">LUCENE_36</span><span class="o">);</span>
+        <span class="k">try</span> <span class="o">{</span>
+                 <span class="n">IndexWriter</span> <span class="n">indexWriter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IndexWriter</span><span class="o">(</span><span class="n">directory</span><span class="o">,</span> <span class="n">analyzer</span><span class="o">,</span> <span class="kc">true</span><span class="o">,</span> <span class="n">MaxFieldLength</span><span class="o">.</span><span class="na">LIMITED</span><span class="o">);</span>
+                 <span class="n">Document</span> <span class="n">document</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">();</span>
+                 <span class="n">Document</span> <span class="n">document2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Document</span><span class="o">();</span>
+                 <span class="n">String</span> <span class="n">text</span>  <span class="o">=</span> <span class="s">&#34;我是中国人，我爱中国.&#34;</span><span class="o">;</span>
+                 <span class="n">String</span> <span class="n">text2</span>  <span class="o">=</span> <span class="s">&#34;我是中国人，我爱中国.&#34;</span><span class="o">;</span>
+                 <span class="n">document</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Field</span><span class="o">(</span><span class="s">&#34;fieldname&#34;</span><span class="o">,</span> <span class="n">text</span><span class="o">,</span> <span class="n">Field</span><span class="o">.</span><span class="na">Store</span><span class="o">.</span><span class="na">YES</span><span class="o">,</span> <span class="n">Field</span><span class="o">.</span><span class="na">Index</span><span class="o">.</span><span class="na">ANALYZED</span><span class="o">));</span>
+                 <span class="n">document2</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Field</span><span class="o">(</span><span class="s">&#34;fieldname&#34;</span><span class="o">,</span> <span class="n">text2</span><span class="o">,</span> <span class="n">Field</span><span class="o">.</span><span class="na">Store</span><span class="o">.</span><span class="na">YES</span><span class="o">,</span> <span class="n">Field</span><span class="o">.</span><span class="na">Index</span><span class="o">.</span><span class="na">ANALYZED</span><span class="o">));</span>
+                 <span class="n">indexWriter</span><span class="o">.</span><span class="na">addDocument</span><span class="o">(</span><span class="n">document</span><span class="o">);</span>
+                 <span class="n">indexWriter</span><span class="o">.</span><span class="na">addDocument</span><span class="o">(</span><span class="n">document2</span><span class="o">);</span>
+                 <span class="n">indexWriter</span><span class="o">.</span><span class="na">optimize</span><span class="o">();</span>
+                 <span class="n">indexWriter</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+                 <span class="c1">// Now search the index;
+</span><span class="c1"></span>                 <span class="n">IndexSearcher</span> <span class="n">isearcher</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IndexSearcher</span><span class="o">(</span><span class="n">directory</span><span class="o">);</span>
+                 <span class="c1">// Parse a simple query that searches for &#34;中国人&#34;
+</span><span class="c1"></span>                  <span class="n">String</span> <span class="o">[]</span> <span class="n">queryFileds</span> <span class="o">=</span> <span class="o">{</span><span class="s">&#34;fieldname&#34;</span><span class="o">};</span>
+                 <span class="n">QueryParser</span> <span class="n">parser</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MultiFieldQueryParser</span><span class="o">(</span><span class="n">Version</span><span class="o">.</span><span class="na">LUCENE_36</span><span class="o">,</span> <span class="n">queryFileds</span><span class="o">,</span> <span class="n">analyzer</span><span class="o">);</span>
+                 <span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">&#34;中国人&#34;</span><span class="o">);</span>
+                 <span class="n">TopDocs</span> <span class="n">result</span> <span class="o">=</span>  <span class="n">isearcher</span><span class="o">.</span><span class="na">search</span><span class="o">(</span><span class="n">query</span><span class="o">,</span> <span class="n">1000</span><span class="o">);</span>
+                 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;检索到&#34;</span><span class="o">+</span><span class="n">result</span><span class="o">.</span><span class="na">totalHits</span><span class="o">+</span><span class="s">&#34;条符合条件的数据.&#34;</span><span class="o">);</span>
+                 <span class="n">isearcher</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+                 <span class="n">directory</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">CorruptIndexException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">LockObtainFailedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">ParseException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     

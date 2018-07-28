@@ -25,7 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="北斗" />
-  <meta name="description" content="一、Wordpress配置 下载 wget http://wordpress.org/latest.zip 解压 unzip latest.zip 进入目录 cd wordpress/ 重命名 mv wp-config-sample.php wp-config.php 更改配置 vi wp-config.php 请自行根据数据库设置进行配置文件设置。 二、PHP服务器配置 安装" />
+  <meta name="description" content="一、Wordpress配置 下载 1 wget http://wordpress.org/latest.zip 解压 1 unzip latest.zip 进入目录 1 cd wordpress/ 重命名 1 mv wp-config-sample.php wp-config.php 更改配置 1 vi wp-config.php 请自行根据数据库设置进行配置文件设置。 二、PHP服务" />
 
   <meta name="keywords" content="技术, 程序员, 码农, 程序猿, 分享, java, python, 3afun" />
 
@@ -58,7 +58,7 @@
 
 
 <meta property="og:title" content="EC2主机部署Wordpress" />
-<meta property="og:description" content="一、Wordpress配置 下载 wget http://wordpress.org/latest.zip 解压 unzip latest.zip 进入目录 cd wordpress/ 重命名 mv wp-config-sample.php wp-config.php 更改配置 vi wp-config.php 请自行根据数据库设置进行配置文件设置。 二、PHP服务器配置 安装" />
+<meta property="og:description" content="一、Wordpress配置 下载 1 wget http://wordpress.org/latest.zip 解压 1 unzip latest.zip 进入目录 1 cd wordpress/ 重命名 1 mv wp-config-sample.php wp-config.php 更改配置 1 vi wp-config.php 请自行根据数据库设置进行配置文件设置。 二、PHP服务" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.3afun.com/post/2014/ec2%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2wordpress/" />
 
@@ -79,19 +79,19 @@
 
 
 <meta itemprop="name" content="EC2主机部署Wordpress">
-<meta itemprop="description" content="一、Wordpress配置 下载 wget http://wordpress.org/latest.zip 解压 unzip latest.zip 进入目录 cd wordpress/ 重命名 mv wp-config-sample.php wp-config.php 更改配置 vi wp-config.php 请自行根据数据库设置进行配置文件设置。 二、PHP服务器配置 安装">
+<meta itemprop="description" content="一、Wordpress配置 下载 1 wget http://wordpress.org/latest.zip 解压 1 unzip latest.zip 进入目录 1 cd wordpress/ 重命名 1 mv wp-config-sample.php wp-config.php 更改配置 1 vi wp-config.php 请自行根据数据库设置进行配置文件设置。 二、PHP服务">
 
 
 <meta itemprop="datePublished" content="2014-03-10T17:42:27&#43;08:00" />
 <meta itemprop="dateModified" content="2014-03-10T17:42:27&#43;08:00" />
-<meta itemprop="wordCount" content="147">
+<meta itemprop="wordCount" content="159">
 
 
 
 <meta itemprop="keywords" content="Wordpress," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="EC2主机部署Wordpress"/>
-<meta name="twitter:description" content="一、Wordpress配置 下载 wget http://wordpress.org/latest.zip 解压 unzip latest.zip 进入目录 cd wordpress/ 重命名 mv wp-config-sample.php wp-config.php 更改配置 vi wp-config.php 请自行根据数据库设置进行配置文件设置。 二、PHP服务器配置 安装"/>
+<meta name="twitter:description" content="一、Wordpress配置 下载 1 wget http://wordpress.org/latest.zip 解压 1 unzip latest.zip 进入目录 1 cd wordpress/ 重命名 1 mv wp-config-sample.php wp-config.php 更改配置 1 vi wp-config.php 请自行根据数据库设置进行配置文件设置。 二、PHP服务"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -317,7 +317,7 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/"> 开源软件 </a>
             
           </div>
-        <span class="more-meta"> 约 147 字 </span>
+        <span class="more-meta"> 约 159 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -336,56 +336,95 @@ ga('send', 'pageview');
       <p>一、Wordpress配置</p>
 
 <p>下载</p>
-
-<pre><code>wget http://wordpress.org/latest.zip
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">wget http://wordpress.org/latest.zip</pre></td></tr></table>
+</div>
+</div>
 <p>解压</p>
-
-<pre><code>unzip latest.zip
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">unzip latest.zip</pre></td></tr></table>
+</div>
+</div>
 <p>进入目录</p>
-
-<pre><code>cd wordpress/
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">cd wordpress/</pre></td></tr></table>
+</div>
+</div>
 <p>重命名</p>
-
-<pre><code>mv  wp-config-sample.php wp-config.php
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">mv  wp-config-sample.php wp-config.php</pre></td></tr></table>
+</div>
+</div>
 <p>更改配置</p>
-
-<pre><code>vi wp-config.php
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">vi wp-config.php</pre></td></tr></table>
+</div>
+</div>
 <p>请自行根据数据库设置进行配置文件设置。</p>
 
 <p>二、PHP服务器配置</p>
 
 <p>安装</p>
-
-<pre><code>yum install php php-mysql php-fpm
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">yum install php php-mysql php-fpm</pre></td></tr></table>
+</div>
+</div>
 <p>启动</p>
-
-<pre><code>service php-fpm start
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">service php-fpm start</pre></td></tr></table>
+</div>
+</div>
 <p>三、MySQL数据库安装</p>
-
-<pre><code>yum install mysql
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">yum install mysql
 yum install mysql-server
 yum install mysql-devel
 chgrp -R mysql /var/lib/mysql
 chmod -R 770 /var/lib/mysql
 service mysqld start
 mysql
-SET PASSWORD FOR 'root'@'localhost' =PASSWORD('root');
-</code></pre>
-
+SET PASSWORD FOR &#39;root&#39;@&#39;localhost&#39; =PASSWORD(&#39;root&#39;);</pre></td></tr></table>
+</div>
+</div>
 <p>创建数据库后，即可浏览器打开</p>
 
 <p><a href="http://example.com/blog/wp-admin/install.php">http://example.com/blog/wp-admin/install.php</a></p>
@@ -456,7 +495,7 @@ SET PASSWORD FOR 'root'@'localhost' =PASSWORD('root');
         id: 'EC2主机部署Wordpress.md',
         title: 'EC2主机部署Wordpress',
         link: decodeURI(location.href),
-        desc: '一、Wordpress配置 下载 wget http:\/\/wordpress.org\/latest.zip 解压 unzip latest.zip 进入目录 cd wordpress\/ 重命名 mv wp-config-sample.php wp-config.php 更改配置 vi wp-config.php 请自行根据数据库设置进行配置文件设置。 二、PHP服务器配置 安装',
+        desc: '一、Wordpress配置 下载 1 wget http:\/\/wordpress.org\/latest.zip 解压 1 unzip latest.zip 进入目录 1 cd wordpress\/ 重命名 1 mv wp-config-sample.php wp-config.php 更改配置 1 vi wp-config.php 请自行根据数据库设置进行配置文件设置。 二、PHP服务',
         owner: 'hxchen',
         repo: 'comments',
         oauth: {

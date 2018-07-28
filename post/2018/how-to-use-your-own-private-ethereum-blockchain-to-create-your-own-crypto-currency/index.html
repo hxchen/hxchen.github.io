@@ -84,7 +84,7 @@
 
 <meta itemprop="datePublished" content="2018-04-16T11:24:49&#43;08:00" />
 <meta itemprop="dateModified" content="2018-04-16T11:24:49&#43;08:00" />
-<meta itemprop="wordCount" content="7546">
+<meta itemprop="wordCount" content="8178">
 
 
 
@@ -318,8 +318,8 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"> 区块链 </a>
             
           </div>
-        <span class="more-meta"> 约 7546 字 </span>
-        <span class="more-meta"> 预计阅读 16 分钟 </span>
+        <span class="more-meta"> 约 8178 字 </span>
+        <span class="more-meta"> 预计阅读 17 分钟 </span>
       </div>
     </header>
 
@@ -387,8 +387,32 @@ ga('send', 'pageview');
 <h1 id="最低限度的代币-minimum-viable-token">最低限度的代币(Minimum Viable Token)</h1>
 
 <p>标准代币合约可以非常的复杂,但是一个基本的代币像如下这样:</p>
-
-<pre><code>pragma solidity ^0.4.20;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">pragma solidity ^0.4.20;
 
 contract MyToken {
     /* This creates an array with all balances */
@@ -408,15 +432,171 @@ contract MyToken {
         balanceOf[msg.sender] -= _value;                    // Subtract from the sender
         balanceOf[_to] += _value;                           // Add the same to the recipient
     }
-}
-</code></pre>
-
+}</pre></td></tr></table>
+</div>
+</div>
 <h1 id="基础版代币-the-code">基础版代币 The Code</h1>
 
 <p>如果你只想复制粘贴来实现一个完整的代币,可以使用下面这个。这个是ERC20 规范的代币合约 。相应的标准可以参考之前文章
 <a href="https://www.3afun.com/post/2018/erc-20-token-standard/">ERC20 标准规范</a></p>
-
-<pre><code>pragma solidity ^0.4.16;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">pragma solidity ^0.4.16;
 
 interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
 
@@ -563,14 +743,14 @@ contract TokenERC20 {
         require(balanceOf[_from] &gt;= _value);                // Check if the targeted balance is enough
         require(_value &lt;= allowance[_from][msg.sender]);    // Check allowance
         balanceOf[_from] -= _value;                         // Subtract from the targeted balance
-        allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+        allowance[_from][msg.sender] -= _value;             // Subtract from the sender&#39;s allowance
         totalSupply -= _value;                              // Update totalSupply
         emit Burn(_from, _value);
         return true;
     }
-}
-</code></pre>
-
+}</pre></td></tr></table>
+</div>
+</div>
 <h1 id="如何发布-how-to-deploy">如何发布 How to deploy</h1>
 
 <p>1.点击钱包右上角合约,选择部署新合约
@@ -618,8 +798,22 @@ contract TokenERC20 {
 所以对于合约,你需要首先批准一定量的他们可以从你账户进行转移的代币,然后才能告诉他们让他们知道应该做一些事,或者你可以使用<code>approveAndCall</code>可以把这2个操作合二为一。</p>
 
 <p>因为很多这些函数需要重新实现代币转账,所以将他们定义成内部函数是有意义的,像是下面的只可以由合约自身来调用:</p>
-
-<pre><code>    /* Internal transfer, can only be called by this contract */
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">    /* Internal transfer, can only be called by this contract */
     function _transfer(address _from, address _to, uint _value) internal {
         require (_to != 0x0);                               // Prevent transfer to 0x0 address. Use burn() instead
         require (balanceOf[_from] &gt;= _value);                // Check if the sender has enough
@@ -629,9 +823,9 @@ contract TokenERC20 {
         balanceOf[_from] -= _value;                         // Subtract from the sender
         balanceOf[_to] += _value;                           // Add the same to the recipient
         Transfer(_from, _to, _value);
-    }
-</code></pre>
-
+    }</pre></td></tr></table>
+</div>
+</div>
 <p>现在所有可以转移代币的函数都可以执行自己的检查,然后再使用正确的参数来调用 transfer函数。我们会发现这个函数会从一个账户转移到另一个账户,而不需要一个人的允许。所以我们要将他定义成一个内部函数,只能被合约来调用。如果你想增加可以调用这个函数的函数,你需要检查调用者是否有权来调用。</p>
 
 <h2 id="中心化管理员">中心化管理员</h2>
@@ -642,8 +836,27 @@ contract TokenERC20 {
 <p>期待这些事可以实现,你需要一个中心货币管理者。这可以是一个简单的账户,但也可以是一个合约,因此创建更多代币的决定取决于合约:如果他是一个可以投票的民主组织或者它只是一个限制代币所有者的权力。</p>
 
 <p>为了做到这些,我们会学习到一个非常有用的合约属性: <code>inheritance</code>。继承允许一个合约无需重新定义他们就得到父合约的一些特点。这就可以使代码干净,简单可复用。在你的代码<code>contract MyToken {</code>前面,先添加添加如下代码。</p>
-
-<pre><code>contract owned {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">contract owned {
         address public owner;
 
         function owned() {
@@ -658,21 +871,37 @@ contract TokenERC20 {
         function transferOwnership(address newOwner) onlyOwner {
             owner = newOwner;
         }
-    }
-
-</code></pre>
-
+    }</pre></td></tr></table>
+</div>
+</div>
 <p>这创建了一个非常简单的合约,你不需要做什么,只需要在名为<code>owned</code>里面定义有关合约的一些通用的函数。
 下一步就是只需要在你合约里面添加  <code>is owned</code>即可。</p>
-
-<pre><code>    contract MyToken is owned {
-        /* the rest of the contract as usual */
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">    contract MyToken is owned {
+        /* the rest of the contract as usual */</pre></td></tr></table>
+</div>
+</div>
 <p>这意味着你在<code>MyToken</code>里面所有的函数都可要访问<code>owner</code>变量和修改者<code>onlyOwner</code>。这个合约同事也得到了一个可以转换管理员的函数。
 因为在开始的时候设置一个管理者会非常的有趣,所以你可以把这个功能添加到构造函数中去:</p>
-
-<pre><code>    function MyToken(
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">    function MyToken(
         uint256 initialSupply,
         string tokenName,
         uint8 decimalUnits,
@@ -680,16 +909,28 @@ contract TokenERC20 {
         address centralMinter
         ) {
         if(centralMinter != 0 ) owner = centralMinter;
-    }
-</code></pre>
-
+    }</pre></td></tr></table>
+</div>
+</div>
 <h2 id="代币增发">代币增发</h2>
 
 <p>有时我们可能需要货币增发或者删除的情况。</p>
 
 <p>我们首先需要增加一个<code>totalSupply</code>变量来存储发行量,并且在构造函数中指定。</p>
-
-<pre><code>    contract MyToken {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">    contract MyToken {
         uint256 public totalSupply;
 
         function MyToken(...) {
@@ -697,85 +938,144 @@ contract TokenERC20 {
             ...
         }
         ...
-    }
-</code></pre>
-
+    }</pre></td></tr></table>
+</div>
+</div>
 <p>现在我们来增加一个函数,可以让管理员来发行新币</p>
-
-<pre><code>    function mintToken(address target, uint256 mintedAmount) onlyOwner {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">    function mintToken(address target, uint256 mintedAmount) onlyOwner {
         balanceOf[target] += mintedAmount;
         totalSupply += mintedAmount;
         Transfer(0, owner, mintedAmount);
         Transfer(owner, target, mintedAmount);
-    }
-</code></pre>
-
+    }</pre></td></tr></table>
+</div>
+</div>
 <p>注意到上面的修饰符<code>onlyOwner</code>说明 <code>mintToken</code> 是继承了 <code>onlyOwner</code>方法，会先调用 <code>modifier onlyOwner</code> 方法，然后将<code>mintToken</code> 方法的内容，插入到下划线 <code>_</code> 处调用。</p>
 
 <h2 id="冻结资产">冻结资产</h2>
 
 <p>根据你的适用情况,你可能会需要一些监管来让谁或者禁止谁来使用你的代币,你需要添加一个参数来让合约管理员冻结或者解冻资产。</p>
-
-<pre><code>    mapping (address =&gt; bool) public frozenAccount;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">    mapping (address =&gt; bool) public frozenAccount;
     event FrozenFunds(address target, bool frozen);
 
     function freezeAccount(address target, bool freeze) onlyOwner {
         frozenAccount[target] = freeze;
         FrozenFunds(target, freeze);
-    }
-</code></pre>
-
+    }</pre></td></tr></table>
+</div>
+</div>
 <p>使用这段代码,所有的账户默认是非冻结状态,管理员可以通过调用<code>Freeze Account</code>来冻结账户。但是到目前还没有正式生效,我们还需在转账交易函数里添加如下代码:</p>
-
-<pre><code>    function transfer(address _to, uint256 _value) {
-        require(!frozenAccount[msg.sender]);
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">    function transfer(address _to, uint256 _value) {
+        require(!frozenAccount[msg.sender]);</pre></td></tr></table>
+</div>
+</div>
 <p>现在被冻结账户仍然玩好的拥有资金,但是不能转移他们。所有的账户默认是非冻结状态,除非你去冻结他们,但是你可以轻易的还原这个行为,把他们一个个的手动批准加入到白名单中去。
 只需要把<code>frozenAccount</code>重命名成<code>approvedAccount</code>并且把最后一行代码改成:</p>
-
-<pre><code>    require(approvedAccount[msg.sender]);
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">    require(approvedAccount[msg.sender]);</pre></td></tr></table>
+</div>
+</div>
 <h2 id="自动买卖">自动买卖</h2>
 
 <p>到目前为止,你依靠效用和信任来评估你的代币。但是你如果想要的话,你可以通过创建一个基金来以市场价进行买卖兑换以太币或者其他代币。</p>
 
 <p>首先让我们来设置一个买入和卖出价格:</p>
-
-<pre><code>    uint256 public sellPrice;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">    uint256 public sellPrice;
     uint256 public buyPrice;
 
     function setPrices(uint256 newSellPrice, uint256 newBuyPrice) onlyOwner {
         sellPrice = newSellPrice;
         buyPrice = newBuyPrice;
-    }
-</code></pre>
-
+    }</pre></td></tr></table>
+</div>
+</div>
 <p>对于一个不经常变的价格,这是可以接受的。因为每次更改价格将会需要你来执行一个合同并且花费一点的以太币。如果你希望有个持续浮动的价格,我们建议你研究一下 <a href="https://github.com/ethereum/wiki/wiki/Standardized_Contract_APIs#data-feeds">standard data feeds</a></p>
 
 <p>下一步来增加购买和销售函数:</p>
-
-<pre><code>    function buy() payable returns (uint amount){
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">    function buy() payable returns (uint amount){
         amount = msg.value / buyPrice;                    // calculates the amount
         require(balanceOf[this] &gt;= amount);               // checks if it has enough to sell
-        balanceOf[msg.sender] += amount;                  // adds the amount to buyer's balance
-        balanceOf[this] -= amount;                        // subtracts amount from seller's balance
+        balanceOf[msg.sender] += amount;                  // adds the amount to buyer&#39;s balance
+        balanceOf[this] -= amount;                        // subtracts amount from seller&#39;s balance
         Transfer(this, msg.sender, amount);               // execute an event reflecting the change
         return amount;                                    // ends function and returns
     }
 
     function sell(uint amount) returns (uint revenue){
         require(balanceOf[msg.sender] &gt;= amount);         // checks if the sender has enough to sell
-        balanceOf[this] += amount;                        // adds the amount to owner's balance
-        balanceOf[msg.sender] -= amount;                  // subtracts the amount from seller's balance
+        balanceOf[this] += amount;                        // adds the amount to owner&#39;s balance
+        balanceOf[msg.sender] -= amount;                  // subtracts the amount from seller&#39;s balance
         revenue = amount * sellPrice;
-        msg.sender.transfer(revenue);                     // sends ether to the seller: it's important to do this last to prevent recursion attacks
+        msg.sender.transfer(revenue);                     // sends ether to the seller: it&#39;s important to do this last to prevent recursion attacks
         Transfer(msg.sender, this, amount);               // executes an event reflecting on the change
         return revenue;                                   // ends function and returns
-    }
-</code></pre>
-
+    }</pre></td></tr></table>
+</div>
+</div>
 <p>buy函数中我们增加了一个payable关键字,表示调用者可以直接向该函数传入以太币进行调用。</p>
 
 <p>注意:买入和卖出价格并不是以Ether为单位,而是以wei(最小货币精度)为单位。1Ether = 1000000000000000000 wei。所以当在Ether中设置价格时,后面需要加18个0.</p>
@@ -793,34 +1093,60 @@ contract TokenERC20 {
 账户余额小于特定费用的时候会被卡住,直到所有人owner可以支付所需费用。但是在有些情况下,你或许不希望你的用户来考虑以太币,区块链或者怎么获取以太币,所以一个可以的办法是让你的币只要检测余额低的有些危险的时候可以自动补充。</p>
 
 <p>为了做到这样,首先你需要创建一个变量来保存阈值和一个函数来改变它。如果你不知道应该设置多少,设置<strong>5finney</strong>(0.005以太币)就好。</p>
-
-<pre><code>    uint public minBalanceForAccounts;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">    uint public minBalanceForAccounts;
 
     function setMinBalance(uint minimumBalanceInFinney) onlyOwner {
          minBalanceForAccounts = minimumBalanceInFinney * 1 finney;
-    }
-</code></pre>
-
+    }</pre></td></tr></table>
+</div>
+</div>
 <p>然后，将此行添加到<strong>transfer</strong>功能，以便发件人退款：</p>
-
-<pre><code>    /* Send coins */
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">    /* Send coins */
     function transfer(address _to, uint256 _value) {
         ...
         if(msg.sender.balance &lt; minBalanceForAccounts)
             sell((minBalanceForAccounts - msg.sender.balance) / sellPrice);
-    }
-</code></pre>
-
+    }</pre></td></tr></table>
+</div>
+</div>
 <p>还有一种做法是，发送者检测收款方有没有足够的ETH，如果没有，发送者则兑换一部分自己的代币，将得到的ETH发送给收款方（这种做法就是为收款方服务，收款方不用处理ETH、GAS的事情）</p>
-
-<pre><code>    /* Send coins */
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">    /* Send coins */
     function transfer(address _to, uint256 _value) {
         ...
         if(_to.balance&lt;minBalanceForAccounts)
             _to.send(sell((minBalanceForAccounts - _to.balance) / sellPrice));
-    }
-</code></pre>
-
+    }</pre></td></tr></table>
+</div>
+</div>
 <p>这将确保不会有低于必要以太币的账户可以接受代币。</p>
 
 <h1 id="高级版代币">高级版代币</h1>
@@ -830,8 +1156,356 @@ contract TokenERC20 {
 <p>如果你打算添加所有高级的高能,下面是最终代码:</p>
 
 <p>注意:原示例中存在几处bug已经修正。</p>
-
-<pre><code>pragma solidity 0.4.21;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span><span class="lnt">251
+</span><span class="lnt">252
+</span><span class="lnt">253
+</span><span class="lnt">254
+</span><span class="lnt">255
+</span><span class="lnt">256
+</span><span class="lnt">257
+</span><span class="lnt">258
+</span><span class="lnt">259
+</span><span class="lnt">260
+</span><span class="lnt">261
+</span><span class="lnt">262
+</span><span class="lnt">263
+</span><span class="lnt">264
+</span><span class="lnt">265
+</span><span class="lnt">266
+</span><span class="lnt">267
+</span><span class="lnt">268
+</span><span class="lnt">269
+</span><span class="lnt">270
+</span><span class="lnt">271
+</span><span class="lnt">272
+</span><span class="lnt">273
+</span><span class="lnt">274
+</span><span class="lnt">275
+</span><span class="lnt">276
+</span><span class="lnt">277
+</span><span class="lnt">278
+</span><span class="lnt">279
+</span><span class="lnt">280
+</span><span class="lnt">281
+</span><span class="lnt">282
+</span><span class="lnt">283
+</span><span class="lnt">284
+</span><span class="lnt">285
+</span><span class="lnt">286
+</span><span class="lnt">287
+</span><span class="lnt">288
+</span><span class="lnt">289
+</span><span class="lnt">290
+</span><span class="lnt">291
+</span><span class="lnt">292
+</span><span class="lnt">293
+</span><span class="lnt">294
+</span><span class="lnt">295
+</span><span class="lnt">296
+</span><span class="lnt">297
+</span><span class="lnt">298
+</span><span class="lnt">299
+</span><span class="lnt">300
+</span><span class="lnt">301
+</span><span class="lnt">302
+</span><span class="lnt">303
+</span><span class="lnt">304
+</span><span class="lnt">305
+</span><span class="lnt">306
+</span><span class="lnt">307
+</span><span class="lnt">308
+</span><span class="lnt">309
+</span><span class="lnt">310
+</span><span class="lnt">311
+</span><span class="lnt">312
+</span><span class="lnt">313
+</span><span class="lnt">314
+</span><span class="lnt">315
+</span><span class="lnt">316
+</span><span class="lnt">317
+</span><span class="lnt">318
+</span><span class="lnt">319
+</span><span class="lnt">320
+</span><span class="lnt">321
+</span><span class="lnt">322
+</span><span class="lnt">323
+</span><span class="lnt">324
+</span><span class="lnt">325
+</span><span class="lnt">326
+</span><span class="lnt">327
+</span><span class="lnt">328
+</span><span class="lnt">329
+</span><span class="lnt">330
+</span><span class="lnt">331
+</span><span class="lnt">332
+</span><span class="lnt">333
+</span><span class="lnt">334
+</span><span class="lnt">335
+</span><span class="lnt">336
+</span><span class="lnt">337
+</span><span class="lnt">338
+</span><span class="lnt">339
+</span><span class="lnt">340
+</span><span class="lnt">341
+</span><span class="lnt">342
+</span><span class="lnt">343
+</span><span class="lnt">344
+</span><span class="lnt">345
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">pragma solidity 0.4.21;
 
 interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
 
@@ -871,7 +1545,7 @@ contract owned {
 contract TokenERC20 {
     /* 公共变量 */
     string public name; //代币名称
-    string public symbol; //代币符号比如'$'
+    string public symbol; //代币符号比如&#39;$&#39;
     uint8 public decimals = 18;  //代币精度，展示的小数点后面多少个0,和以太币一样后面是是18个0
     uint256 public totalSupply; //代币总量
 
@@ -1175,10 +1849,9 @@ contract MyAdvancedToken is owned, TokenERC20 {
 
         msg.sender.transfer(amount * sellPrice);
     }
-}
-
-</code></pre>
-
+}</pre></td></tr></table>
+</div>
+</div>
 <h2 id="部署">部署</h2>
 
 <p>复制修正后代码到部署界面,选择My Advanced Token,填写相应的参数,发布即可。

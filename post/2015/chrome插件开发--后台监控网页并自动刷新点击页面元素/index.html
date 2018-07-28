@@ -84,7 +84,7 @@
 
 <meta itemprop="datePublished" content="2015-06-18T16:54:00&#43;08:00" />
 <meta itemprop="dateModified" content="2015-06-18T16:54:00&#43;08:00" />
-<meta itemprop="wordCount" content="726">
+<meta itemprop="wordCount" content="775">
 
 
 
@@ -316,7 +316,7 @@ ga('send', 'pageview');
         <div class="post-category">
             
           </div>
-        <span class="more-meta"> 约 726 字 </span>
+        <span class="more-meta"> 约 775 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
       </div>
     </header>
@@ -341,30 +341,54 @@ ga('send', 'pageview');
 <p>一、新建目录ChromeAddin-mafengwo。目录下新建名为manifest.json的入口文件。</p>
 
 <p>manifest.json:</p>
-
-<pre><code>{
-    &quot;name&quot;: &quot;picZongzi&quot;,
-    &quot;version&quot;: &quot;1.0&quot;,
-    &quot;manifest_version&quot;: 2,
-    &quot;description&quot;: &quot;自动抓取蚂蜂窝粽子&quot;,
-    &quot;browser_action&quot;: {
-        &quot;default_icon&quot;: &quot;./images/icon.png&quot;,
-        &quot;default_title&quot;: &quot;蚂蜂窝自动捡粽子&quot;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">{
+    &#34;name&#34;: &#34;picZongzi&#34;,
+    &#34;version&#34;: &#34;1.0&#34;,
+    &#34;manifest_version&#34;: 2,
+    &#34;description&#34;: &#34;自动抓取蚂蜂窝粽子&#34;,
+    &#34;browser_action&#34;: {
+        &#34;default_icon&#34;: &#34;./images/icon.png&#34;,
+        &#34;default_title&#34;: &#34;蚂蜂窝自动捡粽子&#34;
     },
-    &quot;permissions&quot;: [
-        &quot;tabs&quot;,
-        &quot;https://*/*&quot;,
-        &quot;http://*/*&quot;
+    &#34;permissions&#34;: [
+        &#34;tabs&#34;,
+        &#34;https://*/*&#34;,
+        &#34;http://*/*&#34;
     ],
-    &quot;content_scripts&quot;: [
+    &#34;content_scripts&#34;: [
         {
-            &quot;matches&quot;: [&quot;*://*.mafengwo.cn/*&quot;],
-            &quot;js&quot;: [&quot;jquery-1.11.3.min.js&quot;, &quot;mafengwo.js&quot;]
+            &#34;matches&#34;: [&#34;*://*.mafengwo.cn/*&#34;],
+            &#34;js&#34;: [&#34;jquery-1.11.3.min.js&#34;, &#34;mafengwo.js&#34;]
         }
     ]
-}
-</code></pre>
-
+}</pre></td></tr></table>
+</div>
+</div>
 <p>本文件主要声明了插件名称版本，监控的权限，网站，加载的文件。</p>
 
 <p>二、实现后台处理文件。</p>
@@ -376,16 +400,45 @@ ga('send', 'pageview');
 <p>具体业务逻辑如下：</p>
 
 <p>mafengwo.js:</p>
-
-<pre><code>console.log(&quot;蚂蜂窝自动捡粽子，实时监控ing&quot;);
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">console.log(&#34;蚂蜂窝自动捡粽子，实时监控ing&#34;);
 $(document).ready(function(){
     var sites = [
-                 'http://www.mafengwo.cn/',
-                 'http://www.mafengwo.cn/activity/zongzi2015.php?fromhead',
-                 'http://www.mafengwo.cn/gonglve/',
-                 'http://www.mafengwo.cn/mdd/',
-                 'http://www.mafengwo.cn/wenda/',
-                 'http://www.mafengwo.cn/sales/'
+                 &#39;http://www.mafengwo.cn/&#39;,
+                 &#39;http://www.mafengwo.cn/activity/zongzi2015.php?fromhead&#39;,
+                 &#39;http://www.mafengwo.cn/gonglve/&#39;,
+                 &#39;http://www.mafengwo.cn/mdd/&#39;,
+                 &#39;http://www.mafengwo.cn/wenda/&#39;,
+                 &#39;http://www.mafengwo.cn/sales/&#39;
                  ]
     function GetRandomNum(Min,Max){
         var Range = Max - Min;
@@ -396,15 +449,15 @@ $(document).ready(function(){
         var number = GetRandomNum(1,5);
         location.href = sites[number];
         var body = document.body.innerHTML;
-        $(&quot;.pickZongzi&quot;).each(function(){
+        $(&#34;.pickZongzi&#34;).each(function(){
             $(this).click();
         });
-        console.log('杀死粽子！');
+        console.log(&#39;杀死粽子！&#39;);
     }
     setTimeout(killZongzi, 2500);
-});
-</code></pre>
-
+});</pre></td></tr></table>
+</div>
+</div>
 <p>三、开发中的插件调试</p>
 
 <p>浏览器输入：chrome://extensions/</p>

@@ -84,7 +84,7 @@
 
 <meta itemprop="datePublished" content="2018-04-24T22:23:11&#43;08:00" />
 <meta itemprop="dateModified" content="2018-04-24T22:23:11&#43;08:00" />
-<meta itemprop="wordCount" content="432">
+<meta itemprop="wordCount" content="464">
 
 
 
@@ -317,7 +317,7 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/git/"> git </a>
             
           </div>
-        <span class="more-meta"> 约 432 字 </span>
+        <span class="more-meta"> 约 464 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -336,69 +336,125 @@ ga('send', 'pageview');
       <p>有时我们fork一个项目到我们账号下,但是又想同步更新原先的内容,怎么办?别着急 <strong>remote upstream</strong>可以来搞定。</p>
 
 <p>1.先使用<code>git remote -v</code>查看远程状态。</p>
-
-<pre><code class="language-bash">git remote -v
-origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
-origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git remote -v
+origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git <span class="o">(</span>fetch<span class="o">)</span>
+origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git <span class="o">(</span>push<span class="o">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>2.指定一个远程的 remote upstream 用以同步,也就是你fork而来的那个。</p>
-
-<pre><code class="language-bash">git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git</code></pre></td></tr></table>
+</div>
+</div>
 <p>3.确认新加的 upstream 库</p>
-
-<pre><code class="language-bash">git remote -v
-origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
-origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
-upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (fetch)
-upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (push)
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git remote -v
+origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git <span class="o">(</span>fetch<span class="o">)</span>
+origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git <span class="o">(</span>push<span class="o">)</span>
+upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git <span class="o">(</span>fetch<span class="o">)</span>
+upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git <span class="o">(</span>push<span class="o">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>4.获取 upstream 的<code>master</code>内容,该内容会被存在本地的 <code>upstream/master</code>分支</p>
-
-<pre><code class="language-bash">git fetch upstream
-remote: Counting objects: 75, done.
-remote: Compressing objects: 100% (53/53), done.
-remote: Total 62 (delta 27), reused 44 (delta 9)
-Unpacking objects: 100% (62/62), done.
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git fetch upstream
+remote: Counting objects: <span class="m">75</span>, <span class="k">done</span>.
+remote: Compressing objects: <span class="m">100</span>% <span class="o">(</span><span class="m">53</span>/53<span class="o">)</span>, <span class="k">done</span>.
+remote: Total <span class="m">62</span> <span class="o">(</span>delta <span class="m">27</span><span class="o">)</span>, reused <span class="m">44</span> <span class="o">(</span>delta <span class="m">9</span><span class="o">)</span>
+Unpacking objects: <span class="m">100</span>% <span class="o">(</span><span class="m">62</span>/62<span class="o">)</span>, <span class="k">done</span>.
 From https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY
- * [new branch]      master     -&gt; upstream/master
-</code></pre>
-
+ * <span class="o">[</span>new branch<span class="o">]</span>      master     -&gt; upstream/master</code></pre></td></tr></table>
+</div>
+</div>
 <p>5.切换到本地<code>master</code>分支</p>
-
-<pre><code class="language-bash">git checkout master
-Switched to branch 'master'
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git checkout master
+Switched to branch <span class="s1">&#39;master&#39;</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>6.合并从<code>upstream/master</code>来的变化到本地<code>master</code>分支,这会将<code>fork</code>的<code>master</code>的内容同步到你本地,你本地也不会丢失内容。</p>
-
-<pre><code class="language-bash">git merge upstream/master
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git merge upstream/master
 Updating a422352..5fdff0f
 Fast-forward
- README                    |    9 -------
- README.md                 |    7 ++++++
- 2 files changed, 7 insertions(+), 9 deletions(-)
- delete mode 100644 README
- create mode 100644 README.md
-</code></pre>
-
+ README                    <span class="p">|</span>    <span class="m">9</span> -------
+ README.md                 <span class="p">|</span>    <span class="m">7</span> ++++++
+ <span class="m">2</span> files changed, <span class="m">7</span> insertions<span class="o">(</span>+<span class="o">)</span>, <span class="m">9</span> deletions<span class="o">(</span>-<span class="o">)</span>
+ delete mode <span class="m">100644</span> README
+ create mode <span class="m">100644</span> README.md</code></pre></td></tr></table>
+</div>
+</div>
 <p>如果你本地没有改变的话,git会为你进行&rdquo;fast-forward&rdquo;合并</p>
-
-<pre><code class="language-bash">git merge upstream/master
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git merge upstream/master
 Updating 34e91da..16c56ad
 Fast-forward
- README.md                 |    5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
-</code></pre>
-
+ README.md                 <span class="p">|</span>    <span class="m">5</span> +++--
+ <span class="m">1</span> file changed, <span class="m">3</span> insertions<span class="o">(</span>+<span class="o">)</span>, <span class="m">2</span> deletions<span class="o">(</span>-<span class="o">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>7.如果你想更新到你的git上去,只要提交就好了。</p>
-
-<pre><code class="language-bash">git push origin master
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">git push origin master</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     

@@ -25,7 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="北斗" />
-  <meta name="description" content="思路主要是在onResume事件里处理按钮事件并进行判断。 如果使用了WebView则在onKey里处理返回按钮事件。 import android.os.Bundle; import android.support.annotation.Nullable; import android.support.v4.app.Fragment; import android.support.v4.app.FragmentManager; import android.view.KeyEvent; import android.view.LayoutInflater;" />
+  <meta name="description" content="思路主要是在onResume事件里处理按钮事件并进行判断。 如果使用了WebView则在onKey里处理返回按钮事件。 1 2 3 4 5 6 7 8 9 10 11 12" />
 
   <meta name="keywords" content="技术, 程序员, 码农, 程序猿, 分享, java, python, 3afun" />
 
@@ -58,7 +58,7 @@
 
 
 <meta property="og:title" content="Fragment或WebView里监听返回键" />
-<meta property="og:description" content="思路主要是在onResume事件里处理按钮事件并进行判断。 如果使用了WebView则在onKey里处理返回按钮事件。 import android.os.Bundle; import android.support.annotation.Nullable; import android.support.v4.app.Fragment; import android.support.v4.app.FragmentManager; import android.view.KeyEvent; import android.view.LayoutInflater;" />
+<meta property="og:description" content="思路主要是在onResume事件里处理按钮事件并进行判断。 如果使用了WebView则在onKey里处理返回按钮事件。 1 2 3 4 5 6 7 8 9 10 11 12" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.3afun.com/post/2015/fragment%E6%88%96webview%E9%87%8C%E7%9B%91%E5%90%AC%E8%BF%94%E5%9B%9E%E9%94%AE/" />
 
@@ -79,19 +79,19 @@
 
 
 <meta itemprop="name" content="Fragment或WebView里监听返回键">
-<meta itemprop="description" content="思路主要是在onResume事件里处理按钮事件并进行判断。 如果使用了WebView则在onKey里处理返回按钮事件。 import android.os.Bundle; import android.support.annotation.Nullable; import android.support.v4.app.Fragment; import android.support.v4.app.FragmentManager; import android.view.KeyEvent; import android.view.LayoutInflater;">
+<meta itemprop="description" content="思路主要是在onResume事件里处理按钮事件并进行判断。 如果使用了WebView则在onKey里处理返回按钮事件。 1 2 3 4 5 6 7 8 9 10 11 12">
 
 
 <meta itemprop="datePublished" content="2015-04-24T19:11:00&#43;08:00" />
 <meta itemprop="dateModified" content="2015-04-24T19:11:00&#43;08:00" />
-<meta itemprop="wordCount" content="223">
+<meta itemprop="wordCount" content="284">
 
 
 
 <meta itemprop="keywords" content="Android," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Fragment或WebView里监听返回键"/>
-<meta name="twitter:description" content="思路主要是在onResume事件里处理按钮事件并进行判断。 如果使用了WebView则在onKey里处理返回按钮事件。 import android.os.Bundle; import android.support.annotation.Nullable; import android.support.v4.app.Fragment; import android.support.v4.app.FragmentManager; import android.view.KeyEvent; import android.view.LayoutInflater;"/>
+<meta name="twitter:description" content="思路主要是在onResume事件里处理按钮事件并进行判断。 如果使用了WebView则在onKey里处理返回按钮事件。 1 2 3 4 5 6 7 8 9 10 11 12"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -317,7 +317,7 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/android/"> Android </a>
             
           </div>
-        <span class="more-meta"> 约 223 字 </span>
+        <span class="more-meta"> 约 284 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -336,8 +336,72 @@ ga('send', 'pageview');
       <p>思路主要是在onResume事件里处理按钮事件并进行判断。</p>
 
 <p>如果使用了WebView则在onKey里处理返回按钮事件。</p>
-
-<pre><code>import android.os.Bundle;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -360,9 +424,9 @@ public class PostFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.post_layout, container, false);
         webViewForPost = (WebView) rootView.findViewById(R.id.webViewForPost);
-        int index = Integer.valueOf(getArguments().get(&quot;index&quot;).toString());
-        String strategy = &quot;strategy&quot;+(index+1)+&quot;.html&quot;;
-        webViewForPost.loadUrl(&quot;file:///android_asset/&quot;+strategy);
+        int index = Integer.valueOf(getArguments().get(&#34;index&#34;).toString());
+        String strategy = &#34;strategy&#34;+(index+1)+&#34;.html&#34;;
+        webViewForPost.loadUrl(&#34;file:///android_asset/&#34;+strategy);
 
         webViewForPost.setOnKeyListener(new View.OnKeyListener() {
 
@@ -397,9 +461,9 @@ public class PostFragment extends Fragment{
         });
     }
 
-}
-</code></pre>
-
+}</pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
@@ -464,7 +528,7 @@ public class PostFragment extends Fragment{
         id: 'Fragment或WebView里监听返回键.md',
         title: 'Fragment或WebView里监听返回键',
         link: decodeURI(location.href),
-        desc: '思路主要是在onResume事件里处理按钮事件并进行判断。 如果使用了WebView则在onKey里处理返回按钮事件。 import android.os.Bundle; import android.support.annotation.Nullable; import android.support.v4.app.Fragment; import android.support.v4.app.FragmentManager; import android.view.KeyEvent; import android.view.LayoutInflater;',
+        desc: '思路主要是在onResume事件里处理按钮事件并进行判断。 如果使用了WebView则在onKey里处理返回按钮事件。 1 2 3 4 5 6 7 8 9 10 11 12',
         owner: 'hxchen',
         repo: 'comments',
         oauth: {

@@ -83,7 +83,7 @@
 
 <meta itemprop="datePublished" content="2018-06-25T17:40:07&#43;08:00" />
 <meta itemprop="dateModified" content="2018-06-25T17:40:07&#43;08:00" />
-<meta itemprop="wordCount" content="88">
+<meta itemprop="wordCount" content="92">
 
 
 
@@ -316,7 +316,7 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/swift/"> Swift </a>
             
           </div>
-        <span class="more-meta"> 约 88 字 </span>
+        <span class="more-meta"> 约 92 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -333,23 +333,35 @@ ga('send', 'pageview');
     
     <div class="post-content">
       <p>如果是正常App加载图片资源,我们会如下方法加载</p>
-
-<pre><code class="language-swift">let button = UIButton()
-let logoImage:UIImageView!
-logoImage = UIImageView(image: UIImage(named: &quot;image_name&quot;))
-button.setImage(logoImage, for: .normal)
-
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">let</span> <span class="nv">button</span> <span class="p">=</span> <span class="n">UIButton</span><span class="p">()</span>
+<span class="kd">let</span> <span class="nv">logoImage</span><span class="p">:</span><span class="n">UIImageView</span><span class="o">!</span>
+<span class="n">logoImage</span> <span class="p">=</span> <span class="n">UIImageView</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">UIImage</span><span class="p">(</span><span class="n">named</span><span class="p">:</span> <span class="s">&#34;image_name&#34;</span><span class="p">))</span>
+<span class="n">button</span><span class="p">.</span><span class="n">setImage</span><span class="p">(</span><span class="n">logoImage</span><span class="p">,</span> <span class="k">for</span><span class="p">:</span> <span class="p">.</span><span class="n">normal</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>但是当我们这个资源是要打包成Framework,给第三方使用的使用,第三方就会不能加载我们的图片资源。这时候我们就应该从该SDK内读取资源,正确方式如下:</p>
-
-<pre><code class="language-swift">let button = UIButton()
-let logoImage:UIImageView!
-logoImage = UIImageView(named: &quot;image_name&quot;,in: Bundle(for: type(of: self)), compatibleWith: nil)
-button.setImage(logoImage, for: .normal)
-
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="kd">let</span> <span class="nv">button</span> <span class="p">=</span> <span class="n">UIButton</span><span class="p">()</span>
+<span class="kd">let</span> <span class="nv">logoImage</span><span class="p">:</span><span class="n">UIImageView</span><span class="o">!</span>
+<span class="n">logoImage</span> <span class="p">=</span> <span class="n">UIImageView</span><span class="p">(</span><span class="n">named</span><span class="p">:</span> <span class="s">&#34;image_name&#34;</span><span class="p">,</span><span class="k">in</span><span class="p">:</span> <span class="n">Bundle</span><span class="p">(</span><span class="k">for</span><span class="p">:</span> <span class="n">type</span><span class="p">(</span><span class="n">of</span><span class="p">:</span> <span class="kc">self</span><span class="p">)),</span> <span class="n">compatibleWith</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="n">button</span><span class="p">.</span><span class="n">setImage</span><span class="p">(</span><span class="n">logoImage</span><span class="p">,</span> <span class="k">for</span><span class="p">:</span> <span class="p">.</span><span class="n">normal</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
@@ -415,7 +427,7 @@ button.setImage(logoImage, for: .normal)
         id: 'Swift之Framework开发-从Framework中给UIButton按钮加载图片.md',
         title: 'Swift之SDK开发-从Framework中给UIButton按钮加载图片',
         link: decodeURI(location.href),
-        desc: '如果是正常App加载图片资源,我们会如下方法加载 let button = UIButton() let logoImage:UIImageView! logoImage = UIImageView(image: UIImage(named: \x26quot;image_name\x26quot;)) button.setImage(logoImage, for: .normal) 但是当我们这个资源是要打包成Framework,给第三方使用的使',
+        desc: '如果是正常App加载图片资源,我们会如下方法加载 1 2 3 4 let button = UIButton() let logoImage:UIImageView! logoImage = UIImageView(image: UIImage(named: \x26#34;image_name\x26#34;)) button.setImage(logoImage, for: .normal) 但是当我们这个资源是要打包成Framework,给第三方',
         owner: 'hxchen',
         repo: 'comments',
         oauth: {

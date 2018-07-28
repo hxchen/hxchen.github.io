@@ -84,7 +84,7 @@
 
 <meta itemprop="datePublished" content="2013-01-25T11:00:00&#43;08:00" />
 <meta itemprop="dateModified" content="2013-01-25T11:00:00&#43;08:00" />
-<meta itemprop="wordCount" content="171">
+<meta itemprop="wordCount" content="184">
 
 
 
@@ -317,7 +317,7 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/mysql/"> MySQL </a>
             
           </div>
-        <span class="more-meta"> 约 171 字 </span>
+        <span class="more-meta"> 约 184 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -344,9 +344,25 @@ ga('send', 'pageview');
 <p>然后进行运行GRANT命令重新设置主从复制。</p>
 
 <p>具体过程如下：</p>
-
-<pre><code>mysql&gt; change master to master_host='127.0.0.1', master_user='user', master_pass
-word='user', master_log_file='mysql-bin-000202', master_log_pos=553;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">mysql&gt; change master to master_host=&#39;127.0.0.1&#39;, master_user=&#39;user&#39;, master_pass
+word=&#39;user&#39;, master_log_file=&#39;mysql-bin-000202&#39;, master_log_pos=553;
 ERROR 1201 (HY000): Could not initialize master info structure; more error messa
 ges can be found in the MySQL error log
 mysql&gt; stop slave;
@@ -355,11 +371,11 @@ Query OK, 0 rows affected, 1 warning (0.00 sec)
 mysql&gt; reset slave;
 Query OK, 0 rows affected (0.00 sec)
 
-mysql&gt; change master to master_host='127.0.0.1', master_user='user', master_pass
-word='user', master_log_file='mysql-bin-000202', master_log_pos=553;
-Query OK, 0 rows affected (0.11 sec)
-</code></pre>
-
+mysql&gt; change master to master_host=&#39;127.0.0.1&#39;, master_user=&#39;user&#39;, master_pass
+word=&#39;user&#39;, master_log_file=&#39;mysql-bin-000202&#39;, master_log_pos=553;
+Query OK, 0 rows affected (0.11 sec)</pre></td></tr></table>
+</div>
+</div>
     </div>
 
     

@@ -84,7 +84,7 @@
 
 <meta itemprop="datePublished" content="2013-06-18T20:40:00&#43;08:00" />
 <meta itemprop="dateModified" content="2013-06-18T20:40:00&#43;08:00" />
-<meta itemprop="wordCount" content="332">
+<meta itemprop="wordCount" content="385">
 
 
 
@@ -317,7 +317,7 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/java/"> Java </a>
             
           </div>
-        <span class="more-meta"> 约 332 字 </span>
+        <span class="more-meta"> 约 385 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -346,62 +346,118 @@ ga('send', 'pageview');
 <p>3.打印的过程中用一个二维数组存储矩阵，记录圈数 ，当前圈的数列长度 和圈开始计数的数字 。</p>
 
 <p><img src="/media/images/2013/java3.jpg" alt="java" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Matrix</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printMatrix</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">){</span>
+        <span class="kt">int</span> <span class="n">array</span> <span class="o">[][]</span>  <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span><span class="o">][</span><span class="n">n</span><span class="o">];</span>
+        <span class="kt">int</span> <span class="n">circleCount</span> <span class="o">;</span>   <span class="c1">//圈数
+</span><span class="c1"></span>
+        <span class="kt">int</span> <span class="n">currentCircleLength</span> <span class="o">=</span> <span class="n">n</span><span class="o">-</span><span class="n">1</span><span class="o">;</span>  <span class="c1">//当前圈的数列长度
+</span><span class="c1"></span>
+        <span class="kt">int</span> <span class="n">startNumber</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span>    <span class="c1">// 圈开始计数的数字
+</span><span class="c1"></span>
+        <span class="n">circleCount</span> <span class="o">=</span> <span class="n">n</span><span class="o">/</span><span class="n">2</span> <span class="o">+</span> <span class="n">n</span><span class="o">%</span><span class="n">2</span><span class="o">;</span>
+        <span class="n">currentCircleLength</span> <span class="o">=</span> <span class="n">n</span><span class="o">-</span><span class="n">1</span><span class="o">;</span>
+        <span class="n">startNumber</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span>
 
-<pre><code class="language-java">public class Matrix {
-    public void printMatrix(int n){
-        int array [][]  = new int[n][n];
-        int circleCount ;   //圈数
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">circleCount</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+            <span class="n">currentCircleLength</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">1</span> <span class="o">-</span> <span class="n">2</span><span class="o">*</span><span class="n">i</span><span class="o">;</span>
 
-        int currentCircleLength = n-1;  //当前圈的数列长度
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">currentCircleLength</span><span class="o">;</span> <span class="n">j</span><span class="o">++){</span><span class="c1">//→
+</span><span class="c1"></span>                <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">startNumber</span><span class="o">++;</span>
+            <span class="o">}</span>
 
-        int startNumber = 1;    // 圈开始计数的数字
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">currentCircleLength</span><span class="o">;</span> <span class="n">j</span><span class="o">++){</span><span class="c1">//↓
+</span><span class="c1"></span>                <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="o">][</span><span class="n">n</span><span class="o">-</span><span class="n">1</span><span class="o">-</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">startNumber</span><span class="o">++;</span>
+            <span class="o">}</span>
 
-        circleCount = n/2 + n%2;
-        currentCircleLength = n-1;
-        startNumber = 1;
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">currentCircleLength</span><span class="o">;</span> <span class="n">j</span><span class="o">++){</span><span class="c1">//←
+</span><span class="c1"></span>                <span class="n">array</span><span class="o">[</span><span class="n">n</span><span class="o">-</span><span class="n">1</span><span class="o">-</span><span class="n">i</span><span class="o">][</span><span class="n">n</span><span class="o">-</span><span class="n">1</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">startNumber</span><span class="o">++;</span>
+            <span class="o">}</span>
 
-        for(int i = 0; i &lt; circleCount; i++){
-            currentCircleLength = n - 1 - 2*i;
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">currentCircleLength</span><span class="o">;</span> <span class="n">j</span><span class="o">++){</span><span class="c1">//↑
+</span><span class="c1"></span>                <span class="n">array</span><span class="o">[</span><span class="n">n</span><span class="o">-</span><span class="n">1</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="o">][</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">startNumber</span><span class="o">++;</span>
+            <span class="o">}</span>
 
-            for(int j = 0; j &lt; currentCircleLength; j++){//→
-                array[i][i+j] = startNumber++;
-            }
+        <span class="o">}</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">n</span><span class="o">%</span><span class="n">2</span> <span class="o">==</span> <span class="n">1</span><span class="o">){</span><span class="c1">//奇数补齐中间最后一个数
+</span><span class="c1"></span>            <span class="n">array</span><span class="o">[</span><span class="n">n</span><span class="o">/</span><span class="n">2</span><span class="o">][</span><span class="n">n</span><span class="o">/</span><span class="n">2</span><span class="o">]</span> <span class="o">=</span> <span class="n">n</span><span class="o">*</span><span class="n">n</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">j</span><span class="o">++){</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]+</span><span class="s">&#34;      &#34;</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;&#34;</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="cm">/**
+</span><span class="cm">     * @param args
+</span><span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// TODO Auto-generated method stub
+</span><span class="c1"></span>        <span class="n">Matrix</span> <span class="n">matrix</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Matrix</span><span class="o">();</span>
+        <span class="n">matrix</span><span class="o">.</span><span class="na">printMatrix</span><span class="o">(</span><span class="n">5</span><span class="o">);</span>
+    <span class="o">}</span>
 
-            for(int j = 0; j &lt; currentCircleLength; j++){//↓
-                array[i+j][n-1-i] = startNumber++;
-            }
-
-            for(int j = 0; j &lt; currentCircleLength; j++){//←
-                array[n-1-i][n-1-i-j] = startNumber++;
-            }
-
-            for(int j = 0; j &lt; currentCircleLength; j++){//↑
-                array[n-1-i-j][i] = startNumber++;
-            }
-
-        }
-        if(n%2 == 1){//奇数补齐中间最后一个数
-            array[n/2][n/2] = n*n;
-        }
-        for(int i = 0; i &lt; n; i++){
-            for(int j = 0; j &lt; n; j++){
-                System.out.print(array[i][j]+&quot;      &quot;);
-            }
-            System.out.println(&quot;&quot;);
-        }
-    }
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        Matrix matrix = new Matrix();
-        matrix.printMatrix(5);
-    }
-
-}
-</code></pre>
-
+<span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     

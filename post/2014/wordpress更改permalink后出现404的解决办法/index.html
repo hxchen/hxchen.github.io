@@ -25,7 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="北斗" />
-  <meta name="description" content="1、Apache作为服务器的话 修改httpd.conf 打开 LoadModule rewrite_module modules/mod_rewrite.so 查找并替换 AllowOverride none -&amp;gt; AllowOverride All 2、nginx作为服务器的话，添加三条if语句。 location ~ \.php$ {" />
+  <meta name="description" content="1、Apache作为服务器的话 修改httpd.conf 打开 1 LoadModule rewrite_module modules/mod_rewrite.so 查找并替换 1 AllowOverride none -&amp;gt; AllowOverride All 2、nginx作为服务器的话，添加三条if语句。 1 2" />
 
   <meta name="keywords" content="技术, 程序员, 码农, 程序猿, 分享, java, python, 3afun" />
 
@@ -58,7 +58,7 @@
 
 
 <meta property="og:title" content="Wordpress更改Permalink后出现404的解决办法" />
-<meta property="og:description" content="1、Apache作为服务器的话 修改httpd.conf 打开 LoadModule rewrite_module modules/mod_rewrite.so 查找并替换 AllowOverride none -&gt; AllowOverride All 2、nginx作为服务器的话，添加三条if语句。 location ~ \.php$ {" />
+<meta property="og:description" content="1、Apache作为服务器的话 修改httpd.conf 打开 1 LoadModule rewrite_module modules/mod_rewrite.so 查找并替换 1 AllowOverride none -&gt; AllowOverride All 2、nginx作为服务器的话，添加三条if语句。 1 2" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.3afun.com/post/2014/wordpress%E6%9B%B4%E6%94%B9permalink%E5%90%8E%E5%87%BA%E7%8E%B0404%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" />
 
@@ -79,19 +79,19 @@
 
 
 <meta itemprop="name" content="Wordpress更改Permalink后出现404的解决办法">
-<meta itemprop="description" content="1、Apache作为服务器的话 修改httpd.conf 打开 LoadModule rewrite_module modules/mod_rewrite.so 查找并替换 AllowOverride none -&gt; AllowOverride All 2、nginx作为服务器的话，添加三条if语句。 location ~ \.php$ {">
+<meta itemprop="description" content="1、Apache作为服务器的话 修改httpd.conf 打开 1 LoadModule rewrite_module modules/mod_rewrite.so 查找并替换 1 AllowOverride none -&gt; AllowOverride All 2、nginx作为服务器的话，添加三条if语句。 1 2">
 
 
 <meta itemprop="datePublished" content="2014-03-19T15:18:27&#43;08:00" />
 <meta itemprop="dateModified" content="2014-03-19T15:18:27&#43;08:00" />
-<meta itemprop="wordCount" content="105">
+<meta itemprop="wordCount" content="123">
 
 
 
 <meta itemprop="keywords" content="Wordpress," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Wordpress更改Permalink后出现404的解决办法"/>
-<meta name="twitter:description" content="1、Apache作为服务器的话 修改httpd.conf 打开 LoadModule rewrite_module modules/mod_rewrite.so 查找并替换 AllowOverride none -&gt; AllowOverride All 2、nginx作为服务器的话，添加三条if语句。 location ~ \.php$ {"/>
+<meta name="twitter:description" content="1、Apache作为服务器的话 修改httpd.conf 打开 1 LoadModule rewrite_module modules/mod_rewrite.so 查找并替换 1 AllowOverride none -&gt; AllowOverride All 2、nginx作为服务器的话，添加三条if语句。 1 2"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -317,7 +317,7 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/"> 开源软件 </a>
             
           </div>
-        <span class="more-meta"> 约 105 字 </span>
+        <span class="more-meta"> 约 123 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -338,18 +338,45 @@ ga('send', 'pageview');
 <p>修改httpd.conf</p>
 
 <p>打开</p>
-
-<pre><code>LoadModule rewrite_module modules/mod_rewrite.so
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">LoadModule rewrite_module modules/mod_rewrite.so</pre></td></tr></table>
+</div>
+</div>
 <p>查找并替换</p>
-
-<pre><code>AllowOverride none -&gt; AllowOverride All
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">AllowOverride none -&gt; AllowOverride All</pre></td></tr></table>
+</div>
+</div>
 <p>2、nginx作为服务器的话，添加三条if语句。</p>
-
-<pre><code>location ~ \.php$ {
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">location ~ \.php$ {
         #    root           html;
             fastcgi_pass   127.0.0.1:9000;
             fastcgi_index  index.php;
@@ -364,9 +391,9 @@ ga('send', 'pageview');
         }
         if (!-f $request_filename){
             rewrite (.*) /index.php;
-        }
-</code></pre>
-
+        }</pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
@@ -431,7 +458,7 @@ ga('send', 'pageview');
         id: 'Wordpress更改Permalink后出现404的解决办法.md',
         title: 'Wordpress更改Permalink后出现404的解决办法',
         link: decodeURI(location.href),
-        desc: '1、Apache作为服务器的话 修改httpd.conf 打开 LoadModule rewrite_module modules\/mod_rewrite.so 查找并替换 AllowOverride none -\x26gt; AllowOverride All 2、nginx作为服务器的话，添加三条if语句。 location ~ \\.php$ {',
+        desc: '1、Apache作为服务器的话 修改httpd.conf 打开 1 LoadModule rewrite_module modules\/mod_rewrite.so 查找并替换 1 AllowOverride none -\x26gt; AllowOverride All 2、nginx作为服务器的话，添加三条if语句。 1 2',
         owner: 'hxchen',
         repo: 'comments',
         oauth: {

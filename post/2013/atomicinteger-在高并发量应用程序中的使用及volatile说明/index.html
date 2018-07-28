@@ -84,7 +84,7 @@
 
 <meta itemprop="datePublished" content="2013-04-08T19:45:00&#43;08:00" />
 <meta itemprop="dateModified" content="2013-04-08T19:45:00&#43;08:00" />
-<meta itemprop="wordCount" content="692">
+<meta itemprop="wordCount" content="701">
 
 
 
@@ -317,7 +317,7 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"> 并发编程 </a>
             
           </div>
-        <span class="more-meta"> 约 692 字 </span>
+        <span class="more-meta"> 约 701 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
       </div>
     </header>
@@ -336,26 +336,44 @@ ga('send', 'pageview');
       <p>当我们在处理简单程序中，可以使用诸如count++这种简单的计数器，但是这种简单的处理在高并发/多线程中的使用却是不安全的，几乎可以百分百的说，得到的数据是未更新的，不是实时数据，然而在JDK1.5之后，却封装了一个类AtomicInteger 可以用来统计这种计数。</p>
 
 <p>该类中有三个变量，其中最重要的是</p>
-
-<pre><code>private volatile int value;
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">private volatile int value;</pre></td></tr></table>
+</div>
+</div>
 <p>value就类似count，还有2个辅助变量用于进行更新value。其中的volatile使用可见最后说明。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// setup to use Unsafe.compareAndSwapInt for updates
+</span><span class="c1"></span>
+<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Unsafe</span> <span class="n">unsafe</span> <span class="o">=</span> <span class="n">Unsafe</span><span class="o">.</span><span class="na">getUnsafe</span><span class="o">();</span>
 
-<pre><code class="language-java">// setup to use Unsafe.compareAndSwapInt for updates
-
-private static final Unsafe unsafe = Unsafe.getUnsafe();
-
-private static final long valueOffset;
-</code></pre>
-
+<span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">valueOffset</span><span class="o">;</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>在该类中常用方法主要是实现加1减1操作，方法分别是：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">final</span> <span class="kt">int</span> <span class="nf">getAndIncrement</span><span class="o">()</span><span class="err">；</span>
 
-<pre><code class="language-java">public final int getAndIncrement()；
-
-public final int getAndDecrement()；
-</code></pre>
-
+<span class="kd">public</span> <span class="kd">final</span> <span class="kt">int</span> <span class="nf">getAndDecrement</span><span class="o">()</span><span class="err">；</span></code></pre></td></tr></table>
+</div>
+</div>
 <p>volatile说明：</p>
 
 <p>volatile修饰的成员变量在每次被线程访问时，都强迫从共享内存重新读取该成员的值，而且，当成员变量值发生变化时，强迫将变化的值重新写入共享内存，这样两个不同的线程在访问同一个共享变量的值时，始终看到的是同一个值。</p>

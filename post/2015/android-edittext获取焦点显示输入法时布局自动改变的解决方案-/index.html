@@ -84,7 +84,7 @@
 
 <meta itemprop="datePublished" content="2015-06-26T17:33:00&#43;08:00" />
 <meta itemprop="dateModified" content="2015-06-26T17:33:00&#43;08:00" />
-<meta itemprop="wordCount" content="123">
+<meta itemprop="wordCount" content="124">
 
 
 
@@ -317,7 +317,7 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/android/"> Android </a>
             
           </div>
-        <span class="more-meta"> 约 123 字 </span>
+        <span class="more-meta"> 约 124 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -336,10 +336,14 @@ ga('send', 'pageview');
       <p>最近在调试Android时，发现当屏幕下方的EditText获取焦点，显示输入法时候。页面布局重新调整而不是整体上移。导致部分控件显示不完全。</p>
 
 <p>最终解决方案是修改项目AnroidManifest.xml的文件，在所属Activity中添加属性设置：</p>
-
-<pre><code>android:windowSoftInputMode=&quot;adjustPan&quot;
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">android:windowSoftInputMode=&#34;adjustPan&#34;</pre></td></tr></table>
+</div>
+</div>
     </div>
 
     

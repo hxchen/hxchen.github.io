@@ -335,21 +335,36 @@ ga('send', 'pageview');
       <p>兼容iOS10以及iOS11的,跳转苹果商店应用评论页的函数,直接调用就行。</p>
 
 <p>自行替换<code>XXXXXXXX</code>为商店ID</p>
-
-<pre><code class="language-swift">//跳转到应用的AppStore页页面
-    func gotoAppStore() {
-        let urlString = &quot;itms-apps://itunes.apple.com/cn/app/idXXXXXXXX?mt=8&amp;action=write-review&quot;
-        if let url = URL(string: urlString) {
-            //根据iOS系统版本，分别处理
-            if #available(iOS 10, *) {
-                UIApplication.shared.open(url, options: [:],completionHandler: {(success) in})
-            } else {
-                UIApplication.shared.openURL(url)
-            }
-        }
-    }
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-swift" data-lang="swift"><span class="c1">//跳转到应用的AppStore页页面</span>
+    <span class="kd">func</span> <span class="nf">gotoAppStore</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nv">urlString</span> <span class="p">=</span> <span class="s">&#34;itms-apps://itunes.apple.com/cn/app/idXXXXXXXX?mt=8&amp;action=write-review&#34;</span>
+        <span class="k">if</span> <span class="kd">let</span> <span class="nv">url</span> <span class="p">=</span> <span class="n">URL</span><span class="p">(</span><span class="n">string</span><span class="p">:</span> <span class="n">urlString</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">//根据iOS系统版本，分别处理</span>
+            <span class="k">if</span> <span class="cp">#available</span><span class="p">(</span><span class="cp">iOS</span> <span class="mi">10</span><span class="p">,</span> <span class="o">*</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">UIApplication</span><span class="p">.</span><span class="n">shared</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">options</span><span class="p">:</span> <span class="p">[:],</span><span class="n">completionHandler</span><span class="p">:</span> <span class="p">{(</span><span class="n">success</span><span class="p">)</span> <span class="k">in</span><span class="p">})</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">UIApplication</span><span class="p">.</span><span class="n">shared</span><span class="p">.</span><span class="n">openURL</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
@@ -414,7 +429,7 @@ ga('send', 'pageview');
         id: 'Swift跳转AppStore商店应用评论页.md',
         title: 'Swift跳转AppStore商店应用评论页',
         link: decodeURI(location.href),
-        desc: '兼容iOS10以及iOS11的,跳转苹果商店应用评论页的函数,直接调用就行。 自行替换XXXXXXXX为商店ID \/\/跳转到应用的AppStor',
+        desc: '兼容iOS10以及iOS11的,跳转苹果商店应用评论页的函数,直接调用就行。 自行替换XXXXXXXX为商店ID 1 2 3 4 5 6 7 8 9 10 11 12 \/\/跳',
         owner: 'hxchen',
         repo: 'comments',
         oauth: {

@@ -84,7 +84,7 @@
 
 <meta itemprop="datePublished" content="2015-04-28T18:19:00&#43;08:00" />
 <meta itemprop="dateModified" content="2015-04-28T18:19:00&#43;08:00" />
-<meta itemprop="wordCount" content="134">
+<meta itemprop="wordCount" content="136">
 
 
 
@@ -317,7 +317,7 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/ios/"> IOS </a>
             
           </div>
-        <span class="more-meta"> 约 134 字 </span>
+        <span class="more-meta"> 约 136 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -338,11 +338,16 @@ ga('send', 'pageview');
 <p><img src="/media/images/2015/ios01.jpg" alt="ios" /></p>
 
 <p>二、Object-C里文件加载采用loadRequest方式</p>
-
-<pre><code>NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:param ofType:@&quot;html&quot; inDirectory:@&quot;assets&quot;]];
-    [webView loadRequest:[NSURLRequest requestWithURL:url]];
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:param ofType:@&#34;html&#34; inDirectory:@&#34;assets&#34;]];
+    [webView loadRequest:[NSURLRequest requestWithURL:url]];</pre></td></tr></table>
+</div>
+</div>
 <p>以上方式可正确显示html文件，并且文件夹内可采用相对路径访问css、javascript、图片等文件。</p>
 
     </div>

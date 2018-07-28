@@ -84,7 +84,7 @@
 
 <meta itemprop="datePublished" content="2018-04-12T18:31:44&#43;08:00" />
 <meta itemprop="dateModified" content="2018-04-12T18:31:44&#43;08:00" />
-<meta itemprop="wordCount" content="296">
+<meta itemprop="wordCount" content="301">
 
 
 
@@ -318,7 +318,7 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"> 区块链 </a>
             
           </div>
-        <span class="more-meta"> 约 296 字 </span>
+        <span class="more-meta"> 约 301 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
       </div>
     </header>
@@ -370,10 +370,14 @@ ga('send', 'pageview');
 <p>因为我是远程链接私有链不是本地链接,所有我采用了RPC 链接方式。</p>
 
 <p>Geth 启动方式</p>
-
-<pre><code>geth --identity &quot;TestNode&quot; --rpc --rpcaddr &quot;0.0.0.0&quot; --rpcport &quot;8545&quot; --datadir data0 --port &quot;30303&quot; --nodiscover console
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">geth --identity &#34;TestNode&#34; --rpc --rpcaddr &#34;0.0.0.0&#34; --rpcport &#34;8545&#34; --datadir data0 --port &#34;30303&#34; --nodiscover console</pre></td></tr></table>
+</div>
+</div>
 <p>此次我们加入了 <code>--rpcaddr</code>参数来允许远程连接,默认是拒绝远程链接的,只能本地链接。</p>
 
 <h1 id="客户端钱包wallet启动">客户端钱包Wallet启动</h1>
@@ -381,27 +385,43 @@ ga('send', 'pageview');
 <h2 id="mac">Mac</h2>
 
 <h3 id="ethereum-wallet-启动">Ethereum Wallet 启动</h3>
-
-<pre><code>&quot;/Applications/Ethereum Wallet.app/Contents/MacOS/Ethereum Wallet&quot; --rpc &quot;http://YOUR_IP:8545&quot;
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&#34;/Applications/Ethereum Wallet.app/Contents/MacOS/Ethereum Wallet&#34; --rpc &#34;http://YOUR_IP:8545&#34;</pre></td></tr></table>
+</div>
+</div>
 <h3 id="mist-启动">Mist 启动</h3>
-
-<pre><code>/Applications/Mist.app/Contents/MacOS/Mist --rpc http://YOUR_IP:8545
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">/Applications/Mist.app/Contents/MacOS/Mist --rpc http://YOUR_IP:8545</pre></td></tr></table>
+</div>
+</div>
 <h2 id="windows">Windows</h2>
 
 <h3 id="mist-启动-1">Mist 启动</h3>
-
-<pre><code>&quot;D:\Program Files\Mist-win64-0-10-0\Mist.exe&quot; --rpc http://YOUR_IP:8545
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&#34;D:\Program Files\Mist-win64-0-10-0\Mist.exe&#34; --rpc http://YOUR_IP:8545</pre></td></tr></table>
+</div>
+</div>
 <h3 id="ethereum-wallet-启动-1">Ethereum Wallet 启动</h3>
-
-<pre><code>&quot;D:\Program Files\Ethereum-Wallet-win64-0-10-0\Ethereum Wallet.exe&quot; --rpc http://YOUR_IP:8545
-</code></pre>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&#34;D:\Program Files\Ethereum-Wallet-win64-0-10-0\Ethereum Wallet.exe&#34; --rpc http://YOUR_IP:8545</pre></td></tr></table>
+</div>
+</div>
 <p>请自行替换 <code>YOUR_IP</code></p>
 
     </div>

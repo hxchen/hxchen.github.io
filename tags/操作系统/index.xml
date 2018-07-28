@@ -26,7 +26,7 @@
       <pubDate>Sat, 26 Nov 2016 19:20:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2016/mac-%E5%8D%B8%E8%BD%BDgooglesoftwareupdate/</guid>
-      <description>sudo /Library/Google/GoogleSoftwareUpdate/GoogleSoftwareUpdate.bundle/Contents/Resources/ksinstall --uninstall  </description>
+      <description>1  sudo /Library/Google/GoogleSoftwareUpdate/GoogleSoftwareUpdate.bundle/Contents/Resources/ksinstall --uninstall  </description>
     </item>
     
   </channel>
