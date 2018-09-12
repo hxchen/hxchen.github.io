@@ -83,7 +83,7 @@
 
 <meta itemprop="datePublished" content="2018-07-04T21:56:47&#43;08:00" />
 <meta itemprop="dateModified" content="2018-07-04T21:56:47&#43;08:00" />
-<meta itemprop="wordCount" content="776">
+<meta itemprop="wordCount" content="835">
 
 
 
@@ -316,7 +316,7 @@ ga('send', 'pageview');
             <a href="https://www.3afun.com/categories/swift/"> Swift </a>
             
           </div>
-        <span class="more-meta"> 约 776 字 </span>
+        <span class="more-meta"> 约 835 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
       </div>
     </header>
@@ -349,20 +349,23 @@ ga('send', 'pageview');
 
 <h3 id="添加多语言文件">添加多语言文件</h3>
 
-<p>1.Command + N, 选择iOS -&gt; Resource -&gt; Strings File
+<p>1.项目配置 -&gt; “Info” -&gt; “Localizations”区域下，可以看到工程默认只支持英文，我们可以再添加中文语言。</p>
+
+<p>2.Command + N, 选择iOS -&gt; Resource -&gt; Strings File
 <img src="/media/images/2018/multilang000.png" alt="multiLang01" />
-2.文件名必须命名为<code>Localizable.strings</code></p>
+3.文件名必须命名为<code>Localizable.strings</code></p>
 
-<p>3.文件创建成功，查看Xcode左侧导航列表，发现多了一个名为Localizable.strings的文件</p>
+<p>4.文件创建成功，查看Xcode左侧导航列表，发现多了一个名为Localizable.strings的文件</p>
 
-<p>4.选中Localizable.strings文件，在Xcode的File inspection中点击Localize，目的是选择我们需要本地化的语言.</p>
+<p>5.选中Localizable.strings文件，在Xcode的File inspection中点击Localize，目的是选择我们需要本地化的语言.</p>
 
-<p>5.依次选择English-&gt;Localize,在此我们可以继续添加简体中文,日语等。</p>
+<p>6.依次选择English-&gt;Localize,在此我们可以继续添加简体中文,日语等。</p>
 
-<p>6.此时，Xcode左侧的Localizable.strings左侧多了一个箭头，展开后可以看到存储各个语言的文件。</p>
+<p>7.此时，Xcode左侧的Localizable.strings左侧多了一个箭头，展开后可以看到存储各个语言的文件。</p>
 
-<p>7.然后我们只需要在Localizable.strings下对应的文件中，分别以Key-Value的形式，为代码中每一个需要本地化的字符串赋值。
-例如 <code>LOGIN = &quot;登录&quot;;</code></p>
+<p>8.然后我们只需要在Localizable.strings下对应的文件中，分别以Key-Value的形式，为代码中每一个需要本地化的字符串赋值。</p>
+
+<p>例如 <code>LOGIN = &quot;登录&quot;;</code></p>
 
 <h3 id="代码中多语言适配">代码中多语言适配</h3>
 

@@ -38,6 +38,294 @@
     </item>
     
     <item>
+      <title>Lets Encrypt免费通配符SSL 证书申请配置教程</title>
+      <link>https://www.3afun.com/post/2018/lets-encrypt%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 10 Sep 2018 18:12:26 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/lets-encrypt%E9%85%8D%E7%BD%AE/</guid>
+      
+        <description>
+
+&lt;h2 id=&#34;一-lets-encrypt介绍&#34;&gt;一、Lets Encrypt介绍&lt;/h2&gt;
+
+&lt;p&gt;Lets Encrypt 是一个免费、自动化、开放的证书颁发机构(CA),为了公众利益而服务。它由Internet Security Research Group (ISRG) 来提供服务。&lt;/p&gt;
+
+&lt;h2 id=&#34;二-通配符证书介绍&#34;&gt;二、通配符证书介绍&lt;/h2&gt;
+
+&lt;p&gt;通配符证书,是我们申请一个域名证书,可以支持子域名的证书。比如申请一个&lt;code&gt;abc.com&lt;/code&gt;,那么子域名&lt;code&gt;bbs.abc.com&lt;/code&gt;和&lt;code&gt;blog.abc.com&lt;/code&gt;都可以使用。&lt;/p&gt;
+
+&lt;h2 id=&#34;三-申请通配符证书&#34;&gt;三、申请通配符证书&lt;/h2&gt;
+
+&lt;p&gt;Let’s Encrypt 上的证书申请是通过 ACME 协议来完成的。ACME 协议规范化了证书申请、更新、撤销等流程，实现了 Let’s Encrypt CA 自动化操作。解决了传统的 CA 机构是人工手动处理证书申请、证书更新、证书撤销的效率和成本问题。&lt;/p&gt;
+
+&lt;p&gt;ACME v2 是 ACME 协议的更新版本，通配符证书只能通过 ACME v2 获得。要使用 ACME v2 协议申请通配符证书，只需一个支持该协议的客户端就可以了，官方推荐的客户端是 Certbot。&lt;/p&gt;
+
+&lt;h2 id=&#34;四-安装certbot-客户端&#34;&gt;四、安装Certbot 客户端&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 下载
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;wget https://dl.eff.org/certbot-auto
+&lt;span class=&#34;c1&#34;&gt;# 添加可执行权限
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;chmod a+x certbot-auto&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;五-申请通配符证书&#34;&gt;五、申请通配符证书&lt;/h2&gt;
+
+&lt;p&gt;使用 Certbot 客户端申请证书方法非常的简单，只需如下一行命令就搞定了。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;./certbot-auto certonly  -d &lt;span class=&#34;s2&#34;&gt;&amp;#34;*.3afun.com&amp;#34;&lt;/span&gt; --manual --preferred-challenges dns-01  --server https://acme-v02.api.letsencrypt.org/directory&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;3afun.com为申请证书的域名&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;Saving debug log to /var/log/letsencrypt/letsencrypt.log
+Plugins selected: Authenticator manual, Installer None
+Obtaining a new certificate
+Performing the following challenges:
+dns-01 challenge for 3afun.com
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+NOTE: The IP of this machine will be publicly logged as having requested this
+certificate. If you&amp;#39;re running certbot in manual mode on a machine that is not
+your server, please ensure you&amp;#39;re okay with that.
+
+Are you OK with your IP being logged?
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+(Y)es/(N)o:&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;输入Y&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Please deploy a DNS TXT record under the name
+_acme-challenge.3afun.com with the following value:
+
+nEPEFRYbYHUCS_BFqpB6kZslvuhGor5EfUvSWHIvEE4
+
+Before continuing, verify the record is deployed.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Press Enter to Continue&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;在域名的供应商那里添加一条TXT记录。&lt;/p&gt;
+
+&lt;p&gt;键:_acme-challenge.3afun.com&lt;/p&gt;
+
+&lt;p&gt;值: nEPEFRYbYHUCS_BFqpB6kZslvuhGor5EfUvSWHIvEE4&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;再回车之前我们需要新开一个窗口通过命令来检查TXT记录设置已生效。&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;# dig -t txt _acme-challenge.3afun.com @8.8.8.8
+; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.8.2rc1-RedHat-9.8.2-0.37.rc1.49.amzn1 &amp;lt;&amp;lt;&amp;gt;&amp;gt; -t txt _acme-challenge.3afun.com @8.8.8.8
+;; global options: +cmd
+;; Got answer:
+;; -&amp;gt;&amp;gt;HEADER&amp;lt;&amp;lt;- opcode: QUERY, status: NOERROR, id: 64795
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;_acme-challenge.3afun.com.        IN      TXT
+
+;; ANSWER SECTION:
+_acme-challenge.3afun.com. 299 IN  TXT     &amp;#34;nEPEFRYbYHUCS_BFqpB6kZslvuhGor5EfUvSWHIvEE4&amp;#34;
+
+;; Query time: 118 msec
+;; SERVER: 8.8.8.8#53(8.8.8.8)
+;; WHEN: Wed Sep 12 08:51:13 2018
+;; MSG SIZE  rcvd: 104&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;然后现在可以回到原来窗口按下回车键&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;Waiting for verification...
+Cleaning up challenges
+
+IMPORTANT NOTES:
+ - Congratulations! Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/3afun.com/fullchain.pem
+   Your key file has been saved at:
+   /etc/letsencrypt/live/3afun.com/privkey.pem
+   Your cert will expire on 2018-12-11. To obtain a new or tweaked
+   version of this certificate in the future, simply run certbot-auto
+   again. To non-interactively renew *all* of your certificates, run
+   &amp;#34;certbot-auto renew&amp;#34;
+ - If you like Certbot, please consider supporting our work by:
+
+   Donating to ISRG / Let&amp;#39;s Encrypt:   https://letsencrypt.org/donate
+   Donating to EFF:                    https://eff.org/donate-le&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;通配符证书会在&lt;code&gt;/etc/letsencrypt/live/3afun.com&lt;/code&gt; 目录下给我们生成。&lt;/p&gt;
+
+&lt;h2 id=&#34;六-nginx-配置使用证书&#34;&gt;六、Nginx 配置使用证书&lt;/h2&gt;
+
+&lt;p&gt;Nginx里设置证书和Key文件即可,简约代码如下:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;ssl_certificate /etc/letsencrypt/live/3afun.com/fullchain.pem; # managed by Certbot
+ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Certbot&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;七-证书续期&#34;&gt;七、证书续期&lt;/h2&gt;
+
+&lt;p&gt;Let’s encrypt 的免费证书默认有效期为 90 天，到期后如果要续期可以执行：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;# certbot-auto renew&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;我们可以使用 crontab 来定时续期。&lt;/p&gt;
+
+&lt;p&gt;1.编辑crontab文件&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;crontab -e&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;2.添加&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;# 每隔90天执行一次 certbot-auto renew
+0 0 */90 * * certbot-auto renew&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;3.保存退出。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;!wq&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;4.重启crond：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;service crond restart&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>解决Minimum supported Gradle version is 3.3. Current version is 2.10.</title>
+      <link>https://www.3afun.com/post/2018/%E8%A7%A3%E5%86%B3minimum-supported-gradle-version-is-3.3.-current-version-is-2.10/</link>
+      <pubDate>Wed, 01 Aug 2018 11:30:40 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/%E8%A7%A3%E5%86%B3minimum-supported-gradle-version-is-3.3.-current-version-is-2.10/</guid>
+      
+        <description>&lt;p&gt;原先Windows电脑开发的Android项目,转移到Mac下进行开发维护后,本机安装了Gradle4.9后,发现Android Studio还是使用的旧版本Gradle。&lt;/p&gt;
+
+&lt;p&gt;报错:&lt;code&gt;Gradle sync failed: Minimum supported Gradle version is 3.3. Current version is 2.10.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;解决办法是更新Android Studio使用的Gradle:&lt;/p&gt;
+
+&lt;p&gt;Mac版本Android Studio&lt;/p&gt;
+
+&lt;p&gt;选择:菜单栏 -&amp;gt; Android Studio -&amp;gt; Preferences -&amp;gt; Build,Execution,Deployment -&amp;gt; Build Tools -&amp;gt; Gradle&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/android-gradle.png&#34; alt=&#34;android-gradle&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后来 &lt;a href=&#34;https://services.gradle.org/distributions/&#34;&gt;https://services.gradle.org/distributions/&lt;/a&gt; 下载更新版本,解压缩更换 Android Studio目录下的gradle。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>Swift键盘类型和添加下一项完成等选项的控制</title>
       <link>https://www.3afun.com/post/2018/swift%E9%94%AE%E7%9B%98%E7%B1%BB%E5%9E%8B%E5%92%8C%E6%B7%BB%E5%8A%A0%E4%B8%8B%E4%B8%80%E9%A1%B9%E5%AE%8C%E6%88%90%E7%AD%89%E9%80%89%E9%A1%B9%E7%9A%84%E6%8E%A7%E5%88%B6/</link>
       <pubDate>Tue, 24 Jul 2018 18:56:43 +0800</pubDate>
@@ -526,20 +814,23 @@
 
 &lt;h3 id=&#34;添加多语言文件&#34;&gt;添加多语言文件&lt;/h3&gt;
 
-&lt;p&gt;1.Command + N, 选择iOS -&amp;gt; Resource -&amp;gt; Strings File
+&lt;p&gt;1.项目配置 -&amp;gt; “Info” -&amp;gt; “Localizations”区域下，可以看到工程默认只支持英文，我们可以再添加中文语言。&lt;/p&gt;
+
+&lt;p&gt;2.Command + N, 选择iOS -&amp;gt; Resource -&amp;gt; Strings File
 &lt;img src=&#34;https://www.3afun.com/media/images/2018/multilang000.png&#34; alt=&#34;multiLang01&#34; /&gt;
-2.文件名必须命名为&lt;code&gt;Localizable.strings&lt;/code&gt;&lt;/p&gt;
+3.文件名必须命名为&lt;code&gt;Localizable.strings&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;3.文件创建成功，查看Xcode左侧导航列表，发现多了一个名为Localizable.strings的文件&lt;/p&gt;
+&lt;p&gt;4.文件创建成功，查看Xcode左侧导航列表，发现多了一个名为Localizable.strings的文件&lt;/p&gt;
 
-&lt;p&gt;4.选中Localizable.strings文件，在Xcode的File inspection中点击Localize，目的是选择我们需要本地化的语言.&lt;/p&gt;
+&lt;p&gt;5.选中Localizable.strings文件，在Xcode的File inspection中点击Localize，目的是选择我们需要本地化的语言.&lt;/p&gt;
 
-&lt;p&gt;5.依次选择English-&amp;gt;Localize,在此我们可以继续添加简体中文,日语等。&lt;/p&gt;
+&lt;p&gt;6.依次选择English-&amp;gt;Localize,在此我们可以继续添加简体中文,日语等。&lt;/p&gt;
 
-&lt;p&gt;6.此时，Xcode左侧的Localizable.strings左侧多了一个箭头，展开后可以看到存储各个语言的文件。&lt;/p&gt;
+&lt;p&gt;7.此时，Xcode左侧的Localizable.strings左侧多了一个箭头，展开后可以看到存储各个语言的文件。&lt;/p&gt;
 
-&lt;p&gt;7.然后我们只需要在Localizable.strings下对应的文件中，分别以Key-Value的形式，为代码中每一个需要本地化的字符串赋值。
-例如 &lt;code&gt;LOGIN = &amp;quot;登录&amp;quot;;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;8.然后我们只需要在Localizable.strings下对应的文件中，分别以Key-Value的形式，为代码中每一个需要本地化的字符串赋值。&lt;/p&gt;
+
+&lt;p&gt;例如 &lt;code&gt;LOGIN = &amp;quot;登录&amp;quot;;&lt;/code&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;代码中多语言适配&#34;&gt;代码中多语言适配&lt;/h3&gt;
 
@@ -4701,149 +4992,6 @@ ERC20代币规范会导致退出用户的金钱损失.主要的问题是无法�
 
 &lt;p&gt;这是一个强烈推荐的ERC223的代币实现 &lt;a href=&#34;https://github.com/Dexaran/ERC23-tokens/tree/Recommended&#34;&gt;https://github.com/Dexaran/ERC23-tokens/tree/Recommended&lt;/a&gt;&lt;/p&gt;
 </description>
-      
-    </item>
-    
-    <item>
-      <title>ERC20 标准规范</title>
-      <link>https://www.3afun.com/post/2018/erc-20-token-standard/</link>
-      <pubDate>Wed, 04 Apr 2018 15:43:48 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2018/erc-20-token-standard/</guid>
-      
-        <description>
-
-&lt;h1 id=&#34;简要说明&#34;&gt;简要说明&lt;/h1&gt;
-
-&lt;p&gt;该文主要是一个以太币智能合约的标准接口说明。&lt;/p&gt;
-
-&lt;h1 id=&#34;抽象&#34;&gt;抽象&lt;/h1&gt;
-
-&lt;p&gt;以下将要说明的标准允许你去实现基于智能合约的标准代币（Tokens）API提供的接口。这个标准提供了一些基本功能以用于代币（Tokens）转账，以及批准用于其他链上的第三方来使用。&lt;/p&gt;
-
-&lt;h1 id=&#34;动机&#34;&gt;动机&lt;/h1&gt;
-
-&lt;p&gt;标准接口允许以太坊上的任何代币（Tokens）可以被其他程序来重新使用：包括钱包和去中心化的交换。&lt;/p&gt;
-
-&lt;h1 id=&#34;规范&#34;&gt;规范&lt;/h1&gt;
-
-&lt;h1 id=&#34;代币-tokens&#34;&gt;代币(Tokens)&lt;/h1&gt;
-
-&lt;h2 id=&#34;方法&#34;&gt;方法&lt;/h2&gt;
-
-&lt;p&gt;注意：调用者必须处理返回方法 &lt;code&gt;returns (bool success)&lt;/code&gt;返回的 &lt;code&gt;false&lt;/code&gt;.调用者绝对不能认为 &lt;code&gt;false&lt;/code&gt;从未返回。&lt;/p&gt;
-
-&lt;h3 id=&#34;name&#34;&gt;name&lt;/h3&gt;
-
-&lt;p&gt;返回代币的名字 ，例如 “MyToken”
-可选 - 该方法用来提高可用性，但是接口和其他合约不能期望这些值的呈现。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;function name() view returns (string name)&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;symbol&#34;&gt;symbol&lt;/h3&gt;
-
-&lt;p&gt;返回代币的符号，例如“ETH”
-可选 - 该方法用来提高可用性，但是接口和其他合约不能期望这些值的呈现。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;function symbol() view returns (string symbol)&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;decimals&#34;&gt;decimals&lt;/h3&gt;
-
-&lt;p&gt;返回代币的精确度，例如“8”，代币最小可以是0.00000001
-可选 - 该方法用来提高可用性，但是接口和其他合约不能期望这些值的呈现。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;该方法用来提高可用性，但是接口和其他合约不能期望这些值的呈现。&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;totalsupply&#34;&gt;totalSupply&lt;/h3&gt;
-
-&lt;p&gt;返回代币的总量&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;function totalSupply() view returns (uint256 totalSupply)&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;balanceof&#34;&gt;balanceOf&lt;/h3&gt;
-
-&lt;p&gt;返回地址为 _owner 账户的 账户余额&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;function balanceOf(address _owner) view returns (uint256 balance)&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;transfer&#34;&gt;transfer&lt;/h3&gt;
-
-&lt;p&gt;将 &lt;code&gt;_value&lt;/code&gt; 数量的代币（从外面账户）转到账户 &lt;code&gt;_to&lt;/code&gt;,并且必须调用 &lt;code&gt;Transfer&lt;/code&gt; 事件。如果 &lt;code&gt;_from&lt;/code&gt; 账户余额不够使用的话，该函数 应该抛出 &lt;code&gt;throw&lt;/code&gt; 。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;function transfer(address _to, uint256 _value) returns (bool success)&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;transferfrom&#34;&gt;transferFrom&lt;/h3&gt;
-
-&lt;p&gt;实现代币用户之间的交易，将 &lt;code&gt;_value&lt;/code&gt; 数量的代币从 &lt;code&gt;_from&lt;/code&gt; 账户转账到 &lt;code&gt;_to&lt;/code&gt;账户，并且必须调用 &lt;code&gt;Transfer&lt;/code&gt; 事件。
-transferFrom 方法用于退出工作流程，允许合约代表你来转账。例如，这可以允许合约代替你来交易或者收取子货币的费用。该函数应该抛出 &lt;code&gt;throw&lt;/code&gt;，除非 &lt;code&gt;_from&lt;/code&gt; 账户通过某些机制授权消息的发送者。
-注意：交易数量为 0 的转账须当做正常交易，并且应该调用 &lt;code&gt;Transfer&lt;/code&gt;事件&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;function transferFrom(address _from, address _to, uint256 _value) returns (bool success)&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;approve&#34;&gt;approve&lt;/h3&gt;
-
-&lt;p&gt;该方法允许发送者&lt;code&gt;_spender&lt;/code&gt;从你的账户多次取走最多为&lt;code&gt;_value&lt;/code&gt;限额数量的代币。如果这个方法再次被调用，那么他会用&lt;code&gt;_value&lt;/code&gt;的值覆盖当前可用限额。
-注意:为了避免攻击，客户端应该以这样的方式来设置限额，在设置其他值给同一个发送者之前，先设置成0（尽管为了向后兼容之前的合约，合约不会执行它）.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;function approve(address _spender, uint256 _value) returns (bool success)&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;allowance&#34;&gt;allowance&lt;/h3&gt;
-
-&lt;p&gt;返回发送者&lt;code&gt;_spender&lt;/code&gt;还剩下可从&lt;code&gt;_owner&lt;/code&gt;取走的额度。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;function allowance(address _owner, address _spender) view returns (uint256 remaining)&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;事件&#34;&gt;事件&lt;/h2&gt;
-
-&lt;h3 id=&#34;transfer-1&#34;&gt;Transfer&lt;/h3&gt;
-
-&lt;p&gt;该事件必须在交易代币（Tokens）的时候出发，包括数量为0的交易。
-当创建新代币时应该触发一个 &lt;code&gt;Transfer&lt;/code&gt;事件，并将_from账户设置为&lt;code&gt;0x0&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;event Transfer(address indexed _from, address indexed _to, uint256 _value)&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;approval&#34;&gt;Approval&lt;/h3&gt;
-
-&lt;p&gt;该事件必须在 成功调用 &lt;code&gt;approve(address _spender, uint256 _value)&lt;/code&gt;的时候触发。&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;event Approval(address indexed _owner, address indexed _spender, uint256 _value)&lt;/code&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;实现&#34;&gt;实现&lt;/h1&gt;
-
-&lt;p&gt;现在已经有很多的兼容ERC20标准并且基于以太坊网络的代币。有众多的团队根据接口来实现了不一样的代币，这些不同的实现包括节约费用Gas，提高安全性。
-以下是一些可用的实现：&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/token/ERC20/StandardToken.sol&#34;&gt;https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/token/ERC20/StandardToken.sol&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/ConsenSys/Tokens/blob/master/contracts/eip20/EIP20.sol&#34;&gt;https://github.com/ConsenSys/Tokens/blob/master/contracts/eip20/EIP20.sol&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;一个再次调用 &lt;code&gt;approve&lt;/code&gt;前，设置0操作的实现：&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/Giveth/minime/blob/master/contracts/MiniMeToken.sol&#34;&gt;https://github.com/Giveth/minime/blob/master/contracts/MiniMeToken.sol&lt;/a&gt;&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>Network Error Unable to load the page的解决办法</title>
-      <link>https://www.3afun.com/post/2017/network-error-unable-to-load-the-page%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
-      <pubDate>Fri, 15 Dec 2017 13:42:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2017/network-error-unable-to-load-the-page%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
-      
-        <description>&lt;p&gt;Cocos2d-x加载一个http页面A，A中其中含有一个链接到https页面B。现在B页面返回到A页面报错Unable to load the page.Please keep network connection.&lt;/p&gt;
-
-&lt;p&gt;尝试B页面加载Https页面C没问题，返回A有问题。&lt;/p&gt;
-
-&lt;p&gt;修改办法是，B页面的href链接 采用如下形式：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&amp;lt;a class=&amp;#34;class_name&amp;#34; href=&amp;#34;//www.example.com&amp;#34;&amp;gt;A Page&amp;lt;/a&amp;gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
       
     </item>
     

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ssl on 我不是帅才</title>
+    <link>https://www.3afun.com/categories/ssl/</link>
+    <description>Recent content in Ssl on 我不是帅才</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright 3AFun</copyright>
+    <lastBuildDate>Mon, 10 Sep 2018 18:12:26 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.3afun.com/categories/ssl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Lets Encrypt免费通配符SSL 证书申请配置教程</title>
+      <link>https://www.3afun.com/post/2018/lets-encrypt%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 10 Sep 2018 18:12:26 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/lets-encrypt%E9%85%8D%E7%BD%AE/</guid>
+      <description>一、Lets Encrypt介绍 Lets Encrypt 是一个免费、自动化、开放的证书颁发机构(CA),为了公众利益而服务。它由Internet Security Research Group (ISRG) 来提供服务</description>
+    </item>
+    
+  </channel>
+</rss>

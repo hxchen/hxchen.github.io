@@ -6,10 +6,28 @@
     <description>Recent content in Posts on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Tue, 24 Jul 2018 18:56:43 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 10 Sep 2018 18:12:26 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lets Encrypt免费通配符SSL 证书申请配置教程</title>
+      <link>https://www.3afun.com/post/2018/lets-encrypt%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 10 Sep 2018 18:12:26 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/lets-encrypt%E9%85%8D%E7%BD%AE/</guid>
+      <description>一、Lets Encrypt介绍 Lets Encrypt 是一个免费、自动化、开放的证书颁发机构(CA),为了公众利益而服务。它由Internet Security Research Group (ISRG) 来提供服务</description>
+    </item>
+    
+    <item>
+      <title>解决Minimum supported Gradle version is 3.3. Current version is 2.10.</title>
+      <link>https://www.3afun.com/post/2018/%E8%A7%A3%E5%86%B3minimum-supported-gradle-version-is-3.3.-current-version-is-2.10/</link>
+      <pubDate>Wed, 01 Aug 2018 11:30:40 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/%E8%A7%A3%E5%86%B3minimum-supported-gradle-version-is-3.3.-current-version-is-2.10/</guid>
+      <description>原先Windows电脑开发的Android项目,转移到Mac下进行开发维护后,本机安装了Gradle4.9后,发现Android Studio</description>
+    </item>
     
     <item>
       <title>Swift键盘类型和添加下一项完成等选项的控制</title>
@@ -171,24 +189,6 @@
       
       <guid>https://www.3afun.com/post/2018/erc-20-token-standard/</guid>
       <description>简要说明 该文主要是一个以太币智能合约的标准接口说明。 抽象 以下将要说明的标准允许你去实现基于智能合约的标准代币（Tokens）API提供的接口</description>
-    </item>
-    
-    <item>
-      <title>Network Error Unable to load the page的解决办法</title>
-      <link>https://www.3afun.com/post/2017/network-error-unable-to-load-the-page%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
-      <pubDate>Fri, 15 Dec 2017 13:42:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2017/network-error-unable-to-load-the-page%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
-      <description>Cocos2d-x加载一个http页面A，A中其中含有一个链接到https页面B。现在B页面返回到A页面报错Unable to load the page.Please keep network connection. 尝试B</description>
-    </item>
-    
-    <item>
-      <title>Crontab 定时执行任务的环境变量问题</title>
-      <link>https://www.3afun.com/post/2017/crontab-%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E4%BB%BB%E5%8A%A1%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Mon, 20 Nov 2017 17:27:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2017/crontab-%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E4%BB%BB%E5%8A%A1%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%97%AE%E9%A2%98/</guid>
-      <description>今天写了一个脚本文件，有用到Python3中time库的localtime函数。在单独执行该脚本文件时候，可以支持获取服务器date时间。但</description>
     </item>
     
   </channel>

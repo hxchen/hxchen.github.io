@@ -6,10 +6,19 @@
     <description>Recent content in Gradle on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Thu, 16 Jun 2016 19:27:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 01 Aug 2018 11:30:40 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/tags/gradle/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>解决Minimum supported Gradle version is 3.3. Current version is 2.10.</title>
+      <link>https://www.3afun.com/post/2018/%E8%A7%A3%E5%86%B3minimum-supported-gradle-version-is-3.3.-current-version-is-2.10/</link>
+      <pubDate>Wed, 01 Aug 2018 11:30:40 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2018/%E8%A7%A3%E5%86%B3minimum-supported-gradle-version-is-3.3.-current-version-is-2.10/</guid>
+      <description>原先Windows电脑开发的Android项目,转移到Mac下进行开发维护后,本机安装了Gradle4.9后,发现Android Studio</description>
+    </item>
     
     <item>
       <title>Mac上安装Gradle </title>
