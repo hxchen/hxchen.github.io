@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Mon, 10 Sep 2018 18:12:26 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 10 Jan 2019 14:26:58 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MySQL远程备份与还原</title>
+      <link>https://www.3afun.com/post/2019/mysql%E8%BF%9C%E7%A8%8B%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%98%E5%8E%9F/</link>
+      <pubDate>Thu, 10 Jan 2019 14:26:58 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2019/mysql%E8%BF%9C%E7%A8%8B%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%98%E5%8E%9F/</guid>
+      <description>有时我们需要远程进行MySQL数据库的备份与还原。为此,我们可以使用mysqldump命令复制数据库,然后通过管道将其直接传输到远程数据中去</description>
+    </item>
     
     <item>
       <title>Lets Encrypt免费通配符SSL 证书申请配置教程</title>
@@ -180,15 +189,6 @@
       
       <guid>https://www.3afun.com/post/2018/erc-223-token-standard/</guid>
       <description>翻译自 https://github.com/ethereum/EIPs/issues/223 抽象 以下描述了标准代币合约函数和特定的代币,这样的实现代币可以避免意外发送到合约,可以是代币事物表现的像其他事务一样。 动机 以下描述了</description>
-    </item>
-    
-    <item>
-      <title>ERC20 标准规范</title>
-      <link>https://www.3afun.com/post/2018/erc-20-token-standard/</link>
-      <pubDate>Wed, 04 Apr 2018 15:43:48 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2018/erc-20-token-standard/</guid>
-      <description>简要说明 该文主要是一个以太币智能合约的标准接口说明。 抽象 以下将要说明的标准允许你去实现基于智能合约的标准代币（Tokens）API提供的接口</description>
     </item>
     
   </channel>
