@@ -6,10 +6,19 @@
     <description>Recent content in Web前端 on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Fri, 15 Dec 2017 13:42:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 20 Aug 2019 18:02:47 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/categories/web%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>解决IDEA中Thymeleaf模板HTML文件无法热部署的问题</title>
+      <link>https://www.3afun.com/post/2019/%E8%A7%A3%E5%86%B3idea%E4%B8%ADthymeleaf%E6%A8%A1%E6%9D%BFhtml%E6%96%87%E4%BB%B6%E6%97%A0%E6%B3%95%E7%83%AD%E9%83%A8%E7%BD%B2%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 20 Aug 2019 18:02:47 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2019/%E8%A7%A3%E5%86%B3idea%E4%B8%ADthymeleaf%E6%A8%A1%E6%9D%BFhtml%E6%96%87%E4%BB%B6%E6%97%A0%E6%B3%95%E7%83%AD%E9%83%A8%E7%BD%B2%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>项目中使用了thymeleaf模板引擎，改动HTML文件后，前端页面无法热部署。在排除Tomcat设置问题后，最终发现是Thymeleaf视</description>
+    </item>
     
     <item>
       <title>Network Error Unable to load the page的解决办法</title>

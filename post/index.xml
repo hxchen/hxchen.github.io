@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Thu, 10 Jan 2019 14:26:58 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 20 Aug 2019 18:02:47 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>解决IDEA中Thymeleaf模板HTML文件无法热部署的问题</title>
+      <link>https://www.3afun.com/post/2019/%E8%A7%A3%E5%86%B3idea%E4%B8%ADthymeleaf%E6%A8%A1%E6%9D%BFhtml%E6%96%87%E4%BB%B6%E6%97%A0%E6%B3%95%E7%83%AD%E9%83%A8%E7%BD%B2%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 20 Aug 2019 18:02:47 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2019/%E8%A7%A3%E5%86%B3idea%E4%B8%ADthymeleaf%E6%A8%A1%E6%9D%BFhtml%E6%96%87%E4%BB%B6%E6%97%A0%E6%B3%95%E7%83%AD%E9%83%A8%E7%BD%B2%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>项目中使用了thymeleaf模板引擎，改动HTML文件后，前端页面无法热部署。在排除Tomcat设置问题后，最终发现是Thymeleaf视</description>
+    </item>
     
     <item>
       <title>MySQL远程备份与还原</title>
@@ -180,15 +189,6 @@
       
       <guid>https://www.3afun.com/post/2018/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE1/</guid>
       <description>一、说明 想尝试基于以太坊的应用或者Tokens发布，无奈正常网络测试需要用Ether，购买麻烦，各步骤还得需要消耗以太币，不过我们可以搭建私</description>
-    </item>
-    
-    <item>
-      <title>ERC223 标准规范</title>
-      <link>https://www.3afun.com/post/2018/erc-223-token-standard/</link>
-      <pubDate>Mon, 09 Apr 2018 15:43:48 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2018/erc-223-token-standard/</guid>
-      <description>翻译自 https://github.com/ethereum/EIPs/issues/223 抽象 以下描述了标准代币合约函数和特定的代币,这样的实现代币可以避免意外发送到合约,可以是代币事物表现的像其他事务一样。 动机 以下描述了</description>
     </item>
     
   </channel>
