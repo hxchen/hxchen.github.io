@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>机器学习 on 我不是帅才</title>
+    <link>https://www.3afun.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link>
+    <description>Recent content in 机器学习 on 我不是帅才</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright 3AFun</copyright>
+    <lastBuildDate>Mon, 02 Dec 2019 17:24:46 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.3afun.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Andrew Ng机器学习ex1(Linear Regression)编程作业详解</title>
+      <link>https://www.3afun.com/post/2019/andrew-ng%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0ex1linear-regression%E7%BC%96%E7%A8%8B%E4%BD%9C%E4%B8%9A%E8%AF%A6%E8%A7%A3/</link>
+      <pubDate>Mon, 02 Dec 2019 17:24:46 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2019/andrew-ng%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0ex1linear-regression%E7%BC%96%E7%A8%8B%E4%BD%9C%E4%B8%9A%E8%AF%A6%E8%A7%A3/</guid>
+      <description>要想顺利的完成作业，必须参考编程作业指导文件ex1.pdf 第一次作业主要包括两部分：必做题和选做题。其中必做题包括一道热身练习和完成单变量的</description>
+    </item>
+    
+  </channel>
+</rss>

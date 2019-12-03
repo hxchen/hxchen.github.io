@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nginx on 我不是帅才</title>
@@ -17,7 +17,7 @@
       <pubDate>Fri, 18 Dec 2015 13:50:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2015/nginx&#43;tomcat%E4%B8%8B%E7%9A%84http-504%E8%B6%85%E6%97%B6%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
-      <description>1.前端选用JQuery框架下 延迟超时时间和错误处理 1 2 3 4 timeout: 6000, error: function (xmlHttpRequest, error) { console.info(xmlHttpRequest, error); } 2.后端Nginx增大缓存区 1 2 3 4 5 6 7 http { ... # set size to:8*128k fastcgi_buffers 8</description>
+      <description>1.前端选用JQuery框架下 延迟超时时间和错误处理 timeout: 6000, error: function (xmlHttpRequest, error) { console.info(xmlHttpRequest, error); } 2.后端Nginx增大缓存区 http { ... # set size to:8*128k fastcgi_buffers 8 128k; send_timeout 60; ... } 3.以上可以</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Tue, 22 Apr 2014 17:44:27 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2014/centos6.3-yum%E6%96%B9%E5%BC%8F%E5%AE%89%E8%A3%85nginx/</guid>
-      <description>1、软件包管理 1 rpm -ivh http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm CentOS 5，就用下面的源： 1 rpm -ivh http://nginx.org/packages/centos/5/noarch/RPMS/nginx-release-centos-5-0.el5.ngx.noarch.rpm Red Hat Enterprise Linux 6： 1 rpm -ivh http://nginx.org/packages/rhel/6/noarch/RPMS/nginx-release-rhel-6-0.el6.ngx.noarch.rpm Red Hat Enterprise Linux 5： 1 rpm -ivh http://nginx.org/packages/rhel/5/noarch/RPMS/nginx-release-rhel-5-0.el5.ngx.noarch.rpm 2、安装 1 yum install nginx 3、启动 1 service nginx start 4、测试 访问：ht</description>
+      <description>1、软件包管理 rpm -ivh http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm CentOS 5，就用下面的源： rpm -ivh http://nginx.org/packages/centos/5/noarch/RPMS/nginx-release-centos-5-0.el5.ngx.noarch.rpm Red Hat Enterprise Linux 6： rpm -ivh http://nginx.org/packages/rhel/6/noarch/RPMS/nginx-release-rhel-6-0.el6.ngx.noarch.rpm Red Hat Enterprise Linux 5： rpm -ivh http://nginx.org/packages/rhel/5/noarch/RPMS/nginx-release-rhel-5-0.el5.ngx.noarch.rpm 2、安装 yum install nginx 3、启动 service nginx start 4、测试 访问：http://1</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Wed, 05 Mar 2014 16:05:27 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2014/nginx-location%E8%A7%84%E5%88%99%E6%9B%BF%E6%8D%A2/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 server { listen 80; server_name www.6dgame.com 6dgame.com; location /2013/ { proxy_pass http://127.0.0.1:8081/; } location / { proxy_pass http://127.0.0.1:8080/; } error_page 500 502 503 504 /50x.html; location = /50x.html { root html; } } 对于此种设置方法， 访问：http://54.</description>
+      <description>server { listen 80; server_name www.6dgame.com 6dgame.com; location /2013/ { proxy_pass http://127.0.0.1:8081/; } location / { proxy_pass http://127.0.0.1:8080/; } error_page 500 502 503 504 /50x.html; location = /50x.html { root html; } } 对于此种设置方法， 访问：http://54.200.150.182:808</description>
     </item>
     
     <item>

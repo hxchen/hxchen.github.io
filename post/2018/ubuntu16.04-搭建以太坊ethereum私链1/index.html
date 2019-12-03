@@ -2,9 +2,9 @@
 <html lang="en" itemscope itemtype="http://schema.org/WebPage">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Ubuntu16.04 搭建以太坊Ethereum私链 - 我不是帅才</title>
-  <link rel="alternate" hreflang="en" href="https://www.3afun.com/" />
+  
 
 <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -14,8 +14,6 @@
 
 
 <meta name="applicable-device" content="pc,mobile">
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 <meta name="theme-color" content="#f8f5ec" />
 <meta name="msapplication-navbutton-color" content="#f8f5ec">
@@ -34,10 +32,12 @@
 
 
 
-<meta name="generator" content="Hugo 0.38.2" />
+<meta name="generator" content="Hugo 0.60.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2018/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE1/" />
+
+
 
 
 
@@ -52,7 +52,9 @@
 
 
 
-<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+<link rel="stylesheet" href="/sass/jane.min.0995afa14b62cd93e93cfc066b646c4c17a3eddca0e9d52a1d9dcf5d90aaacd3.css" integrity="sha256-CZWvoUtizZPpPPwGa2RsTBej7dyg6dUqHZ3PXZCqrNM=" media="screen" crossorigin="anonymous">
+
 
 
 
@@ -61,35 +63,17 @@
 <meta property="og:description" content="一、说明 想尝试基于以太坊的应用或者Tokens发布，无奈正常网络测试需要用Ether，购买麻烦，各步骤还得需要消耗以太币，不过我们可以搭建私" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.3afun.com/post/2018/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE1/" />
-
-
-
-<meta property="article:published_time" content="2018-04-11T15:43:48&#43;08:00"/>
-
-<meta property="article:modified_time" content="2018-04-11T15:43:48&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2018-04-11T15:43:48+08:00" />
+<meta property="article:modified_time" content="2018-04-11T15:43:48+08:00" />
 <meta itemprop="name" content="Ubuntu16.04 搭建以太坊Ethereum私链">
 <meta itemprop="description" content="一、说明 想尝试基于以太坊的应用或者Tokens发布，无奈正常网络测试需要用Ether，购买麻烦，各步骤还得需要消耗以太币，不过我们可以搭建私">
-
-
 <meta itemprop="datePublished" content="2018-04-11T15:43:48&#43;08:00" />
 <meta itemprop="dateModified" content="2018-04-11T15:43:48&#43;08:00" />
-<meta itemprop="wordCount" content="3190">
+<meta itemprop="wordCount" content="3052">
 
 
 
-<meta itemprop="keywords" content="Ethereum,区块链," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Ethereum,区块链," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Ubuntu16.04 搭建以太坊Ethereum私链"/>
 <meta name="twitter:description" content="一、说明 想尝试基于以太坊的应用或者Tokens发布，无奈正常网络测试需要用Ether，购买麻烦，各步骤还得需要消耗以太币，不过我们可以搭建私"/>
 
@@ -103,12 +87,16 @@
 <![endif]-->
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-117605000-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-117605000-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -162,6 +150,8 @@ ga('send', 'pageview');
           
         
       </li>
+    
+
     
   </ul>
 </nav>
@@ -229,6 +219,8 @@ ga('send', 'pageview');
 
   
 
+  
+
   <header id="header" class="header container">
     <div class="logo-wrapper">
   <a href="/" class="logo">
@@ -241,7 +233,8 @@ ga('send', 'pageview');
 <nav class="site-navbar">
   <ul id="menu" class="menu">
     
-      <li class="menu-item">
+    
+        <li class="menu-item">
         
           
           
@@ -252,7 +245,7 @@ ga('send', 'pageview');
 
       </li>
     
-      <li class="menu-item">
+        <li class="menu-item">
         
           
           
@@ -263,7 +256,7 @@ ga('send', 'pageview');
 
       </li>
     
-      <li class="menu-item">
+        <li class="menu-item">
         
           
           
@@ -274,7 +267,7 @@ ga('send', 'pageview');
 
       </li>
     
-      <li class="menu-item">
+        <li class="menu-item">
         
           
           
@@ -285,7 +278,7 @@ ga('send', 'pageview');
 
       </li>
     
-      <li class="menu-item">
+        <li class="menu-item">
         
           
           
@@ -296,6 +289,10 @@ ga('send', 'pageview');
 
       </li>
     
+
+    
+    
+
     
   </ul>
 </nav>
@@ -312,14 +309,22 @@ ga('send', 'pageview');
       <h1 class="post-title">Ubuntu16.04 搭建以太坊Ethereum私链</h1>
       
       <div class="post-meta">
-        <span class="post-time"> 2018-04-11 </span>
+        <time datetime="2018-04-11" class="post-time">
+          2018-04-11
+        </time>
         <div class="post-category">
             <a href="https://www.3afun.com/categories/ethereum/"> Ethereum </a>
             <a href="https://www.3afun.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"> 区块链 </a>
             
           </div>
-        <span class="more-meta"> 约 3190 字 </span>
-        <span class="more-meta"> 预计阅读 7 分钟 </span>
+        <span class="more-meta"> 约 3052 字 </span>
+          <span class="more-meta"> 预计阅读 7 分钟 </span>
+
+        
+        
+
+        
+        
       </div>
     </header>
 
@@ -329,131 +334,57 @@ ga('send', 'pageview');
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#一-说明">一、说明</a></li>
-<li><a href="#二-所需工具">二、所需工具</a></li>
-<li><a href="#三-安装">三、安装</a></li>
-<li><a href="#四-私有链搭建">四、私有链搭建</a></li>
-<li><a href="#五-启动私有节点">五、启动私有节点</a></li>
-<li><a href="#六-控制台操作">六、控制台操作</a>
-<ul>
-<li><a href="#1-创建账户">1、创建账户</a></li>
-<li><a href="#2-查看账户余额">2、查看账户余额</a></li>
-<li><a href="#3-启动-停止挖矿">3、启动 停止挖矿</a>
-<ul>
-<li><a href="#启动挖矿">启动挖矿</a></li>
-<li><a href="#停止挖矿">停止挖矿</a></li>
-</ul></li>
-<li><a href="#4-发送交易">4、发送交易</a></li>
-<li><a href="#5-查看交易和区块">5、查看交易和区块</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#1">1、创建账户</a></li>
+    <li><a href="#2">2、查看账户余额</a></li>
+    <li><a href="#3-">3、启动 停止挖矿</a>
+      <ul>
+        <li><a href="#heading6">启动挖矿</a></li>
+        <li><a href="#heading7">停止挖矿</a></li>
+      </ul>
+    </li>
+    <li><a href="#4">4、发送交易</a></li>
+    <li><a href="#5">5、查看交易和区块</a></li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h1 id="一-说明">一、说明</h1>
-
+      <h1 id="heading">一、说明</h1>
 <p>想尝试基于以太坊的应用或者Tokens发布，无奈正常网络测试需要用Ether，购买麻烦，各步骤还得需要消耗以太币，不过我们可以搭建私有链来进行开发，话不多说，马上开始搭建我们自己的开发测试私有链。</p>
-
-<h1 id="二-所需工具">二、所需工具</h1>
-
+<h1 id="heading1">二、所需工具</h1>
 <p>1、以太坊客户端</p>
-
 <p>以太坊客户端用于接入以太坊网络，进行账户管理、交易、挖矿、智能合约相关的操作。</p>
-
 <p>目前有多种语言实现的客户端，常用的有 Go 语言实现的 go-ethereum 客户端 Geth，支持接入以太坊网络并成为一个完整节点，也可作为一个 HTTP-RPC 服务器对外提供 JSON-RPC 接口。</p>
-
 <p>其他的客户端有：智能合约编译器</p>
-
 <p>Parity：Rust 语言实现；</p>
-
 <p>cpp-ethereum：C++ 语言实现；</p>
-
 <p>ethereumjs-lib：JavaScript 语言实现；</p>
-
 <p>Ethereum(J)：Java 语言实现；</p>
-
 <p>ethereumH：Haskell 语言实现；</p>
-
 <p>pyethapp： Python 语言实现；</p>
-
 <p>ruby-ethereum：Ruby 语言实现；</p>
-
 <p>2、智能合约编译器</p>
-
 <p>以太坊支持两种智能合约的编程语言：Solidity 和 Serpent。现在的主流是Solidity，学习教程可参考 <a href="http://www.tryblockchain.org/Solidity-%E8%AF%AD%E8%A8%80%E4%BB%8B%E7%BB%8D.html">站点</a> 。</p>
-
 <p>现在以太坊提供更方便的在线 IDE —— Remix <a href="https://remix.ethereum.org">https://remix.ethereum.org</a> 使用 Remix，免去了安装solc和编译过程，它可以直接提供部署合约所需的二进制码和 ABI。</p>
-
 <p>3、以太坊钱包</p>
-
 <p>以太坊提供了图形界面的钱包 Ethereum Wallet 和 Mist Dapp 浏览器。</p>
-
 <p>钱包的功能是 Mist 的一个子集，可用于管理账户和交易；Mist 在钱包基础上，还能操作智能合约。为了演示合约部署过程，本文使用了 Geth console 操作，没有用到 Mist，当然，使用 Mist 会更简单。</p>
-
-<h1 id="三-安装">三、安装</h1>
-
+<h1 id="heading2">三、安装</h1>
 <p>服务器我们采用Ubuntu16.04。</p>
-
 <p>首先安装必要的工具</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">apt install software-properties-common</pre></td></tr></table>
-</div>
-</div>
-<p>再次添加以太坊源</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">add-apt-repository -y ppa:ethereum/ethereum
-apt update</pre></td></tr></table>
-</div>
-</div>
-<p>最后安装go-ethereum</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">apt install ethereum</pre></td></tr></table>
-</div>
-</div>
-<p>安装完成后，可以运行命令查看是否成功</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">geth version</pre></td></tr></table>
-</div>
-</div>
-<p>显示</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">Geth
+<pre><code>apt install software-properties-common
+</code></pre><p>再次添加以太坊源</p>
+<pre><code>add-apt-repository -y ppa:ethereum/ethereum
+apt update
+</code></pre><p>最后安装go-ethereum</p>
+<pre><code>apt install ethereum
+</code></pre><p>安装完成后，可以运行命令查看是否成功</p>
+<pre><code>geth version
+</code></pre><p>显示</p>
+<pre><code>Geth
 Version: 1.8.2-stable
 Git Commit: b8b9f7f4476a30a0aaf6077daade6ae77f969960
 Architecture: amd64
@@ -462,90 +393,37 @@ Network Id: 1
 Go Version: go1.9.4
 Operating System: linux
 GOPATH=
-GOROOT=/usr/lib/go-1.9</pre></td></tr></table>
-</div>
-</div>
-<h1 id="四-私有链搭建">四、私有链搭建</h1>
-
+GOROOT=/usr/lib/go-1.9
+</code></pre><h1 id="heading3">四、私有链搭建</h1>
 <p>1、创建初始化配置文件和存放数据目录</p>
-
 <p>要运行以太坊私有链，需要定义自己创世区块，创世区块是一个json格式配置文件。我们可以新建一个文件 genesis.json</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">{
-&#34;config&#34;: {
-    &#34;chainId&#34;: 411,
-    &#34;homesteadBlock&#34;: 0,
-    &#34;eip155Block&#34;: 0,
-    &#34;eip158Block&#34;: 0
+<pre><code>{
+&quot;config&quot;: {
+    &quot;chainId&quot;: 411,
+    &quot;homesteadBlock&quot;: 0,
+    &quot;eip155Block&quot;: 0,
+    &quot;eip158Block&quot;: 0
   },
-  &#34;nonce&#34;: &#34;0x0000000000000033&#34;,
-  &#34;timestamp&#34;: &#34;0x0&#34;,
-  &#34;parentHash&#34;: &#34;0x0000000000000000000000000000000000000000000000000000000000000000&#34;,
-  &#34;gasLimit&#34;: &#34;0x8000000&#34;,
-  &#34;difficulty&#34;: &#34;0x100&#34;,
-  &#34;mixhash&#34;: &#34;0x0000000000000000000000000000000000000000000000000000000000000000&#34;,
-  &#34;coinbase&#34;: &#34;0x0000000000000000000000000000000000000000&#34;,
-  &#34;alloc&#34;: {
-        &#34;0x1C83C95473e1e93A2C8560c73976dAFA9C3f0a79&#34;:{&#34;balance&#34;:&#34;1000000&#34;}
+  &quot;nonce&quot;: &quot;0x0000000000000033&quot;,
+  &quot;timestamp&quot;: &quot;0x0&quot;,
+  &quot;parentHash&quot;: &quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;,
+  &quot;gasLimit&quot;: &quot;0x8000000&quot;,
+  &quot;difficulty&quot;: &quot;0x100&quot;,
+  &quot;mixhash&quot;: &quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;,
+  &quot;coinbase&quot;: &quot;0x0000000000000000000000000000000000000000&quot;,
+  &quot;alloc&quot;: {
+        &quot;0x1C83C95473e1e93A2C8560c73976dAFA9C3f0a79&quot;:{&quot;balance&quot;:&quot;1000000&quot;}
   }
-}</pre></td></tr></table>
-</div>
-</div>
-<p>其中chainID 指定了区块链网络ID。</p>
-
+}
+</code></pre><p>其中chainID 指定了区块链网络ID。</p>
 <p>并且我对自己地址进行了配额。其他参数可参考 <a href="http://www.tryblockchain.org/Solidity-%E8%AF%AD%E8%A8%80%E4%BB%8B%E7%BB%8D.html">站点</a></p>
-
 <p>存放数据目录在此我使用 <code>/home/ubuntu/ethereum/data0</code></p>
-
 <p>genesis.json存放在<code>/home/ubuntu/ethereum/</code></p>
-
 <p>然后可以执行命令来进行初始化操作。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">cd ethereum
-geth --datadir data0 init genesis.json</pre></td></tr></table>
-</div>
-</div>
-<p>结果</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">INFO [04-11|07:51:14] Maximum peer count                       ETH=25 LES=0 total=25
+<pre><code>cd ethereum
+geth --datadir data0 init genesis.json
+</code></pre><p>结果</p>
+<pre><code>INFO [04-11|07:51:14] Maximum peer count                       ETH=25 LES=0 total=25
 INFO [04-11|07:51:14] Allocated cache and file handles         database=/home/ubuntu/ethereum/data0/geth/chaindata cache=16 handles=16
 INFO [04-11|07:51:14] Writing custom genesis block
 INFO [04-11|07:51:14] Persisted trie from memory database      nodes=1 size=195.00B time=35.174碌s gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
@@ -553,342 +431,135 @@ INFO [04-11|07:51:14] Successfully wrote genesis state         database=chaindat
 INFO [04-11|07:51:14] Allocated cache and file handles         database=/home/ubuntu/ethereum/data0/geth/lightchaindata cache=16 handles=16
 INFO [04-11|07:51:14] Writing custom genesis block
 INFO [04-11|07:51:14] Persisted trie from memory database      nodes=1 size=195.00B time=460.134碌s gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
-INFO [04-11|07:51:14] Successfully wrote genesis state         database=lightchaindata                                  hash=b924d6Ωfdceb</pre></td></tr></table>
-</div>
-</div>
-<p>初始化成功后，会在data0目录下生产所需文件。</p>
-
+INFO [04-11|07:51:14] Successfully wrote genesis state         database=lightchaindata                                  hash=b924d6Ωfdceb
+</code></pre><p>初始化成功后，会在data0目录下生产所需文件。</p>
 <p>其中 <code>geth/chaindata</code> 中存放的是区块数据，<code>keystore</code> 中存放的是账户数据。</p>
-
-<h1 id="五-启动私有节点">五、启动私有节点</h1>
-
+<h1 id="heading4">五、启动私有节点</h1>
 <p>初始化完成后，就有了一条自己的私有链。我们可以执行命令来启动它</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">geth --identity &#34;TestNode&#34; --rpc --rpcport &#34;8545&#34; --datadir data0 --port &#34;30303&#34; --nodiscover console</pre></td></tr></table>
-</div>
-</div>
-<p>上面命令的主体是 geth console，表示启动节点并进入交互式控制台。</p>
-
+<pre><code>geth --identity &quot;TestNode&quot; --rpc --rpcport &quot;8545&quot; --datadir data0 --port &quot;30303&quot; --nodiscover console
+</code></pre><p>上面命令的主体是 geth console，表示启动节点并进入交互式控制台。</p>
 <p>各选项含义如下：</p>
-
 <p>–identity：指定节点 ID；</p>
-
 <p>–rpc：表示开启 HTTP-RPC 服务；</p>
-
 <p>–rpcport：指定 HTTP-RPC 服务监听端口号（默认为 8545）；</p>
-
 <p>–datadir：指定区块链数据的存储位置；</p>
-
 <p>–port：指定和其他节点连接所用的端口号（默认为 30303）；</p>
-
 <p>–nodiscover：关闭节点发现机制，防止加入有同样初始配置的陌生节点。</p>
-
 <p>运行上面的命令后，就启动了区块链节点并进入了该节点的控制台：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">INFO [04-11|08:05:23] Maximum peer count                       ETH=25 LES=0 total=25
+<pre><code>INFO [04-11|08:05:23] Maximum peer count                       ETH=25 LES=0 total=25
 INFO [04-11|08:05:23] Starting peer-to-peer node               instance=Geth/TestNode/v1.8.2-stable-b8b9f7f4/linux-amd64/go1.9.4
 INFO [04-11|08:05:23] Allocated cache and file handles         database=/home/ubuntu/ethereum/data0/data0/geth/chaindata cache=768 handles=512
 INFO [04-11|08:05:23] Writing default main-net genesis block
 INFO [04-11|08:05:23] Persisted trie from memory database      nodes=12356 size=2.34mB time=47.705254ms gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B
-INFO [04-11|08:05:23] Initialised chain configuration          config=&#34;{ChainID: 1 Homestead: 1150000 DAO: 1920000 DAOSupport: true EIP150: 2463000 EIP155: 2675000 EIP158: 2675000 Byzantium: 4370000 Constantinople: &lt;nil&gt; Engine: ethash}&#34;
+INFO [04-11|08:05:23] Initialised chain configuration          config=&quot;{ChainID: 1 Homestead: 1150000 DAO: 1920000 DAOSupport: true EIP150: 2463000 EIP155: 2675000 EIP158: 2675000 Byzantium: 4370000 Constantinople: &lt;nil&gt; Engine: ethash}&quot;
 INFO [04-11|08:05:23] Disk storage enabled for ethash caches   dir=/home/ubuntu/ethereum/data0/data0/geth/ethash count=3
 INFO [04-11|08:05:23] Disk storage enabled for ethash DAGs     dir=/root/.ethash                                 count=2
-INFO [04-11|08:05:23] Initialising Ethereum protocol           versions=&#34;[63 62]&#34; network=1
+INFO [04-11|08:05:23] Initialising Ethereum protocol           versions=&quot;[63 62]&quot; network=1
 INFO [04-11|08:05:23] Loaded most recent local header          number=0 hash=d4e567b8fa3 td=17179869184
 INFO [04-11|08:05:23] Loaded most recent local full block      number=0 hash=d4e567b8fa3 td=17179869184
 INFO [04-11|08:05:23] Loaded most recent local fast block      number=0 hash=d4e567b8fa3 td=17179869184
 INFO [04-11|08:05:23] Regenerated local transaction journal    transactions=0 accounts=0
 INFO [04-11|08:05:23] Starting P2P networking
-INFO [04-11|08:05:23] RLPx listener up                         self=&#34;enode://b5e91ca148308d721599ac14b9f2a9aff28c88b258a439fbc19f094d65ecaa9954a6a7d0de29f5737726bcdb20a443db9edeedce0471c1ba5cda043e8601e0d0@[::]:30303?discport=0&#34;
+INFO [04-11|08:05:23] RLPx listener up                         self=&quot;enode://b5e91ca148308d721599ac14b9f2a9aff28c88b258a439fbc19f094d65ecaa9954a6a7d0de29f5737726bcdb20a443db9edeedce0471c1ba5cda043e8601e0d0@[::]:30303?discport=0&quot;
 INFO [04-11|08:05:23] IPC endpoint opened                      url=/home/ubuntu/ethereum/data0/data0/geth.ipc
 INFO [04-11|08:05:23] HTTP endpoint opened                     url=http://127.0.0.1:8545                      cors= vhosts=localhost
 Welcome to the Geth JavaScript console!
 
 instance: Geth/TestNode/v1.8.2-stable-b8b9f7f4/linux-amd64/go1.9.4
- modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 txpool:1.0 web3:1.0</pre></td></tr></table>
-</div>
-</div>
-<p>这是一个交互式的 JavaScript 执行环境，在这里面可以执行 JavaScript 代码，其中 <code>&gt;</code>是命令提示符。在这个环境里也内置了一些用来操作以太坊的 JavaScript 对象，可以直接使用这些对象。这些对象主要包括：</p>
-
+ modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 txpool:1.0 web3:1.0
+</code></pre><p>这是一个交互式的 JavaScript 执行环境，在这里面可以执行 JavaScript 代码，其中 <code>&gt;</code>是命令提示符。在这个环境里也内置了一些用来操作以太坊的 JavaScript 对象，可以直接使用这些对象。这些对象主要包括：</p>
 <p>eth：包含一些跟操作区块链相关的方法；</p>
-
 <p>net：包含一些查看p2p网络状态的方法；</p>
-
 <p>admin：包含一些与管理节点相关的方法；</p>
-
 <p>miner：包含启动&amp;停止挖矿的一些方法；</p>
-
 <p>personal：主要包含一些管理账户的方法；</p>
-
 <p>txpool：包含一些查看交易内存池的方法；</p>
-
 <p>web3：包含了以上对象，还包含一些单位换算的方法。</p>
-
-<h1 id="六-控制台操作">六、控制台操作</h1>
-
+<h1 id="heading5">六、控制台操作</h1>
 <p>进入以太坊 Javascript Console 后，就可以使用里面的内置对象做一些操作，这些内置对象提供的功能很丰富，比如查看区块和交易、创建账户、挖矿、发送交易、部署智能合约等。</p>
-
 <p>常用命令有：</p>
-
 <p><code>personal.newAccount()</code>：创建账户；</p>
-
 <p><code>personal.unlockAccount()</code>：解锁账户；</p>
-
 <p><code>eth.accounts</code>：枚举系统中的账户；</p>
-
 <p><code>eth.getBalance()</code>：查看账户余额，返回值的单位是 Wei（Wei 是以太坊中最小货币面额单位，类似比特币中的聪，1 ether = 10^18 Wei）；</p>
-
 <p><code>eth.blockNumber</code>：列出区块总数；</p>
-
 <p><code>eth.getTransaction()</code>：获取交易；</p>
-
 <p><code>eth.getBlock()</code>：获取区块；</p>
-
 <p><code>miner.start()</code>：开始挖矿；</p>
-
 <p><code>miner.stop()</code>：停止挖矿；</p>
-
 <p><code>web3.fromWei()</code>：Wei 换算成以太币；</p>
-
 <p><code>web3.toWei()</code>：以太币换算成 Wei；</p>
-
 <p><code>txpool.status</code>：交易池中的状态；</p>
-
 <p><code>admin.addPeer()</code>：连接到其他节点；</p>
-
 <p>这些命令支持 Tab 键自动补全，具体用法如下。</p>
-
-<h2 id="1-创建账户">1、创建账户</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">&gt;personal.newAccount()
+<h2 id="1">1、创建账户</h2>
+<pre><code>&gt;personal.newAccount()
 Passphrase:
 Repeat passphrase:
-&#34;0x914995c9c3c993c9d3fdd63602c91823f932b308&#34;</pre></td></tr></table>
-</div>
-</div>
-<p>输入密码、确认密码将会创建一个账户.</p>
-
+&quot;0x914995c9c3c993c9d3fdd63602c91823f932b308&quot;
+</code></pre><p>输入密码、确认密码将会创建一个账户.</p>
 <p>同样方法再创建一个</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">&gt; personal.newAccount()
+<pre><code>&gt; personal.newAccount()
 Passphrase:
 Repeat passphrase:
-&#34;0x30ed8cd207dfdaf5e24847252df822b1da1f2fe5&#34;</pre></td></tr></table>
-</div>
-</div>
-<p>查看账户(上面初始化配置文件出差错了？没分配呀)</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">&gt; eth.accounts
-[&#34;0x914995c9c3c993c9d3fdd63602c91823f932b308&#34;, &#34;0x30ed8cd207dfdaf5e24847252df822b1da1f2fe5&#34;]</pre></td></tr></table>
-</div>
-</div>
-<h2 id="2-查看账户余额">2、查看账户余额</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">eth.getBalance(eth.accounts[0])</pre></td></tr></table>
-</div>
-</div>
-<h2 id="3-启动-停止挖矿">3、启动 停止挖矿</h2>
-
-<h3 id="启动挖矿">启动挖矿</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">&gt;miner.start(1)</pre></td></tr></table>
-</div>
-</div>
-<p>其中 start 的参数表示挖矿使用的线程数。第一次启动挖矿会先生成挖矿所需的 DAG 文件，这个过程有点慢，等进度达到 100% 后，就会开始挖矿，此时屏幕会被挖矿信息刷屏。</p>
-
-<h3 id="停止挖矿">停止挖矿</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">&gt;miner.stop()</pre></td></tr></table>
-</div>
-</div>
-<p>挖到一个区块会奖励5个以太币，挖矿所得的奖励会进入矿工的账户，这个账户叫做 coinbase，默认情况下 coinbase 是本地账户中的第一个账户，可以通过 miner.setEtherbase() 将其他账户设置成 coinbase。</p>
-
+&quot;0x30ed8cd207dfdaf5e24847252df822b1da1f2fe5&quot;
+</code></pre><p>查看账户(上面初始化配置文件出差错了？没分配呀)</p>
+<pre><code>&gt; eth.accounts
+[&quot;0x914995c9c3c993c9d3fdd63602c91823f932b308&quot;, &quot;0x30ed8cd207dfdaf5e24847252df822b1da1f2fe5&quot;]
+</code></pre><h2 id="2">2、查看账户余额</h2>
+<pre><code>eth.getBalance(eth.accounts[0])
+</code></pre><h2 id="3-">3、启动 停止挖矿</h2>
+<h3 id="heading6">启动挖矿</h3>
+<pre><code>&gt;miner.start(1)
+</code></pre><p>其中 start 的参数表示挖矿使用的线程数。第一次启动挖矿会先生成挖矿所需的 DAG 文件，这个过程有点慢，等进度达到 100% 后，就会开始挖矿，此时屏幕会被挖矿信息刷屏。</p>
+<h3 id="heading7">停止挖矿</h3>
+<pre><code>&gt;miner.stop()
+</code></pre><p>挖到一个区块会奖励5个以太币，挖矿所得的奖励会进入矿工的账户，这个账户叫做 coinbase，默认情况下 coinbase 是本地账户中的第一个账户，可以通过 miner.setEtherbase() 将其他账户设置成 coinbase。</p>
 <p>再次查看账户余额</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">&gt; eth.getBalance(eth.accounts[0])
-510000000000000000000</pre></td></tr></table>
-</div>
-</div>
-<h2 id="4-发送交易">4、发送交易</h2>
-
+<pre><code>&gt; eth.getBalance(eth.accounts[0])
+510000000000000000000
+</code></pre><h2 id="4">4、发送交易</h2>
 <p>目前，账户0已经挖到了97个块的奖励，账户1余额还是0：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">&gt; eth.getBalance(eth.accounts[0])
+<pre><code>&gt; eth.getBalance(eth.accounts[0])
 510000000000000000000
 &gt; eth.getBalance(eth.accounts[1])
-0</pre></td></tr></table>
-</div>
-</div>
-<p>我们要从账户0到账户1转账，需要先解锁账户0才能转账</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">&gt; personal.unlockAccount(eth.accounts[0])
+0
+</code></pre><p>我们要从账户0到账户1转账，需要先解锁账户0才能转账</p>
+<pre><code>&gt; personal.unlockAccount(eth.accounts[0])
 Unlock account 0x914995c9c3c993c9d3fdd63602c91823f932b308
 Passphrase:
-true</pre></td></tr></table>
-</div>
-</div>
-<p>转账0-&gt;1</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">&gt; amount = web3.toWei(5,&#39;ether&#39;)
-&#34;5000000000000000000&#34;
+true
+</code></pre><p>转账0-&gt;1</p>
+<pre><code>&gt; amount = web3.toWei(5,'ether')
+&quot;5000000000000000000&quot;
 &gt; eth.sendTransaction({from:eth.accounts[0],to:eth.accounts[1],value:amount})
 INFO [04-11|09:37:09] Submitted transaction                    fullhash=0x2d8342ce23ca00a61a66a9926d45e8516bd0edda18703770c72897d2b9c31973 recipient=0x30Ed8Cd207dfdAF5E24847252DF822b1DA1F2FE5
-&#34;0x2d8342ce23ca00a61a66a9926d45e8516bd0edda18703770c72897d2b9c31973&#34;</pre></td></tr></table>
-</div>
-</div>
-<p>此时如果没有挖矿，用 txpool.status 命令可以看到本地交易池中有一个待确认的交易，可以使用 <code>eth.getBlock(&quot;pending&quot;, true).transactions</code> 查看当前待确认交易。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">&gt; txpool.status
+&quot;0x2d8342ce23ca00a61a66a9926d45e8516bd0edda18703770c72897d2b9c31973&quot;
+</code></pre><p>此时如果没有挖矿，用 txpool.status 命令可以看到本地交易池中有一个待确认的交易，可以使用 <code>eth.getBlock(&quot;pending&quot;, true).transactions</code> 查看当前待确认交易。</p>
+<pre><code>&gt; txpool.status
 {
   pending: 1,
   queued: 0
 }
-&gt; eth.getBlock(&#34;pending&#34;, true).transactions
+&gt; eth.getBlock(&quot;pending&quot;, true).transactions
 [{
-    blockHash: &#34;0x2a13705bbe3a60c1d8fa686d6c8a326c6f1b70e7943bb7be8d8e9aa9fef7701e&#34;,
+    blockHash: &quot;0x2a13705bbe3a60c1d8fa686d6c8a326c6f1b70e7943bb7be8d8e9aa9fef7701e&quot;,
     blockNumber: 103,
-    from: &#34;0x914995c9c3c993c9d3fdd63602c91823f932b308&#34;,
+    from: &quot;0x914995c9c3c993c9d3fdd63602c91823f932b308&quot;,
     gas: 90000,
     gasPrice: 18000000000,
-    hash: &#34;0x2d8342ce23ca00a61a66a9926d45e8516bd0edda18703770c72897d2b9c31973&#34;,
-    input: &#34;0x&#34;,
+    hash: &quot;0x2d8342ce23ca00a61a66a9926d45e8516bd0edda18703770c72897d2b9c31973&quot;,
+    input: &quot;0x&quot;,
     nonce: 0,
-    r: &#34;0x546055f53f1f7535549c4e31ddf03c6678384afc9571240d237823c205239a11&#34;,
-    s: &#34;0x65f39c6a35f338c6fe67faf7a3bb14c91abc0472113bb9916c82cc51a407f6c9&#34;,
-    to: &#34;0x30ed8cd207dfdaf5e24847252df822b1da1f2fe5&#34;,
+    r: &quot;0x546055f53f1f7535549c4e31ddf03c6678384afc9571240d237823c205239a11&quot;,
+    s: &quot;0x65f39c6a35f338c6fe67faf7a3bb14c91abc0472113bb9916c82cc51a407f6c9&quot;,
+    to: &quot;0x30ed8cd207dfdaf5e24847252df822b1da1f2fe5&quot;,
     transactionIndex: 0,
-    v: &#34;0x359&#34;,
+    v: &quot;0x359&quot;,
     value: 5000000000000000000
-}]</pre></td></tr></table>
-</div>
-</div>
-<p>使用 <code>miner.start()</code> 命令开始挖矿：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">&gt; miner.start(1);admin.sleepBlocks(1);miner.stop();
+}]
+</code></pre><p>使用 <code>miner.start()</code> 命令开始挖矿：</p>
+<pre><code>&gt; miner.start(1);admin.sleepBlocks(1);miner.stop();
 INFO [04-11|09:39:49] Updated mining threads                   threads=1
 INFO [04-11|09:39:49] Transaction pool price threshold updated price=18000000000
 INFO [04-11|09:39:49] Starting mining operation
@@ -897,127 +568,57 @@ INFO [04-11|09:39:52] Successfully sealed new block            number=103 hash=8
 INFO [04-11|09:39:52]  block reached canonical chain          number=98  hash=9d43b286588
 INFO [04-11|09:39:52]  mined potential block                  number=103 hash=8327606bec9
 INFO [04-11|09:39:52] Commit new mining work                   number=104 txs=0 uncles=0 elapsed=231.591碌s
-true</pre></td></tr></table>
-</div>
-</div>
-<p>新区块挖出后，挖矿结束，查看账户 1 的余额，已经收到了账户 0 的以太币：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">&gt; web3.fromWei(eth.getBalance(eth.accounts[1]),&#39;ether&#39;)
-5</pre></td></tr></table>
-</div>
-</div>
-<h2 id="5-查看交易和区块">5、查看交易和区块</h2>
-
+true
+</code></pre><p>新区块挖出后，挖矿结束，查看账户 1 的余额，已经收到了账户 0 的以太币：</p>
+<pre><code>&gt; web3.fromWei(eth.getBalance(eth.accounts[1]),'ether')
+5
+</code></pre><h2 id="5">5、查看交易和区块</h2>
 <p>查看当前区块总数：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">&gt; eth.blockNumber
-103</pre></td></tr></table>
-</div>
-</div>
-<p>通过交易 Hash 查看交易（Hash 值包含在上面交易返回值中）：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">&gt; eth.getTransaction(&#34;0x2d8342ce23ca00a61a66a9926d45e8516bd0edda18703770c72897d2b9c31973&#34;)
+<pre><code>&gt; eth.blockNumber
+103
+</code></pre><p>通过交易 Hash 查看交易（Hash 值包含在上面交易返回值中）：</p>
+<pre><code>&gt; eth.getTransaction(&quot;0x2d8342ce23ca00a61a66a9926d45e8516bd0edda18703770c72897d2b9c31973&quot;)
 {
-  blockHash: &#34;0x83276067a8ad0168cf1d9fabb089b7778024bc6700434f470d830decb4a6bec9&#34;,
+  blockHash: &quot;0x83276067a8ad0168cf1d9fabb089b7778024bc6700434f470d830decb4a6bec9&quot;,
   blockNumber: 103,
-  from: &#34;0x914995c9c3c993c9d3fdd63602c91823f932b308&#34;,
+  from: &quot;0x914995c9c3c993c9d3fdd63602c91823f932b308&quot;,
   gas: 90000,
   gasPrice: 18000000000,
-  hash: &#34;0x2d8342ce23ca00a61a66a9926d45e8516bd0edda18703770c72897d2b9c31973&#34;,
-  input: &#34;0x&#34;,
+  hash: &quot;0x2d8342ce23ca00a61a66a9926d45e8516bd0edda18703770c72897d2b9c31973&quot;,
+  input: &quot;0x&quot;,
   nonce: 0,
-  r: &#34;0x546055f53f1f7535549c4e31ddf03c6678384afc9571240d237823c205239a11&#34;,
-  s: &#34;0x65f39c6a35f338c6fe67faf7a3bb14c91abc0472113bb9916c82cc51a407f6c9&#34;,
-  to: &#34;0x30ed8cd207dfdaf5e24847252df822b1da1f2fe5&#34;,
+  r: &quot;0x546055f53f1f7535549c4e31ddf03c6678384afc9571240d237823c205239a11&quot;,
+  s: &quot;0x65f39c6a35f338c6fe67faf7a3bb14c91abc0472113bb9916c82cc51a407f6c9&quot;,
+  to: &quot;0x30ed8cd207dfdaf5e24847252df822b1da1f2fe5&quot;,
   transactionIndex: 0,
-  v: &#34;0x359&#34;,
+  v: &quot;0x359&quot;,
   value: 5000000000000000000
-}</pre></td></tr></table>
-</div>
-</div>
-<p>通过区块号查看区块</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">&gt; eth.getBlock(102)
+}
+</code></pre><p>通过区块号查看区块</p>
+<pre><code>&gt; eth.getBlock(102)
 {
   difficulty: 137514,
-  extraData: &#34;0xd783010802846765746887676f312e392e34856c696e7578&#34;,
+  extraData: &quot;0xd783010802846765746887676f312e392e34856c696e7578&quot;,
   gasLimit: 121486905,
   gasUsed: 0,
-  hash: &#34;0x09c0a05f1a76fa39222f965d0b3665550bb5a0ab518963c8d1c5280a7b13cf43&#34;,
-  logsBloom: &#34;0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&#34;,
-  miner: &#34;0x914995c9c3c993c9d3fdd63602c91823f932b308&#34;,
-  mixHash: &#34;0x7afd2e352e797ad57554bd81d1f156baed041242fcb641c336683fc9f5937b6c&#34;,
-  nonce: &#34;0x4fe257812731bb15&#34;,
+  hash: &quot;0x09c0a05f1a76fa39222f965d0b3665550bb5a0ab518963c8d1c5280a7b13cf43&quot;,
+  logsBloom: &quot;0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&quot;,
+  miner: &quot;0x914995c9c3c993c9d3fdd63602c91823f932b308&quot;,
+  mixHash: &quot;0x7afd2e352e797ad57554bd81d1f156baed041242fcb641c336683fc9f5937b6c&quot;,
+  nonce: &quot;0x4fe257812731bb15&quot;,
   number: 102,
-  parentHash: &#34;0xaf1c22536346d8183b63632e4eb6fae81bfd5f9ca305f5fe20b9b7ef0da2a9de&#34;,
-  receiptsRoot: &#34;0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421&#34;,
-  sha3Uncles: &#34;0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347&#34;,
+  parentHash: &quot;0xaf1c22536346d8183b63632e4eb6fae81bfd5f9ca305f5fe20b9b7ef0da2a9de&quot;,
+  receiptsRoot: &quot;0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421&quot;,
+  sha3Uncles: &quot;0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347&quot;,
   size: 536,
-  stateRoot: &#34;0x73bb0a88af2d04b4fcec031a48ffdc16cda90b88c215e3587f1e9acc1c050eca&#34;,
+  stateRoot: &quot;0x73bb0a88af2d04b4fcec031a48ffdc16cda90b88c215e3587f1e9acc1c050eca&quot;,
   timestamp: 1523438740,
   totalDifficulty: 13695386,
   transactions: [],
-  transactionsRoot: &#34;0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421&#34;,
+  transactionsRoot: &quot;0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421&quot;,
   uncles: []
-}</pre></td></tr></table>
-</div>
-</div>
+}
+</code></pre>
     </div>
 
     
@@ -1029,7 +630,10 @@ true</pre></td></tr></table>
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2018-04-11</span>
+    <span class="item-content">
+      2018-04-11
+      
+    </span>
   </p>
   
   <p class="copyright-item">
@@ -1037,6 +641,7 @@ true</pre></td></tr></table>
     <span class="item-content"><a href="https://github.com/gohugoio/hugoBasicExample" rel="noopener" target="_blank">See origin</a></span>
   </p>
 </div>
+
 
     
     
@@ -1052,7 +657,15 @@ true</pre></td></tr></table>
       <nav class="post-nav">
         
           <a class="prev" href="/post/2018/ethereum-wallet%E4%BB%A5%E5%A4%AA%E5%9D%8A%E9%92%B1%E5%8C%85%E9%93%BE%E6%8E%A5geth-server%E7%A7%81%E6%9C%89%E9%93%BE/">
-            <i class="iconfont icon-left"></i>
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
             <span class="prev-text nav-default">Ethereum wallet以太坊钱包链接Geth Server私有链</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
@@ -1060,13 +673,26 @@ true</pre></td></tr></table>
           <a class="next" href="/post/2018/erc-223-token-standard/">
             <span class="next-text nav-default">ERC223 标准规范</span>
             <span class="prev-text nav-mobile">下一篇</span>
-            <i class="iconfont icon-right"></i>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
           </a>
       </nav>
     </footer>
   </article>
 
   
+  
+
+  
+  
+
   
 
   
@@ -1098,28 +724,73 @@ true</pre></td></tr></table>
 
   
 
+    
+
+  
+
         </div>
       </div>
     </main>
 
     <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:helloworld.vip@gmail.com" rel="me noopener" class="iconfont icon-email"
-        title="email" target="_blank">
-      </a>
-      <a href="https://twitter.com/helloworld_vip" rel="me noopener" class="iconfont icon-twitter"
-        title="twitter" target="_blank">
-      </a>
-      <a href="https://www.facebook.com/wayne.chen.dev" rel="me noopener" class="iconfont icon-facebook"
-        title="facebook" target="_blank">
-      </a>
-      <a href="https://github.com/hxchen" rel="me noopener" class="iconfont icon-github"
-        title="github" target="_blank">
-      </a>
-  <a href="https://www.3afun.com/index.xml" rel="noopener alternate" type="application/rss" class="iconfont icon-rss"
-    title="rss" target="_blank">
+      <div class="icon-links">
+  
+  
+    <a href="mailto:helloworld.vip@gmail.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://twitter.com/helloworld_vip" rel="me noopener" class="iconfont"
+      title="twitter"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1264 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M1229.8616 18.043658c0 0-117.852626 63.135335-164.151872 67.344358-105.225559-164.151872-505.082682-92.598492-437.738325 223.078185C278.622548 312.675223 89.216542 47.506814 89.216542 47.506814s-117.852626 189.406006 75.762402 345.139833C127.097743 396.85567 55.544363 371.601535 55.544363 371.601535S26.081207 535.753407 253.368414 615.724832c-21.045112 29.463156-113.643603 8.418045-113.643603 8.418045s25.254134 143.10676 231.496229 180.987961c-143.10676 130.479693-387.230056 92.598492-370.393967 105.225559 206.242095 189.406006 1119.599946 231.496229 1128.01799-643.98042C1179.353331 249.539887 1263.533778 123.269217 1263.533778 123.269217s-130.479693 37.881201-138.897738 33.672179C1225.652577 98.015083 1229.8616 18.043658 1229.8616 18.043658"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.facebook.com/wayne.chen.dev" rel="me noopener" class="iconfont"
+      title="facebook"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="33" height="33">
+  <path d="M965.7344 2.7648c14.848 0 28.2624 5.5296 40.2432 16.6912C1017.9584 30.5152 1024 43.52 1024 58.2656l0 910.2336c0 14.848-6.0416 27.7504-18.0224 38.8096C993.8944 1018.4704 980.48 1024 965.7344 1024L704.9216 1024 704.9216 629.9648l133.2224 0 19.456-155.4432-152.576 0L705.024 373.0432c0-50.688 25.9072-76.0832 77.7216-76.0832l80.4864 0L863.232 163.5328c-27.7504-5.4272-67.4816-8.192-119.296-8.192-59.1872 0-106.8032 18.0224-142.9504 54.0672C564.736 245.5552 546.7136 296.0384 546.7136 360.7552l0 113.7664L413.4912 474.5216l0 155.4432 133.2224 0L546.7136 1024 55.5008 1024c-14.848 0-27.7504-5.5296-38.8096-16.6912C5.5296 996.2496 0 983.3472 0 968.4992L0 58.2656C0 43.52 5.5296 30.5152 16.6912 19.456c11.0592-11.0592 24.064-16.6912 38.8096-16.6912L965.7344 2.7648z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/hxchen" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+
+
+<a href="https://www.3afun.com/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
   </a>
-  </div>
+   
+</div>
 
 <div class="copyright">
   <span class="power-by">
@@ -1136,20 +807,52 @@ true</pre></td></tr></table>
       2012 -
     2019
     <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span><span class="author">Copyright 3AFun</span></span>
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        Copyright 3AFun
+        
+      </span></span>
+
+  
+  
+
+  
 </div>
 
     </footer>
 
     <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
     </div>
   </div>
   
 <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
-<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
   <script type="text/javascript">
     window.MathJax = {
       showProcessingMessages: false,
@@ -1162,11 +865,25 @@ true</pre></td></tr></table>
 
 
 
+
+
+
+
   
     <script type="text/javascript" src="/js/load-photoswipe.js"></script>
     <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
     <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
   
+
+
+
+
+
+
+
+
+
+
 
 
 

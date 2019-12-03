@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Javascript on 我不是帅才</title>
+    <title>JavaScript on 我不是帅才</title>
     <link>https://www.3afun.com/tags/javascript/</link>
-    <description>Recent content in Javascript on 我不是帅才</description>
+    <description>Recent content in JavaScript on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
     <lastBuildDate>Mon, 21 Oct 2013 16:16:00 +0800</lastBuildDate>
@@ -17,7 +17,7 @@
       <pubDate>Mon, 21 Oct 2013 16:16:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2013/javascript-%E4%B8%ADcontains%E6%96%B9%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 /** * 对大小写敏感的Contains方法 * @param substring * @returns */ String.prototype.contains = function(substring) { return this.indexOf(substring) != -1 ? true:false; }; 使用方法：a.contains(b)&amp;mdash</description>
+      <description>1 2 3 4 5 6 7 8 9 /** * 对大小写敏感的Contains方法 * @param substring * @returns */ String.prototype.contains = function(substring) { return this.indexOf(substring) != -1 ? true:false; }; 使用方法：a.contains(b)&amp;mdash;</description>
     </item>
     
   </channel>

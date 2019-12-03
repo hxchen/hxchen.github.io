@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 我不是帅才</title>
@@ -6,10 +6,46 @@
     <description>Recent content in Categories on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Wed, 01 Aug 2018 11:30:40 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 02 Dec 2019 17:24:46 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>机器学习</title>
+      <link>https://www.3afun.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Mon, 02 Dec 2019 17:24:46 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web前端</title>
+      <link>https://www.3afun.com/categories/web%E5%89%8D%E7%AB%AF/</link>
+      <pubDate>Tue, 20 Aug 2019 18:02:47 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/web%E5%89%8D%E7%AB%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MySQL</title>
+      <link>https://www.3afun.com/categories/mysql/</link>
+      <pubDate>Thu, 10 Jan 2019 14:26:58 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SSL</title>
+      <link>https://www.3afun.com/categories/ssl/</link>
+      <pubDate>Mon, 10 Sep 2018 18:12:26 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/ssl/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Android</title>
@@ -17,33 +53,6 @@
       <pubDate>Wed, 01 Aug 2018 11:30:40 +0800</pubDate>
       
       <guid>https://www.3afun.com/categories/android/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bootstrap</title>
-      <link>https://www.3afun.com/categories/bootstrap/</link>
-      <pubDate>Thu, 17 Oct 2013 15:25:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/categories/bootstrap/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ethereum</title>
-      <link>https://www.3afun.com/categories/ethereum/</link>
-      <pubDate>Wed, 25 Apr 2018 22:15:37 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/categories/ethereum/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Git</title>
-      <link>https://www.3afun.com/categories/git/</link>
-      <pubDate>Tue, 24 Apr 2018 22:23:11 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/categories/git/</guid>
       <description></description>
     </item>
     
@@ -57,119 +66,11 @@
     </item>
     
     <item>
-      <title>Idea</title>
-      <link>https://www.3afun.com/categories/idea/</link>
-      <pubDate>Wed, 25 Apr 2018 22:15:37 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/categories/idea/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Intellij</title>
-      <link>https://www.3afun.com/categories/intellij/</link>
-      <pubDate>Mon, 08 Aug 2016 10:47:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/categories/intellij/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ios</title>
+      <title>IOS</title>
       <link>https://www.3afun.com/categories/ios/</link>
       <pubDate>Tue, 24 Jul 2018 18:56:43 +0800</pubDate>
       
       <guid>https://www.3afun.com/categories/ios/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java</title>
-      <link>https://www.3afun.com/categories/java/</link>
-      <pubDate>Thu, 22 Jan 2015 17:31:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/categories/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Javascript</title>
-      <link>https://www.3afun.com/categories/javascript/</link>
-      <pubDate>Mon, 21 Oct 2013 16:16:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/categories/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://www.3afun.com/categories/linux/</link>
-      <pubDate>Tue, 27 May 2014 10:20:27 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/categories/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mysql</title>
-      <link>https://www.3afun.com/categories/mysql/</link>
-      <pubDate>Thu, 10 Jan 2019 14:26:58 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/categories/mysql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nginx</title>
-      <link>https://www.3afun.com/categories/nginx/</link>
-      <pubDate>Fri, 18 Dec 2015 13:50:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/categories/nginx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nodejs</title>
-      <link>https://www.3afun.com/categories/nodejs/</link>
-      <pubDate>Fri, 06 Feb 2015 15:25:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/categories/nodejs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Php</title>
-      <link>https://www.3afun.com/categories/php/</link>
-      <pubDate>Thu, 10 Aug 2017 11:32:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/categories/php/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://www.3afun.com/categories/python/</link>
-      <pubDate>Wed, 16 Aug 2017 15:32:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/categories/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Spring Mvc</title>
-      <link>https://www.3afun.com/categories/spring-mvc/</link>
-      <pubDate>Fri, 04 Apr 2014 14:46:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/categories/spring-mvc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ssl</title>
-      <link>https://www.3afun.com/categories/ssl/</link>
-      <pubDate>Mon, 10 Sep 2018 18:12:26 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/categories/ssl/</guid>
       <description></description>
     </item>
     
@@ -183,11 +84,110 @@
     </item>
     
     <item>
-      <title>Tomcat</title>
-      <link>https://www.3afun.com/categories/tomcat/</link>
-      <pubDate>Thu, 07 Nov 2013 14:25:00 +0800</pubDate>
+      <title>Ethereum</title>
+      <link>https://www.3afun.com/categories/ethereum/</link>
+      <pubDate>Wed, 25 Apr 2018 22:15:37 +0800</pubDate>
       
-      <guid>https://www.3afun.com/categories/tomcat/</guid>
+      <guid>https://www.3afun.com/categories/ethereum/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IDEA</title>
+      <link>https://www.3afun.com/categories/idea/</link>
+      <pubDate>Wed, 25 Apr 2018 22:15:37 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/idea/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>区块链</title>
+      <link>https://www.3afun.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/</link>
+      <pubDate>Wed, 25 Apr 2018 17:34:28 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://www.3afun.com/categories/git/</link>
+      <pubDate>Tue, 24 Apr 2018 22:23:11 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>index</title>
+      <link>https://www.3afun.com/categories/index/</link>
+      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/index/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shortcodes</title>
+      <link>https://www.3afun.com/categories/shortcodes/</link>
+      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/shortcodes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>服务器</title>
+      <link>https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Mon, 20 Nov 2017 17:27:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>杂</title>
+      <link>https://www.3afun.com/categories/%E6%9D%82/</link>
+      <pubDate>Sat, 18 Nov 2017 16:57:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/%E6%9D%82/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>English</title>
+      <link>https://www.3afun.com/categories/english/</link>
+      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/english/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>https://www.3afun.com/categories/test/</link>
+      <pubDate>Wed, 30 Aug 2017 15:43:48 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://www.3afun.com/categories/python/</link>
+      <pubDate>Wed, 16 Aug 2017 15:32:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PHP</title>
+      <link>https://www.3afun.com/categories/php/</link>
+      <pubDate>Thu, 10 Aug 2017 11:32:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/php/</guid>
       <description></description>
     </item>
     

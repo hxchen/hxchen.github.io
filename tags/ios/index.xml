@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ios on 我不是帅才</title>
+    <title>IOS on 我不是帅才</title>
     <link>https://www.3afun.com/tags/ios/</link>
-    <description>Recent content in Ios on 我不是帅才</description>
+    <description>Recent content in IOS on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
     <lastBuildDate>Tue, 24 Jul 2018 18:56:43 +0800</lastBuildDate>
@@ -44,7 +44,7 @@
       <pubDate>Mon, 25 Jun 2018 17:40:07 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2018/swift%E4%B9%8Bframework%E5%BC%80%E5%8F%91-%E4%BB%8Eframework%E4%B8%AD%E7%BB%99uibutton%E6%8C%89%E9%92%AE%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87/</guid>
-      <description>如果是正常App加载图片资源,我们会如下方法加载 1 2 3 4 let button = UIButton() let logoImage:UIImageView! logoImage = UIImageView(image: UIImage(named: &amp;#34;image_name&amp;#34;)) button.setImage(logoImage, for: .normal) 但是当我们这个资源是要打包成Framework,给第三方</description>
+      <description>如果是正常App加载图片资源,我们会如下方法加载 1 2 3 4 5 let button = UIButton() let logoImage:UIImageView! logoImage = UIImageView(image: UIImage(named: &amp;#34;image_name&amp;#34;)) button.setImage(logoImage, for: .normal) 但是当我们这个资源是要打包成Framework,给第三</description>
     </item>
     
     <item>

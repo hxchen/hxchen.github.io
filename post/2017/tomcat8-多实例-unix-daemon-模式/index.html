@@ -2,9 +2,9 @@
 <html lang="en" itemscope itemtype="http://schema.org/WebPage">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Tomcat8 多实例 Unix daemon 模式  - 我不是帅才</title>
-  <link rel="alternate" hreflang="en" href="https://www.3afun.com/" />
+  
 
 <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -14,8 +14,6 @@
 
 
 <meta name="applicable-device" content="pc,mobile">
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 <meta name="theme-color" content="#f8f5ec" />
 <meta name="msapplication-navbutton-color" content="#f8f5ec">
@@ -34,10 +32,12 @@
 
 
 
-<meta name="generator" content="Hugo 0.38.2" />
+<meta name="generator" content="Hugo 0.60.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2017/tomcat8-%E5%A4%9A%E5%AE%9E%E4%BE%8B-unix-daemon-%E6%A8%A1%E5%BC%8F/" />
+
+
 
 
 
@@ -52,7 +52,9 @@
 
 
 
-<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+
+<link rel="stylesheet" href="/sass/jane.min.0995afa14b62cd93e93cfc066b646c4c17a3eddca0e9d52a1d9dcf5d90aaacd3.css" integrity="sha256-CZWvoUtizZPpPPwGa2RsTBej7dyg6dUqHZ3PXZCqrNM=" media="screen" crossorigin="anonymous">
+
 
 
 
@@ -61,35 +63,17 @@
 <meta property="og:description" content="一、事前准备 Tomcat8（版本8.5.20） 下载地址 JDK8（版本号1.8.0_144） 下载地址 二、配置部署 目录说明 jdk 安装目录 /usr/java/jdk1.8.0_144 tomcat 安装目录" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.3afun.com/post/2017/tomcat8-%E5%A4%9A%E5%AE%9E%E4%BE%8B-unix-daemon-%E6%A8%A1%E5%BC%8F/" />
-
-
-
-<meta property="article:published_time" content="2017-09-11T18:47:00&#43;08:00"/>
-
-<meta property="article:modified_time" content="2017-09-11T18:47:00&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2017-09-11T18:47:00+08:00" />
+<meta property="article:modified_time" content="2017-09-11T18:47:00+08:00" />
 <meta itemprop="name" content="Tomcat8 多实例 Unix daemon 模式 ">
 <meta itemprop="description" content="一、事前准备 Tomcat8（版本8.5.20） 下载地址 JDK8（版本号1.8.0_144） 下载地址 二、配置部署 目录说明 jdk 安装目录 /usr/java/jdk1.8.0_144 tomcat 安装目录">
-
-
 <meta itemprop="datePublished" content="2017-09-11T18:47:00&#43;08:00" />
 <meta itemprop="dateModified" content="2017-09-11T18:47:00&#43;08:00" />
-<meta itemprop="wordCount" content="411">
+<meta itemprop="wordCount" content="372">
 
 
 
-<meta itemprop="keywords" content="服务器,Tomcat," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="服务器,Tomcat," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Tomcat8 多实例 Unix daemon 模式 "/>
 <meta name="twitter:description" content="一、事前准备 Tomcat8（版本8.5.20） 下载地址 JDK8（版本号1.8.0_144） 下载地址 二、配置部署 目录说明 jdk 安装目录 /usr/java/jdk1.8.0_144 tomcat 安装目录"/>
 
@@ -103,12 +87,16 @@
 <![endif]-->
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-117605000-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-117605000-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -162,6 +150,8 @@ ga('send', 'pageview');
           
         
       </li>
+    
+
     
   </ul>
 </nav>
@@ -229,6 +219,8 @@ ga('send', 'pageview');
 
   
 
+  
+
   <header id="header" class="header container">
     <div class="logo-wrapper">
   <a href="/" class="logo">
@@ -241,7 +233,8 @@ ga('send', 'pageview');
 <nav class="site-navbar">
   <ul id="menu" class="menu">
     
-      <li class="menu-item">
+    
+        <li class="menu-item">
         
           
           
@@ -252,7 +245,7 @@ ga('send', 'pageview');
 
       </li>
     
-      <li class="menu-item">
+        <li class="menu-item">
         
           
           
@@ -263,7 +256,7 @@ ga('send', 'pageview');
 
       </li>
     
-      <li class="menu-item">
+        <li class="menu-item">
         
           
           
@@ -274,7 +267,7 @@ ga('send', 'pageview');
 
       </li>
     
-      <li class="menu-item">
+        <li class="menu-item">
         
           
           
@@ -285,7 +278,7 @@ ga('send', 'pageview');
 
       </li>
     
-      <li class="menu-item">
+        <li class="menu-item">
         
           
           
@@ -296,6 +289,10 @@ ga('send', 'pageview');
 
       </li>
     
+
+    
+    
+
     
   </ul>
 </nav>
@@ -312,13 +309,21 @@ ga('send', 'pageview');
       <h1 class="post-title">Tomcat8 多实例 Unix daemon 模式 </h1>
       
       <div class="post-meta">
-        <span class="post-time"> 2017-09-11 </span>
+        <time datetime="2017-09-11" class="post-time">
+          2017-09-11
+        </time>
         <div class="post-category">
             <a href="https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
             
           </div>
-        <span class="more-meta"> 约 411 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span class="more-meta"> 约 372 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
+
+        
+        
+
+        
+        
       </div>
     </header>
 
@@ -328,178 +333,90 @@ ga('send', 'pageview');
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#一-事前准备">一、事前准备</a></li>
-<li><a href="#二-配置部署">二、配置部署</a>
-<ul>
-<li>
-<ul>
-<li><a href="#目录说明">目录说明</a></li>
-<li><a href="#tomcat安装">tomcat安装</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#三-多实例模式">三 、多实例模式</a></li>
-</ul>
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#heading2">目录说明</a></li>
+        <li><a href="#tomcat">tomcat安装</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
 
     
     <div class="post-content">
-      
-
-<h1 id="一-事前准备">一、事前准备</h1>
-
+      <h1 id="heading">一、事前准备</h1>
 <p>Tomcat8（版本8.5.20） <a href="http://apache.spinellicreations.com/tomcat/tomcat-8/v8.5.20/bin/apache-tomcat-8.5.20.tar.gz">下载地址</a></p>
-
 <p>JDK8（版本号1.8.0_144） <a href="http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.tar.gz">下载地址</a></p>
-
-<h1 id="二-配置部署">二、配置部署</h1>
-
-<h3 id="目录说明">目录说明</h3>
-
+<h1 id="heading1">二、配置部署</h1>
+<h3 id="heading2">目录说明</h3>
 <ul>
 <li>jdk 安装目录</li>
 </ul>
-
 <p><em>/usr/java/jdk1.8.0_144</em></p>
-
 <ul>
 <li>tomcat 安装目录</li>
 </ul>
-
 <p><em>/usr/tomcat/apache-tomcat-8.5.20</em></p>
-
 <ul>
 <li>项目代码目录</li>
 </ul>
-
 <p><em>data/web/forum</em></p>
-
 <ul>
 <li>tomcat实例目录</li>
 </ul>
-
 <p><em>/data/web/tomcat8_forum8082</em></p>
-
-<h3 id="tomcat安装">tomcat安装</h3>
-
+<h3 id="tomcat">tomcat安装</h3>
 <p>1.生成jsvc</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">cd /usr/tomcat/apache-tomcat-8.5.20/bin
+<pre><code>cd /usr/tomcat/apache-tomcat-8.5.20/bin
 tar xvfz commons-daemon-native.tar.gz
 cd commons-daemon-1.0.x-native-src/unix
 ./configure --with-java=/usr/java/jdk1.8.0_144
 make
 cp jsvc ../..
-cd ../..</pre></td></tr></table>
-</div>
-</div>
-<p>2.复制tomcat 安装目录的conf 配置文件到实例目录conf</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">cp /usr/tomcat/apache-tomcat-8.5.20/conf /data/web/tomcat8_forum8082</pre></td></tr></table>
-</div>
-</div>
-<p>3.修改相应端口号，此处使用8082.</p>
-
+cd ../..
+</code></pre><p>2.复制tomcat 安装目录的conf 配置文件到实例目录conf</p>
+<pre><code>cp /usr/tomcat/apache-tomcat-8.5.20/conf /data/web/tomcat8_forum8082
+</code></pre><p>3.修改相应端口号，此处使用8082.</p>
 <p>4.在/data/web/tomcat8_forum8082目录下新建启动脚本</p>
-
 <p><em>startup.sh</em></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma"><span class="cp">#!/bin/bash
-</span><span class="cp"></span>
-<span class="nv">JRE_HOME</span><span class="o">=</span><span class="s2">&#34;/usr/java/jdk1.8.0_144&#34;</span>
-<span class="nv">JAVA_HOME</span><span class="o">=</span><span class="s2">&#34;/usr/java/jdk1.8.0_144&#34;</span>
-<span class="nv">SERVER_PATH</span><span class="o">=</span><span class="s2">&#34;/data/web&#34;</span>
-<span class="nv">LOGS_PATH</span><span class="o">=</span><span class="s2">&#34;/data/web/logs/forum&#34;</span>
-<span class="nv">CATALINA_HOME</span><span class="o">=</span><span class="s2">&#34;/usr/tomcat/apache-tomcat-8.5.20&#34;</span>
-<span class="nv">CATALINA_BASE</span><span class="o">=</span><span class="s2">&#34;/data/web/tomcat8_forum8082&#34;</span>
-<span class="nv">CATALINA_PID</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$SERVER_PATH</span><span class="s2">/tomcat8_forum8082/pid&#34;</span>
-<span class="nv">JAVA_OPTS</span><span class="o">=</span><span class="s2">&#34;-Xms512m -Xmx512m &#34;</span>
-<span class="c1">#TOMCAT_USER=&#34;app100681811&#34;
-</span><span class="c1"></span>
-<span class="c1">#export JAVA_HOME JRE_HOME LOGS_PATH CATALINA_HOME CATALINA_BASE
-</span><span class="c1"></span><span class="nb">export</span> JAVA_HOME JRE_HOME LOGS_PATH <span class="c1">#CATALINA_HOME CATALINA_BASE CATALINA_PID
-</span><span class="c1"></span><span class="nb">echo</span> <span class="s2">$&#34;tomcat8_forum8082 start&#34;</span>
-<span class="c1">#/usr/tomcat/apache-tomcat-8.5.20/bin/catalina.sh start
-</span><span class="c1"></span><span class="nb">export</span> <span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
+<pre><code>#!/bin/bash
 
-<span class="nb">cd</span> <span class="nv">$CATALINA_HOME</span>
-./bin/jsvc <span class="se">\
-</span><span class="se"></span>    -classpath <span class="nv">$CATALINA_HOME</span>/bin/bootstrap.jar:<span class="nv">$CATALINA_HOME</span>/bin/tomcat-juli.jar <span class="se">\
-</span><span class="se"></span>    -outfile <span class="nv">$CATALINA_BASE</span>/logs/catalina.out <span class="se">\
-</span><span class="se"></span>    -errfile <span class="nv">$CATALINA_BASE</span>/logs/catalina.err <span class="se">\
-</span><span class="se"></span>    -pidfile <span class="s2">&#34;</span><span class="nv">$CATALINA_PID</span><span class="s2">&#34;</span> <span class="se">\
-</span><span class="se"></span>    -Dcatalina.home<span class="o">=</span><span class="nv">$CATALINA_HOME</span> <span class="se">\
-</span><span class="se"></span>    -Dcatalina.base<span class="o">=</span><span class="nv">$CATALINA_BASE</span> <span class="se">\
-</span><span class="se"></span>    -Djava.util.logging.manager<span class="o">=</span>org.apache.juli.ClassLoaderLogManager <span class="se">\
-</span><span class="se"></span>    -Djava.util.logging.config.file<span class="o">=</span><span class="nv">$CATALINA_BASE</span>/conf/logging.properties <span class="se">\
-</span><span class="se"></span>    org.apache.catalina.startup.Bootstrap</pre></td></tr></table>
-</div>
-</div>
-<p>关闭脚本</p>
+JRE_HOME=&quot;/usr/java/jdk1.8.0_144&quot;
+JAVA_HOME=&quot;/usr/java/jdk1.8.0_144&quot;
+SERVER_PATH=&quot;/data/web&quot;
+LOGS_PATH=&quot;/data/web/logs/forum&quot;
+CATALINA_HOME=&quot;/usr/tomcat/apache-tomcat-8.5.20&quot;
+CATALINA_BASE=&quot;/data/web/tomcat8_forum8082&quot;
+CATALINA_PID=&quot;$SERVER_PATH/tomcat8_forum8082/pid&quot;
+JAVA_OPTS=&quot;-Xms512m -Xmx512m &quot;
+#TOMCAT_USER=&quot;app100681811&quot;
 
+#export JAVA_HOME JRE_HOME LOGS_PATH CATALINA_HOME CATALINA_BASE
+export JAVA_HOME JRE_HOME LOGS_PATH #CATALINA_HOME CATALINA_BASE CATALINA_PID
+echo $&quot;tomcat8_forum8082 start&quot;
+#/usr/tomcat/apache-tomcat-8.5.20/bin/catalina.sh start
+export LANG=en_US.UTF-8
+
+cd $CATALINA_HOME
+./bin/jsvc \
+    -classpath $CATALINA_HOME/bin/bootstrap.jar:$CATALINA_HOME/bin/tomcat-juli.jar \
+    -outfile $CATALINA_BASE/logs/catalina.out \
+    -errfile $CATALINA_BASE/logs/catalina.err \
+    -pidfile &quot;$CATALINA_PID&quot; \
+    -Dcatalina.home=$CATALINA_HOME \
+    -Dcatalina.base=$CATALINA_BASE \
+    -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager \
+    -Djava.util.logging.config.file=$CATALINA_BASE/conf/logging.properties \
+    org.apache.catalina.startup.Bootstrap
+</code></pre><p>关闭脚本</p>
 <p><em>shutdown.sh</em></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">echo $&#34;tomcat8_forum8082 stop&#34;
-ps aux | grep jsvc |grep &#39;/web/tomcat8_forum8082&#39;| grep -v &#39;grep&#39; | awk -F &#39; &#39; &#39;{print $2}&#39; | xargs kill -s 2</pre></td></tr></table>
-</div>
-</div>
-<p>5.执行相应脚本，即可完成启动关闭。</p>
-
-<h1 id="三-多实例模式">三 、多实例模式</h1>
-
+<pre><code>echo $&quot;tomcat8_forum8082 stop&quot;
+ps aux | grep jsvc |grep '/web/tomcat8_forum8082'| grep -v 'grep' | awk -F ' ' '{print $2}' | xargs kill -s 2
+</code></pre><p>5.执行相应脚本，即可完成启动关闭。</p>
+<h1 id="-">三 、多实例模式</h1>
 <p>多实例模式，只需要复制tomcat实例目录，修改相应配置文件为B项目地址，端口号等信息即可。</p>
 
     </div>
@@ -513,7 +430,10 @@ ps aux | grep jsvc |grep &#39;/web/tomcat8_forum8082&#39;| grep -v &#39;grep&#39
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2017-09-11</span>
+    <span class="item-content">
+      2017-09-11
+      
+    </span>
   </p>
   
   <p class="copyright-item">
@@ -521,6 +441,7 @@ ps aux | grep jsvc |grep &#39;/web/tomcat8_forum8082&#39;| grep -v &#39;grep&#39
     <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
   </p>
 </div>
+
 
     
     
@@ -536,21 +457,42 @@ ps aux | grep jsvc |grep &#39;/web/tomcat8_forum8082&#39;| grep -v &#39;grep&#39
       <nav class="post-nav">
         
           <a class="prev" href="/post/2017/sass-%E5%AE%89%E8%A3%85-%E5%8F%8A%E5%85%B6%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">
-            <i class="iconfont icon-left"></i>
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
             <span class="prev-text nav-default">Sass 安装 及其常见错误的解决办法</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
-          <a class="next" href="/post/2017/react%E5%85%A5%E9%97%A8/">
-            <span class="next-text nav-default">React入门 </span>
+          <a class="next" href="/post/english-preview/">
+            <span class="next-text nav-default">English Creating a New Theme</span>
             <span class="prev-text nav-mobile">下一篇</span>
-            <i class="iconfont icon-right"></i>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
           </a>
       </nav>
     </footer>
   </article>
 
   
+  
+
+  
+  
+
   
 
   
@@ -582,28 +524,73 @@ ps aux | grep jsvc |grep &#39;/web/tomcat8_forum8082&#39;| grep -v &#39;grep&#39
 
   
 
+    
+
+  
+
         </div>
       </div>
     </main>
 
     <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:helloworld.vip@gmail.com" rel="me noopener" class="iconfont icon-email"
-        title="email" target="_blank">
-      </a>
-      <a href="https://twitter.com/helloworld_vip" rel="me noopener" class="iconfont icon-twitter"
-        title="twitter" target="_blank">
-      </a>
-      <a href="https://www.facebook.com/wayne.chen.dev" rel="me noopener" class="iconfont icon-facebook"
-        title="facebook" target="_blank">
-      </a>
-      <a href="https://github.com/hxchen" rel="me noopener" class="iconfont icon-github"
-        title="github" target="_blank">
-      </a>
-  <a href="https://www.3afun.com/index.xml" rel="noopener alternate" type="application/rss" class="iconfont icon-rss"
-    title="rss" target="_blank">
+      <div class="icon-links">
+  
+  
+    <a href="mailto:helloworld.vip@gmail.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://twitter.com/helloworld_vip" rel="me noopener" class="iconfont"
+      title="twitter"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1264 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M1229.8616 18.043658c0 0-117.852626 63.135335-164.151872 67.344358-105.225559-164.151872-505.082682-92.598492-437.738325 223.078185C278.622548 312.675223 89.216542 47.506814 89.216542 47.506814s-117.852626 189.406006 75.762402 345.139833C127.097743 396.85567 55.544363 371.601535 55.544363 371.601535S26.081207 535.753407 253.368414 615.724832c-21.045112 29.463156-113.643603 8.418045-113.643603 8.418045s25.254134 143.10676 231.496229 180.987961c-143.10676 130.479693-387.230056 92.598492-370.393967 105.225559 206.242095 189.406006 1119.599946 231.496229 1128.01799-643.98042C1179.353331 249.539887 1263.533778 123.269217 1263.533778 123.269217s-130.479693 37.881201-138.897738 33.672179C1225.652577 98.015083 1229.8616 18.043658 1229.8616 18.043658"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.facebook.com/wayne.chen.dev" rel="me noopener" class="iconfont"
+      title="facebook"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="33" height="33">
+  <path d="M965.7344 2.7648c14.848 0 28.2624 5.5296 40.2432 16.6912C1017.9584 30.5152 1024 43.52 1024 58.2656l0 910.2336c0 14.848-6.0416 27.7504-18.0224 38.8096C993.8944 1018.4704 980.48 1024 965.7344 1024L704.9216 1024 704.9216 629.9648l133.2224 0 19.456-155.4432-152.576 0L705.024 373.0432c0-50.688 25.9072-76.0832 77.7216-76.0832l80.4864 0L863.232 163.5328c-27.7504-5.4272-67.4816-8.192-119.296-8.192-59.1872 0-106.8032 18.0224-142.9504 54.0672C564.736 245.5552 546.7136 296.0384 546.7136 360.7552l0 113.7664L413.4912 474.5216l0 155.4432 133.2224 0L546.7136 1024 55.5008 1024c-14.848 0-27.7504-5.5296-38.8096-16.6912C5.5296 996.2496 0 983.3472 0 968.4992L0 58.2656C0 43.52 5.5296 30.5152 16.6912 19.456c11.0592-11.0592 24.064-16.6912 38.8096-16.6912L965.7344 2.7648z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/hxchen" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+
+
+<a href="https://www.3afun.com/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
   </a>
-  </div>
+   
+</div>
 
 <div class="copyright">
   <span class="power-by">
@@ -620,20 +607,52 @@ ps aux | grep jsvc |grep &#39;/web/tomcat8_forum8082&#39;| grep -v &#39;grep&#39
       2012 -
     2019
     <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span><span class="author">Copyright 3AFun</span></span>
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        Copyright 3AFun
+        
+      </span></span>
+
+  
+  
+
+  
 </div>
 
     </footer>
 
     <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
     </div>
   </div>
   
 <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
-<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
   <script type="text/javascript">
     window.MathJax = {
       showProcessingMessages: false,
@@ -646,11 +665,25 @@ ps aux | grep jsvc |grep &#39;/web/tomcat8_forum8082&#39;| grep -v &#39;grep&#39
 
 
 
+
+
+
+
   
     <script type="text/javascript" src="/js/load-photoswipe.js"></script>
     <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
     <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
   
+
+
+
+
+
+
+
+
+
+
 
 
 

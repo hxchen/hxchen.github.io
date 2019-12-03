@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 我不是帅才</title>
@@ -6,10 +6,46 @@
     <description>Recent content in Tags on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Wed, 01 Aug 2018 11:30:40 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 02 Dec 2019 17:24:46 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>机器学习</title>
+      <link>https://www.3afun.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Mon, 02 Dec 2019 17:24:46 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HTML</title>
+      <link>https://www.3afun.com/tags/html/</link>
+      <pubDate>Tue, 20 Aug 2019 18:02:47 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MySQL</title>
+      <link>https://www.3afun.com/tags/mysql/</link>
+      <pubDate>Thu, 10 Jan 2019 14:26:58 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SSL</title>
+      <link>https://www.3afun.com/tags/ssl/</link>
+      <pubDate>Mon, 10 Sep 2018 18:12:26 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/ssl/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Android</title>
@@ -17,60 +53,6 @@
       <pubDate>Wed, 01 Aug 2018 11:30:40 +0800</pubDate>
       
       <guid>https://www.3afun.com/tags/android/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bootstrap</title>
-      <link>https://www.3afun.com/tags/bootstrap/</link>
-      <pubDate>Thu, 17 Oct 2013 15:25:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/bootstrap/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Charles</title>
-      <link>https://www.3afun.com/tags/charles/</link>
-      <pubDate>Sat, 18 Nov 2017 16:57:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/charles/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cocosbuilder</title>
-      <link>https://www.3afun.com/tags/cocosbuilder/</link>
-      <pubDate>Fri, 02 Dec 2016 15:52:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/cocosbuilder/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Crontab</title>
-      <link>https://www.3afun.com/tags/crontab/</link>
-      <pubDate>Mon, 20 Nov 2017 17:27:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/crontab/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ethereum</title>
-      <link>https://www.3afun.com/tags/ethereum/</link>
-      <pubDate>Wed, 25 Apr 2018 17:34:28 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/ethereum/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Git</title>
-      <link>https://www.3afun.com/tags/git/</link>
-      <pubDate>Tue, 24 Apr 2018 22:23:11 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/git/</guid>
       <description></description>
     </item>
     
@@ -84,43 +66,7 @@
     </item>
     
     <item>
-      <title>Html</title>
-      <link>https://www.3afun.com/tags/html/</link>
-      <pubDate>Tue, 20 Aug 2019 18:02:47 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/html/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Http</title>
-      <link>https://www.3afun.com/tags/http/</link>
-      <pubDate>Fri, 18 Dec 2015 13:50:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/http/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Idea</title>
-      <link>https://www.3afun.com/tags/idea/</link>
-      <pubDate>Wed, 25 Apr 2018 22:15:37 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/idea/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Intellij</title>
-      <link>https://www.3afun.com/tags/intellij/</link>
-      <pubDate>Mon, 08 Aug 2016 10:47:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/intellij/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ios</title>
+      <title>IOS</title>
       <link>https://www.3afun.com/tags/ios/</link>
       <pubDate>Tue, 24 Jul 2018 18:56:43 +0800</pubDate>
       
@@ -129,65 +75,119 @@
     </item>
     
     <item>
-      <title>Jade</title>
-      <link>https://www.3afun.com/tags/jade/</link>
-      <pubDate>Mon, 10 Nov 2014 15:59:27 +0800</pubDate>
+      <title>Swift</title>
+      <link>https://www.3afun.com/tags/swift/</link>
+      <pubDate>Tue, 24 Jul 2018 18:56:43 +0800</pubDate>
       
-      <guid>https://www.3afun.com/tags/jade/</guid>
+      <guid>https://www.3afun.com/tags/swift/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Java</title>
-      <link>https://www.3afun.com/tags/java/</link>
-      <pubDate>Thu, 22 Jan 2015 17:31:00 +0800</pubDate>
+      <title>IDEA</title>
+      <link>https://www.3afun.com/tags/idea/</link>
+      <pubDate>Wed, 25 Apr 2018 22:15:37 +0800</pubDate>
       
-      <guid>https://www.3afun.com/tags/java/</guid>
+      <guid>https://www.3afun.com/tags/idea/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Javascript</title>
-      <link>https://www.3afun.com/tags/javascript/</link>
-      <pubDate>Mon, 21 Oct 2013 16:16:00 +0800</pubDate>
+      <title>Ethereum</title>
+      <link>https://www.3afun.com/tags/ethereum/</link>
+      <pubDate>Wed, 25 Apr 2018 17:34:28 +0800</pubDate>
       
-      <guid>https://www.3afun.com/tags/javascript/</guid>
+      <guid>https://www.3afun.com/tags/ethereum/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Linux</title>
-      <link>https://www.3afun.com/tags/linux/</link>
-      <pubDate>Tue, 27 May 2014 10:20:27 +0800</pubDate>
+      <title>区块链</title>
+      <link>https://www.3afun.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/</link>
+      <pubDate>Wed, 25 Apr 2018 17:34:28 +0800</pubDate>
       
-      <guid>https://www.3afun.com/tags/linux/</guid>
+      <guid>https://www.3afun.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Lua</title>
-      <link>https://www.3afun.com/tags/lua/</link>
-      <pubDate>Fri, 02 Dec 2016 15:52:00 +0800</pubDate>
+      <title>Git</title>
+      <link>https://www.3afun.com/tags/git/</link>
+      <pubDate>Tue, 24 Apr 2018 22:23:11 +0800</pubDate>
       
-      <guid>https://www.3afun.com/tags/lua/</guid>
+      <guid>https://www.3afun.com/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Lucene</title>
-      <link>https://www.3afun.com/tags/lucene/</link>
-      <pubDate>Wed, 27 Mar 2013 23:19:00 +0800</pubDate>
+      <title>preview</title>
+      <link>https://www.3afun.com/tags/preview/</link>
+      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
       
-      <guid>https://www.3afun.com/tags/lucene/</guid>
+      <guid>https://www.3afun.com/tags/preview/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Mysql</title>
-      <link>https://www.3afun.com/tags/mysql/</link>
-      <pubDate>Thu, 10 Jan 2019 14:26:58 +0800</pubDate>
+      <title>shortcodes</title>
+      <link>https://www.3afun.com/tags/shortcodes/</link>
+      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
       
-      <guid>https://www.3afun.com/tags/mysql/</guid>
+      <guid>https://www.3afun.com/tags/shortcodes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tag-6</title>
+      <link>https://www.3afun.com/tags/tag-6/</link>
+      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/tag-6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web前端</title>
+      <link>https://www.3afun.com/tags/web%E5%89%8D%E7%AB%AF/</link>
+      <pubDate>Fri, 15 Dec 2017 13:42:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/web%E5%89%8D%E7%AB%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>crontab</title>
+      <link>https://www.3afun.com/tags/crontab/</link>
+      <pubDate>Mon, 20 Nov 2017 17:27:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/crontab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>服务器</title>
+      <link>https://www.3afun.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Mon, 20 Nov 2017 17:27:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Charles</title>
+      <link>https://www.3afun.com/tags/charles/</link>
+      <pubDate>Sat, 18 Nov 2017 16:57:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/charles/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Saas</title>
+      <link>https://www.3afun.com/tags/saas/</link>
+      <pubDate>Wed, 27 Sep 2017 10:51:00 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/saas/</guid>
       <description></description>
     </item>
     
