@@ -135,14 +135,14 @@
   </url>
   
   <url>
-    <loc>https://www.3afun.com/categories/gradle/</loc>
+    <loc>https://www.3afun.com/tags/gradle/</loc>
     <lastmod>2018-04-25T23:42:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://www.3afun.com/tags/gradle/</loc>
+    <loc>https://www.3afun.com/categories/gradle/</loc>
     <lastmod>2018-04-25T23:42:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -170,14 +170,14 @@
   </url>
   
   <url>
-    <loc>https://www.3afun.com/tags/swift/</loc>
+    <loc>https://www.3afun.com/categories/swift/</loc>
     <lastmod>2018-07-24T18:56:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://www.3afun.com/categories/swift/</loc>
+    <loc>https://www.3afun.com/tags/swift/</loc>
     <lastmod>2018-07-24T18:56:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -268,14 +268,14 @@
   </url>
   
   <url>
-    <loc>https://www.3afun.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/</loc>
+    <loc>https://www.3afun.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/</loc>
     <lastmod>2018-04-25T23:42:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://www.3afun.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/</loc>
+    <loc>https://www.3afun.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/</loc>
     <lastmod>2018-04-25T23:42:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -366,55 +366,6 @@
   </url>
   
   <url>
-    <loc>https://www.3afun.com/categories/index/</loc>
-    <lastmod>2018-03-07T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/post/jane-theme-preview/</loc>
-    <lastmod>2018-03-07T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/tags/preview/</loc>
-    <lastmod>2018-03-07T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/tags/shortcodes/</loc>
-    <lastmod>2018-03-07T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/categories/shortcodes/</loc>
-    <lastmod>2018-03-07T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/tags/tag-6/</loc>
-    <lastmod>2018-03-07T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/post/shortcodes-preview/</loc>
-    <lastmod>2018-03-05T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://www.3afun.com/post/2017/network-error-unable-to-load-the-page%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</loc>
     <lastmod>2017-12-15T13:42:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -443,14 +394,14 @@
   </url>
   
   <url>
-    <loc>https://www.3afun.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <loc>https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
     <lastmod>2017-11-20T17:27:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <loc>https://www.3afun.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
     <lastmod>2017-11-20T17:27:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -501,48 +452,6 @@
   <url>
     <loc>https://www.3afun.com/post/2017/tomcat8-%E5%A4%9A%E5%AE%9E%E4%BE%8B-unix-daemon-%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2017-09-11T18:47:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/categories/english/</loc>
-    <lastmod>2017-08-31T15:43:48+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/tags/english/</loc>
-    <lastmod>2017-08-31T15:43:48+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/post/english-preview/</loc>
-    <lastmod>2017-08-31T15:43:48+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/tags/tag-2/</loc>
-    <lastmod>2017-08-31T15:43:48+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/categories/test/</loc>
-    <lastmod>2017-08-30T15:43:48+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/post/this-is-a-very-long-title/</loc>
-    <lastmod>2017-08-30T15:43:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -954,14 +863,14 @@
   </url>
   
   <url>
-    <loc>https://www.3afun.com/tags/nodejs/</loc>
+    <loc>https://www.3afun.com/categories/nodejs/</loc>
     <lastmod>2015-02-06T15:25:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://www.3afun.com/categories/nodejs/</loc>
+    <loc>https://www.3afun.com/tags/nodejs/</loc>
     <lastmod>2015-02-06T15:25:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1024,13 +933,6 @@
   </url>
   
   <url>
-    <loc>https://www.3afun.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
-    <lastmod>2014-10-16T18:12:27+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://www.3afun.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
     <lastmod>2014-10-16T18:12:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1038,57 +940,8 @@
   </url>
   
   <url>
-    <loc>https://www.3afun.com/post/creating-a-new-theme/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/categories/development/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/tags/development/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/tags/go/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/tags/golang/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/categories/golang/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/tags/templates/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/tags/themes/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <loc>https://www.3afun.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</loc>
+    <lastmod>2014-10-16T18:12:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1227,27 +1080,6 @@
   </url>
   
   <url>
-    <loc>https://www.3afun.com/post/goisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/post/hugoisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/tags/hugo/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://www.3afun.com/post/2014/wordpress%E6%9B%B4%E6%94%B9permalink%E5%90%8E%E5%87%BA%E7%8E%B0404%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</loc>
     <lastmod>2014-03-19T15:18:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -1257,20 +1089,6 @@
   <url>
     <loc>https://www.3afun.com/post/2014/ec2%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2wordpress/</loc>
     <lastmod>2014-03-10T17:42:27+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/tags/jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/post/migrate-from-jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1360,14 +1178,14 @@
   </url>
   
   <url>
-    <loc>https://www.3afun.com/categories/javascript/</loc>
+    <loc>https://www.3afun.com/tags/javascript/</loc>
     <lastmod>2013-10-21T16:16:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://www.3afun.com/tags/javascript/</loc>
+    <loc>https://www.3afun.com/categories/javascript/</loc>
     <lastmod>2013-10-21T16:16:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1423,14 +1241,14 @@
   </url>
   
   <url>
-    <loc>https://www.3afun.com/categories/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</loc>
+    <loc>https://www.3afun.com/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2013-04-08T19:45:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://www.3afun.com/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</loc>
+    <loc>https://www.3afun.com/categories/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2013-04-08T19:45:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1628,34 +1446,6 @@
   <url>
     <loc>https://www.3afun.com/post/2012/java%E6%A3%80%E6%B5%8Bgc%E6%97%A5%E5%BF%97/</loc>
     <lastmod>2012-11-07T15:46:00+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/tags/syntax-highlighting/</loc>
-    <lastmod>2017-08-30T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/categories/syntax-highlighting/</loc>
-    <lastmod>2017-08-30T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/post/syntax-highlighting/</loc>
-    <lastmod>2017-08-30T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/tags/tag-5/</loc>
-    <lastmod>2017-08-30T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

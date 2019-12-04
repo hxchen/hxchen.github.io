@@ -306,304 +306,6 @@ if (!doNotTrack) {
   <header class="post-header">
     <h1 class="post-title">
       
-      <a class="post-link" href="/post/migrate-from-jekyll/">Migrate to Hugo from Jekyll</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2014-03-10" class="post-time">
-        2014-03-10
-      </time>
-      <div class="post-category">
-          <a href="https://www.3afun.com/categories/development/"> Development </a>
-          <a href="https://www.3afun.com/categories/golang/"> golang </a>
-          <a href="https://www.3afun.com/categories/index/"> index </a>
-          
-        </div>
-      <span class="more-meta"> 约 813 字 </span>
-      <span class="more-meta"> 预计阅读 4 分钟 </span>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
-▾ &lt;root&gt;/ ▾ images/ logo.png  should become
-▾ &lt;root&gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you'll want any files that should reside at the root (such as CNAME) to be moved to static.
-    </div>
-    <div class="read-more">
-      <a href="/post/migrate-from-jekyll/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2014/nginx-location%E8%A7%84%E5%88%99%E6%9B%BF%E6%8D%A2/">nginx location规则替换</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2014-03-05" class="post-time">
-        2014-03-05
-      </time>
-      <div class="post-category">
-          <a href="https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
-          <a href="https://www.3afun.com/categories/nginx/"> Nginx </a>
-          
-        </div>
-      <span class="more-meta"> 约 133 字 </span>
-      <span class="more-meta"> 预计阅读 1 分钟 </span>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      server { listen 80; server_name www.6dgame.com 6dgame.com; location /2013/ { proxy_pass http://127.0.0.1:8081/; } location / { proxy_pass http://127.0.0.1:8080/; } error_page 500 502 503 504 /50x.html; location = /50x.html { root html; } } 对于此种设置方法， 访问：http://54.200.150.182:808
-    </div>
-    <div class="read-more">
-      <a href="/post/2014/nginx-location%E8%A7%84%E5%88%99%E6%9B%BF%E6%8D%A2/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2014/springmvc-controller%E5%B1%82%E4%B8%AD-request%E6%8E%A5%E6%94%B6%E5%8F%82%E6%95%B0%E4%B9%B1%E7%A0%81/">SpringMVC Controller层中 request接收参数乱码</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2014-02-26" class="post-time">
-        2014-02-26
-      </time>
-      <div class="post-category">
-          <a href="https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
-          <a href="https://www.3afun.com/categories/spring-mvc/"> Spring-MVC </a>
-          
-        </div>
-      <span class="more-meta"> 约 63 字 </span>
-      <span class="more-meta"> 预计阅读 1 分钟 </span>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      直接使用 1 String email = request.getParameter(&#34;email&#34;); 接收到email是乱码，需要转换 1 email = new String(request.getParameter(&#34;email&#34;).getBytes(&#34;ISO-8859-1&#34;),&#34;UTF-8&#34;); 这样麻烦还需要处理异常。 还可以这么解决： web.xml &lt;filter&gt; &lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt; &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt; &lt;init-param&gt; &lt;param-name&gt;encoding&lt;/param-name&gt; &lt;param-value&gt;utf-8&lt;/param-value&gt; &lt;/init-param&gt; &lt;/filter&gt; &lt;filter-mapping&gt; &lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt; &lt;url-pattern&gt;/*&lt;/url-pattern&gt; &lt;/filter-mapping&gt;
-    </div>
-    <div class="read-more">
-      <a href="/post/2014/springmvc-controller%E5%B1%82%E4%B8%AD-request%E6%8E%A5%E6%94%B6%E5%8F%82%E6%95%B0%E4%B9%B1%E7%A0%81/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2014/%E4%BA%9A%E9%A9%AC%E9%80%8Aec2%E4%B8%8A%E6%90%AD%E5%BB%BAnode.js/">亚马逊EC2上搭建Node.js</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2014-02-14" class="post-time">
-        2014-02-14
-      </time>
-      <div class="post-category">
-          <a href="https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
-          <a href="https://www.3afun.com/categories/nodejs/"> NodeJS </a>
-          
-        </div>
-      <span class="more-meta"> 约 141 字 </span>
-      <span class="more-meta"> 预计阅读 1 分钟 </span>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      1、安装Node,js编译工具 sudo yum install gcc-c++ openssl-devel make curl git 2、下载Node.js源码、编译、安装 wget http://nodejs.org/dist/v0.10.25/node-v0.10.25.tar.gz tar -xvf node-v0.10.25.tar.gz cd node-v0.10.25 ./configure make 在此make会需要很长时间，我用了大约
-    </div>
-    <div class="read-more">
-      <a href="/post/2014/%E4%BA%9A%E9%A9%AC%E9%80%8Aec2%E4%B8%8A%E6%90%AD%E5%BB%BAnode.js/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2014/node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80%E4%BB%8E%E6%97%A0%E5%88%B0%E6%9C%89%E4%B9%8Bnode.js%E5%AE%89%E8%A3%85helloworld%E9%83%A8%E7%BD%B2%E8%BF%90%E8%A1%8C/">Node.js学习笔记（一）从无到有之Node.js安装、helloworld部署运行</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2014-01-20" class="post-time">
-        2014-01-20
-      </time>
-      <div class="post-category">
-          <a href="https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
-          <a href="https://www.3afun.com/categories/nodejs/"> NodeJS </a>
-          
-        </div>
-      <span class="more-meta"> 约 290 字 </span>
-      <span class="more-meta"> 预计阅读 1 分钟 </span>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      一、下载 进入 官网，下载适合版本。 在此我选用的是64位windows：node-v0.10.24-x64.msi。 二、安装 ① 安装下载下来的安装
-    </div>
-    <div class="read-more">
-      <a href="/post/2014/node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80%E4%BB%8E%E6%97%A0%E5%88%B0%E6%9C%89%E4%B9%8Bnode.js%E5%AE%89%E8%A3%85helloworld%E9%83%A8%E7%BD%B2%E8%BF%90%E8%A1%8C/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2014/node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95%E5%88%A9%E5%99%A8%E4%B9%8Bsupervisor/">Node.js学习笔记（二）开发调试利器之supervisor</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2014-01-20" class="post-time">
-        2014-01-20
-      </time>
-      <div class="post-category">
-          <a href="https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
-          <a href="https://www.3afun.com/categories/nodejs/"> NodeJS </a>
-          
-        </div>
-      <span class="more-meta"> 约 150 字 </span>
-      <span class="more-meta"> 预计阅读 1 分钟 </span>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      node.js开发调试时候每次更新代码都需要重启node.js，开发调试效率之低令人愤懑，然后却有这样一款小工具supervisor。它会监
-    </div>
-    <div class="read-more">
-      <a href="/post/2014/node.js%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95%E5%88%A9%E5%99%A8%E4%B9%8Bsupervisor/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2013/nginx&#43;tomcat%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E7%9C%9F%E5%AE%9Eip/">Nginx&#43;Tomcat获取用户真实IP</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2013-12-26" class="post-time">
-        2013-12-26
-      </time>
-      <div class="post-category">
-          <a href="https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
-          <a href="https://www.3afun.com/categories/nginx/"> Nginx </a>
-          
-        </div>
-      <span class="more-meta"> 约 134 字 </span>
-      <span class="more-meta"> 预计阅读 1 分钟 </span>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      项目在测试环境获取用户IP没问题，在正式环境下使用 1 request.getRemoteHost() 获取的始终是127.0.0.1，最后才想到问题所在：正式环境使用了nginx作为代理，
-    </div>
-    <div class="read-more">
-      <a href="/post/2013/nginx&#43;tomcat%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E7%9C%9F%E5%AE%9Eip/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2013/%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E5%B7%B2%E5%81%9C%E6%AD%A2%E5%B7%A5%E4%BD%9C-%E4%BB%8A%E6%97%A5%E7%9C%8B%E7%82%B9%E5%BC%B9%E7%AA%97/">资源管理器已停止工作----今日看点弹窗</a>
-    </h1>
-    
-    <div class="post-meta">
-      <time datetime="2013-12-04" class="post-time">
-        2013-12-04
-      </time>
-      <div class="post-category">
-          <a href="https://www.3afun.com/categories/%E6%9D%82/"> 杂 </a>
-          
-        </div>
-      <span class="more-meta"> 约 705 字 </span>
-      <span class="more-meta"> 预计阅读 2 分钟 </span>
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    
-    <div class="post-summary">
-      资源管理器已停止工作的原因可能很多，下面只说其中的一种：由uusee网络电视引起的停止，该种原因其他现象还有“今日看点”弹窗。 如果你之前安装
-    </div>
-    <div class="read-more">
-      <a href="/post/2013/%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E5%B7%B2%E5%81%9C%E6%AD%A2%E5%B7%A5%E4%BD%9C-%E4%BB%8A%E6%97%A5%E7%9C%8B%E7%82%B9%E5%BC%B9%E7%AA%97/" class="read-more-link">阅读全文</a>
-    </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
       <a class="post-link" href="/post/2013/excel%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5mysql%E6%95%B0%E6%8D%AE%E5%BA%93/">excel数据导入mysql数据库</a>
     </h1>
     
@@ -674,6 +376,296 @@ if (!doNotTrack) {
 </article>
 
   
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/post/2013/touch%E5%91%BD%E4%BB%A4%E6%9B%B4%E6%96%B0%E7%9B%AE%E5%BD%95%E5%8F%8A%E5%85%B6%E5%AD%90%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E6%97%B6%E9%97%B4/">touch命令更新目录及其子目录下的时间</a>
+    </h1>
+    
+    <div class="post-meta">
+      <time datetime="2013-11-05" class="post-time">
+        2013-11-05
+      </time>
+      <div class="post-category">
+          <a href="https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
+          
+        </div>
+      <span class="more-meta"> 约 107 字 </span>
+      <span class="more-meta"> 预计阅读 1 分钟 </span>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      网站改版，上线后发现部分页面还是改版前的（服务器时间晚于浏览器客户端时间），查看代码却是最新的。原因就是服务器上的站点代码目录时间未更新到最
+    </div>
+    <div class="read-more">
+      <a href="/post/2013/touch%E5%91%BD%E4%BB%A4%E6%9B%B4%E6%96%B0%E7%9B%AE%E5%BD%95%E5%8F%8A%E5%85%B6%E5%AD%90%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E6%97%B6%E9%97%B4/" class="read-more-link">阅读全文</a>
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/post/2013/javascript-%E4%B8%ADcontains%E6%96%B9%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89/">javascript 中contains方法的定义</a>
+    </h1>
+    
+    <div class="post-meta">
+      <time datetime="2013-10-21" class="post-time">
+        2013-10-21
+      </time>
+      <div class="post-category">
+          <a href="https://www.3afun.com/categories/web%E5%89%8D%E7%AB%AF/"> Web前端 </a>
+          <a href="https://www.3afun.com/categories/javascript/"> JavaScript </a>
+          
+        </div>
+      <span class="more-meta"> 约 78 字 </span>
+      <span class="more-meta"> 预计阅读 1 分钟 </span>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      1 2 3 4 5 6 7 8 9 /** * 对大小写敏感的Contains方法 * @param substring * @returns */ String.prototype.contains = function(substring) { return this.indexOf(substring) != -1 ? true:false; }; 使用方法：a.contains(b)&mdash;
+    </div>
+    <div class="read-more">
+      <a href="/post/2013/javascript-%E4%B8%ADcontains%E6%96%B9%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89/" class="read-more-link">阅读全文</a>
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/post/2013/bootstrap%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/">Bootstrap前端开发框架</a>
+    </h1>
+    
+    <div class="post-meta">
+      <time datetime="2013-10-17" class="post-time">
+        2013-10-17
+      </time>
+      <div class="post-category">
+          <a href="https://www.3afun.com/categories/web%E5%89%8D%E7%AB%AF/"> Web前端 </a>
+          <a href="https://www.3afun.com/categories/bootstrap/"> Bootstrap </a>
+          
+        </div>
+      <span class="more-meta"> 约 375 字 </span>
+      <span class="more-meta"> 预计阅读 1 分钟 </span>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      之前做的一个项目，最近完成了前端改版，选用了前端开发框架Bootstrap，感觉真不错。谈谈几个最大的感受： 一、布局方便合理。Bootstr
+    </div>
+    <div class="read-more">
+      <a href="/post/2013/bootstrap%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/" class="read-more-link">阅读全文</a>
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/post/2013/some-projects-cannot-be-imported-because-they-already-exist-in-the-workspace/">Some projects cannot be imported because they already exist in the workspace</a>
+    </h1>
+    
+    <div class="post-meta">
+      <time datetime="2013-10-17" class="post-time">
+        2013-10-17
+      </time>
+      <div class="post-category">
+          <a href="https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
+          
+        </div>
+      <span class="more-meta"> 约 98 字 </span>
+      <span class="more-meta"> 预计阅读 1 分钟 </span>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      IDE里之前已经删除过工程，再次添加报：Some projects cannot be imported because they already exist in the workspace。 解决办法：导入时不勾选下面的Copy projects into woeksp
+    </div>
+    <div class="read-more">
+      <a href="/post/2013/some-projects-cannot-be-imported-because-they-already-exist-in-the-workspace/" class="read-more-link">阅读全文</a>
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/post/2013/java%E6%89%93%E5%8D%B0n%E9%98%B6%E5%9B%9E%E6%97%8B%E7%9F%A9%E9%98%B5/">java打印N阶回旋矩阵</a>
+    </h1>
+    
+    <div class="post-meta">
+      <time datetime="2013-06-18" class="post-time">
+        2013-06-18
+      </time>
+      <div class="post-category">
+          <a href="https://www.3afun.com/categories/java/"> Java </a>
+          
+        </div>
+      <span class="more-meta"> 约 388 字 </span>
+      <span class="more-meta"> 预计阅读 1 分钟 </span>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      算法分析： 1.将此矩阵分解为一个一个的圈，如下图，1-20可以看成一个圈，21-32是一个圈，33-36也是一个圈。 2.再将圈分解为四个均等
+    </div>
+    <div class="read-more">
+      <a href="/post/2013/java%E6%89%93%E5%8D%B0n%E9%98%B6%E5%9B%9E%E6%97%8B%E7%9F%A9%E9%98%B5/" class="read-more-link">阅读全文</a>
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/post/2013/atomicinteger-%E5%9C%A8%E9%AB%98%E5%B9%B6%E5%8F%91%E9%87%8F%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E5%8F%8Avolatile%E8%AF%B4%E6%98%8E/">AtomicInteger 在高并发量应用程序中的使用及volatile说明</a>
+    </h1>
+    
+    <div class="post-meta">
+      <time datetime="2013-04-08" class="post-time">
+        2013-04-08
+      </time>
+      <div class="post-category">
+          <a href="https://www.3afun.com/categories/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"> 并发编程 </a>
+          
+        </div>
+      <span class="more-meta"> 约 752 字 </span>
+      <span class="more-meta"> 预计阅读 2 分钟 </span>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      当我们在处理简单程序中，可以使用诸如count++这种简单的计数器，但是这种简单的处理在高并发/多线程中的使用却是不安全的，几乎可以百分百的
+    </div>
+    <div class="read-more">
+      <a href="/post/2013/atomicinteger-%E5%9C%A8%E9%AB%98%E5%B9%B6%E5%8F%91%E9%87%8F%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E5%8F%8Avolatile%E8%AF%B4%E6%98%8E/" class="read-more-link">阅读全文</a>
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/post/2013/nosuchmethoderror-servletfileupload.parserequest/">NoSuchMethodError ServletFileUpload.parseRequest</a>
+    </h1>
+    
+    <div class="post-meta">
+      <time datetime="2013-04-01" class="post-time">
+        2013-04-01
+      </time>
+      <div class="post-category">
+          <a href="https://www.3afun.com/categories/java/"> Java </a>
+          
+        </div>
+      <span class="more-meta"> 约 180 字 </span>
+      <span class="more-meta"> 预计阅读 1 分钟 </span>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      Bug描述：老项目，文件上传在tomcat下没有问题，在部分WebSphere上存在问题。 Error 500: java.lang.NoSuchMethodError: org/apache/commons/fileupload/servlet/ServletFileUpload.parseRequest(Lorg/apache/commons/fileupload/RequestContext;)Ljava/util/List; 问题原因：不是没有加载fileupload
+    </div>
+    <div class="read-more">
+      <a href="/post/2013/nosuchmethoderror-servletfileupload.parserequest/" class="read-more-link">阅读全文</a>
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/post/2013/was7.0-%E5%9C%A8linuxsuse%E4%B8%8B%E7%9A%84%E9%9D%99%E9%BB%98%E5%AE%89%E8%A3%85/">WAS7.0 在Linux（Suse）下的静默安装</a>
+    </h1>
+    
+    <div class="post-meta">
+      <time datetime="2013-03-29" class="post-time">
+        2013-03-29
+      </time>
+      <div class="post-category">
+          <a href="https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
+          
+        </div>
+      <span class="more-meta"> 约 818 字 </span>
+      <span class="more-meta"> 预计阅读 2 分钟 </span>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      一、WAS程序安装 1、上传文件： 上传文件C1G35ML.tar.gz、C1G36ML.tar.gz到待安装系统/home下。 2、登陆root
+    </div>
+    <div class="read-more">
+      <a href="/post/2013/was7.0-%E5%9C%A8linuxsuse%E4%B8%8B%E7%9A%84%E9%9D%99%E9%BB%98%E5%AE%89%E8%A3%85/" class="read-more-link">阅读全文</a>
+    </div>
+    
+  </div>
+</article>
+
+  
 </section>
 
 
@@ -696,461 +688,65 @@ if (!doNotTrack) {
 
   
   
-
-    <nav class="pagination">
-      <ul>
-
+  <nav class="pagination">
+    <ul>
       
+      <li >
+        <a href="/">1</a>
+      </li>
       
-      <li><a href="/">««</a></li>
+      <li >
+        <a href="/page/2/">2</a>
+      </li>
       
-
+      <li >
+        <a href="/page/3/">3</a>
+      </li>
       
+      <li >
+        <a href="/page/4/">4</a>
+      </li>
       
-      <li><a href="/page/9/">«</a></li>
+      <li >
+        <a href="/page/5/">5</a>
+      </li>
       
-
+      <li >
+        <a href="/page/6/">6</a>
+      </li>
       
+      <li >
+        <a href="/page/7/">7</a>
+      </li>
       
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-
-          
-          
-
-        
-        
-
-        
-        
-
+      <li >
+        <a href="/page/8/">8</a>
+      </li>
       
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/2/">
-              2
-            </a>
-          </li>
-        
-
+      <li >
+        <a href="/page/9/">9</a>
+      </li>
       
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/3/">
-              3
-            </a>
-          </li>
-        
-
+      <li  class="active" >
+        <a href="/page/10/">10</a>
+      </li>
       
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/4/">
-              4
-            </a>
-          </li>
-        
-
+      <li >
+        <a href="/page/11/">11</a>
+      </li>
       
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/5/">
-              5
-            </a>
-          </li>
-        
-
+      <li >
+        <a href="/page/12/">12</a>
+      </li>
       
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/6/">
-              6
-            </a>
-          </li>
-        
-
+      <li >
+        <a href="/page/13/">13</a>
+      </li>
       
+    </ul>
+  </nav>
 
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/7/">
-              7
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/8/">
-              8
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/9/">
-              9
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="active">
-            <a href="/page/10/">
-              10
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/11/">
-              11
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/12/">
-              12
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/13/">
-              13
-            </a>
-          </li>
-        
-
-      
-
-        
-
-        
-        
-
-          
-          
-          
-
-            
-            
-              
-            
-
-          
-          
-
-        
-        
-
-        
-        
-          <li class="">
-            <a href="/page/14/">
-              14
-            </a>
-          </li>
-        
-
-      
-
-      
-      
-      <li><a href="/page/11/">»</a></li>
-      
-
-      
-      
-      <li><a href="/page/14/">»»</a></li>
-      
-
-      </ul>
-    </nav>
+  
   
 
 
