@@ -625,10 +625,10 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
 &lt;p&gt;1.编辑crontab文件&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;crontab -e
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2.添加&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# 每隔90天执行一次 certbot-auto renew
-0 0 */90 * * certbot-auto renew
+&lt;pre&gt;&lt;code&gt;# certbot-auto 需要配置到系统环境 mv certbot-auto /usr/bin/certbot-auto
+0 0,12 * * * root certbot-auto renew --post-hook &amp;quot;service nginx restart&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3.保存退出。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;!wq
+&lt;pre&gt;&lt;code&gt;:wq
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;4.重启crond：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;service crond restart
 &lt;/code&gt;&lt;/pre&gt;</description>

@@ -68,7 +68,7 @@
 <meta itemprop="description" content="Lets Encrypt SSL HTTPS">
 <meta itemprop="datePublished" content="2018-09-10T18:12:26&#43;08:00" />
 <meta itemprop="dateModified" content="2018-09-10T18:12:26&#43;08:00" />
-<meta itemprop="wordCount" content="1173">
+<meta itemprop="wordCount" content="1180">
 
 
 
@@ -315,7 +315,7 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/ssl/"> SSL </a>
             
           </div>
-        <span class="more-meta"> 约 1173 字 </span>
+        <span class="more-meta"> 约 1180 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
 
         
@@ -457,10 +457,10 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
 <p>1.编辑crontab文件</p>
 <pre><code>crontab -e
 </code></pre><p>2.添加</p>
-<pre><code># 每隔90天执行一次 certbot-auto renew
-0 0 */90 * * certbot-auto renew
+<pre><code># certbot-auto 需要配置到系统环境 mv certbot-auto /usr/bin/certbot-auto
+0 0,12 * * * root certbot-auto renew --post-hook &quot;service nginx restart&quot;
 </code></pre><p>3.保存退出。</p>
-<pre><code>!wq
+<pre><code>:wq
 </code></pre><p>4.重启crond：</p>
 <pre><code>service crond restart
 </code></pre>
