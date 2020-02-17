@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2018/swift%E5%8A%A8%E6%80%81%E5%BA%93frameworksdk%E5%BC%80%E5%8F%91/" />
@@ -333,26 +333,26 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">学习目标</a></li>
-    <li><a href="#cocoa-touch-framework">一、创建一个Cocoa Touch Framework项目</a>
+    <li><a href="#学习目标">学习目标</a></li>
+    <li><a href="#一创建一个cocoa-touch-framework项目">一、创建一个Cocoa Touch Framework项目</a>
       <ul>
-        <li><a href="#1xcode">1.打开Xcode,新建一个工程</a></li>
-        <li><a href="#2sdk">2.编写函数供SDK掉用者使用</a></li>
-        <li><a href="#3sdk">3.打包SDK</a></li>
+        <li><a href="#1打开xcode新建一个工程">1.打开Xcode,新建一个工程</a></li>
+        <li><a href="#2编写函数供sdk掉用者使用">2.编写函数供SDK掉用者使用</a></li>
+        <li><a href="#3打包sdk">3.打包SDK</a></li>
       </ul>
     </li>
-    <li><a href="#single-view-appsdk">️二、创建Single View App项目来测试SDK</a>
+    <li><a href="#二创建single-view-app项目来测试sdk">️二、创建Single View App项目来测试SDK</a>
       <ul>
-        <li><a href="#1xcodeaccountsdkdemo">1.使用Xcode新建一个名为AccountSDKDemo的工程</a></li>
-        <li><a href="#2storyboardbutton">2.为storyboard添加Button</a></li>
-        <li><a href="#3assistant-">3.切换到Assistant 工作区</a></li>
-        <li><a href="#4ui">4.UI和代码的绑定</a></li>
-        <li><a href="#5sdk">5.添加SDK</a></li>
-        <li><a href="#6sdk">6.调用SDK代码</a></li>
+        <li><a href="#1使用xcode新建一个名为accountsdkdemo的工程">1.使用Xcode新建一个名为AccountSDKDemo的工程</a></li>
+        <li><a href="#2为storyboard添加button">2.为storyboard添加Button</a></li>
+        <li><a href="#3切换到assistant-工作区">3.切换到Assistant 工作区</a></li>
+        <li><a href="#4ui和代码的绑定">4.UI和代码的绑定</a></li>
+        <li><a href="#5添加sdk">5.添加SDK</a></li>
+        <li><a href="#6调用sdk代码">6.调用SDK代码</a></li>
       </ul>
     </li>
-    <li><a href="#heading1">三、测试</a></li>
-    <li><a href="#heading2">四、代码</a></li>
+    <li><a href="#三测试">三、测试</a></li>
+    <li><a href="#四代码">四、代码</a></li>
   </ul>
 </nav>
   </div>
@@ -361,7 +361,7 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>今天这篇文章主要是来讲解如何进行 <code>Cocoa Touch Framework</code> 开发SDK,以及如何使用打包出来的SDK。</p>
-<h2 id="heading">学习目标</h2>
+<h2 id="学习目标">学习目标</h2>
 <p>看完这篇文章,你将会学会:</p>
 <ul>
 <li>使用Xcode创建一个<code>Cocoa Touch Framework</code>项目,进行SDK开发</li>
@@ -370,13 +370,13 @@ if (!doNotTrack) {
 <li>UI和代码的链接,进行事件操作</li>
 <li>调用打包的SDK中的函数</li>
 </ul>
-<h2 id="cocoa-touch-framework">一、创建一个Cocoa Touch Framework项目</h2>
-<h3 id="1xcode">1.打开Xcode,新建一个工程</h3>
+<h2 id="一创建一个cocoa-touch-framework项目">一、创建一个Cocoa Touch Framework项目</h2>
+<h3 id="1打开xcode新建一个工程">1.打开Xcode,新建一个工程</h3>
 <p>因为是进行Cocoa Touch Framework开发,所以我们要选择这个,然后点击next。
 <img src="/media/images/2018/swift01.png" alt="new project"></p>
 <p>在这里我们给我们的工程起个名字:AccountSDK
 <img src="/media/images/2018/swift02.png" alt="new project"></p>
-<h3 id="2sdk">2.编写函数供SDK掉用者使用</h3>
+<h3 id="2编写函数供sdk掉用者使用">2.编写函数供SDK掉用者使用</h3>
 <p>菜单栏-&gt;File-&gt;New-&gt;File&hellip; 新建一个名为<code>LoginProcessor.swift</code>的文件。</p>
 <p><img src="/media/images/2018/swift03.png" alt="new file"></p>
 <p><code>LoginProcessor.swift</code>代码如下:</p>
@@ -411,32 +411,32 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div><p>在类LoginProcessor里面我们先定义了构造函数init,然后定义了一个login函数供SDK调用者使用,功能非常简单,只是一句简单输出。</p>
-<h3 id="3sdk">3.打包SDK</h3>
+<h3 id="3打包sdk">3.打包SDK</h3>
 <p>快捷键command+B打包SDK成framework文件,默认生产的文件会在Products目录下。我们可以选择文件,右键打开文件所在位置找到文件供接下来的步骤使用。
 <img src="/media/images/2018/swift04.png" alt="findindir"></p>
-<h2 id="single-view-appsdk">️二、创建Single View App项目来测试SDK</h2>
-<h3 id="1xcodeaccountsdkdemo">1.使用Xcode新建一个名为AccountSDKDemo的工程</h3>
+<h2 id="二创建single-view-app项目来测试sdk">️二、创建Single View App项目来测试SDK</h2>
+<h3 id="1使用xcode新建一个名为accountsdkdemo的工程">1.使用Xcode新建一个名为AccountSDKDemo的工程</h3>
 <p>Xcode菜单栏-&gt;File-&gt;New-&gt;Project
 <img src="/media/images/2018/swift05.png" alt="new Project"></p>
 <p><img src="/media/images/2018/swift06.png" alt="new Project"></p>
-<h3 id="2storyboardbutton">2.为storyboard添加Button</h3>
+<h3 id="2为storyboard添加button">2.为storyboard添加Button</h3>
 <p>左侧导航栏选中<code>Main.storyboard</code>,中间我们会看到一个UI,右侧有工具区。我们从工具区拖拽一个Button到中间编辑区的UI上。</p>
 <p><img src="/media/images/2018/swift07.png" alt="new Project"></p>
-<h3 id="3assistant-">3.切换到Assistant 工作区</h3>
+<h3 id="3切换到assistant-工作区">3.切换到Assistant 工作区</h3>
 <p>点击工具栏左上角的 Show Assistant Editor</p>
 <p><img src="/media/images/2018/swift08.png" alt="new Project"></p>
-<h3 id="4ui">4.UI和代码的绑定</h3>
+<h3 id="4ui和代码的绑定">4.UI和代码的绑定</h3>
 <p>1.编辑 ViewController.swift,在<code>UIViewController{ </code>下面添加注释 <code>//MARK: Properties</code>,下面代码来绑定UI中的变量,
 在类的最后一个括号上面添加一行注释<code>//MARK: Actions</code>下面代码好绑定事件。</p>
 <p>2.在UI上选中Button按钮,右键拖拽一个Referencing Outlets到<code>//MARK: Properties</code>下面,并起名<code>loginButton</code>
 拖拽一个Touch Up Inside事件到 <code>//MARK: Actions</code>下面,起名<code>login</code></p>
 <p><img src="/media/images/2018/swift09.png" alt="new Project"></p>
-<h3 id="5sdk">5.添加SDK</h3>
+<h3 id="5添加sdk">5.添加SDK</h3>
 <p>1.复制步骤一中打包出来的SDK到AccountSDKDemo目录下,并添加。
 <img src="/media/images/2018/swift10.png" alt="new Project"></p>
 <p>2.General-&gt;Embedded Binaries中添加SDK。
 <img src="/media/images/2018/swift11.png" alt="new Project"></p>
-<h3 id="6sdk">6.调用SDK代码</h3>
+<h3 id="6调用sdk代码">6.调用SDK代码</h3>
 <p>编辑ViewController.swift,添加<code>import AccountSDK</code>,并且在login事件中调用SDK中定义的login函数。
 最终该文件应该是这样的:</p>
 <div class="highlight"><div class="chroma">
@@ -513,10 +513,10 @@ if (!doNotTrack) {
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="heading1">三、测试</h2>
+</div><h2 id="三测试">三、测试</h2>
 <p>Command+R 在模拟器上运行AccountSDKDemo App,运行后,点击Login按钮,观察后台日志,是否成功输出LoginProcessor中login函数的内容。</p>
 <p><img src="/media/images/2018/swift12.png" alt="new Project"></p>
-<h2 id="heading2">四、代码</h2>
+<h2 id="四代码">四、代码</h2>
 <p><!-- raw HTML omitted -->代码下载<!-- raw HTML omitted --></p>
 
     </div>
@@ -704,7 +704,7 @@ if (!doNotTrack) {
     &copy;
     
       2012 -
-    2019
+    2020
     <span class="heart">
       
       <i class="iconfont">

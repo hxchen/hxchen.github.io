@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2018/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE2/" />
@@ -69,7 +69,7 @@
 <meta itemprop="description" content="前面几篇文章我们介绍了私有链的服务器搭建和客户端连接私有服务器,接下来我们就要学习如何保证服务器端退出后还能继续提供稳定服务,解决客户端可以">
 <meta itemprop="datePublished" content="2018-04-13T16:18:49&#43;08:00" />
 <meta itemprop="dateModified" content="2018-04-13T16:18:49&#43;08:00" />
-<meta itemprop="wordCount" content="397">
+<meta itemprop="wordCount" content="399">
 
 
 
@@ -317,7 +317,7 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"> 区块链 </a>
             
           </div>
-        <span class="more-meta"> 约 397 字 </span>
+        <span class="more-meta"> 约 399 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -340,14 +340,28 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>前面几篇文章我们介绍了私有链的服务器搭建和客户端连接私有服务器,接下来我们就要学习如何保证服务器端退出后还能继续提供稳定服务,解决客户端可以永久链接服务器,交易实时被处理。</p>
-<h1 id="heading">服务器端启动</h1>
+<h1 id="服务器端启动">服务器端启动</h1>
 <p>为了让客户端可以链接,我们可以使用nohup命令来让服务器进行后台启动,但仅仅这样还是不够的,我们还应该允许服务器端支持客户端转账等API,我们就要使用<code>--rpcapi</code> 参数来指定。</p>
-<pre><code>nohup geth --identity TestNode --rpc --rpcaddr 0.0.0.0 --rpcport 8545 --rpcapi &quot;db,eth,net,web3,personal,admin,miner&quot; --datadir /home/ubuntu/ethereum/data0 --port 30303 --nodiscover --mine --minerthreads=1 &gt;/dev/null 2&gt;&amp;1 &amp;
-</code></pre><p>以上命令可以来后台启动服务器,并且允许客户端进行远程API调用.
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">nohup geth --identity TestNode --rpc --rpcaddr 0.0.0.0 --rpcport 8545 --rpcapi &#34;db,eth,net,web3,personal,admin,miner&#34; --datadir /home/ubuntu/ethereum/data0 --port 30303 --nodiscover --mine --minerthreads=1 &gt;/dev/null 2&gt;&amp;1 &amp;
+</code></pre></td></tr></table>
+</div>
+</div><p>以上命令可以来后台启动服务器,并且允许客户端进行远程API调用.
 在此命令中我们使用了mine参数开启一个线程进行挖矿,我们是有理由这么操作的,因为如果不是这样,即使客户端发起了一笔远程交易,因为不能生产块数据,也还是不会处理转账。</p>
 <p>如果你还是想进入console控制台来向原来那样执行命令,可以使用如下命令来进入</p>
-<pre><code>geth attach http://127.0.0.1:8545
-</code></pre><p>这篇文章结束后,我们在使用客户端操作时候,就可以实现实时处理我们的交易。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">geth attach http://127.0.0.1:8545
+</code></pre></td></tr></table>
+</div>
+</div><p>这篇文章结束后,我们在使用客户端操作时候,就可以实现实时处理我们的交易。</p>
 
     </div>
 
@@ -535,7 +549,7 @@ if (!doNotTrack) {
     &copy;
     
       2012 -
-    2019
+    2020
     <span class="heart">
       
       <i class="iconfont">

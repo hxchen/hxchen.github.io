@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="北斗" />
-  <meta name="description" content="1、写在&amp;lt;% %&amp;gt;里，通过java代码获取。 2、通过$引用。比如后台返回bean，获取bean的name值，可以使用如下代码 &amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;name&amp;quot;" />
+  <meta name="description" content="1、写在&amp;lt;% %&amp;gt;里，通过java代码获取。 2、通过$引用。比如后台返回bean，获取bean的name值，可以使用如下代码 1 &amp;lt;input type=&amp;#34;text&amp;#34;" />
 
   <meta name="keywords" content="技术, 程序员, 码农, 程序猿, 分享, java, python, 3afun" />
 
@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2013/struts2-%E5%89%8D%E7%AB%AFjsp%E9%A1%B5%E9%9D%A2%E8%8E%B7%E5%8F%96%E5%90%8E%E5%8F%B0action%E5%B1%9E%E6%80%A7%E5%80%BC%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/" />
@@ -60,22 +60,22 @@
 
 
 <meta property="og:title" content="Struts2 前端JSP页面获取后台Action属性值的几种方法" />
-<meta property="og:description" content="1、写在&lt;% %&gt;里，通过java代码获取。 2、通过$引用。比如后台返回bean，获取bean的name值，可以使用如下代码 &lt;input type=&quot;text&quot; name=&quot;name&quot;" />
+<meta property="og:description" content="1、写在&lt;% %&gt;里，通过java代码获取。 2、通过$引用。比如后台返回bean，获取bean的name值，可以使用如下代码 1 &lt;input type=&#34;text&#34;" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.3afun.com/post/2013/struts2-%E5%89%8D%E7%AB%AFjsp%E9%A1%B5%E9%9D%A2%E8%8E%B7%E5%8F%96%E5%90%8E%E5%8F%B0action%E5%B1%9E%E6%80%A7%E5%80%BC%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/" />
 <meta property="article:published_time" content="2013-02-28T10:32:00+08:00" />
 <meta property="article:modified_time" content="2013-02-28T10:32:00+08:00" />
 <meta itemprop="name" content="Struts2 前端JSP页面获取后台Action属性值的几种方法">
-<meta itemprop="description" content="1、写在&lt;% %&gt;里，通过java代码获取。 2、通过$引用。比如后台返回bean，获取bean的name值，可以使用如下代码 &lt;input type=&quot;text&quot; name=&quot;name&quot;">
+<meta itemprop="description" content="1、写在&lt;% %&gt;里，通过java代码获取。 2、通过$引用。比如后台返回bean，获取bean的name值，可以使用如下代码 1 &lt;input type=&#34;text&#34;">
 <meta itemprop="datePublished" content="2013-02-28T10:32:00&#43;08:00" />
 <meta itemprop="dateModified" content="2013-02-28T10:32:00&#43;08:00" />
-<meta itemprop="wordCount" content="104">
+<meta itemprop="wordCount" content="105">
 
 
 
 <meta itemprop="keywords" content="服务器,Struts," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Struts2 前端JSP页面获取后台Action属性值的几种方法"/>
-<meta name="twitter:description" content="1、写在&lt;% %&gt;里，通过java代码获取。 2、通过$引用。比如后台返回bean，获取bean的name值，可以使用如下代码 &lt;input type=&quot;text&quot; name=&quot;name&quot;"/>
+<meta name="twitter:description" content="1、写在&lt;% %&gt;里，通过java代码获取。 2、通过$引用。比如后台返回bean，获取bean的name值，可以使用如下代码 1 &lt;input type=&#34;text&#34;"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -316,7 +316,7 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
             
           </div>
-        <span class="more-meta"> 约 104 字 </span>
+        <span class="more-meta"> 约 105 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -340,8 +340,15 @@ if (!doNotTrack) {
     <div class="post-content">
       <p>1、写在&lt;% %&gt;里，通过java代码获取。</p>
 <p>2、通过$引用。比如后台返回bean，获取bean的name值，可以使用如下代码</p>
-<pre><code>&lt;input type=&quot;text&quot;  name=&quot;name&quot;   id=&quot;name&quot;  value=&quot;${bean.name}&quot;  maxlength=&quot;50&quot;/&gt;
-</code></pre><p>3、通过Struts2标签引用。&lt;s:property value=&quot;bean.name&rdquo;/&gt;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;input type=&#34;text&#34;  name=&#34;name&#34;   id=&#34;name&#34;  value=&#34;${bean.name}&#34;  maxlength=&#34;50&#34;/&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>3、通过Struts2标签引用。&lt;s:property value=&quot;bean.name&rdquo;/&gt;</p>
 
     </div>
 
@@ -433,7 +440,7 @@ if (!doNotTrack) {
         id: 'Struts2 前端JSP页面获取后台Action属性值的几种方法.md',
         title: 'Struts2 前端JSP页面获取后台Action属性值的几种方法',
         link: decodeURI(location.href),
-        desc: '1、写在\x26lt;% %\x26gt;里，通过java代码获取。 2、通过$引用。比如后台返回bean，获取bean的name值，可以使用如下代码 \x26lt;input type=\x26quot;text\x26quot; name=\x26quot;name\x26quot;',
+        desc: '1、写在\x26lt;% %\x26gt;里，通过java代码获取。 2、通过$引用。比如后台返回bean，获取bean的name值，可以使用如下代码 1 \x26lt;input type=\x26#34;text\x26#34;',
         owner: 'hxchen',
         repo: 'comments',
         oauth: {
@@ -529,7 +536,7 @@ if (!doNotTrack) {
     &copy;
     
       2012 -
-    2019
+    2020
     <span class="heart">
       
       <i class="iconfont">

@@ -17,7 +17,7 @@
       <pubDate>Sun, 20 Aug 2017 22:04:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2017/react%E5%85%A5%E9%97%A8/</guid>
-      <description>安装 你可以进行一起全局安装 sudo npm install -g create-react-app 创建一个应用 为了创建一个App，执行 create-react-app react_demo cd react_demo 执行完毕后，他会在当前目录下创建一个名为 react_demo 的文件夹。 如图所示</description>
+      <description>安装 你可以进行一起全局安装 1 sudo npm install -g create-react-app 创建一个应用 为了创建一个App，执行 1 2 create-react-app react_demo cd react_demo 执行完毕后，他会在当前目录下创建一个名为 react_demo 的文件夹。 如</description>
     </item>
     
   </channel>

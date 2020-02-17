@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2015/android-edittext%E8%8E%B7%E5%8F%96%E7%84%A6%E7%82%B9%E6%98%BE%E7%A4%BA%E8%BE%93%E5%85%A5%E6%B3%95%E6%97%B6%E5%B8%83%E5%B1%80%E8%87%AA%E5%8A%A8%E6%94%B9%E5%8F%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-/" />
@@ -69,7 +69,7 @@
 <meta itemprop="description" content="最近在调试Android时，发现当屏幕下方的EditText获取焦点，显示输入法时候。页面布局重新调整而不是整体上移。导致部分控件显示不完全">
 <meta itemprop="datePublished" content="2015-06-26T17:33:00&#43;08:00" />
 <meta itemprop="dateModified" content="2015-06-26T17:33:00&#43;08:00" />
-<meta itemprop="wordCount" content="124">
+<meta itemprop="wordCount" content="125">
 
 
 
@@ -316,7 +316,7 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/android/"> Android </a>
             
           </div>
-        <span class="more-meta"> 约 124 字 </span>
+        <span class="more-meta"> 约 125 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -340,8 +340,15 @@ if (!doNotTrack) {
     <div class="post-content">
       <p>最近在调试Android时，发现当屏幕下方的EditText获取焦点，显示输入法时候。页面布局重新调整而不是整体上移。导致部分控件显示不完全。</p>
 <p>最终解决方案是修改项目AnroidManifest.xml的文件，在所属Activity中添加属性设置：</p>
-<pre><code>android:windowSoftInputMode=&quot;adjustPan&quot;
-</code></pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">android:windowSoftInputMode=&#34;adjustPan&#34;
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
@@ -527,7 +534,7 @@ if (!doNotTrack) {
     &copy;
     
       2012 -
-    2019
+    2020
     <span class="heart">
       
       <i class="iconfont">

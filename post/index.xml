@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Wed, 04 Dec 2019 19:22:53 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 11 Feb 2020 16:46:43 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MacOS安装FlatBuffers</title>
+      <link>https://www.3afun.com/post/2020/macos%E5%AE%89%E8%A3%85flatbuffers/</link>
+      <pubDate>Tue, 11 Feb 2020 16:46:43 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2020/macos%E5%AE%89%E8%A3%85flatbuffers/</guid>
+      <description>在Mac系统上安装FlatBuffers有两种方式，第一种是通过Homebrew安装 1 $ brew install flatbuffers 但是并不推荐如此安装，因为可能会造成你安装的f</description>
+    </item>
     
     <item>
       <title>Python读取邮件并批量导出</title>
@@ -180,15 +189,6 @@
       
       <guid>https://www.3afun.com/post/2018/how-to-use-your-own-private-ethereum-blockchain-to-create-your-own-crypto-currency/</guid>
       <description>根据前面的几篇文章,我们已经可以创建自己的私有链、使用钱包来链接私有链,今天我们来学习如何使用私有链来创建我们自己的加密货币。 工具 1.私有链</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu16.04 搭建以太坊Ethereum私链(2)</title>
-      <link>https://www.3afun.com/post/2018/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE2/</link>
-      <pubDate>Fri, 13 Apr 2018 16:18:49 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2018/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE2/</guid>
-      <description>前面几篇文章我们介绍了私有链的服务器搭建和客户端连接私有服务器,接下来我们就要学习如何保证服务器端退出后还能继续提供稳定服务,解决客户端可以</description>
     </item>
     
   </channel>

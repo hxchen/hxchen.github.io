@@ -6,7 +6,7 @@
     <description>Recent content on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Wed, 04 Dec 2019 19:22:53 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 11 Feb 2020 16:46:43 +0800</lastBuildDate>
     
         <atom:link href="https://www.3afun.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -26,6 +26,72 @@
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;爱好&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;业余跑步,迄今为止,完成半程马拉松3次,全程马拉松3次。&lt;/p&gt;
 &lt;p&gt;喜爱摄影、徒步,走过大半个中国,写过几篇&lt;a href=&#34;http://www.mafengwo.cn/u/5295523/note.html&#34;&gt;游记&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>MacOS安装FlatBuffers</title>
+      <link>https://www.3afun.com/post/2020/macos%E5%AE%89%E8%A3%85flatbuffers/</link>
+      <pubDate>Tue, 11 Feb 2020 16:46:43 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2020/macos%E5%AE%89%E8%A3%85flatbuffers/</guid>
+      
+        <description>&lt;p&gt;在Mac系统上安装FlatBuffers有两种方式，第一种是通过&lt;code&gt;Homebrew&lt;/code&gt;安装&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ brew install flatbuffers
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;但是并不推荐如此安装，因为可能会造成你安装的&lt;code&gt;flatc&lt;/code&gt;编译版本和后期运行时版本不一致，导致程序编译不过。建议采用源码安装。
+源码安装首先安装&lt;code&gt;cmake&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ brew install cmake
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;然后再安装FlatBuffers&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ git clone https://github.com/google/flatbuffers.git
+$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; flatbuffers
+$ cmake -G &lt;span class=&#34;s2&#34;&gt;&amp;#34;Unix Makefiles&amp;#34;&lt;/span&gt;
+$ make
+$ ./flattests &lt;span class=&#34;c1&#34;&gt;# this is quick, and should print &amp;#34;ALL TESTS PASSED&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;添加到系统，方便以后使用&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ sudo cp flatc /usr/local/bin/flatc
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;安装完成后，查看安装版本&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ flatc --version
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;后期运行时可以使用&lt;code&gt;java&lt;/code&gt;目录（其他语言自行选择对应目录）下的源码作为运行时环境，编译直接使用&lt;code&gt;flatc&lt;/code&gt;命令对schema文件进行编译。&lt;/p&gt;
 </description>
       
     </item>
@@ -287,7 +353,7 @@ Text: 这里是测试邮件
         <description>&lt;p&gt;要想顺利的完成作业，必须参考编程作业指导文件&lt;a href=&#34;https://github.com/hxchen/MachineLearning/blob/master/exercise_1/ex1.pdf&#34;&gt;ex1.pdf&lt;/a&gt;
 第一次作业主要包括两部分：必做题和选做题。其中必做题包括一道热身练习和完成单变量的线性回归问题，选做题是完成多变量的线性回归问题。&lt;/p&gt;
 &lt;p&gt;运行作业只要在具有Octave环境时候，进入到文件目录，执行&lt;code&gt;ex1&lt;/code&gt;或者&lt;code&gt;ex1_multi&lt;/code&gt;即可。&lt;/p&gt;
-&lt;h2 id=&#34;1&#34;&gt;1.热身练习&lt;/h2&gt;
+&lt;h2 id=&#34;1热身练习&#34;&gt;1.热身练习&lt;/h2&gt;
 &lt;p&gt;热身练习主要是在&lt;code&gt;warmUpExercise.m&lt;/code&gt;文件中生成一个5X5的单位矩阵。
 代码如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -298,9 +364,9 @@ Text: 这里是测试邮件
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-octave&#34; data-lang=&#34;octave&#34;&gt;&lt;span class=&#34;n&#34;&gt;A&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;eye&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;2&#34;&gt;2.单变量线性回归问题&lt;/h2&gt;
+&lt;/div&gt;&lt;h2 id=&#34;2单变量线性回归问题&#34;&gt;2.单变量线性回归问题&lt;/h2&gt;
 &lt;p&gt;完成该道题，我们主要是利用样本数据&lt;code&gt;ex1data1.txt&lt;/code&gt;（第一列为城市人口，第二列为对应该城市餐车收益），完成&lt;code&gt;plotData.m&lt;/code&gt;、&lt;code&gt;computeCost.m文件&lt;/code&gt;和&lt;code&gt;gradientDescent.m&lt;/code&gt;文件，然后进行给出人口数量，对餐车收益进行预测。&lt;code&gt;ex1.m&lt;/code&gt;文件为入口函数文件，不需要修改。&lt;/p&gt;
-&lt;h3 id=&#34;21--plotdatam&#34;&gt;2.1 绘制数据 plotData.m&lt;/h3&gt;
+&lt;h3 id=&#34;21-绘制数据-plotdatam&#34;&gt;2.1 绘制数据 plotData.m&lt;/h3&gt;
 &lt;p&gt;具体&lt;code&gt;plotData.m&lt;/code&gt;中补充如下代码&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -314,7 +380,7 @@ Text: 这里是测试邮件
 &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;ylabel&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;Population of City in 10,000s&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;22--computecostm&#34;&gt;2.2 代价函数 computeCost.m&lt;/h3&gt;
+&lt;/div&gt;&lt;h3 id=&#34;22-代价函数-computecostm&#34;&gt;2.2 代价函数 computeCost.m&lt;/h3&gt;
 &lt;p&gt;该文件主要是实现代价函数
 $$J(θ)=  {1 \over 2m} \sum_{i=1}^m(h_θ(x^{(i)}) − y^{(i)})^2$$
 具体&lt;code&gt;computeCost.m&lt;/code&gt;中补充如下代码&lt;/p&gt;
@@ -326,7 +392,7 @@ $$J(θ)=  {1 \over 2m} \sum_{i=1}^m(h_θ(x^{(i)}) − y^{(i)})^2$$
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-octave&#34; data-lang=&#34;octave&#34;&gt;&lt;span class=&#34;n&#34;&gt;J&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;sum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;theta&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.^&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;23--gradientdescentm&#34;&gt;2.3 梯度下降 gradientDescent.m&lt;/h3&gt;
+&lt;/div&gt;&lt;h3 id=&#34;23-梯度下降-gradientdescentm&#34;&gt;2.3 梯度下降 gradientDescent.m&lt;/h3&gt;
 &lt;p&gt;该文件主要是实现梯度下降函数
 $$θj := θj − α{1 \over m}\sum_{i=1}^m(h_θ(x^{(i)}) − y^{(i)})x_j^{(i)} (对于所有的j同时更新 θ_j )$$
 具体&lt;code&gt;gradientDescent.m&lt;/code&gt;中补充如下代码&lt;/p&gt;
@@ -342,9 +408,9 @@ $$θj := θj − α{1 \over m}\sum_{i=1}^m(h_θ(x^{(i)}) − y^{(i)})x_j^{(i)} (
 &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;theta&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;theta&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;alpha&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;sum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;theta_t&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;3&#34;&gt;3.多变量线性回归问题&lt;/h2&gt;
+&lt;/div&gt;&lt;h2 id=&#34;3多变量线性回归问题&#34;&gt;3.多变量线性回归问题&lt;/h2&gt;
 &lt;p&gt;完成该道题，主要是利用样本数据&lt;code&gt;ex1data2.txt&lt;/code&gt;（房屋面积、房间数，售价）,完成&lt;code&gt;gradientDescentMulti.m&lt;/code&gt;、&lt;code&gt;computeCostMulti.m&lt;/code&gt;、&lt;code&gt;featureNormalize.m&lt;/code&gt;、&lt;code&gt;normalEqn.m&lt;/code&gt;。最终实现给出房屋面积1650，房间数3的时候对房价进行预测。&lt;/p&gt;
-&lt;h3 id=&#34;31--featurenormalizem&#34;&gt;3.1 特征归一化 featureNormalize.m&lt;/h3&gt;
+&lt;h3 id=&#34;31-特征归一化-featurenormalizem&#34;&gt;3.1 特征归一化 featureNormalize.m&lt;/h3&gt;
 &lt;p&gt;要求我们完成&lt;code&gt;featureNormalize.m&lt;/code&gt;，主要对特征进行缩放，依据公式：
 $$x_i = {x_i - u_1 \over s_1} （u_1 为均值 s_1为标准差）$$
 具体&lt;code&gt;featureNormalize.m&lt;/code&gt;中补充如下代码&lt;/p&gt;
@@ -362,7 +428,7 @@ $$x_i = {x_i - u_1 \over s_1} （u_1 为均值 s_1为标准差）$$
 &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;X_norm&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;X&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;ones&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mu&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;./&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;ones&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sigma&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;32--gradientdescentmultim&#34;&gt;3.2 梯度下降 gradientDescentMulti.m&lt;/h3&gt;
+&lt;/div&gt;&lt;h3 id=&#34;32-梯度下降-gradientdescentmultim&#34;&gt;3.2 梯度下降 gradientDescentMulti.m&lt;/h3&gt;
 &lt;p&gt;同单变量一样的思想，我们在&lt;code&gt;gradientDescentMulti.m&lt;/code&gt;中补充如下代码&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -378,7 +444,7 @@ $$x_i = {x_i - u_1 \over s_1} （u_1 为均值 s_1为标准差）$$
 &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;321-&#34;&gt;3.2.1 可选练习&lt;/h3&gt;
+&lt;/div&gt;&lt;h3 id=&#34;321-可选练习&#34;&gt;3.2.1 可选练习&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;ex1_multi.m&lt;/code&gt;中默认定义了&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -391,7 +457,7 @@ $$x_i = {x_i - u_1 \over s_1} （u_1 为均值 s_1为标准差）$$
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;我们可以更改学习率和迭代次数，通过观察绘图来获得最佳的学习率。&lt;/p&gt;
-&lt;h3 id=&#34;322-&#34;&gt;3.2.2 价格预测&lt;/h3&gt;
+&lt;h3 id=&#34;322-价格预测&#34;&gt;3.2.2 价格预测&lt;/h3&gt;
 &lt;p&gt;在求预测价格时候，不要忘记同样需要对样本数据进行归一化处理：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -402,7 +468,7 @@ $$x_i = {x_i - u_1 \over s_1} （u_1 为均值 s_1为标准差）$$
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;我们可以优化alpha，观察梯度下降快满。&lt;/p&gt;
-&lt;h3 id=&#34;33-normal-equations&#34;&gt;3.3 正规方程Normal Equations&lt;/h3&gt;
+&lt;h3 id=&#34;33-正规方程normal-equations&#34;&gt;3.3 正规方程Normal Equations&lt;/h3&gt;
 &lt;p&gt;在多变量线性规划问题中，我们求&lt;code&gt;θ&lt;/code&gt;还可以直接应用正规方程求解。
 其中：
 $$θ = (X^TX)^{-1} X^Ty$$
@@ -489,7 +555,7 @@ $$θ = (X^TX)^{-1} X^Ty$$
 &lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;        -p&amp;lt;b_password&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;heading&#34;&gt;注意:&lt;/h4&gt;
+&lt;/div&gt;&lt;h4 id=&#34;注意&#34;&gt;注意:&lt;/h4&gt;
 &lt;p&gt;确保 -p 选项和输入的密码之间不留空格。&lt;/p&gt;
 &lt;p&gt;所用参数如下所示：&lt;/p&gt;
 &lt;p&gt;-u &amp;lt;&lt;code&gt;a_user&lt;/code&gt;&amp;gt; – 用于指定用户名。在第一次使用该参数时，您指定由 &amp;ndash;databases 参数确定的本地 MySQL 或 MariaDB 数据库中的用户账户名称。&lt;/p&gt;
@@ -515,14 +581,14 @@ $$θ = (X^TX)^{-1} X^Ty$$
       
       <guid>https://www.3afun.com/post/2018/lets-encrypt%E9%85%8D%E7%BD%AE/</guid>
       
-        <description>&lt;h2 id=&#34;lets-encrypt&#34;&gt;一、Lets Encrypt介绍&lt;/h2&gt;
+        <description>&lt;h2 id=&#34;一lets-encrypt介绍&#34;&gt;一、Lets Encrypt介绍&lt;/h2&gt;
 &lt;p&gt;Lets Encrypt 是一个免费、自动化、开放的证书颁发机构(CA),为了公众利益而服务。它由Internet Security Research Group (ISRG) 来提供服务。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;二、通配符证书介绍&lt;/h2&gt;
+&lt;h2 id=&#34;二通配符证书介绍&#34;&gt;二、通配符证书介绍&lt;/h2&gt;
 &lt;p&gt;通配符证书,是我们申请一个域名证书,可以支持子域名的证书。比如申请一个&lt;code&gt;abc.com&lt;/code&gt;,那么子域名&lt;code&gt;bbs.abc.com&lt;/code&gt;和&lt;code&gt;blog.abc.com&lt;/code&gt;都可以使用。&lt;/p&gt;
-&lt;h2 id=&#34;heading1&#34;&gt;三、申请通配符证书&lt;/h2&gt;
+&lt;h2 id=&#34;三申请通配符证书&#34;&gt;三、申请通配符证书&lt;/h2&gt;
 &lt;p&gt;Let’s Encrypt 上的证书申请是通过 ACME 协议来完成的。ACME 协议规范化了证书申请、更新、撤销等流程，实现了 Let’s Encrypt CA 自动化操作。解决了传统的 CA 机构是人工手动处理证书申请、证书更新、证书撤销的效率和成本问题。&lt;/p&gt;
 &lt;p&gt;ACME v2 是 ACME 协议的更新版本，通配符证书只能通过 ACME v2 获得。要使用 ACME v2 协议申请通配符证书，只需一个支持该协议的客户端就可以了，官方推荐的客户端是 Certbot。&lt;/p&gt;
-&lt;h2 id=&#34;certbot-&#34;&gt;四、安装Certbot 客户端&lt;/h2&gt;
+&lt;h2 id=&#34;四安装certbot-客户端&#34;&gt;四、安装Certbot 客户端&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -537,7 +603,7 @@ wget https://dl.eff.org/certbot-auto
 chmod a+x certbot-auto
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;heading2&#34;&gt;五、申请通配符证书&lt;/h2&gt;
+&lt;/div&gt;&lt;h2 id=&#34;五申请通配符证书&#34;&gt;五、申请通配符证书&lt;/h2&gt;
 &lt;p&gt;使用 Certbot 客户端申请证书方法非常的简单，只需如下一行命令就搞定了。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -548,7 +614,25 @@ chmod a+x certbot-auto
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;3afun.com为申请证书的域名&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Saving debug log to /var/log/letsencrypt/letsencrypt.log
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;Saving debug log to /var/log/letsencrypt/letsencrypt.log
 Plugins selected: Authenticator manual, Installer None
 Obtaining a new certificate
 Performing the following challenges:
@@ -556,14 +640,31 @@ dns-01 challenge for 3afun.com
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 NOTE: The IP of this machine will be publicly logged as having requested this
-certificate. If you&#39;re running certbot in manual mode on a machine that is not
-your server, please ensure you&#39;re okay with that.
+certificate. If you&amp;#39;re running certbot in manual mode on a machine that is not
+your server, please ensure you&amp;#39;re okay with that.
 
 Are you OK with your IP being logged?
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 (Y)es/(N)o:
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;输入Y&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;输入Y&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Please deploy a DNS TXT record under the name
 _acme-challenge.3afun.com with the following value:
 
@@ -574,11 +675,34 @@ Before continuing, verify the record is deployed.
 Press Enter to Continue
 
 
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在域名的供应商那里添加一条TXT记录。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;在域名的供应商那里添加一条TXT记录。&lt;/p&gt;
 &lt;p&gt;键:_acme-challenge.3afun.com&lt;/p&gt;
 &lt;p&gt;值: nEPEFRYbYHUCS_BFqpB6kZslvuhGor5EfUvSWHIvEE4&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;再回车之前我们需要新开一个窗口通过命令来检查TXT记录设置已生效。&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# dig -t txt _acme-challenge.3afun.com @8.8.8.8
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;# dig -t txt _acme-challenge.3afun.com @8.8.8.8
 ; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.8.2rc1-RedHat-9.8.2-0.37.rc1.49.amzn1 &amp;lt;&amp;lt;&amp;gt;&amp;gt; -t txt _acme-challenge.3afun.com @8.8.8.8
 ;; global options: +cmd
 ;; Got answer:
@@ -589,14 +713,37 @@ Press Enter to Continue
 ;_acme-challenge.3afun.com.        IN      TXT
 
 ;; ANSWER SECTION:
-_acme-challenge.3afun.com. 299 IN  TXT     &amp;quot;nEPEFRYbYHUCS_BFqpB6kZslvuhGor5EfUvSWHIvEE4&amp;quot;
+_acme-challenge.3afun.com. 299 IN  TXT     &amp;#34;nEPEFRYbYHUCS_BFqpB6kZslvuhGor5EfUvSWHIvEE4&amp;#34;
 
 ;; Query time: 118 msec
 ;; SERVER: 8.8.8.8#53(8.8.8.8)
 ;; WHEN: Wed Sep 12 08:51:13 2018
 ;; MSG SIZE  rcvd: 104
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后现在可以回到原来窗口按下回车键&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Waiting for verification...
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;然后现在可以回到原来窗口按下回车键&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;Waiting for verification...
 Cleaning up challenges
 
 IMPORTANT NOTES:
@@ -607,31 +754,77 @@ IMPORTANT NOTES:
    Your cert will expire on 2018-12-11. To obtain a new or tweaked
    version of this certificate in the future, simply run certbot-auto
    again. To non-interactively renew *all* of your certificates, run
-   &amp;quot;certbot-auto renew&amp;quot;
+   &amp;#34;certbot-auto renew&amp;#34;
  - If you like Certbot, please consider supporting our work by:
 
-   Donating to ISRG / Let&#39;s Encrypt:   https://letsencrypt.org/donate
+   Donating to ISRG / Let&amp;#39;s Encrypt:   https://letsencrypt.org/donate
    Donating to EFF:                    https://eff.org/donate-le
 
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;通配符证书会在&lt;code&gt;/etc/letsencrypt/live/3afun.com&lt;/code&gt; 目录下给我们生成。&lt;/p&gt;
-&lt;h2 id=&#34;nginx-&#34;&gt;六、Nginx 配置使用证书&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;通配符证书会在&lt;code&gt;/etc/letsencrypt/live/3afun.com&lt;/code&gt; 目录下给我们生成。&lt;/p&gt;
+&lt;h2 id=&#34;六nginx-配置使用证书&#34;&gt;六、Nginx 配置使用证书&lt;/h2&gt;
 &lt;p&gt;Nginx里设置证书和Key文件即可,简约代码如下:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;ssl_certificate /etc/letsencrypt/live/3afun.com/fullchain.pem; # managed by Certbot
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;ssl_certificate /etc/letsencrypt/live/3afun.com/fullchain.pem; # managed by Certbot
 ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Certbot
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;heading3&#34;&gt;七、证书续期&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;七证书续期&#34;&gt;七、证书续期&lt;/h2&gt;
 &lt;p&gt;Let’s encrypt 的免费证书默认有效期为 90 天，到期后如果要续期可以执行：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# certbot-auto renew
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我们可以使用 crontab 来定时续期。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;# certbot-auto renew
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;我们可以使用 crontab 来定时续期。&lt;/p&gt;
 &lt;p&gt;1.编辑crontab文件&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;crontab -e
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2.添加&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# certbot-auto 需要配置到系统环境 mv certbot-auto /usr/bin/certbot-auto
-0 0,12 * * * root certbot-auto renew --post-hook &amp;quot;service nginx restart&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3.保存退出。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;:wq
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;4.重启crond：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;service crond restart
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;crontab -e
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;2.添加&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;# 每隔90天执行一次 certbot-auto renew
+0 0 */90 * * certbot-auto renew
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;3.保存退出。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;!wq
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;4.重启crond：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;service crond restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
       
     </item>
     
@@ -661,7 +854,7 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
       <guid>https://www.3afun.com/post/2018/swift%E9%94%AE%E7%9B%98%E7%B1%BB%E5%9E%8B%E5%92%8C%E6%B7%BB%E5%8A%A0%E4%B8%8B%E4%B8%80%E9%A1%B9%E5%AE%8C%E6%88%90%E7%AD%89%E9%80%89%E9%A1%B9%E7%9A%84%E6%8E%A7%E5%88%B6/</guid>
       
         <description>&lt;p&gt;为了便于易用性,Swift在&lt;code&gt;UIKeyboardType&lt;/code&gt;为我们定义了众多的键盘类型。&lt;/p&gt;
-&lt;h1 id=&#34;swift-uikeyboardtype&#34;&gt;Swift键盘类型 UIKeyboardType&lt;/h1&gt;
+&lt;h1 id=&#34;swift键盘类型-uikeyboardtype&#34;&gt;Swift键盘类型 UIKeyboardType&lt;/h1&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -720,7 +913,7 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h1 id=&#34;swift--uireturnkeytype&#34;&gt;Swift 键盘返回类型 UIReturnKeyType&lt;/h1&gt;
+&lt;h1 id=&#34;swift-键盘返回类型-uireturnkeytype&#34;&gt;Swift 键盘返回类型 UIReturnKeyType&lt;/h1&gt;
 &lt;p&gt;连续多个输入框的时候,有时我们填写完一项,我们想使用键盘自动跳到下一项输入框,这时候我们可以设置键盘Return按键功能,该类型定义在UIReturnKeyType&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -832,7 +1025,7 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;在上面的代码中我们设置了,当焦点位于账号输入框时,键盘右下角显示下一项,点击下一项,焦点移到密码输入框,此时键盘右下角显示完成,点击完成,可隐藏键盘。&lt;/p&gt;
-&lt;h1 id=&#34;heading&#34;&gt;为数字键盘添加完成功能&lt;/h1&gt;
+&lt;h1 id=&#34;为数字键盘添加完成功能&#34;&gt;为数字键盘添加完成功能&lt;/h1&gt;
 &lt;p&gt;当我们设置键盘类型为UIKeyboardType.numberPad,我们是无法为键盘添加完成收起键盘的功能。 但是我们可以利用UIToolbar在数字键盘上方附着一个完成按钮。&lt;/p&gt;
 &lt;p&gt;假设我们的TextField名为 codeTextfield,我们可以利用如下代码实现添加完成按钮,点击完成按钮,隐藏键盘。&lt;/p&gt;
 &lt;p&gt;效果如下:&lt;/p&gt;
@@ -1104,7 +1297,7 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
       <guid>https://www.3afun.com/post/2018/swift%E4%B9%8Bframework%E5%BC%80%E5%8F%91-%E5%A4%9A%E8%AF%AD%E8%A8%80%E5%9B%BD%E9%99%85%E5%8C%96/</guid>
       
         <description>&lt;p&gt;除了做App开发之外,有时候我们会使用Framework进行SDK开发,如果你使用的语言是Swift,你又怎么才能实现你的多语言国际化呢?&lt;/p&gt;
-&lt;h3 id=&#34;heading&#34;&gt;添加多语言文件&lt;/h3&gt;
+&lt;h3 id=&#34;添加多语言文件&#34;&gt;添加多语言文件&lt;/h3&gt;
 &lt;p&gt;1.项目配置 -&amp;gt; “Info” -&amp;gt; “Localizations”区域下，可以看到工程默认只支持英文，我们可以再添加中文语言。&lt;/p&gt;
 &lt;p&gt;2.Command + N, 选择iOS -&amp;gt; Resource -&amp;gt; Strings File
 &lt;img src=&#34;https://www.3afun.com/media/images/2018/multilang000.png&#34; alt=&#34;multiLang01&#34;&gt;
@@ -1115,7 +1308,7 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
 &lt;p&gt;7.此时，Xcode左侧的Localizable.strings左侧多了一个箭头，展开后可以看到存储各个语言的文件。&lt;/p&gt;
 &lt;p&gt;8.然后我们只需要在Localizable.strings下对应的文件中，分别以Key-Value的形式，为代码中每一个需要本地化的字符串赋值。&lt;/p&gt;
 &lt;p&gt;例如 &lt;code&gt;LOGIN = &amp;quot;登录&amp;quot;;&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&#34;heading1&#34;&gt;代码中多语言适配&lt;/h3&gt;
+&lt;h3 id=&#34;代码中多语言适配&#34;&gt;代码中多语言适配&lt;/h3&gt;
 &lt;p&gt;在SDK中提取多语言翻译,我们用到的方法是:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;public func NSLocalizedString(_ key: String, tableName: String? = default, bundle: Bundle = default, value: String = default, comment: String) -&amp;gt; String&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;NSLocalizedString&lt;/code&gt;可以接受5个参数,各个参数说明如下:&lt;/p&gt;
@@ -1184,7 +1377,7 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
       <guid>https://www.3afun.com/post/2018/swift%E5%8A%A8%E6%80%81%E5%BA%93frameworksdk%E5%BC%80%E5%8F%91/</guid>
       
         <description>&lt;p&gt;今天这篇文章主要是来讲解如何进行 &lt;code&gt;Cocoa Touch Framework&lt;/code&gt; 开发SDK,以及如何使用打包出来的SDK。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;学习目标&lt;/h2&gt;
+&lt;h2 id=&#34;学习目标&#34;&gt;学习目标&lt;/h2&gt;
 &lt;p&gt;看完这篇文章,你将会学会:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;使用Xcode创建一个&lt;code&gt;Cocoa Touch Framework&lt;/code&gt;项目,进行SDK开发&lt;/li&gt;
@@ -1193,13 +1386,13 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
 &lt;li&gt;UI和代码的链接,进行事件操作&lt;/li&gt;
 &lt;li&gt;调用打包的SDK中的函数&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;cocoa-touch-framework&#34;&gt;一、创建一个Cocoa Touch Framework项目&lt;/h2&gt;
-&lt;h3 id=&#34;1xcode&#34;&gt;1.打开Xcode,新建一个工程&lt;/h3&gt;
+&lt;h2 id=&#34;一创建一个cocoa-touch-framework项目&#34;&gt;一、创建一个Cocoa Touch Framework项目&lt;/h2&gt;
+&lt;h3 id=&#34;1打开xcode新建一个工程&#34;&gt;1.打开Xcode,新建一个工程&lt;/h3&gt;
 &lt;p&gt;因为是进行Cocoa Touch Framework开发,所以我们要选择这个,然后点击next。
 &lt;img src=&#34;https://www.3afun.com/media/images/2018/swift01.png&#34; alt=&#34;new project&#34;&gt;&lt;/p&gt;
 &lt;p&gt;在这里我们给我们的工程起个名字:AccountSDK
 &lt;img src=&#34;https://www.3afun.com/media/images/2018/swift02.png&#34; alt=&#34;new project&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;2sdk&#34;&gt;2.编写函数供SDK掉用者使用&lt;/h3&gt;
+&lt;h3 id=&#34;2编写函数供sdk掉用者使用&#34;&gt;2.编写函数供SDK掉用者使用&lt;/h3&gt;
 &lt;p&gt;菜单栏-&amp;gt;File-&amp;gt;New-&amp;gt;File&amp;hellip; 新建一个名为&lt;code&gt;LoginProcessor.swift&lt;/code&gt;的文件。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/swift03.png&#34; alt=&#34;new file&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;LoginProcessor.swift&lt;/code&gt;代码如下:&lt;/p&gt;
@@ -1234,32 +1427,32 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;在类LoginProcessor里面我们先定义了构造函数init,然后定义了一个login函数供SDK调用者使用,功能非常简单,只是一句简单输出。&lt;/p&gt;
-&lt;h3 id=&#34;3sdk&#34;&gt;3.打包SDK&lt;/h3&gt;
+&lt;h3 id=&#34;3打包sdk&#34;&gt;3.打包SDK&lt;/h3&gt;
 &lt;p&gt;快捷键command+B打包SDK成framework文件,默认生产的文件会在Products目录下。我们可以选择文件,右键打开文件所在位置找到文件供接下来的步骤使用。
 &lt;img src=&#34;https://www.3afun.com/media/images/2018/swift04.png&#34; alt=&#34;findindir&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;single-view-appsdk&#34;&gt;️二、创建Single View App项目来测试SDK&lt;/h2&gt;
-&lt;h3 id=&#34;1xcodeaccountsdkdemo&#34;&gt;1.使用Xcode新建一个名为AccountSDKDemo的工程&lt;/h3&gt;
+&lt;h2 id=&#34;二创建single-view-app项目来测试sdk&#34;&gt;️二、创建Single View App项目来测试SDK&lt;/h2&gt;
+&lt;h3 id=&#34;1使用xcode新建一个名为accountsdkdemo的工程&#34;&gt;1.使用Xcode新建一个名为AccountSDKDemo的工程&lt;/h3&gt;
 &lt;p&gt;Xcode菜单栏-&amp;gt;File-&amp;gt;New-&amp;gt;Project
 &lt;img src=&#34;https://www.3afun.com/media/images/2018/swift05.png&#34; alt=&#34;new Project&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/swift06.png&#34; alt=&#34;new Project&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;2storyboardbutton&#34;&gt;2.为storyboard添加Button&lt;/h3&gt;
+&lt;h3 id=&#34;2为storyboard添加button&#34;&gt;2.为storyboard添加Button&lt;/h3&gt;
 &lt;p&gt;左侧导航栏选中&lt;code&gt;Main.storyboard&lt;/code&gt;,中间我们会看到一个UI,右侧有工具区。我们从工具区拖拽一个Button到中间编辑区的UI上。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/swift07.png&#34; alt=&#34;new Project&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;3assistant-&#34;&gt;3.切换到Assistant 工作区&lt;/h3&gt;
+&lt;h3 id=&#34;3切换到assistant-工作区&#34;&gt;3.切换到Assistant 工作区&lt;/h3&gt;
 &lt;p&gt;点击工具栏左上角的 Show Assistant Editor&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/swift08.png&#34; alt=&#34;new Project&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;4ui&#34;&gt;4.UI和代码的绑定&lt;/h3&gt;
+&lt;h3 id=&#34;4ui和代码的绑定&#34;&gt;4.UI和代码的绑定&lt;/h3&gt;
 &lt;p&gt;1.编辑 ViewController.swift,在&lt;code&gt;UIViewController{ &lt;/code&gt;下面添加注释 &lt;code&gt;//MARK: Properties&lt;/code&gt;,下面代码来绑定UI中的变量,
 在类的最后一个括号上面添加一行注释&lt;code&gt;//MARK: Actions&lt;/code&gt;下面代码好绑定事件。&lt;/p&gt;
 &lt;p&gt;2.在UI上选中Button按钮,右键拖拽一个Referencing Outlets到&lt;code&gt;//MARK: Properties&lt;/code&gt;下面,并起名&lt;code&gt;loginButton&lt;/code&gt;
 拖拽一个Touch Up Inside事件到 &lt;code&gt;//MARK: Actions&lt;/code&gt;下面,起名&lt;code&gt;login&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/swift09.png&#34; alt=&#34;new Project&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;5sdk&#34;&gt;5.添加SDK&lt;/h3&gt;
+&lt;h3 id=&#34;5添加sdk&#34;&gt;5.添加SDK&lt;/h3&gt;
 &lt;p&gt;1.复制步骤一中打包出来的SDK到AccountSDKDemo目录下,并添加。
 &lt;img src=&#34;https://www.3afun.com/media/images/2018/swift10.png&#34; alt=&#34;new Project&#34;&gt;&lt;/p&gt;
 &lt;p&gt;2.General-&amp;gt;Embedded Binaries中添加SDK。
 &lt;img src=&#34;https://www.3afun.com/media/images/2018/swift11.png&#34; alt=&#34;new Project&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;6sdk&#34;&gt;6.调用SDK代码&lt;/h3&gt;
+&lt;h3 id=&#34;6调用sdk代码&#34;&gt;6.调用SDK代码&lt;/h3&gt;
 &lt;p&gt;编辑ViewController.swift,添加&lt;code&gt;import AccountSDK&lt;/code&gt;,并且在login事件中调用SDK中定义的login函数。
 最终该文件应该是这样的:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1336,10 +1529,10 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;heading1&#34;&gt;三、测试&lt;/h2&gt;
+&lt;/div&gt;&lt;h2 id=&#34;三测试&#34;&gt;三、测试&lt;/h2&gt;
 &lt;p&gt;Command+R 在模拟器上运行AccountSDKDemo App,运行后,点击Login按钮,观察后台日志,是否成功输出LoginProcessor中login函数的内容。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/swift12.png&#34; alt=&#34;new Project&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;heading2&#34;&gt;四、代码&lt;/h2&gt;
+&lt;h2 id=&#34;四代码&#34;&gt;四、代码&lt;/h2&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;代码下载&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 </description>
       
@@ -1368,7 +1561,7 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
       
         <description>&lt;p&gt;本章节我们将学习如何从智能合约代码自动生成与java交换的java代码。&lt;/p&gt;
 &lt;p&gt;首先我们需要安装Solidity编译器&lt;/p&gt;
-&lt;h1 id=&#34;solidity&#34;&gt;安装Solidity编译器&lt;/h1&gt;
+&lt;h1 id=&#34;安装solidity编译器&#34;&gt;安装Solidity编译器&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -1386,7 +1579,7 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;solcjs --version
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h1 id=&#34;web3j&#34;&gt;安装web3j&lt;/h1&gt;
+&lt;/div&gt;&lt;h1 id=&#34;安装web3j&#34;&gt;安装web3j&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -1398,10 +1591,293 @@ brew install web3j
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;查看web3j是否安装成功&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;web3j
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;binabi&#34;&gt;智能合约生成bin文件和abi文件&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;web3j
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;智能合约生成bin文件和abi文件&#34;&gt;智能合约生成bin文件和abi文件&lt;/h3&gt;
 &lt;p&gt;现在我们有如下合约 CoolCoin.sol&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pragma solidity 0.4.23;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;  1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 38
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 39
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 40
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 41
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 42
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 43
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 44
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 45
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 46
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 47
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 48
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 49
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 50
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 51
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 52
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 53
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 54
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 55
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 56
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 57
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 58
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 59
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 60
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 61
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 62
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 63
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 64
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 65
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 66
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 67
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 68
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 69
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 70
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 71
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 72
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 73
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 74
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 75
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 76
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 77
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 78
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 79
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 80
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 81
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 82
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 83
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 84
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 85
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 86
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 87
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 88
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 89
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 90
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 91
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 92
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 93
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 94
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 95
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 96
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 97
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 98
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 99
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;100
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;101
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;102
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;103
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;104
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;105
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;106
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;107
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;108
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;109
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;110
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;111
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;112
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;113
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;114
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;115
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;116
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;117
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;118
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;119
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;120
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;121
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;122
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;123
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;124
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;125
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;126
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;127
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;128
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;129
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;130
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;131
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;132
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;133
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;134
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;135
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;136
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;137
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;138
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;139
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;140
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;141
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;142
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;143
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;144
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;145
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;146
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;147
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;148
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;149
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;150
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;151
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;152
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;153
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;154
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;155
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;156
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;157
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;158
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;159
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;160
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;161
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;162
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;163
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;164
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;165
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;166
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;167
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;168
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;169
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;170
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;171
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;172
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;173
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;174
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;175
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;176
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;177
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;178
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;179
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;180
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;181
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;182
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;183
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;184
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;185
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;186
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;187
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;188
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;189
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;190
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;191
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;192
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;193
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;194
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;195
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;196
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;197
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;198
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;199
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;200
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;201
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;202
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;203
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;204
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;205
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;206
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;207
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;208
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;209
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;210
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;211
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;212
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;213
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;214
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;215
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;216
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;217
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;218
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;219
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;220
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;221
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;222
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;223
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;224
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;225
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;226
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;227
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;228
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;229
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;230
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;231
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;232
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;233
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;234
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;235
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;236
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;237
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;238
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;239
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;240
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;241
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;242
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;243
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;244
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;245
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;246
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;247
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;248
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;249
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;250
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;251
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;252
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;253
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;254
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;255
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;256
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;257
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;258
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;259
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;260
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;261
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;262
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;263
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;264
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;265
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;266
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;267
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;268
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;269
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;270
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;271
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;272
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;pragma solidity 0.4.23;
 interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
 /**
  * owned 是一个管理者
@@ -1435,7 +1911,7 @@ contract owned {
 contract TokenERC20 {
     /* 公共变量 */
     string public name; //代币名称
-    string public symbol; //代币符号比如&#39;$&#39;
+    string public symbol; //代币符号比如&amp;#39;$&amp;#39;
     uint8 public decimals = 18;  //代币精度，展示的小数点后面多少个0,和以太币一样后面是是18个0
     uint256 public totalSupply; //代币总量
     /*记录所有余额的映射*/
@@ -1673,7 +2149,9 @@ contract MyAdvancedToken is owned, TokenERC20 {
         msg.sender.transfer(amount * sellPrice);
     }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我们在同位置新建一个build的目录来存储bin 和 abi 文件。然后用solc编译合约代码获得 bin 和 abi&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;我们在同位置新建一个build的目录来存储bin 和 abi 文件。然后用solc编译合约代码获得 bin 和 abi&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -1683,38 +2161,80 @@ contract MyAdvancedToken is owned, TokenERC20 {
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;用web3j编译bin和abi 获得包装代码&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;web3j solidity generate /path/to/&amp;lt;smart-contract&amp;gt;.bin /path/to/&amp;lt;smart-contract&amp;gt;.abi -o /path/to/src/main/java -p com.your.organisation.name
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面从智能合约到生成java包装代码比较麻烦,更聪明的办法是你应该写一个脚本文件来处理:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#!/usr/bin/env bash
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;web3j solidity generate /path/to/&amp;lt;smart-contract&amp;gt;.bin /path/to/&amp;lt;smart-contract&amp;gt;.abi -o /path/to/src/main/java -p com.your.organisation.name
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;上面从智能合约到生成java包装代码比较麻烦,更聪明的办法是你应该写一个脚本文件来处理:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/usr/bin/env bash
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; -e
+&lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; -o pipefail
 
-set -e
-set -o pipefail
+&lt;span class=&#34;nv&#34;&gt;targets&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;ens/ENS
+&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;ens/PublicResolver
+&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
 
-targets=&amp;quot;
-ens/ENS
-ens/PublicResolver
-&amp;quot;
+&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; target in &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;targets&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
+    &lt;span class=&#34;nv&#34;&gt;dirName&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;dirname &lt;span class=&#34;nv&#34;&gt;$target&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;nv&#34;&gt;fileName&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;basename &lt;span class=&#34;nv&#34;&gt;$target&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
 
-for target in ${targets}; do
-    dirName=$(dirname $target)
-    fileName=$(basename $target)
+    &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$dirName&lt;/span&gt;
+    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;Compiling Solidity file &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;fileName&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.sol:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+    solc --bin --abi --optimize --overwrite &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;fileName&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;.sol -o build/
+    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Complete&amp;#34;&lt;/span&gt;
 
-    cd $dirName
-    echo &amp;quot;Compiling Solidity file ${fileName}.sol:&amp;quot;
-    solc --bin --abi --optimize --overwrite ${fileName}.sol -o build/
-    echo &amp;quot;Complete&amp;quot;
+    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Generating web3j bindings&amp;#34;&lt;/span&gt;
+    web3j solidity generate &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;        build/&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;fileName&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;.bin &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;        build/&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;fileName&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;.abi &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;        -p org.web3j.ens.contracts.generated &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;        -o ../../../../main/java/ &amp;gt; /dev/null
+    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Complete&amp;#34;&lt;/span&gt;
 
-    echo &amp;quot;Generating web3j bindings&amp;quot;
-    web3j solidity generate \
-        build/${fileName}.bin \
-        build/${fileName}.abi \
-        -p org.web3j.ens.contracts.generated \
-        -o ../../../../main/java/ &amp;gt; /dev/null
-    echo &amp;quot;Complete&amp;quot;
-
-    cd -
-done
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;讲解说明:&lt;/p&gt;
+    &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; -
+&lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;讲解说明:&lt;/p&gt;
 &lt;p&gt;该文件通过 targets 定义了 你要编译的合约ENS.sol和PublicResolver.sol&lt;/p&gt;
 &lt;p&gt;然后遍历待编译的合约文件,通过solc命令来编译。&lt;/p&gt;
 &lt;p&gt;最后通过web3j 命令来生成相应的java包装代码。&lt;/p&gt;
@@ -1867,11 +2387,18 @@ Fast-forward
 &lt;p&gt;对于普通的用户来说,这太不友好了,那么我们就得继续封装,允许用户在我们的网站或者手机上动动手指就可以完成简单的操作。&lt;/p&gt;
 &lt;p&gt;下面我们就学习一下如何用代码的方式替代钱包里的操作来调用智能合约。&lt;/p&gt;
 &lt;p&gt;我们重点讲一下两种访问智能合约方式: &lt;strong&gt;web3.js&lt;/strong&gt; 和 &lt;strong&gt;web3j&lt;/strong&gt;&lt;/p&gt;
-&lt;h1 id=&#34;web3js&#34;&gt;web3.js方式&lt;/h1&gt;
+&lt;h1 id=&#34;web3js方式&#34;&gt;web3.js方式&lt;/h1&gt;
 &lt;p&gt;如果你还没有安装node js 安装,请先安装node js,此处不再赘述。&lt;/p&gt;
-&lt;h2 id=&#34;heading&#34;&gt;安装&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;npm install web3
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;heading1&#34;&gt;代码&lt;/h2&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;npm install web3
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;代码&#34;&gt;代码&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -1908,23 +2435,41 @@ Fast-forward
 &lt;p&gt;第5、6行通过abi和address获取合约。&lt;/p&gt;
 &lt;p&gt;最后我们以异步方式调用&lt;code&gt;balanceOf&lt;/code&gt;方法,该方法使用了address来查询地址&lt;code&gt;0xc2298C3398584aaB380fafb564037D9Fb910e0a1&lt;/code&gt;有多少个Cool Coin。&lt;/p&gt;
 &lt;p&gt;大家可以通过执行该方法对比Mist钱包查询,自行验证余额是否一致。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;node CoolCoin.js
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;有关 web3 更多 API可参考 :
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;node CoolCoin.js
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;有关 web3 更多 API可参考 :
 &lt;!-- raw HTML omitted --&gt;这里&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;h1 id=&#34;web3j&#34;&gt;web3j方式&lt;/h1&gt;
-&lt;h2 id=&#34;heading2&#34;&gt;合约准备:&lt;/h2&gt;
+&lt;h1 id=&#34;web3j方式&#34;&gt;web3j方式&lt;/h1&gt;
+&lt;h2 id=&#34;合约准备&#34;&gt;合约准备:&lt;/h2&gt;
 &lt;p&gt;由于java的远程调用合约需要一个编译后的二进制码,利用已经存在的合约时,我暂未找到如何获取这个二进制码,所以在此我又重新发布了一个新合约才能获取编译后的二进制码。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/rpc02.png&#34; alt=&#34;rpc&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/rpc03.png&#34; alt=&#34;rpc&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;heading3&#34;&gt;开始&lt;/h2&gt;
+&lt;h2 id=&#34;开始&#34;&gt;开始&lt;/h2&gt;
 &lt;h3 id=&#34;maven&#34;&gt;Maven&lt;/h3&gt;
 &lt;p&gt;java 8:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;dependency&amp;gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&amp;lt;dependency&amp;gt;
     &amp;lt;groupId&amp;gt;org.web3j&amp;lt;/groupId&amp;gt;
     &amp;lt;artifactId&amp;gt;core&amp;lt;/artifactId&amp;gt;
     &amp;lt;version&amp;gt;3.3.1&amp;lt;/version&amp;gt;
 &amp;lt;/dependency&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;CoolCoin.java&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;CoolCoin.java&lt;/p&gt;
 &lt;p&gt;继承自Contract 并且对合约进行封装&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -2046,7 +2591,45 @@ Fast-forward
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;CoolCoinClient.java&lt;/p&gt;
 &lt;p&gt;一个调用合约函数的测试文件&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import com.threeafun.ethereum.contract.CoolCoin;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;import com.threeafun.ethereum.contract.CoolCoin;
 import org.web3j.crypto.Credentials;
 import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.RemoteCall;
@@ -2061,18 +2644,18 @@ public class CoolCoinClient{
 
     public static void main( String[] args ) throws Exception
     {
-        Web3j web3j = Web3j.build(new HttpService(&amp;quot;http://localhost:8545&amp;quot;));
+        Web3j web3j = Web3j.build(new HttpService(&amp;#34;http://localhost:8545&amp;#34;));
         try {
 
             String account = web3j.ethAccounts().send().getAccounts().get(0);
             Credentials credentials = Credentials.create(account);
             //合约地址
-            String address=&amp;quot;0xd69A0599df3C0dd9ACAa0a9E47365730E9f4ee99&amp;quot;;
+            String address=&amp;#34;0xd69A0599df3C0dd9ACAa0a9E47365730E9f4ee99&amp;#34;;
             CoolCoin coolCoin = CoolCoin.load(address,web3j,credentials, Contract.GAS_PRICE,Contract.Contract.GAS_LIMIT);
             //待查询余额的账户地址
-            String account2 = &amp;quot;0xc2298C3398584aaB380fafb564037D9Fb910e0a1&amp;quot;;
+            String account2 = &amp;#34;0xc2298C3398584aaB380fafb564037D9Fb910e0a1&amp;#34;;
             RemoteCall remoteCall= coolCoin.balanceOf(account);
-            System.out.println(&amp;quot;返回结果:&amp;quot;+remoteCall.send());
+            System.out.println(&amp;#34;返回结果:&amp;#34;+remoteCall.send());
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -2080,7 +2663,9 @@ public class CoolCoinClient{
     }
 
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;有关 web3j 更多可参考:&lt;!-- raw HTML omitted --&gt;web3j&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;有关 web3j 更多可参考:&lt;!-- raw HTML omitted --&gt;web3j&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;全文涉及到的代码, 在&lt;!-- raw HTML omitted --&gt;这里&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 </description>
       
@@ -2096,900 +2681,24 @@ public class CoolCoinClient{
         <description>&lt;p&gt;以太坊钱包想删除不用的合约怎么办?&lt;/p&gt;
 &lt;p&gt;1.菜单栏——&amp;raquo;开发——&amp;raquo;切换开发者工具——&amp;raquo;Ethereum Wallet,打开控制台。&lt;/p&gt;
 &lt;p&gt;2.获取合约 &lt;strong&gt;_id&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;CustomContracts.find().fetch()
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3.根据ID删除合约&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;CustomContracts.remove(&#39;_id&#39;)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/mist01.png&#34; alt=&#34;mist01&#34;&gt;&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>如何利用私有链来创建自己的加密代币</title>
-      <link>https://www.3afun.com/post/2018/how-to-use-your-own-private-ethereum-blockchain-to-create-your-own-crypto-currency/</link>
-      <pubDate>Mon, 16 Apr 2018 11:24:49 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2018/how-to-use-your-own-private-ethereum-blockchain-to-create-your-own-crypto-currency/</guid>
-      
-        <description>&lt;p&gt;根据前面的几篇文章,我们已经可以创建自己的私有链、使用钱包来链接私有链,今天我们来学习如何使用私有链来创建我们自己的加密货币。&lt;/p&gt;
-&lt;h1 id=&#34;heading&#34;&gt;工具&lt;/h1&gt;
-&lt;p&gt;1.私有链服务器 Geth Server&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.3afun.com/post/2018/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE1/&#34;&gt;Ubuntu16.04 搭建以太坊Ethereum私链1&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.3afun.com/post/2018/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE2/&#34;&gt;Ubuntu16.04 搭建以太坊Ethereum私链2&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;2.客户端钱包 Mist&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.3afun.com/post/2018/ethereum-wallet%E4%BB%A5%E5%A4%AA%E5%9D%8A%E9%92%B1%E5%8C%85%E9%93%BE%E6%8E%A5geth-server%E7%A7%81%E6%9C%89%E9%93%BE/&#34;&gt;Ethereum wallet以太坊钱包链接Geth Server私有链&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;minimum-viable-token&#34;&gt;最低限度的代币(Minimum Viable Token)&lt;/h1&gt;
-&lt;p&gt;标准代币合约可以非常的复杂,但是一个基本的代币像如下这样:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pragma solidity ^0.4.20;
-
-contract MyToken {
-    /* This creates an array with all balances */
-    mapping (address =&amp;gt; uint256) public balanceOf;
-
-    /* Initializes contract with initial supply tokens to the creator of the contract */
-    function MyToken(
-        uint256 initialSupply
-        ) public {
-        balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
-    }
-
-    /* Send coins */
-    function transfer(address _to, uint256 _value) public {
-        require(balanceOf[msg.sender] &amp;gt;= _value);           // Check if the sender has enough
-        require(balanceOf[_to] + _value &amp;gt;= balanceOf[_to]); // Check for overflows
-        balanceOf[msg.sender] -= _value;                    // Subtract from the sender
-        balanceOf[_to] += _value;                           // Add the same to the recipient
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;-the-code&#34;&gt;基础版代币 The Code&lt;/h1&gt;
-&lt;p&gt;如果你只想复制粘贴来实现一个完整的代币,可以使用下面这个。这个是ERC20 规范的代币合约 。相应的标准可以参考之前文章
-&lt;a href=&#34;https://www.3afun.com/post/2018/erc-20-token-standard/&#34;&gt;ERC20 标准规范&lt;/a&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pragma solidity ^0.4.16;
-
-interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
-
-contract TokenERC20 {
-    // Public variables of the token
-    string public name;
-    string public symbol;
-    uint8 public decimals = 18;
-    // 18 decimals is the strongly suggested default, avoid changing it
-    uint256 public totalSupply;
-
-    // This creates an array with all balances
-    mapping (address =&amp;gt; uint256) public balanceOf;
-    mapping (address =&amp;gt; mapping (address =&amp;gt; uint256)) public allowance;
-
-    // This generates a public event on the blockchain that will notify clients
-    event Transfer(address indexed from, address indexed to, uint256 value);
-
-    // This notifies clients about the amount burnt
-    event Burn(address indexed from, uint256 value);
-
-    /**
-     * Constructor function
-     *
-     * Initializes contract with initial supply tokens to the creator of the contract
-     */
-    function TokenERC20(
-        uint256 initialSupply,
-        string tokenName,
-        string tokenSymbol
-    ) public {
-        totalSupply = initialSupply * 10 ** uint256(decimals);  // Update total supply with the decimal amount
-        balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = tokenName;                                   // Set the name for display purposes
-        symbol = tokenSymbol;                               // Set the symbol for display purposes
-    }
-
-    /**
-     * Internal transfer, only can be called by this contract
-     */
-    function _transfer(address _from, address _to, uint _value) internal {
-        // Prevent transfer to 0x0 address. Use burn() instead
-        require(_to != 0x0);
-        // Check if the sender has enough
-        require(balanceOf[_from] &amp;gt;= _value);
-        // Check for overflows
-        require(balanceOf[_to] + _value &amp;gt;= balanceOf[_to]);
-        // Save this for an assertion in the future
-        uint previousBalances = balanceOf[_from] + balanceOf[_to];
-        // Subtract from the sender
-        balanceOf[_from] -= _value;
-        // Add the same to the recipient
-        balanceOf[_to] += _value;
-        emit Transfer(_from, _to, _value);
-        // Asserts are used to use static analysis to find bugs in your code. They should never fail
-        assert(balanceOf[_from] + balanceOf[_to] == previousBalances);
-    }
-
-    /**
-     * Transfer tokens
-     *
-     * Send `_value` tokens to `_to` from your account
-     *
-     * @param _to The address of the recipient
-     * @param _value the amount to send
-     */
-    function transfer(address _to, uint256 _value) public {
-        _transfer(msg.sender, _to, _value);
-    }
-
-    /**
-     * Transfer tokens from other address
-     *
-     * Send `_value` tokens to `_to` on behalf of `_from`
-     *
-     * @param _from The address of the sender
-     * @param _to The address of the recipient
-     * @param _value the amount to send
-     */
-    function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
-        require(_value &amp;lt;= allowance[_from][msg.sender]);     // Check allowance
-        allowance[_from][msg.sender] -= _value;
-        _transfer(_from, _to, _value);
-        return true;
-    }
-
-    /**
-     * Set allowance for other address
-     *
-     * Allows `_spender` to spend no more than `_value` tokens on your behalf
-     *
-     * @param _spender The address authorized to spend
-     * @param _value the max amount they can spend
-     */
-    function approve(address _spender, uint256 _value) public
-        returns (bool success) {
-        allowance[msg.sender][_spender] = _value;
-        return true;
-    }
-
-    /**
-     * Set allowance for other address and notify
-     *
-     * Allows `_spender` to spend no more than `_value` tokens on your behalf, and then ping the contract about it
-     *
-     * @param _spender The address authorized to spend
-     * @param _value the max amount they can spend
-     * @param _extraData some extra information to send to the approved contract
-     */
-    function approveAndCall(address _spender, uint256 _value, bytes _extraData)
-        public
-        returns (bool success) {
-        tokenRecipient spender = tokenRecipient(_spender);
-        if (approve(_spender, _value)) {
-            spender.receiveApproval(msg.sender, _value, this, _extraData);
-            return true;
-        }
-    }
-
-    /**
-     * Destroy tokens
-     *
-     * Remove `_value` tokens from the system irreversibly
-     *
-     * @param _value the amount of money to burn
-     */
-    function burn(uint256 _value) public returns (bool success) {
-        require(balanceOf[msg.sender] &amp;gt;= _value);   // Check if the sender has enough
-        balanceOf[msg.sender] -= _value;            // Subtract from the sender
-        totalSupply -= _value;                      // Updates totalSupply
-        emit Burn(msg.sender, _value);
-        return true;
-    }
-
-    /**
-     * Destroy tokens from other account
-     *
-     * Remove `_value` tokens from the system irreversibly on behalf of `_from`.
-     *
-     * @param _from the address of the sender
-     * @param _value the amount of money to burn
-     */
-    function burnFrom(address _from, uint256 _value) public returns (bool success) {
-        require(balanceOf[_from] &amp;gt;= _value);                // Check if the targeted balance is enough
-        require(_value &amp;lt;= allowance[_from][msg.sender]);    // Check allowance
-        balanceOf[_from] -= _value;                         // Subtract from the targeted balance
-        allowance[_from][msg.sender] -= _value;             // Subtract from the sender&#39;s allowance
-        totalSupply -= _value;                              // Update totalSupply
-        emit Burn(_from, _value);
-        return true;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;-how-to-deploy&#34;&gt;如何发布 How to deploy&lt;/h1&gt;
-&lt;p&gt;1.点击钱包右上角合约,选择部署新合约
-&lt;img src=&#34;https://www.3afun.com/media/images/2018/deploy01.png&#34; alt=&#34;deploy step&#34;&gt;&lt;/p&gt;
-&lt;p&gt;2.将上面代码复制粘贴到左边Solidity合约原始代码,右边选择合约Token ERC20 填写相应初始量、代币名称、代币符号后点击最下面 部署按钮&lt;/p&gt;
-&lt;p&gt;在这里我们发行量选择 1,000,000枚 起名字 BBCoin 货币符号 BBC
-&lt;img src=&#34;https://www.3afun.com/media/images/2018/deploy02.png&#34; alt=&#34;deploy step&#34;&gt;
-输入密码后,回到合约界面等待一会即可看到自己发布的代币
-&lt;img src=&#34;https://www.3afun.com/media/images/2018/deploy03.png&#34; alt=&#34;deploy step&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/deploy04.png&#34; alt=&#34;deploy step&#34;&gt;
-3.回到钱包主界面,点击选择我们的主账户,我们可以看到我们的账户里已经有我们发行的货币了
-&lt;img src=&#34;https://www.3afun.com/media/images/2018/deploy05.png&#34; alt=&#34;deploy step&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/deploy06.png&#34; alt=&#34;deploy step&#34;&gt;&lt;/p&gt;
-&lt;h1 id=&#34;heading1&#34;&gt;转账&lt;/h1&gt;
-&lt;p&gt;1.通过钱包转账&lt;/p&gt;
-&lt;p&gt;点击发送,选择发送资金时候可以选择我们刚刚创建的BBCoin就可以了
-&lt;img src=&#34;https://www.3afun.com/media/images/2018/deploy07.png&#34; alt=&#34;deploy step&#34;&gt;&lt;/p&gt;
-&lt;p&gt;然后我们点击钱包,去查看账户2的内容,就可以看到多了相应数量的BBCoin
-&lt;img src=&#34;https://www.3afun.com/media/images/2018/deploy08.png&#34; alt=&#34;deploy step&#34;&gt;&lt;/p&gt;
-&lt;p&gt;2.通过合约转账&lt;/p&gt;
-&lt;p&gt;进入合约管理界面,选择相应的函数,填写参数,执行就好。&lt;/p&gt;
-&lt;p&gt;(注意:上面我们定义的精度是18,这里参数也是需要带精度的)。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/deploy09.png&#34; alt=&#34;deploy step&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/deploy10.png&#34; alt=&#34;deploy step&#34;&gt;&lt;/p&gt;
-&lt;h1 id=&#34;heading2&#34;&gt;提升你代币&lt;/h1&gt;
-&lt;h2 id=&#34;heading3&#34;&gt;其他更多基础函数&lt;/h2&gt;
-&lt;p&gt;在上面基础版代码中,你可能注意到还有一些其他基本的函数,像是&lt;code&gt;approve`,&lt;/code&gt;sendFrom&lt;code&gt;等。这些函数是用来和其他合约进行交互用。 假如你需要出售你的代币到一个去中心化交易,只发送代币到一个地址是不够的,因为合约不会订阅 Events, 只会进行 functions call,所以这次的交换不会被识别成新的代币,不知道是谁发送的。 所以对于合约,你需要首先批准一定量的他们可以从你账户进行转移的代币,然后才能告诉他们让他们知道应该做一些事,或者你可以使用&lt;/code&gt;approveAndCall`可以把这2个操作合二为一。&lt;/p&gt;
-&lt;p&gt;因为很多这些函数需要重新实现代币转账,所以将他们定义成内部函数是有意义的,像是下面的只可以由合约自身来调用:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    /* Internal transfer, can only be called by this contract */
-    function _transfer(address _from, address _to, uint _value) internal {
-        require (_to != 0x0);                               // Prevent transfer to 0x0 address. Use burn() instead
-        require (balanceOf[_from] &amp;gt;= _value);                // Check if the sender has enough
-        require (balanceOf[_to] + _value &amp;gt;= balanceOf[_to]); // Check for overflows
-        require(!frozenAccount[_from]);                     // Check if sender is frozen
-        require(!frozenAccount[_to]);                       // Check if recipient is frozen
-        balanceOf[_from] -= _value;                         // Subtract from the sender
-        balanceOf[_to] += _value;                           // Add the same to the recipient
-        Transfer(_from, _to, _value);
-    }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;现在所有可以转移代币的函数都可以执行自己的检查,然后再使用正确的参数来调用 transfer函数。我们会发现这个函数会从一个账户转移到另一个账户,而不需要一个人的允许。所以我们要将他定义成一个内部函数,只能被合约来调用。如果你想增加可以调用这个函数的函数,你需要检查调用者是否有权来调用。&lt;/p&gt;
-&lt;h2 id=&#34;heading4&#34;&gt;中心化管理员&lt;/h2&gt;
-&lt;p&gt;所有的Dapps默认是完全去中心化的,这并不意味着他们不需要一些中心化的管理者。或许你需要有货币增发的功能,或者你需要禁止某些人使用你的代币。
-你可以添加诸如此类的一些功能,唯一需要做的就是在一开始的时候添加这些功能,所以那些代币持有者永远会在他们决定持有前确切的知道游戏规则。&lt;/p&gt;
-&lt;p&gt;期待这些事可以实现,你需要一个中心货币管理者。这可以是一个简单的账户,但也可以是一个合约,因此创建更多代币的决定取决于合约:如果他是一个可以投票的民主组织或者它只是一个限制代币所有者的权力。&lt;/p&gt;
-&lt;p&gt;为了做到这些,我们会学习到一个非常有用的合约属性: &lt;code&gt;inheritance&lt;/code&gt;。继承允许一个合约无需重新定义他们就得到父合约的一些特点。这就可以使代码干净,简单可复用。在你的代码&lt;code&gt;contract MyToken {&lt;/code&gt;前面,先添加添加如下代码。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;contract owned {
-        address public owner;
-
-        function owned() {
-            owner = msg.sender;
-        }
-
-        modifier onlyOwner {
-            require(msg.sender == owner);
-            _;
-        }
-
-        function transferOwnership(address newOwner) onlyOwner {
-            owner = newOwner;
-        }
-    }
-
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这创建了一个非常简单的合约,你不需要做什么,只需要在名为&lt;code&gt;owned&lt;/code&gt;里面定义有关合约的一些通用的函数。
-下一步就是只需要在你合约里面添加  &lt;code&gt;is owned &lt;/code&gt;即可。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    contract MyToken is owned {
-        /* the rest of the contract as usual */
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这意味着你在&lt;code&gt;MyToken&lt;/code&gt;里面所有的函数都可要访问&lt;code&gt;owner&lt;/code&gt;变量和修改者&lt;code&gt;onlyOwner&lt;/code&gt;。这个合约同事也得到了一个可以转换管理员的函数。
-因为在开始的时候设置一个管理者会非常的有趣,所以你可以把这个功能添加到构造函数中去:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    function MyToken(
-        uint256 initialSupply,
-        string tokenName,
-        uint8 decimalUnits,
-        string tokenSymbol,
-        address centralMinter
-        ) {
-        if(centralMinter != 0 ) owner = centralMinter;
-    }
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;heading5&#34;&gt;代币增发&lt;/h2&gt;
-&lt;p&gt;有时我们可能需要货币增发或者删除的情况。&lt;/p&gt;
-&lt;p&gt;我们首先需要增加一个&lt;code&gt;totalSupply&lt;/code&gt;变量来存储发行量,并且在构造函数中指定。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    contract MyToken {
-        uint256 public totalSupply;
-
-        function MyToken(...) {
-            totalSupply = initialSupply;
-            ...
-        }
-        ...
-    }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;现在我们来增加一个函数,可以让管理员来发行新币&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    function mintToken(address target, uint256 mintedAmount) onlyOwner {
-        balanceOf[target] += mintedAmount;
-        totalSupply += mintedAmount;
-        Transfer(0, owner, mintedAmount);
-        Transfer(owner, target, mintedAmount);
-    }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注意到上面的修饰符&lt;code&gt;onlyOwner&lt;/code&gt;说明 &lt;code&gt;mintToken&lt;/code&gt; 是继承了 &lt;code&gt;onlyOwner&lt;/code&gt;方法，会先调用 &lt;code&gt;modifier onlyOwner&lt;/code&gt; 方法，然后将&lt;code&gt;mintToken&lt;/code&gt; 方法的内容，插入到下划线 &lt;code&gt;_&lt;/code&gt; 处调用。&lt;/p&gt;
-&lt;h2 id=&#34;heading6&#34;&gt;冻结资产&lt;/h2&gt;
-&lt;p&gt;根据你的适用情况,你可能会需要一些监管来让谁或者禁止谁来使用你的代币,你需要添加一个参数来让合约管理员冻结或者解冻资产。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    mapping (address =&amp;gt; bool) public frozenAccount;
-    event FrozenFunds(address target, bool frozen);
-
-    function freezeAccount(address target, bool freeze) onlyOwner {
-        frozenAccount[target] = freeze;
-        FrozenFunds(target, freeze);
-    }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用这段代码,所有的账户默认是非冻结状态,管理员可以通过调用&lt;code&gt;Freeze Account&lt;/code&gt;来冻结账户。但是到目前还没有正式生效,我们还需在转账交易函数里添加如下代码:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    function transfer(address _to, uint256 _value) {
-        require(!frozenAccount[msg.sender]);
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;现在被冻结账户仍然玩好的拥有资金,但是不能转移他们。所有的账户默认是非冻结状态,除非你去冻结他们,但是你可以轻易的还原这个行为,把他们一个个的手动批准加入到白名单中去。
-只需要把&lt;code&gt;frozenAccount&lt;/code&gt;重命名成&lt;code&gt;approvedAccount&lt;/code&gt;并且把最后一行代码改成:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    require(approvedAccount[msg.sender]);
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;heading7&#34;&gt;自动买卖&lt;/h2&gt;
-&lt;p&gt;到目前为止,你依靠效用和信任来评估你的代币。但是你如果想要的话,你可以通过创建一个基金来以市场价进行买卖兑换以太币或者其他代币。&lt;/p&gt;
-&lt;p&gt;首先让我们来设置一个买入和卖出价格:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    uint256 public sellPrice;
-    uint256 public buyPrice;
-
-    function setPrices(uint256 newSellPrice, uint256 newBuyPrice) onlyOwner {
-        sellPrice = newSellPrice;
-        buyPrice = newBuyPrice;
-    }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;对于一个不经常变的价格,这是可以接受的。因为每次更改价格将会需要你来执行一个合同并且花费一点的以太币。如果你希望有个持续浮动的价格,我们建议你研究一下 &lt;a href=&#34;https://github.com/ethereum/wiki/wiki/Standardized_Contract_APIs#data-feeds&#34;&gt;standard data feeds&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;下一步来增加购买和销售函数:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    function buy() payable returns (uint amount){
-        amount = msg.value / buyPrice;                    // calculates the amount
-        require(balanceOf[this] &amp;gt;= amount);               // checks if it has enough to sell
-        balanceOf[msg.sender] += amount;                  // adds the amount to buyer&#39;s balance
-        balanceOf[this] -= amount;                        // subtracts amount from seller&#39;s balance
-        Transfer(this, msg.sender, amount);               // execute an event reflecting the change
-        return amount;                                    // ends function and returns
-    }
-
-    function sell(uint amount) returns (uint revenue){
-        require(balanceOf[msg.sender] &amp;gt;= amount);         // checks if the sender has enough to sell
-        balanceOf[this] += amount;                        // adds the amount to owner&#39;s balance
-        balanceOf[msg.sender] -= amount;                  // subtracts the amount from seller&#39;s balance
-        revenue = amount * sellPrice;
-        msg.sender.transfer(revenue);                     // sends ether to the seller: it&#39;s important to do this last to prevent recursion attacks
-        Transfer(msg.sender, this, amount);               // executes an event reflecting on the change
-        return revenue;                                   // ends function and returns
-    }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;buy函数中我们增加了一个payable关键字,表示调用者可以直接向该函数传入以太币进行调用。&lt;/p&gt;
-&lt;p&gt;注意:买入和卖出价格并不是以Ether为单位,而是以wei(最小货币精度)为单位。1Ether = 1000000000000000000 wei。所以当在Ether中设置价格时,后面需要加18个0.&lt;/p&gt;
-&lt;p&gt;不明白的话,可以看后面的Sell Buy 测试数据。&lt;/p&gt;
-&lt;p&gt;当创建合约时,要发送足够的Ether以确保能买回来市场上所有的代币,否则你的合约会破产并且你的用户不能卖出他们的代币。&lt;/p&gt;
-&lt;p&gt;前面的例子,当然是在描述一个和单个中央卖方买方的合约,更有趣的合约是允许任何人都可要设置不懂竞价的市场,或者直接从外部来源加载价格。&lt;/p&gt;
-&lt;h2 id=&#34;heading8&#34;&gt;自动补充&lt;/h2&gt;
-&lt;p&gt;每一次你想在以太坊上进行一笔交易,你需要支付一些费用给挖这个区块的矿工以计算你合约的结果。 &lt;a href=&#34;https://github.com/ethereum/EIPs/issues/28&#34;&gt;未来这可能会改变&lt;/a&gt;
-目前费用只能用以太币来支付因此你代币的用户都需要它。
-账户余额小于特定费用的时候会被卡住,直到所有人owner可以支付所需费用。但是在有些情况下,你或许不希望你的用户来考虑以太币,区块链或者怎么获取以太币,所以一个可以的办法是让你的币只要检测余额低的有些危险的时候可以自动补充。&lt;/p&gt;
-&lt;p&gt;为了做到这样,首先你需要创建一个变量来保存阈值和一个函数来改变它。如果你不知道应该设置多少,设置&lt;strong&gt;5finney&lt;/strong&gt;(0.005以太币)就好。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    uint public minBalanceForAccounts;
-
-    function setMinBalance(uint minimumBalanceInFinney) onlyOwner {
-         minBalanceForAccounts = minimumBalanceInFinney * 1 finney;
-    }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后，将此行添加到&lt;strong&gt;transfer&lt;/strong&gt;功能，以便发件人退款：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    /* Send coins */
-    function transfer(address _to, uint256 _value) {
-        ...
-        if(msg.sender.balance &amp;lt; minBalanceForAccounts)
-            sell((minBalanceForAccounts - msg.sender.balance) / sellPrice);
-    }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;还有一种做法是，发送者检测收款方有没有足够的ETH，如果没有，发送者则兑换一部分自己的代币，将得到的ETH发送给收款方（这种做法就是为收款方服务，收款方不用处理ETH、GAS的事情）&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    /* Send coins */
-    function transfer(address _to, uint256 _value) {
-        ...
-        if(_to.balance&amp;lt;minBalanceForAccounts)
-            _to.send(sell((minBalanceForAccounts - _to.balance) / sellPrice));
-    }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这将确保不会有低于必要以太币的账户可以接受代币。&lt;/p&gt;
-&lt;h1 id=&#34;heading9&#34;&gt;高级版代币&lt;/h1&gt;
-&lt;h2 id=&#34;heading10&#34;&gt;全部代码&lt;/h2&gt;
-&lt;p&gt;如果你打算添加所有高级的高能,下面是最终代码:&lt;/p&gt;
-&lt;p&gt;注意:原示例中存在几处bug已经修正。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pragma solidity 0.4.21;
-
-interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
-
-/**
- * owned 是一个管理者
- */
-contract owned {
-    address public owner;
-
-    /**
-     * 初台化构造函数
-     */
-    function owned() public{
-        owner = msg.sender;
-    }
-
-    /**
-     * 判断当前合约调用者是否是管理员
-     */
-    modifier onlyOwner {
-        require (msg.sender == owner);
-        _;
-    }
-
-    /**
-     * 指派一个新的管理员
-     * @param  newOwner address 新的管理员帐户地址
-     */
-    function transferOwnership(address newOwner) onlyOwner public{
-        owner = newOwner;
-    }
-}
-
-/**
- * @title 基础版的代币合约
- */
-contract TokenERC20 {
-    /* 公共变量 */
-    string public name; //代币名称
-    string public symbol; //代币符号比如&#39;$&#39;
-    uint8 public decimals = 18;  //代币精度，展示的小数点后面多少个0,和以太币一样后面是是18个0
-    uint256 public totalSupply; //代币总量
-
-    /*记录所有余额的映射*/
-    mapping (address =&amp;gt; uint256) public balanceOf;
-    mapping (address =&amp;gt; mapping (address =&amp;gt; uint256)) public allowance;
-
-    /* 在区块链上创建一个事件，用以通知客户端*/
-    event Transfer(address indexed from, address indexed to, uint256 value);  //转帐通知事件
-    event Burn(address indexed from, uint256 value);  //减去用户余额事件
-
-    /* 构造函数
-     * 初始化合约，并且把初始的所有代币都给这合约的创建者
-     * @param initialSupply 代币的总数
-     * @param tokenName 代币名称
-     * @param tokenSymbol 代币符号
-     */
-    function TokenERC20(uint256 initialSupply, string tokenName, string tokenSymbol) public{
-
-        //初始化总量
-        totalSupply = initialSupply * 10 ** uint256(decimals);    //使用精度来更新总量
-
-        //初始化总量赋值给创建者
-        balanceOf[msg.sender] = totalSupply;
-        name = tokenName;
-        symbol = tokenSymbol;
-
-    }
-
-
-    /**
-     * 私有方法从一个帐户发送给另一个帐户代币，只能合约内部调用
-     * @param  _from address 发送代币的地址
-     * @param  _to address 接受代币的地址
-     * @param  _value uint256 接受代币的数量
-     */
-    function _transfer(address _from, address _to, uint256 _value) internal {
-
-      //避免转帐的地址是0x0
-      require(_to != 0x0);
-
-      //检查发送者是否拥有足够余额
-      require(balanceOf[_from] &amp;gt;= _value);
-
-      //检查是否溢出
-      require(balanceOf[_to] + _value &amp;gt; balanceOf[_to]);
-
-      //保存数据用于后面的判断
-      uint previousBalances = balanceOf[_from] + balanceOf[_to];
-
-      //从发送者减掉发送额
-      balanceOf[_from] -= _value;
-
-      //给接收者加上相同的量
-      balanceOf[_to] += _value;
-
-      //通知任何监听该交易的客户端
-      emit Transfer(_from, _to, _value);
-
-      //判断买、卖双方的数据是否和转换前一致
-      assert(balanceOf[_from] + balanceOf[_to] == previousBalances);
-
-    }
-
-    /**
-     * 从主帐户合约调用者发送给别人代币
-     * @param  _to address 接受代币的地址
-     * @param  _value uint256 接受代币的数量
-     */
-    function transfer(address _to, uint256 _value) public {
-        _transfer(msg.sender, _to, _value);
-    }
-
-    /**
-     * 从某个指定的帐户中，向另一个帐户发送代币
-     *
-     * 调用过程，会检查设置的允许最大交易额
-     *
-     * @param  _from address 发送者地址
-     * @param  _to address 接受者地址
-     * @param  _value uint256 要转移的代币数量
-     * @return success        是否交易成功
-     */
-    function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
-        //检查发送者是否拥有足够余额
-        require(_value &amp;lt;= allowance[_from][msg.sender]);   // Check allowance
-
-        allowance[_from][msg.sender] -= _value;
-
-        _transfer(_from, _to, _value);
-
-        return true;
-    }
-
-    /**
-     * 设置帐户允许支付的最大金额
-     *
-     * 一般在智能合约的时候，避免支付过多，造成风险
-     *
-     * @param _spender 帐户地址
-     * @param _value 金额
-     */
-    function approve(address _spender, uint256 _value) public returns (bool success) {
-        allowance[msg.sender][_spender] = _value;
-        return true;
-    }
-
-    /**
-     * 设置帐户允许支付的最大金额
-     *
-     * 一般在智能合约的时候，避免支付过多，造成风险，加入时间参数，可以在 tokenRecipient 中做其他操作
-     *
-     * @param _spender 帐户地址
-     * @param _value 金额
-     * @param _extraData 操作的时间
-     */
-    function approveAndCall(address _spender, uint256 _value, bytes _extraData) public returns (bool success) {
-        tokenRecipient spender = tokenRecipient(_spender);
-        if (approve(_spender, _value)) {
-            spender.receiveApproval(msg.sender, _value, this, _extraData);
-            return true;
-        }
-    }
-
-    /**
-     * 减少代币调用者的余额
-     *
-     * 操作以后是不可逆的
-     *
-     * @param _value 要删除的数量
-     */
-    function burn(uint256 _value) public returns (bool success) {
-        //检查帐户余额是否大于要减去的值
-        require(balanceOf[msg.sender] &amp;gt;= _value);   // Check if the sender has enough
-
-        //给指定帐户减去余额
-        balanceOf[msg.sender] -= _value;
-
-        //代币问题做相应扣除
-        totalSupply -= _value;
-
-        emit Burn(msg.sender, _value);
-        return true;
-    }
-
-    /**
-     * 删除帐户的余额（含其他帐户）
-     *
-     * 删除以后是不可逆的
-     *
-     * @param _from 要操作的帐户地址
-     * @param _value 要减去的数量
-     */
-    function burnFrom(address _from, uint256 _value) public returns (bool success) {
-
-        //检查帐户余额是否大于要减去的值
-        require(balanceOf[_from] &amp;gt;= _value);
-
-        //检查 其他帐户 的余额是否够使用
-        require(_value &amp;lt;= allowance[_from][msg.sender]);
-
-        //减掉代币
-        balanceOf[_from] -= _value;
-        allowance[_from][msg.sender] -= _value;
-
-        //更新总量
-        totalSupply -= _value;
-        emit Burn(_from, _value);
-        return true;
-    }
-}
-
-/**
- * @title 高级版代币
- * 增加冻结用户、挖矿、根据指定汇率购买(售出)代币价格的功能
- */
-contract MyAdvancedToken is owned, TokenERC20 {
-
-    //卖出价格 单位是wei
-    uint256 public sellPrice;
-
-    //买入价格
-    uint256 public buyPrice;
-
-    //是否冻结帐户的列表
-    mapping (address =&amp;gt; bool) public frozenAccount;
-
-    //定义一个事件，当有资产被冻结的时候，通知正在监听事件的客户端
-    event FrozenFunds(address target, bool frozen);
-
-
-    /*初始化合约，并且把初始的所有的令牌都给这合约的创建者
-     * @param initialSupply 所有币的总数
-     * @param tokenName 代币名称
-     * @param tokenSymbol 代币符号
-     */
-    function MyAdvancedToken(
-      uint256 initialSupply,
-      string tokenName,
-      string tokenSymbol
-    ) public TokenERC20 (initialSupply, tokenName, tokenSymbol) {
-     //初始化操作
-    }
-
-
-    /**
-     * 私有方法，从指定帐户转出余额
-     * @param  _from address 发送代币的地址
-     * @param  _to address 接受代币的地址
-     * @param  _value uint256 接受代币的数量
-     */
-    function _transfer(address _from, address _to, uint _value) internal {
-
-        //避免转帐的地址是0x0
-        require (_to != 0x0);
-
-        //检查发送者是否拥有足够余额
-        require (balanceOf[_from] &amp;gt;= _value);
-
-        //检查是否溢出
-        require (balanceOf[_to] + _value &amp;gt;= balanceOf[_to]);
-
-        //检查 冻结帐户
-        require(!frozenAccount[_from]);
-        require(!frozenAccount[_to]);
-
-
-
-        //从发送者减掉发送额
-        balanceOf[_from] -= _value;
-
-        //给接收者加上相同的量
-        balanceOf[_to] += _value;
-
-        //通知任何监听该交易的客户端
-        emit Transfer(_from, _to, _value);
-
-    }
-
-    /**
-     * 合约拥有者，可以为指定帐户创造一些代币
-     * @param  target address 帐户地址
-     * @param  mintedAmount uint256 增加的金额(单位是wei)
-     */
-    function mintToken(address target, uint256 mintedAmount) onlyOwner public{
-
-        //给指定地址增加代币，同时总量也相加
-        balanceOf[target] += mintedAmount;
-        totalSupply += mintedAmount;
-
-
-        emit Transfer(0, this, mintedAmount);
-        emit Transfer(this, target, mintedAmount);
-    }
-
-    /**
-     * 增加冻结帐户名称
-     *
-     * 你可能需要监管功能以便你能控制谁可以/谁不可以使用你创建的代币合约
-     *
-     * @param  target address 帐户地址
-     * @param  freeze bool    是否冻结
-     */
-    function freezeAccount(address target, bool freeze) onlyOwner public{
-        frozenAccount[target] = freeze;
-        emit FrozenFunds(target, freeze);
-    }
-
-    /**
-     * 设置买卖价格
-     *
-     * 如果你想让ether(或其他代币)为你的代币进行背书,以便可以市场价自动化买卖代币,我们可以这么做。如果要使用浮动的价格，也可以在这里设置
-     *
-     * @param newSellPrice 新的卖出价格
-     * @param newBuyPrice 新的买入价格
-     */
-    function setPrices(uint256 newSellPrice, uint256 newBuyPrice) onlyOwner public{
-        sellPrice = newSellPrice;
-        buyPrice = newBuyPrice;
-    }
-
-    /**
-     * 使用以太币购买代币,通过增加关键字 payable 我们就可以从任何账户接受以太币来调用这个函数。
-     */
-    function buy() payable public {
-      uint amount = msg.value / buyPrice;
-
-      _transfer(this, msg.sender, amount);
-    }
-
-    /**
-     * @dev 卖出代币
-     * @return 要卖出的数量(单位是wei)
-     */
-    function sell(uint256 amount) public {
-
-        //检查合约的余额是否充足
-        require(address(this).balance &amp;gt;= amount * sellPrice);
-
-        _transfer(msg.sender, this, amount);
-
-        msg.sender.transfer(amount * sellPrice);
-    }
-}
-
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;heading11&#34;&gt;部署&lt;/h2&gt;
-&lt;p&gt;复制修正后代码到部署界面,选择My Advanced Token,填写相应的参数,发布即可。
-&lt;img src=&#34;https://www.3afun.com/media/images/2018/deploy11.png&#34; alt=&#34;deplpy&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;heading12&#34;&gt;测试&lt;/h2&gt;
-&lt;h3 id=&#34;heading13&#34;&gt;准备&lt;/h3&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;账号&lt;/th&gt;
-&lt;th&gt;地址&lt;/th&gt;
-&lt;th&gt;CoolCoin&lt;/th&gt;
-&lt;th&gt;Ether&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Main account&lt;/td&gt;
-&lt;td&gt;0x914995c9c3c993C9D3Fdd63602c91823F932b308&lt;/td&gt;
-&lt;td&gt;9800&lt;/td&gt;
-&lt;td&gt;x&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Account 2&lt;/td&gt;
-&lt;td&gt;0x30Ed8Cd207dfdAF5E24847252DF822b1DA1F2FE5&lt;/td&gt;
-&lt;td&gt;100&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Account 3&lt;/td&gt;
-&lt;td&gt;0x379f0f61dF4D9009C1AB7BDEA409F5465b5D940c&lt;/td&gt;
-&lt;td&gt;100&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Account 4&lt;/td&gt;
-&lt;td&gt;0xc2298C3398584aaB380fafb564037D9Fb910e0a1&lt;/td&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;1set-prices-&#34;&gt;1.Set prices 测试&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;实验:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;在合约管理界面,通过Set Prices函数,我们可以设置&lt;/p&gt;
-&lt;p&gt;New sell price =  1&lt;/p&gt;
-&lt;p&gt;New buy price = 2&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;结果&lt;/strong&gt;:&lt;/p&gt;
-&lt;p&gt;等到同步一个区块后,发现管理界面Sell price 和 Buy Price已经更新。&lt;/p&gt;
-&lt;h3 id=&#34;2approve--allowance-transfer-from-&#34;&gt;2.Approve &amp;amp; Allowance &amp;amp;Transfer From 测试&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;实验1:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;通过账户2授权10个CoolCoin给账户3&lt;/p&gt;
-&lt;p&gt;Approve(Account2, 100)&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin01.png&#34; alt=&#34;cool coin&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;结果:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;通过Allowance查看账户2拥有账户3的授权额度&lt;/p&gt;
-&lt;p&gt;Allowance(Account 2, Account 3) = 10&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin02.png&#34; alt=&#34;cool coin&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;实验2:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;通过Transfer From函数,账户3将账户2账户的10个Cool Coin转给账户4&lt;/p&gt;
-&lt;p&gt;Transfer From(Account2, Account4,10)&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin03.png&#34; alt=&#34;cool coin&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;结果:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Balance of(Account2) = 90&lt;/p&gt;
-&lt;p&gt;Balance of(Account4) = 10&lt;/p&gt;
-&lt;p&gt;Allowance(Account 2, Account 3) = 0&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;账号&lt;/th&gt;
-&lt;th&gt;地址&lt;/th&gt;
-&lt;th&gt;CoolCoin&lt;/th&gt;
-&lt;th&gt;Ether&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Main account&lt;/td&gt;
-&lt;td&gt;0x914995c9c3c993C9D3Fdd63602c91823F932b308&lt;/td&gt;
-&lt;td&gt;9800&lt;/td&gt;
-&lt;td&gt;x&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Account 2&lt;/td&gt;
-&lt;td&gt;0x30Ed8Cd207dfdAF5E24847252DF822b1DA1F2FE5&lt;/td&gt;
-&lt;td&gt;90&lt;/td&gt;
-&lt;td&gt;0,999212698&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Account 3&lt;/td&gt;
-&lt;td&gt;0x379f0f61dF4D9009C1AB7BDEA409F5465b5D940c&lt;/td&gt;
-&lt;td&gt;100&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Account 4&lt;/td&gt;
-&lt;td&gt;0xc2298C3398584aaB380fafb564037D9Fb910e0a1&lt;/td&gt;
-&lt;td&gt;10&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;其他条件测试可自行进行。&lt;/p&gt;
-&lt;h3 id=&#34;3burn-&#34;&gt;3.Burn 测试&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;实验&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;销毁账户4的5个Cool Coin&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin04.png&#34; alt=&#34;cool coin&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;结果&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;账户4 还剩下5个Cool Coin,Total supply 同步也会减少5个。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin05.png&#34; alt=&#34;cool coin&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;4mint-token-&#34;&gt;4.Mint Token 测试&lt;/h3&gt;
-&lt;p&gt;账户4挖5个Cool Coin&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin06.png&#34; alt=&#34;cool coin&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;结果&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;账户4 此时有10个Cool Coin&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin07.png&#34; alt=&#34;cool coin&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;5burn-from-&#34;&gt;5.Burn From 测试&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;实验&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;账户2通过Burn From函数销毁账户3的 10个CoolCoin&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin08.png&#34; alt=&#34;cool coin&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;结果&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;执行失败,原因是账户2不具有账户3的授权额度。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin09.png&#34; alt=&#34;cool coin&#34;&gt;&lt;/p&gt;
-&lt;p&gt;那么我们可以将账户3的20个币授权给账户2再重新试一下&lt;/p&gt;
-&lt;p&gt;授权&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin10.png&#34; alt=&#34;cool coin&#34;&gt;&lt;/p&gt;
-&lt;p&gt;此时有Allowance(Account3, Account2)=20&lt;/p&gt;
-&lt;p&gt;现在我们再次使用账户2来销毁账户3的10个币试一下&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin11.png&#34; alt=&#34;cool coin&#34;&gt;&lt;/p&gt;
-&lt;p&gt;现在可以成功销毁账户3的10个币了&lt;/p&gt;
-&lt;p&gt;此时有Allowance(Account3, Account2)=10&lt;/p&gt;
-&lt;p&gt;当我们尝试再次销毁20个的时候,发现区块链拒绝我们的服务,但是我们销毁10个的话,还是可以允许的。&lt;/p&gt;
-&lt;h3 id=&#34;6buy&#34;&gt;6.Buy测试&lt;/h3&gt;
-&lt;p&gt;通过Set prices 测试,我们已经完成的设置有:&lt;/p&gt;
-&lt;p&gt;Buy Price = 1&lt;/p&gt;
-&lt;p&gt;Sell price = 2&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;实验&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;由于现在Cool Coin的管理界面账户里是没有Ether的,所以我们只能先用账户4来购买一些以太币。&lt;/p&gt;
-&lt;p&gt;1.主账户发送100Ether给账户4&lt;/p&gt;
-&lt;p&gt;2.测试账户4有100,890236054 ETHER和20个CoolCoin,现在我们使用账户4的10个Ether来购买CoolCoin。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin12.png&#34; alt=&#34;cool coin&#34;&gt;&lt;/p&gt;
-&lt;p&gt;3.&lt;strong&gt;注意:我们购买代币,并不是从合约管理员Owner来扣除相应的代币,而是从合约地址来购买代币。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;所以我们需要先给合约地址充值代币,才能允许其他用户来购买,否则其他用户向一个代币为0的&amp;quot;央行&amp;quot;购买,是会购买不到。&lt;/p&gt;
-&lt;p&gt;在此我们使用Mint Token函数来给合约地址 0x63b5047Decd4501d4eb3bb7b30e3da89cE37c2f5 充值 100万个。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin13.png&#34; alt=&#34;cool coin&#34;&gt;&lt;/p&gt;
-&lt;p&gt;4.现在我们的&amp;quot;央行&amp;rdquo;&amp;ndash;CoolCoin(管理界面),拥有0个以太币,100万个Cool Coin&lt;/p&gt;
-&lt;p&gt;账户4拥有100.890236054个以太币和20个CoolCoin&lt;/p&gt;
-&lt;p&gt;回到合约管理界面,我们尝试使用账户4调用Buy函数,传入10个以太币,看看会发什么。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin14.png&#34; alt=&#34;购买&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;结果&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;没错!!!&lt;/p&gt;
-&lt;p&gt;结果正是我们看到的,账户4以太币减少了10个。Cool Coin币增加了5个。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin15.png&#34; alt=&#34;购买&#34;&gt;&lt;/p&gt;
-&lt;p&gt;同样可查看CoolCoin管理界面多了10个Ether。&lt;/p&gt;
-&lt;h3 id=&#34;7sell-&#34;&gt;7.Sell 测试&lt;/h3&gt;
-&lt;p&gt;现在更激动人心的来了,我们要进行Sell测试,因为我们订的Buy Price = 2, Sell price = 1。账户4一买一卖我们会净赚一半!!!&lt;/p&gt;
-&lt;p&gt;现在我们使用账户4卖出刚才买入的5个CoolCoin:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin16.png&#34; alt=&#34;卖出操作&#34;&gt;&lt;/p&gt;
-&lt;p&gt;卖出后,我们回到Account 4,发现我们成功卖出5个CoolCoin,得到5个以太币。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin17.png&#34; alt=&#34;卖出操作&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;8freeze-account-&#34;&gt;8.Freeze Account 测试&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;实验&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;1.现在我们进行冻结账户测试,我们选择冻结账户4&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin18.png&#34; alt=&#34;卖出操作&#34;&gt;&lt;/p&gt;
-&lt;p&gt;2.然后账户4授权20个币给账户2.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin19.png&#34; alt=&#34;卖出操作&#34;&gt;&lt;/p&gt;
-&lt;p&gt;现在我们有&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin20.png&#34; alt=&#34;卖出操作&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;结果&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;为了验证,我们选择使用2将账户4的10个币转账给账户3。结果提示交易会失败,符合预期。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin21.png&#34; alt=&#34;卖出操作&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/coolcoin22.png&#34; alt=&#34;卖出操作&#34;&gt;&lt;/p&gt;
-&lt;p&gt;重新解冻后,我们就可以进行上面验证了。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;CustomContracts.find().fetch()
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;3.根据ID删除合约&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;CustomContracts.remove(&amp;#39;_id&amp;#39;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/mist01.png&#34; alt=&#34;mist01&#34;&gt;&lt;/p&gt;
 </description>
       
     </item>

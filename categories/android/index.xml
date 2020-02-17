@@ -44,7 +44,7 @@
       <pubDate>Tue, 27 Oct 2015 10:44:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2015/android-studio%E4%B8%AD%E6%8F%90%E7%A4%BAcannot-resolve-symble-r/</guid>
-      <description>1、build.gradle中确认已添加 compile &#39;com.android.support:appcompat-v7:21.0.3&#39; 2、菜单里Build-&amp;gt;Clean Project 3、菜单里Tools-&amp;gt;Android-&amp;gt;</description>
+      <description>1、build.gradle中确认已添加 1 compile &amp;#39;com.android.support:appcompat-v7:21.0.3&amp;#39; 2、菜单里Build-&amp;gt;Clean Project 3、菜单里Tools-&amp;gt;Android-&amp;gt</description>
     </item>
     
     <item>
@@ -71,7 +71,7 @@
       <pubDate>Tue, 09 Jun 2015 18:14:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2015/android-%E6%8C%89%E9%92%AE%E6%8E%A7%E5%88%B6viewpager%E5%B7%A6%E5%8F%B3%E7%BF%BB%E9%A1%B5/</guid>
-      <description>ViewPager除了滑动翻页，有时我们需要增加按钮翻页。 向前翻页可以在按钮事件里调用 viewPager.arrowScroll(View.FOCUS_LEFT); 向后翻页可以在按钮事件里调用 viewPager.arrowScroll(View.FOCUS_RIGHT);</description>
+      <description>ViewPager除了滑动翻页，有时我们需要增加按钮翻页。 向前翻页可以在按钮事件里调用 1 viewPager.arrowScroll(View.FOCUS_LEFT); 向后翻页可以在按钮事件里调用 1 viewPager.arrowScroll(View.FOCUS_RIGHT);</description>
     </item>
     
     <item>
@@ -89,7 +89,7 @@
       <pubDate>Fri, 24 Apr 2015 19:11:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2015/fragment%E6%88%96webview%E9%87%8C%E7%9B%91%E5%90%AC%E8%BF%94%E5%9B%9E%E9%94%AE/</guid>
-      <description>思路主要是在onResume事件里处理按钮事件并进行判断。 如果使用了WebView则在onKey里处理返回按钮事件。 import android.os.Bundle; import android.support.annotation.Nullable; import android.support.v4.app.Fragment; import android.support.v4.app.FragmentManager; import android.view.KeyEvent; import android.view.LayoutInflater;</description>
+      <description>思路主要是在onResume事件里处理按钮事件并进行判断。 如果使用了WebView则在onKey里处理返回按钮事件。 1 2 3 4 5 6 7 8 9 10 11 12</description>
     </item>
     
     <item>

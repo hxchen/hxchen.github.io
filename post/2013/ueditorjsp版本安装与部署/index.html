@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2013/ueditorjsp%E7%89%88%E6%9C%AC%E5%AE%89%E8%A3%85%E4%B8%8E%E9%83%A8%E7%BD%B2/" />
@@ -69,7 +69,7 @@
 <meta itemprop="description" content="一、访问UEditor官方网站，此处我选择的是开发版-&gt;1.2.5.0Jsp版本-&gt;UTF-8版本。 二、解压缩下载文件。如图所示">
 <meta itemprop="datePublished" content="2013-02-04T17:35:00&#43;08:00" />
 <meta itemprop="dateModified" content="2013-02-04T17:35:00&#43;08:00" />
-<meta itemprop="wordCount" content="496">
+<meta itemprop="wordCount" content="515">
 
 
 
@@ -316,8 +316,8 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/web%E5%89%8D%E7%AB%AF/"> Web前端 </a>
             
           </div>
-        <span class="more-meta"> 约 496 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span class="more-meta"> 约 515 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
         
@@ -343,26 +343,51 @@ if (!doNotTrack) {
 <p>三、在原有Java Web工程（此处我的是Ecommerce）里新建resources/ueditor目录。</p>
 <p>拷贝源码包dialogs、lang、themes、third-party、editor_all.js、editor_config.js文件或目录到工程ueditor下面。新建editor.jsp文件用于展示ueditor。</p>
 <p>ueditor.jsp内容：</p>
-<pre><code class="language-jsp" data-lang="jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;
-    pageEncoding=&quot;UTF-8&quot;%&gt;
-&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;%@ page language=&#34;java&#34; contentType=&#34;text/html; charset=UTF-8&#34;
+    pageEncoding=&#34;UTF-8&#34;%&gt;
+&lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD HTML 4.01 Transitional//EN&#34; &#34;http://www.w3.org/TR/html4/loose.dtd&#34;&gt;
 &lt;html&gt;
 &lt;head&gt;
-&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
-&lt;SCRIPT type=text/javascript src=&quot;../resources/ueditor/editor_config.js&quot;&gt;&lt;/SCRIPT&gt;
-&lt;SCRIPT type=text/javascript src=&quot;../resources/ueditor/editor_all.js&quot;&gt;&lt;/SCRIPT&gt;
-&lt;LINK rel=stylesheet href=&quot;../resources/ueditor/themes/default/css/ueditor.css&quot;&gt;
+&lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html; charset=UTF-8&#34;&gt;
+&lt;SCRIPT type=text/javascript src=&#34;../resources/ueditor/editor_config.js&#34;&gt;&lt;/SCRIPT&gt;
+&lt;SCRIPT type=text/javascript src=&#34;../resources/ueditor/editor_all.js&#34;&gt;&lt;/SCRIPT&gt;
+&lt;LINK rel=stylesheet href=&#34;../resources/ueditor/themes/default/css/ueditor.css&#34;&gt;
 &lt;title&gt;文本编辑器&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
 &lt;DIV id=myEditor&gt;&lt;/DIV&gt;
 &lt;SCRIPT type=text/javascript&gt;
     var editor = new baidu.editor.ui.Editor();
-    editor.render(&quot;myEditor&quot;);
+    editor.render(&#34;myEditor&#34;);
 &lt;/SCRIPT&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre><p>四、修改editor_config.js中URL值指向资源文件</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>四、修改editor_config.js中URL值指向资源文件</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -558,7 +583,7 @@ if (!doNotTrack) {
     &copy;
     
       2012 -
-    2019
+    2020
     <span class="heart">
       
       <i class="iconfont">

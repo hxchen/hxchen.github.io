@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="北斗" />
-  <meta name="description" content="想要全局安装composer，按照网上的方法下载安装： curl -sS https://getcomposer.org/installer | php mv composer.phar /usr/local/bin/composer 然后检查结果 composer -V 会出现，bash: composer: command not found Installation on Unixes (Ubuntu, Debian, CentOS, 等操作系统上) 如" />
+  <meta name="description" content="想要全局安装composer，按照网上的方法下载安装： 1 2 curl -sS https://getcomposer.org/installer | php mv composer.phar /usr/local/bin/composer 然后检查结果 1 composer -V 会出现，bash: composer: command not found Installation on Unixes (Ubuntu, Debian, CentOS, 等操作系统" />
 
   <meta name="keywords" content="技术, 程序员, 码农, 程序猿, 分享, java, python, 3afun" />
 
@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2017/%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%9Dcomposer-%E5%87%BA%E7%8F%BE-command-not-found-%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" />
@@ -60,22 +60,22 @@
 
 
 <meta property="og:title" content="无法安裝COMPOSER 出現 COMMAND NOT FOUND 的解决办法" />
-<meta property="og:description" content="想要全局安装composer，按照网上的方法下载安装： curl -sS https://getcomposer.org/installer | php mv composer.phar /usr/local/bin/composer 然后检查结果 composer -V 会出现，bash: composer: command not found Installation on Unixes (Ubuntu, Debian, CentOS, 等操作系统上) 如" />
+<meta property="og:description" content="想要全局安装composer，按照网上的方法下载安装： 1 2 curl -sS https://getcomposer.org/installer | php mv composer.phar /usr/local/bin/composer 然后检查结果 1 composer -V 会出现，bash: composer: command not found Installation on Unixes (Ubuntu, Debian, CentOS, 等操作系统" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.3afun.com/post/2017/%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%9Dcomposer-%E5%87%BA%E7%8F%BE-command-not-found-%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" />
 <meta property="article:published_time" content="2017-08-10T11:32:00+08:00" />
 <meta property="article:modified_time" content="2017-08-10T11:32:00+08:00" />
 <meta itemprop="name" content="无法安裝COMPOSER 出現 COMMAND NOT FOUND 的解决办法">
-<meta itemprop="description" content="想要全局安装composer，按照网上的方法下载安装： curl -sS https://getcomposer.org/installer | php mv composer.phar /usr/local/bin/composer 然后检查结果 composer -V 会出现，bash: composer: command not found Installation on Unixes (Ubuntu, Debian, CentOS, 等操作系统上) 如">
+<meta itemprop="description" content="想要全局安装composer，按照网上的方法下载安装： 1 2 curl -sS https://getcomposer.org/installer | php mv composer.phar /usr/local/bin/composer 然后检查结果 1 composer -V 会出现，bash: composer: command not found Installation on Unixes (Ubuntu, Debian, CentOS, 等操作系统">
 <meta itemprop="datePublished" content="2017-08-10T11:32:00&#43;08:00" />
 <meta itemprop="dateModified" content="2017-08-10T11:32:00&#43;08:00" />
-<meta itemprop="wordCount" content="146">
+<meta itemprop="wordCount" content="151">
 
 
 
 <meta itemprop="keywords" content="PHP," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="无法安裝COMPOSER 出現 COMMAND NOT FOUND 的解决办法"/>
-<meta name="twitter:description" content="想要全局安装composer，按照网上的方法下载安装： curl -sS https://getcomposer.org/installer | php mv composer.phar /usr/local/bin/composer 然后检查结果 composer -V 会出现，bash: composer: command not found Installation on Unixes (Ubuntu, Debian, CentOS, 等操作系统上) 如"/>
+<meta name="twitter:description" content="想要全局安装composer，按照网上的方法下载安装： 1 2 curl -sS https://getcomposer.org/installer | php mv composer.phar /usr/local/bin/composer 然后检查结果 1 composer -V 会出现，bash: composer: command not found Installation on Unixes (Ubuntu, Debian, CentOS, 等操作系统"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -316,7 +316,7 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/php/"> PHP </a>
             
           </div>
-        <span class="more-meta"> 约 146 字 </span>
+        <span class="more-meta"> 约 151 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -339,18 +339,47 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>想要全局安装composer，按照网上的方法下载安装：</p>
-<pre><code>curl -sS https://getcomposer.org/installer | php
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
-</code></pre><p>然后检查结果</p>
-<pre><code>composer -V
-</code></pre><p>会出现，bash: composer: command not found Installation on Unixes (Ubuntu, Debian, CentOS, 等操作系统上)</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>然后检查结果</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">composer -V
+</code></pre></td></tr></table>
+</div>
+</div><p>会出现，bash: composer: command not found Installation on Unixes (Ubuntu, Debian, CentOS, 等操作系统上)</p>
 <p>如果遇到了这个问题，那么可以将composer原先放在 <em>/usr/local/bin/</em> 的路径，</p>
 <p>换成成以下目录 <em>/usr/bin/</em> 。</p>
 <p>解决办法的LINUX指令：</p>
-<pre><code># sudo mv /usr/local/bin/composer /usr/bin/composer
-</code></pre><p>接着继续测试</p>
-<pre><code>#composer -V
-</code></pre><p>就会正确显示版本了~</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># sudo mv /usr/local/bin/composer /usr/bin/composer
+</code></pre></td></tr></table>
+</div>
+</div><p>接着继续测试</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">#composer -V
+</code></pre></td></tr></table>
+</div>
+</div><p>就会正确显示版本了~</p>
 
     </div>
 
@@ -441,7 +470,7 @@ mv composer.phar /usr/local/bin/composer
         id: '无法安裝COMPOSER 出現 COMMAND NOT FOUND 的解决办法.md',
         title: '无法安裝COMPOSER 出現 COMMAND NOT FOUND 的解决办法',
         link: decodeURI(location.href),
-        desc: '想要全局安装composer，按照网上的方法下载安装： curl -sS https:\/\/getcomposer.org\/installer | php mv composer.phar \/usr\/local\/bin\/composer 然后检查结果 composer -V 会出现，bash: composer: command not found Installation on Unixes (Ubuntu, Debian, CentOS, 等操作系统上) 如',
+        desc: '想要全局安装composer，按照网上的方法下载安装： 1 2 curl -sS https:\/\/getcomposer.org\/installer | php mv composer.phar \/usr\/local\/bin\/composer 然后检查结果 1 composer -V 会出现，bash: composer: command not found Installation on Unixes (Ubuntu, Debian, CentOS, 等操作系统',
         owner: 'hxchen',
         repo: 'comments',
         oauth: {
@@ -537,7 +566,7 @@ mv composer.phar /usr/local/bin/composer
     &copy;
     
       2012 -
-    2019
+    2020
     <span class="heart">
       
       <i class="iconfont">

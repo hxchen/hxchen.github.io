@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2014/ajp%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0apache%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1&#43;tomcat%E9%9B%86%E7%BE%A4/" />
@@ -69,7 +69,7 @@
 <meta itemprop="description" content="目标: 使用 apache 和 tomcat 配置一个可以应用的 web 网站，要达到以下要求： Apache 做为 HttpServer ，后面连接多个 tomcat 应用实例，并进行负载均衡。 注：本例程以一台机器为例子，即同">
 <meta itemprop="datePublished" content="2014-09-24T18:11:27&#43;08:00" />
 <meta itemprop="dateModified" content="2014-09-24T18:11:27&#43;08:00" />
-<meta itemprop="wordCount" content="715">
+<meta itemprop="wordCount" content="840">
 
 
 
@@ -316,7 +316,7 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
             
           </div>
-        <span class="more-meta"> 约 715 字 </span>
+        <span class="more-meta"> 约 840 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
@@ -334,19 +334,19 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#1apache">1、Apache配置</a>
+    <li><a href="#1apache配置">1、Apache配置</a>
       <ul>
-        <li><a href="#11httpdconf">1.1、httpd.conf配置</a></li>
-        <li><a href="#12httpdvhostsconf">1.2、httpd-vhosts.conf设置</a></li>
+        <li><a href="#11httpdconf配置">1.1、httpd.conf配置</a></li>
+        <li><a href="#12httpd-vhostsconf设置">1.2、httpd-vhosts.conf设置</a></li>
       </ul>
     </li>
-    <li><a href="#2--tomcat">2 配置 tomcat</a>
+    <li><a href="#2-配置-tomcat">2 配置 tomcat</a>
       <ul>
-        <li><a href="#21---server-">2.1.  配置 server 的关闭</a></li>
+        <li><a href="#21--配置-server-的关闭">2.1.  配置 server 的关闭</a></li>
       </ul>
     </li>
-    <li><a href="#22--engine">2.2. 配置 Engine</a></li>
-    <li><a href="#25cluster">2.5.配置Cluster</a></li>
+    <li><a href="#22-配置-engine">2.2. 配置 Engine</a></li>
+    <li><a href="#25配置cluster">2.5.配置Cluster</a></li>
   </ul>
 </nav>
   </div>
@@ -358,22 +358,38 @@ if (!doNotTrack) {
 <p>使用 apache 和 tomcat 配置一个可以应用的 web 网站，要达到以下要求：</p>
 <p>Apache 做为 HttpServer ，后面连接多个 tomcat 应用实例，并进行负载均衡。</p>
 <p>注：本例程以一台机器为例子，即同一台机器上装一个apache和2个Tomcat。</p>
-<h1 id="heading">一、准备工作,下载以下软件</h1>
+<h1 id="一准备工作下载以下软件">一、准备工作,下载以下软件</h1>
 <p>JDK1.5+</p>
 <p>APAHCE 2.2.8</p>
 <p>Tomcat-7.0.41</p>
-<h1 id="heading1">二、安装过程</h1>
+<h1 id="二安装过程">二、安装过程</h1>
 <p>安装Apache</p>
 <p><strong>D:\Program Files (x86)\Apache Software Foundation\Apache2.2</strong>
 解压tomcat
 <strong>D:\Tomcat-7.0.41-1</strong>
 <strong>D:\Tomcat-7.0.41-2</strong></p>
-<h1 id="heading2">三、配置</h1>
-<h2 id="1apache">1、Apache配置</h2>
-<h3 id="11httpdconf">1.1、httpd.conf配置</h3>
+<h1 id="三配置">三、配置</h1>
+<h2 id="1apache配置">1、Apache配置</h2>
+<h3 id="11httpdconf配置">1.1、httpd.conf配置</h3>
 <p>修改APACHE的配置文件 <strong>Apache2.2\conf\httpd.conf</strong></p>
 <p>将以下Module的注释去掉</p>
-<pre><code>#apache tomcat负载均衡
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">#apache tomcat负载均衡
 LoadModule proxy_module modules/mod_proxy.so
 #apache tomcat负载均衡
 LoadModule proxy_ajp_module modules/mod_proxy_ajp.so
@@ -385,141 +401,334 @@ LoadModule proxy_connect_module modules/mod_proxy_connect.so
 LoadModule proxy_ftp_module modules/mod_proxy_ftp.so
 #apache tomcat负载均衡
 LoadModule proxy_http_module modules/mod_proxy_http.so
-</code></pre><p>再找到<!-- raw HTML omitted --><!-- raw HTML omitted -->加上index.jsp修改成</p>
-<pre><code>&lt;IfModule dir_module&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>再找到<!-- raw HTML omitted --><!-- raw HTML omitted -->加上index.jsp修改成</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;IfModule dir_module&gt;
     DirectoryIndex index.html index.php
 &lt;/IfModule&gt;
-</code></pre><p>去掉如下代码的注释</p>
-<pre><code>Include conf/extra/httpd-vhosts.conf
-</code></pre><p>最下面添加</p>
-<pre><code>#tomcat集群
+</code></pre></td></tr></table>
+</div>
+</div><p>去掉如下代码的注释</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Include conf/extra/httpd-vhosts.conf
+</code></pre></td></tr></table>
+</div>
+</div><p>最下面添加</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">#tomcat集群
 ProxyRequests Off
 ProxyPass / balancer://example/
 &lt;proxy balancer://example&gt;
 BalancerMember ajp://127.0.0.1:8010 loadfactor=1 route=jvm1
 BalancerMember ajp://127.0.0.1:8011 loadfactor=1 route=jvm2
 &lt;/proxy&gt;
-</code></pre><h3 id="12httpdvhostsconf">1.2、httpd-vhosts.conf设置</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="12httpd-vhostsconf设置">1.2、httpd-vhosts.conf设置</h3>
 <p>接下来进行虚拟主机的设置。修改 <strong>Apache2.2\conf\extra\httpd-vhosts.conf</strong></p>
-<pre><code>&lt;VirtualHost *:80&gt;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;VirtualHost *:80&gt;
     ServerAdmin 506110230@qq.com
     ServerName localhost
     ServerAlias localhost
     ProxyPass / balancer://example/ stickysession=jsessionid nofailover=On
     ProxyPassReverse / balancer://example/
-    ErrorLog &quot;logs/loadbalancer-error.log&quot;
-    CustomLog &quot;logs/loadbalancer-access.log&quot; common
+    ErrorLog &#34;logs/loadbalancer-error.log&#34;
+    CustomLog &#34;logs/loadbalancer-access.log&#34; common
 &lt;/VirtualHost&gt;
-</code></pre><h2 id="2--tomcat">2 配置 tomcat</h2>
-<h3 id="21---server-">2.1.  配置 server 的关闭</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2-配置-tomcat">2 配置 tomcat</h2>
+<h3 id="21--配置-server-的关闭">2.1.  配置 server 的关闭</h3>
 <p>tomcat1</p>
-<pre><code>&lt;Server port=&quot;8006&quot; shutdown=&quot;SHUTDOWN&quot;&gt;
-</code></pre><p>tomcat2</p>
-<pre><code>&lt;Server port=&quot;8007&quot; shutdown=&quot;SHUTDOWN&quot;&gt;
-</code></pre><h2 id="22--engine">2.2. 配置 Engine</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;Server port=&#34;8006&#34; shutdown=&#34;SHUTDOWN&#34;&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>tomcat2</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;Server port=&#34;8007&#34; shutdown=&#34;SHUTDOWN&#34;&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="22-配置-engine">2.2. 配置 Engine</h2>
 <p>tomcat1</p>
-<pre><code>&lt;Engine name=&quot;Catalina&quot; defaultHost=&quot;localhost&quot; jvmRoute=&quot;jvm1&quot;&gt;
-</code></pre><p>tomcat2</p>
-<pre><code>&lt;Engine name=&quot;Catalina&quot; defaultHost=&quot;localhost&quot; jvmRoute=&quot;jvm2&quot;&gt;
-</code></pre><p>##2.3. 配置 Connector
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;Engine name=&#34;Catalina&#34; defaultHost=&#34;localhost&#34; jvmRoute=&#34;jvm1&#34;&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>tomcat2</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;Engine name=&#34;Catalina&#34; defaultHost=&#34;localhost&#34; jvmRoute=&#34;jvm2&#34;&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>##2.3. 配置 Connector
 tomcat1</p>
-<pre><code>&lt;Connector port=&quot;8010&quot; protocol=&quot;AJP/1.3&quot; redirectPort=&quot;8443&quot; /&gt;
-</code></pre><p>tomcat2</p>
-<pre><code>&lt;Connector port=&quot;8011&quot; protocol=&quot;AJP/1.3&quot; redirectPort=&quot;8443&quot; /&gt;
-</code></pre><h2 id="25cluster">2.5.配置Cluster</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;Connector port=&#34;8010&#34; protocol=&#34;AJP/1.3&#34; redirectPort=&#34;8443&#34; /&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>tomcat2</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;Connector port=&#34;8011&#34; protocol=&#34;AJP/1.3&#34; redirectPort=&#34;8443&#34; /&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="25配置cluster">2.5.配置Cluster</h2>
 <p>tomcat1(port号是重点)</p>
-<pre><code>&lt;Cluster className=&quot;org.apache.catalina.ha.tcp.SimpleTcpCluster&quot;
-                 channelSendOptions=&quot;8&quot;&gt;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;Cluster className=&#34;org.apache.catalina.ha.tcp.SimpleTcpCluster&#34;
+                 channelSendOptions=&#34;8&#34;&gt;
 
-          &lt;Manager className=&quot;org.apache.catalina.ha.session.DeltaManager&quot;
-                   expireSessionsOnShutdown=&quot;false&quot;
-                   notifyListenersOnReplication=&quot;true&quot;/&gt;
+          &lt;Manager className=&#34;org.apache.catalina.ha.session.DeltaManager&#34;
+                   expireSessionsOnShutdown=&#34;false&#34;
+                   notifyListenersOnReplication=&#34;true&#34;/&gt;
 
-          &lt;Channel className=&quot;org.apache.catalina.tribes.group.GroupChannel&quot;&gt;
-            &lt;Membership className=&quot;org.apache.catalina.tribes.membership.McastService&quot;
-                        address=&quot;228.0.0.4&quot;
-                        port=&quot;45564&quot;
-                        frequency=&quot;500&quot;
-                        dropTime=&quot;3000&quot;/&gt;
-            &lt;Receiver className=&quot;org.apache.catalina.tribes.transport.nio.NioReceiver&quot;
-                      address=&quot;auto&quot;
-                      port=&quot;4000&quot;
-                      autoBind=&quot;100&quot;
-                      selectorTimeout=&quot;5000&quot;
-                      maxThreads=&quot;6&quot;/&gt;
+          &lt;Channel className=&#34;org.apache.catalina.tribes.group.GroupChannel&#34;&gt;
+            &lt;Membership className=&#34;org.apache.catalina.tribes.membership.McastService&#34;
+                        address=&#34;228.0.0.4&#34;
+                        port=&#34;45564&#34;
+                        frequency=&#34;500&#34;
+                        dropTime=&#34;3000&#34;/&gt;
+            &lt;Receiver className=&#34;org.apache.catalina.tribes.transport.nio.NioReceiver&#34;
+                      address=&#34;auto&#34;
+                      port=&#34;4000&#34;
+                      autoBind=&#34;100&#34;
+                      selectorTimeout=&#34;5000&#34;
+                      maxThreads=&#34;6&#34;/&gt;
 
-            &lt;Sender className=&quot;org.apache.catalina.tribes.transport.ReplicationTransmitter&quot;&gt;
-              &lt;Transport className=&quot;org.apache.catalina.tribes.transport.nio.PooledParallelSender&quot;/&gt;
+            &lt;Sender className=&#34;org.apache.catalina.tribes.transport.ReplicationTransmitter&#34;&gt;
+              &lt;Transport className=&#34;org.apache.catalina.tribes.transport.nio.PooledParallelSender&#34;/&gt;
             &lt;/Sender&gt;
-            &lt;Interceptor className=&quot;org.apache.catalina.tribes.group.interceptors.TcpFailureDetector&quot;/&gt;
-            &lt;Interceptor className=&quot;org.apache.catalina.tribes.group.interceptors.MessageDispatch15Interceptor&quot;/&gt;
+            &lt;Interceptor className=&#34;org.apache.catalina.tribes.group.interceptors.TcpFailureDetector&#34;/&gt;
+            &lt;Interceptor className=&#34;org.apache.catalina.tribes.group.interceptors.MessageDispatch15Interceptor&#34;/&gt;
           &lt;/Channel&gt;
 
-          &lt;Valve className=&quot;org.apache.catalina.ha.tcp.ReplicationValve&quot;
-                 filter=&quot;&quot;/&gt;
-          &lt;Valve className=&quot;org.apache.catalina.ha.session.JvmRouteBinderValve&quot;/&gt;
+          &lt;Valve className=&#34;org.apache.catalina.ha.tcp.ReplicationValve&#34;
+                 filter=&#34;&#34;/&gt;
+          &lt;Valve className=&#34;org.apache.catalina.ha.session.JvmRouteBinderValve&#34;/&gt;
 
-          &lt;Deployer className=&quot;org.apache.catalina.ha.deploy.FarmWarDeployer&quot;
-                    tempDir=&quot;/tmp/war-temp/&quot;
-                    deployDir=&quot;/tmp/war-deploy/&quot;
-                    watchDir=&quot;/tmp/war-listen/&quot;
-                    watchEnabled=&quot;false&quot;/&gt;
+          &lt;Deployer className=&#34;org.apache.catalina.ha.deploy.FarmWarDeployer&#34;
+                    tempDir=&#34;/tmp/war-temp/&#34;
+                    deployDir=&#34;/tmp/war-deploy/&#34;
+                    watchDir=&#34;/tmp/war-listen/&#34;
+                    watchEnabled=&#34;false&#34;/&gt;
 
-          &lt;ClusterListener className=&quot;org.apache.catalina.ha.session.JvmRouteSessionIDBinderListener&quot;/&gt;
-          &lt;ClusterListener className=&quot;org.apache.catalina.ha.session.ClusterSessionListener&quot;/&gt;
+          &lt;ClusterListener className=&#34;org.apache.catalina.ha.session.JvmRouteSessionIDBinderListener&#34;/&gt;
+          &lt;ClusterListener className=&#34;org.apache.catalina.ha.session.ClusterSessionListener&#34;/&gt;
         &lt;/Cluster&gt;
-</code></pre><p>tomcat2(port号是重点)</p>
-<pre><code>&lt;Cluster className=&quot;org.apache.catalina.ha.tcp.SimpleTcpCluster&quot;
-                 channelSendOptions=&quot;8&quot;&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>tomcat2(port号是重点)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;Cluster className=&#34;org.apache.catalina.ha.tcp.SimpleTcpCluster&#34;
+                 channelSendOptions=&#34;8&#34;&gt;
 
-          &lt;Manager className=&quot;org.apache.catalina.ha.session.DeltaManager&quot;
-                   expireSessionsOnShutdown=&quot;false&quot;
-                   notifyListenersOnReplication=&quot;true&quot;/&gt;
+          &lt;Manager className=&#34;org.apache.catalina.ha.session.DeltaManager&#34;
+                   expireSessionsOnShutdown=&#34;false&#34;
+                   notifyListenersOnReplication=&#34;true&#34;/&gt;
 
-          &lt;Channel className=&quot;org.apache.catalina.tribes.group.GroupChannel&quot;&gt;
-            &lt;Membership className=&quot;org.apache.catalina.tribes.membership.McastService&quot;
-                        address=&quot;228.0.0.4&quot;
-                        port=&quot;45564&quot;
-                        frequency=&quot;500&quot;
-                        dropTime=&quot;3000&quot;/&gt;
-            &lt;Receiver className=&quot;org.apache.catalina.tribes.transport.nio.NioReceiver&quot;
-                      address=&quot;auto&quot;
-                      port=&quot;4001&quot;
-                      autoBind=&quot;100&quot;
-                      selectorTimeout=&quot;5000&quot;
-                      maxThreads=&quot;6&quot;/&gt;
+          &lt;Channel className=&#34;org.apache.catalina.tribes.group.GroupChannel&#34;&gt;
+            &lt;Membership className=&#34;org.apache.catalina.tribes.membership.McastService&#34;
+                        address=&#34;228.0.0.4&#34;
+                        port=&#34;45564&#34;
+                        frequency=&#34;500&#34;
+                        dropTime=&#34;3000&#34;/&gt;
+            &lt;Receiver className=&#34;org.apache.catalina.tribes.transport.nio.NioReceiver&#34;
+                      address=&#34;auto&#34;
+                      port=&#34;4001&#34;
+                      autoBind=&#34;100&#34;
+                      selectorTimeout=&#34;5000&#34;
+                      maxThreads=&#34;6&#34;/&gt;
 
-            &lt;Sender className=&quot;org.apache.catalina.tribes.transport.ReplicationTransmitter&quot;&gt;
-              &lt;Transport className=&quot;org.apache.catalina.tribes.transport.nio.PooledParallelSender&quot;/&gt;
+            &lt;Sender className=&#34;org.apache.catalina.tribes.transport.ReplicationTransmitter&#34;&gt;
+              &lt;Transport className=&#34;org.apache.catalina.tribes.transport.nio.PooledParallelSender&#34;/&gt;
             &lt;/Sender&gt;
-            &lt;Interceptor className=&quot;org.apache.catalina.tribes.group.interceptors.TcpFailureDetector&quot;/&gt;
-            &lt;Interceptor className=&quot;org.apache.catalina.tribes.group.interceptors.MessageDispatch15Interceptor&quot;/&gt;
+            &lt;Interceptor className=&#34;org.apache.catalina.tribes.group.interceptors.TcpFailureDetector&#34;/&gt;
+            &lt;Interceptor className=&#34;org.apache.catalina.tribes.group.interceptors.MessageDispatch15Interceptor&#34;/&gt;
           &lt;/Channel&gt;
 
-          &lt;Valve className=&quot;org.apache.catalina.ha.tcp.ReplicationValve&quot;
-                 filter=&quot;&quot;/&gt;
-          &lt;Valve className=&quot;org.apache.catalina.ha.session.JvmRouteBinderValve&quot;/&gt;
+          &lt;Valve className=&#34;org.apache.catalina.ha.tcp.ReplicationValve&#34;
+                 filter=&#34;&#34;/&gt;
+          &lt;Valve className=&#34;org.apache.catalina.ha.session.JvmRouteBinderValve&#34;/&gt;
 
-          &lt;Deployer className=&quot;org.apache.catalina.ha.deploy.FarmWarDeployer&quot;
-                    tempDir=&quot;/tmp/war-temp/&quot;
-                    deployDir=&quot;/tmp/war-deploy/&quot;
-                    watchDir=&quot;/tmp/war-listen/&quot;
-                    watchEnabled=&quot;false&quot;/&gt;
+          &lt;Deployer className=&#34;org.apache.catalina.ha.deploy.FarmWarDeployer&#34;
+                    tempDir=&#34;/tmp/war-temp/&#34;
+                    deployDir=&#34;/tmp/war-deploy/&#34;
+                    watchDir=&#34;/tmp/war-listen/&#34;
+                    watchEnabled=&#34;false&#34;/&gt;
 
-          &lt;ClusterListener className=&quot;org.apache.catalina.ha.session.JvmRouteSessionIDBinderListener&quot;/&gt;
-          &lt;ClusterListener className=&quot;org.apache.catalina.ha.session.ClusterSessionListener&quot;/&gt;
+          &lt;ClusterListener className=&#34;org.apache.catalina.ha.session.JvmRouteSessionIDBinderListener&#34;/&gt;
+          &lt;ClusterListener className=&#34;org.apache.catalina.ha.session.ClusterSessionListener&#34;/&gt;
         &lt;/Cluster&gt;
-</code></pre><h1 id="tomcat">四、启动服务，测试tomcat</h1>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="四启动服务测试tomcat">四、启动服务，测试tomcat</h1>
 <p>1、测试apache和tomcat协作。
 先在每个tomcat中的\webapps\ROOT下的index.jsp下面加上以下的测试代码部分：</p>
-<pre><code>&lt;%@ page language=&quot;java&quot;%&gt;
-&lt;%@ page contentType=&quot;text/html; charset=utf-8&quot;%&gt;
-&lt;%@ page import=&quot;java.util.*&quot;%&gt;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;%@ page language=&#34;java&#34;%&gt;
+&lt;%@ page contentType=&#34;text/html; charset=utf-8&#34;%&gt;
+&lt;%@ page import=&#34;java.util.*&#34;%&gt;
 
 &lt;%
 System.out.println(new Date().getTime());
 %&gt;
-</code></pre><p>浏览器分别刷新:</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>浏览器分别刷新:</p>
 <p>http://127.0.0.1:8081/</p>
 <p>http://127.0.0.1:8082/</p>
 <p>http://127.0.0.1/</p>
@@ -711,7 +920,7 @@ System.out.println(new Date().getTime());
     &copy;
     
       2012 -
-    2019
+    2020
     <span class="heart">
       
       <i class="iconfont">

@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2019/andrew-ng%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0ex1linear-regression%E7%BC%96%E7%A8%8B%E4%BD%9C%E4%B8%9A%E8%AF%A6%E8%A7%A3/" />
@@ -333,21 +333,21 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#1">1.热身练习</a></li>
-    <li><a href="#2">2.单变量线性回归问题</a>
+    <li><a href="#1热身练习">1.热身练习</a></li>
+    <li><a href="#2单变量线性回归问题">2.单变量线性回归问题</a>
       <ul>
-        <li><a href="#21--plotdatam">2.1 绘制数据 plotData.m</a></li>
-        <li><a href="#22--computecostm">2.2 代价函数 computeCost.m</a></li>
-        <li><a href="#23--gradientdescentm">2.3 梯度下降 gradientDescent.m</a></li>
+        <li><a href="#21-绘制数据-plotdatam">2.1 绘制数据 plotData.m</a></li>
+        <li><a href="#22-代价函数-computecostm">2.2 代价函数 computeCost.m</a></li>
+        <li><a href="#23-梯度下降-gradientdescentm">2.3 梯度下降 gradientDescent.m</a></li>
       </ul>
     </li>
-    <li><a href="#3">3.多变量线性回归问题</a>
+    <li><a href="#3多变量线性回归问题">3.多变量线性回归问题</a>
       <ul>
-        <li><a href="#31--featurenormalizem">3.1 特征归一化 featureNormalize.m</a></li>
-        <li><a href="#32--gradientdescentmultim">3.2 梯度下降 gradientDescentMulti.m</a></li>
-        <li><a href="#321-">3.2.1 可选练习</a></li>
-        <li><a href="#322-">3.2.2 价格预测</a></li>
-        <li><a href="#33-normal-equations">3.3 正规方程Normal Equations</a></li>
+        <li><a href="#31-特征归一化-featurenormalizem">3.1 特征归一化 featureNormalize.m</a></li>
+        <li><a href="#32-梯度下降-gradientdescentmultim">3.2 梯度下降 gradientDescentMulti.m</a></li>
+        <li><a href="#321-可选练习">3.2.1 可选练习</a></li>
+        <li><a href="#322-价格预测">3.2.2 价格预测</a></li>
+        <li><a href="#33-正规方程normal-equations">3.3 正规方程Normal Equations</a></li>
       </ul>
     </li>
   </ul>
@@ -360,7 +360,7 @@ if (!doNotTrack) {
       <p>要想顺利的完成作业，必须参考编程作业指导文件<a href="https://github.com/hxchen/MachineLearning/blob/master/exercise_1/ex1.pdf">ex1.pdf</a>
 第一次作业主要包括两部分：必做题和选做题。其中必做题包括一道热身练习和完成单变量的线性回归问题，选做题是完成多变量的线性回归问题。</p>
 <p>运行作业只要在具有Octave环境时候，进入到文件目录，执行<code>ex1</code>或者<code>ex1_multi</code>即可。</p>
-<h2 id="1">1.热身练习</h2>
+<h2 id="1热身练习">1.热身练习</h2>
 <p>热身练习主要是在<code>warmUpExercise.m</code>文件中生成一个5X5的单位矩阵。
 代码如下：</p>
 <div class="highlight"><div class="chroma">
@@ -371,9 +371,9 @@ if (!doNotTrack) {
 <pre class="chroma"><code class="language-octave" data-lang="octave"><span class="n">A</span> <span class="p">=</span> <span class="nb">eye</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="p">;</span><span class="err">
 </span></code></pre></td></tr></table>
 </div>
-</div><h2 id="2">2.单变量线性回归问题</h2>
+</div><h2 id="2单变量线性回归问题">2.单变量线性回归问题</h2>
 <p>完成该道题，我们主要是利用样本数据<code>ex1data1.txt</code>（第一列为城市人口，第二列为对应该城市餐车收益），完成<code>plotData.m</code>、<code>computeCost.m文件</code>和<code>gradientDescent.m</code>文件，然后进行给出人口数量，对餐车收益进行预测。<code>ex1.m</code>文件为入口函数文件，不需要修改。</p>
-<h3 id="21--plotdatam">2.1 绘制数据 plotData.m</h3>
+<h3 id="21-绘制数据-plotdatam">2.1 绘制数据 plotData.m</h3>
 <p>具体<code>plotData.m</code>中补充如下代码</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -387,7 +387,7 @@ if (!doNotTrack) {
 </span><span class="err"></span><span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;</span><span class="s">Population of City in 10,000s&#39;</span><span class="p">)</span><span class="p">;</span><span class="err">
 </span></code></pre></td></tr></table>
 </div>
-</div><h3 id="22--computecostm">2.2 代价函数 computeCost.m</h3>
+</div><h3 id="22-代价函数-computecostm">2.2 代价函数 computeCost.m</h3>
 <p>该文件主要是实现代价函数
 $$J(θ)=  {1 \over 2m} \sum_{i=1}^m(h_θ(x^{(i)}) − y^{(i)})^2$$
 具体<code>computeCost.m</code>中补充如下代码</p>
@@ -399,7 +399,7 @@ $$J(θ)=  {1 \over 2m} \sum_{i=1}^m(h_θ(x^{(i)}) − y^{(i)})^2$$
 <pre class="chroma"><code class="language-octave" data-lang="octave"><span class="n">J</span> <span class="p">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="nb">sum</span><span class="p">(</span><span class="p">(</span><span class="n">X</span><span class="o">*</span><span class="n">theta</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span><span class="o">.^</span><span class="mi">2</span><span class="p">)</span><span class="p">;</span><span class="err">
 </span></code></pre></td></tr></table>
 </div>
-</div><h3 id="23--gradientdescentm">2.3 梯度下降 gradientDescent.m</h3>
+</div><h3 id="23-梯度下降-gradientdescentm">2.3 梯度下降 gradientDescent.m</h3>
 <p>该文件主要是实现梯度下降函数
 $$θj := θj − α{1 \over m}\sum_{i=1}^m(h_θ(x^{(i)}) − y^{(i)})x_j^{(i)} (对于所有的j同时更新 θ_j )$$
 具体<code>gradientDescent.m</code>中补充如下代码</p>
@@ -415,9 +415,9 @@ $$θj := θj − α{1 \over m}\sum_{i=1}^m(h_θ(x^{(i)}) − y^{(i)})x_j^{(i)} (
 </span><span class="err"></span><span class="n">theta</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">=</span> <span class="n">theta</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">alpha</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">m</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="p">(</span><span class="n">X</span><span class="o">*</span><span class="n">theta_t</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">.*</span><span class="n">X</span><span class="p">(</span><span class="p">:</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="p">)</span><span class="p">)</span><span class="p">;</span><span class="err">
 </span></code></pre></td></tr></table>
 </div>
-</div><h2 id="3">3.多变量线性回归问题</h2>
+</div><h2 id="3多变量线性回归问题">3.多变量线性回归问题</h2>
 <p>完成该道题，主要是利用样本数据<code>ex1data2.txt</code>（房屋面积、房间数，售价）,完成<code>gradientDescentMulti.m</code>、<code>computeCostMulti.m</code>、<code>featureNormalize.m</code>、<code>normalEqn.m</code>。最终实现给出房屋面积1650，房间数3的时候对房价进行预测。</p>
-<h3 id="31--featurenormalizem">3.1 特征归一化 featureNormalize.m</h3>
+<h3 id="31-特征归一化-featurenormalizem">3.1 特征归一化 featureNormalize.m</h3>
 <p>要求我们完成<code>featureNormalize.m</code>，主要对特征进行缩放，依据公式：
 $$x_i = {x_i - u_1 \over s_1} （u_1 为均值 s_1为标准差）$$
 具体<code>featureNormalize.m</code>中补充如下代码</p>
@@ -435,7 +435,7 @@ $$x_i = {x_i - u_1 \over s_1} （u_1 为均值 s_1为标准差）$$
 </span><span class="err"></span><span class="n">X_norm</span> <span class="p">=</span> <span class="p">(</span><span class="n">X</span> <span class="o">-</span> <span class="nb">ones</span><span class="p">(</span><span class="n">len</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">mu</span><span class="p">)</span> <span class="o">./</span> <span class="p">(</span><span class="nb">ones</span><span class="p">(</span><span class="n">len</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">sigma</span><span class="p">)</span><span class="p">;</span><span class="err">
 </span></code></pre></td></tr></table>
 </div>
-</div><h3 id="32--gradientdescentmultim">3.2 梯度下降 gradientDescentMulti.m</h3>
+</div><h3 id="32-梯度下降-gradientdescentmultim">3.2 梯度下降 gradientDescentMulti.m</h3>
 <p>同单变量一样的思想，我们在<code>gradientDescentMulti.m</code>中补充如下代码</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -451,7 +451,7 @@ $$x_i = {x_i - u_1 \over s_1} （u_1 为均值 s_1为标准差）$$
 </span><span class="err"></span><span class="k">end</span><span class="err">
 </span></code></pre></td></tr></table>
 </div>
-</div><h3 id="321-">3.2.1 可选练习</h3>
+</div><h3 id="321-可选练习">3.2.1 可选练习</h3>
 <p><code>ex1_multi.m</code>中默认定义了</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -464,7 +464,7 @@ $$x_i = {x_i - u_1 \over s_1} （u_1 为均值 s_1为标准差）$$
 </span></code></pre></td></tr></table>
 </div>
 </div><p>我们可以更改学习率和迭代次数，通过观察绘图来获得最佳的学习率。</p>
-<h3 id="322-">3.2.2 价格预测</h3>
+<h3 id="322-价格预测">3.2.2 价格预测</h3>
 <p>在求预测价格时候，不要忘记同样需要对样本数据进行归一化处理：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -475,7 +475,7 @@ $$x_i = {x_i - u_1 \over s_1} （u_1 为均值 s_1为标准差）$$
 </span></code></pre></td></tr></table>
 </div>
 </div><p>我们可以优化alpha，观察梯度下降快满。</p>
-<h3 id="33-normal-equations">3.3 正规方程Normal Equations</h3>
+<h3 id="33-正规方程normal-equations">3.3 正规方程Normal Equations</h3>
 <p>在多变量线性规划问题中，我们求<code>θ</code>还可以直接应用正规方程求解。
 其中：
 $$θ = (X^TX)^{-1} X^Ty$$
@@ -674,7 +674,7 @@ $$θ = (X^TX)^{-1} X^Ty$$
     &copy;
     
       2012 -
-    2019
+    2020
     <span class="heart">
       
       <i class="iconfont">

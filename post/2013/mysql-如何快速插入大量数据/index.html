@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2013/mysql-%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%8F%92%E5%85%A5%E5%A4%A7%E9%87%8F%E6%95%B0%E6%8D%AE/" />
@@ -69,7 +69,7 @@
 <meta itemprop="description" content="这几天尝试了使用不同的存储引擎大量插入MySQL表数据，主要试验了MyISAM存储引擎和InnoDB。下面是实验过程： 一、InnoDB存储引">
 <meta itemprop="datePublished" content="2013-01-31T13:45:00&#43;08:00" />
 <meta itemprop="dateModified" content="2013-01-31T13:45:00&#43;08:00" />
-<meta itemprop="wordCount" content="640">
+<meta itemprop="wordCount" content="741">
 
 
 
@@ -316,7 +316,7 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/mysql/"> MySQL </a>
             
           </div>
-        <span class="more-meta"> 约 640 字 </span>
+        <span class="more-meta"> 约 741 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
 
         
@@ -341,14 +341,37 @@ if (!doNotTrack) {
       <p>这几天尝试了使用不同的存储引擎大量插入MySQL表数据，主要试验了MyISAM存储引擎和InnoDB。下面是实验过程：</p>
 <p>一、InnoDB存储引擎。</p>
 <p>创建数据库和表</p>
-<pre><code>CREATE DATABASE ecommerce;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">CREATE DATABASE ecommerce;
 CREATE TABLE employees (
     id INT NOT NULL,
     fname VARCHAR(30),
     lname VARCHAR(30),
     birth TIMESTAMP,
-    hired DATE NOT NULL DEFAULT '1970-01-01',
-    separated DATE NOT NULL DEFAULT '9999-12-31',
+    hired DATE NOT NULL DEFAULT &#39;1970-01-01&#39;,
+    separated DATE NOT NULL DEFAULT &#39;9999-12-31&#39;,
     job_code INT NOT NULL,
     store_id INT NOT NULL
 )
@@ -360,8 +383,27 @@ partition BY RANGE (store_id) (
     partition p3 VALUES LESS THAN (150000),
     Partition p4 VALUES LESS THAN MAXVALUE
 );
-</code></pre><p>创建存储过程</p>
-<pre><code>use ecommerce;
+</code></pre></td></tr></table>
+</div>
+</div><p>创建存储过程</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">use ecommerce;
 CREATE PROCEDURE BatchInsert(IN init INT, IN loop_time INT)
 BEGIN
     DECLARE Var INT;
@@ -369,17 +411,54 @@ BEGIN
     SET Var = 0;
     SET ID = init;
         WHILE Var &lt; loop_time DO
-        insert into employees(id,fname,lname,birth,hired,separated,job_code,store_id) values(ID,CONCAT('chen',ID),CONCAT('haixiang',ID),Now(),Now(),Now(),1,ID);
+        insert into employees(id,fname,lname,birth,hired,separated,job_code,store_id) values(ID,CONCAT(&#39;chen&#39;,ID),CONCAT(&#39;haixiang&#39;,ID),Now(),Now(),Now(),1,ID);
         SET ID = ID + 1;
         SET Var = Var + 1;
         END WHILE;
 END;
-</code></pre><p>调用存储过程插入数据</p>
-<pre><code>CALL BatchInsert（30036,200000）
-</code></pre><p>用时：3h 37min 8sec</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>调用存储过程插入数据</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">CALL BatchInsert（30036,200000）
+</code></pre></td></tr></table>
+</div>
+</div><p>用时：3h 37min 8sec</p>
 <p>二、MyISAM存储引擎</p>
 <p>创建表</p>
-<pre><code>use ecommerce;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">use ecommerce;
 CREATE TABLE ecommerce.customer (
    id INT NOT NULL,
    email VARCHAR(64) NOT NULL,
@@ -403,8 +482,30 @@ partition BY RANGE (id) (
     partition p4 VALUES LESS THAN (2000000),
     Partition p5 VALUES LESS THAN MAXVALUE
 );
-</code></pre><p>创建存储过程</p>
-<pre><code>use ecommerce;
+</code></pre></td></tr></table>
+</div>
+</div><p>创建存储过程</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">use ecommerce;
 DROP PROCEDURE IF EXISTS ecommerce.BatchInsertCustomer;
 CREATE PROCEDURE BatchInsertCustomer(IN start INT,IN loop_time INT)
 BEGIN
@@ -415,19 +516,37 @@ BEGIN
         WHILE Var &lt; loop_time
         DO
         insert into customer(ID,email,name,password,phone,birth,sex,avatar,address,regtime,lastip,modifytime)
-        values(ID,CONCAT(ID,'@sina.com'),CONCAT('name_',rand(ID)*10000 mod 200),123456,13800000000,adddate('1995-01-01',(rand(ID)*36520) mod 3652),Var%2,'http://t3.baidu.com/it/u=2267714161,58787848&amp;fm=52&amp;gp=0.jpg','北京市海淀区',adddate('1995-01-01',(rand(ID)*36520) mod 3652),'8.8.8.8',adddate('1995-01-01',(rand(ID)*36520) mod 3652));
+        values(ID,CONCAT(ID,&#39;@sina.com&#39;),CONCAT(&#39;name_&#39;,rand(ID)*10000 mod 200),123456,13800000000,adddate(&#39;1995-01-01&#39;,(rand(ID)*36520) mod 3652),Var%2,&#39;http://t3.baidu.com/it/u=2267714161,58787848&amp;fm=52&amp;gp=0.jpg&#39;,&#39;北京市海淀区&#39;,adddate(&#39;1995-01-01&#39;,(rand(ID)*36520) mod 3652),&#39;8.8.8.8&#39;,adddate(&#39;1995-01-01&#39;,(rand(ID)*36520) mod 3652));
         SET Var = Var + 1;
         SET ID= ID + 1;
         END WHILE;
 END;
-</code></pre><p>调用存储过程插入数据</p>
-<pre><code>ALTER  TABLE  customer  DISABLE  KEYS;
+</code></pre></td></tr></table>
+</div>
+</div><p>调用存储过程插入数据</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ALTER  TABLE  customer  DISABLE  KEYS;
 CALL BatchInsertCustomer(1,2000000);
 ALTER  TABLE  customer  ENABLE  KEYS;
-</code></pre><p>用时：8min 50sec</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>用时：8min 50sec</p>
 <p>通过以上对比发现对于插入大量数据时可以使用MyISAM存储引擎，如果再需要修改MySQL存储引擎可以使用命令：</p>
-<pre><code>ALTER TABLE t ENGINE = MYISAM;
-</code></pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ALTER TABLE t ENGINE = MYISAM;
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
@@ -613,7 +732,7 @@ ALTER  TABLE  customer  ENABLE  KEYS;
     &copy;
     
       2012 -
-    2019
+    2020
     <span class="heart">
       
       <i class="iconfont">

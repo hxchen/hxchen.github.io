@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2015/unity3d%E4%B8%8Eandroid-sdk%E4%BA%A4%E4%BA%92/" />
@@ -69,7 +69,7 @@
 <meta itemprop="description" content="一、Android SDK准备 1、新建Android Library工程unitysdk 2、新建libs目录，将Unity for Android的 cl">
 <meta itemprop="datePublished" content="2015-11-20T11:17:00&#43;08:00" />
 <meta itemprop="dateModified" content="2015-11-20T11:17:00&#43;08:00" />
-<meta itemprop="wordCount" content="1588">
+<meta itemprop="wordCount" content="1803">
 
 
 
@@ -317,7 +317,7 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/android/"> Android </a>
             
           </div>
-        <span class="more-meta"> 约 1588 字 </span>
+        <span class="more-meta"> 约 1803 字 </span>
           <span class="more-meta"> 预计阅读 4 分钟 </span>
 
         
@@ -339,216 +339,454 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <h1 id="android-sdk">一、Android SDK准备</h1>
+      <h1 id="一android-sdk准备">一、Android SDK准备</h1>
 <p>1、新建Android Library工程unitysdk
 <img src="/media/images/2015/unity01.jpg" alt="unity01"></p>
 <p>2、新建libs目录，将Unity for Android的 class.jar（Unity安装目录里有）复制到此。在此我这里，重命名为unity3dplayer.jar并且添加到安卓工程里去。</p>
 <p>3、新建主Activity：UnityTestActivity 继承 UnityPlayerActivity。</p>
 <p>本文件主要是回调Unity游戏对象Canvas。方法AndroidReceive，传递参数message。</p>
-<pre><code>package com.qikuyx.unitysdk;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">com</span><span class="p">.</span><span class="nx">qikuyx</span><span class="p">.</span><span class="nx">unitysdk</span><span class="p">;</span>
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
+<span class="kn">import</span> <span class="nx">android</span><span class="p">.</span><span class="nx">content</span><span class="p">.</span><span class="nx">Context</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nx">android</span><span class="p">.</span><span class="nx">content</span><span class="p">.</span><span class="nx">Intent</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nx">android</span><span class="p">.</span><span class="nx">os</span><span class="p">.</span><span class="nx">Bundle</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nx">android</span><span class="p">.</span><span class="nx">util</span><span class="p">.</span><span class="nx">Log</span><span class="p">;</span>
 
-import com.unity3d.player.UnityPlayer;
-import com.unity3d.player.UnityPlayerActivity;
+<span class="kn">import</span> <span class="nx">com</span><span class="p">.</span><span class="nx">unity3d</span><span class="p">.</span><span class="nx">player</span><span class="p">.</span><span class="nx">UnityPlayer</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nx">com</span><span class="p">.</span><span class="nx">unity3d</span><span class="p">.</span><span class="nx">player</span><span class="p">.</span><span class="nx">UnityPlayerActivity</span><span class="p">;</span>
 
-/**
- * Created by Administrator on 2015/11/17.
- */
-public class UnityTestActivity extends UnityPlayerActivity{
-    static final String TAG = &quot;UnityTestActivity&quot;;
-    Context mContext = null;
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-         mContext = this;
-    }
+<span class="cm">/**
+</span><span class="cm"> * Created by Administrator on 2015/11/17.
+</span><span class="cm"> */</span>
+<span class="nx">public</span> <span class="nx">class</span> <span class="nx">UnityTestActivity</span> <span class="nx">extends</span> <span class="nx">UnityPlayerActivity</span><span class="p">{</span>
+    <span class="nx">static</span> <span class="nx">final</span> <span class="nx">String</span> <span class="nx">TAG</span> <span class="p">=</span> <span class="s">&#34;UnityTestActivity&#34;</span><span class="p">;</span>
+    <span class="nx">Context</span> <span class="nx">mContext</span> <span class="p">=</span> <span class="nx">null</span><span class="p">;</span>
+    <span class="err">@</span><span class="nx">Override</span>
+    <span class="nx">public</span> <span class="nx">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="nx">Bundle</span> <span class="nx">savedInstanceState</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">super</span><span class="p">.</span><span class="nf">onCreate</span><span class="p">(</span><span class="nx">savedInstanceState</span><span class="p">)</span><span class="p">;</span>
+         <span class="nx">mContext</span> <span class="p">=</span> <span class="nx">this</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    public void StartActivity0(String name) {
-        Intent intent = new Intent(mContext,TestActivity0.class);
-        intent.putExtra(&quot;name&quot;, name);
-        Log.i(TAG, &quot;收到Unity传递过来的参数:&quot; + name);
-        this.startActivity(intent);
-    }
-    public static void sendMessageToUnity(String message){
-        Log.i(TAG, &quot;向Unity传递参数:&quot;+message);
-        UnityPlayer.UnitySendMessage(&quot;Canvas&quot;, &quot;AndroidReceive&quot;, message);
-    }
-}
-</code></pre><p>4、新建TestActivity0，添加如下代码：</p>
-<pre><code>package com.qikuyx.unitysdk;
+    <span class="nx">public</span> <span class="nx">void</span> <span class="nf">StartActivity0</span><span class="p">(</span><span class="nx">String</span> <span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">Intent</span> <span class="nx">intent</span> <span class="p">=</span> <span class="nx">new</span> <span class="nf">Intent</span><span class="p">(</span><span class="nx">mContext</span><span class="p">,</span><span class="nx">TestActivity0</span><span class="p">.</span><span class="nx">class</span><span class="p">)</span><span class="p">;</span>
+        <span class="nx">intent</span><span class="p">.</span><span class="nf">putExtra</span><span class="p">(</span><span class="s">&#34;name&#34;</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span><span class="p">;</span>
+        <span class="nx">Log</span><span class="p">.</span><span class="nf">i</span><span class="p">(</span><span class="nx">TAG</span><span class="p">,</span> <span class="s">&#34;收到Unity传递过来的参数:&#34;</span> <span class="o">+</span> <span class="nx">name</span><span class="p">)</span><span class="p">;</span>
+        <span class="nx">this</span><span class="p">.</span><span class="nf">startActivity</span><span class="p">(</span><span class="nx">intent</span><span class="p">)</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">public</span> <span class="nx">static</span> <span class="nx">void</span> <span class="nf">sendMessageToUnity</span><span class="p">(</span><span class="nx">String</span> <span class="nx">message</span><span class="p">)</span><span class="p">{</span>
+        <span class="nx">Log</span><span class="p">.</span><span class="nf">i</span><span class="p">(</span><span class="nx">TAG</span><span class="p">,</span> <span class="s">&#34;向Unity传递参数:&#34;</span><span class="o">+</span><span class="nx">message</span><span class="p">)</span><span class="p">;</span>
+        <span class="nx">UnityPlayer</span><span class="p">.</span><span class="nf">UnitySendMessage</span><span class="p">(</span><span class="s">&#34;Canvas&#34;</span><span class="p">,</span> <span class="s">&#34;AndroidReceive&#34;</span><span class="p">,</span> <span class="nx">message</span><span class="p">)</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>4、新建TestActivity0，添加如下代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">com</span><span class="p">.</span><span class="nx">qikuyx</span><span class="p">.</span><span class="nx">unitysdk</span><span class="p">;</span>
 
-import android.app.Activity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
+<span class="kn">import</span> <span class="nx">android</span><span class="p">.</span><span class="nx">app</span><span class="p">.</span><span class="nx">Activity</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nx">android</span><span class="p">.</span><span class="nx">os</span><span class="p">.</span><span class="nx">Bundle</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nx">android</span><span class="p">.</span><span class="nx">view</span><span class="p">.</span><span class="nx">View</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nx">android</span><span class="p">.</span><span class="nx">widget</span><span class="p">.</span><span class="nx">Button</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nx">android</span><span class="p">.</span><span class="nx">widget</span><span class="p">.</span><span class="nx">EditText</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nx">android</span><span class="p">.</span><span class="nx">widget</span><span class="p">.</span><span class="nx">TextView</span><span class="p">;</span>
 
 
-/**
- * Created by Administrator on 2015/11/17.
- */
-public class TestActivity0 extends Activity{
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+<span class="cm">/**
+</span><span class="cm"> * Created by Administrator on 2015/11/17.
+</span><span class="cm"> */</span>
+<span class="nx">public</span> <span class="nx">class</span> <span class="nx">TestActivity0</span> <span class="nx">extends</span> <span class="nx">Activity</span><span class="p">{</span>
+    <span class="err">@</span><span class="nx">Override</span>
+    <span class="nx">public</span> <span class="nx">void</span> <span class="nf">onCreate</span><span class="p">(</span><span class="nx">Bundle</span> <span class="nx">savedInstanceState</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">super</span><span class="p">.</span><span class="nf">onCreate</span><span class="p">(</span><span class="nx">savedInstanceState</span><span class="p">)</span><span class="p">;</span>
+        <span class="nf">setContentView</span><span class="p">(</span><span class="nx">R</span><span class="p">.</span><span class="nx">layout</span><span class="p">.</span><span class="nx">main</span><span class="p">)</span><span class="p">;</span>
 
-        TextView text = (TextView)this.findViewById(R.id.textView1);
-        text.setText(this.getIntent().getStringExtra(&quot;name&quot;));
-        final EditText editText = (EditText) this.findViewById(R.id.editText);
-        Button close = (Button)this.findViewById(R.id.button0);
-        close.setOnClickListener(new View.OnClickListener() {
+        <span class="nx">TextView</span> <span class="nx">text</span> <span class="p">=</span> <span class="p">(</span><span class="nx">TextView</span><span class="p">)</span><span class="nx">this</span><span class="p">.</span><span class="nf">findViewById</span><span class="p">(</span><span class="nx">R</span><span class="p">.</span><span class="nx">id</span><span class="p">.</span><span class="nx">textView1</span><span class="p">)</span><span class="p">;</span>
+        <span class="nx">text</span><span class="p">.</span><span class="nf">setText</span><span class="p">(</span><span class="nx">this</span><span class="p">.</span><span class="nf">getIntent</span><span class="p">(</span><span class="p">)</span><span class="p">.</span><span class="nf">getStringExtra</span><span class="p">(</span><span class="s">&#34;name&#34;</span><span class="p">)</span><span class="p">)</span><span class="p">;</span>
+        <span class="nx">final</span> <span class="nx">EditText</span> <span class="nx">editText</span> <span class="p">=</span> <span class="p">(</span><span class="nx">EditText</span><span class="p">)</span> <span class="nx">this</span><span class="p">.</span><span class="nf">findViewById</span><span class="p">(</span><span class="nx">R</span><span class="p">.</span><span class="nx">id</span><span class="p">.</span><span class="nx">editText</span><span class="p">)</span><span class="p">;</span>
+        <span class="nx">Button</span> <span class="nx">close</span> <span class="p">=</span> <span class="p">(</span><span class="nx">Button</span><span class="p">)</span><span class="nx">this</span><span class="p">.</span><span class="nf">findViewById</span><span class="p">(</span><span class="nx">R</span><span class="p">.</span><span class="nx">id</span><span class="p">.</span><span class="nx">button0</span><span class="p">)</span><span class="p">;</span>
+        <span class="nx">close</span><span class="p">.</span><span class="nf">setOnClickListener</span><span class="p">(</span><span class="nx">new</span> <span class="nx">View</span><span class="p">.</span><span class="nf">OnClickListener</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
 
-            @Override
-            public void onClick(View v) {
-                TestActivity0.this.finish();
-                UnityTestActivity.sendMessageToUnity(editText.getText().toString());
-            }
-        });
-    }
-}
-</code></pre><p>5、新建布局文件main.xml</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;ScrollView xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; android:id=&quot;@+id/screen&quot;
-    android:layout_width=&quot;fill_parent&quot; android:layout_height=&quot;fill_parent&quot;
-    android:orientation=&quot;vertical&quot;&gt;
+            <span class="err">@</span><span class="nx">Override</span>
+            <span class="nx">public</span> <span class="nx">void</span> <span class="nf">onClick</span><span class="p">(</span><span class="nx">View</span> <span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">TestActivity0</span><span class="p">.</span><span class="nx">this</span><span class="p">.</span><span class="nf">finish</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+                <span class="nx">UnityTestActivity</span><span class="p">.</span><span class="nf">sendMessageToUnity</span><span class="p">(</span><span class="nx">editText</span><span class="p">.</span><span class="nf">getText</span><span class="p">(</span><span class="p">)</span><span class="p">.</span><span class="nf">toString</span><span class="p">(</span><span class="p">)</span><span class="p">)</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span><span class="p">)</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>5、新建布局文件main.xml</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
+&lt;ScrollView xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34; android:id=&#34;@+id/screen&#34;
+    android:layout_width=&#34;fill_parent&#34; android:layout_height=&#34;fill_parent&#34;
+    android:orientation=&#34;vertical&#34;&gt;
     &lt;LinearLayout
-        android:layout_width=&quot;fill_parent&quot; android:layout_height=&quot;fill_parent&quot;
-        android:orientation=&quot;vertical&quot;&gt;
+        android:layout_width=&#34;fill_parent&#34; android:layout_height=&#34;fill_parent&#34;
+        android:orientation=&#34;vertical&#34;&gt;
         &lt;ImageView
-            android:src=&quot;@drawable/ic_launcher&quot;
-            android:layout_width=&quot;fill_parent&quot;
-            android:layout_height=&quot;fill_parent&quot;
+            android:src=&#34;@drawable/ic_launcher&#34;
+            android:layout_width=&#34;fill_parent&#34;
+            android:layout_height=&#34;fill_parent&#34;
             /&gt;
-        &lt;TextView android:id=&quot;@+id/textView0&quot;
-            android:layout_width=&quot;fill_parent&quot;
-            android:layout_height=&quot;41dp&quot;
-            android:textColor=&quot;#000000&quot;
-            android:textSize=&quot;18dip&quot;
-            android:text=&quot;@string/android_sdk_for_unity3d&quot;
-            android:background=&quot;#af1727d3&quot; /&gt;
+        &lt;TextView android:id=&#34;@+id/textView0&#34;
+            android:layout_width=&#34;fill_parent&#34;
+            android:layout_height=&#34;41dp&#34;
+            android:textColor=&#34;#000000&#34;
+            android:textSize=&#34;18dip&#34;
+            android:text=&#34;@string/android_sdk_for_unity3d&#34;
+            android:background=&#34;#af1727d3&#34; /&gt;
 
         &lt;TextView
-            android:layout_width=&quot;match_parent&quot;
-            android:layout_height=&quot;43dp&quot;
-            android:text=&quot;@string/received_values&quot;
-            android:id=&quot;@+id/textView&quot;
-            android:layout_gravity=&quot;center_horizontal&quot;
-            android:layout_marginTop=&quot;40dp&quot; /&gt;
+            android:layout_width=&#34;match_parent&#34;
+            android:layout_height=&#34;43dp&#34;
+            android:text=&#34;@string/received_values&#34;
+            android:id=&#34;@+id/textView&#34;
+            android:layout_gravity=&#34;center_horizontal&#34;
+            android:layout_marginTop=&#34;40dp&#34; /&gt;
 
         &lt;TextView
-            android:id=&quot;@+id/textView1&quot;
-            android:layout_width=&quot;fill_parent&quot;
-            android:layout_height=&quot;42dp&quot;
-            android:textColor=&quot;#000000&quot;
-            android:textSize=&quot;18dip&quot;
-            android:background=&quot;#af17d3c6&quot; /&gt;
+            android:id=&#34;@+id/textView1&#34;
+            android:layout_width=&#34;fill_parent&#34;
+            android:layout_height=&#34;42dp&#34;
+            android:textColor=&#34;#000000&#34;
+            android:textSize=&#34;18dip&#34;
+            android:background=&#34;#af17d3c6&#34; /&gt;
 
         &lt;EditText
-            android:layout_width=&quot;match_parent&quot;
-            android:layout_height=&quot;wrap_content&quot;
-            android:id=&quot;@+id/editText&quot;
-            android:layout_gravity=&quot;center_horizontal&quot;
-            android:hint=&quot;@string/input_parameters&quot;
-            android:layout_marginTop=&quot;40dp&quot; /&gt;
+            android:layout_width=&#34;match_parent&#34;
+            android:layout_height=&#34;wrap_content&#34;
+            android:id=&#34;@+id/editText&#34;
+            android:layout_gravity=&#34;center_horizontal&#34;
+            android:hint=&#34;@string/input_parameters&#34;
+            android:layout_marginTop=&#34;40dp&#34; /&gt;
 
-        &lt;Button android:id=&quot;@+id/button0&quot;
-            android:layout_width=&quot;fill_parent&quot; android:layout_height=&quot;wrap_content&quot;
-            android:text=&quot;@string/send_and_close&quot;/&gt;
+        &lt;Button android:id=&#34;@+id/button0&#34;
+            android:layout_width=&#34;fill_parent&#34; android:layout_height=&#34;wrap_content&#34;
+            android:text=&#34;@string/send_and_close&#34;/&gt;
     &lt;/LinearLayout&gt;
 &lt;/ScrollView&gt;
-</code></pre><p>6、values/string.xml添加如下：</p>
-<pre><code>&lt;resources&gt;
-    &lt;string name=&quot;app_name&quot;&gt;UnitySDK&lt;/string&gt;
-    &lt;string name=&quot;android_sdk_for_unity3d&quot;&gt;Android SDK for Unity3D&lt;/string&gt;
-    &lt;string name=&quot;received_values&quot;&gt;收到Unity传递过来的参数:&lt;/string&gt;
-    &lt;string name=&quot;input_parameters&quot;&gt;请在此输入向Unity传送的参数&lt;/string&gt;
-    &lt;string name=&quot;send_and_close&quot;&gt;传送并关闭当前Android Activity&lt;/string&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>6、values/string.xml添加如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;resources&gt;
+    &lt;string name=&#34;app_name&#34;&gt;UnitySDK&lt;/string&gt;
+    &lt;string name=&#34;android_sdk_for_unity3d&#34;&gt;Android SDK for Unity3D&lt;/string&gt;
+    &lt;string name=&#34;received_values&#34;&gt;收到Unity传递过来的参数:&lt;/string&gt;
+    &lt;string name=&#34;input_parameters&#34;&gt;请在此输入向Unity传送的参数&lt;/string&gt;
+    &lt;string name=&#34;send_and_close&#34;&gt;传送并关闭当前Android Activity&lt;/string&gt;
 &lt;/resources&gt;
-</code></pre><p>7、AndroidManifest配置如下：</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    package=&quot;com.qikuyx.unitysdk&quot;
-    android:versionCode=&quot;1&quot;
-    android:versionName=&quot;1.0&quot; &gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>7、AndroidManifest配置如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
+&lt;manifest xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34;
+    package=&#34;com.qikuyx.unitysdk&#34;
+    android:versionCode=&#34;1&#34;
+    android:versionName=&#34;1.0&#34; &gt;
 
-    &lt;uses-sdk android:minSdkVersion=&quot;7&quot; /&gt;
+    &lt;uses-sdk android:minSdkVersion=&#34;7&#34; /&gt;
     &lt;application
-        android:icon=&quot;@drawable/ic_launcher&quot;
-        android:label=&quot;@string/app_name&quot; &gt;
+        android:icon=&#34;@drawable/ic_launcher&#34;
+        android:label=&#34;@string/app_name&#34; &gt;
         &lt;activity
-            android:theme=&quot;@android:style/Theme.NoTitleBar.Fullscreen&quot;
-            android:name=&quot;com.qikuyx.unitysdk.UnityTestActivity&quot;
-            android:label=&quot;@string/app_name&quot; &gt;
+            android:theme=&#34;@android:style/Theme.NoTitleBar.Fullscreen&#34;
+            android:name=&#34;com.qikuyx.unitysdk.UnityTestActivity&#34;
+            android:label=&#34;@string/app_name&#34; &gt;
             &lt;intent-filter&gt;
-                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;
-                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+                &lt;action android:name=&#34;android.intent.action.MAIN&#34; /&gt;
+                &lt;category android:name=&#34;android.intent.category.LAUNCHER&#34; /&gt;
             &lt;/intent-filter&gt;
         &lt;/activity&gt;
 
         &lt;activity
-            android:name=&quot;com.qikuyx.unitysdk.TestActivity0&quot;
-            android:theme=&quot;@android:style/Theme.NoTitleBar.Fullscreen&quot;
+            android:name=&#34;com.qikuyx.unitysdk.TestActivity0&#34;
+            android:theme=&#34;@android:style/Theme.NoTitleBar.Fullscreen&#34;
             &gt;
         &lt;/activity&gt;
 
     &lt;/application&gt;
 
 &lt;/manifest&gt;
-</code></pre><p>8、build.gradle配置文件：</p>
-<pre><code>apply plugin: 'com.android.library'
-def SDKVersion = '1.0'
+</code></pre></td></tr></table>
+</div>
+</div><p>8、build.gradle配置文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">apply plugin: &#39;com.android.library&#39;
+def SDKVersion = &#39;1.0&#39;
 android {
     compileSdkVersion 21
-    buildToolsVersion &quot;21.1.2&quot;
+    buildToolsVersion &#34;21.1.2&#34;
 
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 21
         versionCode 1
-        versionName &quot;1.0&quot;
+        versionName &#34;1.0&#34;
     }
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile(&#39;proguard-android.txt&#39;), &#39;proguard-rules.pro&#39;
         }
     }
     sourceSets {
         defaultConfig {
         }
         main {
-            java.srcDirs = ['src/main/java']
-            manifest.srcFile 'src/main/AndroidManifest.xml'
+            java.srcDirs = [&#39;src/main/java&#39;]
+            manifest.srcFile &#39;src/main/AndroidManifest.xml&#39;
         }
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:21.0.3'
-    compile files('libs/unity3dplayer.jar')
+    compile fileTree(dir: &#39;libs&#39;, include: [&#39;*.jar&#39;])
+    testCompile &#39;junit:junit:4.12&#39;
+    compile &#39;com.android.support:appcompat-v7:21.0.3&#39;
+    compile files(&#39;libs/unity3dplayer.jar&#39;)
 }
 task clearJar(type: Delete) {
-    delete &quot;build/outputs/UnitySDK_$SDKVersion&quot;+&quot;.jar&quot;
+    delete &#34;build/outputs/UnitySDK_$SDKVersion&#34;+&#34;.jar&#34;
 }
 task makeUnitySDKJar(type: Copy) {
-    from(&quot;build/intermediates/bundles/release/&quot;)
-    into(&quot;build/outputs/&quot;)
-    include(&quot;classes.jar&quot;)
-    rename (&quot;classes.jar&quot;, &quot;UnitySDK_$SDKVersion&quot;+&quot;.jar&quot;)
+    from(&#34;build/intermediates/bundles/release/&#34;)
+    into(&#34;build/outputs/&#34;)
+    include(&#34;classes.jar&#34;)
+    rename (&#34;classes.jar&#34;, &#34;UnitySDK_$SDKVersion&#34;+&#34;.jar&#34;)
 }
 makeUnitySDKJar.dependsOn(clearJar, build)
-</code></pre><p>9、通过执行如下命令就可以生成Jar包供Unity使用：</p>
-<pre><code>gradle makeUnitySDKJar
-</code></pre><p>Android部分到此结束，下面开始Unity部分说明。</p>
-<h1 id="unity02unity">unity02二、Unity准备</h1>
+</code></pre></td></tr></table>
+</div>
+</div><p>9、通过执行如下命令就可以生成Jar包供Unity使用：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">gradle makeUnitySDKJar
+</code></pre></td></tr></table>
+</div>
+</div><p>Android部分到此结束，下面开始Unity部分说明。</p>
+<h1 id="unity02二unity准备">unity02二、Unity准备</h1>
 <p>1、新建一个名为QikuLogin的Unity3D工程。</p>
 <p>2、在Hierarchy上。选中Main Camera新建Button(右键-&gt;UI-&gt;Button)。</p>
 <p>3、上面步骤中将自动创建Canvas，然后在其上依次添加2个InputField，最后结构如下：</p>
@@ -560,7 +798,40 @@ makeUnitySDKJar.dependsOn(clearJar, build)
 <p><img src="/media/images/2015/unity03.jpg" alt="unity03"></p>
 <p>5、Assets\Plugins下新建C#脚本文件Test.cs,并且挂载到Canvas上。</p>
 <p>本文件主要是进行Java对象初始化和方法调用。</p>
-<pre><code>using UnityEngine;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -571,8 +842,8 @@ public class Test : MonoBehaviour {
     public InputField sendText;
     // Use this for initialization
     void Start () {
-        jc = new AndroidJavaClass(&quot;com.unity3d.player.UnityPlayer&quot;);
-        jo = jc.GetStatic&lt;AndroidJavaObject&gt;(&quot;currentActivity&quot;);
+        jc = new AndroidJavaClass(&#34;com.unity3d.player.UnityPlayer&#34;);
+        jo = jc.GetStatic&lt;AndroidJavaObject&gt;(&#34;currentActivity&#34;);
     }
 
     // Update is called once per frame
@@ -586,10 +857,12 @@ public class Test : MonoBehaviour {
         receivedText.text = content;
     }
     public void openAndroidActivity() {
-        jo.Call(&quot;StartActivity0&quot;, sendText.text);
+        jo.Call(&#34;StartActivity0&#34;, sendText.text);
     }
 }
-</code></pre><p>6、将控件Button事件关联到openAndroidActivity函数，2个InputField关联到脚本文件的receivedText和sendText变量。
+</code></pre></td></tr></table>
+</div>
+</div><p>6、将控件Button事件关联到openAndroidActivity函数，2个InputField关联到脚本文件的receivedText和sendText变量。
 最终配置如下：
 <img src="/media/images/2015/unity04.jpg" alt="unity04"></p>
 <p><img src="/media/images/2015/unity05.jpg" alt="unity05"></p>
@@ -790,7 +1063,7 @@ public class Test : MonoBehaviour {
     &copy;
     
       2012 -
-    2019
+    2020
     <span class="heart">
       
       <i class="iconfont">

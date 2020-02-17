@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2013/aop-advisor%E8%AF%B4%E6%98%8E%E4%BB%A5%E5%8F%8Athe-prefix-aop-for-element-aopconfig-is-not-bound.%E9%94%99%E8%AF%AF%E5%8E%9F%E5%9B%A0/" />
@@ -69,7 +69,7 @@
 <meta itemprop="description" content="原因：我们在定义申明AOP的时候。没有加载schema。 解决：首先应该加载JAR包。 还要在中要加入“xmlns：aop”的命名申明， 并在“x">
 <meta itemprop="datePublished" content="2013-01-17T22:34:00&#43;08:00" />
 <meta itemprop="dateModified" content="2013-01-17T22:34:00&#43;08:00" />
-<meta itemprop="wordCount" content="330">
+<meta itemprop="wordCount" content="343">
 
 
 
@@ -316,7 +316,7 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/web%E5%89%8D%E7%AB%AF/"> Web前端 </a>
             
           </div>
-        <span class="more-meta"> 约 330 字 </span>
+        <span class="more-meta"> 约 343 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -343,20 +343,39 @@ if (!doNotTrack) {
 <p>还要在<!-- raw HTML omitted -->中要加入“xmlns：aop”的命名申明，</p>
 <p>并在“xsi：schemaLocation”中指定aop配置的schema的地址</p>
 <p>配置文件如下：</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans &quot;
-xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance &quot;
-xmlns:aop=&quot;http://www.springframework.org/schema/aop &quot;
-xmlns:tx=&quot;http://www.springframework.org/schema/tx &quot;
-xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+&lt;beans xmlns=&#34;http://www.springframework.org/schema/beans &#34;
+xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance &#34;
+xmlns:aop=&#34;http://www.springframework.org/schema/aop &#34;
+xmlns:tx=&#34;http://www.springframework.org/schema/tx &#34;
+xsi:schemaLocation=&#34;http://www.springframework.org/schema/beans
                      http://www.springframework.org/schema/beans/spring-beans.xsd
                      http://www.springframework.org/schema/tx
                      http://www.springframework.org/schema/tx/spring-tx.xsd
                      http://www.springframework.org/schema/aop
-                     http://www.springframework.org/schema/aop/spring-aop.xsd &quot;&gt;
+                     http://www.springframework.org/schema/aop/spring-aop.xsd &#34;&gt;
 
 (* com.test.service.*.*(..))中几个通配符的含义：
-</code></pre><p>第一个 * —— 通配 任意返回值类型</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>第一个 * —— 通配 任意返回值类型</p>
 <p>第二个 * —— 通配 包com.test.service下的任意class</p>
 <p>第三个 * —— 通配 包com.test.service下的任意class的任意方法</p>
 <p>第四个 .. —— 通配 方法可以有0个或多个参数</p>
@@ -547,7 +566,7 @@ xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
     &copy;
     
       2012 -
-    2019
+    2020
     <span class="heart">
       
       <i class="iconfont">

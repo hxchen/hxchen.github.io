@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2018/ethereum-wallet%E4%BB%A5%E5%A4%AA%E5%9D%8A%E9%92%B1%E5%8C%85%E9%93%BE%E6%8E%A5geth-server%E7%A7%81%E6%9C%89%E9%93%BE/" />
@@ -69,7 +69,7 @@
 <meta itemprop="description" content="上一篇文章里,我们讲到 Ubuntu16.04 搭建以太坊Ethereum私链 这次,我就要来介绍如何下载我们的钱包来链接我们的私有链。 以太坊钱包Wallet下载 钱包">
 <meta itemprop="datePublished" content="2018-04-12T18:31:44&#43;08:00" />
 <meta itemprop="dateModified" content="2018-04-12T18:31:44&#43;08:00" />
-<meta itemprop="wordCount" content="304">
+<meta itemprop="wordCount" content="309">
 
 
 
@@ -317,7 +317,7 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"> 区块链 </a>
             
           </div>
-        <span class="more-meta"> 约 304 字 </span>
+        <span class="more-meta"> 约 309 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -337,14 +337,14 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#mac">Mac</a>
       <ul>
-        <li><a href="#ethereum-wallet-">Ethereum Wallet 启动</a></li>
-        <li><a href="#mist-">Mist 启动</a></li>
+        <li><a href="#ethereum-wallet-启动">Ethereum Wallet 启动</a></li>
+        <li><a href="#mist-启动">Mist 启动</a></li>
       </ul>
     </li>
     <li><a href="#windows">Windows</a>
       <ul>
-        <li><a href="#mist-1">Mist 启动</a></li>
-        <li><a href="#ethereum-wallet-1">Ethereum Wallet 启动</a></li>
+        <li><a href="#mist-启动-1">Mist 启动</a></li>
+        <li><a href="#ethereum-wallet-启动-1">Ethereum Wallet 启动</a></li>
       </ul>
     </li>
   </ul>
@@ -356,27 +356,62 @@ if (!doNotTrack) {
     <div class="post-content">
       <p>上一篇文章里,我们讲到 <a href="https://www.3afun.com/post/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE/">Ubuntu16.04 搭建以太坊Ethereum私链</a>
 这次,我就要来介绍如何下载我们的钱包来链接我们的私有链。</p>
-<h1 id="wallet">以太坊钱包Wallet下载</h1>
+<h1 id="以太坊钱包wallet下载">以太坊钱包Wallet下载</h1>
 <p>钱包下载,大家可以去 <a href="https://github.com/ethereum/mist/releases">这里</a>下载。现在最新版本是0.10.0</p>
 <p>不管大家选择是 Ethereum Wallet 还是 Mist 都是可以的,这里我都下载了Mac版本的2个钱包。</p>
 <p>安装的话没有难度,正常安装就行。</p>
-<h1 id="geth-server-">Geth Server 私有链服务器端</h1>
+<h1 id="geth-server-私有链服务器端">Geth Server 私有链服务器端</h1>
 <p>因为我是远程链接私有链不是本地链接,所有我采用了RPC 链接方式。</p>
 <p>Geth 启动方式</p>
-<pre><code>geth --identity &quot;TestNode&quot; --rpc --rpcaddr &quot;0.0.0.0&quot; --rpcport &quot;8545&quot; --datadir data0 --port &quot;30303&quot; --nodiscover console
-</code></pre><p>此次我们加入了 <code>--rpcaddr</code>参数来允许远程连接,默认是拒绝远程链接的,只能本地链接。</p>
-<h1 id="wallet1">客户端钱包Wallet启动</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">geth --identity &#34;TestNode&#34; --rpc --rpcaddr &#34;0.0.0.0&#34; --rpcport &#34;8545&#34; --datadir data0 --port &#34;30303&#34; --nodiscover console
+</code></pre></td></tr></table>
+</div>
+</div><p>此次我们加入了 <code>--rpcaddr</code>参数来允许远程连接,默认是拒绝远程链接的,只能本地链接。</p>
+<h1 id="客户端钱包wallet启动">客户端钱包Wallet启动</h1>
 <h2 id="mac">Mac</h2>
-<h3 id="ethereum-wallet-">Ethereum Wallet 启动</h3>
-<pre><code>&quot;/Applications/Ethereum Wallet.app/Contents/MacOS/Ethereum Wallet&quot; --rpc &quot;http://YOUR_IP:8545&quot;
-</code></pre><h3 id="mist-">Mist 启动</h3>
-<pre><code>/Applications/Mist.app/Contents/MacOS/Mist --rpc http://YOUR_IP:8545
-</code></pre><h2 id="windows">Windows</h2>
-<h3 id="mist-1">Mist 启动</h3>
-<pre><code>&quot;D:\Program Files\Mist-win64-0-10-0\Mist.exe&quot; --rpc http://YOUR_IP:8545
-</code></pre><h3 id="ethereum-wallet-1">Ethereum Wallet 启动</h3>
-<pre><code>&quot;D:\Program Files\Ethereum-Wallet-win64-0-10-0\Ethereum Wallet.exe&quot; --rpc http://YOUR_IP:8545
-</code></pre><p>请自行替换 <code>YOUR_IP</code></p>
+<h3 id="ethereum-wallet-启动">Ethereum Wallet 启动</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&#34;/Applications/Ethereum Wallet.app/Contents/MacOS/Ethereum Wallet&#34; --rpc &#34;http://YOUR_IP:8545&#34;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="mist-启动">Mist 启动</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">/Applications/Mist.app/Contents/MacOS/Mist --rpc http://YOUR_IP:8545
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="windows">Windows</h2>
+<h3 id="mist-启动-1">Mist 启动</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&#34;D:\Program Files\Mist-win64-0-10-0\Mist.exe&#34; --rpc http://YOUR_IP:8545
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="ethereum-wallet-启动-1">Ethereum Wallet 启动</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&#34;D:\Program Files\Ethereum-Wallet-win64-0-10-0\Ethereum Wallet.exe&#34; --rpc http://YOUR_IP:8545
+</code></pre></td></tr></table>
+</div>
+</div><p>请自行替换 <code>YOUR_IP</code></p>
 
     </div>
 
@@ -564,7 +599,7 @@ if (!doNotTrack) {
     &copy;
     
       2012 -
-    2019
+    2020
     <span class="heart">
       
       <i class="iconfont">

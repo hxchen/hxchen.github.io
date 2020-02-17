@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2017/sass-%E5%AE%89%E8%A3%85-%E5%8F%8A%E5%85%B6%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" />
@@ -69,7 +69,7 @@
 <meta itemprop="description" content="Sass是一种css的开发工具，它的安装依赖Ruby，没有安装Ruby的请先安装Ruby。 假定你已经安装了Ruby，则可以直接执行如下语句进">
 <meta itemprop="datePublished" content="2017-09-27T10:51:00&#43;08:00" />
 <meta itemprop="dateModified" content="2017-09-27T10:51:00&#43;08:00" />
-<meta itemprop="wordCount" content="486">
+<meta itemprop="wordCount" content="498">
 
 
 
@@ -316,7 +316,7 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/web%E5%89%8D%E7%AB%AF/"> Web前端 </a>
             
           </div>
-        <span class="more-meta"> 约 486 字 </span>
+        <span class="more-meta"> 约 498 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -340,22 +340,54 @@ if (!doNotTrack) {
     <div class="post-content">
       <p>Sass是一种css的开发工具，它的安装依赖Ruby，没有安装Ruby的请先安装Ruby。</p>
 <p>假定你已经安装了Ruby，则可以直接执行如下语句进行安装。</p>
-<pre><code>gem install sass
-</code></pre><p>常见错误提示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">gem install sass
+</code></pre></td></tr></table>
+</div>
+</div><p>常见错误提示：</p>
 <p>1、ERROR:  While executing gem &hellip; (OpenSSL::SSL::SSLError)</p>
 <p>hostname &ldquo;gems.ruby-china.org&rdquo; does not match the server certificate</p>
 <p>解决办法：</p>
 <p>执行命令，查看数据源</p>
-<pre><code>gem source -l
-</code></pre><p>结果</p>
-<pre><code>*** CURRENT SOURCES ***
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">gem source -l
+</code></pre></td></tr></table>
+</div>
+</div><p>结果</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">*** CURRENT SOURCES ***
 
 https://ruby.taobao.org/
 https://gems.ruby-china.org
-</code></pre><p>则可以删除多余的</p>
-<pre><code>gem sources --remove https://ruby.taobao.org/
+</code></pre></td></tr></table>
+</div>
+</div><p>则可以删除多余的</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">gem sources --remove https://ruby.taobao.org/
 sudo gem update --system
-</code></pre><p>然后重新安装。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>然后重新安装。</p>
 <p>2、ERROR:  SSL verification error at depth 1: unable to get local issuer certificate (20)</p>
 <p>ERROR:  You must add /O=Digital Signature Trust Co./CN=DST Root CA X3 to your local trusted store</p>
 <p>Fetching: ffi-1.9.18.gem ( 32%)ERROR:  SSL verification error at depth 2: self signed certificate in certificate chain (19)</p>
@@ -377,18 +409,40 @@ sudo gem update --system
 <p>ERROR:  While executing gem &hellip; (Errno::EPERM)</p>
 <p>Operation not permitted - /usr/bin/sass</p>
 <p>遇到以上错误 2和3的解决办法</p>
-<pre><code>sudo gem install -n /usr/local/bin sass
-</code></pre><p>查看</p>
-<pre><code>sass -v
-</code></pre><p>则会正确显示Sass版本号。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo gem install -n /usr/local/bin sass
+</code></pre></td></tr></table>
+</div>
+</div><p>查看</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sass -v
+</code></pre></td></tr></table>
+</div>
+</div><p>则会正确显示Sass版本号。</p>
 <hr>
 <p>2017年12月28日更新：</p>
 <p>Mac更新系统后，Ruby由2.0升级到2.3，再次使用Sass时候，发现报错。</p>
 <p>于是决定升级SaaS，重新安装时遇到错误。最后找到解决方案：</p>
 <p>先安装libgmp-dev，再重新安装即可。</p>
-<pre><code>brew install libgmp-dev
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">brew install libgmp-dev
 sudo gem install -n /usr/local/bin sass
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
@@ -575,7 +629,7 @@ sudo gem install -n /usr/local/bin sass
     &copy;
     
       2012 -
-    2019
+    2020
     <span class="heart">
       
       <i class="iconfont">
