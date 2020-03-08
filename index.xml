@@ -6,7 +6,7 @@
     <description>Recent content on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Tue, 11 Feb 2020 16:46:43 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 08 Mar 2020 11:59:21 +0800</lastBuildDate>
     
         <atom:link href="https://www.3afun.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -26,6 +26,27 @@
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;爱好&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;业余跑步,迄今为止,完成半程马拉松3次,全程马拉松3次。&lt;/p&gt;
 &lt;p&gt;喜爱摄影、徒步,走过大半个中国,写过几篇&lt;a href=&#34;http://www.mafengwo.cn/u/5295523/note.html&#34;&gt;游记&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>MacOSX无法挂载硬盘的解决办法</title>
+      <link>https://www.3afun.com/post/2020/macosx%E6%97%A0%E6%B3%95%E6%8C%82%E8%BD%BD%E7%A1%AC%E7%9B%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Sun, 08 Mar 2020 11:59:21 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2020/macosx%E6%97%A0%E6%B3%95%E6%8C%82%E8%BD%BD%E7%A1%AC%E7%9B%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      
+        <description>&lt;p&gt;有时移动硬盘无法从电脑退出，下次再次使用时候，插入进去没有反应，通过查看Mac 自带的磁盘工具发现已经识别，但是却无法挂载，遇到这样的问题尝试了以下两种方式，都可以实现正常挂载。&lt;/p&gt;
+&lt;h4 id=&#34;方法1&#34;&gt;方法1:&lt;/h4&gt;
+&lt;p&gt;插入到Windows进行修复。&lt;/p&gt;
+&lt;h4 id=&#34;方法2&#34;&gt;方法2：&lt;/h4&gt;
+&lt;p&gt;通过Mac自带的&lt;code&gt;diskutil&lt;/code&gt;命令。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;命令1：通过&lt;code&gt;diskutil list&lt;/code&gt;查看当前硬盘的信息，找到没有挂载的硬盘，我这里是&lt;code&gt;/dev/disk4&lt;/code&gt;没有挂载上。&lt;/li&gt;
+&lt;li&gt;命令2：通过&lt;code&gt;sudo fsck_hfs -fy /dev/disk4&lt;/code&gt;命令进行修复。&lt;/li&gt;
+&lt;li&gt;命令3：通过&lt;code&gt;sudo diskutil mount /dev/disk4&lt;/code&gt;命令进行挂载，这会系统就可以显示可以挂载硬盘了。&lt;/li&gt;
+&lt;/ul&gt;
 </description>
       
     </item>
@@ -2667,38 +2688,6 @@ public class CoolCoinClient{
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;有关 web3j 更多可参考:&lt;!-- raw HTML omitted --&gt;web3j&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;全文涉及到的代码, 在&lt;!-- raw HTML omitted --&gt;这里&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>以太坊钱包删除合约</title>
-      <link>https://www.3afun.com/post/2018/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E9%92%B1%E5%8C%85%E5%88%A0%E9%99%A4%E5%90%88%E7%BA%A6/</link>
-      <pubDate>Wed, 18 Apr 2018 18:13:20 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2018/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E9%92%B1%E5%8C%85%E5%88%A0%E9%99%A4%E5%90%88%E7%BA%A6/</guid>
-      
-        <description>&lt;p&gt;以太坊钱包想删除不用的合约怎么办?&lt;/p&gt;
-&lt;p&gt;1.菜单栏——&amp;raquo;开发——&amp;raquo;切换开发者工具——&amp;raquo;Ethereum Wallet,打开控制台。&lt;/p&gt;
-&lt;p&gt;2.获取合约 &lt;strong&gt;_id&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;CustomContracts.find().fetch()
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;3.根据ID删除合约&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;CustomContracts.remove(&amp;#39;_id&amp;#39;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/mist01.png&#34; alt=&#34;mist01&#34;&gt;&lt;/p&gt;
 </description>
       
     </item>

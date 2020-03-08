@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Tue, 11 Feb 2020 16:46:43 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 08 Mar 2020 11:59:21 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MacOSX无法挂载硬盘的解决办法</title>
+      <link>https://www.3afun.com/post/2020/macosx%E6%97%A0%E6%B3%95%E6%8C%82%E8%BD%BD%E7%A1%AC%E7%9B%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Sun, 08 Mar 2020 11:59:21 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2020/macosx%E6%97%A0%E6%B3%95%E6%8C%82%E8%BD%BD%E7%A1%AC%E7%9B%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <description>有时移动硬盘无法从电脑退出，下次再次使用时候，插入进去没有反应，通过查看Mac 自带的磁盘工具发现已经识别，但是却无法挂载，遇到这样的问题尝试</description>
+    </item>
     
     <item>
       <title>MacOS安装FlatBuffers</title>
@@ -180,15 +189,6 @@
       
       <guid>https://www.3afun.com/post/2018/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E9%92%B1%E5%8C%85%E5%88%A0%E9%99%A4%E5%90%88%E7%BA%A6/</guid>
       <description>以太坊钱包想删除不用的合约怎么办? 1.菜单栏——&amp;raquo;开发——&amp;raquo;切换开发者工具——&amp;raquo;Ethereum Wall</description>
-    </item>
-    
-    <item>
-      <title>如何利用私有链来创建自己的加密代币</title>
-      <link>https://www.3afun.com/post/2018/how-to-use-your-own-private-ethereum-blockchain-to-create-your-own-crypto-currency/</link>
-      <pubDate>Mon, 16 Apr 2018 11:24:49 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2018/how-to-use-your-own-private-ethereum-blockchain-to-create-your-own-crypto-currency/</guid>
-      <description>根据前面的几篇文章,我们已经可以创建自己的私有链、使用钱包来链接私有链,今天我们来学习如何使用私有链来创建我们自己的加密货币。 工具 1.私有链</description>
     </item>
     
   </channel>
