@@ -68,7 +68,7 @@
 <meta itemprop="description" content="Lets Encrypt SSL HTTPS">
 <meta itemprop="datePublished" content="2018-09-10T18:12:26&#43;08:00" />
 <meta itemprop="dateModified" content="2018-09-10T18:12:26&#43;08:00" />
-<meta itemprop="wordCount" content="1180">
+<meta itemprop="wordCount" content="1215">
 
 
 
@@ -315,7 +315,7 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/ssl/"> SSL </a>
             
           </div>
-        <span class="more-meta"> 约 1180 字 </span>
+        <span class="more-meta"> 约 1215 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
 
         
@@ -337,7 +337,11 @@ if (!doNotTrack) {
     <li><a href="#heading">二、通配符证书介绍</a></li>
     <li><a href="#heading1">三、申请通配符证书</a></li>
     <li><a href="#certbot-">四、安装Certbot 客户端</a></li>
-    <li><a href="#heading2">五、申请通配符证书</a></li>
+    <li><a href="#heading2">五、申请通配符证书</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
     <li><a href="#nginx-">六、Nginx 配置使用证书</a></li>
     <li><a href="#heading3">七、证书续期</a></li>
   </ul>
@@ -446,7 +450,17 @@ IMPORTANT NOTES:
    Donating to EFF:                    https://eff.org/donate-le
 
 </code></pre><p>通配符证书会在<code>/etc/letsencrypt/live/3afun.com</code> 目录下给我们生成。</p>
-<h2 id="nginx-">六、Nginx 配置使用证书</h2>
+<h4 id="20200703">2020年07月03日更新:</h4>
+<p>申请自动验证的证书，不需要TXT验证。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">certbot-auto certonly --email helloworld.vip@gmail.com --agree-tos --no-eff-email  -d www.3afun.com
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="nginx-">六、Nginx 配置使用证书</h2>
 <p>Nginx里设置证书和Key文件即可,简约代码如下:</p>
 <pre><code>ssl_certificate /etc/letsencrypt/live/3afun.com/fullchain.pem; # managed by Certbot
 ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Certbot
@@ -457,10 +471,10 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
 <p>1.编辑crontab文件</p>
 <pre><code>crontab -e
 </code></pre><p>2.添加</p>
-<pre><code># certbot-auto 需要配置到系统环境 mv certbot-auto /usr/bin/certbot-auto
-0 0,12 * * * root certbot-auto renew --post-hook &quot;service nginx restart&quot;
+<pre><code># 每隔90天执行一次 certbot-auto renew
+0 0 */90 * * certbot-auto renew
 </code></pre><p>3.保存退出。</p>
-<pre><code>:wq
+<pre><code>!wq
 </code></pre><p>4.重启crond：</p>
 <pre><code>service crond restart
 </code></pre>
@@ -649,7 +663,7 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
     &copy;
     
       2012 -
-    2019
+    2020
     <span class="heart">
       
       <i class="iconfont">

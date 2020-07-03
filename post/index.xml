@@ -6,10 +6,37 @@
     <description>Recent content in Posts on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Wed, 04 Dec 2019 19:22:53 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 11 Mar 2020 17:20:56 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>利用wget抓取网站模板</title>
+      <link>https://www.3afun.com/post/2020/%E5%88%A9%E7%94%A8wget%E6%8A%93%E5%8F%96%E7%BD%91%E7%AB%99%E6%A8%A1%E6%9D%BF/</link>
+      <pubDate>Wed, 11 Mar 2020 17:20:56 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2020/%E5%88%A9%E7%94%A8wget%E6%8A%93%E5%8F%96%E7%BD%91%E7%AB%99%E6%A8%A1%E6%9D%BF/</guid>
+      <description>有时遇到精美的网站模板，给了演示Demo下载却花钱，怎么办？找不到好用的软件，又不想写繁多的Python或者Go脚本，别着急，利用wget命</description>
+    </item>
+    
+    <item>
+      <title>MacOSX无法挂载硬盘的解决办法</title>
+      <link>https://www.3afun.com/post/2020/macosx%E6%97%A0%E6%B3%95%E6%8C%82%E8%BD%BD%E7%A1%AC%E7%9B%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Sun, 08 Mar 2020 11:59:21 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2020/macosx%E6%97%A0%E6%B3%95%E6%8C%82%E8%BD%BD%E7%A1%AC%E7%9B%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <description>有时移动硬盘无法从电脑退出，下次再次使用时候，插入进去没有反应，通过查看Mac 自带的磁盘工具发现已经识别，但是却无法挂载，遇到这样的问题尝试</description>
+    </item>
+    
+    <item>
+      <title>MacOS安装FlatBuffers</title>
+      <link>https://www.3afun.com/post/2020/macos%E5%AE%89%E8%A3%85flatbuffers/</link>
+      <pubDate>Tue, 11 Feb 2020 16:46:43 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2020/macos%E5%AE%89%E8%A3%85flatbuffers/</guid>
+      <description>在Mac系统上安装FlatBuffers有两种方式，第一种是通过Homebrew安装 1 $ brew install flatbuffers 但是并不推荐如此安装，因为可能会造成你安装的f</description>
+    </item>
     
     <item>
       <title>Python读取邮件并批量导出</title>
@@ -162,33 +189,6 @@
       
       <guid>https://www.3afun.com/post/2018/%E8%BF%9C%E7%A8%8B%E8%B0%83%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/</guid>
       <description>前面我们学习了部署以太坊合约,我们的操作都是在钱包中完成的。 然而当我们面对我们的用户时我们不可能说叫他们安装钱包,然后学习这些复杂操作。 对于</description>
-    </item>
-    
-    <item>
-      <title>以太坊钱包删除合约</title>
-      <link>https://www.3afun.com/post/2018/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E9%92%B1%E5%8C%85%E5%88%A0%E9%99%A4%E5%90%88%E7%BA%A6/</link>
-      <pubDate>Wed, 18 Apr 2018 18:13:20 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2018/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E9%92%B1%E5%8C%85%E5%88%A0%E9%99%A4%E5%90%88%E7%BA%A6/</guid>
-      <description>以太坊钱包想删除不用的合约怎么办? 1.菜单栏——&amp;raquo;开发——&amp;raquo;切换开发者工具——&amp;raquo;Ethereum Wall</description>
-    </item>
-    
-    <item>
-      <title>如何利用私有链来创建自己的加密代币</title>
-      <link>https://www.3afun.com/post/2018/how-to-use-your-own-private-ethereum-blockchain-to-create-your-own-crypto-currency/</link>
-      <pubDate>Mon, 16 Apr 2018 11:24:49 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2018/how-to-use-your-own-private-ethereum-blockchain-to-create-your-own-crypto-currency/</guid>
-      <description>根据前面的几篇文章,我们已经可以创建自己的私有链、使用钱包来链接私有链,今天我们来学习如何使用私有链来创建我们自己的加密货币。 工具 1.私有链</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu16.04 搭建以太坊Ethereum私链(2)</title>
-      <link>https://www.3afun.com/post/2018/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE2/</link>
-      <pubDate>Fri, 13 Apr 2018 16:18:49 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2018/ubuntu16.04-%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%A4%AA%E5%9D%8Aethereum%E7%A7%81%E9%93%BE2/</guid>
-      <description>前面几篇文章我们介绍了私有链的服务器搭建和客户端连接私有服务器,接下来我们就要学习如何保证服务器端退出后还能继续提供稳定服务,解决客户端可以</description>
     </item>
     
   </channel>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OSX on 我不是帅才</title>
+    <link>https://www.3afun.com/tags/osx/</link>
+    <description>Recent content in OSX on 我不是帅才</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright 3AFun</copyright>
+    <lastBuildDate>Sun, 08 Mar 2020 11:59:21 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.3afun.com/tags/osx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MacOSX无法挂载硬盘的解决办法</title>
+      <link>https://www.3afun.com/post/2020/macosx%E6%97%A0%E6%B3%95%E6%8C%82%E8%BD%BD%E7%A1%AC%E7%9B%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Sun, 08 Mar 2020 11:59:21 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2020/macosx%E6%97%A0%E6%B3%95%E6%8C%82%E8%BD%BD%E7%A1%AC%E7%9B%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <description>有时移动硬盘无法从电脑退出，下次再次使用时候，插入进去没有反应，通过查看Mac 自带的磁盘工具发现已经识别，但是却无法挂载，遇到这样的问题尝试</description>
+    </item>
+    
+  </channel>
+</rss>

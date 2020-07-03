@@ -6,10 +6,37 @@
     <description>Recent content in Categories on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Wed, 04 Dec 2019 19:22:53 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 11 Mar 2020 17:20:56 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux</title>
+      <link>https://www.3afun.com/categories/linux/</link>
+      <pubDate>Wed, 11 Mar 2020 17:20:56 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OSX</title>
+      <link>https://www.3afun.com/categories/osx/</link>
+      <pubDate>Sun, 08 Mar 2020 11:59:21 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/osx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FlatBuffers</title>
+      <link>https://www.3afun.com/categories/flatbuffers/</link>
+      <pubDate>Tue, 11 Feb 2020 16:46:43 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/flatbuffers/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Python</title>
@@ -161,33 +188,6 @@
       <pubDate>Fri, 02 Dec 2016 15:52:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/categories/%E6%B8%B8%E6%88%8F/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Intellij</title>
-      <link>https://www.3afun.com/categories/intellij/</link>
-      <pubDate>Mon, 08 Aug 2016 10:47:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/categories/intellij/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nginx</title>
-      <link>https://www.3afun.com/categories/nginx/</link>
-      <pubDate>Fri, 18 Dec 2015 13:50:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/categories/nginx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Unity3D</title>
-      <link>https://www.3afun.com/categories/unity3d/</link>
-      <pubDate>Fri, 20 Nov 2015 11:17:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/categories/unity3d/</guid>
       <description></description>
     </item>
     
