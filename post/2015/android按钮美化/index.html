@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1" />
+<meta name="generator" content="Hugo 0.60.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2015/android%E6%8C%89%E9%92%AE%E7%BE%8E%E5%8C%96/" />
@@ -69,7 +69,7 @@
 <meta itemprop="description" content="下面介绍的Android按钮的美化主要是通过android:background来实现的。 一、首先需要定义按钮样式 在res/drawable">
 <meta itemprop="datePublished" content="2015-06-09T18:22:00&#43;08:00" />
 <meta itemprop="dateModified" content="2015-06-09T18:22:00&#43;08:00" />
-<meta itemprop="wordCount" content="294">
+<meta itemprop="wordCount" content="251">
 
 
 
@@ -316,7 +316,7 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/android/"> Android </a>
             
           </div>
-        <span class="more-meta"> 约 294 字 </span>
+        <span class="more-meta"> 约 251 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -341,107 +341,52 @@ if (!doNotTrack) {
       <p>下面介绍的Android按钮的美化主要是通过android:background来实现的。</p>
 <p>一、首先需要定义按钮样式</p>
 <p>在res/drawable下新建文件button_selector.xml，内容如下</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
-&lt;selector xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34;&gt;
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
     &lt;!-- pressed --&gt;
-    &lt;item android:state_pressed=&#34;true&#34; &gt;
-        &lt;shape  android:shape=&#34;rectangle&#34;&gt;
+    &lt;item android:state_pressed=&quot;true&quot; &gt;
+        &lt;shape  android:shape=&quot;rectangle&quot;&gt;
             &lt;gradient
-                android:startColor=&#34;#ff2b35f0&#34;
-                android:endColor=&#34;#ff2b35f0&#34;
-                android:angle=&#34;270&#34; /&gt;
+                android:startColor=&quot;#ff2b35f0&quot;
+                android:endColor=&quot;#ff2b35f0&quot;
+                android:angle=&quot;270&quot; /&gt;
             &lt;corners
-                android:radius=&#34;4dp&#34; /&gt;
+                android:radius=&quot;4dp&quot; /&gt;
         &lt;/shape&gt;
     &lt;/item&gt;
     &lt;!-- focus --&gt;
-    &lt;item android:state_focused=&#34;true&#34; &gt;
+    &lt;item android:state_focused=&quot;true&quot; &gt;
         &lt;shape&gt;
             &lt;gradient
-                android:startColor=&#34;#ffc2b7&#34;
-                android:endColor=&#34;#ffc2b7&#34;
-                android:angle=&#34;270&#34; /&gt;
+                android:startColor=&quot;#ffc2b7&quot;
+                android:endColor=&quot;#ffc2b7&quot;
+                android:angle=&quot;270&quot; /&gt;
             &lt;corners
-                android:radius=&#34;4dp&#34; /&gt;
+                android:radius=&quot;4dp&quot; /&gt;
         &lt;/shape&gt;
     &lt;/item&gt;
     &lt;!-- default --&gt;
     &lt;item&gt;
         &lt;shape&gt;
             &lt;gradient
-                android:startColor=&#34;#ff00aced&#34;
-                android:endColor=&#34;#ff00aced&#34;
-                android:angle=&#34;0&#34; /&gt;
+                android:startColor=&quot;#ff00aced&quot;
+                android:endColor=&quot;#ff00aced&quot;
+                android:angle=&quot;0&quot; /&gt;
             &lt;corners
-                android:radius=&#34;4dp&#34; /&gt;
+                android:radius=&quot;4dp&quot; /&gt;
         &lt;/shape&gt;
     &lt;/item&gt;
 &lt;/selector&gt;
-</code></pre></td></tr></table>
-</div>
-</div><p>二、使用美化的按钮</p>
+</code></pre><p>二、使用美化的按钮</p>
 <p>在原有Button布局文件上增加android:background=&rdquo;@drawable/button_selector&rdquo;</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;Button
-    android:layout_width=&#34;fill_parent&#34;
-    android:layout_height=&#34;wrap_content&#34;
-    android:text=&#34;@string/subscribe&#34;
-    android:id=&#34;@+id/buttonSubscribe&#34;
-    android:layout_gravity=&#34;center_horizontal&#34;
-    android:background=&#34;@drawable/button_selector&#34; /&gt;
-</code></pre></td></tr></table>
-</div>
-</div><p>效果如下：
+<pre><code>&lt;Button
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:text=&quot;@string/subscribe&quot;
+    android:id=&quot;@+id/buttonSubscribe&quot;
+    android:layout_gravity=&quot;center_horizontal&quot;
+    android:background=&quot;@drawable/button_selector&quot; /&gt;
+</code></pre><p>效果如下：
 <img src="/media/images/2015/android_btn.png" alt="android button"></p>
 
     </div>

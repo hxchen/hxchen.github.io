@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1" />
+<meta name="generator" content="Hugo 0.60.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2018/lets-encrypt%E9%85%8D%E7%BD%AE/" />
@@ -68,7 +68,11 @@
 <meta itemprop="description" content="Lets Encrypt SSL HTTPS">
 <meta itemprop="datePublished" content="2018-09-10T18:12:26&#43;08:00" />
 <meta itemprop="dateModified" content="2018-09-10T18:12:26&#43;08:00" />
+<<<<<<< HEAD
 <meta itemprop="wordCount" content="1282">
+=======
+<meta itemprop="wordCount" content="1215">
+>>>>>>> 6c5884084eaf256789ae7e803937b2a438727432
 
 
 
@@ -315,7 +319,11 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/ssl/"> SSL </a>
             
           </div>
+<<<<<<< HEAD
         <span class="more-meta"> 约 1282 字 </span>
+=======
+        <span class="more-meta"> 约 1215 字 </span>
+>>>>>>> 6c5884084eaf256789ae7e803937b2a438727432
           <span class="more-meta"> 预计阅读 3 分钟 </span>
 
         
@@ -333,17 +341,30 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
+<<<<<<< HEAD
     <li><a href="#一lets-encrypt介绍">一、Lets Encrypt介绍</a></li>
     <li><a href="#二通配符证书介绍">二、通配符证书介绍</a></li>
     <li><a href="#三申请通配符证书">三、申请通配符证书</a></li>
     <li><a href="#四安装certbot-客户端">四、安装Certbot 客户端</a></li>
     <li><a href="#五申请通配符证书">五、申请通配符证书</a>
+=======
+    <li><a href="#lets-encrypt">一、Lets Encrypt介绍</a></li>
+    <li><a href="#heading">二、通配符证书介绍</a></li>
+    <li><a href="#heading1">三、申请通配符证书</a></li>
+    <li><a href="#certbot-">四、安装Certbot 客户端</a></li>
+    <li><a href="#heading2">五、申请通配符证书</a>
+>>>>>>> 6c5884084eaf256789ae7e803937b2a438727432
       <ul>
         <li></li>
       </ul>
     </li>
+<<<<<<< HEAD
     <li><a href="#六nginx-配置使用证书">六、Nginx 配置使用证书</a></li>
     <li><a href="#七证书续期">七、证书续期</a></li>
+=======
+    <li><a href="#nginx-">六、Nginx 配置使用证书</a></li>
+    <li><a href="#heading3">七、证书续期</a></li>
+>>>>>>> 6c5884084eaf256789ae7e803937b2a438727432
   </ul>
 </nav>
   </div>
@@ -351,14 +372,14 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <h2 id="一lets-encrypt介绍">一、Lets Encrypt介绍</h2>
+      <h2 id="lets-encrypt">一、Lets Encrypt介绍</h2>
 <p>Lets Encrypt 是一个免费、自动化、开放的证书颁发机构(CA),为了公众利益而服务。它由Internet Security Research Group (ISRG) 来提供服务。</p>
-<h2 id="二通配符证书介绍">二、通配符证书介绍</h2>
+<h2 id="heading">二、通配符证书介绍</h2>
 <p>通配符证书,是我们申请一个域名证书,可以支持子域名的证书。比如申请一个<code>abc.com</code>,那么子域名<code>bbs.abc.com</code>和<code>blog.abc.com</code>都可以使用。</p>
-<h2 id="三申请通配符证书">三、申请通配符证书</h2>
+<h2 id="heading1">三、申请通配符证书</h2>
 <p>Let’s Encrypt 上的证书申请是通过 ACME 协议来完成的。ACME 协议规范化了证书申请、更新、撤销等流程，实现了 Let’s Encrypt CA 自动化操作。解决了传统的 CA 机构是人工手动处理证书申请、证书更新、证书撤销的效率和成本问题。</p>
 <p>ACME v2 是 ACME 协议的更新版本，通配符证书只能通过 ACME v2 获得。要使用 ACME v2 协议申请通配符证书，只需一个支持该协议的客户端就可以了，官方推荐的客户端是 Certbot。</p>
-<h2 id="四安装certbot-客户端">四、安装Certbot 客户端</h2>
+<h2 id="certbot-">四、安装Certbot 客户端</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -373,7 +394,7 @@ wget https://dl.eff.org/certbot-auto
 chmod a+x certbot-auto
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="五申请通配符证书">五、申请通配符证书</h2>
+</div><h2 id="heading2">五、申请通配符证书</h2>
 <p>使用 Certbot 客户端申请证书方法非常的简单，只需如下一行命令就搞定了。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -384,25 +405,7 @@ chmod a+x certbot-auto
 </code></pre></td></tr></table>
 </div>
 </div><p>3afun.com为申请证书的域名</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">Saving debug log to /var/log/letsencrypt/letsencrypt.log
+<pre><code>Saving debug log to /var/log/letsencrypt/letsencrypt.log
 Plugins selected: Authenticator manual, Installer None
 Obtaining a new certificate
 Performing the following challenges:
@@ -410,31 +413,14 @@ dns-01 challenge for 3afun.com
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 NOTE: The IP of this machine will be publicly logged as having requested this
-certificate. If you&#39;re running certbot in manual mode on a machine that is not
-your server, please ensure you&#39;re okay with that.
+certificate. If you're running certbot in manual mode on a machine that is not
+your server, please ensure you're okay with that.
 
 Are you OK with your IP being logged?
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 (Y)es/(N)o:
-</code></pre></td></tr></table>
-</div>
-</div><p>输入Y</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+</code></pre><p>输入Y</p>
+<pre><code>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Please deploy a DNS TXT record under the name
 _acme-challenge.3afun.com with the following value:
 
@@ -445,34 +431,11 @@ Before continuing, verify the record is deployed.
 Press Enter to Continue
 
 
-</code></pre></td></tr></table>
-</div>
-</div><p>在域名的供应商那里添加一条TXT记录。</p>
+</code></pre><p>在域名的供应商那里添加一条TXT记录。</p>
 <p>键:_acme-challenge.3afun.com</p>
 <p>值: nEPEFRYbYHUCS_BFqpB6kZslvuhGor5EfUvSWHIvEE4</p>
 <p><strong>再回车之前我们需要新开一个窗口通过命令来检查TXT记录设置已生效。</strong></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback"># dig -t txt _acme-challenge.3afun.com @8.8.8.8
+<pre><code># dig -t txt _acme-challenge.3afun.com @8.8.8.8
 ; &lt;&lt;&gt;&gt; DiG 9.8.2rc1-RedHat-9.8.2-0.37.rc1.49.amzn1 &lt;&lt;&gt;&gt; -t txt _acme-challenge.3afun.com @8.8.8.8
 ;; global options: +cmd
 ;; Got answer:
@@ -483,37 +446,14 @@ Press Enter to Continue
 ;_acme-challenge.3afun.com.        IN      TXT
 
 ;; ANSWER SECTION:
-_acme-challenge.3afun.com. 299 IN  TXT     &#34;nEPEFRYbYHUCS_BFqpB6kZslvuhGor5EfUvSWHIvEE4&#34;
+_acme-challenge.3afun.com. 299 IN  TXT     &quot;nEPEFRYbYHUCS_BFqpB6kZslvuhGor5EfUvSWHIvEE4&quot;
 
 ;; Query time: 118 msec
 ;; SERVER: 8.8.8.8#53(8.8.8.8)
 ;; WHEN: Wed Sep 12 08:51:13 2018
 ;; MSG SIZE  rcvd: 104
-</code></pre></td></tr></table>
-</div>
-</div><p>然后现在可以回到原来窗口按下回车键</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">Waiting for verification...
+</code></pre><p>然后现在可以回到原来窗口按下回车键</p>
+<pre><code>Waiting for verification...
 Cleaning up challenges
 
 IMPORTANT NOTES:
@@ -524,12 +464,13 @@ IMPORTANT NOTES:
    Your cert will expire on 2018-12-11. To obtain a new or tweaked
    version of this certificate in the future, simply run certbot-auto
    again. To non-interactively renew *all* of your certificates, run
-   &#34;certbot-auto renew&#34;
+   &quot;certbot-auto renew&quot;
  - If you like Certbot, please consider supporting our work by:
 
-   Donating to ISRG / Let&#39;s Encrypt:   https://letsencrypt.org/donate
+   Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
    Donating to EFF:                    https://eff.org/donate-le
 
+<<<<<<< HEAD
 </code></pre></td></tr></table>
 </div>
 </div><p>通配符证书会在<code>/etc/letsencrypt/live/3afun.com</code> 目录下给我们生成。</p>
@@ -545,66 +486,37 @@ IMPORTANT NOTES:
 </div>
 </div><h2 id="六nginx-配置使用证书">六、Nginx 配置使用证书</h2>
 <p>Nginx里设置证书和Key文件即可,简约代码如下:</p>
+=======
+</code></pre><p>通配符证书会在<code>/etc/letsencrypt/live/3afun.com</code> 目录下给我们生成。</p>
+<h4 id="20200703">2020年07月03日更新:</h4>
+<p>申请自动验证的证书，不需要TXT验证。</p>
+>>>>>>> 6c5884084eaf256789ae7e803937b2a438727432
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">ssl_certificate /etc/letsencrypt/live/3afun.com/fullchain.pem; # managed by Certbot
+<pre class="chroma"><code class="language-shell" data-lang="shell">certbot-auto certonly --email helloworld.vip@gmail.com --agree-tos --no-eff-email  -d www.3afun.com
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="nginx-">六、Nginx 配置使用证书</h2>
+<p>Nginx里设置证书和Key文件即可,简约代码如下:</p>
+<pre><code>ssl_certificate /etc/letsencrypt/live/3afun.com/fullchain.pem; # managed by Certbot
 ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Certbot
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="七证书续期">七、证书续期</h2>
+</code></pre><h2 id="heading3">七、证书续期</h2>
 <p>Let’s encrypt 的免费证书默认有效期为 90 天，到期后如果要续期可以执行：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback"># certbot-auto renew
-</code></pre></td></tr></table>
-</div>
-</div><p>我们可以使用 crontab 来定时续期。</p>
+<pre><code># certbot-auto renew
+</code></pre><p>我们可以使用 crontab 来定时续期。</p>
 <p>1.编辑crontab文件</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">crontab -e
-</code></pre></td></tr></table>
-</div>
-</div><p>2.添加</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback"># 每隔90天执行一次 certbot-auto renew
+<pre><code>crontab -e
+</code></pre><p>2.添加</p>
+<pre><code># 每隔90天执行一次 certbot-auto renew
 0 0 */90 * * certbot-auto renew
-</code></pre></td></tr></table>
-</div>
-</div><p>3.保存退出。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">!wq
-</code></pre></td></tr></table>
-</div>
-</div><p>4.重启crond：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">service crond restart
-</code></pre></td></tr></table>
-</div>
-</div>
+</code></pre><p>3.保存退出。</p>
+<pre><code>!wq
+</code></pre><p>4.重启crond：</p>
+<pre><code>service crond restart
+</code></pre>
     </div>
 
     

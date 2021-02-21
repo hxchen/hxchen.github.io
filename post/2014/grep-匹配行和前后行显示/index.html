@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="北斗" />
-  <meta name="description" content="grep 检索显示匹配行以及前后行 info.txt里检索KEY，显示KEY的后10行。 1 grep -A 10 &amp;#39;KEY&amp;#39; info.txt info.txt里检索KEY，显示KEY的前10行" />
+  <meta name="description" content="grep 检索显示匹配行以及前后行 info.txt里检索KEY，显示KEY的后10行。 grep -A 10 &#39;KEY&#39; info.txt info.txt里检索KEY，显示KEY的前10行。" />
 
   <meta name="keywords" content="技术, 程序员, 码农, 程序猿, 分享, java, python, 3afun" />
 
@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1" />
+<meta name="generator" content="Hugo 0.60.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2014/grep-%E5%8C%B9%E9%85%8D%E8%A1%8C%E5%92%8C%E5%89%8D%E5%90%8E%E8%A1%8C%E6%98%BE%E7%A4%BA/" />
@@ -60,22 +60,22 @@
 
 
 <meta property="og:title" content="grep 匹配行和前后行显示" />
-<meta property="og:description" content="grep 检索显示匹配行以及前后行 info.txt里检索KEY，显示KEY的后10行。 1 grep -A 10 &#39;KEY&#39; info.txt info.txt里检索KEY，显示KEY的前10行" />
+<meta property="og:description" content="grep 检索显示匹配行以及前后行 info.txt里检索KEY，显示KEY的后10行。 grep -A 10 &#39;KEY&#39; info.txt info.txt里检索KEY，显示KEY的前10行。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.3afun.com/post/2014/grep-%E5%8C%B9%E9%85%8D%E8%A1%8C%E5%92%8C%E5%89%8D%E5%90%8E%E8%A1%8C%E6%98%BE%E7%A4%BA/" />
 <meta property="article:published_time" content="2014-05-27T10:20:27+08:00" />
 <meta property="article:modified_time" content="2014-05-27T10:20:27+08:00" />
 <meta itemprop="name" content="grep 匹配行和前后行显示">
-<meta itemprop="description" content="grep 检索显示匹配行以及前后行 info.txt里检索KEY，显示KEY的后10行。 1 grep -A 10 &#39;KEY&#39; info.txt info.txt里检索KEY，显示KEY的前10行">
+<meta itemprop="description" content="grep 检索显示匹配行以及前后行 info.txt里检索KEY，显示KEY的后10行。 grep -A 10 &#39;KEY&#39; info.txt info.txt里检索KEY，显示KEY的前10行。">
 <meta itemprop="datePublished" content="2014-05-27T10:20:27&#43;08:00" />
 <meta itemprop="dateModified" content="2014-05-27T10:20:27&#43;08:00" />
-<meta itemprop="wordCount" content="111">
+<meta itemprop="wordCount" content="108">
 
 
 
 <meta itemprop="keywords" content="Linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="grep 匹配行和前后行显示"/>
-<meta name="twitter:description" content="grep 检索显示匹配行以及前后行 info.txt里检索KEY，显示KEY的后10行。 1 grep -A 10 &#39;KEY&#39; info.txt info.txt里检索KEY，显示KEY的前10行"/>
+<meta name="twitter:description" content="grep 检索显示匹配行以及前后行 info.txt里检索KEY，显示KEY的后10行。 grep -A 10 &#39;KEY&#39; info.txt info.txt里检索KEY，显示KEY的前10行。"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -316,7 +316,7 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/linux/"> Linux </a>
             
           </div>
-        <span class="more-meta"> 约 111 字 </span>
+        <span class="more-meta"> 约 108 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -340,33 +340,12 @@ if (!doNotTrack) {
     <div class="post-content">
       <p>grep 检索显示匹配行以及前后行</p>
 <p>info.txt里检索KEY，显示KEY的后10行。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">grep -A 10 &#39;KEY&#39; info.txt
-</code></pre></td></tr></table>
-</div>
-</div><p>info.txt里检索KEY，显示KEY的前10行。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">grep -B 10 &#39;KEY&#39; info.txt
-</code></pre></td></tr></table>
-</div>
-</div><p>info.txt里检索KEY，显示KEY的前后各10行。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">grep -C 10 &#39;KEY&#39; info.txt
-</code></pre></td></tr></table>
-</div>
-</div>
+<pre><code>grep -A 10 'KEY' info.txt
+</code></pre><p>info.txt里检索KEY，显示KEY的前10行。</p>
+<pre><code>grep -B 10 'KEY' info.txt
+</code></pre><p>info.txt里检索KEY，显示KEY的前后各10行。</p>
+<pre><code>grep -C 10 'KEY' info.txt
+</code></pre>
     </div>
 
     
@@ -456,7 +435,7 @@ if (!doNotTrack) {
         id: 'grep 匹配行和前后行显示.md',
         title: 'grep 匹配行和前后行显示',
         link: decodeURI(location.href),
-        desc: 'grep 检索显示匹配行以及前后行 info.txt里检索KEY，显示KEY的后10行。 1 grep -A 10 \x26#39;KEY\x26#39; info.txt info.txt里检索KEY，显示KEY的前10行',
+        desc: 'grep 检索显示匹配行以及前后行 info.txt里检索KEY，显示KEY的后10行。 grep -A 10 \x27KEY\x27 info.txt info.txt里检索KEY，显示KEY的前10行。',
         owner: 'hxchen',
         repo: 'comments',
         oauth: {

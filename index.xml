@@ -356,9 +356,9 @@ server:
       <guid>https://www.3afun.com/post/2020/macosx%E6%97%A0%E6%B3%95%E6%8C%82%E8%BD%BD%E7%A1%AC%E7%9B%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
       
         <description>&lt;p&gt;有时移动硬盘无法从电脑退出，下次再次使用时候，插入进去没有反应，通过查看Mac 自带的磁盘工具发现已经识别，但是却无法挂载，遇到这样的问题尝试了以下两种方式，都可以实现正常挂载。&lt;/p&gt;
-&lt;h4 id=&#34;方法1&#34;&gt;方法1:&lt;/h4&gt;
+&lt;h4 id=&#34;1&#34;&gt;方法1:&lt;/h4&gt;
 &lt;p&gt;插入到Windows进行修复。&lt;/p&gt;
-&lt;h4 id=&#34;方法2&#34;&gt;方法2：&lt;/h4&gt;
+&lt;h4 id=&#34;2&#34;&gt;方法2：&lt;/h4&gt;
 &lt;p&gt;通过Mac自带的&lt;code&gt;diskutil&lt;/code&gt;命令。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;命令1：通过&lt;code&gt;diskutil list&lt;/code&gt;查看当前硬盘的信息，找到没有挂载的硬盘，我这里是&lt;code&gt;/dev/disk4&lt;/code&gt;没有挂载上。&lt;/li&gt;
@@ -692,7 +692,7 @@ Text: 这里是测试邮件
         <description>&lt;p&gt;要想顺利的完成作业，必须参考编程作业指导文件&lt;a href=&#34;https://github.com/hxchen/MachineLearning/blob/master/exercise_1/ex1.pdf&#34;&gt;ex1.pdf&lt;/a&gt;
 第一次作业主要包括两部分：必做题和选做题。其中必做题包括一道热身练习和完成单变量的线性回归问题，选做题是完成多变量的线性回归问题。&lt;/p&gt;
 &lt;p&gt;运行作业只要在具有Octave环境时候，进入到文件目录，执行&lt;code&gt;ex1&lt;/code&gt;或者&lt;code&gt;ex1_multi&lt;/code&gt;即可。&lt;/p&gt;
-&lt;h2 id=&#34;1热身练习&#34;&gt;1.热身练习&lt;/h2&gt;
+&lt;h2 id=&#34;1&#34;&gt;1.热身练习&lt;/h2&gt;
 &lt;p&gt;热身练习主要是在&lt;code&gt;warmUpExercise.m&lt;/code&gt;文件中生成一个5X5的单位矩阵。
 代码如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -703,9 +703,9 @@ Text: 这里是测试邮件
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-octave&#34; data-lang=&#34;octave&#34;&gt;&lt;span class=&#34;n&#34;&gt;A&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;eye&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;2单变量线性回归问题&#34;&gt;2.单变量线性回归问题&lt;/h2&gt;
+&lt;/div&gt;&lt;h2 id=&#34;2&#34;&gt;2.单变量线性回归问题&lt;/h2&gt;
 &lt;p&gt;完成该道题，我们主要是利用样本数据&lt;code&gt;ex1data1.txt&lt;/code&gt;（第一列为城市人口，第二列为对应该城市餐车收益），完成&lt;code&gt;plotData.m&lt;/code&gt;、&lt;code&gt;computeCost.m文件&lt;/code&gt;和&lt;code&gt;gradientDescent.m&lt;/code&gt;文件，然后进行给出人口数量，对餐车收益进行预测。&lt;code&gt;ex1.m&lt;/code&gt;文件为入口函数文件，不需要修改。&lt;/p&gt;
-&lt;h3 id=&#34;21-绘制数据-plotdatam&#34;&gt;2.1 绘制数据 plotData.m&lt;/h3&gt;
+&lt;h3 id=&#34;21--plotdatam&#34;&gt;2.1 绘制数据 plotData.m&lt;/h3&gt;
 &lt;p&gt;具体&lt;code&gt;plotData.m&lt;/code&gt;中补充如下代码&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -719,7 +719,7 @@ Text: 这里是测试邮件
 &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;ylabel&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;Population of City in 10,000s&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;22-代价函数-computecostm&#34;&gt;2.2 代价函数 computeCost.m&lt;/h3&gt;
+&lt;/div&gt;&lt;h3 id=&#34;22--computecostm&#34;&gt;2.2 代价函数 computeCost.m&lt;/h3&gt;
 &lt;p&gt;该文件主要是实现代价函数
 $$J(θ)=  {1 \over 2m} \sum_{i=1}^m(h_θ(x^{(i)}) − y^{(i)})^2$$
 具体&lt;code&gt;computeCost.m&lt;/code&gt;中补充如下代码&lt;/p&gt;
@@ -731,7 +731,7 @@ $$J(θ)=  {1 \over 2m} \sum_{i=1}^m(h_θ(x^{(i)}) − y^{(i)})^2$$
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-octave&#34; data-lang=&#34;octave&#34;&gt;&lt;span class=&#34;n&#34;&gt;J&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;sum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;theta&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.^&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;23-梯度下降-gradientdescentm&#34;&gt;2.3 梯度下降 gradientDescent.m&lt;/h3&gt;
+&lt;/div&gt;&lt;h3 id=&#34;23--gradientdescentm&#34;&gt;2.3 梯度下降 gradientDescent.m&lt;/h3&gt;
 &lt;p&gt;该文件主要是实现梯度下降函数
 $$θj := θj − α{1 \over m}\sum_{i=1}^m(h_θ(x^{(i)}) − y^{(i)})x_j^{(i)} (对于所有的j同时更新 θ_j )$$
 具体&lt;code&gt;gradientDescent.m&lt;/code&gt;中补充如下代码&lt;/p&gt;
@@ -747,9 +747,9 @@ $$θj := θj − α{1 \over m}\sum_{i=1}^m(h_θ(x^{(i)}) − y^{(i)})x_j^{(i)} (
 &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;theta&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;theta&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;alpha&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;sum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;theta_t&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;3多变量线性回归问题&#34;&gt;3.多变量线性回归问题&lt;/h2&gt;
+&lt;/div&gt;&lt;h2 id=&#34;3&#34;&gt;3.多变量线性回归问题&lt;/h2&gt;
 &lt;p&gt;完成该道题，主要是利用样本数据&lt;code&gt;ex1data2.txt&lt;/code&gt;（房屋面积、房间数，售价）,完成&lt;code&gt;gradientDescentMulti.m&lt;/code&gt;、&lt;code&gt;computeCostMulti.m&lt;/code&gt;、&lt;code&gt;featureNormalize.m&lt;/code&gt;、&lt;code&gt;normalEqn.m&lt;/code&gt;。最终实现给出房屋面积1650，房间数3的时候对房价进行预测。&lt;/p&gt;
-&lt;h3 id=&#34;31-特征归一化-featurenormalizem&#34;&gt;3.1 特征归一化 featureNormalize.m&lt;/h3&gt;
+&lt;h3 id=&#34;31--featurenormalizem&#34;&gt;3.1 特征归一化 featureNormalize.m&lt;/h3&gt;
 &lt;p&gt;要求我们完成&lt;code&gt;featureNormalize.m&lt;/code&gt;，主要对特征进行缩放，依据公式：
 $$x_i = {x_i - u_1 \over s_1} （u_1 为均值 s_1为标准差）$$
 具体&lt;code&gt;featureNormalize.m&lt;/code&gt;中补充如下代码&lt;/p&gt;
@@ -767,7 +767,7 @@ $$x_i = {x_i - u_1 \over s_1} （u_1 为均值 s_1为标准差）$$
 &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;X_norm&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;X&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;ones&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mu&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;./&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;ones&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sigma&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;32-梯度下降-gradientdescentmultim&#34;&gt;3.2 梯度下降 gradientDescentMulti.m&lt;/h3&gt;
+&lt;/div&gt;&lt;h3 id=&#34;32--gradientdescentmultim&#34;&gt;3.2 梯度下降 gradientDescentMulti.m&lt;/h3&gt;
 &lt;p&gt;同单变量一样的思想，我们在&lt;code&gt;gradientDescentMulti.m&lt;/code&gt;中补充如下代码&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -783,7 +783,7 @@ $$x_i = {x_i - u_1 \over s_1} （u_1 为均值 s_1为标准差）$$
 &lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;321-可选练习&#34;&gt;3.2.1 可选练习&lt;/h3&gt;
+&lt;/div&gt;&lt;h3 id=&#34;321-&#34;&gt;3.2.1 可选练习&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;ex1_multi.m&lt;/code&gt;中默认定义了&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -796,7 +796,7 @@ $$x_i = {x_i - u_1 \over s_1} （u_1 为均值 s_1为标准差）$$
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;我们可以更改学习率和迭代次数，通过观察绘图来获得最佳的学习率。&lt;/p&gt;
-&lt;h3 id=&#34;322-价格预测&#34;&gt;3.2.2 价格预测&lt;/h3&gt;
+&lt;h3 id=&#34;322-&#34;&gt;3.2.2 价格预测&lt;/h3&gt;
 &lt;p&gt;在求预测价格时候，不要忘记同样需要对样本数据进行归一化处理：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -807,7 +807,7 @@ $$x_i = {x_i - u_1 \over s_1} （u_1 为均值 s_1为标准差）$$
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;我们可以优化alpha，观察梯度下降快满。&lt;/p&gt;
-&lt;h3 id=&#34;33-正规方程normal-equations&#34;&gt;3.3 正规方程Normal Equations&lt;/h3&gt;
+&lt;h3 id=&#34;33-normal-equations&#34;&gt;3.3 正规方程Normal Equations&lt;/h3&gt;
 &lt;p&gt;在多变量线性规划问题中，我们求&lt;code&gt;θ&lt;/code&gt;还可以直接应用正规方程求解。
 其中：
 $$θ = (X^TX)^{-1} X^Ty$$
@@ -894,7 +894,7 @@ $$θ = (X^TX)^{-1} X^Ty$$
 &lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;        -p&amp;lt;b_password&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;注意&#34;&gt;注意:&lt;/h4&gt;
+&lt;/div&gt;&lt;h4 id=&#34;heading&#34;&gt;注意:&lt;/h4&gt;
 &lt;p&gt;确保 -p 选项和输入的密码之间不留空格。&lt;/p&gt;
 &lt;p&gt;所用参数如下所示：&lt;/p&gt;
 &lt;p&gt;-u &amp;lt;&lt;code&gt;a_user&lt;/code&gt;&amp;gt; – 用于指定用户名。在第一次使用该参数时，您指定由 &amp;ndash;databases 参数确定的本地 MySQL 或 MariaDB 数据库中的用户账户名称。&lt;/p&gt;
@@ -920,14 +920,14 @@ $$θ = (X^TX)^{-1} X^Ty$$
       
       <guid>https://www.3afun.com/post/2018/lets-encrypt%E9%85%8D%E7%BD%AE/</guid>
       
-        <description>&lt;h2 id=&#34;一lets-encrypt介绍&#34;&gt;一、Lets Encrypt介绍&lt;/h2&gt;
+        <description>&lt;h2 id=&#34;lets-encrypt&#34;&gt;一、Lets Encrypt介绍&lt;/h2&gt;
 &lt;p&gt;Lets Encrypt 是一个免费、自动化、开放的证书颁发机构(CA),为了公众利益而服务。它由Internet Security Research Group (ISRG) 来提供服务。&lt;/p&gt;
-&lt;h2 id=&#34;二通配符证书介绍&#34;&gt;二、通配符证书介绍&lt;/h2&gt;
+&lt;h2 id=&#34;heading&#34;&gt;二、通配符证书介绍&lt;/h2&gt;
 &lt;p&gt;通配符证书,是我们申请一个域名证书,可以支持子域名的证书。比如申请一个&lt;code&gt;abc.com&lt;/code&gt;,那么子域名&lt;code&gt;bbs.abc.com&lt;/code&gt;和&lt;code&gt;blog.abc.com&lt;/code&gt;都可以使用。&lt;/p&gt;
-&lt;h2 id=&#34;三申请通配符证书&#34;&gt;三、申请通配符证书&lt;/h2&gt;
+&lt;h2 id=&#34;heading1&#34;&gt;三、申请通配符证书&lt;/h2&gt;
 &lt;p&gt;Let’s Encrypt 上的证书申请是通过 ACME 协议来完成的。ACME 协议规范化了证书申请、更新、撤销等流程，实现了 Let’s Encrypt CA 自动化操作。解决了传统的 CA 机构是人工手动处理证书申请、证书更新、证书撤销的效率和成本问题。&lt;/p&gt;
 &lt;p&gt;ACME v2 是 ACME 协议的更新版本，通配符证书只能通过 ACME v2 获得。要使用 ACME v2 协议申请通配符证书，只需一个支持该协议的客户端就可以了，官方推荐的客户端是 Certbot。&lt;/p&gt;
-&lt;h2 id=&#34;四安装certbot-客户端&#34;&gt;四、安装Certbot 客户端&lt;/h2&gt;
+&lt;h2 id=&#34;certbot-&#34;&gt;四、安装Certbot 客户端&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -942,7 +942,7 @@ wget https://dl.eff.org/certbot-auto
 chmod a+x certbot-auto
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;五申请通配符证书&#34;&gt;五、申请通配符证书&lt;/h2&gt;
+&lt;/div&gt;&lt;h2 id=&#34;heading2&#34;&gt;五、申请通配符证书&lt;/h2&gt;
 &lt;p&gt;使用 Certbot 客户端申请证书方法非常的简单，只需如下一行命令就搞定了。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -953,25 +953,7 @@ chmod a+x certbot-auto
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;3afun.com为申请证书的域名&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;Saving debug log to /var/log/letsencrypt/letsencrypt.log
+&lt;pre&gt;&lt;code&gt;Saving debug log to /var/log/letsencrypt/letsencrypt.log
 Plugins selected: Authenticator manual, Installer None
 Obtaining a new certificate
 Performing the following challenges:
@@ -979,31 +961,14 @@ dns-01 challenge for 3afun.com
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 NOTE: The IP of this machine will be publicly logged as having requested this
-certificate. If you&amp;#39;re running certbot in manual mode on a machine that is not
-your server, please ensure you&amp;#39;re okay with that.
+certificate. If you&#39;re running certbot in manual mode on a machine that is not
+your server, please ensure you&#39;re okay with that.
 
 Are you OK with your IP being logged?
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 (Y)es/(N)o:
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;输入Y&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;输入Y&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Please deploy a DNS TXT record under the name
 _acme-challenge.3afun.com with the following value:
 
@@ -1014,34 +979,11 @@ Before continuing, verify the record is deployed.
 Press Enter to Continue
 
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;在域名的供应商那里添加一条TXT记录。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在域名的供应商那里添加一条TXT记录。&lt;/p&gt;
 &lt;p&gt;键:_acme-challenge.3afun.com&lt;/p&gt;
 &lt;p&gt;值: nEPEFRYbYHUCS_BFqpB6kZslvuhGor5EfUvSWHIvEE4&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;再回车之前我们需要新开一个窗口通过命令来检查TXT记录设置已生效。&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;# dig -t txt _acme-challenge.3afun.com @8.8.8.8
+&lt;pre&gt;&lt;code&gt;# dig -t txt _acme-challenge.3afun.com @8.8.8.8
 ; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.8.2rc1-RedHat-9.8.2-0.37.rc1.49.amzn1 &amp;lt;&amp;lt;&amp;gt;&amp;gt; -t txt _acme-challenge.3afun.com @8.8.8.8
 ;; global options: +cmd
 ;; Got answer:
@@ -1052,37 +994,14 @@ Press Enter to Continue
 ;_acme-challenge.3afun.com.        IN      TXT
 
 ;; ANSWER SECTION:
-_acme-challenge.3afun.com. 299 IN  TXT     &amp;#34;nEPEFRYbYHUCS_BFqpB6kZslvuhGor5EfUvSWHIvEE4&amp;#34;
+_acme-challenge.3afun.com. 299 IN  TXT     &amp;quot;nEPEFRYbYHUCS_BFqpB6kZslvuhGor5EfUvSWHIvEE4&amp;quot;
 
 ;; Query time: 118 msec
 ;; SERVER: 8.8.8.8#53(8.8.8.8)
 ;; WHEN: Wed Sep 12 08:51:13 2018
 ;; MSG SIZE  rcvd: 104
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;然后现在可以回到原来窗口按下回车键&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;Waiting for verification...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后现在可以回到原来窗口按下回车键&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Waiting for verification...
 Cleaning up challenges
 
 IMPORTANT NOTES:
@@ -1093,12 +1012,13 @@ IMPORTANT NOTES:
    Your cert will expire on 2018-12-11. To obtain a new or tweaked
    version of this certificate in the future, simply run certbot-auto
    again. To non-interactively renew *all* of your certificates, run
-   &amp;#34;certbot-auto renew&amp;#34;
+   &amp;quot;certbot-auto renew&amp;quot;
  - If you like Certbot, please consider supporting our work by:
 
-   Donating to ISRG / Let&amp;#39;s Encrypt:   https://letsencrypt.org/donate
+   Donating to ISRG / Let&#39;s Encrypt:   https://letsencrypt.org/donate
    Donating to EFF:                    https://eff.org/donate-le
 
+<<<<<<< HEAD
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;通配符证书会在&lt;code&gt;/etc/letsencrypt/live/3afun.com&lt;/code&gt; 目录下给我们生成。&lt;/p&gt;
@@ -1114,66 +1034,37 @@ IMPORTANT NOTES:
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;六nginx-配置使用证书&#34;&gt;六、Nginx 配置使用证书&lt;/h2&gt;
 &lt;p&gt;Nginx里设置证书和Key文件即可,简约代码如下:&lt;/p&gt;
+=======
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;通配符证书会在&lt;code&gt;/etc/letsencrypt/live/3afun.com&lt;/code&gt; 目录下给我们生成。&lt;/p&gt;
+&lt;h4 id=&#34;20200703&#34;&gt;2020年07月03日更新:&lt;/h4&gt;
+&lt;p&gt;申请自动验证的证书，不需要TXT验证。&lt;/p&gt;
+>>>>>>> 6c5884084eaf256789ae7e803937b2a438727432
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;ssl_certificate /etc/letsencrypt/live/3afun.com/fullchain.pem; # managed by Certbot
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;certbot-auto certonly --email helloworld.vip@gmail.com --agree-tos --no-eff-email  -d www.3afun.com
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;nginx-&#34;&gt;六、Nginx 配置使用证书&lt;/h2&gt;
+&lt;p&gt;Nginx里设置证书和Key文件即可,简约代码如下:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ssl_certificate /etc/letsencrypt/live/3afun.com/fullchain.pem; # managed by Certbot
 ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Certbot
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;七证书续期&#34;&gt;七、证书续期&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;heading3&#34;&gt;七、证书续期&lt;/h2&gt;
 &lt;p&gt;Let’s encrypt 的免费证书默认有效期为 90 天，到期后如果要续期可以执行：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;# certbot-auto renew
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;我们可以使用 crontab 来定时续期。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# certbot-auto renew
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我们可以使用 crontab 来定时续期。&lt;/p&gt;
 &lt;p&gt;1.编辑crontab文件&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;crontab -e
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;2.添加&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;# 每隔90天执行一次 certbot-auto renew
+&lt;pre&gt;&lt;code&gt;crontab -e
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2.添加&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 每隔90天执行一次 certbot-auto renew
 0 0 */90 * * certbot-auto renew
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;3.保存退出。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;!wq
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;4.重启crond：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;service crond restart
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3.保存退出。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;!wq
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;4.重启crond：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;service crond restart
+&lt;/code&gt;&lt;/pre&gt;</description>
       
     </item>
     
@@ -1203,7 +1094,7 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
       <guid>https://www.3afun.com/post/2018/swift%E9%94%AE%E7%9B%98%E7%B1%BB%E5%9E%8B%E5%92%8C%E6%B7%BB%E5%8A%A0%E4%B8%8B%E4%B8%80%E9%A1%B9%E5%AE%8C%E6%88%90%E7%AD%89%E9%80%89%E9%A1%B9%E7%9A%84%E6%8E%A7%E5%88%B6/</guid>
       
         <description>&lt;p&gt;为了便于易用性,Swift在&lt;code&gt;UIKeyboardType&lt;/code&gt;为我们定义了众多的键盘类型。&lt;/p&gt;
-&lt;h1 id=&#34;swift键盘类型-uikeyboardtype&#34;&gt;Swift键盘类型 UIKeyboardType&lt;/h1&gt;
+&lt;h1 id=&#34;swift-uikeyboardtype&#34;&gt;Swift键盘类型 UIKeyboardType&lt;/h1&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1262,7 +1153,7 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h1 id=&#34;swift-键盘返回类型-uireturnkeytype&#34;&gt;Swift 键盘返回类型 UIReturnKeyType&lt;/h1&gt;
+&lt;h1 id=&#34;swift--uireturnkeytype&#34;&gt;Swift 键盘返回类型 UIReturnKeyType&lt;/h1&gt;
 &lt;p&gt;连续多个输入框的时候,有时我们填写完一项,我们想使用键盘自动跳到下一项输入框,这时候我们可以设置键盘Return按键功能,该类型定义在UIReturnKeyType&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -1374,7 +1265,7 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;在上面的代码中我们设置了,当焦点位于账号输入框时,键盘右下角显示下一项,点击下一项,焦点移到密码输入框,此时键盘右下角显示完成,点击完成,可隐藏键盘。&lt;/p&gt;
-&lt;h1 id=&#34;为数字键盘添加完成功能&#34;&gt;为数字键盘添加完成功能&lt;/h1&gt;
+&lt;h1 id=&#34;heading&#34;&gt;为数字键盘添加完成功能&lt;/h1&gt;
 &lt;p&gt;当我们设置键盘类型为UIKeyboardType.numberPad,我们是无法为键盘添加完成收起键盘的功能。 但是我们可以利用UIToolbar在数字键盘上方附着一个完成按钮。&lt;/p&gt;
 &lt;p&gt;假设我们的TextField名为 codeTextfield,我们可以利用如下代码实现添加完成按钮,点击完成按钮,隐藏键盘。&lt;/p&gt;
 &lt;p&gt;效果如下:&lt;/p&gt;
@@ -1646,7 +1537,7 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
       <guid>https://www.3afun.com/post/2018/swift%E4%B9%8Bframework%E5%BC%80%E5%8F%91-%E5%A4%9A%E8%AF%AD%E8%A8%80%E5%9B%BD%E9%99%85%E5%8C%96/</guid>
       
         <description>&lt;p&gt;除了做App开发之外,有时候我们会使用Framework进行SDK开发,如果你使用的语言是Swift,你又怎么才能实现你的多语言国际化呢?&lt;/p&gt;
-&lt;h3 id=&#34;添加多语言文件&#34;&gt;添加多语言文件&lt;/h3&gt;
+&lt;h3 id=&#34;heading&#34;&gt;添加多语言文件&lt;/h3&gt;
 &lt;p&gt;1.项目配置 -&amp;gt; “Info” -&amp;gt; “Localizations”区域下，可以看到工程默认只支持英文，我们可以再添加中文语言。&lt;/p&gt;
 &lt;p&gt;2.Command + N, 选择iOS -&amp;gt; Resource -&amp;gt; Strings File
 &lt;img src=&#34;https://www.3afun.com/media/images/2018/multilang000.png&#34; alt=&#34;multiLang01&#34;&gt;
@@ -1657,7 +1548,7 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
 &lt;p&gt;7.此时，Xcode左侧的Localizable.strings左侧多了一个箭头，展开后可以看到存储各个语言的文件。&lt;/p&gt;
 &lt;p&gt;8.然后我们只需要在Localizable.strings下对应的文件中，分别以Key-Value的形式，为代码中每一个需要本地化的字符串赋值。&lt;/p&gt;
 &lt;p&gt;例如 &lt;code&gt;LOGIN = &amp;quot;登录&amp;quot;;&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&#34;代码中多语言适配&#34;&gt;代码中多语言适配&lt;/h3&gt;
+&lt;h3 id=&#34;heading1&#34;&gt;代码中多语言适配&lt;/h3&gt;
 &lt;p&gt;在SDK中提取多语言翻译,我们用到的方法是:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;public func NSLocalizedString(_ key: String, tableName: String? = default, bundle: Bundle = default, value: String = default, comment: String) -&amp;gt; String&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;NSLocalizedString&lt;/code&gt;可以接受5个参数,各个参数说明如下:&lt;/p&gt;
@@ -1726,7 +1617,7 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
       <guid>https://www.3afun.com/post/2018/swift%E5%8A%A8%E6%80%81%E5%BA%93frameworksdk%E5%BC%80%E5%8F%91/</guid>
       
         <description>&lt;p&gt;今天这篇文章主要是来讲解如何进行 &lt;code&gt;Cocoa Touch Framework&lt;/code&gt; 开发SDK,以及如何使用打包出来的SDK。&lt;/p&gt;
-&lt;h2 id=&#34;学习目标&#34;&gt;学习目标&lt;/h2&gt;
+&lt;h2 id=&#34;heading&#34;&gt;学习目标&lt;/h2&gt;
 &lt;p&gt;看完这篇文章,你将会学会:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;使用Xcode创建一个&lt;code&gt;Cocoa Touch Framework&lt;/code&gt;项目,进行SDK开发&lt;/li&gt;
@@ -1735,13 +1626,13 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
 &lt;li&gt;UI和代码的链接,进行事件操作&lt;/li&gt;
 &lt;li&gt;调用打包的SDK中的函数&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;一创建一个cocoa-touch-framework项目&#34;&gt;一、创建一个Cocoa Touch Framework项目&lt;/h2&gt;
-&lt;h3 id=&#34;1打开xcode新建一个工程&#34;&gt;1.打开Xcode,新建一个工程&lt;/h3&gt;
+&lt;h2 id=&#34;cocoa-touch-framework&#34;&gt;一、创建一个Cocoa Touch Framework项目&lt;/h2&gt;
+&lt;h3 id=&#34;1xcode&#34;&gt;1.打开Xcode,新建一个工程&lt;/h3&gt;
 &lt;p&gt;因为是进行Cocoa Touch Framework开发,所以我们要选择这个,然后点击next。
 &lt;img src=&#34;https://www.3afun.com/media/images/2018/swift01.png&#34; alt=&#34;new project&#34;&gt;&lt;/p&gt;
 &lt;p&gt;在这里我们给我们的工程起个名字:AccountSDK
 &lt;img src=&#34;https://www.3afun.com/media/images/2018/swift02.png&#34; alt=&#34;new project&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;2编写函数供sdk掉用者使用&#34;&gt;2.编写函数供SDK掉用者使用&lt;/h3&gt;
+&lt;h3 id=&#34;2sdk&#34;&gt;2.编写函数供SDK掉用者使用&lt;/h3&gt;
 &lt;p&gt;菜单栏-&amp;gt;File-&amp;gt;New-&amp;gt;File&amp;hellip; 新建一个名为&lt;code&gt;LoginProcessor.swift&lt;/code&gt;的文件。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/swift03.png&#34; alt=&#34;new file&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;LoginProcessor.swift&lt;/code&gt;代码如下:&lt;/p&gt;
@@ -1776,32 +1667,32 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;在类LoginProcessor里面我们先定义了构造函数init,然后定义了一个login函数供SDK调用者使用,功能非常简单,只是一句简单输出。&lt;/p&gt;
-&lt;h3 id=&#34;3打包sdk&#34;&gt;3.打包SDK&lt;/h3&gt;
+&lt;h3 id=&#34;3sdk&#34;&gt;3.打包SDK&lt;/h3&gt;
 &lt;p&gt;快捷键command+B打包SDK成framework文件,默认生产的文件会在Products目录下。我们可以选择文件,右键打开文件所在位置找到文件供接下来的步骤使用。
 &lt;img src=&#34;https://www.3afun.com/media/images/2018/swift04.png&#34; alt=&#34;findindir&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;二创建single-view-app项目来测试sdk&#34;&gt;️二、创建Single View App项目来测试SDK&lt;/h2&gt;
-&lt;h3 id=&#34;1使用xcode新建一个名为accountsdkdemo的工程&#34;&gt;1.使用Xcode新建一个名为AccountSDKDemo的工程&lt;/h3&gt;
+&lt;h2 id=&#34;single-view-appsdk&#34;&gt;️二、创建Single View App项目来测试SDK&lt;/h2&gt;
+&lt;h3 id=&#34;1xcodeaccountsdkdemo&#34;&gt;1.使用Xcode新建一个名为AccountSDKDemo的工程&lt;/h3&gt;
 &lt;p&gt;Xcode菜单栏-&amp;gt;File-&amp;gt;New-&amp;gt;Project
 &lt;img src=&#34;https://www.3afun.com/media/images/2018/swift05.png&#34; alt=&#34;new Project&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/swift06.png&#34; alt=&#34;new Project&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;2为storyboard添加button&#34;&gt;2.为storyboard添加Button&lt;/h3&gt;
+&lt;h3 id=&#34;2storyboardbutton&#34;&gt;2.为storyboard添加Button&lt;/h3&gt;
 &lt;p&gt;左侧导航栏选中&lt;code&gt;Main.storyboard&lt;/code&gt;,中间我们会看到一个UI,右侧有工具区。我们从工具区拖拽一个Button到中间编辑区的UI上。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/swift07.png&#34; alt=&#34;new Project&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;3切换到assistant-工作区&#34;&gt;3.切换到Assistant 工作区&lt;/h3&gt;
+&lt;h3 id=&#34;3assistant-&#34;&gt;3.切换到Assistant 工作区&lt;/h3&gt;
 &lt;p&gt;点击工具栏左上角的 Show Assistant Editor&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/swift08.png&#34; alt=&#34;new Project&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;4ui和代码的绑定&#34;&gt;4.UI和代码的绑定&lt;/h3&gt;
+&lt;h3 id=&#34;4ui&#34;&gt;4.UI和代码的绑定&lt;/h3&gt;
 &lt;p&gt;1.编辑 ViewController.swift,在&lt;code&gt;UIViewController{ &lt;/code&gt;下面添加注释 &lt;code&gt;//MARK: Properties&lt;/code&gt;,下面代码来绑定UI中的变量,
 在类的最后一个括号上面添加一行注释&lt;code&gt;//MARK: Actions&lt;/code&gt;下面代码好绑定事件。&lt;/p&gt;
 &lt;p&gt;2.在UI上选中Button按钮,右键拖拽一个Referencing Outlets到&lt;code&gt;//MARK: Properties&lt;/code&gt;下面,并起名&lt;code&gt;loginButton&lt;/code&gt;
 拖拽一个Touch Up Inside事件到 &lt;code&gt;//MARK: Actions&lt;/code&gt;下面,起名&lt;code&gt;login&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/swift09.png&#34; alt=&#34;new Project&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;5添加sdk&#34;&gt;5.添加SDK&lt;/h3&gt;
+&lt;h3 id=&#34;5sdk&#34;&gt;5.添加SDK&lt;/h3&gt;
 &lt;p&gt;1.复制步骤一中打包出来的SDK到AccountSDKDemo目录下,并添加。
 &lt;img src=&#34;https://www.3afun.com/media/images/2018/swift10.png&#34; alt=&#34;new Project&#34;&gt;&lt;/p&gt;
 &lt;p&gt;2.General-&amp;gt;Embedded Binaries中添加SDK。
 &lt;img src=&#34;https://www.3afun.com/media/images/2018/swift11.png&#34; alt=&#34;new Project&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;6调用sdk代码&#34;&gt;6.调用SDK代码&lt;/h3&gt;
+&lt;h3 id=&#34;6sdk&#34;&gt;6.调用SDK代码&lt;/h3&gt;
 &lt;p&gt;编辑ViewController.swift,添加&lt;code&gt;import AccountSDK&lt;/code&gt;,并且在login事件中调用SDK中定义的login函数。
 最终该文件应该是这样的:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1878,10 +1769,10 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;三测试&#34;&gt;三、测试&lt;/h2&gt;
+&lt;/div&gt;&lt;h2 id=&#34;heading1&#34;&gt;三、测试&lt;/h2&gt;
 &lt;p&gt;Command+R 在模拟器上运行AccountSDKDemo App,运行后,点击Login按钮,观察后台日志,是否成功输出LoginProcessor中login函数的内容。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/swift12.png&#34; alt=&#34;new Project&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;四代码&#34;&gt;四、代码&lt;/h2&gt;
+&lt;h2 id=&#34;heading2&#34;&gt;四、代码&lt;/h2&gt;
 &lt;p&gt;&lt;!-- raw HTML omitted --&gt;代码下载&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 </description>
       
@@ -1910,7 +1801,7 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
       
         <description>&lt;p&gt;本章节我们将学习如何从智能合约代码自动生成与java交换的java代码。&lt;/p&gt;
 &lt;p&gt;首先我们需要安装Solidity编译器&lt;/p&gt;
-&lt;h1 id=&#34;安装solidity编译器&#34;&gt;安装Solidity编译器&lt;/h1&gt;
+&lt;h1 id=&#34;solidity&#34;&gt;安装Solidity编译器&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -1928,7 +1819,7 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;solcjs --version
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h1 id=&#34;安装web3j&#34;&gt;安装web3j&lt;/h1&gt;
+&lt;/div&gt;&lt;h1 id=&#34;web3j&#34;&gt;安装web3j&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -1940,293 +1831,10 @@ brew install web3j
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;查看web3j是否安装成功&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;web3j
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;智能合约生成bin文件和abi文件&#34;&gt;智能合约生成bin文件和abi文件&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;web3j
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;binabi&#34;&gt;智能合约生成bin文件和abi文件&lt;/h3&gt;
 &lt;p&gt;现在我们有如下合约 CoolCoin.sol&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;  1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 22
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 23
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 24
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 25
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 26
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 27
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 28
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 29
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 30
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 31
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 32
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 33
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 34
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 35
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 36
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 37
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 38
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 39
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 40
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 41
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 42
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 43
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 44
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 45
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 46
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 47
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 48
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 49
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 50
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 51
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 52
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 53
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 54
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 55
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 56
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 57
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 58
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 59
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 60
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 61
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 62
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 63
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 64
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 65
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 66
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 67
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 68
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 69
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 70
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 71
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 72
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 73
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 74
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 75
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 76
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 77
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 78
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 79
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 80
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 81
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 82
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 83
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 84
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 85
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 86
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 87
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 88
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 89
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 90
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 91
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 92
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 93
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 94
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 95
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 96
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 97
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 98
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 99
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;100
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;101
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;102
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;103
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;104
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;105
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;106
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;107
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;108
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;109
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;110
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;111
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;112
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;113
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;114
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;115
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;116
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;117
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;118
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;119
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;120
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;121
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;122
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;123
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;124
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;125
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;126
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;127
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;128
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;129
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;130
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;131
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;132
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;133
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;134
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;135
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;136
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;137
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;138
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;139
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;140
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;141
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;142
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;143
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;144
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;145
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;146
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;147
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;148
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;149
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;150
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;151
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;152
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;153
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;154
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;155
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;156
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;157
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;158
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;159
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;160
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;161
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;162
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;163
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;164
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;165
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;166
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;167
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;168
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;169
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;170
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;171
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;172
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;173
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;174
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;175
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;176
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;177
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;178
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;179
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;180
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;181
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;182
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;183
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;184
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;185
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;186
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;187
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;188
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;189
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;190
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;191
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;192
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;193
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;194
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;195
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;196
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;197
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;198
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;199
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;200
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;201
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;202
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;203
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;204
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;205
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;206
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;207
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;208
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;209
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;210
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;211
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;212
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;213
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;214
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;215
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;216
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;217
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;218
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;219
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;220
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;221
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;222
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;223
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;224
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;225
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;226
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;227
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;228
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;229
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;230
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;231
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;232
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;233
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;234
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;235
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;236
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;237
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;238
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;239
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;240
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;241
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;242
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;243
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;244
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;245
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;246
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;247
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;248
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;249
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;250
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;251
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;252
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;253
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;254
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;255
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;256
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;257
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;258
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;259
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;260
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;261
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;262
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;263
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;264
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;265
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;266
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;267
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;268
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;269
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;270
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;271
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;272
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;pragma solidity 0.4.23;
+&lt;pre&gt;&lt;code&gt;pragma solidity 0.4.23;
 interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
 /**
  * owned 是一个管理者
@@ -2260,7 +1868,7 @@ contract owned {
 contract TokenERC20 {
     /* 公共变量 */
     string public name; //代币名称
-    string public symbol; //代币符号比如&amp;#39;$&amp;#39;
+    string public symbol; //代币符号比如&#39;$&#39;
     uint8 public decimals = 18;  //代币精度，展示的小数点后面多少个0,和以太币一样后面是是18个0
     uint256 public totalSupply; //代币总量
     /*记录所有余额的映射*/
@@ -2498,9 +2106,7 @@ contract MyAdvancedToken is owned, TokenERC20 {
         msg.sender.transfer(amount * sellPrice);
     }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;我们在同位置新建一个build的目录来存储bin 和 abi 文件。然后用solc编译合约代码获得 bin 和 abi&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我们在同位置新建一个build的目录来存储bin 和 abi 文件。然后用solc编译合约代码获得 bin 和 abi&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -2510,80 +2116,38 @@ contract MyAdvancedToken is owned, TokenERC20 {
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;用web3j编译bin和abi 获得包装代码&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;web3j solidity generate /path/to/&amp;lt;smart-contract&amp;gt;.bin /path/to/&amp;lt;smart-contract&amp;gt;.abi -o /path/to/src/main/java -p com.your.organisation.name
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;上面从智能合约到生成java包装代码比较麻烦,更聪明的办法是你应该写一个脚本文件来处理:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/usr/bin/env bash
-&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; -e
-&lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; -o pipefail
+&lt;pre&gt;&lt;code&gt;web3j solidity generate /path/to/&amp;lt;smart-contract&amp;gt;.bin /path/to/&amp;lt;smart-contract&amp;gt;.abi -o /path/to/src/main/java -p com.your.organisation.name
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面从智能合约到生成java包装代码比较麻烦,更聪明的办法是你应该写一个脚本文件来处理:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/usr/bin/env bash
 
-&lt;span class=&#34;nv&#34;&gt;targets&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;
-&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;ens/ENS
-&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;ens/PublicResolver
-&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+set -e
+set -o pipefail
 
-&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; target in &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;targets&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
-    &lt;span class=&#34;nv&#34;&gt;dirName&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;dirname &lt;span class=&#34;nv&#34;&gt;$target&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
-    &lt;span class=&#34;nv&#34;&gt;fileName&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;basename &lt;span class=&#34;nv&#34;&gt;$target&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+targets=&amp;quot;
+ens/ENS
+ens/PublicResolver
+&amp;quot;
 
-    &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$dirName&lt;/span&gt;
-    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;Compiling Solidity file &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;fileName&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.sol:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
-    solc --bin --abi --optimize --overwrite &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;fileName&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;.sol -o build/
-    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Complete&amp;#34;&lt;/span&gt;
+for target in ${targets}; do
+    dirName=$(dirname $target)
+    fileName=$(basename $target)
 
-    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Generating web3j bindings&amp;#34;&lt;/span&gt;
-    web3j solidity generate &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;        build/&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;fileName&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;.bin &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;        build/&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;fileName&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;.abi &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;        -p org.web3j.ens.contracts.generated &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;        -o ../../../../main/java/ &amp;gt; /dev/null
-    &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Complete&amp;#34;&lt;/span&gt;
+    cd $dirName
+    echo &amp;quot;Compiling Solidity file ${fileName}.sol:&amp;quot;
+    solc --bin --abi --optimize --overwrite ${fileName}.sol -o build/
+    echo &amp;quot;Complete&amp;quot;
 
-    &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; -
-&lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;讲解说明:&lt;/p&gt;
+    echo &amp;quot;Generating web3j bindings&amp;quot;
+    web3j solidity generate \
+        build/${fileName}.bin \
+        build/${fileName}.abi \
+        -p org.web3j.ens.contracts.generated \
+        -o ../../../../main/java/ &amp;gt; /dev/null
+    echo &amp;quot;Complete&amp;quot;
+
+    cd -
+done
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;讲解说明:&lt;/p&gt;
 &lt;p&gt;该文件通过 targets 定义了 你要编译的合约ENS.sol和PublicResolver.sol&lt;/p&gt;
 &lt;p&gt;然后遍历待编译的合约文件,通过solc命令来编译。&lt;/p&gt;
 &lt;p&gt;最后通过web3j 命令来生成相应的java包装代码。&lt;/p&gt;

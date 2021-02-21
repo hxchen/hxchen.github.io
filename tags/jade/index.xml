@@ -17,7 +17,7 @@
       <pubDate>Mon, 10 Nov 2014 15:59:27 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2014/jade%E6%A8%A1%E6%9D%BF%E4%B8%8B%E7%9A%84%E6%9D%A1%E4%BB%B6%E6%B3%A8%E9%87%8A/</guid>
-      <description>jade版本1.6.0 在调试浏览器兼容问题时，发现原先的条件注释不再试用，特此更新下最新标记 demo.jade 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23</description>
+      <description>jade版本1.6.0 在调试浏览器兼容问题时，发现原先的条件注释不再试用，特此更新下最新标记 demo.jade doctype html html(lang=&#39;zh-CN&#39;) head title= title //if IE 7 //if IE 8 //if IE 9 body h3 Welcome //if IE 7 p IE7_1</description>
     </item>
     
   </channel>

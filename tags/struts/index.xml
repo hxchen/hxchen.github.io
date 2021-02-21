@@ -17,7 +17,7 @@
       <pubDate>Thu, 28 Feb 2013 10:32:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2013/struts2-%E5%89%8D%E7%AB%AFjsp%E9%A1%B5%E9%9D%A2%E8%8E%B7%E5%8F%96%E5%90%8E%E5%8F%B0action%E5%B1%9E%E6%80%A7%E5%80%BC%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/</guid>
-      <description>1、写在&amp;lt;% %&amp;gt;里，通过java代码获取。 2、通过$引用。比如后台返回bean，获取bean的name值，可以使用如下代码 1 &amp;lt;input type=&amp;#34;text&amp;#34;</description>
+      <description>1、写在&amp;lt;% %&amp;gt;里，通过java代码获取。 2、通过$引用。比如后台返回bean，获取bean的name值，可以使用如下代码 &amp;lt;input type=&amp;quot;text&amp;quot; name=&amp;quot;name&amp;quot;</description>
     </item>
     
   </channel>

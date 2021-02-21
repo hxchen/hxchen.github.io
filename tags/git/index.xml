@@ -26,7 +26,7 @@
       <pubDate>Tue, 22 Apr 2014 19:10:27 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2014/centos-%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85gitgit-clone-git-push-git-pull-401%E9%94%99%E8%AF%AF/</guid>
-      <description>低版本时osc git clone git pull git push 会报401错误 1、准备工作 1 2 yum install curl curl-devel zlib-devel openssl-devel perl perl-devel cpio expat-devel gettext-devel 2、下载git 去下载页面 下载 1 2 wget https://git-core.googlecode.com/files/git-1.9.0.tar.gz 3、解压安装 1 2 3 4 5 6 7</description>
+      <description>低版本时osc git clone git pull git push 会报401错误 1、准备工作 yum install curl curl-devel zlib-devel openssl-devel perl perl-devel cpio expat-devel gettext-devel 2、下载git 去下载页面 下载 wget https://git-core.googlecode.com/files/git-1.9.0.tar.gz 3、解压安装 Java代码 收藏代码 tar</description>
     </item>
     
   </channel>

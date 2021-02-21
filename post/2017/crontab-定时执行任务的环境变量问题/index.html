@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1" />
+<meta name="generator" content="Hugo 0.60.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2017/crontab-%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E4%BB%BB%E5%8A%A1%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%97%AE%E9%A2%98/" />
@@ -69,7 +69,7 @@
 <meta itemprop="description" content="今天写了一个脚本文件，有用到Python3中time库的localtime函数。在单独执行该脚本文件时候，可以支持获取服务器date时间。但">
 <meta itemprop="datePublished" content="2017-11-20T17:27:00&#43;08:00" />
 <meta itemprop="dateModified" content="2017-11-20T17:27:00&#43;08:00" />
-<meta itemprop="wordCount" content="247">
+<meta itemprop="wordCount" content="245">
 
 
 
@@ -316,7 +316,7 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
             
           </div>
-        <span class="more-meta"> 约 247 字 </span>
+        <span class="more-meta"> 约 245 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -341,17 +341,9 @@ if (!doNotTrack) {
       <p>今天写了一个脚本文件，有用到Python3中time库的localtime函数。在单独执行该脚本文件时候，可以支持获取服务器date时间。但是放在Crontab里定时执行的时候，发现获取的是格林尼治时间。明明系统已经更改到北京时间，为什么还会显示格林尼治时间呢？
 怀疑是crontab执行时和单独执行py脚本时候，系统环境变量不一致。</p>
 <p>最终原先直接在crontab里定时执行py脚本，改为定时执行shell文件，在shell文件里通过记载用户环境变量，再执行py文件，成功获取到北京时间。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/sh
-</span><span class="cp"></span><span class="nb">source</span> /etc/profile
-</code></pre></td></tr></table>
-</div>
-</div>
+<pre><code>#!/bin/sh
+source /etc/profile
+</code></pre>
     </div>
 
     

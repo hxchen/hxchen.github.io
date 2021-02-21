@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1" />
+<meta name="generator" content="Hugo 0.60.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2015/ios-webview%E5%8A%A0%E8%BD%BD%E6%9C%AC%E5%9C%B0html%E6%96%87%E4%BB%B6/" />
@@ -69,7 +69,7 @@
 <meta itemprop="description" content="一、选中工程，右键选择Add files，按照下图进行添加后，文件夹被成功添加到项目中去，文件夹显示蓝色图标。 二、Object-C里文件加载采">
 <meta itemprop="datePublished" content="2015-04-28T18:19:00&#43;08:00" />
 <meta itemprop="dateModified" content="2015-04-28T18:19:00&#43;08:00" />
-<meta itemprop="wordCount" content="150">
+<meta itemprop="wordCount" content="148">
 
 
 
@@ -316,7 +316,7 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/ios/"> IOS </a>
             
           </div>
-        <span class="more-meta"> 约 150 字 </span>
+        <span class="more-meta"> 约 148 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -341,17 +341,9 @@ if (!doNotTrack) {
       <p>一、选中工程，右键选择Add files，按照下图进行添加后，文件夹被成功添加到项目中去，文件夹显示蓝色图标。</p>
 <p><img src="/media/images/2015/ios01.jpg" alt="ios"></p>
 <p>二、Object-C里文件加载采用loadRequest方式</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:param ofType:@&#34;html&#34; inDirectory:@&#34;assets&#34;]];
+<pre><code>NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:param ofType:@&quot;html&quot; inDirectory:@&quot;assets&quot;]];
     [webView loadRequest:[NSURLRequest requestWithURL:url]];
-</code></pre></td></tr></table>
-</div>
-</div><p>以上方式可正确显示html文件，并且文件夹内可采用相对路径访问css、javascript、图片等文件。</p>
+</code></pre><p>以上方式可正确显示html文件，并且文件夹内可采用相对路径访问css、javascript、图片等文件。</p>
 
     </div>
 

@@ -17,7 +17,7 @@
       <pubDate>Fri, 25 Jul 2014 10:12:27 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2014/redis-%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE/</guid>
-      <description>redis在cli里不能直接操作。批量删除gameRankData_DGJD开始的keys需要： 1 ./redis-cli -n 0 keys &amp;#34;gameRankData_DGJD*&amp;#34;|xargs ./redis-cli -n 0 del</description>
+      <description>redis在cli里不能直接操作。批量删除gameRankData_DGJD开始的keys需要： ./redis-cli -n 0 keys &amp;quot;gameRankData_DGJD*&amp;quot;|xargs ./redis-cli -n 0 del</description>
     </item>
     
   </channel>

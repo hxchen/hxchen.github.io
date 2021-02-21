@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="北斗" />
-  <meta name="description" content="1.下载 下载地址 2.解压 下载完解压到任意目录，我解压在/usr/local/下。 3.配置环境变量 在命令行运行以下命令 1 sudo vim /etc/bashrc 添加以下内容 1 2" />
+  <meta name="description" content="1.下载 下载地址 2.解压 下载完解压到任意目录，我解压在/usr/local/下。 3.配置环境变量 在命令行运行以下命令 sudo vim /etc/bashrc 添加以下内容 GRADLE_HOME=/usr/local/gradle-2.14; export GRADLE_HOME" />
 
   <meta name="keywords" content="技术, 程序员, 码农, 程序猿, 分享, java, python, 3afun" />
 
@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1" />
+<meta name="generator" content="Hugo 0.60.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2016/mac%E4%B8%8A%E5%AE%89%E8%A3%85gradle/" />
@@ -60,22 +60,22 @@
 
 
 <meta property="og:title" content="Mac上安装Gradle " />
-<meta property="og:description" content="1.下载 下载地址 2.解压 下载完解压到任意目录，我解压在/usr/local/下。 3.配置环境变量 在命令行运行以下命令 1 sudo vim /etc/bashrc 添加以下内容 1 2" />
+<meta property="og:description" content="1.下载 下载地址 2.解压 下载完解压到任意目录，我解压在/usr/local/下。 3.配置环境变量 在命令行运行以下命令 sudo vim /etc/bashrc 添加以下内容 GRADLE_HOME=/usr/local/gradle-2.14; export GRADLE_HOME" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.3afun.com/post/2016/mac%E4%B8%8A%E5%AE%89%E8%A3%85gradle/" />
 <meta property="article:published_time" content="2016-06-16T19:27:00+08:00" />
 <meta property="article:modified_time" content="2016-06-16T19:27:00+08:00" />
 <meta itemprop="name" content="Mac上安装Gradle ">
-<meta itemprop="description" content="1.下载 下载地址 2.解压 下载完解压到任意目录，我解压在/usr/local/下。 3.配置环境变量 在命令行运行以下命令 1 sudo vim /etc/bashrc 添加以下内容 1 2">
+<meta itemprop="description" content="1.下载 下载地址 2.解压 下载完解压到任意目录，我解压在/usr/local/下。 3.配置环境变量 在命令行运行以下命令 sudo vim /etc/bashrc 添加以下内容 GRADLE_HOME=/usr/local/gradle-2.14; export GRADLE_HOME">
 <meta itemprop="datePublished" content="2016-06-16T19:27:00&#43;08:00" />
 <meta itemprop="dateModified" content="2016-06-16T19:27:00&#43;08:00" />
-<meta itemprop="wordCount" content="101">
+<meta itemprop="wordCount" content="95">
 
 
 
 <meta itemprop="keywords" content="gradle," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Mac上安装Gradle "/>
-<meta name="twitter:description" content="1.下载 下载地址 2.解压 下载完解压到任意目录，我解压在/usr/local/下。 3.配置环境变量 在命令行运行以下命令 1 sudo vim /etc/bashrc 添加以下内容 1 2"/>
+<meta name="twitter:description" content="1.下载 下载地址 2.解压 下载完解压到任意目录，我解压在/usr/local/下。 3.配置环境变量 在命令行运行以下命令 sudo vim /etc/bashrc 添加以下内容 GRADLE_HOME=/usr/local/gradle-2.14; export GRADLE_HOME"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -316,7 +316,7 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/gradle/"> gradle </a>
             
           </div>
-        <span class="more-meta"> 约 101 字 </span>
+        <span class="more-meta"> 约 95 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -344,46 +344,16 @@ if (!doNotTrack) {
 下载完解压到任意目录，我解压在/usr/local/下。</p>
 <p>3.配置环境变量
 在命令行运行以下命令</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo vim /etc/bashrc
-</code></pre></td></tr></table>
-</div>
-</div><p>添加以下内容</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">GRADLE_HOME=/usr/local/gradle-2.14;
+<pre><code>sudo vim /etc/bashrc
+</code></pre><p>添加以下内容</p>
+<pre><code>GRADLE_HOME=/usr/local/gradle-2.14;
 export GRADLE_HOME
 export PATH=$PATH:$GRADLE_HOME/bin
-</code></pre></td></tr></table>
-</div>
-</div><p>接着使配置文件生效</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">source /etc/bashrc
-</code></pre></td></tr></table>
-</div>
-</div><p>然后用</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">gradle -version
-</code></pre></td></tr></table>
-</div>
-</div><p>命令测试一下.</p>
+</code></pre><p>接着使配置文件生效</p>
+<pre><code>source /etc/bashrc
+</code></pre><p>然后用</p>
+<pre><code>gradle -version
+</code></pre><p>命令测试一下.</p>
 
     </div>
 
@@ -474,7 +444,7 @@ export PATH=$PATH:$GRADLE_HOME/bin
         id: 'Mac上安装Gradle.md',
         title: 'Mac上安装Gradle ',
         link: decodeURI(location.href),
-        desc: '1.下载 下载地址 2.解压 下载完解压到任意目录，我解压在\/usr\/local\/下。 3.配置环境变量 在命令行运行以下命令 1 sudo vim \/etc\/bashrc 添加以下内容 1 2',
+        desc: '1.下载 下载地址 2.解压 下载完解压到任意目录，我解压在\/usr\/local\/下。 3.配置环境变量 在命令行运行以下命令 sudo vim \/etc\/bashrc 添加以下内容 GRADLE_HOME=\/usr\/local\/gradle-2.14; export GRADLE_HOME',
         owner: 'hxchen',
         repo: 'comments',
         oauth: {

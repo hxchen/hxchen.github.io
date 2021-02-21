@@ -26,7 +26,7 @@
       <pubDate>Wed, 19 Mar 2014 15:18:27 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2014/wordpress%E6%9B%B4%E6%94%B9permalink%E5%90%8E%E5%87%BA%E7%8E%B0404%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
-      <description>1、Apache作为服务器的话 修改httpd.conf 打开 1 LoadModule rewrite_module modules/mod_rewrite.so 查找并替换 1 AllowOverride none -&amp;gt; AllowOverride All 2、nginx作为服务器的话，添加三条if语句。 1 2</description>
+      <description>1、Apache作为服务器的话 修改httpd.conf 打开 LoadModule rewrite_module modules/mod_rewrite.so 查找并替换 AllowOverride none -&amp;gt; AllowOverride All 2、nginx作为服务器的话，添加三条if语句。 location ~ \.php$ {</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Mon, 10 Mar 2014 17:42:27 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2014/ec2%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2wordpress/</guid>
-      <description>一、Wordpress配置 下载 1 wget http://wordpress.org/latest.zip 解压 1 unzip latest.zip 进入目录 1 cd wordpress/ 重命名 1 mv wp-config-sample.php wp-config.php 更改配置 1 vi wp-config.php 请自行根据数据库设置进行配置文件设置。 二、PHP服务</description>
+      <description>一、Wordpress配置 下载 wget http://wordpress.org/latest.zip 解压 unzip latest.zip 进入目录 cd wordpress/ 重命名 mv wp-config-sample.php wp-config.php 更改配置 vi wp-config.php 请自行根据数据库设置进行配置文件设置。 二、PHP服务器配置 安装</description>
     </item>
     
     <item>

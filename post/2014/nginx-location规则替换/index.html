@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="北斗" />
-  <meta name="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 server { listen 80; server_name www.6dgame.com 6dgame.com; location /2013/ { proxy_pass http://127.0.0.1:8081/; } location / { proxy_pass http://127.0.0.1:8080/; } error_page 500 502 503 504 /50x.html; location = /50x.html { root html; } } 对于此种设置方法， 访问：http://54." />
+  <meta name="description" content="server { listen 80; server_name www.6dgame.com 6dgame.com; location /2013/ { proxy_pass http://127.0.0.1:8081/; } location / { proxy_pass http://127.0.0.1:8080/; } error_page 500 502 503 504 /50x.html; location = /50x.html { root html; } } 对于此种设置方法， 访问：http://54.200.150.182:808" />
 
   <meta name="keywords" content="技术, 程序员, 码农, 程序猿, 分享, java, python, 3afun" />
 
@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1" />
+<meta name="generator" content="Hugo 0.60.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2014/nginx-location%E8%A7%84%E5%88%99%E6%9B%BF%E6%8D%A2/" />
@@ -60,22 +60,22 @@
 
 
 <meta property="og:title" content="nginx location规则替换" />
-<meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 server { listen 80; server_name www.6dgame.com 6dgame.com; location /2013/ { proxy_pass http://127.0.0.1:8081/; } location / { proxy_pass http://127.0.0.1:8080/; } error_page 500 502 503 504 /50x.html; location = /50x.html { root html; } } 对于此种设置方法， 访问：http://54." />
+<meta property="og:description" content="server { listen 80; server_name www.6dgame.com 6dgame.com; location /2013/ { proxy_pass http://127.0.0.1:8081/; } location / { proxy_pass http://127.0.0.1:8080/; } error_page 500 502 503 504 /50x.html; location = /50x.html { root html; } } 对于此种设置方法， 访问：http://54.200.150.182:808" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.3afun.com/post/2014/nginx-location%E8%A7%84%E5%88%99%E6%9B%BF%E6%8D%A2/" />
 <meta property="article:published_time" content="2014-03-05T16:05:27+08:00" />
 <meta property="article:modified_time" content="2014-03-05T16:05:27+08:00" />
 <meta itemprop="name" content="nginx location规则替换">
-<meta itemprop="description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 server { listen 80; server_name www.6dgame.com 6dgame.com; location /2013/ { proxy_pass http://127.0.0.1:8081/; } location / { proxy_pass http://127.0.0.1:8080/; } error_page 500 502 503 504 /50x.html; location = /50x.html { root html; } } 对于此种设置方法， 访问：http://54.">
+<meta itemprop="description" content="server { listen 80; server_name www.6dgame.com 6dgame.com; location /2013/ { proxy_pass http://127.0.0.1:8081/; } location / { proxy_pass http://127.0.0.1:8080/; } error_page 500 502 503 504 /50x.html; location = /50x.html { root html; } } 对于此种设置方法， 访问：http://54.200.150.182:808">
 <meta itemprop="datePublished" content="2014-03-05T16:05:27&#43;08:00" />
 <meta itemprop="dateModified" content="2014-03-05T16:05:27&#43;08:00" />
-<meta itemprop="wordCount" content="148">
+<meta itemprop="wordCount" content="133">
 
 
 
 <meta itemprop="keywords" content="服务器,Nginx," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="nginx location规则替换"/>
-<meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 server { listen 80; server_name www.6dgame.com 6dgame.com; location /2013/ { proxy_pass http://127.0.0.1:8081/; } location / { proxy_pass http://127.0.0.1:8080/; } error_page 500 502 503 504 /50x.html; location = /50x.html { root html; } } 对于此种设置方法， 访问：http://54."/>
+<meta name="twitter:description" content="server { listen 80; server_name www.6dgame.com 6dgame.com; location /2013/ { proxy_pass http://127.0.0.1:8081/; } location / { proxy_pass http://127.0.0.1:8080/; } error_page 500 502 503 504 /50x.html; location = /50x.html { root html; } } 对于此种设置方法， 访问：http://54.200.150.182:808"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -317,7 +317,7 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/nginx/"> Nginx </a>
             
           </div>
-        <span class="more-meta"> 约 148 字 </span>
+        <span class="more-meta"> 约 133 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -339,26 +339,7 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">server {
+      <pre><code>server {
         listen       80;
         server_name  www.6dgame.com 6dgame.com;
 
@@ -373,9 +354,7 @@ if (!doNotTrack) {
             root   html;
         }
     }
-</code></pre></td></tr></table>
-</div>
-</div><p>对于此种设置方法，</p>
+</code></pre><p>对于此种设置方法，</p>
 <p>访问：http://54.200.150.182:8081/2013/ 和 http://54.200.150.182/2013/2013 是等效的。</p>
 <p>也就是说访问http://54.200.150.182/2013/</p>
 <p>根据nginx配置会自动替换成</p>
@@ -471,7 +450,7 @@ if (!doNotTrack) {
         id: 'nginx location规则替换.md',
         title: 'nginx location规则替换',
         link: decodeURI(location.href),
-        desc: '1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 server { listen 80; server_name www.6dgame.com 6dgame.com; location \/2013\/ { proxy_pass http:\/\/127.0.0.1:8081\/; } location \/ { proxy_pass http:\/\/127.0.0.1:8080\/; } error_page 500 502 503 504 \/50x.html; location = \/50x.html { root html; } } 对于此种设置方法， 访问：http:\/\/54.',
+        desc: 'server { listen 80; server_name www.6dgame.com 6dgame.com; location \/2013\/ { proxy_pass http:\/\/127.0.0.1:8081\/; } location \/ { proxy_pass http:\/\/127.0.0.1:8080\/; } error_page 500 502 503 504 \/50x.html; location = \/50x.html { root html; } } 对于此种设置方法， 访问：http:\/\/54.200.150.182:808',
         owner: 'hxchen',
         repo: 'comments',
         oauth: {

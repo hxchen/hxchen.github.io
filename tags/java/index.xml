@@ -71,7 +71,7 @@
       <pubDate>Wed, 07 Nov 2012 15:46:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2012/java%E6%A3%80%E6%B5%8Bgc%E6%97%A5%E5%BF%97/</guid>
-      <description>只需要在JAVA程序运行的时候，加上VM参数就可以。像下面这样: 1 -XX:+PrintGCDetails</description>
+      <description>只需要在JAVA程序运行的时候，加上VM参数就可以。像下面这样: -XX:+PrintGCDetails</description>
     </item>
     
   </channel>

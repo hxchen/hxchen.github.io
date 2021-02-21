@@ -17,7 +17,7 @@
       <pubDate>Fri, 06 Jun 2014 17:09:27 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2014/mysql%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%97%B6%E9%97%B4/</guid>
-      <description>随机生成2014/05/01到现在的时间 1 SELECT FROM_UNIXTIME(UNIX_TIMESTAMP(&amp;#39;20140501000000&amp;#39;) + ROUND(RAND()*(UNIX_TIMESTAMP() - UNIX_TIMESTAMP(&amp;#39;20140501000000&amp;#39;))));</description>
+      <description>随机生成2014/05/01到现在的时间 SELECT FROM_UNIXTIME(UNIX_TIMESTAMP(&#39;20140501000000&#39;) + ROUND(RAND()*(UNIX_TIMESTAMP() - UNIX_TIMESTAMP(&#39;20140501000000&#39;))));</description>
     </item>
     
     <item>

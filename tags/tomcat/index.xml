@@ -26,7 +26,7 @@
       <pubDate>Thu, 07 Nov 2013 14:25:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2013/aws-ec2%E4%B8%8A%E9%85%8D%E7%BD%AEtomcat/</guid>
-      <description>一、官网下载 Tomcat ，然后上传解压到EC2主机上，我这解压到： 1 /usr/local/apache-tomcat-7.0.47 二、添加环境变量。此次EC2主机是自带JRE的，位置是： 1 /usr/lib/jvm 我只需在/etc/p</description>
+      <description>一、官网下载 Tomcat ，然后上传解压到EC2主机上，我这解压到： /usr/local/apache-tomcat-7.0.47 二、添加环境变量。此次EC2主机是自带JRE的，位置是： /usr/lib/jvm 我只需在/etc/pro</description>
     </item>
     
   </channel>

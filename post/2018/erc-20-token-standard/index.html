@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1" />
+<meta name="generator" content="Hugo 0.60.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2018/erc-20-token-standard/" />
@@ -335,7 +335,7 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#方法">方法</a>
+    <li><a href="#heading4">方法</a>
       <ul>
         <li><a href="#name">name</a></li>
         <li><a href="#symbol">symbol</a></li>
@@ -348,9 +348,9 @@ if (!doNotTrack) {
         <li><a href="#allowance">allowance</a></li>
       </ul>
     </li>
-    <li><a href="#事件">事件</a>
+    <li><a href="#heading5">事件</a>
       <ul>
-        <li><a href="#transfer-1">Transfer</a></li>
+        <li><a href="#transfer1">Transfer</a></li>
         <li><a href="#approval">Approval</a></li>
       </ul>
     </li>
@@ -361,15 +361,15 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <h1 id="简要说明">简要说明</h1>
+      <h1 id="heading">简要说明</h1>
 <p>该文主要是一个以太币智能合约的标准接口说明。</p>
-<h1 id="抽象">抽象</h1>
+<h1 id="heading1">抽象</h1>
 <p>以下将要说明的标准允许你去实现基于智能合约的标准代币（Tokens）API提供的接口。这个标准提供了一些基本功能以用于代币（Tokens）转账，以及批准用于其他链上的第三方来使用。</p>
-<h1 id="动机">动机</h1>
+<h1 id="heading2">动机</h1>
 <p>标准接口允许以太坊上的任何代币（Tokens）可以被其他程序来重新使用：包括钱包和去中心化的交换。</p>
-<h1 id="规范">规范</h1>
-<h1 id="代币tokens">代币(Tokens)</h1>
-<h2 id="方法">方法</h2>
+<h1 id="heading3">规范</h1>
+<h1 id="tokens">代币(Tokens)</h1>
+<h2 id="heading4">方法</h2>
 <p>注意：调用者必须处理返回方法 <code>returns (bool success)</code>返回的 <code>false</code>.调用者绝对不能认为 <code>false</code>从未返回。</p>
 <h3 id="name">name</h3>
 <p>返回代币的名字 ，例如 “MyToken”
@@ -404,15 +404,15 @@ transferFrom 方法用于退出工作流程，允许合约代表你来转账。�
 <h3 id="allowance">allowance</h3>
 <p>返回发送者<code>_spender</code>还剩下可从<code>_owner</code>取走的额度。</p>
 <p><code>function allowance(address _owner, address _spender) view returns (uint256 remaining)</code></p>
-<h2 id="事件">事件</h2>
-<h3 id="transfer-1">Transfer</h3>
+<h2 id="heading5">事件</h2>
+<h3 id="transfer1">Transfer</h3>
 <p>该事件必须在交易代币（Tokens）的时候出发，包括数量为0的交易。
 当创建新代币时应该触发一个 <code>Transfer</code>事件，并将_from账户设置为<code>0x0</code></p>
 <p><code>event Transfer(address indexed _from, address indexed _to, uint256 _value)</code></p>
 <h3 id="approval">Approval</h3>
 <p>该事件必须在 成功调用 <code>approve(address _spender, uint256 _value)</code>的时候触发。</p>
 <p><code>event Approval(address indexed _owner, address indexed _spender, uint256 _value)</code></p>
-<h1 id="实现">实现</h1>
+<h1 id="heading6">实现</h1>
 <p>现在已经有很多的兼容ERC20标准并且基于以太坊网络的代币。有众多的团队根据接口来实现了不一样的代币，这些不同的实现包括节约费用Gas，提高安全性。
 以下是一些可用的实现：</p>
 <p><a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/token/ERC20/StandardToken.sol">https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/token/ERC20/StandardToken.sol</a></p>

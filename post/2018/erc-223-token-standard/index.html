@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1" />
+<meta name="generator" content="Hugo 0.60.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2018/erc-223-token-standard/" />
@@ -335,7 +335,7 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#方法">方法</a>
+    <li><a href="#heading3">方法</a>
       <ul>
         <li><a href="#totalsupply">totalSupply</a></li>
         <li><a href="#name">name</a></li>
@@ -346,13 +346,13 @@ if (!doNotTrack) {
         <li><a href="#transferaddress-uint-bytes">transfer(address, uint, bytes)</a></li>
       </ul>
     </li>
-    <li><a href="#事件">事件</a>
+    <li><a href="#heading4">事件</a>
       <ul>
         <li><a href="#transfer">Transfer</a></li>
       </ul>
     </li>
-    <li><a href="#contract合约和tokens-代币-一起工作">Contract合约和tokens 代币 一起工作</a></li>
-    <li><a href="#推荐的实现">推荐的实现</a></li>
+    <li><a href="#contracttokens--">Contract合约和tokens 代币 一起工作</a></li>
+    <li><a href="#heading5">推荐的实现</a></li>
   </ul>
 </nav>
   </div>
@@ -361,9 +361,9 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>翻译自 <a href="https://github.com/ethereum/EIPs/issues/223">https://github.com/ethereum/EIPs/issues/223</a></p>
-<h1 id="抽象">抽象</h1>
+<h1 id="heading">抽象</h1>
 <p>以下描述了标准代币合约函数和特定的代币,这样的实现代币可以避免意外发送到合约,可以是代币事物表现的像其他事务一样。</p>
-<h1 id="动机">动机</h1>
+<h1 id="heading1">动机</h1>
 <p>以下描述了ER223解决的ERC20代币规范的问题:
 ERC20代币规范会导致退出用户的金钱损失.主要的问题是无法处理传入的ERC20事务,该事务是指通过 ERC20规范中 <code>transfer</code> 函数执行的。</p>
 <p>如果你发送100个 ETH到一个不支持Ether的合约地址,那么他会拒绝交易并没有什么坏事发生。
@@ -375,9 +375,9 @@ ERC20代币规范会导致退出用户的金钱损失.主要的问题是无法�
 <p>这些讲允许合约处理传入的代币事务并且阻止意外发送的和合约接受的代币(卡在余额中)</p>
 <p>例如,去中心化的交易不再需要用户调用 <code>approve</code> 然后调用 <code>deposit</code>(内部调用 <code>transferFrom</code>用来取出批准的代币). 代币事务会在交易合约中自动处理.</p>
 <p>这里最重要的是在执行合约时调用 <code>tokenFallback</code></p>
-<h1 id="规范">规范</h1>
-<h1 id="代币tokens">代币(Tokens)</h1>
-<h2 id="方法">方法</h2>
+<h1 id="heading2">规范</h1>
+<h1 id="tokens">代币(Tokens)</h1>
+<h2 id="heading3">方法</h2>
 <p>注意:合约开发者如果想他们的合约支持特定代币,那么他们必须实现<code>tokenFallback</code></p>
 <p>如果接受者没有实现 <code>tokenFallback</code>函数,考虑合约不是设计用来支持代币,那么交易必定失败并且不会有代币被转账.
 类比以太币交易,当发送以太币到一个没有实现 <code>function() payable</code>的合约地址,也是会失败。</p>
@@ -405,16 +405,16 @@ ERC20代币规范会导致退出用户的金钱损失.主要的问题是无法�
 <h3 id="transferaddress-uint-bytes">transfer(address, uint, bytes)</h3>
 <p><code>function transfer(address _to, uint _value, bytes _data) returns (bool)</code></p>
 <p>该函数总是在某人想转移代币的时候调用。</p>
-<h2 id="事件">事件</h2>
+<h2 id="heading4">事件</h2>
 <h3 id="transfer">Transfer</h3>
 <p><code>event Transfer(address indexed _from, address indexed _to, uint256 indexed _value, bytes _data)</code></p>
 <p>转移代币时候触发.</p>
-<h2 id="contract合约和tokens-代币-一起工作">Contract合约和tokens 代币 一起工作</h2>
+<h2 id="contracttokens--">Contract合约和tokens 代币 一起工作</h2>
 <p><code>function tokenFallback(address _from, uint _value, bytes _data)</code></p>
 <p>一个处理代币转移的函数,当代币持有者发送代币时候由代币合约来调用.
 <code>_from</code>指代币发送者 <code>_value</code>是收入代币的数量,<code>_data</code>是附加数据,类似于以太币交易中的<code>msg.data</code>.
 它类似于Ether事务的fallback功能，并且什么也不返回。</p>
-<h2 id="推荐的实现">推荐的实现</h2>
+<h2 id="heading5">推荐的实现</h2>
 <p>这是一个强烈推荐的ERC223的代币实现 <a href="https://github.com/Dexaran/ERC23-tokens/tree/Recommended">https://github.com/Dexaran/ERC23-tokens/tree/Recommended</a></p>
 
     </div>

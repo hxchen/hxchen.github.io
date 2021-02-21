@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="北斗" />
-  <meta name="description" content="一、官网下载 Tomcat ，然后上传解压到EC2主机上，我这解压到： 1 /usr/local/apache-tomcat-7.0.47 二、添加环境变量。此次EC2主机是自带JRE的，位置是： 1 /usr/lib/jvm 我只需在/etc/p" />
+  <meta name="description" content="一、官网下载 Tomcat ，然后上传解压到EC2主机上，我这解压到： /usr/local/apache-tomcat-7.0.47 二、添加环境变量。此次EC2主机是自带JRE的，位置是： /usr/lib/jvm 我只需在/etc/pro" />
 
   <meta name="keywords" content="技术, 程序员, 码农, 程序猿, 分享, java, python, 3afun" />
 
@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1" />
+<meta name="generator" content="Hugo 0.60.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2013/aws-ec2%E4%B8%8A%E9%85%8D%E7%BD%AEtomcat/" />
@@ -60,22 +60,22 @@
 
 
 <meta property="og:title" content="AWS EC2上配置Tomcat" />
-<meta property="og:description" content="一、官网下载 Tomcat ，然后上传解压到EC2主机上，我这解压到： 1 /usr/local/apache-tomcat-7.0.47 二、添加环境变量。此次EC2主机是自带JRE的，位置是： 1 /usr/lib/jvm 我只需在/etc/p" />
+<meta property="og:description" content="一、官网下载 Tomcat ，然后上传解压到EC2主机上，我这解压到： /usr/local/apache-tomcat-7.0.47 二、添加环境变量。此次EC2主机是自带JRE的，位置是： /usr/lib/jvm 我只需在/etc/pro" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.3afun.com/post/2013/aws-ec2%E4%B8%8A%E9%85%8D%E7%BD%AEtomcat/" />
 <meta property="article:published_time" content="2013-11-07T14:25:00+08:00" />
 <meta property="article:modified_time" content="2013-11-07T14:25:00+08:00" />
 <meta itemprop="name" content="AWS EC2上配置Tomcat">
-<meta itemprop="description" content="一、官网下载 Tomcat ，然后上传解压到EC2主机上，我这解压到： 1 /usr/local/apache-tomcat-7.0.47 二、添加环境变量。此次EC2主机是自带JRE的，位置是： 1 /usr/lib/jvm 我只需在/etc/p">
+<meta itemprop="description" content="一、官网下载 Tomcat ，然后上传解压到EC2主机上，我这解压到： /usr/local/apache-tomcat-7.0.47 二、添加环境变量。此次EC2主机是自带JRE的，位置是： /usr/lib/jvm 我只需在/etc/pro">
 <meta itemprop="datePublished" content="2013-11-07T14:25:00&#43;08:00" />
 <meta itemprop="dateModified" content="2013-11-07T14:25:00&#43;08:00" />
-<meta itemprop="wordCount" content="243">
+<meta itemprop="wordCount" content="234">
 
 
 
 <meta itemprop="keywords" content="Tomcat,服务器," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AWS EC2上配置Tomcat"/>
-<meta name="twitter:description" content="一、官网下载 Tomcat ，然后上传解压到EC2主机上，我这解压到： 1 /usr/local/apache-tomcat-7.0.47 二、添加环境变量。此次EC2主机是自带JRE的，位置是： 1 /usr/lib/jvm 我只需在/etc/p"/>
+<meta name="twitter:description" content="一、官网下载 Tomcat ，然后上传解压到EC2主机上，我这解压到： /usr/local/apache-tomcat-7.0.47 二、添加环境变量。此次EC2主机是自带JRE的，位置是： /usr/lib/jvm 我只需在/etc/pro"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -317,7 +317,7 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/tomcat/"> Tomcat </a>
             
           </div>
-        <span class="more-meta"> 约 243 字 </span>
+        <span class="more-meta"> 约 234 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -340,59 +340,20 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>一、官网下载 <a href="http://ftp.kddilabs.jp/infosystems/apache/tomcat/tomcat-7/v7.0.47/bin/apache-tomcat-7.0.47.tar.gz">Tomcat</a> ，然后上传解压到EC2主机上，我这解压到：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">/usr/local/apache-tomcat-7.0.47
-</code></pre></td></tr></table>
-</div>
-</div><p>二、添加环境变量。此次EC2主机是自带JRE的，位置是：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">/usr/lib/jvm
-</code></pre></td></tr></table>
-</div>
-</div><p>我只需在/etc/profile里添加</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">JRE_HOME=$JAVA_HOME;
+<pre><code>/usr/local/apache-tomcat-7.0.47
+</code></pre><p>二、添加环境变量。此次EC2主机是自带JRE的，位置是：</p>
+<pre><code>/usr/lib/jvm
+</code></pre><p>我只需在/etc/profile里添加</p>
+<pre><code>JRE_HOME=$JAVA_HOME;
 export JRE_HOME
 PATH=$JAVA_HOME/bin:$PATH;
 export PATH
-</code></pre></td></tr></table>
-</div>
-</div><p>运行source命令使其生效：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">source /etc/profile
-</code></pre></td></tr></table>
-</div>
-</div><p>三、增加tomcat用户。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;role rolename=&#34;manager-gui&#34;/&gt;
-&lt;user username=&#34;admin&#34; password=&#34;admin&#34; roles=&#34;manager-gui&#34;/&gt;
-</code></pre></td></tr></table>
-</div>
-</div><p>四、修改tomcat 端口号8080为80。</p>
+</code></pre><p>运行source命令使其生效：</p>
+<pre><code>source /etc/profile
+</code></pre><p>三、增加tomcat用户。</p>
+<pre><code>&lt;role rolename=&quot;manager-gui&quot;/&gt;
+&lt;user username=&quot;admin&quot; password=&quot;admin&quot; roles=&quot;manager-gui&quot;/&gt;
+</code></pre><p>四、修改tomcat 端口号8080为80。</p>
 <p>五、EC2 控制台Security Groups，选择group，inbound里增加80端口。（默认只开启22端口供SSH连接）。</p>
 <p>六、启动Tomcat，浏览器访问Public DNS地址即可。</p>
 
@@ -486,7 +447,7 @@ export PATH
         id: 'AWS EC2上配置Tomcat.md',
         title: 'AWS EC2上配置Tomcat',
         link: decodeURI(location.href),
-        desc: '一、官网下载 Tomcat ，然后上传解压到EC2主机上，我这解压到： 1 \/usr\/local\/apache-tomcat-7.0.47 二、添加环境变量。此次EC2主机是自带JRE的，位置是： 1 \/usr\/lib\/jvm 我只需在\/etc\/p',
+        desc: '一、官网下载 Tomcat ，然后上传解压到EC2主机上，我这解压到： \/usr\/local\/apache-tomcat-7.0.47 二、添加环境变量。此次EC2主机是自带JRE的，位置是： \/usr\/lib\/jvm 我只需在\/etc\/pro',
         owner: 'hxchen',
         repo: 'comments',
         oauth: {

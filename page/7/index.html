@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1" />
+<meta name="generator" content="Hugo 0.60.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/" />
@@ -353,7 +353,7 @@ if (!doNotTrack) {
           <a href="https://www.3afun.com/categories/android/"> Android </a>
           
         </div>
-      <span class="more-meta"> 约 294 字 </span>
+      <span class="more-meta"> 约 251 字 </span>
       <span class="more-meta"> 预计阅读 1 分钟 </span>
       
       
@@ -389,7 +389,7 @@ if (!doNotTrack) {
           <a href="https://www.3afun.com/categories/android/"> Android </a>
           
         </div>
-      <span class="more-meta"> 约 61 字 </span>
+      <span class="more-meta"> 约 59 字 </span>
       <span class="more-meta"> 预计阅读 1 分钟 </span>
       
       
@@ -400,7 +400,7 @@ if (!doNotTrack) {
   <div class="post-content">
     
     <div class="post-summary">
-      ViewPager除了滑动翻页，有时我们需要增加按钮翻页。 向前翻页可以在按钮事件里调用 1 viewPager.arrowScroll(View.FOCUS_LEFT); 向后翻页可以在按钮事件里调用 1 viewPager.arrowScroll(View.FOCUS_RIGHT);
+      ViewPager除了滑动翻页，有时我们需要增加按钮翻页。 向前翻页可以在按钮事件里调用 viewPager.arrowScroll(View.FOCUS_LEFT); 向后翻页可以在按钮事件里调用 viewPager.arrowScroll(View.FOCUS_RIGHT);
     </div>
     <div class="read-more">
       <a href="/post/2015/android-%E6%8C%89%E9%92%AE%E6%8E%A7%E5%88%B6viewpager%E5%B7%A6%E5%8F%B3%E7%BF%BB%E9%A1%B5/" class="read-more-link">阅读全文</a>
@@ -461,7 +461,7 @@ if (!doNotTrack) {
           <a href="https://www.3afun.com/categories/android/"> Android </a>
           
         </div>
-      <span class="more-meta"> 约 2121 字 </span>
+      <span class="more-meta"> 约 2085 字 </span>
       <span class="more-meta"> 预计阅读 5 分钟 </span>
       
       
@@ -497,7 +497,7 @@ if (!doNotTrack) {
           <a href="https://www.3afun.com/categories/ios/"> IOS </a>
           
         </div>
-      <span class="more-meta"> 约 150 字 </span>
+      <span class="more-meta"> 约 148 字 </span>
       <span class="more-meta"> 预计阅读 1 分钟 </span>
       
       
@@ -570,7 +570,7 @@ if (!doNotTrack) {
           <a href="https://www.3afun.com/categories/gradle/"> Gradle </a>
           
         </div>
-      <span class="more-meta"> 约 99 字 </span>
+      <span class="more-meta"> 约 93 字 </span>
       <span class="more-meta"> 预计阅读 1 分钟 </span>
       
       
@@ -606,7 +606,7 @@ if (!doNotTrack) {
           <a href="https://www.3afun.com/categories/android/"> Android </a>
           
         </div>
-      <span class="more-meta"> 约 284 字 </span>
+      <span class="more-meta"> 约 223 字 </span>
       <span class="more-meta"> 预计阅读 1 分钟 </span>
       
       
@@ -617,7 +617,7 @@ if (!doNotTrack) {
   <div class="post-content">
     
     <div class="post-summary">
-      思路主要是在onResume事件里处理按钮事件并进行判断。 如果使用了WebView则在onKey里处理返回按钮事件。 1 2 3 4 5 6 7 8 9 10 11 12
+      思路主要是在onResume事件里处理按钮事件并进行判断。 如果使用了WebView则在onKey里处理返回按钮事件。 import android.os.Bundle; import android.support.annotation.Nullable; import android.support.v4.app.Fragment; import android.support.v4.app.FragmentManager; import android.view.KeyEvent; import android.view.LayoutInflater;
     </div>
     <div class="read-more">
       <a href="/post/2015/fragment%E6%88%96webview%E9%87%8C%E7%9B%91%E5%90%AC%E8%BF%94%E5%9B%9E%E9%94%AE/" class="read-more-link">阅读全文</a>
@@ -663,6 +663,46 @@ if (!doNotTrack) {
 </article>
 
   
+<<<<<<< HEAD
+=======
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/post/2015/nodejs%E4%BD%BF%E7%94%A8chrome%E4%BC%AA%E8%A3%85%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A8ua/">Nodejs使用Chrome伪装微信浏览器UA</a>
+    </h1>
+    
+    <div class="post-meta">
+      <time datetime="2015-02-06" class="post-time">
+        2015-02-06
+      </time>
+      <div class="post-category">
+          <a href="https://www.3afun.com/categories/nodejs/"> NodeJS </a>
+          <a href="https://www.3afun.com/categories/web%E5%89%8D%E7%AB%AF/"> Web前端 </a>
+          
+        </div>
+      <span class="more-meta"> 约 208 字 </span>
+      <span class="more-meta"> 预计阅读 1 分钟 </span>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      一、获取手机在微信内置浏览器的User-Agent var http = require('http'); http.createServer(function(req, res) { res.writeHead(200, {'Content-type' : 'text/html'}); res.write('user-agent='+req.headers[&quot;user-agent&quot;]); console.log(req.headers[&quot;user-agent&quot;]); res.end(); }).listen(3000); 在这里我获取我手机的是 Mozilla/5.0 (iPhone; CPU iPhone OS 7_1_2 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Mob ile/11D257 MicroMessenger/6.1 NetType/WIFI 二
+    </div>
+    <div class="read-more">
+      <a href="/post/2015/nodejs%E4%BD%BF%E7%94%A8chrome%E4%BC%AA%E8%A3%85%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A8ua/" class="read-more-link">阅读全文</a>
+    </div>
+    
+  </div>
+</article>
+
+  
+>>>>>>> 6c5884084eaf256789ae7e803937b2a438727432
 </section>
 
 
