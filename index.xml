@@ -1102,7 +1102,17 @@ IMPORTANT NOTES:
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;通配符证书会在&lt;code&gt;/etc/letsencrypt/live/3afun.com&lt;/code&gt; 目录下给我们生成。&lt;/p&gt;
-&lt;h2 id=&#34;六nginx-配置使用证书&#34;&gt;六、Nginx 配置使用证书&lt;/h2&gt;
+&lt;h4 id=&#34;2020年07月03日更新&#34;&gt;2020年07月03日更新:&lt;/h4&gt;
+&lt;p&gt;申请自动验证的证书，不需要TXT验证。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;certbot-auto certonly --email helloworld.vip@gmail.com --agree-tos --no-eff-email  -d www.3afun.com
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;六nginx-配置使用证书&#34;&gt;六、Nginx 配置使用证书&lt;/h2&gt;
 &lt;p&gt;Nginx里设置证书和Key文件即可,简约代码如下:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
