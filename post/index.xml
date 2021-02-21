@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Wed, 11 Mar 2020 17:20:56 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 28 Jan 2021 18:00:14 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Dubbo教程</title>
+      <link>https://www.3afun.com/post/2021/dubbo%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Thu, 28 Jan 2021 18:00:14 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2021/dubbo%E6%95%99%E7%A8%8B/</guid>
+      <description>一、Dubbo是什么 Dubbo(读音[ˈdʌbəʊ])是阿里巴巴公司开源的（现在已经捐赠给Apache）一个高性能轻量级的Java RPC框架</description>
+    </item>
     
     <item>
       <title>利用wget抓取网站模板</title>
@@ -180,15 +189,6 @@
       
       <guid>https://www.3afun.com/post/2018/syncing-a-fork/</guid>
       <description>有时我们fork一个项目到我们账号下,但是又想同步更新原先的内容,怎么办?别着急 remote upstream可以来搞定。 1.先使用git remote -v查看远程</description>
-    </item>
-    
-    <item>
-      <title>远程调用以太坊智能合约</title>
-      <link>https://www.3afun.com/post/2018/%E8%BF%9C%E7%A8%8B%E8%B0%83%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/</link>
-      <pubDate>Sat, 21 Apr 2018 14:27:54 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2018/%E8%BF%9C%E7%A8%8B%E8%B0%83%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/</guid>
-      <description>前面我们学习了部署以太坊合约,我们的操作都是在钱包中完成的。 然而当我们面对我们的用户时我们不可能说叫他们安装钱包,然后学习这些复杂操作。 对于</description>
     </item>
     
   </channel>

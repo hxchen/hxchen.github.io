@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dubbo on 我不是帅才</title>
+    <link>https://www.3afun.com/categories/dubbo/</link>
+    <description>Recent content in Dubbo on 我不是帅才</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright 3AFun</copyright>
+    <lastBuildDate>Thu, 28 Jan 2021 18:00:14 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.3afun.com/categories/dubbo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dubbo教程</title>
+      <link>https://www.3afun.com/post/2021/dubbo%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Thu, 28 Jan 2021 18:00:14 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2021/dubbo%E6%95%99%E7%A8%8B/</guid>
+      <description>一、Dubbo是什么 Dubbo(读音[ˈdʌbəʊ])是阿里巴巴公司开源的（现在已经捐赠给Apache）一个高性能轻量级的Java RPC框架</description>
+    </item>
+    
+  </channel>
+</rss>
