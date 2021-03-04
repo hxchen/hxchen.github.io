@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="北斗" />
-  <meta name="description" content="需要一行一行复制安装 apt-get install squid curl https://raw.githubusercontent.com/hxchen/proxy/master/squid.conf &amp;gt; /etc/squid3/squid.conf mkdir -p /var/cache/squid chmod -R 777 /var/cache/squid service squid3 stop squid3 -z service squid3 restart" />
+  <meta name="description" content="需要一行一行复制安装 1 2 3 4 5 6 7 apt-get install squid curl https://raw.githubusercontent.com/hxchen/proxy/master/squid.conf &amp;gt; /etc/squid3/squid.conf mkdir -p /var/cache/squid chmod -R 777 /var/cache/squid service squid3 stop squid3 -z service squid3 restart" />
 
   <meta name="keywords" content="技术, 程序员, 码农, 程序猿, 分享, java, python, 3afun" />
 
@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2016/ubuntu14-%E6%90%AD%E5%BB%BAsquid3%E4%BB%A3%E7%90%86/" />
@@ -60,22 +60,22 @@
 
 
 <meta property="og:title" content="Ubuntu14 搭建Squid3代理 " />
-<meta property="og:description" content="需要一行一行复制安装 apt-get install squid curl https://raw.githubusercontent.com/hxchen/proxy/master/squid.conf &gt; /etc/squid3/squid.conf mkdir -p /var/cache/squid chmod -R 777 /var/cache/squid service squid3 stop squid3 -z service squid3 restart" />
+<meta property="og:description" content="需要一行一行复制安装 1 2 3 4 5 6 7 apt-get install squid curl https://raw.githubusercontent.com/hxchen/proxy/master/squid.conf &gt; /etc/squid3/squid.conf mkdir -p /var/cache/squid chmod -R 777 /var/cache/squid service squid3 stop squid3 -z service squid3 restart" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.3afun.com/post/2016/ubuntu14-%E6%90%AD%E5%BB%BAsquid3%E4%BB%A3%E7%90%86/" />
 <meta property="article:published_time" content="2016-06-14T17:47:00+08:00" />
 <meta property="article:modified_time" content="2016-06-14T17:47:00+08:00" />
 <meta itemprop="name" content="Ubuntu14 搭建Squid3代理 ">
-<meta itemprop="description" content="需要一行一行复制安装 apt-get install squid curl https://raw.githubusercontent.com/hxchen/proxy/master/squid.conf &gt; /etc/squid3/squid.conf mkdir -p /var/cache/squid chmod -R 777 /var/cache/squid service squid3 stop squid3 -z service squid3 restart">
+<meta itemprop="description" content="需要一行一行复制安装 1 2 3 4 5 6 7 apt-get install squid curl https://raw.githubusercontent.com/hxchen/proxy/master/squid.conf &gt; /etc/squid3/squid.conf mkdir -p /var/cache/squid chmod -R 777 /var/cache/squid service squid3 stop squid3 -z service squid3 restart">
 <meta itemprop="datePublished" content="2016-06-14T17:47:00&#43;08:00" />
 <meta itemprop="dateModified" content="2016-06-14T17:47:00&#43;08:00" />
-<meta itemprop="wordCount" content="32">
+<meta itemprop="wordCount" content="39">
 
 
 
 <meta itemprop="keywords" content="Squid," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Ubuntu14 搭建Squid3代理 "/>
-<meta name="twitter:description" content="需要一行一行复制安装 apt-get install squid curl https://raw.githubusercontent.com/hxchen/proxy/master/squid.conf &gt; /etc/squid3/squid.conf mkdir -p /var/cache/squid chmod -R 777 /var/cache/squid service squid3 stop squid3 -z service squid3 restart"/>
+<meta name="twitter:description" content="需要一行一行复制安装 1 2 3 4 5 6 7 apt-get install squid curl https://raw.githubusercontent.com/hxchen/proxy/master/squid.conf &gt; /etc/squid3/squid.conf mkdir -p /var/cache/squid chmod -R 777 /var/cache/squid service squid3 stop squid3 -z service squid3 restart"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -316,7 +316,7 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/%E6%9D%82/"> 杂 </a>
             
           </div>
-        <span class="more-meta"> 约 32 字 </span>
+        <span class="more-meta"> 约 39 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -339,14 +339,27 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>需要一行一行复制安装</p>
-<pre><code>apt-get install squid
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">apt-get install squid
 curl https://raw.githubusercontent.com/hxchen/proxy/master/squid.conf &gt; /etc/squid3/squid.conf
 mkdir -p /var/cache/squid
 chmod -R 777 /var/cache/squid
 service squid3 stop
 squid3 -z
 service squid3 restart
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
@@ -436,7 +449,7 @@ service squid3 restart
         id: 'Ubuntu14 搭建Squid3代理.md',
         title: 'Ubuntu14 搭建Squid3代理 ',
         link: decodeURI(location.href),
-        desc: '需要一行一行复制安装 apt-get install squid curl https:\/\/raw.githubusercontent.com\/hxchen\/proxy\/master\/squid.conf \x26gt; \/etc\/squid3\/squid.conf mkdir -p \/var\/cache\/squid chmod -R 777 \/var\/cache\/squid service squid3 stop squid3 -z service squid3 restart',
+        desc: '需要一行一行复制安装 1 2 3 4 5 6 7 apt-get install squid curl https:\/\/raw.githubusercontent.com\/hxchen\/proxy\/master\/squid.conf \x26gt; \/etc\/squid3\/squid.conf mkdir -p \/var\/cache\/squid chmod -R 777 \/var\/cache\/squid service squid3 stop squid3 -z service squid3 restart',
         owner: 'hxchen',
         repo: 'comments',
         oauth: {

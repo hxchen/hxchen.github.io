@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Thu, 28 Jan 2021 18:00:14 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 04 Mar 2021 22:49:48 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>brew update更新慢的解决办法</title>
+      <link>https://www.3afun.com/post/2021/brew_update%E6%9B%B4%E6%96%B0%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Thu, 04 Mar 2021 22:49:48 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2021/brew_update%E6%9B%B4%E6%96%B0%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <description>默认镜像源在github上，国内可更新为中科大源，速度非常快 1 2 3 4 5 6 7 8 9 10 11 # 替换 brew cd &amp;#34;$(brew --repo)&amp;#34; git remote set-url origin https://mirrors.ustc.edu.cn/brew.git # 替换 homebrew-cor cd &amp;#34;$(brew --repo)/Library/Taps/homebrew/homebrew-core&amp;#34; git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git # 替换 homebrew-cask cd</description>
+    </item>
     
     <item>
       <title>Dubbo教程</title>
@@ -180,15 +189,6 @@
       
       <guid>https://www.3afun.com/post/2018/working-with-smart-contracts-with-java-smart-contract-wrappers/</guid>
       <description>本章节我们将学习如何从智能合约代码自动生成与java交换的java代码。 首先我们需要安装Solidity编译器 安装Solidity编译器 1 sudo</description>
-    </item>
-    
-    <item>
-      <title>如何同步一个fork</title>
-      <link>https://www.3afun.com/post/2018/syncing-a-fork/</link>
-      <pubDate>Tue, 24 Apr 2018 22:23:11 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2018/syncing-a-fork/</guid>
-      <description>有时我们fork一个项目到我们账号下,但是又想同步更新原先的内容,怎么办?别着急 remote upstream可以来搞定。 1.先使用git remote -v查看远程</description>
     </item>
     
   </channel>

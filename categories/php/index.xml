@@ -17,7 +17,7 @@
       <pubDate>Thu, 10 Aug 2017 11:32:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2017/%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%9Dcomposer-%E5%87%BA%E7%8F%BE-command-not-found-%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
-      <description>想要全局安装composer，按照网上的方法下载安装： curl -sS https://getcomposer.org/installer | php mv composer.phar /usr/local/bin/composer 然后检查结果 composer -V 会出现，bash: composer: command not found Installation on Unixes (Ubuntu, Debian, CentOS, 等操作系统上) 如</description>
+      <description>想要全局安装composer，按照网上的方法下载安装： 1 2 curl -sS https://getcomposer.org/installer | php mv composer.phar /usr/local/bin/composer 然后检查结果 1 composer -V 会出现，bash: composer: command not found Installation on Unixes (Ubuntu, Debian, CentOS, 等操作系统</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Tue, 22 Apr 2014 17:27:27 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2014/yum%E6%96%B9%E5%BC%8F%E5%AE%89%E8%A3%85php/</guid>
-      <description>1、安装 yum install php php-mysql php-fpm 2、启动 service php-fpm start</description>
+      <description>1、安装 1 yum install php php-mysql php-fpm 2、启动 1 service php-fpm start</description>
     </item>
     
   </channel>

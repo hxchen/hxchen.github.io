@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2017/tomcat8-%E5%A4%9A%E5%AE%9E%E4%BE%8B-unix-daemon-%E6%A8%A1%E5%BC%8F/" />
@@ -69,7 +69,7 @@
 <meta itemprop="description" content="一、事前准备 Tomcat8（版本8.5.20） 下载地址 JDK8（版本号1.8.0_144） 下载地址 二、配置部署 目录说明 jdk 安装目录 /usr/java/jdk1.8.0_144 tomcat 安装目录">
 <meta itemprop="datePublished" content="2017-09-11T18:47:00&#43;08:00" />
 <meta itemprop="dateModified" content="2017-09-11T18:47:00&#43;08:00" />
-<meta itemprop="wordCount" content="372">
+<meta itemprop="wordCount" content="411">
 
 
 
@@ -316,7 +316,7 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
             
           </div>
-        <span class="more-meta"> 约 372 字 </span>
+        <span class="more-meta"> 约 411 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -336,8 +336,8 @@ if (!doNotTrack) {
   <ul>
     <li>
       <ul>
-        <li><a href="#heading2">目录说明</a></li>
-        <li><a href="#tomcat">tomcat安装</a></li>
+        <li><a href="#目录说明">目录说明</a></li>
+        <li><a href="#tomcat安装">tomcat安装</a></li>
       </ul>
     </li>
   </ul>
@@ -347,11 +347,11 @@ if (!doNotTrack) {
 
     
     <div class="post-content">
-      <h1 id="heading">一、事前准备</h1>
+      <h1 id="一事前准备">一、事前准备</h1>
 <p>Tomcat8（版本8.5.20） <a href="http://apache.spinellicreations.com/tomcat/tomcat-8/v8.5.20/bin/apache-tomcat-8.5.20.tar.gz">下载地址</a></p>
 <p>JDK8（版本号1.8.0_144） <a href="http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.tar.gz">下载地址</a></p>
-<h1 id="heading1">二、配置部署</h1>
-<h3 id="heading2">目录说明</h3>
+<h1 id="二配置部署">二、配置部署</h1>
+<h3 id="目录说明">目录说明</h3>
 <ul>
 <li>jdk 安装目录</li>
 </ul>
@@ -368,55 +368,118 @@ if (!doNotTrack) {
 <li>tomcat实例目录</li>
 </ul>
 <p><em>/data/web/tomcat8_forum8082</em></p>
-<h3 id="tomcat">tomcat安装</h3>
+<h3 id="tomcat安装">tomcat安装</h3>
 <p>1.生成jsvc</p>
-<pre><code>cd /usr/tomcat/apache-tomcat-8.5.20/bin
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">cd /usr/tomcat/apache-tomcat-8.5.20/bin
 tar xvfz commons-daemon-native.tar.gz
 cd commons-daemon-1.0.x-native-src/unix
 ./configure --with-java=/usr/java/jdk1.8.0_144
 make
 cp jsvc ../..
 cd ../..
-</code></pre><p>2.复制tomcat 安装目录的conf 配置文件到实例目录conf</p>
-<pre><code>cp /usr/tomcat/apache-tomcat-8.5.20/conf /data/web/tomcat8_forum8082
-</code></pre><p>3.修改相应端口号，此处使用8082.</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>2.复制tomcat 安装目录的conf 配置文件到实例目录conf</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">cp /usr/tomcat/apache-tomcat-8.5.20/conf /data/web/tomcat8_forum8082
+</code></pre></td></tr></table>
+</div>
+</div><p>3.修改相应端口号，此处使用8082.</p>
 <p>4.在/data/web/tomcat8_forum8082目录下新建启动脚本</p>
 <p><em>startup.sh</em></p>
-<pre><code>#!/bin/bash
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
+</span><span class="cp"></span>
+<span class="nv">JRE_HOME</span><span class="o">=</span><span class="s2">&#34;/usr/java/jdk1.8.0_144&#34;</span>
+<span class="nv">JAVA_HOME</span><span class="o">=</span><span class="s2">&#34;/usr/java/jdk1.8.0_144&#34;</span>
+<span class="nv">SERVER_PATH</span><span class="o">=</span><span class="s2">&#34;/data/web&#34;</span>
+<span class="nv">LOGS_PATH</span><span class="o">=</span><span class="s2">&#34;/data/web/logs/forum&#34;</span>
+<span class="nv">CATALINA_HOME</span><span class="o">=</span><span class="s2">&#34;/usr/tomcat/apache-tomcat-8.5.20&#34;</span>
+<span class="nv">CATALINA_BASE</span><span class="o">=</span><span class="s2">&#34;/data/web/tomcat8_forum8082&#34;</span>
+<span class="nv">CATALINA_PID</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$SERVER_PATH</span><span class="s2">/tomcat8_forum8082/pid</span><span class="s2">&#34;</span>
+<span class="nv">JAVA_OPTS</span><span class="o">=</span><span class="s2">&#34;-Xms512m -Xmx512m &#34;</span>
+<span class="c1">#TOMCAT_USER=&#34;app100681811&#34;</span>
 
-JRE_HOME=&quot;/usr/java/jdk1.8.0_144&quot;
-JAVA_HOME=&quot;/usr/java/jdk1.8.0_144&quot;
-SERVER_PATH=&quot;/data/web&quot;
-LOGS_PATH=&quot;/data/web/logs/forum&quot;
-CATALINA_HOME=&quot;/usr/tomcat/apache-tomcat-8.5.20&quot;
-CATALINA_BASE=&quot;/data/web/tomcat8_forum8082&quot;
-CATALINA_PID=&quot;$SERVER_PATH/tomcat8_forum8082/pid&quot;
-JAVA_OPTS=&quot;-Xms512m -Xmx512m &quot;
-#TOMCAT_USER=&quot;app100681811&quot;
+<span class="c1">#export JAVA_HOME JRE_HOME LOGS_PATH CATALINA_HOME CATALINA_BASE</span>
+<span class="nb">export</span> JAVA_HOME JRE_HOME LOGS_PATH <span class="c1">#CATALINA_HOME CATALINA_BASE CATALINA_PID</span>
+<span class="nb">echo</span> <span class="s2">$&#34;tomcat8_forum8082 start&#34;</span>
+<span class="c1">#/usr/tomcat/apache-tomcat-8.5.20/bin/catalina.sh start</span>
+<span class="nb">export</span> <span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
 
-#export JAVA_HOME JRE_HOME LOGS_PATH CATALINA_HOME CATALINA_BASE
-export JAVA_HOME JRE_HOME LOGS_PATH #CATALINA_HOME CATALINA_BASE CATALINA_PID
-echo $&quot;tomcat8_forum8082 start&quot;
-#/usr/tomcat/apache-tomcat-8.5.20/bin/catalina.sh start
-export LANG=en_US.UTF-8
-
-cd $CATALINA_HOME
-./bin/jsvc \
-    -classpath $CATALINA_HOME/bin/bootstrap.jar:$CATALINA_HOME/bin/tomcat-juli.jar \
-    -outfile $CATALINA_BASE/logs/catalina.out \
-    -errfile $CATALINA_BASE/logs/catalina.err \
-    -pidfile &quot;$CATALINA_PID&quot; \
-    -Dcatalina.home=$CATALINA_HOME \
-    -Dcatalina.base=$CATALINA_BASE \
-    -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager \
-    -Djava.util.logging.config.file=$CATALINA_BASE/conf/logging.properties \
-    org.apache.catalina.startup.Bootstrap
-</code></pre><p>关闭脚本</p>
+<span class="nb">cd</span> <span class="nv">$CATALINA_HOME</span>
+./bin/jsvc <span class="se">\
+</span><span class="se"></span>    -classpath <span class="nv">$CATALINA_HOME</span>/bin/bootstrap.jar:<span class="nv">$CATALINA_HOME</span>/bin/tomcat-juli.jar <span class="se">\
+</span><span class="se"></span>    -outfile <span class="nv">$CATALINA_BASE</span>/logs/catalina.out <span class="se">\
+</span><span class="se"></span>    -errfile <span class="nv">$CATALINA_BASE</span>/logs/catalina.err <span class="se">\
+</span><span class="se"></span>    -pidfile <span class="s2">&#34;</span><span class="nv">$CATALINA_PID</span><span class="s2">&#34;</span> <span class="se">\
+</span><span class="se"></span>    -Dcatalina.home<span class="o">=</span><span class="nv">$CATALINA_HOME</span> <span class="se">\
+</span><span class="se"></span>    -Dcatalina.base<span class="o">=</span><span class="nv">$CATALINA_BASE</span> <span class="se">\
+</span><span class="se"></span>    -Djava.util.logging.manager<span class="o">=</span>org.apache.juli.ClassLoaderLogManager <span class="se">\
+</span><span class="se"></span>    -Djava.util.logging.config.file<span class="o">=</span><span class="nv">$CATALINA_BASE</span>/conf/logging.properties <span class="se">\
+</span><span class="se"></span>    org.apache.catalina.startup.Bootstrap
+</code></pre></td></tr></table>
+</div>
+</div><p>关闭脚本</p>
 <p><em>shutdown.sh</em></p>
-<pre><code>echo $&quot;tomcat8_forum8082 stop&quot;
-ps aux | grep jsvc |grep '/web/tomcat8_forum8082'| grep -v 'grep' | awk -F ' ' '{print $2}' | xargs kill -s 2
-</code></pre><p>5.执行相应脚本，即可完成启动关闭。</p>
-<h1 id="-">三 、多实例模式</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">echo $&#34;tomcat8_forum8082 stop&#34;
+ps aux | grep jsvc |grep &#39;/web/tomcat8_forum8082&#39;| grep -v &#39;grep&#39; | awk -F &#39; &#39; &#39;{print $2}&#39; | xargs kill -s 2
+</code></pre></td></tr></table>
+</div>
+</div><p>5.执行相应脚本，即可完成启动关闭。</p>
+<h1 id="三-多实例模式">三 、多实例模式</h1>
 <p>多实例模式，只需要复制tomcat实例目录，修改相应配置文件为B项目地址，端口号等信息即可。</p>
 
     </div>

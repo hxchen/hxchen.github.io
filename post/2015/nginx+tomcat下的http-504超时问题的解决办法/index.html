@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="北斗" />
-  <meta name="description" content="1.前端选用JQuery框架下 延迟超时时间和错误处理 timeout: 6000, error: function (xmlHttpRequest, error) { console.info(xmlHttpRequest, error); } 2.后端Nginx增大缓存区 http { ... # set size to:8*128k fastcgi_buffers 8 128k; send_timeout 60; ... } 3.以上可以" />
+  <meta name="description" content="1.前端选用JQuery框架下 延迟超时时间和错误处理 1 2 3 4 timeout: 6000, error: function (xmlHttpRequest, error) { console.info(xmlHttpRequest, error); } 2.后端Nginx增大缓存区 1 2 3 4 5 6 7 http { ... # set size to:8*128k fastcgi_buffers 8" />
 
   <meta name="keywords" content="技术, 程序员, 码农, 程序猿, 分享, java, python, 3afun" />
 
@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2015/nginx&#43;tomcat%E4%B8%8B%E7%9A%84http-504%E8%B6%85%E6%97%B6%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" />
@@ -60,22 +60,22 @@
 
 
 <meta property="og:title" content="Nginx&#43;Tomcat下的Http 504超时问题的解决办法 " />
-<meta property="og:description" content="1.前端选用JQuery框架下 延迟超时时间和错误处理 timeout: 6000, error: function (xmlHttpRequest, error) { console.info(xmlHttpRequest, error); } 2.后端Nginx增大缓存区 http { ... # set size to:8*128k fastcgi_buffers 8 128k; send_timeout 60; ... } 3.以上可以" />
+<meta property="og:description" content="1.前端选用JQuery框架下 延迟超时时间和错误处理 1 2 3 4 timeout: 6000, error: function (xmlHttpRequest, error) { console.info(xmlHttpRequest, error); } 2.后端Nginx增大缓存区 1 2 3 4 5 6 7 http { ... # set size to:8*128k fastcgi_buffers 8" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.3afun.com/post/2015/nginx&#43;tomcat%E4%B8%8B%E7%9A%84http-504%E8%B6%85%E6%97%B6%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" />
 <meta property="article:published_time" content="2015-12-18T13:50:00+08:00" />
 <meta property="article:modified_time" content="2015-12-18T13:50:00+08:00" />
 <meta itemprop="name" content="Nginx&#43;Tomcat下的Http 504超时问题的解决办法 ">
-<meta itemprop="description" content="1.前端选用JQuery框架下 延迟超时时间和错误处理 timeout: 6000, error: function (xmlHttpRequest, error) { console.info(xmlHttpRequest, error); } 2.后端Nginx增大缓存区 http { ... # set size to:8*128k fastcgi_buffers 8 128k; send_timeout 60; ... } 3.以上可以">
+<meta itemprop="description" content="1.前端选用JQuery框架下 延迟超时时间和错误处理 1 2 3 4 timeout: 6000, error: function (xmlHttpRequest, error) { console.info(xmlHttpRequest, error); } 2.后端Nginx增大缓存区 1 2 3 4 5 6 7 http { ... # set size to:8*128k fastcgi_buffers 8">
 <meta itemprop="datePublished" content="2015-12-18T13:50:00&#43;08:00" />
 <meta itemprop="dateModified" content="2015-12-18T13:50:00&#43;08:00" />
-<meta itemprop="wordCount" content="143">
+<meta itemprop="wordCount" content="154">
 
 
 
 <meta itemprop="keywords" content="Http,Nginx," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Nginx&#43;Tomcat下的Http 504超时问题的解决办法 "/>
-<meta name="twitter:description" content="1.前端选用JQuery框架下 延迟超时时间和错误处理 timeout: 6000, error: function (xmlHttpRequest, error) { console.info(xmlHttpRequest, error); } 2.后端Nginx增大缓存区 http { ... # set size to:8*128k fastcgi_buffers 8 128k; send_timeout 60; ... } 3.以上可以"/>
+<meta name="twitter:description" content="1.前端选用JQuery框架下 延迟超时时间和错误处理 1 2 3 4 timeout: 6000, error: function (xmlHttpRequest, error) { console.info(xmlHttpRequest, error); } 2.后端Nginx增大缓存区 1 2 3 4 5 6 7 http { ... # set size to:8*128k fastcgi_buffers 8"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -316,7 +316,7 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/nginx/"> Nginx </a>
             
           </div>
-        <span class="more-meta"> 约 143 字 </span>
+        <span class="more-meta"> 约 154 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -340,19 +340,42 @@ if (!doNotTrack) {
     <div class="post-content">
       <p>1.前端选用JQuery框架下</p>
 <p>延迟超时时间和错误处理</p>
-<pre><code>timeout: 6000,
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">timeout: 6000,
 error: function (xmlHttpRequest, error) {
     console.info(xmlHttpRequest, error);
 }
-</code></pre><p>2.后端Nginx增大缓存区</p>
-<pre><code>http {
+</code></pre></td></tr></table>
+</div>
+</div><p>2.后端Nginx增大缓存区</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">http {
 ...
 # set size to:8*128k
 fastcgi_buffers 8 128k;
 send_timeout 60;
 ...
 }
-</code></pre><p>3.以上可以解决，但是无法从根本上解决问题。真正要解决的是日志跟踪Http请求时浪费时间所在，究竟是读写数据库，还是访问第三方接口等等，找到短板，然后优化它！</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>3.以上可以解决，但是无法从根本上解决问题。真正要解决的是日志跟踪Http请求时浪费时间所在，究竟是读写数据库，还是访问第三方接口等等，找到短板，然后优化它！</p>
 
     </div>
 
@@ -444,7 +467,7 @@ send_timeout 60;
         id: 'Nginx\x2bTomcat下的Http 504超时问题的解决办法.md',
         title: 'Nginx\x2bTomcat下的Http 504超时问题的解决办法 ',
         link: decodeURI(location.href),
-        desc: '1.前端选用JQuery框架下 延迟超时时间和错误处理 timeout: 6000, error: function (xmlHttpRequest, error) { console.info(xmlHttpRequest, error); } 2.后端Nginx增大缓存区 http { ... # set size to:8*128k fastcgi_buffers 8 128k; send_timeout 60; ... } 3.以上可以',
+        desc: '1.前端选用JQuery框架下 延迟超时时间和错误处理 1 2 3 4 timeout: 6000, error: function (xmlHttpRequest, error) { console.info(xmlHttpRequest, error); } 2.后端Nginx增大缓存区 1 2 3 4 5 6 7 http { ... # set size to:8*128k fastcgi_buffers 8',
         owner: 'hxchen',
         repo: 'comments',
         oauth: {

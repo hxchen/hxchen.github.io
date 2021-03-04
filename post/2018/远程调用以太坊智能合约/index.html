@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2018/%E8%BF%9C%E7%A8%8B%E8%B0%83%E7%94%A8%E4%BB%A5%E5%A4%AA%E5%9D%8A%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/" />
@@ -69,7 +69,7 @@
 <meta itemprop="description" content="前面我们学习了部署以太坊合约,我们的操作都是在钱包中完成的。 然而当我们面对我们的用户时我们不可能说叫他们安装钱包,然后学习这些复杂操作。 对于">
 <meta itemprop="datePublished" content="2018-04-21T14:27:54&#43;08:00" />
 <meta itemprop="dateModified" content="2018-04-21T14:27:54&#43;08:00" />
-<meta itemprop="wordCount" content="1907">
+<meta itemprop="wordCount" content="1946">
 
 
 
@@ -317,7 +317,7 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"> 区块链 </a>
             
           </div>
-        <span class="more-meta"> 约 1907 字 </span>
+        <span class="more-meta"> 约 1946 字 </span>
           <span class="more-meta"> 预计阅读 4 分钟 </span>
 
         
@@ -335,13 +335,13 @@ if (!doNotTrack) {
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">安装</a></li>
-    <li><a href="#heading1">代码</a></li>
+    <li><a href="#安装">安装</a></li>
+    <li><a href="#代码">代码</a></li>
   </ul>
 
   <ul>
-    <li><a href="#heading2">合约准备:</a></li>
-    <li><a href="#heading3">开始</a>
+    <li><a href="#合约准备">合约准备:</a></li>
+    <li><a href="#开始">开始</a>
       <ul>
         <li><a href="#maven">Maven</a></li>
       </ul>
@@ -358,11 +358,18 @@ if (!doNotTrack) {
 <p>对于普通的用户来说,这太不友好了,那么我们就得继续封装,允许用户在我们的网站或者手机上动动手指就可以完成简单的操作。</p>
 <p>下面我们就学习一下如何用代码的方式替代钱包里的操作来调用智能合约。</p>
 <p>我们重点讲一下两种访问智能合约方式: <strong>web3.js</strong> 和 <strong>web3j</strong></p>
-<h1 id="web3js">web3.js方式</h1>
+<h1 id="web3js方式">web3.js方式</h1>
 <p>如果你还没有安装node js 安装,请先安装node js,此处不再赘述。</p>
-<h2 id="heading">安装</h2>
-<pre><code>npm install web3
-</code></pre><h2 id="heading1">代码</h2>
+<h2 id="安装">安装</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">npm install web3
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="代码">代码</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -399,23 +406,41 @@ if (!doNotTrack) {
 <p>第5、6行通过abi和address获取合约。</p>
 <p>最后我们以异步方式调用<code>balanceOf</code>方法,该方法使用了address来查询地址<code>0xc2298C3398584aaB380fafb564037D9Fb910e0a1</code>有多少个Cool Coin。</p>
 <p>大家可以通过执行该方法对比Mist钱包查询,自行验证余额是否一致。</p>
-<pre><code>node CoolCoin.js
-</code></pre><p>有关 web3 更多 API可参考 :
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">node CoolCoin.js
+</code></pre></td></tr></table>
+</div>
+</div><p>有关 web3 更多 API可参考 :
 <!-- raw HTML omitted -->这里<!-- raw HTML omitted --></p>
-<h1 id="web3j">web3j方式</h1>
-<h2 id="heading2">合约准备:</h2>
+<h1 id="web3j方式">web3j方式</h1>
+<h2 id="合约准备">合约准备:</h2>
 <p>由于java的远程调用合约需要一个编译后的二进制码,利用已经存在的合约时,我暂未找到如何获取这个二进制码,所以在此我又重新发布了一个新合约才能获取编译后的二进制码。</p>
 <p><img src="/media/images/2018/rpc02.png" alt="rpc"></p>
 <p><img src="/media/images/2018/rpc03.png" alt="rpc"></p>
-<h2 id="heading3">开始</h2>
+<h2 id="开始">开始</h2>
 <h3 id="maven">Maven</h3>
 <p>java 8:</p>
-<pre><code>&lt;dependency&gt;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;dependency&gt;
     &lt;groupId&gt;org.web3j&lt;/groupId&gt;
     &lt;artifactId&gt;core&lt;/artifactId&gt;
     &lt;version&gt;3.3.1&lt;/version&gt;
 &lt;/dependency&gt;
-</code></pre><p>CoolCoin.java</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>CoolCoin.java</p>
 <p>继承自Contract 并且对合约进行封装</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -537,7 +562,45 @@ if (!doNotTrack) {
 </div>
 </div><p>CoolCoinClient.java</p>
 <p>一个调用合约函数的测试文件</p>
-<pre><code>import com.threeafun.ethereum.contract.CoolCoin;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">import com.threeafun.ethereum.contract.CoolCoin;
 import org.web3j.crypto.Credentials;
 import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.RemoteCall;
@@ -552,18 +615,18 @@ public class CoolCoinClient{
 
     public static void main( String[] args ) throws Exception
     {
-        Web3j web3j = Web3j.build(new HttpService(&quot;http://localhost:8545&quot;));
+        Web3j web3j = Web3j.build(new HttpService(&#34;http://localhost:8545&#34;));
         try {
 
             String account = web3j.ethAccounts().send().getAccounts().get(0);
             Credentials credentials = Credentials.create(account);
             //合约地址
-            String address=&quot;0xd69A0599df3C0dd9ACAa0a9E47365730E9f4ee99&quot;;
+            String address=&#34;0xd69A0599df3C0dd9ACAa0a9E47365730E9f4ee99&#34;;
             CoolCoin coolCoin = CoolCoin.load(address,web3j,credentials, Contract.GAS_PRICE,Contract.Contract.GAS_LIMIT);
             //待查询余额的账户地址
-            String account2 = &quot;0xc2298C3398584aaB380fafb564037D9Fb910e0a1&quot;;
+            String account2 = &#34;0xc2298C3398584aaB380fafb564037D9Fb910e0a1&#34;;
             RemoteCall remoteCall= coolCoin.balanceOf(account);
-            System.out.println(&quot;返回结果:&quot;+remoteCall.send());
+            System.out.println(&#34;返回结果:&#34;+remoteCall.send());
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -571,7 +634,9 @@ public class CoolCoinClient{
     }
 
 }
-</code></pre><p>有关 web3j 更多可参考:<!-- raw HTML omitted -->web3j<!-- raw HTML omitted --></p>
+</code></pre></td></tr></table>
+</div>
+</div><p>有关 web3j 更多可参考:<!-- raw HTML omitted -->web3j<!-- raw HTML omitted --></p>
 <p>全文涉及到的代码, 在<!-- raw HTML omitted -->这里<!-- raw HTML omitted --></p>
 
     </div>

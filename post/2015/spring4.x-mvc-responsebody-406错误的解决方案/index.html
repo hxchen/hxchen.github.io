@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="北斗" />
-  <meta name="description" content="Spring MVC REST 风格API升级到Spring4.x（4.1.1.RELEASE）&#43;的时候报了406错误。结合网上方案，最终定位为： 1、pom文件 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.fasterxml.jackson.core&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jackson-core&amp;lt;/artifactId&amp;gt;" />
+  <meta name="description" content="Spring MVC REST 风格API升级到Spring4.x（4.1.1.RELEASE）&#43;的时候报了406错误。结合网上方案，最终定位为： 1、pom文件 1 2 3" />
 
   <meta name="keywords" content="技术, 程序员, 码农, 程序猿, 分享, java, python, 3afun" />
 
@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2015/spring4.x-mvc-responsebody-406%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" />
@@ -60,22 +60,22 @@
 
 
 <meta property="og:title" content="Spring4.x MVC responsebody 406错误的解决方案" />
-<meta property="og:description" content="Spring MVC REST 风格API升级到Spring4.x（4.1.1.RELEASE）&#43;的时候报了406错误。结合网上方案，最终定位为： 1、pom文件 &lt;dependency&gt; &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt; &lt;artifactId&gt;jackson-core&lt;/artifactId&gt;" />
+<meta property="og:description" content="Spring MVC REST 风格API升级到Spring4.x（4.1.1.RELEASE）&#43;的时候报了406错误。结合网上方案，最终定位为： 1、pom文件 1 2 3" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.3afun.com/post/2015/spring4.x-mvc-responsebody-406%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" />
 <meta property="article:published_time" content="2015-09-10T17:32:00+08:00" />
 <meta property="article:modified_time" content="2015-09-10T17:32:00+08:00" />
 <meta itemprop="name" content="Spring4.x MVC responsebody 406错误的解决方案">
-<meta itemprop="description" content="Spring MVC REST 风格API升级到Spring4.x（4.1.1.RELEASE）&#43;的时候报了406错误。结合网上方案，最终定位为： 1、pom文件 &lt;dependency&gt; &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt; &lt;artifactId&gt;jackson-core&lt;/artifactId&gt;">
+<meta itemprop="description" content="Spring MVC REST 风格API升级到Spring4.x（4.1.1.RELEASE）&#43;的时候报了406错误。结合网上方案，最终定位为： 1、pom文件 1 2 3">
 <meta itemprop="datePublished" content="2015-09-10T17:32:00&#43;08:00" />
 <meta itemprop="dateModified" content="2015-09-10T17:32:00&#43;08:00" />
-<meta itemprop="wordCount" content="277">
+<meta itemprop="wordCount" content="335">
 
 
 
 <meta itemprop="keywords" content="Spring MVC," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Spring4.x MVC responsebody 406错误的解决方案"/>
-<meta name="twitter:description" content="Spring MVC REST 风格API升级到Spring4.x（4.1.1.RELEASE）&#43;的时候报了406错误。结合网上方案，最终定位为： 1、pom文件 &lt;dependency&gt; &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt; &lt;artifactId&gt;jackson-core&lt;/artifactId&gt;"/>
+<meta name="twitter:description" content="Spring MVC REST 风格API升级到Spring4.x（4.1.1.RELEASE）&#43;的时候报了406错误。结合网上方案，最终定位为： 1、pom文件 1 2 3"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -316,7 +316,7 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
             
           </div>
-        <span class="more-meta"> 约 277 字 </span>
+        <span class="more-meta"> 约 335 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -340,7 +340,26 @@ if (!doNotTrack) {
     <div class="post-content">
       <p>Spring MVC REST 风格API升级到Spring4.x（4.1.1.RELEASE）+的时候报了406错误。结合网上方案，最终定位为：</p>
 <p>1、pom文件</p>
-<pre><code>&lt;dependency&gt;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;dependency&gt;
       &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
       &lt;artifactId&gt;jackson-core&lt;/artifactId&gt;
       &lt;version&gt;2.5.1&lt;/version&gt;
@@ -355,24 +374,67 @@ if (!doNotTrack) {
       &lt;artifactId&gt;jackson-annotations&lt;/artifactId&gt;
       &lt;version&gt;2.5.1&lt;/version&gt;
     &lt;/dependency&gt;
-</code></pre><p>2、配置文件</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
-xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
-xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
-xsi:schemaLocation=&quot;http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+</code></pre></td></tr></table>
+</div>
+</div><p>2、配置文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+&lt;beans xmlns=&#34;http://www.springframework.org/schema/beans&#34;
+xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
+xmlns:context=&#34;http://www.springframework.org/schema/context&#34;
+xmlns:mvc=&#34;http://www.springframework.org/schema/mvc&#34;
+xsi:schemaLocation=&#34;http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
-      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd&quot;&gt;
+      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd&#34;&gt;
 
 &lt;!-- Scans the classpath of this application for @Components to deploy as beans --&gt;
-&lt;context:component-scan base-package=&quot;com.qikuyx.qikuloginserver.controller&quot; /&gt;
-   &lt;mvc:annotation-driven content-negotiation-manager=&quot;contentNegotiationManager&quot; /&gt;
-   &lt;bean id=&quot;contentNegotiationManager&quot; class=&quot;org.springframework.web.accept.ContentNegotiationManagerFactoryBean&quot;&gt;
-      &lt;property name=&quot;favorPathExtension&quot; value=&quot;false&quot; /&gt;
-      &lt;property name=&quot;favorParameter&quot; value=&quot;false&quot; /&gt;
-      &lt;property name=&quot;ignoreAcceptHeader&quot; value=&quot;false&quot; /&gt;
-      &lt;property name=&quot;mediaTypes&quot; &gt;
+&lt;context:component-scan base-package=&#34;com.qikuyx.qikuloginserver.controller&#34; /&gt;
+   &lt;mvc:annotation-driven content-negotiation-manager=&#34;contentNegotiationManager&#34; /&gt;
+   &lt;bean id=&#34;contentNegotiationManager&#34; class=&#34;org.springframework.web.accept.ContentNegotiationManagerFactoryBean&#34;&gt;
+      &lt;property name=&#34;favorPathExtension&#34; value=&#34;false&#34; /&gt;
+      &lt;property name=&#34;favorParameter&#34; value=&#34;false&#34; /&gt;
+      &lt;property name=&#34;ignoreAcceptHeader&#34; value=&#34;false&#34; /&gt;
+      &lt;property name=&#34;mediaTypes&#34; &gt;
          &lt;value&gt;
 atom=application/atom+xml
             html=text/html
@@ -384,25 +446,41 @@ atom=application/atom+xml
 
 
 &lt;!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources/ directory --&gt;
-&lt;mvc:resources mapping=&quot;/resources/**&quot; location=&quot;/resources/&quot; /&gt;
+&lt;mvc:resources mapping=&#34;/resources/**&#34; location=&#34;/resources/&#34; /&gt;
 
 &lt;!-- Resolves view names to protected .jsp resources within the /WEB-INF/views directory --&gt;
-&lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
-      &lt;property name=&quot;prefix&quot; value=&quot;/views/&quot;/&gt;
-      &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;/&gt;
+&lt;bean class=&#34;org.springframework.web.servlet.view.InternalResourceViewResolver&#34;&gt;
+      &lt;property name=&#34;prefix&#34; value=&#34;/views/&#34;/&gt;
+      &lt;property name=&#34;suffix&#34; value=&#34;.jsp&#34;/&gt;
    &lt;/bean&gt;
 
 &lt;/beans&gt;
-</code></pre><p>3、Controller</p>
-<pre><code>@RequestMapping(value=&quot;/account/isExistEmail/{email:.+}&quot;, method=RequestMethod.GET)
+</code></pre></td></tr></table>
+</div>
+</div><p>3、Controller</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">@RequestMapping(value=&#34;/account/isExistEmail/{email:.+}&#34;, method=RequestMethod.GET)
     @ResponseBody
-    public  Message isExistEmail(@PathVariable(&quot;email&quot;) String email){
+    public  Message isExistEmail(@PathVariable(&#34;email&#34;) String email){
         ...
-        Message message = new Message(QikuLoginConst.EMAIL_EXIST,&quot;此邮箱已被注册&quot;);
+        Message message = new Message(QikuLoginConst.EMAIL_EXIST,&#34;此邮箱已被注册&#34;);
         return  message;
 
 }
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
@@ -492,7 +570,7 @@ atom=application/atom+xml
         id: 'Spring4.x MVC responsebody 406错误的解决方案.md',
         title: 'Spring4.x MVC responsebody 406错误的解决方案',
         link: decodeURI(location.href),
-        desc: 'Spring MVC REST 风格API升级到Spring4.x（4.1.1.RELEASE）\x2b的时候报了406错误。结合网上方案，最终定位为： 1、pom文件 \x26lt;dependency\x26gt; \x26lt;groupId\x26gt;com.fasterxml.jackson.core\x26lt;\/groupId\x26gt; \x26lt;artifactId\x26gt;jackson-core\x26lt;\/artifactId\x26gt;',
+        desc: 'Spring MVC REST 风格API升级到Spring4.x（4.1.1.RELEASE）\x2b的时候报了406错误。结合网上方案，最终定位为： 1、pom文件 1 2 3',
         owner: 'hxchen',
         repo: 'comments',
         oauth: {

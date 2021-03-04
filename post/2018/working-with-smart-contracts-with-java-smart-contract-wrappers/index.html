@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2018/working-with-smart-contracts-with-java-smart-contract-wrappers/" />
@@ -68,7 +68,7 @@
 <meta itemprop="description" content="Ethereum 区块链">
 <meta itemprop="datePublished" content="2018-04-25T17:34:28&#43;08:00" />
 <meta itemprop="dateModified" content="2018-04-25T23:42:28&#43;08:00" />
-<meta itemprop="wordCount" content="2392">
+<meta itemprop="wordCount" content="2703">
 
 
 
@@ -316,8 +316,8 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"> 区块链 </a>
             
           </div>
-        <span class="more-meta"> 约 2392 字 </span>
-          <span class="more-meta"> 预计阅读 5 分钟 </span>
+        <span class="more-meta"> 约 2703 字 </span>
+          <span class="more-meta"> 预计阅读 6 分钟 </span>
 
         
         
@@ -336,7 +336,7 @@ if (!doNotTrack) {
   <ul>
     <li>
       <ul>
-        <li><a href="#binabi">智能合约生成bin文件和abi文件</a></li>
+        <li><a href="#智能合约生成bin文件和abi文件">智能合约生成bin文件和abi文件</a></li>
       </ul>
     </li>
   </ul>
@@ -348,7 +348,7 @@ if (!doNotTrack) {
     <div class="post-content">
       <p>本章节我们将学习如何从智能合约代码自动生成与java交换的java代码。</p>
 <p>首先我们需要安装Solidity编译器</p>
-<h1 id="solidity">安装Solidity编译器</h1>
+<h1 id="安装solidity编译器">安装Solidity编译器</h1>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -366,7 +366,7 @@ if (!doNotTrack) {
 <pre class="chroma"><code class="language-bash" data-lang="bash">solcjs --version
 </code></pre></td></tr></table>
 </div>
-</div><h1 id="web3j">安装web3j</h1>
+</div><h1 id="安装web3j">安装web3j</h1>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -378,10 +378,293 @@ brew install web3j
 </code></pre></td></tr></table>
 </div>
 </div><p>查看web3j是否安装成功</p>
-<pre><code>web3j
-</code></pre><h3 id="binabi">智能合约生成bin文件和abi文件</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">web3j
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="智能合约生成bin文件和abi文件">智能合约生成bin文件和abi文件</h3>
 <p>现在我们有如下合约 CoolCoin.sol</p>
-<pre><code>pragma solidity 0.4.23;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span><span class="lnt">251
+</span><span class="lnt">252
+</span><span class="lnt">253
+</span><span class="lnt">254
+</span><span class="lnt">255
+</span><span class="lnt">256
+</span><span class="lnt">257
+</span><span class="lnt">258
+</span><span class="lnt">259
+</span><span class="lnt">260
+</span><span class="lnt">261
+</span><span class="lnt">262
+</span><span class="lnt">263
+</span><span class="lnt">264
+</span><span class="lnt">265
+</span><span class="lnt">266
+</span><span class="lnt">267
+</span><span class="lnt">268
+</span><span class="lnt">269
+</span><span class="lnt">270
+</span><span class="lnt">271
+</span><span class="lnt">272
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pragma solidity 0.4.23;
 interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
 /**
  * owned 是一个管理者
@@ -415,7 +698,7 @@ contract owned {
 contract TokenERC20 {
     /* 公共变量 */
     string public name; //代币名称
-    string public symbol; //代币符号比如'$'
+    string public symbol; //代币符号比如&#39;$&#39;
     uint8 public decimals = 18;  //代币精度，展示的小数点后面多少个0,和以太币一样后面是是18个0
     uint256 public totalSupply; //代币总量
     /*记录所有余额的映射*/
@@ -653,7 +936,9 @@ contract MyAdvancedToken is owned, TokenERC20 {
         msg.sender.transfer(amount * sellPrice);
     }
 }
-</code></pre><p>我们在同位置新建一个build的目录来存储bin 和 abi 文件。然后用solc编译合约代码获得 bin 和 abi</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>我们在同位置新建一个build的目录来存储bin 和 abi 文件。然后用solc编译合约代码获得 bin 和 abi</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -663,38 +948,80 @@ contract MyAdvancedToken is owned, TokenERC20 {
 </code></pre></td></tr></table>
 </div>
 </div><p>用web3j编译bin和abi 获得包装代码</p>
-<pre><code>web3j solidity generate /path/to/&lt;smart-contract&gt;.bin /path/to/&lt;smart-contract&gt;.abi -o /path/to/src/main/java -p com.your.organisation.name
-</code></pre><p>上面从智能合约到生成java包装代码比较麻烦,更聪明的办法是你应该写一个脚本文件来处理:</p>
-<pre><code>#!/usr/bin/env bash
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">web3j solidity generate /path/to/&lt;smart-contract&gt;.bin /path/to/&lt;smart-contract&gt;.abi -o /path/to/src/main/java -p com.your.organisation.name
+</code></pre></td></tr></table>
+</div>
+</div><p>上面从智能合约到生成java包装代码比较麻烦,更聪明的办法是你应该写一个脚本文件来处理:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/usr/bin/env bash
+</span><span class="cp"></span>
+<span class="nb">set</span> -e
+<span class="nb">set</span> -o pipefail
 
-set -e
-set -o pipefail
+<span class="nv">targets</span><span class="o">=</span><span class="s2">&#34;
+</span><span class="s2">ens/ENS
+</span><span class="s2">ens/PublicResolver
+</span><span class="s2">&#34;</span>
 
-targets=&quot;
-ens/ENS
-ens/PublicResolver
-&quot;
+<span class="k">for</span> target in <span class="si">${</span><span class="nv">targets</span><span class="si">}</span><span class="p">;</span> <span class="k">do</span>
+    <span class="nv">dirName</span><span class="o">=</span><span class="k">$(</span>dirname <span class="nv">$target</span><span class="k">)</span>
+    <span class="nv">fileName</span><span class="o">=</span><span class="k">$(</span>basename <span class="nv">$target</span><span class="k">)</span>
 
-for target in ${targets}; do
-    dirName=$(dirname $target)
-    fileName=$(basename $target)
+    <span class="nb">cd</span> <span class="nv">$dirName</span>
+    <span class="nb">echo</span> <span class="s2">&#34;</span><span class="s2">Compiling Solidity file </span><span class="si">${</span><span class="nv">fileName</span><span class="si">}</span><span class="s2">.sol:</span><span class="s2">&#34;</span>
+    solc --bin --abi --optimize --overwrite <span class="si">${</span><span class="nv">fileName</span><span class="si">}</span>.sol -o build/
+    <span class="nb">echo</span> <span class="s2">&#34;Complete&#34;</span>
 
-    cd $dirName
-    echo &quot;Compiling Solidity file ${fileName}.sol:&quot;
-    solc --bin --abi --optimize --overwrite ${fileName}.sol -o build/
-    echo &quot;Complete&quot;
+    <span class="nb">echo</span> <span class="s2">&#34;Generating web3j bindings&#34;</span>
+    web3j solidity generate <span class="se">\
+</span><span class="se"></span>        build/<span class="si">${</span><span class="nv">fileName</span><span class="si">}</span>.bin <span class="se">\
+</span><span class="se"></span>        build/<span class="si">${</span><span class="nv">fileName</span><span class="si">}</span>.abi <span class="se">\
+</span><span class="se"></span>        -p org.web3j.ens.contracts.generated <span class="se">\
+</span><span class="se"></span>        -o ../../../../main/java/ &gt; /dev/null
+    <span class="nb">echo</span> <span class="s2">&#34;Complete&#34;</span>
 
-    echo &quot;Generating web3j bindings&quot;
-    web3j solidity generate \
-        build/${fileName}.bin \
-        build/${fileName}.abi \
-        -p org.web3j.ens.contracts.generated \
-        -o ../../../../main/java/ &gt; /dev/null
-    echo &quot;Complete&quot;
-
-    cd -
-done
-</code></pre><p>讲解说明:</p>
+    <span class="nb">cd</span> -
+<span class="k">done</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>讲解说明:</p>
 <p>该文件通过 targets 定义了 你要编译的合约ENS.sol和PublicResolver.sol</p>
 <p>然后遍历待编译的合约文件,通过solc命令来编译。</p>
 <p>最后通过web3j 命令来生成相应的java包装代码。</p>

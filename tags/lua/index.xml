@@ -17,7 +17,7 @@
       <pubDate>Fri, 02 Dec 2016 15:52:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2016/cocosbuilder%E7%94%9F%E6%88%90%E7%9A%84ccbi%E6%96%87%E4%BB%B6%E4%B8%8Elua%E7%9A%84%E4%BA%A4%E4%BA%92/</guid>
-      <description>一、添加Control，设置位置。 属性设置如图所示 二、lua代码设置 -- 绑定 loginui[&amp;quot;close_btn&amp;quot;] = handler(self, self.onClose) --响应事件 function AdLayer:onClose() ... end</description>
+      <description>一、添加Control，设置位置。 属性设置如图所示 二、lua代码设置 1 2 3 4 5 6 7 8 -- 绑定 loginui[&amp;#34;close_btn&amp;#34;] = handler(self, self.onClose) --响应事件 function AdLayer:onClose() ... end</description>
     </item>
     
   </channel>

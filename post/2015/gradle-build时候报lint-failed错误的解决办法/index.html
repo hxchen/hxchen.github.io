@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.60.1" />
+<meta name="generator" content="Hugo 0.64.1" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2015/gradle-build%E6%97%B6%E5%80%99%E6%8A%A5lint-failed%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" />
@@ -69,7 +69,7 @@
 <meta itemprop="description" content="这是因为程序在buid的时候，会执行lint检查，有任何的错误或者警告提示，都会终止构建，我们可以将其关掉。 修改build.gradle配置">
 <meta itemprop="datePublished" content="2015-04-27T17:27:00&#43;08:00" />
 <meta itemprop="dateModified" content="2015-04-27T17:27:00&#43;08:00" />
-<meta itemprop="wordCount" content="93">
+<meta itemprop="wordCount" content="99">
 
 
 
@@ -316,7 +316,7 @@ if (!doNotTrack) {
             <a href="https://www.3afun.com/categories/gradle/"> Gradle </a>
             
           </div>
-        <span class="more-meta"> 约 93 字 </span>
+        <span class="more-meta"> 约 99 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
 
         
@@ -340,13 +340,25 @@ if (!doNotTrack) {
     <div class="post-content">
       <p>这是因为程序在buid的时候，会执行lint检查，有任何的错误或者警告提示，都会终止构建，我们可以将其关掉。</p>
 <p>修改build.gradle配置文件，在android里面添加</p>
-<pre><code>android{
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">android{
     lintOptions {
             abortOnError false
     }
     ...
 }
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     
