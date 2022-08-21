@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Thu, 04 Mar 2021 22:49:48 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 21 Aug 2022 15:50:28 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>V2ray服务器搭建</title>
+      <link>https://www.3afun.com/post/2022/v2ray%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Sun, 21 Aug 2022 15:50:28 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2022/v2ray%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/</guid>
+      <description>闲言碎语 最近的某天，众所周知的原因，vpn上不去了，于是只能换ip重新部署一套。经过实践过，目前还是v2ray最好用安心一些（耐久），所以继</description>
+    </item>
     
     <item>
       <title>brew update更新慢的解决办法</title>
@@ -180,15 +189,6 @@
       
       <guid>https://www.3afun.com/post/2018/intellij-solidity%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E6%8F%92%E4%BB%B6/</guid>
       <description>选择菜单栏Intellij IDEA -&amp;gt; Preferences -&amp;gt; Plugins -&amp;gt; Browse repositories, 然后搜索Intellij-Solidity安装,重启Intellij IDEA即可生效。</description>
-    </item>
-    
-    <item>
-      <title>智能合约和java智能包装的使用</title>
-      <link>https://www.3afun.com/post/2018/working-with-smart-contracts-with-java-smart-contract-wrappers/</link>
-      <pubDate>Wed, 25 Apr 2018 17:34:28 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2018/working-with-smart-contracts-with-java-smart-contract-wrappers/</guid>
-      <description>本章节我们将学习如何从智能合约代码自动生成与java交换的java代码。 首先我们需要安装Solidity编译器 安装Solidity编译器 1 sudo</description>
     </item>
     
   </channel>

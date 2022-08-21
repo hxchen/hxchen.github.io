@@ -26,7 +26,7 @@
       <pubDate>Tue, 22 Apr 2014 17:27:27 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2014/yum%E6%96%B9%E5%BC%8F%E5%AE%89%E8%A3%85php/</guid>
-      <description>1、安装 1 yum install php php-mysql php-fpm 2、启动 1 service php-fpm start</description>
+      <description>1、安装 1 yum install php php-mysql php-fpm 2、启动 1 com.a3fun.rocket.service php-fpm start</description>
     </item>
     
   </channel>

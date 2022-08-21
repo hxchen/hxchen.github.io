@@ -401,7 +401,7 @@ if (!doNotTrack) {
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">service php-fpm start
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">com.a3fun.rocket.service php-fpm start
 </code></pre></td></tr></table>
 </div>
 </div><p>三、MySQL数据库安装</p>
@@ -422,7 +422,7 @@ yum install mysql-server
 yum install mysql-devel
 chgrp -R mysql /var/lib/mysql
 chmod -R 770 /var/lib/mysql
-service mysqld start
+com.a3fun.rocket.service mysqld start
 mysql
 SET PASSWORD FOR &#39;root&#39;@&#39;localhost&#39; =PASSWORD(&#39;root&#39;);
 </code></pre></td></tr></table>
@@ -616,7 +616,7 @@ SET PASSWORD FOR &#39;root&#39;@&#39;localhost&#39; =PASSWORD(&#39;root&#39;);
     &copy;
     
       2012 -
-    2021
+    2022
     <span class="heart">
       
       <i class="iconfont">

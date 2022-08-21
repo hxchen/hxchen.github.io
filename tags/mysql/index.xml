@@ -53,7 +53,7 @@
       <pubDate>Tue, 22 Apr 2014 17:18:27 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2014/yum%E6%96%B9%E5%BC%8F%E5%AE%89%E8%A3%85mysql/</guid>
-      <description>1、安装 1 yum install mysql mysql-server 2、启动 1 service mysqld start 3、登录 1 mysql -uroot -p 4、改密码 1 set password for root@localhost=password(&amp;#39;your_password&amp;#39;) 5、查看密码 1 select user,host,password from mysql.user 备注： 更改数据库编码参考： 1 SET character_set_client = utf8 ;</description>
+      <description>1、安装 1 yum install mysql mysql-server 2、启动 1 com.a3fun.rocket.service mysqld start 3、登录 1 mysql -uroot -p 4、改密码 1 set password for root@localhost=password(&amp;#39;your_password&amp;#39;) 5、查看密码 1 select user,host,password from mysql.user 备注： 更改数据库编码参考： 1 SET character_set_client = utf8 ;</description>
     </item>
     
     <item>
