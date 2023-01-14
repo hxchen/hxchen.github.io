@@ -6,10 +6,19 @@
     <description>Recent content in Tags on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Thu, 28 Jan 2021 18:00:14 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 14 Jan 2023 17:12:15 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Unity</title>
+      <link>https://www.3afun.com/tags/unity/</link>
+      <pubDate>Sat, 14 Jan 2023 17:12:15 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/unity/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Dubbo</title>
@@ -102,7 +111,7 @@
     </item>
     
     <item>
-      <title>Gradle</title>
+      <title>gradle</title>
       <link>https://www.3afun.com/tags/gradle/</link>
       <pubDate>Wed, 01 Aug 2018 11:30:40 +0800</pubDate>
       
@@ -179,15 +188,6 @@
       <pubDate>Mon, 20 Nov 2017 17:27:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/tags/crontab/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>服务器</title>
-      <link>https://www.3afun.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
-      <pubDate>Mon, 20 Nov 2017 17:27:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
       <description></description>
     </item>
     
