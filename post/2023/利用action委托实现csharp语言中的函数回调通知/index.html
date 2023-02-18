@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Unity中使用Full Serialize进行JSON序列化和反序列化 - 我不是帅才</title>
+  <title>利用Action委托实现C#语言中的函数回调通知 - 我不是帅才</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -22,8 +22,8 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="北斗" /><meta name="description" content="Unity中使用Full Serialize进行JSON序列化和反序列化" />
-<meta name="keywords" content="Unity, Full Serialize" />
+<meta name="author" content="北斗" /><meta name="description" content="C#语言中，如何实现事件回调" />
+<meta name="keywords" content="C#, Action" />
 
 
 
@@ -34,7 +34,7 @@
 <meta name="generator" content="Hugo 0.64.1" />
 
 
-<link rel="canonical" href="https://www.3afun.com/post/2023/unity%E4%B8%AD%E4%BD%BF%E7%94%A8fullserialize%E8%BF%9B%E8%A1%8Cjson%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" />
+<link rel="canonical" href="https://www.3afun.com/post/2023/%E5%88%A9%E7%94%A8action%E5%A7%94%E6%89%98%E5%AE%9E%E7%8E%B0csharp%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E5%9B%9E%E8%B0%83%E9%80%9A%E7%9F%A5/" />
 
 
 
@@ -58,23 +58,23 @@
 
 
 
-<meta property="og:title" content="Unity中使用Full Serialize进行JSON序列化和反序列化" />
-<meta property="og:description" content="Unity中使用Full Serialize进行JSON序列化和反序列化" />
+<meta property="og:title" content="利用Action委托实现C#语言中的函数回调通知" />
+<meta property="og:description" content="C#语言中，如何实现事件回调" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.3afun.com/post/2023/unity%E4%B8%AD%E4%BD%BF%E7%94%A8fullserialize%E8%BF%9B%E8%A1%8Cjson%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" />
-<meta property="article:published_time" content="2023-01-14T17:12:15+08:00" />
-<meta property="article:modified_time" content="2023-01-14T17:12:15+08:00" />
-<meta itemprop="name" content="Unity中使用Full Serialize进行JSON序列化和反序列化">
-<meta itemprop="description" content="Unity中使用Full Serialize进行JSON序列化和反序列化">
-<meta itemprop="datePublished" content="2023-01-14T17:12:15&#43;08:00" />
-<meta itemprop="dateModified" content="2023-01-14T17:12:15&#43;08:00" />
-<meta itemprop="wordCount" content="424">
+<meta property="og:url" content="https://www.3afun.com/post/2023/%E5%88%A9%E7%94%A8action%E5%A7%94%E6%89%98%E5%AE%9E%E7%8E%B0csharp%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E5%9B%9E%E8%B0%83%E9%80%9A%E7%9F%A5/" />
+<meta property="article:published_time" content="2023-02-18T17:31:19+08:00" />
+<meta property="article:modified_time" content="2023-02-18T17:31:19+08:00" />
+<meta itemprop="name" content="利用Action委托实现C#语言中的函数回调通知">
+<meta itemprop="description" content="C#语言中，如何实现事件回调">
+<meta itemprop="datePublished" content="2023-02-18T17:31:19&#43;08:00" />
+<meta itemprop="dateModified" content="2023-02-18T17:31:19&#43;08:00" />
+<meta itemprop="wordCount" content="1017">
 
 
 
-<meta itemprop="keywords" content="Unity," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Unity中使用Full Serialize进行JSON序列化和反序列化"/>
-<meta name="twitter:description" content="Unity中使用Full Serialize进行JSON序列化和反序列化"/>
+<meta itemprop="keywords" content="C#," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="利用Action委托实现C#语言中的函数回调通知"/>
+<meta name="twitter:description" content="C#语言中，如何实现事件回调"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -305,18 +305,19 @@ if (!doNotTrack) {
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">Unity中使用Full Serialize进行JSON序列化和反序列化</h1>
+      <h1 class="post-title">利用Action委托实现C#语言中的函数回调通知</h1>
       
       <div class="post-meta">
-        <time datetime="2023-01-14" class="post-time">
-          2023-01-14
+        <time datetime="2023-02-18" class="post-time">
+          2023-02-18
         </time>
         <div class="post-category">
             <a href="https://www.3afun.com/categories/unity/"> Unity </a>
+            <a href="https://www.3afun.com/categories/c#/"> C# </a>
             
           </div>
-        <span class="more-meta"> 约 424 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span class="more-meta"> 约 1017 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
 
         
         
@@ -328,22 +329,36 @@ if (!doNotTrack) {
 
     
     
-<div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">文章目录</h2>
-  <div class="post-toc-content">
-    <nav id="TableOfContents"></nav>
-  </div>
-</div>
 
     
     <div class="post-content">
-      <p>现如今几乎没什么程序猿的开发项目不跟JSON打交道，在使用Unity 3D 进行游戏开发时候，我们也会遇到这样的场景，对数据进行JSON序列化和反序列化。
-自带的JsonUnity可以解决一部分问题，但是当我们对象有大量的数值需要进行操作时候，我们不可能挨个对对象属性进行操作，那么这时候我们就有一款开源库能满足我们进行对对象的自动装配。
-他就是Full Serialize。</p>
-<p><a href="https://github.com/jacobdufault/fullserializer">Full Serialize On Github</a></p>
-<ol>
-<li>
-<p>序列化方法封装，我们可以对任意类型对象存储为Json 文件</p>
+      <h2 id="actiont委托">Action<!-- raw HTML omitted -->委托</h2>
+<h3 id="定义">定义</h3>
+<p><em>(定义看不懂没关系，浏览一眼后看完示例再过来看定义，会更好理解)</em></p>
+<p>命名空间:
+<code>System</code></p>
+<p>程序集:
+<code>System.Runtime.dll</code></p>
+<p>下面我们来封装一个方法，该方法只有一个参数并且不返回值。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-C#" data-lang="C#"><span class="k">public</span> <span class="k">delegate</span> <span class="k">void</span> <span class="n">Action</span><span class="p">&lt;</span><span class="k">in</span> <span class="n">T</span><span class="p">&gt;</span><span class="p">(</span><span class="n">T</span> <span class="n">obj</span><span class="p">)</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>方法讲解：</strong></p>
+<p>类型参数 <code>T</code> 此委托封装的方法的参数类型。</p>
+<p>这是逆变类型参数。 即，可以使用指定的类型，也可以使用派生程度较低的任何类型。 有关协变和逆变的详细信息，请参阅泛型中的协变和逆变。</p>
+<p>参数 <code>obj</code>T 此委托封装的方法的参数。</p>
+<p><strong>注解</strong></p>
+<p>可以使用 <code>Action&lt;T&gt;</code> 委托将方法作为参数传递，而无需显式声明自定义委托。 封装的方法必须与此委托定义的方法签名相对应。
+这意味着封装方法必须具有一个按值传递给它的参数，并且不能返回值。 (在 C# 中，该方法必须返回 void。)</p>
+<p>利用这个特性我们就可以很好的实现C#语言中的函数回调。</p>
+<h3 id="示例">示例</h3>
+<p>假如我们实战中可能会有金币系统，金币改变的时候，我们需要对UI也要进行更新。这个UI就要向金币系统进行一个事件注册，当你有更新的时候，你要通知我。
+下面我们就要实现这么一个金币系统。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -362,29 +377,103 @@ if (!doNotTrack) {
 </span><span class="lnt">14
 </span><span class="lnt">15
 </span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-C#" data-lang="C#">        <span class="c1">/// &lt;summary&gt;
-</span><span class="c1"></span>        <span class="c1">/// Saves the specified data to a json file at the specified path.
-</span><span class="c1"></span>        <span class="c1">/// &lt;/summary&gt;
-</span><span class="c1"></span>        <span class="c1">/// &lt;param name=&#34;path&#34;&gt;The path to the json file.&lt;/param&gt;
-</span><span class="c1"></span>        <span class="c1">/// &lt;param name=&#34;data&#34;&gt;The data to save.&lt;/param&gt;
-</span><span class="c1"></span>        <span class="c1">/// &lt;typeparam name=&#34;T&#34;&gt;The type of the data to serialize to the file.&lt;/typeparam&gt;
-</span><span class="c1"></span>        <span class="k">protected</span> <span class="k">void</span> <span class="n">SaveJsonFile</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span><span class="p">(</span><span class="kt">string</span> <span class="n">path</span><span class="p">,</span> <span class="n">T</span> <span class="n">data</span><span class="p">)</span> <span class="k">where</span> <span class="n">T</span> <span class="p">:</span> <span class="k">class</span>
-        <span class="p">{</span>
-            <span class="n">fsData</span> <span class="n">serializedData</span><span class="p">;</span>
-            <span class="kt">var</span> <span class="n">serializer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">fsSerializer</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-            <span class="n">serializer</span><span class="p">.</span><span class="n">TrySerialize</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="k">out</span> <span class="n">serializedData</span><span class="p">)</span><span class="p">.</span><span class="n">AssertSuccessWithoutWarnings</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-            <span class="kt">var</span> <span class="n">file</span> <span class="p">=</span> <span class="k">new</span> <span class="n">StreamWriter</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="p">;</span>
-            <span class="kt">var</span> <span class="n">json</span> <span class="p">=</span> <span class="n">fsJsonPrinter</span><span class="p">.</span><span class="n">PrettyJson</span><span class="p">(</span><span class="n">serializedData</span><span class="p">)</span><span class="p">;</span>
-            <span class="n">file</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">json</span><span class="p">)</span><span class="p">;</span>
-            <span class="n">file</span><span class="p">.</span><span class="n">Close</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-        <span class="p">}</span>
+<pre class="chroma"><code class="language-C#" data-lang="C#"><span class="k">public</span> <span class="k">class</span> <span class="nc">CoinsSystem</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
+<span class="p">{</span>
+  <span class="k">public</span> <span class="k">static</span> <span class="n">CoinsSystem</span> <span class="n">instance</span><span class="p">;</span>
+
+
+  <span class="c1">// 保存金币更新回调函数
+</span><span class="c1"></span>  <span class="k">private</span> <span class="n">Action</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">onCoinsUpdated</span><span class="p">;</span>
+
+  <span class="k">private</span> <span class="k">void</span> <span class="n">Awake</span><span class="p">(</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">instance</span> <span class="p">=</span><span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+      <span class="p">{</span>
+          <span class="n">instance</span> <span class="p">=</span> <span class="k">this</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">instance</span> <span class="p">!</span><span class="p">=</span> <span class="k">this</span><span class="p">)</span>
+      <span class="p">{</span>
+          <span class="n">Destroy</span><span class="p">(</span><span class="n">gameObject</span><span class="p">)</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="n">DontDestroyOnLoad</span><span class="p">(</span><span class="n">gameObject</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="c1">/// &lt;summary&gt;
+</span><span class="c1"></span>  <span class="c1">/// 购买金币
+</span><span class="c1"></span>  <span class="c1">/// &lt;/summary&gt;
+</span><span class="c1"></span>  <span class="c1">/// &lt;param name=&#34;amount&#34;&gt;金币数量&lt;/param&gt;
+</span><span class="c1"></span>  <span class="k">public</span> <span class="k">void</span> <span class="n">BuyCoins</span><span class="p">(</span><span class="kt">int</span> <span class="n">amount</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="c1">// some other code
+</span><span class="c1"></span>      <span class="k">if</span> <span class="p">(</span><span class="n">onCoinsUpdated</span> <span class="p">!</span><span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+      <span class="p">{</span>
+          <span class="n">onCoinsUpdated</span><span class="p">(</span><span class="n">numCoins</span><span class="p">)</span><span class="p">;</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="c1">/// &lt;summary&gt;
+</span><span class="c1"></span>  <span class="c1">/// 注册监听，当金币变化的时候调用
+</span><span class="c1"></span>  <span class="c1">/// &lt;/summary&gt;
+</span><span class="c1"></span>  <span class="c1">/// &lt;param name=&#34;callback&#34;&gt;回调函数&lt;/param&gt;
+</span><span class="c1"></span>  <span class="k">public</span> <span class="k">void</span> <span class="n">Subscribe</span><span class="p">(</span><span class="n">Action</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">callback</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="n">onCoinsUpdated</span> <span class="p">+</span><span class="p">=</span> <span class="n">callback</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">/// &lt;summary&gt;
+</span><span class="c1"></span>  <span class="c1">/// 取消注册
+</span><span class="c1"></span>  <span class="c1">/// &lt;/summary&gt;
+</span><span class="c1"></span>  <span class="c1">/// &lt;param name=&#34;callback&#34;&gt;回调函数&lt;/param&gt;
+</span><span class="c1"></span>  <span class="k">public</span> <span class="k">void</span> <span class="n">Unsubscribe</span><span class="p">(</span><span class="n">Action</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">callback</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">onCoinsUpdated</span> <span class="p">!</span><span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+      <span class="p">{</span>
+          <span class="n">onCoinsUpdated</span> <span class="p">-</span><span class="p">=</span> <span class="n">callback</span><span class="p">;</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div></li>
-<li>
-<p>反序列化方法，我们可以对任意Json 格式文件进行反序列化为对象</p>
+</div><p>金币系统我们就这么实现了出来，下面我们再演示一个使用的过程。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -403,51 +492,65 @@ if (!doNotTrack) {
 </span><span class="lnt">14
 </span><span class="lnt">15
 </span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-C#" data-lang="C#">        <span class="c1">/// &lt;summary&gt;
-</span><span class="c1"></span>        <span class="c1">/// Loads the specified json file.
-</span><span class="c1"></span>        <span class="c1">/// &lt;/summary&gt;
-</span><span class="c1"></span>        <span class="c1">/// &lt;param name=&#34;serializer&#34;&gt;The FullSerializer serializer to use.&lt;/param&gt;
-</span><span class="c1"></span>        <span class="c1">/// &lt;param name=&#34;path&#34;&gt;The json file path.&lt;/param&gt;
-</span><span class="c1"></span>        <span class="c1">/// &lt;typeparam name=&#34;T&#34;&gt;The type of the data to load.&lt;/typeparam&gt;
-</span><span class="c1"></span>        <span class="c1">/// &lt;returns&gt;The loaded json data.&lt;/returns&gt;
-</span><span class="c1"></span>        <span class="k">public</span> <span class="k">static</span> <span class="n">T</span> <span class="n">LoadJsonFile</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span><span class="p">(</span><span class="n">fsSerializer</span> <span class="n">serializer</span><span class="p">,</span> <span class="kt">string</span> <span class="n">path</span><span class="p">)</span> <span class="k">where</span> <span class="n">T</span> <span class="p">:</span> <span class="k">class</span>
-        <span class="p">{</span>
-            <span class="kt">var</span> <span class="n">textAsset</span> <span class="p">=</span> <span class="n">Resources</span><span class="p">.</span><span class="n">Load</span><span class="p">&lt;</span><span class="n">TextAsset</span><span class="p">&gt;</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="p">;</span>
-            <span class="n">Assert</span><span class="p">.</span><span class="n">IsNotNull</span><span class="p">(</span><span class="p">(</span><span class="n">textAsset</span><span class="p">)</span><span class="p">)</span><span class="p">;</span>
-            <span class="kt">var</span> <span class="n">data</span> <span class="p">=</span> <span class="n">fsJsonParser</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">textAsset</span><span class="p">.</span><span class="n">text</span><span class="p">)</span><span class="p">;</span>
-            <span class="kt">object</span> <span class="n">deserialized</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
-            <span class="n">serializer</span><span class="p">.</span><span class="n">TryDeserialize</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="p">,</span> <span class="k">ref</span> <span class="n">deserialized</span><span class="p">)</span><span class="p">.</span><span class="n">AssertSuccessWithoutWarnings</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
-            <span class="k">return</span> <span class="n">deserialized</span> <span class="k">as</span> <span class="n">T</span><span class="p">;</span>
-        <span class="p">}</span>
+<pre class="chroma"><code class="language-C#" data-lang="C#"><span class="k">public</span> <span class="k">class</span> <span class="nc">BuyCoinsBar</span>
+<span class="p">{</span>
+<span class="na">  [SerializeField]</span>
+  <span class="k">private</span> <span class="n">Text</span> <span class="n">numCoinsText</span><span class="p">;</span>
+
+  <span class="c1">/// &lt;summary&gt;
+</span><span class="c1"></span>  <span class="c1">/// Unity&#39;s Start method.
+</span><span class="c1"></span>  <span class="c1">/// &lt;/summary&gt;
+</span><span class="c1"></span>  <span class="k">private</span> <span class="k">void</span> <span class="n">Start</span><span class="p">(</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="c1">// 注册监听金币
+</span><span class="c1"></span>      <span class="n">CoinsSystem</span><span class="p">.</span><span class="n">instance</span><span class="p">.</span><span class="n">Subscribe</span><span class="p">(</span><span class="n">OnCoinsChanged</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">/// &lt;summary&gt;
+</span><span class="c1"></span>  <span class="c1">/// Unity&#39;s OnDestroy method.
+</span><span class="c1"></span>  <span class="c1">/// &lt;/summary&gt;
+</span><span class="c1"></span>  <span class="k">private</span> <span class="k">void</span> <span class="n">OnDestroy</span><span class="p">(</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="c1">// 取消注册
+</span><span class="c1"></span>      <span class="n">CoinsSystem</span><span class="p">.</span><span class="n">instance</span><span class="p">.</span><span class="n">Unsubscribe</span><span class="p">(</span><span class="n">OnCoinsChanged</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">/// &lt;summary&gt;
+</span><span class="c1"></span>  <span class="c1">/// 金币变化时调用，更新UI
+</span><span class="c1"></span>  <span class="c1">/// &lt;/summary&gt;
+</span><span class="c1"></span>  <span class="c1">/// &lt;param name=&#34;numCoins&#34;&gt;当前金币数量&lt;/param&gt;
+</span><span class="c1"></span>  <span class="k">private</span> <span class="k">void</span> <span class="n">OnCoinsChanged</span><span class="p">(</span><span class="kt">int</span> <span class="n">numCoins</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="n">numCoinsText</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="n">numCoins</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&#34;n0&#34;</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div></li>
-</ol>
+</div><p>在使用的过程中，我们可以看到<code>OnCoinsChanged</code>这个方法就被当做一个参数传递到注册/取消注册函数中。
+当我们<code>CoinsSystem</code>中的金币数量发生了变化，任何注册进来的函数都会得到被调用，</p>
 
     </div>
 
     
     
-<div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">文章作者</span>
-    <span class="item-content">北斗</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">上次更新</span>
-    <span class="item-content">
-      2023-01-14
-      
-    </span>
-  </p>
-  
-  <p class="copyright-item">
-    <span class="item-title">许可协议</span>
-    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
-  </p>
-</div>
 
 
     
@@ -455,29 +558,16 @@ if (!doNotTrack) {
 
     <footer class="post-footer">
       <div class="post-tags">
-          <a href="https://www.3afun.com/tags/unity/">Unity</a>
+          <a href="https://www.3afun.com/tags/c#/">C#</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/2023/%E5%88%A9%E7%94%A8action%E5%A7%94%E6%89%98%E5%AE%9E%E7%8E%B0csharp%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E5%9B%9E%E8%B0%83%E9%80%9A%E7%9F%A5/">
-            
-            <i class="iconfont">
-              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="18" height="18">
-  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
-</svg>
-
-            </i>
-            <span class="prev-text nav-default">利用Action委托实现C#语言中的函数回调通知</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/2022/unity%E6%9E%84%E5%BB%BAandroid%E5%92%8Cios/">
-            <span class="next-text nav-default">Unity构建Android和iOS</span>
+          <a class="next" href="/post/2023/unity%E4%B8%AD%E4%BD%BF%E7%94%A8fullserialize%E8%BF%9B%E8%A1%8Cjson%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/">
+            <span class="next-text nav-default">Unity中使用Full Serialize进行JSON序列化和反序列化</span>
             <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
@@ -497,41 +587,6 @@ if (!doNotTrack) {
   
 
   
-  
-
-  
-
-  
-  
-
-  
-
-  <div class="post bg-white">
-      <div id="comments-gitment"></div>
-      <link rel="stylesheet" href="/lib/gitment/gitment-0.0.3.min.css">
-        <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
-      <script type="text/javascript">
-      const gitment = new Gitment({
-        id: 'Unity中使用FullSerialize进行JSON序列化和反序列化.md',
-        title: 'Unity中使用Full Serialize进行JSON序列化和反序列化',
-        link: decodeURI(location.href),
-        desc: '现如今几乎没什么程序猿的开发项目不跟JSON打交道，在使用Unity 3D 进行游戏开发时候，我们也会遇到这样的场景，对数据进行JSON序列化和反',
-        owner: 'hxchen',
-        repo: 'comments',
-        oauth: {
-          client_id: 'a557bdb0db1d073dd11d',
-          client_secret: '1f97a695510b5ae31ee6b672e17d17134cb92809'
-        }
-      })
-      gitment.render('comments-gitment')
-      </script>
-      <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
-    </div>
-
-  
-
-    
-
   
 
         </div>
@@ -659,13 +714,6 @@ if (!doNotTrack) {
 
 
 
-  <script type="text/javascript">
-    window.MathJax = {
-      showProcessingMessages: false,
-      messageStyle: 'none'
-    };
-  </script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 
 

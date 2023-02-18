@@ -6,10 +6,19 @@
     <description>Recent content in Tags on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Sat, 14 Jan 2023 17:12:15 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 18 Feb 2023 17:31:19 +0800</lastBuildDate>
     
 	<atom:link href="https://www.3afun.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>C#</title>
+      <link>https://www.3afun.com/tags/c#/</link>
+      <pubDate>Sat, 18 Feb 2023 17:31:19 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/c#/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Unity</title>
@@ -165,7 +174,7 @@
     </item>
     
     <item>
-      <title>Git</title>
+      <title>git</title>
       <link>https://www.3afun.com/tags/git/</link>
       <pubDate>Tue, 24 Apr 2018 22:23:11 +0800</pubDate>
       
@@ -179,15 +188,6 @@
       <pubDate>Fri, 15 Dec 2017 13:42:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/tags/web%E5%89%8D%E7%AB%AF/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>crontab</title>
-      <link>https://www.3afun.com/tags/crontab/</link>
-      <pubDate>Mon, 20 Nov 2017 17:27:00 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/crontab/</guid>
       <description></description>
     </item>
     
