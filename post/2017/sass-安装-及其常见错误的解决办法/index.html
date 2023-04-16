@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Sass 安装 及其常见错误的解决办法 - 我不是帅才</title>
-  
+<html
+  lang="en"
+  itemscope
+  itemtype="http://schema.org/WebPage"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+          Sass 安装 及其常见错误的解决办法 - 我不是帅才
+        </title>
+    
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -32,7 +38,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1" />
+<meta name="generator" content="Hugo 0.111.3" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2017/sass-%E5%AE%89%E8%A3%85-%E5%8F%8A%E5%85%B6%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" />
@@ -53,7 +59,9 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.0995afa14b62cd93e93cfc066b646c4c17a3eddca0e9d52a1d9dcf5d90aaacd3.css" integrity="sha256-CZWvoUtizZPpPPwGa2RsTBej7dyg6dUqHZ3PXZCqrNM=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.d8d87b982993a745e5e7b6a6cbf257be8c3e82aab5e485f0908ad7e6c3501ab2.css" integrity="sha256-2Nh7mCmTp0Xl57amy/JXvow&#43;gqq15IXwkIrX5sNQGrI=" media="screen" crossorigin="anonymous">
+
+
 
 
 
@@ -62,17 +70,13 @@
 <meta property="og:title" content="Sass 安装 及其常见错误的解决办法" />
 <meta property="og:description" content="Sass是一种css的开发工具，它的安装依赖Ruby，没有安装Ruby的请先安装Ruby。 假定你已经安装了Ruby，则可以直接执行如下语句进" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.3afun.com/post/2017/sass-%E5%AE%89%E8%A3%85-%E5%8F%8A%E5%85%B6%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" />
+<meta property="og:url" content="https://www.3afun.com/post/2017/sass-%E5%AE%89%E8%A3%85-%E5%8F%8A%E5%85%B6%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2017-09-27T10:51:00+08:00" />
 <meta property="article:modified_time" content="2017-09-27T10:51:00+08:00" />
 <meta itemprop="name" content="Sass 安装 及其常见错误的解决办法">
-<meta itemprop="description" content="Sass是一种css的开发工具，它的安装依赖Ruby，没有安装Ruby的请先安装Ruby。 假定你已经安装了Ruby，则可以直接执行如下语句进">
-<meta itemprop="datePublished" content="2017-09-27T10:51:00&#43;08:00" />
-<meta itemprop="dateModified" content="2017-09-27T10:51:00&#43;08:00" />
-<meta itemprop="wordCount" content="498">
-
-
-
+<meta itemprop="description" content="Sass是一种css的开发工具，它的安装依赖Ruby，没有安装Ruby的请先安装Ruby。 假定你已经安装了Ruby，则可以直接执行如下语句进"><meta itemprop="datePublished" content="2017-09-27T10:51:00+08:00" />
+<meta itemprop="dateModified" content="2017-09-27T10:51:00+08:00" />
+<meta itemprop="wordCount" content="486">
 <meta itemprop="keywords" content="Web前端,Saas," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Sass 安装 及其常见错误的解决办法"/>
 <meta name="twitter:description" content="Sass是一种css的开发工具，它的安装依赖Ruby，没有安装Ruby的请先安装Ruby。 假定你已经安装了Ruby，则可以直接执行如下语句进"/>
@@ -90,19 +94,22 @@
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 	ga('create', 'UA-117605000-1', 'auto');
 	
 	ga('send', 'pageview');
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
+  </head>
+  <body>
+    <div id="back-to-top"></div>
 
-</head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
+    <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
     <a href="/" class="logo">我不是帅才</a>
   </div>
@@ -157,8 +164,8 @@ if (!doNotTrack) {
 </nav>
 
 
-  
     
+      
 
 
 
@@ -215,14 +222,15 @@ if (!doNotTrack) {
     </div>
 </div>
 
-  
+    
 
-  
+    
 
-  
+    
 
-  <header id="header" class="header container">
-    <div class="logo-wrapper">
+
+    <header id="header" class="header">
+      <div class="logo-wrapper">
   <a href="/" class="logo">
     
       我不是帅才
@@ -297,97 +305,77 @@ if (!doNotTrack) {
   </ul>
 </nav>
 
-  </header>
-
-  <div id="mobile-panel">
-    <main id="main" class="main bg-llight">
-      <div class="content-wrapper">
-        <div id="content" class="content container">
-          <article class="post bg-white">
-    
-    <header class="post-header">
-      <h1 class="post-title">Sass 安装 及其常见错误的解决办法</h1>
-      
-      <div class="post-meta">
-        <time datetime="2017-09-27" class="post-time">
-          2017-09-27
-        </time>
-        <div class="post-category">
-            <a href="https://www.3afun.com/categories/web%E5%89%8D%E7%AB%AF/"> Web前端 </a>
-            
-          </div>
-        <span class="more-meta"> 约 498 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
-
-        
-        
-
-        
-        
-      </div>
     </header>
 
+    <div id="mobile-panel">
+      <main id="main" class="main bg-llight wallpaper">
+        <div class="content-wrapper">
+    <div id="content" class="content">
+      <article class="post">
+        
+        <header class="post-header">
+          <h1 class="post-title">Sass 安装 及其常见错误的解决办法</h1>
+          
+
+          <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      北斗
+    
+  </div>
+
+  <div class="post-meta-time">
+    <time datetime="2017-09-27">
+      2017-09-27
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        约 486 字 -
+        预计阅读 1 分钟
+      </span>
+
+    <div class="post-meta-category">
+        <a href="https://www.3afun.com/categories/web%E5%89%8D%E7%AB%AF/"> Web前端 </a>
+          
+      </div>
+
+
     
     
-<div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">文章目录</h2>
-  <div class="post-toc-content">
-    <nav id="TableOfContents"></nav>
+
+
+    
+    
   </div>
 </div>
 
-    
-    <div class="post-content">
-      <p>Sass是一种css的开发工具，它的安装依赖Ruby，没有安装Ruby的请先安装Ruby。</p>
+        </header>
+
+        
+        <div class="post-content">
+          <p>Sass是一种css的开发工具，它的安装依赖Ruby，没有安装Ruby的请先安装Ruby。</p>
 <p>假定你已经安装了Ruby，则可以直接执行如下语句进行安装。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">gem install sass
-</code></pre></td></tr></table>
-</div>
-</div><p>常见错误提示：</p>
+<pre tabindex="0"><code>gem install sass
+</code></pre><p>常见错误提示：</p>
 <p>1、ERROR:  While executing gem &hellip; (OpenSSL::SSL::SSLError)</p>
 <p>hostname &ldquo;gems.ruby-china.org&rdquo; does not match the server certificate</p>
 <p>解决办法：</p>
 <p>执行命令，查看数据源</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">gem source -l
-</code></pre></td></tr></table>
-</div>
-</div><p>结果</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">*** CURRENT SOURCES ***
+<pre tabindex="0"><code>gem source -l
+</code></pre><p>结果</p>
+<pre tabindex="0"><code>*** CURRENT SOURCES ***
 
 https://ruby.taobao.org/
 https://gems.ruby-china.org
-</code></pre></td></tr></table>
-</div>
-</div><p>则可以删除多余的</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">gem sources --remove https://ruby.taobao.org/
+</code></pre><p>则可以删除多余的</p>
+<pre tabindex="0"><code>gem sources --remove https://ruby.taobao.org/
 sudo gem update --system
-</code></pre></td></tr></table>
-</div>
-</div><p>然后重新安装。</p>
+</code></pre><p>然后重新安装。</p>
 <p>2、ERROR:  SSL verification error at depth 1: unable to get local issuer certificate (20)</p>
 <p>ERROR:  You must add /O=Digital Signature Trust Co./CN=DST Root CA X3 to your local trusted store</p>
 <p>Fetching: ffi-1.9.18.gem ( 32%)ERROR:  SSL verification error at depth 2: self signed certificate in certificate chain (19)</p>
@@ -409,44 +397,22 @@ sudo gem update --system
 <p>ERROR:  While executing gem &hellip; (Errno::EPERM)</p>
 <p>Operation not permitted - /usr/bin/sass</p>
 <p>遇到以上错误 2和3的解决办法</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">sudo gem install -n /usr/local/bin sass
-</code></pre></td></tr></table>
-</div>
-</div><p>查看</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">sass -v
-</code></pre></td></tr></table>
-</div>
-</div><p>则会正确显示Sass版本号。</p>
+<pre tabindex="0"><code>sudo gem install -n /usr/local/bin sass
+</code></pre><p>查看</p>
+<pre tabindex="0"><code>sass -v
+</code></pre><p>则会正确显示Sass版本号。</p>
 <hr>
 <p>2017年12月28日更新：</p>
 <p>Mac更新系统后，Ruby由2.0升级到2.3，再次使用Sass时候，发现报错。</p>
 <p>于是决定升级SaaS，重新安装时遇到错误。最后找到解决方案：</p>
 <p>先安装libgmp-dev，再重新安装即可。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">brew install libgmp-dev
+<pre tabindex="0"><code>brew install libgmp-dev
 sudo gem install -n /usr/local/bin sass
-</code></pre></td></tr></table>
-</div>
-</div>
-    </div>
+</code></pre>
+        </div>
 
-    
-    
+        
+        
 <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">文章作者</span>
@@ -467,84 +433,69 @@ sudo gem install -n /usr/local/bin sass
 </div>
 
 
-    
-    
 
-    <footer class="post-footer">
-      <div class="post-tags">
-          <a href="https://www.3afun.com/tags/web%E5%89%8D%E7%AB%AF/">Web前端</a>
-          <a href="https://www.3afun.com/tags/saas/">Saas</a>
-          
-        </div>
-
-      
-      <nav class="post-nav">
         
-          <a class="prev" href="/post/2017/%E4%BD%BF%E7%94%A8charles-%E8%BF%9B%E8%A1%8Chttps%E6%8A%93%E5%8C%85/">
+        
+
+
+        <footer class="post-footer">
+          <div class="post-tags">
+              <a href="https://www.3afun.com/tags/web%E5%89%8D%E7%AB%AF/">Web前端</a>
+                <a href="https://www.3afun.com/tags/saas/">Saas</a>
+                
+            </div>
+
+
+          
+          <nav class="post-nav">
             
-            <i class="iconfont">
-              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+              <a class="prev" href="/post/2017/%E4%BD%BF%E7%94%A8charles-%E8%BF%9B%E8%A1%8Chttps%E6%8A%93%E5%8C%85/">
+                
+                <i class="iconfont">
+                  <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="18" height="18">
   <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
 </svg>
 
-            </i>
-            <span class="prev-text nav-default">使用Charles 进行https抓包</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        
-          <a class="next" href="/post/2017/tomcat8-%E5%A4%9A%E5%AE%9E%E4%BE%8B-unix-daemon-%E6%A8%A1%E5%BC%8F/">
-            <span class="next-text nav-default">Tomcat8 多实例 Unix daemon 模式 </span>
-            <span class="prev-text nav-mobile">下一篇</span>
+                </i>
+                <span class="prev-text nav-default">使用Charles 进行https抓包</span>
+                <span class="prev-text nav-mobile">上一篇</span>
+              </a>
             
-            <i class="iconfont">
-              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+              <a class="next" href="/post/2017/tomcat8-%E5%A4%9A%E5%AE%9E%E4%BE%8B-unix-daemon-%E6%A8%A1%E5%BC%8F/">
+                <span class="next-text nav-default">Tomcat8 多实例 Unix daemon 模式 </span>
+                <span class="prev-text nav-mobile">下一篇</span>
+                
+                <i class="iconfont">
+                  <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="18" height="18">
   <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
 </svg>
 
-            </i>
-          </a>
-      </nav>
-    </footer>
-  </article>
+                </i>
+              </a>
+          </nav>
+        </footer>
+      </article>
+
+      
+      
+
+
+      
+      
+
+  
+
+  
+  
 
   
   
 
   
-  
-
-  
-
-  
-  
-
-  
-
-  <div class="post bg-white">
-      <div id="comments-gitment"></div>
-      <link rel="stylesheet" href="/lib/gitment/gitment-0.0.3.min.css">
-        <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
-      <script type="text/javascript">
-      const gitment = new Gitment({
-        id: 'Sass 安装 及其常见错误的解决办法.md',
-        title: 'Sass 安装 及其常见错误的解决办法',
-        link: decodeURI(location.href),
-        desc: 'Sass是一种css的开发工具，它的安装依赖Ruby，没有安装Ruby的请先安装Ruby。 假定你已经安装了Ruby，则可以直接执行如下语句进',
-        owner: 'hxchen',
-        repo: 'comments',
-        oauth: {
-          client_id: 'a557bdb0db1d073dd11d',
-          client_secret: '1f97a695510b5ae31ee6b672e17d17134cb92809'
-        }
-      })
-      gitment.render('comments-gitment')
-      </script>
-      <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
-    </div>
 
   
 
@@ -552,12 +503,21 @@ sudo gem install -n /usr/local/bin sass
 
   
 
-        </div>
-      </div>
-    </main>
+  
 
-    <footer id="footer" class="footer">
-      <div class="icon-links">
+
+    </div>
+
+    
+    
+
+
+  </div>
+
+      </main>
+
+      <footer id="footer" class="footer">
+        <div class="icon-links">
   
   
     <a href="mailto:helloworld.vip@gmail.com" rel="me noopener" class="iconfont"
@@ -613,7 +573,7 @@ sudo gem install -n /usr/local/bin sass
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
@@ -652,28 +612,30 @@ sudo gem install -n /usr/local/bin sass
   
 </div>
 
-    </footer>
+      </footer>
 
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont">
-        
-        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+      <div class="button__back-to-top">
+        <a href="#back-to-top">
+          <i class="iconfont">
+            
+            <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="35" height="35">
   <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
 </svg>
 
-      </i>
+          </i>
+        </a>
+      </div>
     </div>
-  </div>
-  
+    
 <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
 
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.2d140c0a16f393dda9a56f88a94545fc04b53c91a6924da2bda2769e2312b5a0.js" integrity="sha256-LRQMChbzk92ppW&#43;IqUVF/AS1PJGmkk2ivaJ2niMStaA=" crossorigin="anonymous"></script>
 
 
 
@@ -694,7 +656,6 @@ sudo gem install -n /usr/local/bin sass
 
 
   
-    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
     <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
     <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
   
@@ -713,5 +674,7 @@ sudo gem install -n /usr/local/bin sass
 
 
 
-</body>
+
+
+  </body>
 </html>

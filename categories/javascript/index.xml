@@ -6,18 +6,14 @@
     <description>Recent content in JavaScript on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Mon, 21 Oct 2013 16:16:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://www.3afun.com/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 21 Oct 2013 16:16:00 +0800</lastBuildDate><atom:link href="https://www.3afun.com/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>javascript 中contains方法的定义</title>
       <link>https://www.3afun.com/post/2013/javascript-%E4%B8%ADcontains%E6%96%B9%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89/</link>
       <pubDate>Mon, 21 Oct 2013 16:16:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2013/javascript-%E4%B8%ADcontains%E6%96%B9%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89/</guid>
-      <description>1 2 3 4 5 6 7 8 9 /** * 对大小写敏感的Contains方法 * @param substring * @returns */ String.prototype.contains = function(substring) { return this.indexOf(substring) != -1 ? true:false; }; 使用方法：a.contains(b)&amp;mdash;</description>
+      <description>/** * 对大小写敏感的Contains方法 * @param substring * @returns */ String.prototype.contains = function(substring) { return this.indexOf(substring) != -1 ? true:false; }; 使用方法：a.contains(b)&amp;mdash;-a中是否包含b</description>
     </item>
     
   </channel>

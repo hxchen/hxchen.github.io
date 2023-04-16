@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>ajp方式实现Apache负载均衡&#43;Tomcat集群 - 我不是帅才</title>
-  
+<html
+  lang="en"
+  itemscope
+  itemtype="http://schema.org/WebPage"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+          ajp方式实现Apache负载均衡&#43;Tomcat集群 - 我不是帅才
+        </title>
+    
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -32,7 +38,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1" />
+<meta name="generator" content="Hugo 0.111.3" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2014/ajp%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0apache%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1&#43;tomcat%E9%9B%86%E7%BE%A4/" />
@@ -53,7 +59,9 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.0995afa14b62cd93e93cfc066b646c4c17a3eddca0e9d52a1d9dcf5d90aaacd3.css" integrity="sha256-CZWvoUtizZPpPPwGa2RsTBej7dyg6dUqHZ3PXZCqrNM=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.d8d87b982993a745e5e7b6a6cbf257be8c3e82aab5e485f0908ad7e6c3501ab2.css" integrity="sha256-2Nh7mCmTp0Xl57amy/JXvow&#43;gqq15IXwkIrX5sNQGrI=" media="screen" crossorigin="anonymous">
+
+
 
 
 
@@ -62,17 +70,13 @@
 <meta property="og:title" content="ajp方式实现Apache负载均衡&#43;Tomcat集群" />
 <meta property="og:description" content="目标: 使用 apache 和 tomcat 配置一个可以应用的 web 网站，要达到以下要求： Apache 做为 HttpServer ，后面连接多个 tomcat 应用实例，并进行负载均衡。 注：本例程以一台机器为例子，即同" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.3afun.com/post/2014/ajp%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0apache%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1&#43;tomcat%E9%9B%86%E7%BE%A4/" />
+<meta property="og:url" content="https://www.3afun.com/post/2014/ajp%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0apache%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1&#43;tomcat%E9%9B%86%E7%BE%A4/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2014-09-24T18:11:27+08:00" />
 <meta property="article:modified_time" content="2014-09-24T18:11:27+08:00" />
 <meta itemprop="name" content="ajp方式实现Apache负载均衡&#43;Tomcat集群">
-<meta itemprop="description" content="目标: 使用 apache 和 tomcat 配置一个可以应用的 web 网站，要达到以下要求： Apache 做为 HttpServer ，后面连接多个 tomcat 应用实例，并进行负载均衡。 注：本例程以一台机器为例子，即同">
-<meta itemprop="datePublished" content="2014-09-24T18:11:27&#43;08:00" />
-<meta itemprop="dateModified" content="2014-09-24T18:11:27&#43;08:00" />
-<meta itemprop="wordCount" content="840">
-
-
-
+<meta itemprop="description" content="目标: 使用 apache 和 tomcat 配置一个可以应用的 web 网站，要达到以下要求： Apache 做为 HttpServer ，后面连接多个 tomcat 应用实例，并进行负载均衡。 注：本例程以一台机器为例子，即同"><meta itemprop="datePublished" content="2014-09-24T18:11:27+08:00" />
+<meta itemprop="dateModified" content="2014-09-24T18:11:27+08:00" />
+<meta itemprop="wordCount" content="715">
 <meta itemprop="keywords" content="服务器," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ajp方式实现Apache负载均衡&#43;Tomcat集群"/>
 <meta name="twitter:description" content="目标: 使用 apache 和 tomcat 配置一个可以应用的 web 网站，要达到以下要求： Apache 做为 HttpServer ，后面连接多个 tomcat 应用实例，并进行负载均衡。 注：本例程以一台机器为例子，即同"/>
@@ -90,19 +94,22 @@
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 	ga('create', 'UA-117605000-1', 'auto');
 	
 	ga('send', 'pageview');
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
+  </head>
+  <body>
+    <div id="back-to-top"></div>
 
-</head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
+    <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
     <a href="/" class="logo">我不是帅才</a>
   </div>
@@ -157,8 +164,8 @@ if (!doNotTrack) {
 </nav>
 
 
-  
     
+      
 
 
 
@@ -215,14 +222,15 @@ if (!doNotTrack) {
     </div>
 </div>
 
-  
+    
 
-  
+    
 
-  
+    
 
-  <header id="header" class="header container">
-    <div class="logo-wrapper">
+
+    <header id="header" class="header">
+      <div class="logo-wrapper">
   <a href="/" class="logo">
     
       我不是帅才
@@ -297,64 +305,60 @@ if (!doNotTrack) {
   </ul>
 </nav>
 
-  </header>
-
-  <div id="mobile-panel">
-    <main id="main" class="main bg-llight">
-      <div class="content-wrapper">
-        <div id="content" class="content container">
-          <article class="post bg-white">
-    
-    <header class="post-header">
-      <h1 class="post-title">ajp方式实现Apache负载均衡&#43;Tomcat集群</h1>
-      
-      <div class="post-meta">
-        <time datetime="2014-09-24" class="post-time">
-          2014-09-24
-        </time>
-        <div class="post-category">
-            <a href="https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
-            
-          </div>
-        <span class="more-meta"> 约 840 字 </span>
-          <span class="more-meta"> 预计阅读 2 分钟 </span>
-
-        
-        
-
-        
-        
-      </div>
     </header>
 
+    <div id="mobile-panel">
+      <main id="main" class="main bg-llight wallpaper">
+        <div class="content-wrapper">
+    <div id="content" class="content">
+      <article class="post">
+        
+        <header class="post-header">
+          <h1 class="post-title">ajp方式实现Apache负载均衡&#43;Tomcat集群</h1>
+          
+
+          <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      北斗
+    
+  </div>
+
+  <div class="post-meta-time">
+    <time datetime="2014-09-24">
+      2014-09-24
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        约 715 字 -
+        预计阅读 2 分钟
+      </span>
+
+    <div class="post-meta-category">
+        <a href="https://www.3afun.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"> 服务器 </a>
+          
+      </div>
+
+
     
     
-<div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">文章目录</h2>
-  <div class="post-toc-content">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#1apache配置">1、Apache配置</a>
-      <ul>
-        <li><a href="#11httpdconf配置">1.1、httpd.conf配置</a></li>
-        <li><a href="#12httpd-vhostsconf设置">1.2、httpd-vhosts.conf设置</a></li>
-      </ul>
-    </li>
-    <li><a href="#2-配置-tomcat">2 配置 tomcat</a>
-      <ul>
-        <li><a href="#21--配置-server-的关闭">2.1.  配置 server 的关闭</a></li>
-      </ul>
-    </li>
-    <li><a href="#22-配置-engine">2.2. 配置 Engine</a></li>
-    <li><a href="#25配置cluster">2.5.配置Cluster</a></li>
-  </ul>
-</nav>
+
+
+    
+    
   </div>
 </div>
 
-    
-    <div class="post-content">
-      <p>目标:</p>
+        </header>
+
+        
+        <div class="post-content">
+          <p>目标:</p>
 <p>使用 apache 和 tomcat 配置一个可以应用的 web 网站，要达到以下要求：</p>
 <p>Apache 做为 HttpServer ，后面连接多个 tomcat 应用实例，并进行负载均衡。</p>
 <p>注：本例程以一台机器为例子，即同一台机器上装一个apache和2个Tomcat。</p>
@@ -373,23 +377,7 @@ if (!doNotTrack) {
 <h3 id="11httpdconf配置">1.1、httpd.conf配置</h3>
 <p>修改APACHE的配置文件 <strong>Apache2.2\conf\httpd.conf</strong></p>
 <p>将以下Module的注释去掉</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">#apache tomcat负载均衡
+<pre tabindex="0"><code>#apache tomcat负载均衡
 LoadModule proxy_module modules/mod_proxy.so
 #apache tomcat负载均衡
 LoadModule proxy_ajp_module modules/mod_proxy_ajp.so
@@ -401,67 +389,23 @@ LoadModule proxy_connect_module modules/mod_proxy_connect.so
 LoadModule proxy_ftp_module modules/mod_proxy_ftp.so
 #apache tomcat负载均衡
 LoadModule proxy_http_module modules/mod_proxy_http.so
-</code></pre></td></tr></table>
-</div>
-</div><p>再找到<!-- raw HTML omitted --><!-- raw HTML omitted -->加上index.jsp修改成</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;IfModule dir_module&gt;
+</code></pre><p>再找到<IfModule dir_module></IfModule>加上index.jsp修改成</p>
+<pre tabindex="0"><code>&lt;IfModule dir_module&gt;
     DirectoryIndex index.html index.php
 &lt;/IfModule&gt;
-</code></pre></td></tr></table>
-</div>
-</div><p>去掉如下代码的注释</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">Include conf/extra/httpd-vhosts.conf
-</code></pre></td></tr></table>
-</div>
-</div><p>最下面添加</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">#tomcat集群
+</code></pre><p>去掉如下代码的注释</p>
+<pre tabindex="0"><code>Include conf/extra/httpd-vhosts.conf
+</code></pre><p>最下面添加</p>
+<pre tabindex="0"><code>#tomcat集群
 ProxyRequests Off
 ProxyPass / balancer://example/
 &lt;proxy balancer://example&gt;
 BalancerMember ajp://127.0.0.1:8010 loadfactor=1 route=jvm1
 BalancerMember ajp://127.0.0.1:8011 loadfactor=1 route=jvm2
 &lt;/proxy&gt;
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="12httpd-vhostsconf设置">1.2、httpd-vhosts.conf设置</h3>
+</code></pre><h3 id="12httpd-vhostsconf设置">1.2、httpd-vhosts.conf设置</h3>
 <p>接下来进行虚拟主机的设置。修改 <strong>Apache2.2\conf\extra\httpd-vhosts.conf</strong></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;VirtualHost *:80&gt;
+<pre tabindex="0"><code>&lt;VirtualHost *:80&gt;
     ServerAdmin 506110230@qq.com
     ServerName localhost
     ServerAlias localhost
@@ -470,113 +414,25 @@ BalancerMember ajp://127.0.0.1:8011 loadfactor=1 route=jvm2
     ErrorLog &#34;logs/loadbalancer-error.log&#34;
     CustomLog &#34;logs/loadbalancer-access.log&#34; common
 &lt;/VirtualHost&gt;
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="2-配置-tomcat">2 配置 tomcat</h2>
+</code></pre><h2 id="2-配置-tomcat">2 配置 tomcat</h2>
 <h3 id="21--配置-server-的关闭">2.1.  配置 server 的关闭</h3>
 <p>tomcat1</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;Server port=&#34;8006&#34; shutdown=&#34;SHUTDOWN&#34;&gt;
-</code></pre></td></tr></table>
-</div>
-</div><p>tomcat2</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;Server port=&#34;8007&#34; shutdown=&#34;SHUTDOWN&#34;&gt;
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="22-配置-engine">2.2. 配置 Engine</h2>
+<pre tabindex="0"><code>&lt;Server port=&#34;8006&#34; shutdown=&#34;SHUTDOWN&#34;&gt;
+</code></pre><p>tomcat2</p>
+<pre tabindex="0"><code>&lt;Server port=&#34;8007&#34; shutdown=&#34;SHUTDOWN&#34;&gt;
+</code></pre><h2 id="22-配置-engine">2.2. 配置 Engine</h2>
 <p>tomcat1</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;Engine name=&#34;Catalina&#34; defaultHost=&#34;localhost&#34; jvmRoute=&#34;jvm1&#34;&gt;
-</code></pre></td></tr></table>
-</div>
-</div><p>tomcat2</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;Engine name=&#34;Catalina&#34; defaultHost=&#34;localhost&#34; jvmRoute=&#34;jvm2&#34;&gt;
-</code></pre></td></tr></table>
-</div>
-</div><p>##2.3. 配置 Connector
+<pre tabindex="0"><code>&lt;Engine name=&#34;Catalina&#34; defaultHost=&#34;localhost&#34; jvmRoute=&#34;jvm1&#34;&gt;
+</code></pre><p>tomcat2</p>
+<pre tabindex="0"><code>&lt;Engine name=&#34;Catalina&#34; defaultHost=&#34;localhost&#34; jvmRoute=&#34;jvm2&#34;&gt;
+</code></pre><p>##2.3. 配置 Connector
 tomcat1</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;Connector port=&#34;8010&#34; protocol=&#34;AJP/1.3&#34; redirectPort=&#34;8443&#34; /&gt;
-</code></pre></td></tr></table>
-</div>
-</div><p>tomcat2</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;Connector port=&#34;8011&#34; protocol=&#34;AJP/1.3&#34; redirectPort=&#34;8443&#34; /&gt;
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="25配置cluster">2.5.配置Cluster</h2>
+<pre tabindex="0"><code>&lt;Connector port=&#34;8010&#34; protocol=&#34;AJP/1.3&#34; redirectPort=&#34;8443&#34; /&gt;
+</code></pre><p>tomcat2</p>
+<pre tabindex="0"><code>&lt;Connector port=&#34;8011&#34; protocol=&#34;AJP/1.3&#34; redirectPort=&#34;8443&#34; /&gt;
+</code></pre><h2 id="25配置cluster">2.5.配置Cluster</h2>
 <p>tomcat1(port号是重点)</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;Cluster className=&#34;org.apache.catalina.ha.tcp.SimpleTcpCluster&#34;
+<pre tabindex="0"><code>&lt;Cluster className=&#34;org.apache.catalina.ha.tcp.SimpleTcpCluster&#34;
                  channelSendOptions=&#34;8&#34;&gt;
 
           &lt;Manager className=&#34;org.apache.catalina.ha.session.DeltaManager&#34;
@@ -616,54 +472,8 @@ tomcat1</p>
           &lt;ClusterListener className=&#34;org.apache.catalina.ha.session.JvmRouteSessionIDBinderListener&#34;/&gt;
           &lt;ClusterListener className=&#34;org.apache.catalina.ha.session.ClusterSessionListener&#34;/&gt;
         &lt;/Cluster&gt;
-</code></pre></td></tr></table>
-</div>
-</div><p>tomcat2(port号是重点)</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;Cluster className=&#34;org.apache.catalina.ha.tcp.SimpleTcpCluster&#34;
+</code></pre><p>tomcat2(port号是重点)</p>
+<pre tabindex="0"><code>&lt;Cluster className=&#34;org.apache.catalina.ha.tcp.SimpleTcpCluster&#34;
                  channelSendOptions=&#34;8&#34;&gt;
 
           &lt;Manager className=&#34;org.apache.catalina.ha.session.DeltaManager&#34;
@@ -703,42 +513,27 @@ tomcat1</p>
           &lt;ClusterListener className=&#34;org.apache.catalina.ha.session.JvmRouteSessionIDBinderListener&#34;/&gt;
           &lt;ClusterListener className=&#34;org.apache.catalina.ha.session.ClusterSessionListener&#34;/&gt;
         &lt;/Cluster&gt;
-</code></pre></td></tr></table>
-</div>
-</div><h1 id="四启动服务测试tomcat">四、启动服务，测试tomcat</h1>
+</code></pre><h1 id="四启动服务测试tomcat">四、启动服务，测试tomcat</h1>
 <p>1、测试apache和tomcat协作。
 先在每个tomcat中的\webapps\ROOT下的index.jsp下面加上以下的测试代码部分：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;%@ page language=&#34;java&#34;%&gt;
+<pre tabindex="0"><code>&lt;%@ page language=&#34;java&#34;%&gt;
 &lt;%@ page contentType=&#34;text/html; charset=utf-8&#34;%&gt;
 &lt;%@ page import=&#34;java.util.*&#34;%&gt;
 
 &lt;%
 System.out.println(new Date().getTime());
 %&gt;
-</code></pre></td></tr></table>
-</div>
-</div><p>浏览器分别刷新:</p>
+</code></pre><p>浏览器分别刷新:</p>
 <p>http://127.0.0.1:8081/</p>
 <p>http://127.0.0.1:8082/</p>
 <p>http://127.0.0.1/</p>
 <p>观察后台输出
 <img src="/media/images/2014/console1.png" alt="console"></p>
 
-    </div>
+        </div>
 
-    
-    
+        
+        
 <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">文章作者</span>
@@ -759,83 +554,68 @@ System.out.println(new Date().getTime());
 </div>
 
 
-    
-    
 
-    <footer class="post-footer">
-      <div class="post-tags">
-          <a href="https://www.3afun.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a>
-          
-        </div>
-
-      
-      <nav class="post-nav">
         
-          <a class="prev" href="/post/2014/%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8Eelasticsearch%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/">
+        
+
+
+        <footer class="post-footer">
+          <div class="post-tags">
+              <a href="https://www.3afun.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a>
+                
+            </div>
+
+
+          
+          <nav class="post-nav">
             
-            <i class="iconfont">
-              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+              <a class="prev" href="/post/2014/%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8Eelasticsearch%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/">
+                
+                <i class="iconfont">
+                  <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="18" height="18">
   <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
 </svg>
 
-            </i>
-            <span class="prev-text nav-default">分布式搜索引擎Elasticsearch——安装部署</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        
-          <a class="next" href="/post/2014/redis-%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE/">
-            <span class="next-text nav-default">redis 批量删除数据</span>
-            <span class="prev-text nav-mobile">下一篇</span>
+                </i>
+                <span class="prev-text nav-default">分布式搜索引擎Elasticsearch——安装部署</span>
+                <span class="prev-text nav-mobile">上一篇</span>
+              </a>
             
-            <i class="iconfont">
-              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+              <a class="next" href="/post/2014/redis-%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE/">
+                <span class="next-text nav-default">redis 批量删除数据</span>
+                <span class="prev-text nav-mobile">下一篇</span>
+                
+                <i class="iconfont">
+                  <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="18" height="18">
   <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
 </svg>
 
-            </i>
-          </a>
-      </nav>
-    </footer>
-  </article>
+                </i>
+              </a>
+          </nav>
+        </footer>
+      </article>
+
+      
+      
+
+
+      
+      
+
+  
+
+  
+  
 
   
   
 
   
-  
-
-  
-
-  
-  
-
-  
-
-  <div class="post bg-white">
-      <div id="comments-gitment"></div>
-      <link rel="stylesheet" href="/lib/gitment/gitment-0.0.3.min.css">
-        <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
-      <script type="text/javascript">
-      const gitment = new Gitment({
-        id: 'ajp方式实现Apache负载均衡\x2bTomcat集群.md',
-        title: 'ajp方式实现Apache负载均衡\x2bTomcat集群',
-        link: decodeURI(location.href),
-        desc: '目标: 使用 apache 和 tomcat 配置一个可以应用的 web 网站，要达到以下要求： Apache 做为 HttpServer ，后面连接多个 tomcat 应用实例，并进行负载均衡。 注：本例程以一台机器为例子，即同',
-        owner: 'hxchen',
-        repo: 'comments',
-        oauth: {
-          client_id: 'a557bdb0db1d073dd11d',
-          client_secret: '1f97a695510b5ae31ee6b672e17d17134cb92809'
-        }
-      })
-      gitment.render('comments-gitment')
-      </script>
-      <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
-    </div>
 
   
 
@@ -843,12 +623,42 @@ System.out.println(new Date().getTime());
 
   
 
-        </div>
-      </div>
-    </main>
+  
 
-    <footer id="footer" class="footer">
-      <div class="icon-links">
+
+    </div>
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1apache配置">1、Apache配置</a>
+      <ul>
+        <li><a href="#11httpdconf配置">1.1、httpd.conf配置</a></li>
+        <li><a href="#12httpd-vhostsconf设置">1.2、httpd-vhosts.conf设置</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-配置-tomcat">2 配置 tomcat</a>
+      <ul>
+        <li><a href="#21--配置-server-的关闭">2.1.  配置 server 的关闭</a></li>
+      </ul>
+    </li>
+    <li><a href="#22-配置-engine">2.2. 配置 Engine</a></li>
+    <li><a href="#25配置cluster">2.5.配置Cluster</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
+  </div>
+
+      </main>
+
+      <footer id="footer" class="footer">
+        <div class="icon-links">
   
   
     <a href="mailto:helloworld.vip@gmail.com" rel="me noopener" class="iconfont"
@@ -904,7 +714,7 @@ System.out.println(new Date().getTime());
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
@@ -943,28 +753,30 @@ System.out.println(new Date().getTime());
   
 </div>
 
-    </footer>
+      </footer>
 
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont">
-        
-        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+      <div class="button__back-to-top">
+        <a href="#back-to-top">
+          <i class="iconfont">
+            
+            <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="35" height="35">
   <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
 </svg>
 
-      </i>
+          </i>
+        </a>
+      </div>
     </div>
-  </div>
-  
+    
 <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
 
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.2d140c0a16f393dda9a56f88a94545fc04b53c91a6924da2bda2769e2312b5a0.js" integrity="sha256-LRQMChbzk92ppW&#43;IqUVF/AS1PJGmkk2ivaJ2niMStaA=" crossorigin="anonymous"></script>
 
 
 
@@ -985,7 +797,6 @@ System.out.println(new Date().getTime());
 
 
   
-    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
     <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
     <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
   
@@ -1004,5 +815,7 @@ System.out.println(new Date().getTime());
 
 
 
-</body>
+
+
+  </body>
 </html>

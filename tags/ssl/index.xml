@@ -6,11 +6,7 @@
     <description>Recent content in SSL on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Mon, 10 Sep 2018 18:12:26 +0800</lastBuildDate>
-    
-	<atom:link href="https://www.3afun.com/tags/ssl/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 10 Sep 2018 18:12:26 +0800</lastBuildDate><atom:link href="https://www.3afun.com/tags/ssl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lets Encrypt免费通配符SSL 证书申请配置教程</title>
       <link>https://www.3afun.com/post/2018/lets-encrypt%E9%85%8D%E7%BD%AE/</link>

@@ -6,11 +6,7 @@
     <description>Recent content in crontab on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Mon, 20 Nov 2017 17:27:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://www.3afun.com/tags/crontab/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 20 Nov 2017 17:27:00 +0800</lastBuildDate><atom:link href="https://www.3afun.com/tags/crontab/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Crontab 定时执行任务的环境变量问题</title>
       <link>https://www.3afun.com/post/2017/crontab-%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E4%BB%BB%E5%8A%A1%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%97%AE%E9%A2%98/</link>
@@ -26,7 +22,7 @@
       <pubDate>Wed, 06 Jan 2016 19:19:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2016/%E4%BD%BF%E7%94%A8crontab%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E4%B8%80%E4%B8%AApython%E8%84%9A%E6%9C%AC/</guid>
-      <description>添加任务，执行命令： 1 crontab -e 在新开的文件里添加： 1 00 05 * * * python /data/Backup_DB_MAT_TABLE_INSTALL.py 保存退出。 1 !wq 重启crond： 1 com.a3fun.rocket.service crond restart</description>
+      <description>添加任务，执行命令： crontab -e 在新开的文件里添加： 00 05 * * * python /data/Backup_DB_MAT_TABLE_INSTALL.py 保存退出。 !wq 重启crond： com.a3fun.rocket.service crond restart</description>
     </item>
     
   </channel>

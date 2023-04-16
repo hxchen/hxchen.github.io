@@ -6,11 +6,7 @@
     <description>Recent content in 操作系统 on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Sat, 26 Nov 2016 20:48:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://www.3afun.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 26 Nov 2016 20:48:00 +0800</lastBuildDate><atom:link href="https://www.3afun.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mac OS Sierra 关机慢的排查思路</title>
       <link>https://www.3afun.com/post/2016/mac-os-sierra-%E5%85%B3%E6%9C%BA%E6%85%A2%E7%9A%84%E6%8E%92%E6%9F%A5%E6%80%9D%E8%B7%AF/</link>
@@ -26,7 +22,7 @@
       <pubDate>Sat, 26 Nov 2016 19:20:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2016/mac-%E5%8D%B8%E8%BD%BDgooglesoftwareupdate/</guid>
-      <description>1 sudo /Library/Google/GoogleSoftwareUpdate/GoogleSoftwareUpdate.bundle/Contents/Resources/ksinstall --uninstall</description>
+      <description>sudo /Library/Google/GoogleSoftwareUpdate/GoogleSoftwareUpdate.bundle/Contents/Resources/ksinstall --uninstall</description>
     </item>
     
   </channel>

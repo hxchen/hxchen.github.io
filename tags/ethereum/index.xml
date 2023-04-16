@@ -6,18 +6,14 @@
     <description>Recent content in Ethereum on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Wed, 25 Apr 2018 17:34:28 +0800</lastBuildDate>
-    
-	<atom:link href="https://www.3afun.com/tags/ethereum/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 25 Apr 2018 17:34:28 +0800</lastBuildDate><atom:link href="https://www.3afun.com/tags/ethereum/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>智能合约和java智能包装的使用</title>
       <link>https://www.3afun.com/post/2018/working-with-smart-contracts-with-java-smart-contract-wrappers/</link>
       <pubDate>Wed, 25 Apr 2018 17:34:28 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2018/working-with-smart-contracts-with-java-smart-contract-wrappers/</guid>
-      <description>本章节我们将学习如何从智能合约代码自动生成与java交换的java代码。 首先我们需要安装Solidity编译器 安装Solidity编译器 1 sudo</description>
+      <description>本章节我们将学习如何从智能合约代码自动生成与java交换的java代码。 首先我们需要安装Solidity编译器 安装Solidity编译器 sudo npm</description>
     </item>
     
     <item>

@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>利用Action委托实现C#语言中的函数回调通知 - 我不是帅才</title>
-  
+<html
+  lang="en"
+  itemscope
+  itemtype="http://schema.org/WebPage"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+          利用Action委托实现C#语言中的函数回调通知 - 我不是帅才
+        </title>
+    
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -22,7 +28,7 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="北斗" /><meta name="description" content="C#语言中，如何实现事件回调" />
+<meta name="author" content="北斗" /><meta name="description" content="C#语言中，如何实现事件回调啊" />
 <meta name="keywords" content="C#, Action" />
 
 
@@ -31,7 +37,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1" />
+<meta name="generator" content="Hugo 0.111.3" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2023/%E5%88%A9%E7%94%A8action%E5%A7%94%E6%89%98%E5%AE%9E%E7%8E%B0csharp%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E5%9B%9E%E8%B0%83%E9%80%9A%E7%9F%A5/" />
@@ -52,29 +58,27 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.0995afa14b62cd93e93cfc066b646c4c17a3eddca0e9d52a1d9dcf5d90aaacd3.css" integrity="sha256-CZWvoUtizZPpPPwGa2RsTBej7dyg6dUqHZ3PXZCqrNM=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.d8d87b982993a745e5e7b6a6cbf257be8c3e82aab5e485f0908ad7e6c3501ab2.css" integrity="sha256-2Nh7mCmTp0Xl57amy/JXvow&#43;gqq15IXwkIrX5sNQGrI=" media="screen" crossorigin="anonymous">
+
+
 
 
 
 
 
 <meta property="og:title" content="利用Action委托实现C#语言中的函数回调通知" />
-<meta property="og:description" content="C#语言中，如何实现事件回调" />
+<meta property="og:description" content="C#语言中，如何实现事件回调啊" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.3afun.com/post/2023/%E5%88%A9%E7%94%A8action%E5%A7%94%E6%89%98%E5%AE%9E%E7%8E%B0csharp%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E5%9B%9E%E8%B0%83%E9%80%9A%E7%9F%A5/" />
+<meta property="og:url" content="https://www.3afun.com/post/2023/%E5%88%A9%E7%94%A8action%E5%A7%94%E6%89%98%E5%AE%9E%E7%8E%B0csharp%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%87%BD%E6%95%B0%E5%9B%9E%E8%B0%83%E9%80%9A%E7%9F%A5/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-02-18T17:31:19+08:00" />
 <meta property="article:modified_time" content="2023-02-18T17:31:19+08:00" />
 <meta itemprop="name" content="利用Action委托实现C#语言中的函数回调通知">
-<meta itemprop="description" content="C#语言中，如何实现事件回调">
-<meta itemprop="datePublished" content="2023-02-18T17:31:19&#43;08:00" />
-<meta itemprop="dateModified" content="2023-02-18T17:31:19&#43;08:00" />
-<meta itemprop="wordCount" content="1017">
-
-
-
+<meta itemprop="description" content="C#语言中，如何实现事件回调啊"><meta itemprop="datePublished" content="2023-02-18T17:31:19+08:00" />
+<meta itemprop="dateModified" content="2023-02-18T17:31:19+08:00" />
+<meta itemprop="wordCount" content="930">
 <meta itemprop="keywords" content="C#," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="利用Action委托实现C#语言中的函数回调通知"/>
-<meta name="twitter:description" content="C#语言中，如何实现事件回调"/>
+<meta name="twitter:description" content="C#语言中，如何实现事件回调啊"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -89,19 +93,22 @@
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 	ga('create', 'UA-117605000-1', 'auto');
 	
 	ga('send', 'pageview');
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
+  </head>
+  <body>
+    <div id="back-to-top"></div>
 
-</head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
+    <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
     <a href="/" class="logo">我不是帅才</a>
   </div>
@@ -156,8 +163,8 @@ if (!doNotTrack) {
 </nav>
 
 
-  
     
+      
 
 
 
@@ -214,14 +221,15 @@ if (!doNotTrack) {
     </div>
 </div>
 
-  
+    
 
-  
+    
 
-  
+    
 
-  <header id="header" class="header container">
-    <div class="logo-wrapper">
+
+    <header id="header" class="header">
+      <div class="logo-wrapper">
   <a href="/" class="logo">
     
       我不是帅才
@@ -296,43 +304,61 @@ if (!doNotTrack) {
   </ul>
 </nav>
 
-  </header>
-
-  <div id="mobile-panel">
-    <main id="main" class="main bg-llight">
-      <div class="content-wrapper">
-        <div id="content" class="content container">
-          <article class="post bg-white">
-    
-    <header class="post-header">
-      <h1 class="post-title">利用Action委托实现C#语言中的函数回调通知</h1>
-      
-      <div class="post-meta">
-        <time datetime="2023-02-18" class="post-time">
-          2023-02-18
-        </time>
-        <div class="post-category">
-            <a href="https://www.3afun.com/categories/unity/"> Unity </a>
-            <a href="https://www.3afun.com/categories/c#/"> C# </a>
-            
-          </div>
-        <span class="more-meta"> 约 1017 字 </span>
-          <span class="more-meta"> 预计阅读 3 分钟 </span>
-
-        
-        
-
-        
-        
-      </div>
     </header>
 
+    <div id="mobile-panel">
+      <main id="main" class="main bg-llight wallpaper">
+        <div class="content-wrapper">
+    <div id="content" class="content">
+      <article class="post">
+        
+        <header class="post-header">
+          <h1 class="post-title">利用Action委托实现C#语言中的函数回调通知</h1>
+          
+
+          <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      北斗
+    
+  </div>
+
+  <div class="post-meta-time">
+    <time datetime="2023-02-18">
+      2023-02-18
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        约 930 字 -
+        预计阅读 2 分钟
+      </span>
+
+    <div class="post-meta-category">
+        <a href="https://www.3afun.com/categories/unity/"> Unity </a>
+          <a href="https://www.3afun.com/categories/c#/"> C# </a>
+          
+      </div>
+
+
     
     
 
+
     
-    <div class="post-content">
-      <h2 id="actiont委托">Action<!-- raw HTML omitted -->委托</h2>
+    
+  </div>
+</div>
+
+        </header>
+
+        
+        <div class="post-content">
+          <h2 id="actiont委托">Action<T>委托</h2>
 <h3 id="定义">定义</h3>
 <p><em>(定义看不懂没关系，浏览一眼后看完示例再过来看定义，会更好理解)</em></p>
 <p>命名空间:
@@ -340,15 +366,8 @@ if (!doNotTrack) {
 <p>程序集:
 <code>System.Runtime.dll</code></p>
 <p>下面我们来封装一个方法，该方法只有一个参数并且不返回值。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-C#" data-lang="C#"><span class="k">public</span> <span class="k">delegate</span> <span class="k">void</span> <span class="n">Action</span><span class="p">&lt;</span><span class="k">in</span> <span class="n">T</span><span class="p">&gt;</span><span class="p">(</span><span class="n">T</span> <span class="n">obj</span><span class="p">)</span><span class="p">;</span>
-</code></pre></td></tr></table>
-</div>
-</div><p><strong>方法讲解：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">delegate</span> <span style="color:#66d9ef">void</span> Action&lt;<span style="color:#66d9ef">in</span> T&gt;(T obj);
+</span></span></code></pre></div><p><strong>方法讲解：</strong></p>
 <p>类型参数 <code>T</code> 此委托封装的方法的参数类型。</p>
 <p>这是逆变类型参数。 即，可以使用指定的类型，也可以使用派生程度较低的任何类型。 有关协变和逆变的详细信息，请参阅泛型中的协变和逆变。</p>
 <p>参数 <code>obj</code>T 此委托封装的方法的参数。</p>
@@ -359,242 +378,182 @@ if (!doNotTrack) {
 <h3 id="示例">示例</h3>
 <p>假如我们实战中可能会有金币系统，金币改变的时候，我们需要对UI也要进行更新。这个UI就要向金币系统进行一个事件注册，当你有更新的时候，你要通知我。
 下面我们就要实现这么一个金币系统。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-C#" data-lang="C#"><span class="k">public</span> <span class="k">class</span> <span class="nc">CoinsSystem</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
-<span class="p">{</span>
-  <span class="k">public</span> <span class="k">static</span> <span class="n">CoinsSystem</span> <span class="n">instance</span><span class="p">;</span>
-
-
-  <span class="c1">// 保存金币更新回调函数
-</span><span class="c1"></span>  <span class="k">private</span> <span class="n">Action</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">onCoinsUpdated</span><span class="p">;</span>
-
-  <span class="k">private</span> <span class="k">void</span> <span class="n">Awake</span><span class="p">(</span><span class="p">)</span>
-  <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">instance</span> <span class="p">=</span><span class="p">=</span> <span class="k">null</span><span class="p">)</span>
-      <span class="p">{</span>
-          <span class="n">instance</span> <span class="p">=</span> <span class="k">this</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">instance</span> <span class="p">!</span><span class="p">=</span> <span class="k">this</span><span class="p">)</span>
-      <span class="p">{</span>
-          <span class="n">Destroy</span><span class="p">(</span><span class="n">gameObject</span><span class="p">)</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="n">DontDestroyOnLoad</span><span class="p">(</span><span class="n">gameObject</span><span class="p">)</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="c1">/// &lt;summary&gt;
-</span><span class="c1"></span>  <span class="c1">/// 购买金币
-</span><span class="c1"></span>  <span class="c1">/// &lt;/summary&gt;
-</span><span class="c1"></span>  <span class="c1">/// &lt;param name=&#34;amount&#34;&gt;金币数量&lt;/param&gt;
-</span><span class="c1"></span>  <span class="k">public</span> <span class="k">void</span> <span class="n">BuyCoins</span><span class="p">(</span><span class="kt">int</span> <span class="n">amount</span><span class="p">)</span>
-  <span class="p">{</span>
-      <span class="c1">// some other code
-</span><span class="c1"></span>      <span class="k">if</span> <span class="p">(</span><span class="n">onCoinsUpdated</span> <span class="p">!</span><span class="p">=</span> <span class="k">null</span><span class="p">)</span>
-      <span class="p">{</span>
-          <span class="n">onCoinsUpdated</span><span class="p">(</span><span class="n">numCoins</span><span class="p">)</span><span class="p">;</span>
-      <span class="p">}</span>
-  <span class="p">}</span>
-
-  <span class="c1">/// &lt;summary&gt;
-</span><span class="c1"></span>  <span class="c1">/// 注册监听，当金币变化的时候调用
-</span><span class="c1"></span>  <span class="c1">/// &lt;/summary&gt;
-</span><span class="c1"></span>  <span class="c1">/// &lt;param name=&#34;callback&#34;&gt;回调函数&lt;/param&gt;
-</span><span class="c1"></span>  <span class="k">public</span> <span class="k">void</span> <span class="n">Subscribe</span><span class="p">(</span><span class="n">Action</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">callback</span><span class="p">)</span>
-  <span class="p">{</span>
-      <span class="n">onCoinsUpdated</span> <span class="p">+</span><span class="p">=</span> <span class="n">callback</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="c1">/// &lt;summary&gt;
-</span><span class="c1"></span>  <span class="c1">/// 取消注册
-</span><span class="c1"></span>  <span class="c1">/// &lt;/summary&gt;
-</span><span class="c1"></span>  <span class="c1">/// &lt;param name=&#34;callback&#34;&gt;回调函数&lt;/param&gt;
-</span><span class="c1"></span>  <span class="k">public</span> <span class="k">void</span> <span class="n">Unsubscribe</span><span class="p">(</span><span class="n">Action</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">callback</span><span class="p">)</span>
-  <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">onCoinsUpdated</span> <span class="p">!</span><span class="p">=</span> <span class="k">null</span><span class="p">)</span>
-      <span class="p">{</span>
-          <span class="n">onCoinsUpdated</span> <span class="p">-</span><span class="p">=</span> <span class="n">callback</span><span class="p">;</span>
-      <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>金币系统我们就这么实现了出来，下面我们再演示一个使用的过程。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-C#" data-lang="C#"><span class="k">public</span> <span class="k">class</span> <span class="nc">BuyCoinsBar</span>
-<span class="p">{</span>
-<span class="na">  [SerializeField]</span>
-  <span class="k">private</span> <span class="n">Text</span> <span class="n">numCoinsText</span><span class="p">;</span>
-
-  <span class="c1">/// &lt;summary&gt;
-</span><span class="c1"></span>  <span class="c1">/// Unity&#39;s Start method.
-</span><span class="c1"></span>  <span class="c1">/// &lt;/summary&gt;
-</span><span class="c1"></span>  <span class="k">private</span> <span class="k">void</span> <span class="n">Start</span><span class="p">(</span><span class="p">)</span>
-  <span class="p">{</span>
-      <span class="c1">// 注册监听金币
-</span><span class="c1"></span>      <span class="n">CoinsSystem</span><span class="p">.</span><span class="n">instance</span><span class="p">.</span><span class="n">Subscribe</span><span class="p">(</span><span class="n">OnCoinsChanged</span><span class="p">)</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="c1">/// &lt;summary&gt;
-</span><span class="c1"></span>  <span class="c1">/// Unity&#39;s OnDestroy method.
-</span><span class="c1"></span>  <span class="c1">/// &lt;/summary&gt;
-</span><span class="c1"></span>  <span class="k">private</span> <span class="k">void</span> <span class="n">OnDestroy</span><span class="p">(</span><span class="p">)</span>
-  <span class="p">{</span>
-      <span class="c1">// 取消注册
-</span><span class="c1"></span>      <span class="n">CoinsSystem</span><span class="p">.</span><span class="n">instance</span><span class="p">.</span><span class="n">Unsubscribe</span><span class="p">(</span><span class="n">OnCoinsChanged</span><span class="p">)</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="c1">/// &lt;summary&gt;
-</span><span class="c1"></span>  <span class="c1">/// 金币变化时调用，更新UI
-</span><span class="c1"></span>  <span class="c1">/// &lt;/summary&gt;
-</span><span class="c1"></span>  <span class="c1">/// &lt;param name=&#34;numCoins&#34;&gt;当前金币数量&lt;/param&gt;
-</span><span class="c1"></span>  <span class="k">private</span> <span class="k">void</span> <span class="n">OnCoinsChanged</span><span class="p">(</span><span class="kt">int</span> <span class="n">numCoins</span><span class="p">)</span>
-  <span class="p">{</span>
-      <span class="n">numCoinsText</span><span class="p">.</span><span class="n">text</span> <span class="p">=</span> <span class="n">numCoins</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&#34;n0&#34;</span><span class="p">)</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>在使用的过程中，我们可以看到<code>OnCoinsChanged</code>这个方法就被当做一个参数传递到注册/取消注册函数中。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CoinsSystem</span> : MonoBehaviour
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> CoinsSystem instance;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 保存金币更新回调函数</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> Action&lt;<span style="color:#66d9ef">int</span>&gt; onCoinsUpdated;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> Awake()
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (instance == <span style="color:#66d9ef">null</span>)
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>          instance = <span style="color:#66d9ef">this</span>;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (instance != <span style="color:#66d9ef">this</span>)
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>          Destroy(gameObject);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      DontDestroyOnLoad(gameObject);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// 购买金币</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// &lt;param name=&#34;amount&#34;&gt;金币数量&lt;/param&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> BuyCoins(<span style="color:#66d9ef">int</span> amount)
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// some other code</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (onCoinsUpdated != <span style="color:#66d9ef">null</span>)
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>          onCoinsUpdated(numCoins);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// 注册监听，当金币变化的时候调用</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// &lt;param name=&#34;callback&#34;&gt;回调函数&lt;/param&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Subscribe(Action&lt;<span style="color:#66d9ef">int</span>&gt; callback)
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>      onCoinsUpdated += callback;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// 取消注册</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// &lt;param name=&#34;callback&#34;&gt;回调函数&lt;/param&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Unsubscribe(Action&lt;<span style="color:#66d9ef">int</span>&gt; callback)
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (onCoinsUpdated != <span style="color:#66d9ef">null</span>)
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>          onCoinsUpdated -= callback;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>金币系统我们就这么实现了出来，下面我们再演示一个使用的过程。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BuyCoinsBar</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">  [SerializeField]</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> Text numCoinsText;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// Unity&#39;s Start method.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> Start()
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// 注册监听金币</span>
+</span></span><span style="display:flex;"><span>      CoinsSystem.instance.Subscribe(OnCoinsChanged);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// Unity&#39;s OnDestroy method.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> OnDestroy()
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// 取消注册</span>
+</span></span><span style="display:flex;"><span>      CoinsSystem.instance.Unsubscribe(OnCoinsChanged);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// 金币变化时调用，更新UI</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// &lt;param name=&#34;numCoins&#34;&gt;当前金币数量&lt;/param&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> OnCoinsChanged(<span style="color:#66d9ef">int</span> numCoins)
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>      numCoinsText.text = numCoins.ToString(<span style="color:#e6db74">&#34;n0&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>在使用的过程中，我们可以看到<code>OnCoinsChanged</code>这个方法就被当做一个参数传递到注册/取消注册函数中。
 当我们<code>CoinsSystem</code>中的金币数量发生了变化，任何注册进来的函数都会得到被调用，</p>
 
-    </div>
-
-    
-    
-
-
-    
-    
-
-    <footer class="post-footer">
-      <div class="post-tags">
-          <a href="https://www.3afun.com/tags/c#/">C#</a>
-          
         </div>
 
-      
-      <nav class="post-nav">
         
         
-          <a class="next" href="/post/2023/unity%E4%B8%AD%E4%BD%BF%E7%94%A8fullserialize%E8%BF%9B%E8%A1%8Cjson%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/">
-            <span class="next-text nav-default">Unity中使用Full Serialize进行JSON序列化和反序列化</span>
-            <span class="prev-text nav-mobile">下一篇</span>
+
+
+
+        
+        
+
+
+        <footer class="post-footer">
+          <div class="post-tags">
+              <a href="https://www.3afun.com/tags/c#/">C#</a>
+                
+            </div>
+
+
+          
+          <nav class="post-nav">
             
-            <i class="iconfont">
-              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+              <a class="prev" href="/post/2023/java%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E6%80%BB%E7%BB%93/">
+                
+                <i class="iconfont">
+                  <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+                </i>
+                <span class="prev-text nav-default">Java从内存模型上看线程安全</span>
+                <span class="prev-text nav-mobile">上一篇</span>
+              </a>
+            
+              <a class="next" href="/post/2023/unity%E4%B8%AD%E4%BD%BF%E7%94%A8fullserialize%E8%BF%9B%E8%A1%8Cjson%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/">
+                <span class="next-text nav-default">Unity中使用Full Serialize进行JSON序列化和反序列化</span>
+                <span class="prev-text nav-mobile">下一篇</span>
+                
+                <i class="iconfont">
+                  <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="18" height="18">
   <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
 </svg>
 
-            </i>
-          </a>
-      </nav>
-    </footer>
-  </article>
+                </i>
+              </a>
+          </nav>
+        </footer>
+      </article>
 
-  
-  
+      
+      
 
-  
-  
 
-        </div>
-      </div>
-    </main>
+      
+      
 
-    <footer id="footer" class="footer">
-      <div class="icon-links">
+
+    </div>
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#actiont委托">Action<T>委托</a>
+      <ul>
+        <li><a href="#定义">定义</a></li>
+        <li><a href="#示例">示例</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
+  </div>
+
+      </main>
+
+      <footer id="footer" class="footer">
+        <div class="icon-links">
   
   
     <a href="mailto:helloworld.vip@gmail.com" rel="me noopener" class="iconfont"
@@ -650,7 +609,7 @@ if (!doNotTrack) {
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
@@ -689,28 +648,30 @@ if (!doNotTrack) {
   
 </div>
 
-    </footer>
+      </footer>
 
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont">
-        
-        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+      <div class="button__back-to-top">
+        <a href="#back-to-top">
+          <i class="iconfont">
+            
+            <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="35" height="35">
   <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
 </svg>
 
-      </i>
+          </i>
+        </a>
+      </div>
     </div>
-  </div>
-  
+    
 <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
 
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.2d140c0a16f393dda9a56f88a94545fc04b53c91a6924da2bda2769e2312b5a0.js" integrity="sha256-LRQMChbzk92ppW&#43;IqUVF/AS1PJGmkk2ivaJ2niMStaA=" crossorigin="anonymous"></script>
 
 
 
@@ -724,7 +685,6 @@ if (!doNotTrack) {
 
 
   
-    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
     <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
     <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
   
@@ -743,5 +703,7 @@ if (!doNotTrack) {
 
 
 
-</body>
+
+
+  </body>
 </html>

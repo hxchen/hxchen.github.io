@@ -6,18 +6,14 @@
     <description>Recent content in React on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Sun, 20 Aug 2017 22:04:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://www.3afun.com/tags/react/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 20 Aug 2017 22:04:00 +0800</lastBuildDate><atom:link href="https://www.3afun.com/tags/react/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>React入门 </title>
       <link>https://www.3afun.com/post/2017/react%E5%85%A5%E9%97%A8/</link>
       <pubDate>Sun, 20 Aug 2017 22:04:00 +0800</pubDate>
       
       <guid>https://www.3afun.com/post/2017/react%E5%85%A5%E9%97%A8/</guid>
-      <description>安装 你可以进行一起全局安装 1 sudo npm install -g create-react-app 创建一个应用 为了创建一个App，执行 1 2 create-react-app react_demo cd react_demo 执行完毕后，他会在当前目录下创建一个名为 react_demo 的文件夹。 如</description>
+      <description>安装 你可以进行一起全局安装 sudo npm install -g create-react-app 创建一个应用 为了创建一个App，执行 create-react-app react_demo cd react_demo 执行完毕后，他会在当前目录下创建一个名为 react_demo 的文件夹。 如图所示</description>
     </item>
     
   </channel>

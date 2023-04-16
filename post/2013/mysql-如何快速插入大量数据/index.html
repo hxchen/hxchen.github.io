@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>MySQL 如何快速插入大量数据 - 我不是帅才</title>
-  
+<html
+  lang="en"
+  itemscope
+  itemtype="http://schema.org/WebPage"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+          MySQL 如何快速插入大量数据 - 我不是帅才
+        </title>
+    
 
 <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
 
 <meta name="MobileOptimized" content="width"/>
 <meta name="HandheldFriendly" content="true"/>
@@ -32,7 +38,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.64.1" />
+<meta name="generator" content="Hugo 0.111.3" />
 
 
 <link rel="canonical" href="https://www.3afun.com/post/2013/mysql-%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%8F%92%E5%85%A5%E5%A4%A7%E9%87%8F%E6%95%B0%E6%8D%AE/" />
@@ -53,7 +59,9 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.0995afa14b62cd93e93cfc066b646c4c17a3eddca0e9d52a1d9dcf5d90aaacd3.css" integrity="sha256-CZWvoUtizZPpPPwGa2RsTBej7dyg6dUqHZ3PXZCqrNM=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.d8d87b982993a745e5e7b6a6cbf257be8c3e82aab5e485f0908ad7e6c3501ab2.css" integrity="sha256-2Nh7mCmTp0Xl57amy/JXvow&#43;gqq15IXwkIrX5sNQGrI=" media="screen" crossorigin="anonymous">
+
+
 
 
 
@@ -62,17 +70,13 @@
 <meta property="og:title" content="MySQL 如何快速插入大量数据" />
 <meta property="og:description" content="这几天尝试了使用不同的存储引擎大量插入MySQL表数据，主要试验了MyISAM存储引擎和InnoDB。下面是实验过程： 一、InnoDB存储引" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.3afun.com/post/2013/mysql-%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%8F%92%E5%85%A5%E5%A4%A7%E9%87%8F%E6%95%B0%E6%8D%AE/" />
+<meta property="og:url" content="https://www.3afun.com/post/2013/mysql-%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%8F%92%E5%85%A5%E5%A4%A7%E9%87%8F%E6%95%B0%E6%8D%AE/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2013-01-31T13:45:00+08:00" />
 <meta property="article:modified_time" content="2013-01-31T13:45:00+08:00" />
 <meta itemprop="name" content="MySQL 如何快速插入大量数据">
-<meta itemprop="description" content="这几天尝试了使用不同的存储引擎大量插入MySQL表数据，主要试验了MyISAM存储引擎和InnoDB。下面是实验过程： 一、InnoDB存储引">
-<meta itemprop="datePublished" content="2013-01-31T13:45:00&#43;08:00" />
-<meta itemprop="dateModified" content="2013-01-31T13:45:00&#43;08:00" />
-<meta itemprop="wordCount" content="741">
-
-
-
+<meta itemprop="description" content="这几天尝试了使用不同的存储引擎大量插入MySQL表数据，主要试验了MyISAM存储引擎和InnoDB。下面是实验过程： 一、InnoDB存储引"><meta itemprop="datePublished" content="2013-01-31T13:45:00+08:00" />
+<meta itemprop="dateModified" content="2013-01-31T13:45:00+08:00" />
+<meta itemprop="wordCount" content="664">
 <meta itemprop="keywords" content="MySQL," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="MySQL 如何快速插入大量数据"/>
 <meta name="twitter:description" content="这几天尝试了使用不同的存储引擎大量插入MySQL表数据，主要试验了MyISAM存储引擎和InnoDB。下面是实验过程： 一、InnoDB存储引"/>
@@ -90,19 +94,22 @@
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 	ga('create', 'UA-117605000-1', 'auto');
 	
 	ga('send', 'pageview');
 }
 </script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
+  </head>
+  <body>
+    <div id="back-to-top"></div>
 
-</head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
+    <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
     <a href="/" class="logo">我不是帅才</a>
   </div>
@@ -157,8 +164,8 @@ if (!doNotTrack) {
 </nav>
 
 
-  
     
+      
 
 
 
@@ -215,14 +222,15 @@ if (!doNotTrack) {
     </div>
 </div>
 
-  
+    
 
-  
+    
 
-  
+    
 
-  <header id="header" class="header container">
-    <div class="logo-wrapper">
+
+    <header id="header" class="header">
+      <div class="logo-wrapper">
   <a href="/" class="logo">
     
       我不是帅才
@@ -297,74 +305,63 @@ if (!doNotTrack) {
   </ul>
 </nav>
 
-  </header>
-
-  <div id="mobile-panel">
-    <main id="main" class="main bg-llight">
-      <div class="content-wrapper">
-        <div id="content" class="content container">
-          <article class="post bg-white">
-    
-    <header class="post-header">
-      <h1 class="post-title">MySQL 如何快速插入大量数据</h1>
-      
-      <div class="post-meta">
-        <time datetime="2013-01-31" class="post-time">
-          2013-01-31
-        </time>
-        <div class="post-category">
-            <a href="https://www.3afun.com/categories/mysql/"> MySQL </a>
-            
-          </div>
-        <span class="more-meta"> 约 741 字 </span>
-          <span class="more-meta"> 预计阅读 2 分钟 </span>
-
-        
-        
-
-        
-        
-      </div>
     </header>
 
+    <div id="mobile-panel">
+      <main id="main" class="main bg-llight wallpaper">
+        <div class="content-wrapper">
+    <div id="content" class="content">
+      <article class="post">
+        
+        <header class="post-header">
+          <h1 class="post-title">MySQL 如何快速插入大量数据</h1>
+          
+
+          <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      北斗
+    
+  </div>
+
+  <div class="post-meta-time">
+    <time datetime="2013-01-31">
+      2013-01-31
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        约 664 字 -
+        预计阅读 2 分钟
+      </span>
+
+    <div class="post-meta-category">
+        <a href="https://www.3afun.com/categories/mysql/"> MySQL </a>
+          
+      </div>
+
+
     
     
-<div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">文章目录</h2>
-  <div class="post-toc-content">
-    <nav id="TableOfContents"></nav>
+
+
+    
+    
   </div>
 </div>
 
-    
-    <div class="post-content">
-      <p>这几天尝试了使用不同的存储引擎大量插入MySQL表数据，主要试验了MyISAM存储引擎和InnoDB。下面是实验过程：</p>
+        </header>
+
+        
+        <div class="post-content">
+          <p>这几天尝试了使用不同的存储引擎大量插入MySQL表数据，主要试验了MyISAM存储引擎和InnoDB。下面是实验过程：</p>
 <p>一、InnoDB存储引擎。</p>
 <p>创建数据库和表</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">CREATE DATABASE ecommerce;
+<pre tabindex="0"><code>CREATE DATABASE ecommerce;
 CREATE TABLE employees (
     id INT NOT NULL,
     fname VARCHAR(30),
@@ -383,27 +380,8 @@ partition BY RANGE (store_id) (
     partition p3 VALUES LESS THAN (150000),
     Partition p4 VALUES LESS THAN MAXVALUE
 );
-</code></pre></td></tr></table>
-</div>
-</div><p>创建存储过程</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">use ecommerce;
+</code></pre><p>创建存储过程</p>
+<pre tabindex="0"><code>use ecommerce;
 CREATE PROCEDURE BatchInsert(IN init INT, IN loop_time INT)
 BEGIN
     DECLARE Var INT;
@@ -416,49 +394,12 @@ BEGIN
         SET Var = Var + 1;
         END WHILE;
 END;
-</code></pre></td></tr></table>
-</div>
-</div><p>调用存储过程插入数据</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">CALL BatchInsert（30036,200000）
-</code></pre></td></tr></table>
-</div>
-</div><p>用时：3h 37min 8sec</p>
+</code></pre><p>调用存储过程插入数据</p>
+<pre tabindex="0"><code>CALL BatchInsert（30036,200000）
+</code></pre><p>用时：3h 37min 8sec</p>
 <p>二、MyISAM存储引擎</p>
 <p>创建表</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">use ecommerce;
+<pre tabindex="0"><code>use ecommerce;
 CREATE TABLE ecommerce.customer (
    id INT NOT NULL,
    email VARCHAR(64) NOT NULL,
@@ -482,30 +423,8 @@ partition BY RANGE (id) (
     partition p4 VALUES LESS THAN (2000000),
     Partition p5 VALUES LESS THAN MAXVALUE
 );
-</code></pre></td></tr></table>
-</div>
-</div><p>创建存储过程</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">use ecommerce;
+</code></pre><p>创建存储过程</p>
+<pre tabindex="0"><code>use ecommerce;
 DROP PROCEDURE IF EXISTS ecommerce.BatchInsertCustomer;
 CREATE PROCEDURE BatchInsertCustomer(IN start INT,IN loop_time INT)
 BEGIN
@@ -521,36 +440,18 @@ BEGIN
         SET ID= ID + 1;
         END WHILE;
 END;
-</code></pre></td></tr></table>
-</div>
-</div><p>调用存储过程插入数据</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">ALTER  TABLE  customer  DISABLE  KEYS;
+</code></pre><p>调用存储过程插入数据</p>
+<pre tabindex="0"><code>ALTER  TABLE  customer  DISABLE  KEYS;
 CALL BatchInsertCustomer(1,2000000);
 ALTER  TABLE  customer  ENABLE  KEYS;
-</code></pre></td></tr></table>
-</div>
-</div><p>用时：8min 50sec</p>
+</code></pre><p>用时：8min 50sec</p>
 <p>通过以上对比发现对于插入大量数据时可以使用MyISAM存储引擎，如果再需要修改MySQL存储引擎可以使用命令：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">ALTER TABLE t ENGINE = MYISAM;
-</code></pre></td></tr></table>
-</div>
-</div>
-    </div>
+<pre tabindex="0"><code>ALTER TABLE t ENGINE = MYISAM;
+</code></pre>
+        </div>
 
-    
-    
+        
+        
 <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">文章作者</span>
@@ -571,83 +472,68 @@ ALTER  TABLE  customer  ENABLE  KEYS;
 </div>
 
 
-    
-    
 
-    <footer class="post-footer">
-      <div class="post-tags">
-          <a href="https://www.3afun.com/tags/mysql/">MySQL</a>
-          
-        </div>
-
-      
-      <nav class="post-nav">
         
-          <a class="prev" href="/post/2013/mysql%E4%B8%8D%E5%90%8C%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%E5%92%8C%E4%B8%8D%E5%90%8C%E5%88%86%E5%8C%BA%E5%AD%97%E6%AE%B5%E5%AF%B9%E4%BA%8E%E6%9F%A5%E8%AF%A2%E7%9A%84%E5%BD%B1%E5%93%8D/">
+        
+
+
+        <footer class="post-footer">
+          <div class="post-tags">
+              <a href="https://www.3afun.com/tags/mysql/">MySQL</a>
+                
+            </div>
+
+
+          
+          <nav class="post-nav">
             
-            <i class="iconfont">
-              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+              <a class="prev" href="/post/2013/mysql%E4%B8%8D%E5%90%8C%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%E5%92%8C%E4%B8%8D%E5%90%8C%E5%88%86%E5%8C%BA%E5%AD%97%E6%AE%B5%E5%AF%B9%E4%BA%8E%E6%9F%A5%E8%AF%A2%E7%9A%84%E5%BD%B1%E5%93%8D/">
+                
+                <i class="iconfont">
+                  <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="18" height="18">
   <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
 </svg>
 
-            </i>
-            <span class="prev-text nav-default">MySQL不同存储引擎和不同分区字段对于查询的影响</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        
-          <a class="next" href="/post/2013/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6%E5%AE%9E%E7%8E%B0/">
-            <span class="next-text nav-default">MySQL主从复制实现</span>
-            <span class="prev-text nav-mobile">下一篇</span>
+                </i>
+                <span class="prev-text nav-default">MySQL不同存储引擎和不同分区字段对于查询的影响</span>
+                <span class="prev-text nav-mobile">上一篇</span>
+              </a>
             
-            <i class="iconfont">
-              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+              <a class="next" href="/post/2013/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6%E5%AE%9E%E7%8E%B0/">
+                <span class="next-text nav-default">MySQL主从复制实现</span>
+                <span class="prev-text nav-mobile">下一篇</span>
+                
+                <i class="iconfont">
+                  <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="18" height="18">
   <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
 </svg>
 
-            </i>
-          </a>
-      </nav>
-    </footer>
-  </article>
+                </i>
+              </a>
+          </nav>
+        </footer>
+      </article>
+
+      
+      
+
+
+      
+      
+
+  
+
+  
+  
 
   
   
 
   
-  
-
-  
-
-  
-  
-
-  
-
-  <div class="post bg-white">
-      <div id="comments-gitment"></div>
-      <link rel="stylesheet" href="/lib/gitment/gitment-0.0.3.min.css">
-        <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
-      <script type="text/javascript">
-      const gitment = new Gitment({
-        id: 'MySQL 如何快速插入大量数据.md',
-        title: 'MySQL 如何快速插入大量数据',
-        link: decodeURI(location.href),
-        desc: '这几天尝试了使用不同的存储引擎大量插入MySQL表数据，主要试验了MyISAM存储引擎和InnoDB。下面是实验过程： 一、InnoDB存储引',
-        owner: 'hxchen',
-        repo: 'comments',
-        oauth: {
-          client_id: 'a557bdb0db1d073dd11d',
-          client_secret: '1f97a695510b5ae31ee6b672e17d17134cb92809'
-        }
-      })
-      gitment.render('comments-gitment')
-      </script>
-      <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
-    </div>
 
   
 
@@ -655,12 +541,21 @@ ALTER  TABLE  customer  ENABLE  KEYS;
 
   
 
-        </div>
-      </div>
-    </main>
+  
 
-    <footer id="footer" class="footer">
-      <div class="icon-links">
+
+    </div>
+
+    
+    
+
+
+  </div>
+
+      </main>
+
+      <footer id="footer" class="footer">
+        <div class="icon-links">
   
   
     <a href="mailto:helloworld.vip@gmail.com" rel="me noopener" class="iconfont"
@@ -716,7 +611,7 @@ ALTER  TABLE  customer  ENABLE  KEYS;
 </svg>
 
   </a>
-   
+  
 </div>
 
 <div class="copyright">
@@ -755,28 +650,30 @@ ALTER  TABLE  customer  ENABLE  KEYS;
   
 </div>
 
-    </footer>
+      </footer>
 
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont">
-        
-        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+      <div class="button__back-to-top">
+        <a href="#back-to-top">
+          <i class="iconfont">
+            
+            <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="35" height="35">
   <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
 </svg>
 
-      </i>
+          </i>
+        </a>
+      </div>
     </div>
-  </div>
-  
+    
 <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
 
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.2d140c0a16f393dda9a56f88a94545fc04b53c91a6924da2bda2769e2312b5a0.js" integrity="sha256-LRQMChbzk92ppW&#43;IqUVF/AS1PJGmkk2ivaJ2niMStaA=" crossorigin="anonymous"></script>
 
 
 
@@ -797,7 +694,6 @@ ALTER  TABLE  customer  ENABLE  KEYS;
 
 
   
-    <script type="text/javascript" src="/js/load-photoswipe.js"></script>
     <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
     <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
   
@@ -816,5 +712,7 @@ ALTER  TABLE  customer  ENABLE  KEYS;
 
 
 
-</body>
+
+
+  </body>
 </html>
