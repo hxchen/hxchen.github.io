@@ -469,7 +469,7 @@ if (!doNotTrack) {
 <li>实例方法<code>addOne</code>得到了调用, 实例方法<code>addTwo</code>没有得到调用，另一个线程没有获取到对象锁。</li>
 <li>实例方法<code>addThree</code>得到了调用，这说明在两个<code>synchronized</code>修饰的实例方法里，只要该线程持有对象锁，就可以调用另一个被修饰的实例方法。</li>
 </ol>
-<h3 id="3修饰代码块">3.修饰代码块</h3>
+<h2 id="3修饰代码块">3.修饰代码块</h2>
 <h4 class=".." id="31-synchronizedthis">3.1 synchronized(this)</h4>
 <p>这种情况下，this是实例对象，锁住的是实例对象。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addOne</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> InterruptedException <span style="color:#f92672">{</span>
@@ -580,9 +580,10 @@ if (!doNotTrack) {
       <nav id="TableOfContents">
   <ul>
     <li><a href="#1修饰静态方法">1.修饰静态方法</a></li>
-    <li><a href="#2修饰实例方法">2.修饰实例方法</a>
+    <li><a href="#2修饰实例方法">2.修饰实例方法</a></li>
+    <li><a href="#3修饰代码块">3.修饰代码块</a>
       <ul>
-        <li><a href="#3修饰代码块">3.修饰代码块</a></li>
+        <li></li>
       </ul>
     </li>
   </ul>
