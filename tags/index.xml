@@ -6,7 +6,16 @@
     <description>Recent content in Tags on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Sun, 16 Apr 2023 18:06:33 +0800</lastBuildDate><atom:link href="https://www.3afun.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Apr 2023 22:06:33 +0800</lastBuildDate><atom:link href="https://www.3afun.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>锁</title>
+      <link>https://www.3afun.com/tags/%E9%94%81/</link>
+      <pubDate>Wed, 19 Apr 2023 22:06:33 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/%E9%94%81/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>并发</title>
       <link>https://www.3afun.com/tags/%E5%B9%B6%E5%8F%91/</link>
@@ -175,15 +184,6 @@
       <pubDate>Wed, 25 Apr 2018 22:15:37 +0800</pubDate>
       
       <guid>https://www.3afun.com/tags/idea/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ethereum</title>
-      <link>https://www.3afun.com/tags/ethereum/</link>
-      <pubDate>Wed, 25 Apr 2018 17:34:28 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/ethereum/</guid>
       <description></description>
     </item>
     
