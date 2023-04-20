@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Wed, 19 Apr 2023 22:06:33 +0800</lastBuildDate><atom:link href="https://www.3afun.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 Apr 2023 21:45:26 +0800</lastBuildDate><atom:link href="https://www.3afun.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java8函数式接口实战之实现全服玩家操作</title>
+      <link>https://www.3afun.com/post/2023/java8%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3%E5%AE%9E%E6%88%98%E4%B9%8B%E5%AE%9E%E7%8E%B0%E5%85%A8%E6%9C%8D%E7%8E%A9%E5%AE%B6%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Thu, 20 Apr 2023 21:45:26 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2023/java8%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3%E5%AE%9E%E6%88%98%E4%B9%8B%E5%AE%9E%E7%8E%B0%E5%85%A8%E6%9C%8D%E7%8E%A9%E5%AE%B6%E6%93%8D%E4%BD%9C/</guid>
+      <description>函数式接口 函数式接口(Functional Interface)就是一个有且仅有一个抽象方法，但是可以有多个非抽象方法的接口。 函数式接口可以被</description>
+    </item>
+    
     <item>
       <title>谈谈Synchronized锁锁住的是什么</title>
       <link>https://www.3afun.com/post/2023/%E8%B0%88%E8%B0%88synchronized%E9%94%81%E9%94%81%E4%BD%8F%E7%9A%84%E6%98%AF%E4%BB%80%E4%B9%88/</link>
@@ -176,15 +185,6 @@
       
       <guid>https://www.3afun.com/post/2018/swift%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%89%E9%92%AEuibutton/</guid>
       <description>在开发的时候,默认的UI有时候并不能满足我们的要求,我们可能需要一套具有主题的按钮,为了避免使用按钮的时候,每次都需要重写大量UI代码,我们</description>
-    </item>
-    
-    <item>
-      <title>Swift跳转AppStore商店应用评论页</title>
-      <link>https://www.3afun.com/post/2018/swift%E8%B7%B3%E8%BD%ACappstore%E5%95%86%E5%BA%97%E5%BA%94%E7%94%A8%E8%AF%84%E8%AE%BA%E9%A1%B5/</link>
-      <pubDate>Thu, 19 Jul 2018 16:32:12 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2018/swift%E8%B7%B3%E8%BD%ACappstore%E5%95%86%E5%BA%97%E5%BA%94%E7%94%A8%E8%AF%84%E8%AE%BA%E9%A1%B5/</guid>
-      <description>兼容iOS10以及iOS11的,跳转苹果商店应用评论页的函数,直接调用就行。 自行替换XXXXXXXX为商店ID //跳转到应用的AppStor</description>
     </item>
     
   </channel>

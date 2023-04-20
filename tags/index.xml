@@ -6,7 +6,34 @@
     <description>Recent content in Tags on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Wed, 19 Apr 2023 22:06:33 +0800</lastBuildDate><atom:link href="https://www.3afun.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 Apr 2023 21:45:26 +0800</lastBuildDate><atom:link href="https://www.3afun.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java</title>
+      <link>https://www.3afun.com/tags/java/</link>
+      <pubDate>Thu, 20 Apr 2023 21:45:26 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lambda</title>
+      <link>https://www.3afun.com/tags/lambda/</link>
+      <pubDate>Thu, 20 Apr 2023 21:45:26 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/lambda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>函数式接口</title>
+      <link>https://www.3afun.com/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/</link>
+      <pubDate>Thu, 20 Apr 2023 21:45:26 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>锁</title>
       <link>https://www.3afun.com/tags/%E9%94%81/</link>
@@ -157,33 +184,6 @@
       <pubDate>Wed, 01 Aug 2018 11:30:40 +0800</pubDate>
       
       <guid>https://www.3afun.com/tags/gradle/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>IOS</title>
-      <link>https://www.3afun.com/tags/ios/</link>
-      <pubDate>Tue, 24 Jul 2018 18:56:43 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/ios/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Swift</title>
-      <link>https://www.3afun.com/tags/swift/</link>
-      <pubDate>Tue, 24 Jul 2018 18:56:43 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/swift/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>IDEA</title>
-      <link>https://www.3afun.com/tags/idea/</link>
-      <pubDate>Wed, 25 Apr 2018 22:15:37 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/idea/</guid>
       <description></description>
     </item>
     
