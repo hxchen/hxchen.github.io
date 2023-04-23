@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Sat, 22 Apr 2023 18:25:08 +0800</lastBuildDate><atom:link href="https://www.3afun.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Apr 2023 18:25:08 +0800</lastBuildDate><atom:link href="https://www.3afun.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何优雅的关闭Java服务程序</title>
+      <link>https://www.3afun.com/post/2023/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E5%85%B3%E9%97%ADjava%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Sun, 23 Apr 2023 18:25:08 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2023/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E5%85%B3%E9%97%ADjava%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8F/</guid>
+      <description>钩子函数 对于Java服务来说，启动很容易，我们可以通过java -jar命令进行启动，或者开发时候通过IDEA的Run/Debug来启动。 然后</description>
+    </item>
+    
     <item>
       <title>Java热更新方案</title>
       <link>https://www.3afun.com/post/2023/java%E7%83%AD%E6%9B%B4%E6%96%B0%E6%96%B9%E6%A1%88/</link>
@@ -36,10 +45,10 @@
     
     <item>
       <title>Java从内存模型上看线程安全</title>
-      <link>https://www.3afun.com/post/2023/java%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E6%80%BB%E7%BB%93/</link>
+      <link>https://www.3afun.com/post/2023/java%E4%BB%8E%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E4%B8%8A%E7%9C%8B%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8/</link>
       <pubDate>Sun, 16 Apr 2023 18:06:33 +0800</pubDate>
       
-      <guid>https://www.3afun.com/post/2023/java%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://www.3afun.com/post/2023/java%E4%BB%8E%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E4%B8%8A%E7%9C%8B%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8/</guid>
       <description>Java 内存模型 主内存与工作内存 不同的平台，内存模型是不一样的，但是jvm的内存模型规范是统一的。 其实java的多线程并发问题最终都会反映在jav</description>
     </item>
     
@@ -176,15 +185,6 @@
       
       <guid>https://www.3afun.com/post/2018/%E8%A7%A3%E5%86%B3minimum-supported-gradle-version-is-3.3.-current-version-is-2.10/</guid>
       <description>原先Windows电脑开发的Android项目,转移到Mac下进行开发维护后,本机安装了Gradle4.9后,发现Android Studio</description>
-    </item>
-    
-    <item>
-      <title>Swift键盘类型和添加下一项完成等选项的控制</title>
-      <link>https://www.3afun.com/post/2018/swift%E9%94%AE%E7%9B%98%E7%B1%BB%E5%9E%8B%E5%92%8C%E6%B7%BB%E5%8A%A0%E4%B8%8B%E4%B8%80%E9%A1%B9%E5%AE%8C%E6%88%90%E7%AD%89%E9%80%89%E9%A1%B9%E7%9A%84%E6%8E%A7%E5%88%B6/</link>
-      <pubDate>Tue, 24 Jul 2018 18:56:43 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2018/swift%E9%94%AE%E7%9B%98%E7%B1%BB%E5%9E%8B%E5%92%8C%E6%B7%BB%E5%8A%A0%E4%B8%8B%E4%B8%80%E9%A1%B9%E5%AE%8C%E6%88%90%E7%AD%89%E9%80%89%E9%A1%B9%E7%9A%84%E6%8E%A7%E5%88%B6/</guid>
-      <description>为了便于易用性,Swift在UIKeyboardType为我们定义了众多的键盘类型。 Swift键盘类型 UIKeyboardType 类型 应用 default 为当前输入方法提供的默认类</description>
     </item>
     
   </channel>

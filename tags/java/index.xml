@@ -6,7 +6,16 @@
     <description>Recent content in Java on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Sat, 22 Apr 2023 18:25:08 +0800</lastBuildDate><atom:link href="https://www.3afun.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Apr 2023 18:25:08 +0800</lastBuildDate><atom:link href="https://www.3afun.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何优雅的关闭Java服务程序</title>
+      <link>https://www.3afun.com/post/2023/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E5%85%B3%E9%97%ADjava%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Sun, 23 Apr 2023 18:25:08 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2023/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E5%85%B3%E9%97%ADjava%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8F/</guid>
+      <description>钩子函数 对于Java服务来说，启动很容易，我们可以通过java -jar命令进行启动，或者开发时候通过IDEA的Run/Debug来启动。 然后</description>
+    </item>
+    
     <item>
       <title>Java热更新方案</title>
       <link>https://www.3afun.com/post/2023/java%E7%83%AD%E6%9B%B4%E6%96%B0%E6%96%B9%E6%A1%88/</link>

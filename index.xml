@@ -6,7 +6,7 @@
     <description>Recent content on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Sat, 22 Apr 2023 18:25:08 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 23 Apr 2023 18:25:08 +0800</lastBuildDate>
     
         <atom:link href="https://www.3afun.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -26,6 +26,64 @@
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;爱好&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;业余跑步,迄今为止,完成半程马拉松3次,全程马拉松3次。&lt;/p&gt;
 &lt;p&gt;喜爱摄影、徒步,走过大半个中国,写过几篇&lt;a href=&#34;http://www.mafengwo.cn/u/5295523/note.html&#34;&gt;游记&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>如何优雅的关闭Java服务程序</title>
+      <link>https://www.3afun.com/post/2023/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E5%85%B3%E9%97%ADjava%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Sun, 23 Apr 2023 18:25:08 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2023/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E5%85%B3%E9%97%ADjava%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8F/</guid>
+      
+        <description>&lt;h1 id=&#34;钩子函数&#34;&gt;钩子函数&lt;/h1&gt;
+&lt;p&gt;对于Java服务来说，启动很容易，我们可以通过&lt;code&gt;java -jar&lt;/code&gt;命令进行启动，或者开发时候通过IDEA的Run/Debug来启动。
+然后当我们停止一个Java程序的时候，我们可能需要先将在线玩家踢下线、保存一下内存里的数据等一些收尾性的工作。那么如何去处理这些工作呢？其实很简单，我们可以向&lt;code&gt;JVM注册钩子函数&lt;/code&gt;,在钩子函数里执行收尾操作。&lt;/p&gt;
+&lt;p&gt;下面演示一下如何使用：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;@SpringBootApplication&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;@ServletComponentScan&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ServerApplication&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;String&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; args&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        SpringApplication&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;run&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;ServerApplication&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt; args&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ApplicationUtil&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;initRunTime&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ApplicationUtil&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;initHandler&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        regShutdownHook&lt;span style=&#34;color:#f92672&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;regShutdownHook&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Runtime&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;getRuntime&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;().&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;addShutdownHook&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Thread&lt;span style=&#34;color:#f92672&#34;&gt;(()&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;try&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                System&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;优雅的关闭服务, 准备处理收尾工作&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#75715e&#34;&gt;// do something
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                System&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;可以安心停服了&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;Throwable e&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                e&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;printStackTrace&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;},&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Shutdown Server&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;));&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在上面代码里，我们利用&lt;code&gt;main&lt;/code&gt;启动了一个Spring Boot程序，在启动时我们可能还有一些其他初始化工作，我们暂且不关心。我们关心的主要是&lt;code&gt;regShutdownHook&lt;/code&gt;方法。&lt;/p&gt;
+&lt;p&gt;我们在&lt;code&gt;regShutdownHook&lt;/code&gt;里创建了一个线程，并且注册到JVM中去，就完成了一个钩子函数，在线程中我们可以处理关闭程序前的扫尾工作。&lt;/p&gt;
+&lt;h1 id=&#34;触发场景&#34;&gt;触发场景&lt;/h1&gt;
+&lt;p&gt;既然钩子函数使用如此简单，那么都有哪些场景会触发呢？下面列出的情况都是可以正常触发的：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;OutOfMemory 宕机&lt;/li&gt;
+&lt;li&gt;使用系统退出 &lt;code&gt;System.exit()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;终端使用&lt;code&gt;Ctrl+C&lt;/code&gt;触发的中段&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;kill pid&lt;/code&gt;杀死进程&lt;/li&gt;
+&lt;li&gt;系统关闭&lt;/li&gt;
+&lt;li&gt;程序正常退出。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;下面这些情况是不会触发的：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;系统掉电当然是不会的。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Runtime.getRuntime().halt()&lt;/code&gt;也是不能优雅退出的&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;kill -9&lt;/code&gt;是不会的。&lt;/li&gt;
+&lt;/ol&gt;
 </description>
       
     </item>
@@ -326,13 +384,13 @@ Arthas 是一款线上监控诊断产品，通过全局视角实时查看应用 
     
     <item>
       <title>Java从内存模型上看线程安全</title>
-      <link>https://www.3afun.com/post/2023/java%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E6%80%BB%E7%BB%93/</link>
+      <link>https://www.3afun.com/post/2023/java%E4%BB%8E%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E4%B8%8A%E7%9C%8B%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8/</link>
       <pubDate>Sun, 16 Apr 2023 18:06:33 +0800</pubDate>
       
-      <guid>https://www.3afun.com/post/2023/java%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://www.3afun.com/post/2023/java%E4%BB%8E%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E4%B8%8A%E7%9C%8B%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8/</guid>
       
-        <description>&lt;h2 id=&#34;java-内存模型&#34;&gt;Java 内存模型&lt;/h2&gt;
-&lt;h3 id=&#34;主内存与工作内存&#34;&gt;主内存与工作内存&lt;/h3&gt;
+        <description>&lt;h1 id=&#34;java-内存模型&#34;&gt;Java 内存模型&lt;/h1&gt;
+&lt;h2 id=&#34;主内存与工作内存&#34;&gt;主内存与工作内存&lt;/h2&gt;
 &lt;p&gt;不同的平台，内存模型是不一样的，但是jvm的内存模型规范是统一的。
 其实java的多线程并发问题最终都会反映在java的内存模型上，所谓线程安全无非是要&lt;font color=red&gt;控制多个线程对某个资源&lt;/font&gt;的有序访问或修改。&lt;/p&gt;
 &lt;p&gt;总结java的内存模型，要解决两个主要的问题：可见性和有序性。我们都知道计算机有高速缓存的存在，处理器并不是每次处理数据都是取内存的。
@@ -344,7 +402,7 @@ JVM定义了自己的内存模型，屏蔽了底层平台内存管理细节，�
 &lt;font color=red&gt;线程的工作内存中保存了被该线程使用到的变量的主内存副本拷贝， 线程对变量的所有操作(读取、赋值等)都必须在工作内存中进行&lt;/font&gt;，
 而不能直接读写主内存中的变量。&lt;/p&gt;
 &lt;p&gt;不同的线程之间也无法直接访问对方工作内存中的变量，&lt;font color=red&gt;线程间变量值的传递均需要通过主内存来完成&lt;/font&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;内存间交互操作&#34;&gt;内存间交互操作&lt;/h3&gt;
+&lt;h2 id=&#34;内存间交互操作&#34;&gt;内存间交互操作&lt;/h2&gt;
 &lt;p&gt;关于主内存与内存之间具体的交互协议，即一个变量如何从主内存拷贝到工作内存、如何从工作内存同步到主内存之类的实现细节，
 Java内存模型中定义了以下8种操作来完成主内存与工作内存之间交互的实现细节，虚拟机实现时必须保证下面提及的每一种操作都是原子的、不可再分的：&lt;/p&gt;
 &lt;ol&gt;
@@ -444,7 +502,7 @@ Java内存模型（JMM）规定了jvm有主内存，主内存是多个线程共�
 &lt;/ol&gt;
 &lt;p&gt;同样，x有可能为11，如果x是一个银行账户，线程a存款，线程b扣款，显然这样是有严重问题的，要解决这个问题，必须保证线程a和线程b是有序执行的，
 并且每个线程执行的加1或减1是一个原子操作。&lt;/p&gt;
-&lt;h3 id=&#34;synchronized-关键字&#34;&gt;synchronized 关键字&lt;/h3&gt;
+&lt;h2 id=&#34;synchronized-关键字&#34;&gt;synchronized 关键字&lt;/h2&gt;
 &lt;p&gt;上面说了，java用synchronized关键字做为多线程并发环境的执行有序性的保证手段之一。
 当一段代码会修改共享变量，这一段代码成为互斥区或 临界区，为了保证共享变量的正确性，synchronized标示了临界区。典型的用法如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;synchronized&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;锁&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;){&lt;/span&gt;
@@ -485,7 +543,7 @@ Java内存模型（JMM）规定了jvm有主内存，主内存是多个线程共�
 &lt;li&gt;释放锁
 可见，synchronized既保证了多线程的并发有序性，又保证了多线程的内存可见性。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;生产者消费者模式&#34;&gt;生产者/消费者模式&lt;/h3&gt;
+&lt;h2 id=&#34;生产者消费者模式&#34;&gt;生产者/消费者模式&lt;/h2&gt;
 &lt;p&gt;生产者/消费者模式其实是一种很经典的线程同步模型，很多时候，并不是光保证多个线程对某共享资源操作的互斥性就够了，往往多个线程之间都是有协作的。
 假设有这样一种情况，有一个桌子，桌子上面有一个盒子，盒子里最多只能放5个苹果，A生产者专门往盒子里放苹果，如果盒子满了，则一直等到盒子苹果数小于5，
 消费者B专门 从盒子里拿苹果，如果盒子里没苹果，则等待直到盒子里有苹果。
@@ -574,7 +632,7 @@ Java内存模型（JMM）规定了jvm有主内存，主内存是多个线程共�
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;volatile-关键字&#34;&gt;volatile 关键字&lt;/h3&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;volatile-关键字&#34;&gt;volatile 关键字&lt;/h2&gt;
 &lt;p&gt;volatile两个语义：&lt;font color=red&gt;保证变量可见性和禁止指令重排序&lt;/font&gt;。&lt;/p&gt;
 &lt;p&gt;volatile是java提供的一种同步手段，只不过它是轻量级的同步，为什么这么说，因为volatile只能保证多线程的内存可见性，不能保证多线程的执行有序性,也不能保证原子性。
 而最彻底的同步要保证有序性和可见性，例如synchronized。
@@ -616,7 +674,7 @@ java程序员不可能直接去控制底层线程对寄存器高速缓存内存�
 这个方案就是诸如synchronized, volatile,锁机制（如同步块，就绪队 列，阻塞队列）等等。这些方案只是语法层面的，
 但我们要从本质上去理解它，不能仅仅知道一个 synchronized 可以保证同步就完了。
 在这里我说的是jvm的内存模型，是动态的，面向多线程并发的，沿袭JSL的“working memory”的说法。&lt;/p&gt;
-&lt;h2 id=&#34;jvm内存结构&#34;&gt;JVM内存结构&lt;/h2&gt;
+&lt;h1 id=&#34;jvm内存结构&#34;&gt;JVM内存结构&lt;/h1&gt;
 &lt;p&gt;（所以顺便简要说一下JVM内存结构，不要混淆）
 &lt;a font color=&#39;red&#39;&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -1628,24 +1686,6 @@ ssl_certificate_key /etc/letsencrypt/live/3afun.com/privkey.pem; # managed by Ce
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;4.重启crond：&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;com.a3fun.rocket.service crond restart
 &lt;/code&gt;&lt;/pre&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>解决Minimum supported Gradle version is 3.3. Current version is 2.10.</title>
-      <link>https://www.3afun.com/post/2018/%E8%A7%A3%E5%86%B3minimum-supported-gradle-version-is-3.3.-current-version-is-2.10/</link>
-      <pubDate>Wed, 01 Aug 2018 11:30:40 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2018/%E8%A7%A3%E5%86%B3minimum-supported-gradle-version-is-3.3.-current-version-is-2.10/</guid>
-      
-        <description>&lt;p&gt;原先Windows电脑开发的Android项目,转移到Mac下进行开发维护后,本机安装了Gradle4.9后,发现Android Studio还是使用的旧版本Gradle。&lt;/p&gt;
-&lt;p&gt;报错:&lt;code&gt;Gradle sync failed: Minimum supported Gradle version is 3.3. Current version is 2.10.&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;解决办法是更新Android Studio使用的Gradle:&lt;/p&gt;
-&lt;p&gt;Mac版本Android Studio&lt;/p&gt;
-&lt;p&gt;选择:菜单栏 -&amp;gt; Android Studio -&amp;gt; Preferences -&amp;gt; Build,Execution,Deployment -&amp;gt; Build Tools -&amp;gt; Gradle&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.3afun.com/media/images/2018/android-gradle.png&#34; alt=&#34;android-gradle&#34;&gt;&lt;/p&gt;
-&lt;p&gt;然后来 &lt;a href=&#34;https://services.gradle.org/distributions/&#34;&gt;https://services.gradle.org/distributions/&lt;/a&gt; 下载更新版本,解压缩更换 Android Studio目录下的gradle。&lt;/p&gt;
-</description>
       
     </item>
     
