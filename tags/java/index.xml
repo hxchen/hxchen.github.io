@@ -6,7 +6,16 @@
     <description>Recent content in Java on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Sun, 23 Apr 2023 18:25:08 +0800</lastBuildDate><atom:link href="https://www.3afun.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 May 2023 17:40:39 +0800</lastBuildDate><atom:link href="https://www.3afun.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何解决CPU飙升或者频繁GC的问题</title>
+      <link>https://www.3afun.com/post/2023/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3cpu%E9%A3%99%E5%8D%87%E6%88%96%E8%80%85%E9%A2%91%E7%B9%81gc%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 06 May 2023 17:40:39 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2023/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3cpu%E9%A3%99%E5%8D%87%E6%88%96%E8%80%85%E9%A2%91%E7%B9%81gc%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>处理过线上问题的同学，可能都会遇到过线上运行的系统突然出现运行缓慢，CPU 100%，以及Full GC次数过多的问题，对于线上系统突然产生的运</description>
+    </item>
+    
     <item>
       <title>如何优雅的关闭Java服务程序</title>
       <link>https://www.3afun.com/post/2023/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E7%9A%84%E5%85%B3%E9%97%ADjava%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8F/</link>
