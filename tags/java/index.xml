@@ -6,7 +6,16 @@
     <description>Recent content in Java on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Sat, 06 May 2023 17:40:39 +0800</lastBuildDate><atom:link href="https://www.3afun.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 May 2023 23:41:31 +0800</lastBuildDate><atom:link href="https://www.3afun.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JVM调优总结</title>
+      <link>https://www.3afun.com/post/2023/jvm%E8%B0%83%E4%BC%98%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Sun, 07 May 2023 23:41:31 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2023/jvm%E8%B0%83%E4%BC%98%E6%80%BB%E7%BB%93/</guid>
+      <description>JVM调优都是有一个目标的，在总结调优之前，我们需要先介绍几个相关概念： 相关概念 串行 单线程：垃圾回收发生的时候，其他线程都暂停 使用于堆内存较</description>
+    </item>
+    
     <item>
       <title>如何解决CPU飙升或者频繁GC的问题</title>
       <link>https://www.3afun.com/post/2023/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3cpu%E9%A3%99%E5%8D%87%E6%88%96%E8%80%85%E9%A2%91%E7%B9%81gc%E7%9A%84%E9%97%AE%E9%A2%98/</link>

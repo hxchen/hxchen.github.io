@@ -10,48 +10,62 @@
   
   <url>
     <loc>https://www.3afun.com/categories/</loc>
-    <lastmod>2023-05-06T17:40:39+08:00</lastmod>
+    <lastmod>2023-05-07T23:41:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.3afun.com/tags/java/</loc>
-    <lastmod>2023-05-06T17:40:39+08:00</lastmod>
+    <lastmod>2023-05-07T23:41:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.3afun.com/categories/java/</loc>
-    <lastmod>2023-05-06T17:40:39+08:00</lastmod>
+    <lastmod>2023-05-07T23:41:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.3afun.com/tags/jvm/</loc>
+    <lastmod>2023-05-07T23:41:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.3afun.com/post/2023/jvm%E8%B0%83%E4%BC%98%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2023-05-07T23:41:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.3afun.com/post/</loc>
-    <lastmod>2023-05-06T17:40:39+08:00</lastmod>
+    <lastmod>2023-05-07T23:41:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.3afun.com/tags/</loc>
-    <lastmod>2023-05-06T17:40:39+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/post/2023/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3cpu%E9%A3%99%E5%8D%87%E6%88%96%E8%80%85%E9%A2%91%E7%B9%81gc%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2023-05-06T17:40:39+08:00</lastmod>
+    <lastmod>2023-05-07T23:41:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.3afun.com/</loc>
+    <lastmod>2023-05-07T23:41:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.3afun.com/post/2023/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3cpu%E9%A3%99%E5%8D%87%E6%88%96%E8%80%85%E9%A2%91%E7%B9%81gc%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2023-05-06T17:40:39+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

@@ -6,7 +6,7 @@
     <description>Recent content on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Sat, 06 May 2023 17:40:39 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 07 May 2023 23:41:31 +0800</lastBuildDate>
     
         <atom:link href="https://www.3afun.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -27,6 +27,60 @@
 &lt;p&gt;业余跑步,迄今为止,完成半程马拉松3次,全程马拉松3次。&lt;/p&gt;
 &lt;p&gt;喜爱摄影、徒步,走过大半个中国,写过几篇&lt;a href=&#34;http://www.mafengwo.cn/u/5295523/note.html&#34;&gt;游记&lt;/a&gt;&lt;/p&gt;
 </description>
+      
+    </item>
+    
+    <item>
+      <title>JVM调优总结</title>
+      <link>https://www.3afun.com/post/2023/jvm%E8%B0%83%E4%BC%98%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Sun, 07 May 2023 23:41:31 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2023/jvm%E8%B0%83%E4%BC%98%E6%80%BB%E7%BB%93/</guid>
+      
+        <description>&lt;p&gt;JVM调优都是有一个目标的，在总结调优之前，我们需要先介绍几个相关概念：&lt;/p&gt;
+&lt;h1 id=&#34;相关概念&#34;&gt;相关概念&lt;/h1&gt;
+&lt;h2 id=&#34;串行&#34;&gt;串行&lt;/h2&gt;
+&lt;p&gt;单线程：垃圾回收发生的时候，其他线程都暂停&lt;/p&gt;
+&lt;p&gt;使用于堆内存较小的时候，适合个人电脑。&lt;/p&gt;
+&lt;h2 id=&#34;吞吐量优先&#34;&gt;吞吐量优先&lt;/h2&gt;
+&lt;p&gt;多线程&lt;/p&gt;
+&lt;p&gt;适合于堆内存较大，需要多核CPU&lt;/p&gt;
+&lt;p&gt;让单位时间内STW（Stop The World）的时间最短。&lt;/p&gt;
+&lt;p&gt;我们可以按照这个公式来计算 GC 的吞吐量：吞吐量 = 应用程序耗时 / (应用程序耗时 +GC 耗时) * 100%&lt;/p&gt;
+&lt;h2 id=&#34;响应时间优先&#34;&gt;响应时间优先&lt;/h2&gt;
+&lt;p&gt;多线程&lt;/p&gt;
+&lt;p&gt;适合于堆内存较大，需要多核CPU&lt;/p&gt;
+&lt;p&gt;注重的是垃圾回收时STW（Stop The World）的时间最短&lt;/p&gt;
+&lt;p&gt;所谓调优，就是要确定我们目标是什么，更高的吞吐量还是更快的响应时间。还是在满足一定的响应时间的情况下，要求达到多大的吞吐量。&lt;/p&gt;
+&lt;p&gt;如科学计算、数据挖掘-吞吐量优先&lt;/p&gt;
+&lt;p&gt;网站、API-响应时间优先。&lt;/p&gt;
+&lt;p&gt;举个例子：
+一个服务10S收集一次，停顿时间100ms，通过参数调整，5秒收集一次，停顿时间70ms。吞吐量下降，响应速度得到提升。&lt;/p&gt;
+&lt;p&gt;目标/原则：
+对于那些涉及用户交互体验的业务，我们目标应该是更快的响应速度，对响应速度不敏感的业务，吞吐量优先。&lt;/p&gt;
+&lt;h1 id=&#34;常规设置&#34;&gt;常规设置&lt;/h1&gt;
+&lt;p&gt;查看当前默认参数：&lt;/p&gt;
+&lt;p&gt;java -XX:+PrintCommandLineFlags -version&lt;/p&gt;
+&lt;p&gt;查看当前JVM支持的参数：&lt;/p&gt;
+&lt;p&gt;java -XX:+PrintFlagsFinal -version&lt;/p&gt;
+&lt;p&gt;以上两点仅做了解。下面是重点的设置，假定在启动脚本，我们已经算出物理内存大小&lt;code&gt;PhysicalMemorySize&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-Xms$&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;PhysicalMemorySize * 2/4&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;g -Xmx$&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;PhysicalMemorySize * 2/4&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;g -XX:MaxDirectMemorySize&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;$&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;PhysicalMemorySize * 1/4&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;g
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在很多情况下，-Xms和-Xmx设置成一样的，这么设置，是因为当Heap不够用时，会发生内存抖动，影响程序运行稳定性，在这里我们设置成一半的内存大小。另外对于Netty项目，我们需要使用堆外存，所以需要设置一下&lt;code&gt;MaxDirectMemorySize&lt;/code&gt;参数。&lt;/p&gt;
+&lt;h1 id=&#34;高端设置&#34;&gt;高端设置&lt;/h1&gt;
+&lt;p&gt;启动优化参数：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;export current_time&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;date &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;+%Y-%m-%d_%H-%M-%S&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-XX:ErrorFile&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;jvm_error_%p_&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;current_time&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;.log&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# 设置JVM 错误日志，记录崩溃时的数据&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-XX:+UnlockDiagnosticVMOptions &lt;span style=&#34;color:#75715e&#34;&gt;# 解锁诊断参数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-XX:+PrintFlagsFinal &lt;span style=&#34;color:#75715e&#34;&gt;#打印JVM中所有参数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-XX:+UnlockExperimentalVMOptions &lt;span style=&#34;color:#75715e&#34;&gt;#解锁实验性参数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-XX:+UseG1GC &lt;span style=&#34;color:#75715e&#34;&gt;#设置使用G1垃圾收集器&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-XX:MaxGCPauseMillis&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;500&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;#设置GC时最大停顿参数，对于严格要求响应时间的，我们要设置&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-XX:+PrintGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:gc_&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;current_time&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;.log &lt;span style=&#34;color:#75715e&#34;&gt;#有关GC时记录的相关设置&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-XX:StringTableSize&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;512000&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;#配置字符串常量池中的StringTable大小，越大数据存储散列越好，性能越高&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-Dio.netty.leakDetectionLevel&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;advanced &lt;span style=&#34;color:#75715e&#34;&gt;#设置netty内存泄漏检测级别&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-XX:NativeMemoryTracking&lt;span style=&#34;color:#f92672&#34;&gt;=[&lt;/span&gt;off | summary | detail&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# 默认关闭，追踪JVM的内部内存使用，一般在压测调参的时候使用，生产环境不要引入&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
       
     </item>
     
@@ -1653,44 +1707,6 @@ $$θ = (X^TX)^{-1} X^Ty$$
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;property&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;characterEncoding&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;value=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;UTF-8&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/bean&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>MySQL远程备份与还原</title>
-      <link>https://www.3afun.com/post/2019/mysql%E8%BF%9C%E7%A8%8B%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%98%E5%8E%9F/</link>
-      <pubDate>Thu, 10 Jan 2019 14:26:58 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2019/mysql%E8%BF%9C%E7%A8%8B%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%98%E5%8E%9F/</guid>
-      
-        <description>&lt;p&gt;有时我们需要远程进行MySQL数据库的备份与还原。为此,我们可以使用&lt;code&gt;mysqldump&lt;/code&gt;命令复制数据库,然后通过管道将其直接传输到远程数据中去。&lt;/p&gt;
-&lt;p&gt;将数据从A端同步到B端,&lt;code&gt;mysqldump&lt;/code&gt;命令类似如下:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mysqldump -u &amp;lt;a_user&amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;    --databases &amp;lt;database_name&amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;    --single-transaction &lt;span style=&#34;color:#ae81ff&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;    --compress &lt;span style=&#34;color:#ae81ff&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;    --order-by-primary  &lt;span style=&#34;color:#ae81ff&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;    --host &amp;lt;a_host_name&amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;    -p&amp;lt;a_password&amp;gt; | mysql -u &amp;lt;b_user&amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;        --port&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&amp;lt;port_number&amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;        --host&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&amp;lt;b_host_name&amp;gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;        -p&amp;lt;b_password&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;注意&#34;&gt;注意:&lt;/h4&gt;
-&lt;p&gt;确保 -p 选项和输入的密码之间不留空格。&lt;/p&gt;
-&lt;p&gt;所用参数如下所示：&lt;/p&gt;
-&lt;p&gt;-u &amp;lt;&lt;code&gt;a_user&lt;/code&gt;&amp;gt; – 用于指定用户名。在第一次使用该参数时，您指定由 &amp;ndash;databases 参数确定的本地 MySQL 或 MariaDB 数据库中的用户账户名称。&lt;/p&gt;
-&lt;p&gt;&amp;ndash;databases &amp;lt;&lt;code&gt;database_name&lt;/code&gt;&amp;gt; – 用于指定本地 MySQL 或 MariaDB 实例上您要导入 Amazon RDS 的数据库的名称。&lt;/p&gt;
-&lt;p&gt;&amp;ndash;single-transaction – 用于确保从本地数据库加载的所有数据都与单一时间点保持一致。如果在 mysqldump 读取数据期间有其他进程更改数据，使用该选项有助于保持数据完整性。&lt;/p&gt;
-&lt;p&gt;&amp;ndash;compress – 用于降低网络带宽消耗，方式为将数据从本地数据库发送到 Amazon RDS 之前压缩数据。&lt;/p&gt;
-&lt;p&gt;&amp;ndash;order-by-primary – 用于减少加载时间，方式为根据主键对每个表中的数据进行排序。
-&amp;ndash;host &amp;lt;&lt;code&gt;a_host_name&lt;/code&gt;&amp;gt; - A端MySQL地址。&lt;/p&gt;
-&lt;p&gt;-p&amp;lt;&lt;code&gt;a_password&lt;/code&gt;&amp;gt; – 用于指定密码。在第一次使用该参数时，您为第一个 -u 参数确定的用户账户指定密码。&lt;/p&gt;
-&lt;p&gt;-u &amp;lt;&lt;code&gt;b_user&lt;/code&gt;&amp;gt; – 用于指定用户名。在第二次使用该参数时，您指定由 &amp;ndash;host 参数确定的 Amazon RDS MySQL 或 MariaDB 数据库实例中的默认数据库的用户账户名称。&lt;/p&gt;
-&lt;p&gt;&amp;ndash;port &amp;lt;&lt;code&gt;port_number&lt;/code&gt;&amp;gt; – 用于为您的 Amazon RDS MySQL 或 MariaDB 数据库实例指定端口。默认情况下该值为 3306，除非您在创建实例时进行了更改。&lt;/p&gt;
-&lt;p&gt;&amp;ndash;host &amp;lt;&lt;code&gt;b_host_name&lt;/code&gt;&amp;gt; – B端MySQL地址。&lt;/p&gt;
-&lt;p&gt;-p&amp;lt;&lt;code&gt;b_password&lt;/code&gt;&amp;gt; – 用于指定密码。在第二次使用该参数时，您为第二个 -u 参数确定的用户账户指定密码。&lt;/p&gt;
-&lt;p&gt;您必须在 B端 数据库中手动创建任何存储过程、触发器、函数或事件。如果您所复制的数据库中有上述任一对象，则在运行 mysqldump 时排除这些对象，方式是将以下参数与 mysqldump 命令一起包含：&amp;ndash;routines=0 &amp;ndash;triggers=0 &amp;ndash;events=0。&lt;/p&gt;
-</description>
       
     </item>
     

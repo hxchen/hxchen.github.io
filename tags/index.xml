@@ -6,13 +6,22 @@
     <description>Recent content in Tags on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Sat, 06 May 2023 17:40:39 +0800</lastBuildDate><atom:link href="https://www.3afun.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 May 2023 23:41:31 +0800</lastBuildDate><atom:link href="https://www.3afun.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Java</title>
       <link>https://www.3afun.com/tags/java/</link>
-      <pubDate>Sat, 06 May 2023 17:40:39 +0800</pubDate>
+      <pubDate>Sun, 07 May 2023 23:41:31 +0800</pubDate>
       
       <guid>https://www.3afun.com/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JVM</title>
+      <link>https://www.3afun.com/tags/jvm/</link>
+      <pubDate>Sun, 07 May 2023 23:41:31 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/jvm/</guid>
       <description></description>
     </item>
     
@@ -175,15 +184,6 @@
       <pubDate>Wed, 01 Aug 2018 11:30:40 +0800</pubDate>
       
       <guid>https://www.3afun.com/tags/android/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gradle</title>
-      <link>https://www.3afun.com/tags/gradle/</link>
-      <pubDate>Wed, 01 Aug 2018 11:30:40 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/gradle/</guid>
       <description></description>
     </item>
     
