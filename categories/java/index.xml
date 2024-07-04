@@ -6,7 +6,16 @@
     <description>Recent content in Java on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Sun, 07 May 2023 23:41:31 +0800</lastBuildDate><atom:link href="https://www.3afun.com/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Jul 2024 14:11:08 +0800</lastBuildDate><atom:link href="https://www.3afun.com/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OOM问题小结</title>
+      <link>https://www.3afun.com/post/2024/oom%E9%97%AE%E9%A2%98%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Thu, 04 Jul 2024 14:11:08 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2024/oom%E9%97%AE%E9%A2%98%E5%B0%8F%E7%BB%93/</guid>
+      <description>OOM原因 一次性申请的太多内存，导致内存不足 更改申请对象的数量 内存资源耗尽未释放 找到未释放的对象进行释放 本身资源不够 jmap -heap pid 查看堆内存使用情况</description>
+    </item>
+    
     <item>
       <title>JVM调优总结</title>
       <link>https://www.3afun.com/post/2023/jvm%E8%B0%83%E4%BC%98%E6%80%BB%E7%BB%93/</link>

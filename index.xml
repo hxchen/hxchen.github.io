@@ -6,7 +6,7 @@
     <description>Recent content on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Sun, 07 May 2023 23:41:31 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 04 Jul 2024 14:11:08 +0800</lastBuildDate>
     
         <atom:link href="https://www.3afun.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -26,6 +26,32 @@
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;爱好&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;业余跑步,迄今为止,完成半程马拉松3次,全程马拉松3次。&lt;/p&gt;
 &lt;p&gt;喜爱摄影、徒步,走过大半个中国,写过几篇&lt;a href=&#34;http://www.mafengwo.cn/u/5295523/note.html&#34;&gt;游记&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>OOM问题小结</title>
+      <link>https://www.3afun.com/post/2024/oom%E9%97%AE%E9%A2%98%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Thu, 04 Jul 2024 14:11:08 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2024/oom%E9%97%AE%E9%A2%98%E5%B0%8F%E7%BB%93/</guid>
+      
+        <description>&lt;h1 id=&#34;oom原因&#34;&gt;OOM原因&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;一次性申请的太多内存，导致内存不足 &lt;br&gt;
+更改申请对象的数量&lt;/li&gt;
+&lt;li&gt;内存资源耗尽未释放 &lt;br&gt;
+找到未释放的对象进行释放&lt;/li&gt;
+&lt;li&gt;本身资源不够 &lt;br&gt;
+&lt;code&gt;jmap -heap pid&lt;/code&gt; 查看堆内存使用情况&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;如何通过dump定位&#34;&gt;如何通过dump定位&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;系统已经OOM挂了，提前设置&lt;code&gt;-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/path/to/dump&lt;/code&gt;，可以在OOM时生成dump文件&lt;/li&gt;
+&lt;li&gt;系统运行中还未OOM，可以通过&lt;code&gt;jmap -dump:live,format=b,file=heap.hprof pid&lt;/code&gt;生成dump文件，然后通过&lt;code&gt;jhat heap.hprof&lt;/code&gt;查看&lt;/li&gt;
+&lt;li&gt;结合&lt;code&gt;jvisualvm&lt;/code&gt;进行调试，查看最多跟业务有关的对象，找到GCRoot，查看线程栈，找到问题代码&lt;/li&gt;
+&lt;/ol&gt;
 </description>
       
     </item>
@@ -1685,28 +1711,6 @@ $$θ = (X^TX)^{-1} X^Ty$$
 所以我们可以在&lt;code&gt;normalEqn.m&lt;/code&gt;中直接添加如下代码：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-octave&#34; data-lang=&#34;octave&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;theta = pinv(X&lt;span style=&#34;color:#f92672&#34;&gt;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; X) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; X&lt;span style=&#34;color:#f92672&#34;&gt;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; y;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>解决IDEA中Thymeleaf模板HTML文件无法热部署的问题</title>
-      <link>https://www.3afun.com/post/2019/%E8%A7%A3%E5%86%B3idea%E4%B8%ADthymeleaf%E6%A8%A1%E6%9D%BFhtml%E6%96%87%E4%BB%B6%E6%97%A0%E6%B3%95%E7%83%AD%E9%83%A8%E7%BD%B2%E7%9A%84%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Tue, 20 Aug 2019 18:02:47 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2019/%E8%A7%A3%E5%86%B3idea%E4%B8%ADthymeleaf%E6%A8%A1%E6%9D%BFhtml%E6%96%87%E4%BB%B6%E6%97%A0%E6%B3%95%E7%83%AD%E9%83%A8%E7%BD%B2%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-      
-        <description>&lt;p&gt;项目中使用了thymeleaf模板引擎，改动HTML文件后，前端页面无法热部署。在排除Tomcat设置问题后，最终发现是Thymeleaf视图模板引擎配置的缓存问题。&lt;/p&gt;
-&lt;p&gt;解决办法:
-&lt;code&gt;SpringResourceTemplateResolver&lt;/code&gt;中的&lt;code&gt;cacheable&lt;/code&gt;要设置为false，就可以实现热部署了。
-如果你是配置文件可参考如下设置：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;bean&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;templateResolver&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;class=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;property&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;prefix&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;value=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/WEB-INF/templates/&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;property&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;suffix&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;value=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.html&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;property&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;cacheable&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;value=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;false&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;property&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;templateMode&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;value=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;HTML5&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;property&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;characterEncoding&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;value=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;UTF-8&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/bean&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
       
     </item>
     

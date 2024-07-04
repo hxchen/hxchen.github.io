@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Sun, 07 May 2023 23:41:31 +0800</lastBuildDate><atom:link href="https://www.3afun.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Jul 2024 14:11:08 +0800</lastBuildDate><atom:link href="https://www.3afun.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OOM问题小结</title>
+      <link>https://www.3afun.com/post/2024/oom%E9%97%AE%E9%A2%98%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Thu, 04 Jul 2024 14:11:08 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2024/oom%E9%97%AE%E9%A2%98%E5%B0%8F%E7%BB%93/</guid>
+      <description>OOM原因 一次性申请的太多内存，导致内存不足 更改申请对象的数量 内存资源耗尽未释放 找到未释放的对象进行释放 本身资源不够 jmap -heap pid 查看堆内存使用情况</description>
+    </item>
+    
     <item>
       <title>JVM调优总结</title>
       <link>https://www.3afun.com/post/2023/jvm%E8%B0%83%E4%BC%98%E6%80%BB%E7%BB%93/</link>
@@ -176,15 +185,6 @@
       
       <guid>https://www.3afun.com/post/2019/%E8%A7%A3%E5%86%B3idea%E4%B8%ADthymeleaf%E6%A8%A1%E6%9D%BFhtml%E6%96%87%E4%BB%B6%E6%97%A0%E6%B3%95%E7%83%AD%E9%83%A8%E7%BD%B2%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>项目中使用了thymeleaf模板引擎，改动HTML文件后，前端页面无法热部署。在排除Tomcat设置问题后，最终发现是Thymeleaf视</description>
-    </item>
-    
-    <item>
-      <title>MySQL远程备份与还原</title>
-      <link>https://www.3afun.com/post/2019/mysql%E8%BF%9C%E7%A8%8B%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%98%E5%8E%9F/</link>
-      <pubDate>Thu, 10 Jan 2019 14:26:58 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2019/mysql%E8%BF%9C%E7%A8%8B%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%98%E5%8E%9F/</guid>
-      <description>有时我们需要远程进行MySQL数据库的备份与还原。为此,我们可以使用mysqldump命令复制数据库,然后通过管道将其直接传输到远程数据中去</description>
     </item>
     
   </channel>
