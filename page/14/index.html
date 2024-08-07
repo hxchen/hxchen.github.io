@@ -315,6 +315,68 @@ if (!doNotTrack) {
   <header class="post-header">
     <h1 class="post-title">
       
+      <a class="post-link" href="/post/2013/aop-advisor%E8%AF%B4%E6%98%8E%E4%BB%A5%E5%8F%8Athe-prefix-aop-for-element-aopconfig-is-not-bound.%E9%94%99%E8%AF%AF%E5%8E%9F%E5%9B%A0/">aop advisor说明以及The prefix aop for element  aop:config is not bound.错误原因</a>
+    </h1>
+    
+
+    <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      北斗
+    
+  </div>
+
+  <div class="post-meta-time">
+    <time datetime="2013-01-17">
+      2013-01-17
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        约 347 字 -
+        预计阅读 1 分钟
+      </span>
+
+    <div class="post-meta-category">
+        <a href="https://www.3afun.com/categories/web%E5%89%8D%E7%AB%AF/"> Web前端 </a>
+          
+      </div>
+
+
+    
+    
+
+
+    
+    
+  </div>
+</div>
+
+  </header>
+  
+  <div class="post-content">
+    
+      <div class="post-summary">
+        原因：我们在定义申明AOP的时候。没有加载schema。 解决：首先应该加载JAR包。 还要在中要加入“xmlns：aop”的命名申明， 并在“x
+      </div>
+      <div class="read-more">
+        <a href="/post/2013/aop-advisor%E8%AF%B4%E6%98%8E%E4%BB%A5%E5%8F%8Athe-prefix-aop-for-element-aopconfig-is-not-bound.%E9%94%99%E8%AF%AF%E5%8E%9F%E5%9B%A0/" class="read-more-link"
+          >阅读全文</a
+        >
+      </div>
+    
+  </div>
+</article>
+
+  
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
       <a class="post-link" href="/post/2013/powerdesigner%E5%AF%BC%E5%87%BA%E8%84%9A%E6%9C%AC%E9%87%8C%E5%8C%85%E5%90%AB%E8%A7%86%E5%9B%BE/">PowerDesigner导出脚本里包含视图</a>
     </h1>
     
@@ -861,68 +923,6 @@ if (!doNotTrack) {
       </div>
       <div class="read-more">
         <a href="/post/2012/countdownlatch-%E9%97%AD%E9%94%81%E6%BC%94%E7%A4%BA/" class="read-more-link"
-          >阅读全文</a
-        >
-      </div>
-    
-  </div>
-</article>
-
-  
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/2012/%E5%88%A9%E7%94%A8%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97blockingdeque%E5%AE%9E%E7%8E%B0%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E8%80%85%E6%A8%A1%E5%BC%8F/">利用阻塞队列BlockingDeque实现生产者-消费者模式</a>
-    </h1>
-    
-
-    <div class="post-meta">
-  <div class="post-meta-author">
-    by
-      北斗
-    
-  </div>
-
-  <div class="post-meta-time">
-    <time datetime="2012-11-22">
-      2012-11-22
-    </time>
-  </div>
-
-  
-
-
-  <div class="post-meta__right">
-    <span class="post-meta-more">
-        约 287 字 -
-        预计阅读 1 分钟
-      </span>
-
-    <div class="post-meta-category">
-        <a href="https://www.3afun.com/categories/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"> 并发编程 </a>
-          
-      </div>
-
-
-    
-    
-
-
-    
-    
-  </div>
-</div>
-
-  </header>
-  
-  <div class="post-content">
-    
-      <div class="post-summary">
-        消费者 import java.util.concurrent.BlockingDeque; import java.util.concurrent.LinkedBlockingDeque; /** * 消费者类 * */ public class Consumer implements Runnable { private BlockingDeque&lt;String&gt; queue = new LinkedBlockingDeque&lt;String&gt;(); public Consumer(BlockingDeque&lt;String&gt; queue){ this.queue = queue; } @Override public void run() { // TODO Auto-generated method stub int i = 0; do{ try { String product = queue.take(); if(!&#34;&#34;.equals(product) &amp;&amp; null != product){ System.out
-      </div>
-      <div class="read-more">
-        <a href="/post/2012/%E5%88%A9%E7%94%A8%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97blockingdeque%E5%AE%9E%E7%8E%B0%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E8%80%85%E6%A8%A1%E5%BC%8F/" class="read-more-link"
           >阅读全文</a
         >
       </div>

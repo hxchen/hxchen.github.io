@@ -6,7 +6,16 @@
     <description>Recent content in Categories on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Thu, 04 Jul 2024 14:11:08 +0800</lastBuildDate><atom:link href="https://www.3afun.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Aug 2024 10:32:37 +0800</lastBuildDate><atom:link href="https://www.3afun.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go</title>
+      <link>https://www.3afun.com/categories/go/</link>
+      <pubDate>Wed, 07 Aug 2024 10:32:37 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/categories/go/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Java</title>
       <link>https://www.3afun.com/categories/java/</link>
@@ -175,15 +184,6 @@
       <pubDate>Wed, 25 Apr 2018 22:15:37 +0800</pubDate>
       
       <guid>https://www.3afun.com/categories/ethereum/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>IDEA</title>
-      <link>https://www.3afun.com/categories/idea/</link>
-      <pubDate>Wed, 25 Apr 2018 22:15:37 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/categories/idea/</guid>
       <description></description>
     </item>
     

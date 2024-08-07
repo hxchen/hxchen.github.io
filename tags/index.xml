@@ -6,7 +6,25 @@
     <description>Recent content in Tags on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Thu, 04 Jul 2024 14:11:08 +0800</lastBuildDate><atom:link href="https://www.3afun.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Aug 2024 10:32:37 +0800</lastBuildDate><atom:link href="https://www.3afun.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go</title>
+      <link>https://www.3afun.com/tags/go/</link>
+      <pubDate>Wed, 07 Aug 2024 10:32:37 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Protobuf</title>
+      <link>https://www.3afun.com/tags/protobuf/</link>
+      <pubDate>Wed, 07 Aug 2024 10:32:37 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/tags/protobuf/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Java</title>
       <link>https://www.3afun.com/tags/java/</link>
@@ -166,24 +184,6 @@
       <pubDate>Thu, 10 Jan 2019 14:26:58 +0800</pubDate>
       
       <guid>https://www.3afun.com/tags/mysql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SSL</title>
-      <link>https://www.3afun.com/tags/ssl/</link>
-      <pubDate>Mon, 10 Sep 2018 18:12:26 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/ssl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Android</title>
-      <link>https://www.3afun.com/tags/android/</link>
-      <pubDate>Wed, 01 Aug 2018 11:30:40 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/tags/android/</guid>
       <description></description>
     </item>
     

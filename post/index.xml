@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Thu, 04 Jul 2024 14:11:08 +0800</lastBuildDate><atom:link href="https://www.3afun.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Aug 2024 10:32:37 +0800</lastBuildDate><atom:link href="https://www.3afun.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go语言下使用Protobuf搭建RPC框架</title>
+      <link>https://www.3afun.com/post/2024/go%E8%AF%AD%E8%A8%80%E4%B8%8B%E4%BD%BF%E7%94%A8protobuf%E7%9A%84%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Wed, 07 Aug 2024 10:32:37 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2024/go%E8%AF%AD%E8%A8%80%E4%B8%8B%E4%BD%BF%E7%94%A8protobuf%E7%9A%84%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/</guid>
+      <description>Protobuf 安装 安装 protobuf brew install protobuf 确认安装成功 protoc --version 安装代理(可选，先跳过，4超时再执行3) go env -w GOPROXY=https://goproxy.cn 安装代码生成插件 protoc-gen-go go install google.golang.org/protobuf/cmd/protoc-gen-go@latest go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest 通信协议定义 定义通信协议 syntax =</description>
+    </item>
+    
     <item>
       <title>OOM问题小结</title>
       <link>https://www.3afun.com/post/2024/oom%E9%97%AE%E9%A2%98%E5%B0%8F%E7%BB%93/</link>
@@ -176,15 +185,6 @@
       
       <guid>https://www.3afun.com/post/2019/andrew-ng%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0ex1linear-regression%E7%BC%96%E7%A8%8B%E4%BD%9C%E4%B8%9A%E8%AF%A6%E8%A7%A3/</guid>
       <description>要想顺利的完成作业，必须参考编程作业指导文件ex1.pdf 第一次作业主要包括两部分：必做题和选做题。其中必做题包括一道热身练习和完成单变量的</description>
-    </item>
-    
-    <item>
-      <title>解决IDEA中Thymeleaf模板HTML文件无法热部署的问题</title>
-      <link>https://www.3afun.com/post/2019/%E8%A7%A3%E5%86%B3idea%E4%B8%ADthymeleaf%E6%A8%A1%E6%9D%BFhtml%E6%96%87%E4%BB%B6%E6%97%A0%E6%B3%95%E7%83%AD%E9%83%A8%E7%BD%B2%E7%9A%84%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Tue, 20 Aug 2019 18:02:47 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2019/%E8%A7%A3%E5%86%B3idea%E4%B8%ADthymeleaf%E6%A8%A1%E6%9D%BFhtml%E6%96%87%E4%BB%B6%E6%97%A0%E6%B3%95%E7%83%AD%E9%83%A8%E7%BD%B2%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-      <description>项目中使用了thymeleaf模板引擎，改动HTML文件后，前端页面无法热部署。在排除Tomcat设置问题后，最终发现是Thymeleaf视</description>
     </item>
     
   </channel>
