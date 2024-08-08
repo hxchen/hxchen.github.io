@@ -10,21 +10,49 @@
   
   <url>
     <loc>https://www.3afun.com/categories/</loc>
-    <lastmod>2024-08-07T10:32:37+08:00</lastmod>
+    <lastmod>2024-08-08T12:12:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.3afun.com/tags/go/</loc>
-    <lastmod>2024-08-07T10:32:37+08:00</lastmod>
+    <lastmod>2024-08-08T12:12:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.3afun.com/categories/go/</loc>
-    <lastmod>2024-08-07T10:32:37+08:00</lastmod>
+    <lastmod>2024-08-08T12:12:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.3afun.com/post/2024/go%E8%AF%AD%E8%A8%80%E5%B0%81%E8%A3%85web%E8%B7%AF%E7%94%B1%E5%92%8C%E4%B8%AD%E9%97%B4%E4%BB%B6/</loc>
+    <lastmod>2024-08-08T12:12:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.3afun.com/post/</loc>
+    <lastmod>2024-08-08T12:12:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.3afun.com/tags/</loc>
+    <lastmod>2024-08-08T12:12:59+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.3afun.com/</loc>
+    <lastmod>2024-08-08T12:12:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -37,28 +65,7 @@
   </url>
   
   <url>
-    <loc>https://www.3afun.com/post/</loc>
-    <lastmod>2024-08-07T10:32:37+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://www.3afun.com/tags/protobuf/</loc>
-    <lastmod>2024-08-07T10:32:37+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/tags/</loc>
-    <lastmod>2024-08-07T10:32:37+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.3afun.com/</loc>
     <lastmod>2024-08-07T10:32:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
