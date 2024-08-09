@@ -7,7 +7,9 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>标签 - 我不是帅才</title>
+    <title>
+          Go语言defer关键字的使用场景 - 我不是帅才
+        </title>
     
 
 <meta name="renderer" content="webkit" />
@@ -26,9 +28,9 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="北斗" />
-  <meta name="description" content="北斗的小窝,记录个人工作和生活" />
-  <meta name="keywords" content="技术, 程序员, 码农, 程序猿, 分享, java, python, 3afun" />
+<meta name="author" content="北斗" /><meta name="description" content="Go语言defer关键字的使用场景" />
+<meta name="keywords" content="Go" />
+
 
 
 
@@ -38,8 +40,8 @@
 <meta name="generator" content="Hugo 0.111.3" />
 
 
-<link rel="canonical" href="https://www.3afun.com/tags/" />
-<link href="/tags/index.xml" rel="alternate" type="application/rss+xml" title="我不是帅才" />
+<link rel="canonical" href="https://www.3afun.com/post/2024/go%E8%AF%AD%E8%A8%80defer%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/" />
+
 
 
 
@@ -64,14 +66,19 @@
 
 
 
-<meta property="og:title" content="Tags" />
-<meta property="og:description" content="北斗的小窝,记录个人工作和生活" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.3afun.com/tags/" />
-<meta itemprop="name" content="Tags">
-<meta itemprop="description" content="北斗的小窝,记录个人工作和生活"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Tags"/>
-<meta name="twitter:description" content="北斗的小窝,记录个人工作和生活"/>
+<meta property="og:title" content="Go语言defer关键字的使用场景" />
+<meta property="og:description" content="Go语言defer关键字的使用场景" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.3afun.com/post/2024/go%E8%AF%AD%E8%A8%80defer%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-08-09T10:41:28+08:00" />
+<meta property="article:modified_time" content="2024-08-09T10:41:28+08:00" />
+<meta itemprop="name" content="Go语言defer关键字的使用场景">
+<meta itemprop="description" content="Go语言defer关键字的使用场景"><meta itemprop="datePublished" content="2024-08-09T10:41:28+08:00" />
+<meta itemprop="dateModified" content="2024-08-09T10:41:28+08:00" />
+<meta itemprop="wordCount" content="408">
+<meta itemprop="keywords" content="Go," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go语言defer关键字的使用场景"/>
+<meta name="twitter:description" content="Go语言defer关键字的使用场景"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -301,706 +308,157 @@ if (!doNotTrack) {
 
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
+        <div class="content-wrapper">
+    <div id="content" class="content">
+      <article class="post">
         
-  
-  
-  
-  
+        <header class="post-header">
+          <h1 class="post-title">Go语言defer关键字的使用场景</h1>
+          
+
+          <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      北斗
+    
+  </div>
+
+  <div class="post-meta-time">
+    <time datetime="2024-08-09">
+      2024-08-09
+    </time>
+  </div>
 
   
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="tag-cloud" style="padding: 5px 15px">
-      <div class="tag-cloud-title">
-        共计 61 个标签
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        约 408 字 -
+        预计阅读 1 分钟
+      </span>
+
+    <div class="post-meta-category">
+        <a href="https://www.3afun.com/categories/g/"> G </a>
+          
       </div>
-      <div class="tag-cloud-tags">
+
+
+    
+    
+
+
+    
+    
+  </div>
+</div>
+
+        </header>
+
+        
+        <div class="post-content">
+          <p><code>defer</code> 是 Go 语言中的一个关键字，用于延迟执行一个函数或方法，直到包含 <code>defer</code> 语句的函数结束后再执行。无论该函数是因为正常的 <code>return</code> 语句退出，还是因为触发了 <code>panic</code> 导致的退出，<code>defer</code> 语句都会执行。</p>
+<h3 id="使用-defer-的场景">使用 <code>defer</code> 的场景</h3>
+<p><code>defer</code> 关键字通常用于确保一些必须要执行的操作能够在函数结束时执行。常见的使用场景包括：</p>
+<ol>
+<li><strong>释放资源</strong>：例如关闭文件、释放锁、关闭数据库连接等。</li>
+<li><strong>解锁互斥锁</strong>：在使用 <code>sync.Mutex</code> 进行并发编程时，可以使用 <code>defer</code> 来确保 <code>Unlock</code> 函数一定会被调用。</li>
+<li><strong>处理错误</strong>：在可能引发 <code>panic</code> 的地方，使用 <code>defer</code> 来确保恢复（<code>recover</code>）操作能够正确执行。</li>
+<li><strong>清理操作</strong>：在函数结束时需要执行的清理或恢复状态操作。</li>
+</ol>
+<h3 id="defer-的执行顺序"><code>defer</code> 的执行顺序</h3>
+<p>如果在一个函数中有多个 <code>defer</code> 语句，它们的执行顺序是<strong>后进先出</strong>（LIFO，Last In First Out）。也就是说，最后一个 <code>defer</code> 语句会最先执行，依次类推。</p>
+<h3 id="示例">示例</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">example</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Start&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Deferred 1&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Deferred 2&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;End&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">example</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>输出结果：</strong></p>
+<pre tabindex="0"><code>Start
+End
+Deferred 2
+Deferred 1
+</code></pre><p>在这个例子中，<code>defer fmt.Println(&quot;Deferred 2&quot;)</code> 和 <code>defer fmt.Println(&quot;Deferred 1&quot;)</code> 的执行顺序是相反的，因为它们遵循 LIFO 的顺序。</p>
+
+        </div>
+
+        
+        
+
+
+
+        
+        
+
+
+        <footer class="post-footer">
+          <div class="post-tags">
+              <a href="https://www.3afun.com/tags/go/">Go</a>
+                
+            </div>
+
+
+          
+          <nav class="post-nav">
+            
+            
+              <a class="next" href="/post/2024/go%E8%AF%AD%E8%A8%80%E5%B0%81%E8%A3%85web%E8%B7%AF%E7%94%B1%E5%92%8C%E4%B8%AD%E9%97%B4%E4%BB%B6/">
+                <span class="next-text nav-default">Go语言封装web路由和中间件</span>
+                <span class="prev-text nav-mobile">下一篇</span>
+                
+                <i class="iconfont">
+                  <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+                </i>
+              </a>
+          </nav>
+        </footer>
+      </article>
+
       
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/android/"
-          style="font-size:2.1173827896600206rem">android</a>
-        
       
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/bootstrap/"
-          style="font-size:1rem">bootstrap</a>
-        
+
+
       
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/c#/"
-          style="font-size:1rem">c#</a>
-        
       
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/charles/"
-          style="font-size:1rem">charles</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/cocosbuilder/"
-          style="font-size:1rem">cocosbuilder</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/crontab/"
-          style="font-size:1.3363657363263632rem">crontab</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/dubbo/"
-          style="font-size:1rem">dubbo</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/ethereum/"
-          style="font-size:2.0662541572094915rem">ethereum</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/flatbuffers/"
-          style="font-size:1rem">flatbuffers</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/git/"
-          style="font-size:1.3363657363263632rem">git</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/go/"
-          style="font-size:1.5331270786047455rem">go</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/gradle/"
-          style="font-size:1.5331270786047455rem">gradle</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/html/"
-          style="font-size:1rem">html</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/http/"
-          style="font-size:1rem">http</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/idea/"
-          style="font-size:1rem">idea</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/intellij/"
-          style="font-size:1.3363657363263632rem">intellij</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/ios/"
-          style="font-size:2.1173827896600206rem">ios</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/jade/"
-          style="font-size:1rem">jade</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/java/"
-          style="font-size:2.2447011305238482rem">java</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/javascript/"
-          style="font-size:1rem">javascript</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/jvm/"
-          style="font-size:1rem">jvm</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/lambda/"
-          style="font-size:1rem">lambda</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/linux/"
-          style="font-size:1.3363657363263632rem">linux</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/lua/"
-          style="font-size:1rem">lua</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/lucene/"
-          style="font-size:1rem">lucene</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/mysql/"
-          style="font-size:2.2447011305238482rem">mysql</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/nginx/"
-          style="font-size:1.8694928149311085rem">nginx</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/nodejs/"
-          style="font-size:1.8694928149311085rem">nodejs</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/osx/"
-          style="font-size:1rem">osx</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/php/"
-          style="font-size:1.3363657363263632rem">php</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/protobuf/"
-          style="font-size:1rem">protobuf</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/python/"
-          style="font-size:1.7810170533336571rem">python</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/react/"
-          style="font-size:1rem">react</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/redis/"
-          style="font-size:1rem">redis</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/saas/"
-          style="font-size:1rem">saas</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/spring-mvc/"
-          style="font-size:1.5331270786047455rem">spring-mvc</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/squid/"
-          style="font-size:1rem">squid</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/ssl/"
-          style="font-size:1rem">ssl</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/struts/"
-          style="font-size:1rem">struts</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/swift/"
-          style="font-size:1.8694928149311085rem">swift</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/tomcat/"
-          style="font-size:1.3363657363263632rem">tomcat</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/unity/"
-          style="font-size:1.3363657363263632rem">unity</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/unity3d/"
-          style="font-size:1rem">unity3d</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/web%E5%89%8D%E7%AB%AF/"
-          style="font-size:2.3454629453054525rem">web前端</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/wordpress/"
-          style="font-size:1.5331270786047455rem">wordpress</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/xcode/"
-          style="font-size:1.3363657363263632rem">xcode</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"
-          style="font-size:1rem">内存模型</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/"
-          style="font-size:1rem">函数式接口</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"
-          style="font-size:2.0662541572094915rem">区块链</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"
-          style="font-size:1rem">大数据</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/%E5%B9%B6%E5%8F%91/"
-          style="font-size:1rem">并发</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"
-          style="font-size:1.7810170533336571rem">并发编程</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/"
-          style="font-size:1rem">开源软件</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"
-          style="font-size:1.3363657363263632rem">操作系统</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"
-          style="font-size:1.3363657363263632rem">数据库</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"
-          style="font-size:2.4774250840920917rem">服务器</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"
-          style="font-size:1rem">机器学习</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/%E6%9D%82/"
-          style="font-size:1.3363657363263632rem">杂</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/"
-          style="font-size:1rem">浏览器插件</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8/"
-          style="font-size:1rem">线程安全</a>
-        
-      
-        
-        
-        
-        
-        
-        
-        
-        <a href="https://www.3afun.com/tags/%E9%94%81/"
-          style="font-size:1rem">锁</a>
-        
-      
-      </div>
+
+
     </div>
-  
-  
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#使用-defer-的场景">使用 <code>defer</code> 的场景</a></li>
+        <li><a href="#defer-的执行顺序"><code>defer</code> 的执行顺序</a></li>
+        <li><a href="#示例">示例</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </nav>
 
 
+  </div>
 
       </main>
 

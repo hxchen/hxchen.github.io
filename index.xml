@@ -6,7 +6,7 @@
     <description>Recent content on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Thu, 08 Aug 2024 12:12:59 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 09 Aug 2024 10:41:28 +0800</lastBuildDate>
     
         <atom:link href="https://www.3afun.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -26,6 +26,49 @@
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;爱好&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;业余跑步,迄今为止,完成半程马拉松3次,全程马拉松3次。&lt;/p&gt;
 &lt;p&gt;喜爱摄影、徒步,走过大半个中国,写过几篇&lt;a href=&#34;http://www.mafengwo.cn/u/5295523/note.html&#34;&gt;游记&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Go语言defer关键字的使用场景</title>
+      <link>https://www.3afun.com/post/2024/go%E8%AF%AD%E8%A8%80defer%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/</link>
+      <pubDate>Fri, 09 Aug 2024 10:41:28 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2024/go%E8%AF%AD%E8%A8%80defer%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/</guid>
+      
+        <description>&lt;p&gt;&lt;code&gt;defer&lt;/code&gt; 是 Go 语言中的一个关键字，用于延迟执行一个函数或方法，直到包含 &lt;code&gt;defer&lt;/code&gt; 语句的函数结束后再执行。无论该函数是因为正常的 &lt;code&gt;return&lt;/code&gt; 语句退出，还是因为触发了 &lt;code&gt;panic&lt;/code&gt; 导致的退出，&lt;code&gt;defer&lt;/code&gt; 语句都会执行。&lt;/p&gt;
+&lt;h3 id=&#34;使用-defer-的场景&#34;&gt;使用 &lt;code&gt;defer&lt;/code&gt; 的场景&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;defer&lt;/code&gt; 关键字通常用于确保一些必须要执行的操作能够在函数结束时执行。常见的使用场景包括：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;释放资源&lt;/strong&gt;：例如关闭文件、释放锁、关闭数据库连接等。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;解锁互斥锁&lt;/strong&gt;：在使用 &lt;code&gt;sync.Mutex&lt;/code&gt; 进行并发编程时，可以使用 &lt;code&gt;defer&lt;/code&gt; 来确保 &lt;code&gt;Unlock&lt;/code&gt; 函数一定会被调用。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;处理错误&lt;/strong&gt;：在可能引发 &lt;code&gt;panic&lt;/code&gt; 的地方，使用 &lt;code&gt;defer&lt;/code&gt; 来确保恢复（&lt;code&gt;recover&lt;/code&gt;）操作能够正确执行。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;清理操作&lt;/strong&gt;：在函数结束时需要执行的清理或恢复状态操作。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;defer-的执行顺序&#34;&gt;&lt;code&gt;defer&lt;/code&gt; 的执行顺序&lt;/h3&gt;
+&lt;p&gt;如果在一个函数中有多个 &lt;code&gt;defer&lt;/code&gt; 语句，它们的执行顺序是&lt;strong&gt;后进先出&lt;/strong&gt;（LIFO，Last In First Out）。也就是说，最后一个 &lt;code&gt;defer&lt;/code&gt; 语句会最先执行，依次类推。&lt;/p&gt;
+&lt;h3 id=&#34;示例&#34;&gt;示例&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;package&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;example&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Start&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;defer&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Deferred 1&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;defer&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Deferred 2&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;End&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;example&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;输出结果：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Start
+End
+Deferred 2
+Deferred 1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在这个例子中，&lt;code&gt;defer fmt.Println(&amp;quot;Deferred 2&amp;quot;)&lt;/code&gt; 和 &lt;code&gt;defer fmt.Println(&amp;quot;Deferred 1&amp;quot;)&lt;/code&gt; 的执行顺序是相反的，因为它们遵循 LIFO 的顺序。&lt;/p&gt;
 </description>
       
     </item>
@@ -1826,33 +1869,6 @@ server:
 &lt;li&gt;命令2：通过&lt;code&gt;sudo fsck_hfs -fy /dev/disk4&lt;/code&gt;命令进行修复。&lt;/li&gt;
 &lt;li&gt;命令3：通过&lt;code&gt;sudo diskutil mount /dev/disk4&lt;/code&gt;命令进行挂载，这会系统就可以显示可以挂载硬盘了。&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>MacOS安装FlatBuffers</title>
-      <link>https://www.3afun.com/post/2020/macos%E5%AE%89%E8%A3%85flatbuffers/</link>
-      <pubDate>Tue, 11 Feb 2020 16:46:43 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2020/macos%E5%AE%89%E8%A3%85flatbuffers/</guid>
-      
-        <description>&lt;p&gt;在Mac系统上安装FlatBuffers有两种方式，第一种是通过&lt;code&gt;Homebrew&lt;/code&gt;安装&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ brew install flatbuffers
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;但是并不推荐如此安装，因为可能会造成你安装的&lt;code&gt;flatc&lt;/code&gt;编译版本和后期运行时版本不一致，导致程序编译不过。建议采用源码安装。
-源码安装首先安装&lt;code&gt;cmake&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ brew install cmake
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后再安装FlatBuffers&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git clone https://github.com/google/flatbuffers.git
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cd flatbuffers
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cmake -G &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Unix Makefiles&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ make
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ./flattests &lt;span style=&#34;color:#75715e&#34;&gt;# this is quick, and should print &amp;#34;ALL TESTS PASSED&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;添加到系统，方便以后使用&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo cp flatc /usr/local/bin/flatc
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;安装完成后，查看安装版本&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ flatc --version
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;后期运行时可以使用&lt;code&gt;java&lt;/code&gt;目录（其他语言自行选择对应目录）下的源码作为运行时环境，编译直接使用&lt;code&gt;flatc&lt;/code&gt;命令对schema文件进行编译。&lt;/p&gt;
 </description>
       
     </item>
