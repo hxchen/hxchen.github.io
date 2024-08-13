@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 我不是帅才</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright 3AFun</copyright>
-    <lastBuildDate>Fri, 09 Aug 2024 18:05:44 +0800</lastBuildDate><atom:link href="https://www.3afun.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Aug 2024 15:24:37 +0800</lastBuildDate><atom:link href="https://www.3afun.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>利用Java泛型和策略模式实现不同消息的处理器</title>
+      <link>https://www.3afun.com/post/2024/%E5%88%A9%E7%94%A8java%E6%B3%9B%E5%9E%8B%E5%92%8C%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F%E5%AE%9E%E7%8E%B0%E4%B8%8D%E5%90%8C%E6%B6%88%E6%81%AF%E7%9A%84%E5%A4%84%E7%90%86%E5%99%A8/</link>
+      <pubDate>Tue, 13 Aug 2024 15:24:37 +0800</pubDate>
+      
+      <guid>https://www.3afun.com/post/2024/%E5%88%A9%E7%94%A8java%E6%B3%9B%E5%9E%8B%E5%92%8C%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F%E5%AE%9E%E7%8E%B0%E4%B8%8D%E5%90%8C%E6%B6%88%E6%81%AF%E7%9A%84%E5%A4%84%E7%90%86%E5%99%A8/</guid>
+      <description>要实现一个基于Java泛型的消息处理框架，使得未来添加新消息时只需添加对应的消息处理器，可以遵循以下步骤： 1. 定义消息接口 首先定义一个通用的消</description>
+    </item>
+    
     <item>
       <title>Go语言的并发安全和锁</title>
       <link>https://www.3afun.com/post/2024/go%E8%AF%AD%E8%A8%80%E7%9A%84%E5%B9%B6%E5%8F%91%E5%AE%89%E5%85%A8%E5%92%8C%E9%94%81/</link>
@@ -176,15 +185,6 @@
       
       <guid>https://www.3afun.com/post/2020/%E5%88%A9%E7%94%A8wget%E6%8A%93%E5%8F%96%E7%BD%91%E7%AB%99%E6%A8%A1%E6%9D%BF/</guid>
       <description>有时遇到精美的网站模板，给了演示Demo下载却花钱，怎么办？找不到好用的软件，又不想写繁多的Python或者Go脚本，别着急，利用wget命</description>
-    </item>
-    
-    <item>
-      <title>MacOSX无法挂载硬盘的解决办法</title>
-      <link>https://www.3afun.com/post/2020/macosx%E6%97%A0%E6%B3%95%E6%8C%82%E8%BD%BD%E7%A1%AC%E7%9B%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
-      <pubDate>Sun, 08 Mar 2020 11:59:21 +0800</pubDate>
-      
-      <guid>https://www.3afun.com/post/2020/macosx%E6%97%A0%E6%B3%95%E6%8C%82%E8%BD%BD%E7%A1%AC%E7%9B%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
-      <description>有时移动硬盘无法从电脑退出，下次再次使用时候，插入进去没有反应，通过查看Mac 自带的磁盘工具发现已经识别，但是却无法挂载，遇到这样的问题尝试</description>
     </item>
     
   </channel>
